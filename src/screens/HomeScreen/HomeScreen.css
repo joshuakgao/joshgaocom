@@ -1,9 +1,9 @@
-.container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  overflow: auto;
-  background: #f7f7f7; /* Just to visualize the extent */
+.title {
+  margin-left: 10%;
+}
+
+@media (max-width: 500px) {
+  .title {
+    margin-left: 5%;
+  }
 }

@@ -1,7 +1,13 @@
 {
-  "short_name": "JoshGao",
+  "short_name": "Josh Gao",
   "name": "Joshua Gao's portfolio",
-  "icons": [],
+  "icons": [
+    {
+      "src": "../src/assets/watermelon.png",
+      "type": "image/png",
+      "size": "2048x1628"
+    }
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

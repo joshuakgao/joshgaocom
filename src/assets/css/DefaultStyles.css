@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+
+h1 {
+  display: block;
+  font-size: 6rem;
+  margin-top: 0.67rem;
+  margin-bottom: 0.67rem;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+h2 {
+  display: block;
+  font-size: 3rem;
+  margin-top: 0.83rem;
+  margin-bottom: 0.83rem;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+h3 {
+  display: block;
+  font-size: 2.25rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+h4 {
+  display: block;
+  font-size: 1.5rem;
+  margin-top: 1.33rem;
+  margin-bottom: 1.33rem;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  /* flex-direction: column; */
+  margin-right: 32px;
+  margin-left: 32px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.fullscreen {
+  height: 100vh;
+  /* flex-direction: column; */
+  justify-content: center;
+}
+
+.debug {
+  border: 1px solid black;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    display: block;
+    font-size: 3.5rem;
+    margin-top: 0.67rem;
+    margin-bottom: 0.67rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+  }
+  h2 {
+    display: block;
+    font-size: 2rem;
+    margin-top: 0.83rem;
+    margin-bottom: 0.83rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+  }
+  h3 {
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+  }
+  h4 {
+    display: block;
+    margin-top: 1.33rem;
+    margin-bottom: 1.33rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+.primary {
+  color: #f7f7f7;
+}
+.secondary {
+  color: #353535;
+}
+.tertiary {
+  color: #7b7b7b;
+}
+.accent {
+  color: #ececec;
+}

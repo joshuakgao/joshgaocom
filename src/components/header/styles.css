@@ -1,0 +1,21 @@
+.header {
+  width: 100wh;
+  margin: 32px;
+}
+
+.logo {
+  height: 3vh;
+}
+
+.right-constraint {
+  position: absolute;
+  right: 32px;
+}
+
+.horizontal-line {
+  border: 1px solid black;
+  height: 0px;
+  width: 25px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
