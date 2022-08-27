@@ -5,7 +5,9 @@ export default function Logo() {
   return (
     <>
       <img className="logo" src={watermelon} alt="Logo" />
-      <h4 className="tertiary">Gao</h4>
+      <h4 className="tertiary" style={{ marginLeft: 10 }}>
+        Gao
+      </h4>
     </>
   );
 }
