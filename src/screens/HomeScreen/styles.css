@@ -6,7 +6,6 @@
   left: 35%;
   top: 20%;
   transform: translate(-50%, -50%);
-  overflow: hidden;
   animation: spin 60s infinite linear;
 }
 
