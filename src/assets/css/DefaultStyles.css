@@ -51,12 +51,6 @@ h4 {
   z-index: 99;
 }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 .column {
   display: flex;
   flex-direction: column;
@@ -77,6 +71,53 @@ h4 {
 
 .d {
   border: 1px solid black;
+}
+
+@media (max-width: 700px) {
+  h1 {
+    display: block;
+    font-size: 4rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    z-index: 99;
+  }
+  h2 {
+    display: block;
+    font-size: 3rem;
+    margin-top: 0.83rem;
+    margin-bottom: 0.83rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    z-index: 99;
+  }
+  h3 {
+    display: block;
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    z-index: 99;
+  }
+  h4 {
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 1.33rem;
+    margin-bottom: 1.33rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    z-index: 99;
+  }
 }
 
 .primary {
