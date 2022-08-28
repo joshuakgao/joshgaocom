@@ -1,3 +1,3 @@
 export * from "./hamburgerMenu";
-export * from "./header";
+export * from "./navBar";
 export * from "./logo";
