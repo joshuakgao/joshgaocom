@@ -6,13 +6,11 @@ import {
   FlexSpacing,
   Row,
 } from "../../components/commonComponents";
-import { Header } from "../../components/customComponents";
 
-export function HomeScreen() {
+export function HomePage() {
   require("./styles.css");
   return (
     <Container>
-      <Header />
       <img className="center-image" src={abstract} />
       <Container>
         <Row>
