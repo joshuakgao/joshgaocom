@@ -2,7 +2,7 @@ import { Row } from "../../commonComponents";
 import { HamburgerMenu } from "../hamburgerMenu";
 import { Logo } from "../logo/logo";
 
-export function Header() {
+export function NavBar() {
   require("./styles.css");
   return (
     <nav className="fixed">

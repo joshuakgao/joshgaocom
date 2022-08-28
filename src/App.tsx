@@ -1,4 +1,4 @@
-import { Header } from "./components/customComponents/header";
+import { NavBar } from "./components/customComponents/navBar";
 import { HomePage } from "./screens";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   }
   return (
     <>
-      <Header />
+      <NavBar />
       {Page}
     </>
   );
