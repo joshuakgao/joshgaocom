@@ -16,16 +16,14 @@ h1 {
 }
 
 .center-image {
-  height: 100vh;
-  filter: invert(62%) sepia(33%) saturate(3990%) hue-rotate(319deg)
-    brightness(97%) contrast(103%);
+  height: 60vh;
+  filter: invert(55%) sepia(0%) saturate(389%) hue-rotate(177deg)
+    brightness(87%) contrast(79%);
 }
 
 .center-image-container {
   position: fixed;
   left: 50%;
-  transform: translateX(-50%);
-  height: 100vh;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
