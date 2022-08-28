@@ -1,4 +1,16 @@
-export function Column({ children, d }: { children?: any; d?: boolean }) {
+export function Column({
+  children,
+  style,
+  d,
+}: {
+  children?: any;
+  style?: any;
+  d?: boolean;
+}) {
   require("./styles.css");
-  return <div className={`column ${d ? "d" : null}`}>{children}</div>;
+  return (
+    <div className={`column ${d ? "d" : null}`} style={style}>
+      {children}
+    </div>
+  );
 }
