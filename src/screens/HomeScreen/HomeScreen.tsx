@@ -11,7 +11,7 @@ import { Header } from "../../components/customComponents";
 export function HomeScreen() {
   require("./styles.css");
   return (
-    <>
+    <Container>
       <Header />
       <img className="center-image" src={abstract} />
       <Container>
@@ -26,6 +26,6 @@ export function HomeScreen() {
           <FlexSpacing flexGrow={4} />
         </Row>
       </Container>
-    </>
+    </Container>
   );
 }
