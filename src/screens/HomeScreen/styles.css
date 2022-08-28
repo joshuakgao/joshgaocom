@@ -3,7 +3,18 @@
   filter: invert(55%) sepia(0%) saturate(389%) hue-rotate(177deg)
     brightness(87%) contrast(79%);
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 35%;
+  top: 20%;
   transform: translate(-50%, -50%);
+  overflow: hidden;
+  animation: spin 60s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
