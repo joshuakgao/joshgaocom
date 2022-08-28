@@ -1,4 +1,21 @@
-export function Row({ children, d }: { children?: any; d?: boolean }) {
+import React from "react";
+
+export function Row({
+  children,
+  className,
+  style,
+  d,
+}: {
+  children?: any;
+  className?: string;
+  style?: React.CSSProperties;
+  d?: boolean;
+}) {
   require("./styles.css");
-  return <div className={`row ${d ? "d" : null}`}>{children}</div>;
+  let debug = d ? "d" : null;
+  return (
+    <div className={`row ${debug} ${className}`} style={style}>
+      {children}
+    </div>
+  );
 }
