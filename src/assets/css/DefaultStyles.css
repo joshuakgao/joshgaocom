@@ -2,7 +2,7 @@
 
 body {
   background-color: #f7f7f7;
-  margin: 32px;
+  margin: 0px;
   height: 100%;
 }
 
@@ -61,16 +61,14 @@ h4 {
 .container {
   display: flex;
   height: 100%;
-  margin-right: 32px;
-  margin-left: 32px;
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 
 .fullscreen {
-  height: 100%;
-  /* flex-direction: column; */
+  height: 100vh;
+  flex-direction: column;
   justify-content: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .debug {
