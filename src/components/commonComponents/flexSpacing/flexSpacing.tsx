@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FlexSpacing({
+export function FlexSpacing({
   flexGrow = 1,
   d,
 }: {

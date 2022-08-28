@@ -6,24 +6,12 @@
   margin-top: 32px;
 }
 
-.logo {
-  height: 3vh;
-}
-
 .fixed {
   top: 0;
   left: 0;
   margin: auto;
   width: 100%;
   position: fixed;
-}
-
-.horizontal-line {
-  border: 1px solid black;
-  height: 0px;
-  width: 25px;
-  margin-bottom: 10px;
-  margin-top: 10px;
 }
 
 h4 {

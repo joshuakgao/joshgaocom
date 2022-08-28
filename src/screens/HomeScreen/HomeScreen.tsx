@@ -1,12 +1,14 @@
 import React from "react";
 import "../../assets/css/DefaultStyles.css";
 import "./HomeScreen.css";
-import Header from "../../components/header/header";
-import abstract from "../../assets/images/Build_Network.png";
-import Row from "../../components/commonComponents/row/row";
-import Column from "../../components/commonComponents/column/column";
-import FlexSpacing from "../../components/commonComponents/flexSpacing/flexSpacing";
-import Container from "../../components/commonComponents/container/container";
+import { Header } from "../../components/customComponents";
+import abstract from "../../assets/images/network.png";
+import {
+  Row,
+  Column,
+  FlexSpacing,
+  Container,
+} from "../../components/commonComponents";
 
 export function HomeScreen() {
   return (

@@ -1,7 +1,5 @@
-import React from "react";
-import "./styles.css";
-
-export default function HamburgerMenu() {
+export function HamburgerMenu() {
+  require("./styles.css");
   return (
     <div className="right-constraint">
       <div className="horizontal-line" />

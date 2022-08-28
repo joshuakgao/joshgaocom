@@ -1,7 +1,7 @@
-import React from "react";
-import watermelon from "../../assets/images/watermelon.png";
+import watermelon from "../../../assets/images/watermelon.png";
 
-export default function Logo() {
+export function Logo() {
+  require("./styles.css");
   return (
     <div className="row">
       <img className="logo" src={watermelon} />
