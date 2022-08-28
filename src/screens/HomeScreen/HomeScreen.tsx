@@ -11,6 +11,7 @@ import {
 } from "../../components/commonComponents";
 
 export function HomeScreen() {
+  require("./styles.css");
   return (
     <>
       <Header />

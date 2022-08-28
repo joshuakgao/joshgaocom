@@ -7,7 +7,3 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
-.fixed-size {
-  flex-shrink: 0;
-}
