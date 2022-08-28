@@ -1,14 +1,12 @@
-import React from "react";
 import "../../assets/css/DefaultStyles.css";
-import "./HomeScreen.css";
-import { Header } from "../../components/customComponents";
 import abstract from "../../assets/images/network.png";
 import {
-  Row,
   Column,
-  FlexSpacing,
   Container,
+  FlexSpacing,
+  Row,
 } from "../../components/commonComponents";
+import { Header } from "../../components/customComponents";
 
 export function HomeScreen() {
   require("./styles.css");
