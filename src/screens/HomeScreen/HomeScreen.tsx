@@ -23,7 +23,7 @@ export function HomeScreen() {
               exploring software, business and beyond
             </h4>
           </Column>
-          <FlexSpacing flexGrow={4} />
+          <FlexSpacing flexGrow={3} />
         </Row>
       </Container>
     </Container>
