@@ -51,24 +51,6 @@ h4 {
   z-index: 99;
 }
 
-.column {
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  display: flex;
-  height: 100%;
-}
-
-.fullscreen {
-  height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
 .d {
   border: 1px solid black;
 }

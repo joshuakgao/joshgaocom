@@ -1,8 +1,3 @@
-.flex-spacing {
-  display: flex;
-  width: 300px;
-}
-
 .center-image {
   height: 60vh;
   filter: invert(55%) sepia(0%) saturate(389%) hue-rotate(177deg)
