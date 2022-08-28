@@ -8,11 +8,11 @@ export function HomeScreen() {
   return (
     <>
       <Header />
-      {/* <div className="container fullscreen">
+      <div className="container fullscreen debug">
         <div className="title">
           <h1>Joshua Gao</h1>
         </div>
-      </div> */}
+      </div>
     </>
   );
 }

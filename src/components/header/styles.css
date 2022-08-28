@@ -1,5 +1,6 @@
 .header {
-  width: 100wh;
+  display: flex;
+  justify-content: space-between;
   margin: 32px;
 }
 
@@ -7,9 +8,16 @@
   height: 3vh;
 }
 
+.fixed {
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  position: fixed;
+}
+
 .right-constraint {
-  position: absolute;
-  right: 32px;
+  float: right;
 }
 
 .horizontal-line {

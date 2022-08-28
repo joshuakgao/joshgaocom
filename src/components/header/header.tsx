@@ -6,9 +6,11 @@ import "../../assets/css/DefaultStyles.css";
 
 export default function Header() {
   return (
-    <div className="row header">
-      <Logo />
-      <HamburgerMenu />
+    <div className="fixed">
+      <div className="header row">
+        <Logo />
+        <HamburgerMenu />
+      </div>
     </div>
   );
 }
