@@ -12,7 +12,10 @@ export function HamburgerMenu({
   require("./styles.css");
   let debug = d ? "d" : null;
   return (
-    <div className={`right-constraint ${d} ${className}`}>
+    <div
+      className={`right-constraint ${debug} ${className}`}
+      onClick={() => console.log("hi")}
+    >
       <div className="horizontal-line" />
       <div className="horizontal-line" />
       <div className="horizontal-line" />

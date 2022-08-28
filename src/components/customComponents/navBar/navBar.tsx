@@ -4,22 +4,13 @@ import { Logo } from "../logo/logo";
 
 export function NavBar() {
   require("./styles.css");
+  let Nav = Row;
   return (
-    <nav className="fixed">
-      <Row className="header">
-        <a href="/">
-          <Logo />
-        </a>
-        <HamburgerMenu />
-      </Row>
-    </nav>
+    <Nav className="nav-bar">
+      <a href="/">
+        <Logo />
+      </a>
+      <HamburgerMenu />
+    </Nav>
   );
-  // return (
-  //   <nav className="fixed">
-  //     <div className="header row">
-  //       <Logo />
-  //       <HamburgerMenu />
-  //     </div>
-  //   </nav>
-  // );
 }
