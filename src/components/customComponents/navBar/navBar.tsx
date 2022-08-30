@@ -6,11 +6,13 @@ export function NavBar() {
   require("./styles.css");
   let Nav = Row;
   return (
-    <Nav className="nav-bar">
-      <a href="/">
-        <Logo />
-      </a>
-      <HamburgerMenu />
-    </Nav>
+    <div className="fixed-position">
+      <Nav className="navbar">
+        <a href="/">
+          <Logo />
+        </a>
+        <HamburgerMenu />
+      </Nav>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-.nav-bar {
+.navbar {
   display: flex;
   justify-content: space-between;
   margin-right: 32px;
@@ -6,7 +6,12 @@
   margin-top: 32px;
 }
 
-.nav-bar a {
+.fixed-position {
+  position: fixed;
+  width: 100vw;
+}
+
+.navbar a {
   text-decoration: none;
 }
 
@@ -18,7 +23,7 @@
   position: fixed;
 }
 
-.nav-bar h4 {
+.navbar h4 {
   display: block;
   font-size: 1.5rem;
   margin-top: 0;
