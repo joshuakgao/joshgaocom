@@ -16,8 +16,8 @@ export function HomePage() {
         <Row>
           <FlexSpacing flexGrow={1} />
           <Column>
-            <h1 className="secondary">Joshua Gao</h1>
-            <h4 className="tertiary">
+            <h1 className="secondary fade-in">Joshua Gao</h1>
+            <h4 className="tertiary fade-in">
               exploring software, business and beyond
             </h4>
           </Column>

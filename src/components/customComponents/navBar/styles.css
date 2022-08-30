@@ -4,6 +4,8 @@
   margin-right: 32px;
   margin-left: 32px;
   margin-top: 32px;
+  animation: navbar-fade-in 1s linear 2s forwards;
+  opacity: 0;
 }
 
 .fixed-position {
@@ -33,4 +35,14 @@
   margin-right: 0;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
+}
+
+@keyframes navbar-fade-in {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
