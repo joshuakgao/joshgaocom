@@ -233,6 +233,6 @@ h1 {
   color: #353535;
 }
 
-h1:hover {
+a h1:hover {
   color: #000000;
 }

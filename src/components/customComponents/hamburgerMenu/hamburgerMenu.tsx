@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ContainerFullscreen } from "../../commonComponents";
 import github from "../../../assets/images/github.png";
 import cv from "../../../assets/images/cv.png";
+import cvPdf from "../../../assets/docs/cv.pdf";
 
 export function HamburgerMenu({
   className,
@@ -59,8 +60,12 @@ export function HamburgerMenu({
           </h1>
         </a>
         <div className="right-constraint bottom-constraint">
-          <img className="icon" src={github} height={64} width={64} />
-          <img className="icon" src={cv} height={62} width={64} />
+          <a href="https://github.com/tugonbob" target="_blank">
+            <img className="icon" src={github} height={64} width={64} />
+          </a>
+          <a href={cvPdf} target="_blank" rel="noreferrer">
+            <img className="icon" src={cv} height={62} width={64} />
+          </a>
         </div>
       </ContainerFullscreen>
     </>
