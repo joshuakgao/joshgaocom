@@ -7,7 +7,7 @@
   top: 20%;
   transform: translate(-50%, -50%);
   animation: spin 60s infinite linear,
-    full-fade-in-upwards 1s 1s linear forwards;
+    full-fade-in-upwards 1s 2s linear forwards;
   opacity: 0;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .fade-in {
-  animation: fade-in-upwards 1s linear forwards;
+  animation: fade-in-upwards 1s 1s linear forwards;
   opacity: 0;
 }
 
