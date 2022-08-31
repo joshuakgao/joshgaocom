@@ -1,14 +1,15 @@
 .center-image {
+  display: block;
   height: 60vh;
   filter: invert(55%) sepia(0%) saturate(389%) hue-rotate(177deg)
     brightness(87%) contrast(79%);
   position: absolute;
   left: 35%;
   top: 20%;
-  animation: spin 60s infinite linear,
-    full-fade-in-upwards 1s 1s linear forwards;
-  -webkit-animation: spin 60s infinite linear,
-    full-fade-in-upwards 1s 1s linear forwards;
+  animation: spin 60s infinite steps(10000),
+    full-fade-in-upwards 1s 1s steps(10000) forwards;
+  -webkit-animation: spin 60s infinite steps(10000),
+    full-fade-in-upwards 1s 1s steps(10000) forwards;
   opacity: 0;
 }
 
@@ -22,8 +23,9 @@
 }
 
 .fade-in {
-  animation: fade-in-upwards 1s linear forwards;
-  -webkit-animation: fade-in-upwards 1s linear forwards;
+  display: block;
+  animation: fade-in-upwards 1s steps(10000) forwards;
+  -webkit-animation: fade-in-upwards 1s steps(10000) forwards;
   opacity: 0;
 }
 
@@ -33,6 +35,7 @@
     opacity: 0;
   }
   100% {
+    transform: translateY(0px);
     opacity: 1;
   }
 }
