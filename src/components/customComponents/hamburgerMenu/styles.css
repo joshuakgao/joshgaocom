@@ -222,3 +222,16 @@
   filter: invert(50%) sepia(0%) saturate(10%) hue-rotate(170deg) brightness(96%)
     contrast(87%);
 }
+
+.icon:hover {
+  filter: invert(16%) sepia(11%) saturate(19%) hue-rotate(316deg)
+    brightness(103%) contrast(89%);
+}
+
+h1 {
+  color: #353535;
+}
+
+h1:hover {
+  color: #000000;
+}
