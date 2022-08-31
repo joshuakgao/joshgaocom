@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 32px;
-  animation: navbar-fade-in 1s linear 3s forwards;
+  animation: navbar-fade-in 1s 1s forwards;
   opacity: 0;
 }
 
@@ -37,7 +37,6 @@
 
 @keyframes navbar-fade-in {
   0% {
-    transform: translateY(-25px);
     opacity: 0;
   }
   100% {

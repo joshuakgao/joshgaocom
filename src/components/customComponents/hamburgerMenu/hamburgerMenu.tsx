@@ -30,36 +30,34 @@ export function HamburgerMenu({
         <hr className={`bottom-line ${hamburgerOpened}`} />
       </div>
       <ContainerFullscreen className={pressed ? "opaque" : "clear"}>
-        <h1
-          className={`right-constraint ${
-            pressed ? "fade-in-upwards" : "fade-out-downwards"
-          }`}
-          style={{ marginTop: 64 }}
-        >
-          Software
-        </h1>
-        <h1
-          className={`right-constraint ${
-            pressed ? "fade-in-upwards" : "fade-out-downwards"
-          }`}
-        >
-          Business
-        </h1>
-        <h1
-          className={`right-constraint ${
-            pressed ? "fade-in-upwards" : "fade-out-downwards"
-          }`}
-        >
-          Other
-        </h1>
-        <h1
-          className={`right-constraint ${
-            pressed ? "fade-in-upwards" : "fade-out-downwards"
-          }`}
-        >
-          Contact
-        </h1>
-
+        <a href="/software">
+          <h1
+            className={`right-constraint ${
+              pressed ? "fade-in-upwards" : "fade-out-downwards"
+            }`}
+            style={{ marginTop: 64 }}
+          >
+            Software
+          </h1>
+        </a>
+        <a href="/business">
+          <h1
+            className={`right-constraint ${
+              pressed ? "fade-in-upwards" : "fade-out-downwards"
+            }`}
+          >
+            Business
+          </h1>
+        </a>
+        <a href="/other">
+          <h1
+            className={`right-constraint ${
+              pressed ? "fade-in-upwards" : "fade-out-downwards"
+            }`}
+          >
+            Other
+          </h1>
+        </a>
         <div className="right-constraint bottom-constraint">
           <img className="icon" src={github} height={64} width={64} />
           <img className="icon" src={cv} height={62} width={64} />
