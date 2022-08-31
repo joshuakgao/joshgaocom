@@ -60,6 +60,9 @@ export function HamburgerMenu({
           </h1>
         </a>
         <div className="right-constraint bottom-constraint">
+          <h4 className="tertiary" style={{ marginBottom: 16 }}>
+            joshuakgao@gmail.com
+          </h4>
           <a href="https://github.com/tugonbob" target="_blank">
             <img className="icon" src={github} height={64} width={64} />
           </a>

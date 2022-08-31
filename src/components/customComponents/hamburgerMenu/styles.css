@@ -187,6 +187,7 @@
 
 .bottom-constraint {
   position: absolute;
+  margin-top: 32px;
   bottom: 32px;
   right: 0px;
 }
