@@ -1,7 +1,150 @@
-.horizontal-line {
+.top-line {
   border: 1px solid black;
   height: 0px;
   width: 25px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.middle-line {
+  border: 1px solid black;
+  height: 0px;
+  width: 25px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.hidden-middle-line {
+  position: absolute;
+  border: 1px solid black;
+  height: 0px;
+  width: 25px;
+}
+
+.bottom-line {
+  border: 1px solid black;
+  height: 0px;
+  width: 25px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.hamburger-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50px;
+}
+
+.hamburger-container:hover .middle-line {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.top-line.open {
+  animation: fade-out-leftwards 0.5s forwards;
+}
+
+.middle-line.open {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  animation: rotate-left 0.5s forwards;
+}
+
+.hidden-middle-line.open {
+  animation: rotate-right 0.5s forwards;
+}
+
+.bottom-line.open {
+  animation: fade-out-rightwards 0.5s forwards;
+}
+
+.top-line.close {
+  animation: fade-in-leftwards 0.5s forwards;
+}
+
+.middle-line.close {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  animation: unrotate-left 0.5s forwards;
+}
+
+.hidden-middle-line.close {
+  animation: unrotate-right 0.5s forwards;
+}
+
+.bottom-line.close {
+  animation: fade-in-rightwards 0.5s forwards;
+}
+
+@keyframes fade-out-leftwards {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+}
+
+@keyframes fade-out-rightwards {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes fade-in-leftwards {
+  0% {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fade-in-rightwards {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes rotate-left {
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes rotate-right {
+  100% {
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes unrotate-left {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes unrotate-right {
+  0% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 export function HamburgerMenu({
   className,
@@ -9,16 +9,21 @@ export function HamburgerMenu({
   style?: React.CSSProperties;
   d?: boolean;
 }) {
+  const [pressed, setPressed] = useState<boolean>(false);
+
   require("./styles.css");
   let debug = d ? "d" : null;
+  let toggleOpenClass = pressed ? "open" : "close";
   return (
     <div
-      className={`right-constraint ${debug} ${className}`}
-      onClick={() => console.log("hi")}
+      className={`hamburger-container ${debug} ${className} `}
+      onClick={() => setPressed(!pressed)}
+      style={style}
     >
-      <div className="horizontal-line" />
-      <div className="horizontal-line" />
-      <div className="horizontal-line" />
+      <hr className={`top-line ${toggleOpenClass}`} />
+      <hr className={`middle-line ${toggleOpenClass}`} />
+      <hr className={`hidden-middle-line ${toggleOpenClass}`} />
+      <hr className={`bottom-line ${toggleOpenClass}`} />
     </div>
   );
 }
