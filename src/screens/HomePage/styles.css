@@ -23,6 +23,7 @@
 
 .fade-in {
   animation: fade-in-upwards 1s linear forwards;
+  -webkit-animation: fade-in-upwards 1s linear forwards;
   opacity: 0;
 }
 
