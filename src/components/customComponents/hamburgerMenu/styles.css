@@ -2,16 +2,16 @@
   border: 1px solid black;
   height: 0px;
   width: 25px;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin-bottom: 4px;
+  margin-top: 4px;
 }
 
 .middle-line {
   border: 1px solid black;
   height: 0px;
   width: 25px;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin-bottom: 4px;
+  margin-top: 4px;
 }
 
 .hidden-middle-line {
@@ -25,8 +25,8 @@
   border: 1px solid black;
   height: 0px;
   width: 25px;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin-bottom: 4px;
+  margin-top: 4px;
 }
 
 .hamburger-container {
@@ -34,11 +34,12 @@
   flex-direction: column;
   justify-content: center;
   height: 50px;
+  z-index: 10;
 }
 
 .hamburger-container:hover .middle-line {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .top-line.open {
@@ -46,8 +47,8 @@
 }
 
 .middle-line.open {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 6px;
+  margin-bottom: 6px;
   animation: rotate-left 0.5s forwards;
 }
 
@@ -64,8 +65,8 @@
 }
 
 .middle-line.close {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   animation: unrotate-left 0.5s forwards;
 }
 
@@ -147,4 +148,77 @@
   100% {
     transform: rotate(0deg);
   }
+}
+
+.opaque {
+  background-color: #f7f7f7;
+  animation: make-opaque 0.5s forwards;
+}
+
+@keyframes make-opaque {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+.clear {
+  background-color: #f7f7f7;
+  animation: clear 0.5s forwards;
+}
+
+@keyframes clear {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.right-constraint {
+  margin-top: 16px;
+  margin-right: 32px;
+  text-align: right;
+}
+
+.bottom-constraint {
+  position: absolute;
+  bottom: 32px;
+  right: 0px;
+}
+
+.fade-in-upwards {
+  animation: fade-in-upwards 0.5s forwards;
+}
+
+@keyframes fade-in-upwards {
+  0% {
+    transform: translateY(-32px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-out-downwards {
+  animation: fade-out-downwards 0.5s forwards;
+}
+
+@keyframes fade-out-downwards {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-32px);
+    opacity: 0;
+  }
+}
+
+.icon {
+  filter: invert(50%) sepia(0%) saturate(10%) hue-rotate(170deg) brightness(96%)
+    contrast(87%);
 }
