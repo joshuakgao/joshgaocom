@@ -14,7 +14,7 @@ export function ScrollContainer({
   require("./styles.css");
   let debug = d ? "d" : null;
   return (
-    <div className={`scroll-container ${className} ${debug} d`} style={style}>
+    <div className={`scroll-container ${className} ${debug}`} style={style}>
       {children}
     </div>
   );

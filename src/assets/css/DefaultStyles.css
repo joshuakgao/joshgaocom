@@ -85,6 +85,23 @@ h4 {
   }
 } */
 
+@font-face {
+  font-family: "Avenir";
+  src: local("Avenir"), url(../fonts/Avenir/Avenir-Book.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 900;
+  src: local("Avenir"), url(../fonts/Avenir/Avenir-Roman.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Avenir";
+  font-weight: 900;
+  src: local("Avenir"), url(../fonts/Avenir/Avenir-Black.otf) format("opentype");
+}
+
 .primary {
   color: #f7f7f7;
 }

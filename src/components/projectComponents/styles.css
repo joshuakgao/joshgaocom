@@ -1,0 +1,44 @@
+.item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin-bottom: 50vh;
+}
+
+.item-inner-container {
+  height: 66%;
+  width: 80%;
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+.left-text {
+  height: 80%;
+  width: 88%;
+  margin-left: 6%;
+  margin-top: 6%;
+  margin-bottom: 6%;
+}
+
+.middle-text {
+  height: 80%;
+  width: 67%;
+  margin-left: 33%;
+  margin-top: 6%;
+  margin-bottom: 6%;
+  border: green 1px solid;
+}
+
+.right-text {
+  height: 80%;
+  width: 44%;
+  margin-left: 56%;
+  margin-top: 6%;
+  margin-bottom: 6%;
+}
+
+.title {
+  font-family: Avenir, Artial, serif;
+}
