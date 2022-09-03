@@ -1,26 +1,17 @@
 import { NavBar } from "./components/customComponents/navBar";
 import { HomePage, BusinessPage, SoftwarePage, OtherPage } from "./screens";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  let Page;
-  switch (window.location.pathname) {
-    case "/":
-      Page = <HomePage />;
-      break;
-    case "/software":
-      Page = <SoftwarePage />;
-      break;
-    case "/business":
-      Page = <BusinessPage />;
-      break;
-    case "/other":
-      Page = <OtherPage />;
-  }
-
   return (
     <>
       <NavBar />
-      {Page}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/software" element={<SoftwarePage />} />
+        <Route path="/business" element={<BusinessPage />} />
+        <Route path="/other" element={<OtherPage />} />
+      </Routes>
     </>
   );
 }

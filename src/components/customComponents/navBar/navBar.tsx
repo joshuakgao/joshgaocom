@@ -1,6 +1,7 @@
 import { Row } from "../../commonComponents";
 import { HamburgerMenu } from "../hamburgerMenu";
 import { Logo } from "../logo/logo";
+import { Link } from "react-router-dom";
 
 export function NavBar() {
   require("./styles.css");
@@ -8,9 +9,9 @@ export function NavBar() {
   return (
     <div className="fixed-position">
       <Nav className="navbar">
-        <a href="/">
+        <Link to="/">
           <Logo />
-        </a>
+        </Link>
         <HamburgerMenu />
       </Nav>
     </div>

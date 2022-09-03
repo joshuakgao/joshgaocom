@@ -3,6 +3,7 @@ import { ContainerFullscreen } from "../../commonComponents";
 import github from "../../../assets/images/github.png";
 import cv from "../../../assets/images/cv.png";
 import cvPdf from "../../../assets/docs/cv.pdf";
+import { Link } from "react-router-dom";
 
 export function HamburgerMenu({
   className,
@@ -31,7 +32,7 @@ export function HamburgerMenu({
         <hr className={`bottom-line ${hamburgerOpened}`} />
       </div>
       <ContainerFullscreen className={pressed ? "opaque" : "clear"}>
-        <a href="/software">
+        <Link to="/software" onClick={() => setPressed(false)}>
           <h1
             className={`secondary right-constraint ${
               pressed ? "fade-in-upwards" : "fade-out-downwards"
@@ -40,8 +41,8 @@ export function HamburgerMenu({
           >
             Software
           </h1>
-        </a>
-        <a href="/business">
+        </Link>
+        <Link to="/business" onClick={() => setPressed(false)}>
           <h1
             className={`secondary right-constraint ${
               pressed ? "fade-in-upwards" : "fade-out-downwards"
@@ -50,8 +51,8 @@ export function HamburgerMenu({
           >
             Business
           </h1>
-        </a>
-        <a href="/other">
+        </Link>
+        <Link to="/other" onClick={() => setPressed(false)}>
           <h1
             className={`secondary right-constraint ${
               pressed ? "fade-in-upwards" : "fade-out-downwards"
@@ -60,7 +61,7 @@ export function HamburgerMenu({
           >
             Other
           </h1>
-        </a>
+        </Link>
         <div className="right-constraint bottom-constraint">
           <h4
             className="tertiary"
@@ -68,12 +69,12 @@ export function HamburgerMenu({
           >
             joshuakgao@gmail.com
           </h4>
-          <a href="https://github.com/tugonbob" target="_blank">
+          <Link to="https://github.com/tugonbob" target="_blank">
             <img className="icon" src={github} />
-          </a>
-          <a href={cvPdf} target="_blank" rel="noreferrer">
+          </Link>
+          <Link to={cvPdf} target="_blank" rel="noreferrer">
             <img className="icon" src={cv} />
-          </a>
+          </Link>
         </div>
       </ContainerFullscreen>
     </>
