@@ -21,7 +21,7 @@ export function HamburgerMenu({
   return (
     <>
       <div
-        className={`hamburger-container ${debug} ${className} `}
+        className={`hamburger-container ${debug} ${className}`}
         onClick={() => setPressed(!pressed)}
         style={style}
       >
@@ -33,41 +33,46 @@ export function HamburgerMenu({
       <ContainerFullscreen className={pressed ? "opaque" : "clear"}>
         <a href="/software">
           <h1
-            className={`right-constraint ${
+            className={`secondary right-constraint ${
               pressed ? "fade-in-upwards" : "fade-out-downwards"
             }`}
-            style={{ marginTop: 64 }}
+            style={{ marginTop: "30vh", fontSize: "10vh", lineHeight: "5vh" }}
           >
             Software
           </h1>
         </a>
         <a href="/business">
           <h1
-            className={`right-constraint ${
+            className={`secondary right-constraint ${
               pressed ? "fade-in-upwards" : "fade-out-downwards"
             }`}
+            style={{ fontSize: "10vh", lineHeight: "5vh" }}
           >
             Business
           </h1>
         </a>
         <a href="/other">
           <h1
-            className={`right-constraint ${
+            className={`secondary right-constraint ${
               pressed ? "fade-in-upwards" : "fade-out-downwards"
             }`}
+            style={{ fontSize: "10vh", lineHeight: "5vh" }}
           >
             Other
           </h1>
         </a>
         <div className="right-constraint bottom-constraint">
-          <h4 className="tertiary" style={{ marginBottom: 16 }}>
+          <h4
+            className="tertiary"
+            style={{ marginBottom: 16, fontSize: "3vh" }}
+          >
             joshuakgao@gmail.com
           </h4>
           <a href="https://github.com/tugonbob" target="_blank">
-            <img className="icon" src={github} height={64} width={64} />
+            <img className="icon" src={github} />
           </a>
           <a href={cvPdf} target="_blank" rel="noreferrer">
-            <img className="icon" src={cv} height={62} width={64} />
+            <img className="icon" src={cv} />
           </a>
         </div>
       </ContainerFullscreen>

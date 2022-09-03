@@ -34,6 +34,7 @@
   flex-direction: column;
   justify-content: center;
   height: 50px;
+  margin-bottom: 0.67rem;
   z-index: 10;
 }
 
@@ -217,7 +218,7 @@
 .bottom-constraint {
   position: absolute;
   margin-top: 32px;
-  bottom: 32px;
+  bottom: 10vh;
   right: 0px;
 }
 
@@ -258,15 +259,15 @@
 .icon {
   filter: invert(50%) sepia(0%) saturate(10%) hue-rotate(170deg) brightness(96%)
     contrast(87%);
+  height: 5vh;
+  width: 5vh;
 }
 
 .icon:hover {
   filter: invert(16%) sepia(11%) saturate(19%) hue-rotate(316deg)
     brightness(103%) contrast(89%);
-}
-
-h1 {
-  color: #353535;
+  height: 5vh;
+  width: 5vh;
 }
 
 a h1:hover {
