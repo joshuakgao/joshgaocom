@@ -9,27 +9,16 @@ import {
 } from "../../components/commonComponents";
 
 export function HomePage() {
-  const [runAnimations, setRunAnimations] = useState<boolean>(false);
-
-  useEffect(() => {
-    setRunAnimations(true);
-  }, []);
-
   require("./styles.css");
   return (
     <Container>
-      <img
-        className={`${runAnimations ? "center-image" : ""}`}
-        src={abstract}
-      />
+      <img className={`center-image`} src={abstract} />
       <Container>
         <Row>
           <FlexSpacing flexGrow={1} />
           <Column>
-            <h1 className={`secondary ${runAnimations ? "fade-in" : ""}`}>
-              Joshua Gao
-            </h1>
-            <h4 className={`tertiary ${runAnimations ? "fade-in" : ""}`}>
+            <h1 className={`secondary fade-in`}>Joshua Gao</h1>
+            <h4 className={`tertiary fade-in`}>
               exploring software, business and beyond
             </h4>
           </Column>
