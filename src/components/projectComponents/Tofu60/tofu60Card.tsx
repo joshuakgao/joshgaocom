@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FlexSpacing } from "../../commonComponents";
+import { Link } from "react-router-dom";
 import tofu_profile from "../../../assets/projects/tofu60/try2.png";
 
 export default function Tofu60Card() {
@@ -31,19 +32,21 @@ export default function Tofu60Card() {
           backgroundColor: "lightblue",
         }}
       >
-        <div
-          className="left-text"
-          style={{ display: "flex", alignItems: "flex-end" }}
-        >
-          <h1
-            className="title primary"
-            style={{
-              transform: `translateY(${scrollPosition / 8}px)`,
-            }}
+        <Link to="/other/tofu60">
+          <div
+            className="left-text"
+            style={{ display: "flex", alignItems: "flex-end" }}
           >
-            Tofu60
-          </h1>
-        </div>
+            <h1
+              className="title primary"
+              style={{
+                transform: `translateY(${scrollPosition / 8}px)`,
+              }}
+            >
+              Tofu60
+            </h1>
+          </div>
+        </Link>
       </div>
     </div>
   );

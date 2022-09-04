@@ -3,6 +3,7 @@ import {
   FlexSpacing,
   ScrollContainer,
 } from "../../components/commonComponents";
+import { Link } from "react-router-dom";
 import Tofu60Card from "../../components/projectComponents/Tofu60/tofu60Card";
 
 export function OtherPage() {
