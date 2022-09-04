@@ -1,4 +1,4 @@
-.item-container {
+.project-card-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +8,7 @@
   overflow: hidden;
 }
 
-.item-inner-container {
+.project-card-container .project-card {
   height: 66%;
   width: 80%;
   max-width: 1200px;
@@ -18,7 +18,7 @@
   -webkit-animation: shrink 1s forwards;
 }
 
-.item-inner-container:hover {
+.project-card-container .item-inner-container:hover {
   display: block;
   -webkit-animation: enlarge 1s forwards;
   animation: enlarge 1s forwards;
@@ -42,7 +42,7 @@
   }
 }
 
-.left-text {
+.project-card-container .left-text {
   height: 80%;
   width: 88%;
   margin-left: 6%;
@@ -50,7 +50,7 @@
   margin-bottom: 6%;
 }
 
-.middle-text {
+.project-card-container .middle-text {
   height: 80%;
   width: 67%;
   margin-left: 33%;
@@ -58,7 +58,7 @@
   margin-bottom: 6%;
 }
 
-.right-text {
+.project-card-container .right-text {
   height: 80%;
   width: 44%;
   margin-left: 56%;
@@ -66,6 +66,6 @@
   margin-bottom: 6%;
 }
 
-.title {
+.project-card-container .title {
   font-family: Avenir, Artial, serif;
 }

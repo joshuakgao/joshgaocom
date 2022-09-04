@@ -22,9 +22,9 @@ export default function Tofu60Card() {
   }, []);
 
   return (
-    <div className="item-container">
+    <div className="project-card-container">
       <div
-        className="item-inner-container"
+        className="project-card"
         style={{
           backgroundImage: `url(${tofu_profile})`,
           backgroundPosition: "right",
