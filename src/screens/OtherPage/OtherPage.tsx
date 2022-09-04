@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FlexSpacing,
   ScrollContainer,
@@ -7,6 +7,10 @@ import { Link } from "react-router-dom";
 import Tofu60Card from "../../components/projectComponents/Tofu60/tofu60Card";
 
 export function OtherPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   require("./styles.css");
   return (
     <ScrollContainer>

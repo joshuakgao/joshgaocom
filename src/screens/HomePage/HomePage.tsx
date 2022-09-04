@@ -9,6 +9,10 @@ import {
 } from "../../components/commonComponents";
 
 export function HomePage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   require("./styles.css");
   return (
     <Container>

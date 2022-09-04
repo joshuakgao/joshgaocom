@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   FlexSpacing,
   ScrollContainer,
 } from "../../components/commonComponents";
 
 export function SoftwarePage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   require("./styles.css");
   return (
     <ScrollContainer>
