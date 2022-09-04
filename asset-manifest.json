@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.bd9cb6e9.css",
-    "main.js": "/static/js/main.7088398d.js",
+    "main.css": "/static/css/main.e41c2a5b.css",
+    "main.js": "/static/js/main.54f7679d.js",
     "static/media/try2.png": "/static/media/try2.1ce79e0f8f63376d0bcb.png",
     "static/media/watermelon.png": "/static/media/watermelon.b4012f507d40a1774201.png",
     "static/media/cv.pdf": "/static/media/cv.ff3357a481d8197f9ad6.pdf",
@@ -10,11 +10,11 @@
     "static/media/Avenir-Book.otf": "/static/media/Avenir-Book.813557df4c7a90b1a474.otf",
     "static/media/Avenir-Roman.otf": "/static/media/Avenir-Roman.0bfb049d9455e81fd1da.otf",
     "index.html": "/index.html",
-    "main.bd9cb6e9.css.map": "/static/css/main.bd9cb6e9.css.map",
-    "main.7088398d.js.map": "/static/js/main.7088398d.js.map"
+    "main.e41c2a5b.css.map": "/static/css/main.e41c2a5b.css.map",
+    "main.54f7679d.js.map": "/static/js/main.54f7679d.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd9cb6e9.css",
-    "static/js/main.7088398d.js"
+    "static/css/main.e41c2a5b.css",
+    "static/js/main.54f7679d.js"
   ]
 }
