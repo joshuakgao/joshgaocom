@@ -7,7 +7,7 @@ export function NavBar() {
   require("./styles.css");
   let Nav = Row;
   return (
-    <div className="fixed-position">
+    <div className="navbar-component fixed-position">
       <Nav className="navbar">
         <Link to="/">
           <Logo />

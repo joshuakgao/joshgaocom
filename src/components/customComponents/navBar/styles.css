@@ -1,4 +1,4 @@
-.navbar {
+.navbar-component .navbar {
   display: flex;
   justify-content: space-between;
   padding: 32px;
@@ -12,11 +12,11 @@
   z-index: 1;
 }
 
-.navbar a {
+.navbar-component a {
   text-decoration: none;
 }
 
-.fixed {
+.navbar-component .fixed {
   top: 0;
   left: 0;
   margin: auto;
@@ -24,7 +24,7 @@
   position: fixed;
 }
 
-.navbar h4 {
+.navbar-component h4 {
   display: block;
   font-size: 1.5rem;
   margin-top: 0;
