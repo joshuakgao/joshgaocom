@@ -2,7 +2,7 @@ import React from "react";
 
 export function FlexSpacing({
   flexGrow = 1,
-  className,
+  className = "",
   style,
   d,
 }: {
@@ -12,6 +12,8 @@ export function FlexSpacing({
   d?: boolean;
 }) {
   require("./styles.css");
-  let debug = d ? "d" : null;
-  return <div className={`flex-spacing ${debug}`} style={{ flexGrow }} />;
+  let debug = d ? "d" : "";
+  return (
+    <div className={`flex-spacing-component ${debug}`} style={{ flexGrow }} />
+  );
 }

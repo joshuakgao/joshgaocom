@@ -2,7 +2,7 @@ import React from "react";
 
 export function Row({
   children,
-  className,
+  className = "",
   style,
   d,
 }: {
@@ -12,9 +12,9 @@ export function Row({
   d?: boolean;
 }) {
   require("./styles.css");
-  let debug = d ? "d" : null;
+  let debug = d ? "d" : "";
   return (
-    <div className={`row ${debug} ${className}`} style={style}>
+    <div className={`row-component ${debug} ${className}`} style={style}>
       {children}
     </div>
   );

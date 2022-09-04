@@ -2,7 +2,7 @@ import React, { CSSProperties } from "react";
 
 export function ScrollContainer({
   children,
-  className,
+  className = "",
   style,
   d,
 }: {
@@ -12,9 +12,12 @@ export function ScrollContainer({
   d?: boolean;
 }) {
   require("./styles.css");
-  let debug = d ? "d" : null;
+  let debug = d ? "d" : "";
   return (
-    <div className={`scroll-container ${className} ${debug}`} style={style}>
+    <div
+      className={`scroll-container-component ${className} ${debug}`}
+      style={style}
+    >
       {children}
     </div>
   );

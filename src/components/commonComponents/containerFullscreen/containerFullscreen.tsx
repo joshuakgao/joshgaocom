@@ -2,7 +2,7 @@ import React, { CSSProperties } from "react";
 
 export function ContainerFullscreen({
   children,
-  className,
+  className = "",
   style,
   d,
 }: {
@@ -12,9 +12,12 @@ export function ContainerFullscreen({
   d?: boolean;
 }) {
   require("./styles.css");
-  let debug = d ? "d" : null;
+  let debug = d ? "d" : "";
   return (
-    <div className={`container-fullscreen ${className} ${debug}`} style={style}>
+    <div
+      className={`container-fullscreen-component ${className} ${debug}`}
+      style={style}
+    >
       {children}
     </div>
   );

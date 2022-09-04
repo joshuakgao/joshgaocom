@@ -2,7 +2,7 @@ import React from "react";
 
 export function Container({
   children,
-  className,
+  className = "",
   style,
   d,
 }: {
@@ -12,9 +12,9 @@ export function Container({
   d?: boolean;
 }) {
   require("./styles.css");
-  let debug = d ? "d" : null;
+  let debug = d ? "d" : "";
   return (
-    <div className={`container ${debug} ${className}`} style={style}>
+    <div className={`container-component ${debug} ${className}`} style={style}>
       {children}
     </div>
   );

@@ -1,4 +1,4 @@
-.scroll-container {
+.scroll-container-component {
   display: flex;
   flex-direction: column;
   align-items: center;

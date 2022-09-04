@@ -2,7 +2,7 @@ import React from "react";
 
 export function Column({
   children,
-  className,
+  className = "",
   style,
   d,
 }: {
@@ -12,9 +12,9 @@ export function Column({
   d?: boolean;
 }) {
   require("./styles.css");
-  let debug = d ? "d" : null;
+  let debug = d ? "d" : "";
   return (
-    <div className={`column ${debug} ${className}`} style={style}>
+    <div className={`column-component ${debug} ${className}`} style={style}>
       {children}
     </div>
   );
