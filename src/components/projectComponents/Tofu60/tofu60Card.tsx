@@ -32,7 +32,7 @@ export default function Tofu60Card() {
           backgroundColor: "lightblue",
         }}
       >
-        <Link to="/other/tofu60">
+        <Link to="/other/tofu60" style={{ textDecoration: "none" }}>
           <div
             className="left-text"
             style={{ display: "flex", alignItems: "flex-end" }}
