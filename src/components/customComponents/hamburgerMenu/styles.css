@@ -35,7 +35,7 @@
   justify-content: center;
   height: 50px;
   margin-bottom: 0.67rem;
-  z-index: 10;
+  z-index: 99;
 }
 
 .hamburger-container:hover .middle-line {
@@ -209,20 +209,20 @@
   }
 }
 
-.right-constraint {
+.hamburger-items .right-constraint {
   margin-top: 16px;
   margin-right: 32px;
   text-align: right;
 }
 
-.bottom-constraint {
+.hamburger-items .bottom-constraint {
   position: absolute;
   margin-top: 32px;
   bottom: 10vh;
   right: 0px;
 }
 
-.fade-in-upwards {
+.hamburger-items .fade-in-upwards {
   display: block;
   animation: fade-in-upwards 0.5s forwards;
   -webkit-animation: fade-in-upwards 0.5s forwards;
@@ -239,7 +239,7 @@
   }
 }
 
-.fade-out-downwards {
+.hamburger-items .fade-out-downwards {
   display: block;
   animation: fade-out-downwards 0.5s forwards;
   -webkit-animation: fade-out-downwards 0.5s forwards;
@@ -256,20 +256,20 @@
   }
 }
 
-.icon {
+.hamburger-items .icon {
   filter: invert(50%) sepia(0%) saturate(10%) hue-rotate(170deg) brightness(96%)
     contrast(87%);
   height: 5vh;
   width: 5vh;
 }
 
-.icon:hover {
+.hamburger-items .icon:hover {
   filter: invert(16%) sepia(11%) saturate(19%) hue-rotate(316deg)
     brightness(103%) contrast(89%);
   height: 5vh;
   width: 5vh;
 }
 
-h1:hover {
+.hamburger-items h1:hover {
   color: #000000;
 }

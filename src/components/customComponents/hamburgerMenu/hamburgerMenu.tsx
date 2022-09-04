@@ -31,7 +31,9 @@ export function HamburgerMenu({
         <hr className={`hidden-middle-line ${hamburgerOpened}`} />
         <hr className={`bottom-line ${hamburgerOpened}`} />
       </div>
-      <ContainerFullscreen className={pressed ? "opaque" : "clear"}>
+      <ContainerFullscreen
+        className={`hamburger-items ${pressed ? "opaque" : "clear"}`}
+      >
         <Link to="/software" onClick={() => setPressed(false)}>
           <h1
             className={`secondary right-constraint ${
