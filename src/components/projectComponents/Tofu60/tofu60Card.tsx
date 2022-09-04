@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FlexSpacing } from "../../commonComponents";
-import tofu_profile from "../../../assets/projects/tofu60/tofu60_profile.jpeg";
+import tofu_profile from "../../../assets/projects/tofu60/try2.png";
 
 export default function Tofu60Card() {
   require("../styles.css");
@@ -26,9 +26,9 @@ export default function Tofu60Card() {
         className="item-inner-container"
         style={{
           backgroundImage: `url(${tofu_profile})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
+          backgroundPosition: "right",
           backgroundRepeat: "no-repeat",
+          backgroundColor: "lightblue",
         }}
       >
         <div
