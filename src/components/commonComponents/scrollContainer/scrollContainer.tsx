@@ -2,7 +2,7 @@ import React, { CSSProperties } from "react";
 
 export function ScrollContainer({
   children,
-  className = "",
+  className,
   style,
   d,
 }: {

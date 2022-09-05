@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FlexSpacing } from "../../commonComponents";
 import { Link } from "react-router-dom";
-import tofu_profile from "../../../assets/projects/tofu60/try2.png";
+import tofu_profile from "../../../assets/projects/tofu60/tofu60_diagonal.jpeg";
 
 export default function Tofu60Card() {
   require("../styles.css");
@@ -23,31 +23,33 @@ export default function Tofu60Card() {
 
   return (
     <div className="project-card-container">
-      <div
+      <Link
+        to="/other/tofu60"
         className="project-card"
         style={{
+          textDecoration: "none",
           backgroundImage: `url(${tofu_profile})`,
-          backgroundPosition: "right",
+          backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundColor: "lightblue",
+          backgroundSize: "cover",
         }}
       >
-        <Link to="/other/tofu60" style={{ textDecoration: "none" }}>
-          <div
-            className="left-text"
-            style={{ display: "flex", alignItems: "flex-end" }}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+          }}
+        >
+          <h1
+            className="title primary"
+            style={{
+              transform: `translateY(${scrollPosition / 8}px)`,
+            }}
           >
-            <h1
-              className="title primary"
-              style={{
-                transform: `translateY(${scrollPosition / 8}px)`,
-              }}
-            >
-              Tofu60
-            </h1>
-          </div>
-        </Link>
-      </div>
+            Tofu60
+          </h1>
+        </div>
+      </Link>
     </div>
   );
 }
