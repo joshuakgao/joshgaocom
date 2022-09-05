@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.e41c2a5b.css",
-    "main.js": "/static/js/main.54f7679d.js",
-    "static/media/try2.png": "/static/media/try2.1ce79e0f8f63376d0bcb.png",
+    "main.css": "/static/css/main.da5f4bfe.css",
+    "main.js": "/static/js/main.1c430323.js",
+    "static/media/tofu60_diagonal.jpeg": "/static/media/tofu60_diagonal.535437e5661dfa46648f.jpeg",
     "static/media/watermelon.png": "/static/media/watermelon.b4012f507d40a1774201.png",
     "static/media/cv.pdf": "/static/media/cv.ff3357a481d8197f9ad6.pdf",
     "static/media/network.png": "/static/media/network.7a32c62716a0ceb121fa.png",
@@ -10,11 +10,11 @@
     "static/media/Avenir-Book.otf": "/static/media/Avenir-Book.813557df4c7a90b1a474.otf",
     "static/media/Avenir-Roman.otf": "/static/media/Avenir-Roman.0bfb049d9455e81fd1da.otf",
     "index.html": "/index.html",
-    "main.e41c2a5b.css.map": "/static/css/main.e41c2a5b.css.map",
-    "main.54f7679d.js.map": "/static/js/main.54f7679d.js.map"
+    "main.da5f4bfe.css.map": "/static/css/main.da5f4bfe.css.map",
+    "main.1c430323.js.map": "/static/js/main.1c430323.js.map"
   },
   "entrypoints": [
-    "static/css/main.e41c2a5b.css",
-    "static/js/main.54f7679d.js"
+    "static/css/main.da5f4bfe.css",
+    "static/js/main.1c430323.js"
   ]
 }
