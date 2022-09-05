@@ -1,0 +1,22 @@
+.hamburger-container .top-line {
+}
+
+.hamburger-container .middle-line {
+}
+
+.hamburger-container .hidden-middle-line {
+  position: absolute;
+  border: 2px red solid;
+}
+
+.hamburger-container .top-line {
+}
+
+.hamburger-container:hover .middle-line {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/* .hamburger-container:hover .top-line {
+  border: red 5px solid;
+} */

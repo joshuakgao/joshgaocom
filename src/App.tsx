@@ -1,12 +1,13 @@
-// import { NavBar } from "./components/customComponents/navbar/navbar";
+import { Navbar } from "./components/customComponents/navbar/navbar";
 import { HomePage } from "./pages";
 // import { Tofu60Page } from "./components/projectComponents/Tofu60";
 import { Route, Routes } from "react-router-dom";
+import "./assets/styles.css";
 
 function App() {
   return (
     <>
-      {/* <NavBar /> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         {/* <Route path="/software" element={<SoftwarePage />} />

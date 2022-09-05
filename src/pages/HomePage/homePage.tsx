@@ -1,6 +1,6 @@
 import React from "react";
-import { FullscreenDiv } from "../../components/commonComponents/fullscreenDiv";
+import { FullscreenDiv } from "../../components/commonComponents";
 
 export function HomePage() {
-  return <FullscreenDiv>HomePage</FullscreenDiv>;
+  return <FullscreenDiv></FullscreenDiv>;
 }
