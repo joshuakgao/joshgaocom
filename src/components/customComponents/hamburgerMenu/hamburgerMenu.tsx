@@ -50,27 +50,48 @@ export function HamburgerMenu({ d }: { d?: boolean }) {
       {pressed ? (
         <FullscreenDiv style={styles.menuContainer}>
           <div style={styles.menu}>
-            <Link to="/software" onClick={() => setPressed(false)}>
-              <h1 style={styles.h1}>Software</h1>
+            <Link
+              to="/software"
+              onClick={() => setPressed(false)}
+              style={styles.link}
+            >
+              <h1 style={styles.menuItem} className="secondary">
+                Software
+              </h1>
             </Link>
-            <Link to="/business" onClick={() => setPressed(false)}>
-              <h1 style={styles.h1}>Business</h1>
+            <Link
+              to="/business"
+              onClick={() => setPressed(false)}
+              style={styles.link}
+            >
+              <h1 style={styles.menuItem} className="secondary">
+                Business
+              </h1>
             </Link>
-            <Link to="/other" onClick={() => setPressed(false)}>
-              <h1 style={styles.h1}>Other</h1>
+            <Link
+              to="/other"
+              onClick={() => setPressed(false)}
+              style={styles.link}
+            >
+              <h1 style={styles.menuItem} className="secondary">
+                Other
+              </h1>
             </Link>
           </div>
 
-          <div style={styles.footer}>
-            <h4 style={{ marginBottom: 16, fontSize: "3vh" }}>
+          <div style={styles.footer} className="hamburger-menu-footer">
+            <h4
+              style={{ marginBottom: 16, fontSize: "3vh" }}
+              className="secondary"
+            >
               joshuakgao@gmail.com
             </h4>
             <RowDiv>
               <Link to="https://github.com/tugonbob" target="_blank">
-                <img style={styles.icon} src={github} />
+                <img className="icon" src={github} />
               </Link>
               <Link to={cvPdf} target="_blank" rel="noreferrer">
-                <img style={styles.icon} src={cv} />
+                <img className="icon" src={cv} />
               </Link>
             </RowDiv>
           </div>
@@ -115,15 +136,13 @@ const styles: StyleSheet = {
     marginRight: 32,
     marginTop: "20vh",
   },
-  h1: {
-    textDecoration: "none",
+  menuItem: {
     fontSize: "10vh",
     marginTop: "2vh",
     marginBottom: "2vh",
   },
-  icon: {
-    height: "5vh",
-    width: "5vh",
+  link: {
+    textDecorationLine: "none",
   },
   footer: {
     display: "flex",
