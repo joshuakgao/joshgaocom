@@ -8,7 +8,7 @@ import "./styles.css";
 
 export function HamburgerMenu({ d }: { d?: boolean }) {
   const [pressed, setPressed] = useState<boolean>(false);
-  require("../../../assets/styles.css");
+
   return (
     <>
       <div
@@ -23,21 +23,27 @@ export function HamburgerMenu({ d }: { d?: boolean }) {
       >
         <hr
           style={styles.line}
-          className={`top-line ${pressed ? "fade-left" : ""}`}
+          className={`top-line ${pressed ? "fade-left" : "fade-left-reverse"}`}
         />
         <hr
           style={styles.line}
-          className={`middle-line ${pressed ? "rotate-clockwise" : ""}`}
-        />
-        <hr
-          style={styles.line}
-          className={`hidden-middle-line ${
-            pressed ? "rotate-counter-clockwise" : ""
+          className={`middle-line ${
+            pressed ? "rotate-clockwise" : "rotate-clockwise-reverse"
           }`}
         />
         <hr
           style={styles.line}
-          className={`bottom-line ${pressed ? "fade-right" : null}`}
+          className={`hidden-middle-line ${
+            pressed
+              ? "rotate-counter-clockwise"
+              : "rotate-counter-clockwise-reverse"
+          }`}
+        />
+        <hr
+          style={styles.line}
+          className={`bottom-line ${
+            pressed ? "fade-right" : "fade-right-reverse"
+          }`}
         />
       </div>
 
@@ -83,11 +89,12 @@ const styles: StyleSheet = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
+    height: 50,
     margin: 32,
     zIndex: 11,
   },
   line: {
-    // border: "1px solid black",
+    border: "2px solid black",
     height: 0,
     width: 32,
   },
