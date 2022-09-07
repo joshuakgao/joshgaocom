@@ -6,9 +6,15 @@ import cvPdf from "../../../assets/docs/cv.pdf";
 import { Link } from "react-router-dom";
 import "./styles.css";
 
-export function HamburgerMenu({ d }: { d?: boolean }) {
-  const [pressed, setPressed] = useState<boolean>(false);
-
+export function HamburgerMenu({
+  menuOpen,
+  setMenuOpen,
+  d,
+}: {
+  menuOpen: boolean;
+  setMenuOpen: (menuOpen: boolean) => void;
+  d?: boolean;
+}) {
   return (
     <>
       <div
@@ -18,23 +24,23 @@ export function HamburgerMenu({ d }: { d?: boolean }) {
             border: d ? "1px solid black" : undefined,
           },
         }}
-        onClick={() => setPressed(!pressed)}
+        onClick={() => setMenuOpen(!menuOpen)}
         className="hamburger-container"
       >
         <hr
           style={styles.line}
-          className={`top-line ${pressed ? "fade-left" : "fade-left-reverse"}`}
+          className={`top-line ${menuOpen ? "fade-left" : "fade-left-reverse"}`}
         />
         <hr
           style={styles.line}
           className={`middle-line ${
-            pressed ? "rotate-clockwise" : "rotate-clockwise-reverse"
+            menuOpen ? "rotate-clockwise" : "rotate-clockwise-reverse"
           }`}
         />
         <hr
           style={styles.line}
           className={`hidden-middle-line ${
-            pressed
+            menuOpen
               ? "rotate-counter-clockwise"
               : "rotate-counter-clockwise-reverse"
           }`}
@@ -42,17 +48,17 @@ export function HamburgerMenu({ d }: { d?: boolean }) {
         <hr
           style={styles.line}
           className={`bottom-line ${
-            pressed ? "fade-right" : "fade-right-reverse"
+            menuOpen ? "fade-right" : "fade-right-reverse"
           }`}
         />
       </div>
 
-      {pressed ? (
+      {menuOpen ? (
         <FullscreenDiv style={styles.menuContainer}>
           <div style={styles.menu}>
             <Link
               to="/software"
-              onClick={() => setPressed(false)}
+              onClick={() => setMenuOpen(false)}
               style={styles.link}
             >
               <h1 style={styles.menuItem} className="secondary">
@@ -61,7 +67,7 @@ export function HamburgerMenu({ d }: { d?: boolean }) {
             </Link>
             <Link
               to="/business"
-              onClick={() => setPressed(false)}
+              onClick={() => setMenuOpen(false)}
               style={styles.link}
             >
               <h1 style={styles.menuItem} className="secondary">
@@ -70,7 +76,7 @@ export function HamburgerMenu({ d }: { d?: boolean }) {
             </Link>
             <Link
               to="/other"
-              onClick={() => setPressed(false)}
+              onClick={() => setMenuOpen(false)}
               style={styles.link}
             >
               <h1 style={styles.menuItem} className="secondary">

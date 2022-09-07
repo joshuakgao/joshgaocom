@@ -1,9 +1,10 @@
-import React from "react";
-import watermelon from "../../../assets/images/watermelon.png";
+import React, { useState } from "react";
 import { HamburgerMenu } from "../hamburgerMenu";
 import { Logo } from "../logo";
 
 export function Navbar({ d }: { d?: boolean }) {
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
   return (
     <div
       style={{
@@ -11,8 +12,11 @@ export function Navbar({ d }: { d?: boolean }) {
         ...{ border: d ? "1px black solid" : undefined },
       }}
     >
-      <Logo />
-      <HamburgerMenu />
+      <Logo setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)} />
+      <HamburgerMenu
+        menuOpen={menuOpen}
+        setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)}
+      />
     </div>
   );
 }
