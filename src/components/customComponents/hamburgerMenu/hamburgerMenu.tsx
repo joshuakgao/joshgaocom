@@ -8,7 +8,6 @@ import "./styles.css";
 
 export function HamburgerMenu({ d }: { d?: boolean }) {
   const [pressed, setPressed] = useState<boolean>(false);
-  d = true;
   require("../../../assets/styles.css");
   return (
     <>
@@ -22,10 +21,24 @@ export function HamburgerMenu({ d }: { d?: boolean }) {
         onClick={() => setPressed(!pressed)}
         className="hamburger-container"
       >
-        <hr style={styles.line} className="top-line" />
-        <hr style={styles.line} className="middle-line" />
-        <hr style={styles.line} className="hidden-middle-line" />
-        <hr style={styles.line} className="bottom-line" />
+        <hr
+          style={styles.line}
+          className={`top-line ${pressed ? "fade-left" : ""}`}
+        />
+        <hr
+          style={styles.line}
+          className={`middle-line ${pressed ? "rotate-clockwise" : ""}`}
+        />
+        <hr
+          style={styles.line}
+          className={`hidden-middle-line ${
+            pressed ? "rotate-counter-clockwise" : ""
+          }`}
+        />
+        <hr
+          style={styles.line}
+          className={`bottom-line ${pressed ? "fade-right" : null}`}
+        />
       </div>
 
       {pressed ? (
