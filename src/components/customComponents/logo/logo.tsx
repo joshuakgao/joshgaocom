@@ -12,7 +12,7 @@ export function Logo({ d }: { d?: boolean }) {
       }}
     >
       <img className="image" src={watermelon} style={{ ...styles.image }} />
-      <h1>Gao</h1>
+      <h1 className="secondary">Gao</h1>
     </RowDiv>
   );
 }

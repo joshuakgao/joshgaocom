@@ -4,9 +4,31 @@ body {
   margin: 0;
 }
 
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/Avenir/Avenir-Book.otf");
+}
+
 h1 {
   /* border: 1px solid black; */
   margin: 0;
+  font-family: "Avenir";
+}
+
+h2 {
+  font-family: "Avenir";
+}
+
+h3 {
+  font-family: "Avenir";
+}
+
+h4 {
+  font-family: "Avenir";
+}
+
+p {
+  font-family: "Avenir";
 }
 
 .primary {
