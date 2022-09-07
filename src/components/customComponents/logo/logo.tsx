@@ -19,11 +19,7 @@ export function Logo({
         ...{ border: d ? "1px black solid" : undefined },
       }}
     >
-      <Link
-        to="/"
-        style={{ display: "flex", alignItems: "center" }}
-        onClick={() => setMenuOpen(false)}
-      >
+      <Link to="/" style={styles.link} onClick={() => setMenuOpen(false)}>
         <img className="image" src={watermelon} style={{ ...styles.image }} />
         <h1 className="secondary">Gao</h1>
       </Link>
@@ -36,6 +32,11 @@ interface StyleSheet {
 }
 
 const styles: StyleSheet = {
+  link: {
+    display: "flex",
+    alignItems: "center",
+    textDecoration: "none",
+  },
   image: {
     height: "1.5rem",
     marginRight: 8,
