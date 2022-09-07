@@ -1,22 +1,13 @@
-.hamburger-container .top-line {
-}
-
-.hamburger-container .middle-line {
-}
-
 .hamburger-container .hidden-middle-line {
   position: absolute;
-  border: 2px red solid;
-}
-
-.hamburger-container .top-line {
+  /* margin-top: 6px;
+  margin-bottom: 6px; */
 }
 
 .hamburger-container:hover .middle-line {
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-/* .hamburger-container:hover .top-line {
-  border: red 5px solid;
-} */
+.hamburger-container @keyframes fade-left {
+}
