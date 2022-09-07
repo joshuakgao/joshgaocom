@@ -1,6 +1,6 @@
 .hamburger-container .middle-line {
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .hamburger-container .hidden-middle-line {
@@ -8,8 +8,8 @@
 }
 
 .hamburger-container:hover .middle-line {
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .fade-left {

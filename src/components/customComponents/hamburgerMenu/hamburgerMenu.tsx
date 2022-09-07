@@ -94,7 +94,7 @@ const styles: StyleSheet = {
     zIndex: 11,
   },
   line: {
-    border: "2px solid black",
+    border: "1px solid black",
     height: 0,
     width: 32,
   },
