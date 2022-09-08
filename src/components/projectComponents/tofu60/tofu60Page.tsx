@@ -9,7 +9,7 @@ export function Tofu60Page() {
       <Tofu60Card toFullscreen />
       <MainContentDiv>
         <h2>My Custom Tofu60 Mechanical Keyboard</h2>
-        <h3>Quick Summary</h3>
+        <h4>Quick Summary</h4>
         <ul>
           <li>E-White Tofu60 from KBDfans</li>
           <li>dz64rgb pcb</li>
@@ -17,7 +17,6 @@ export function Tofu60Page() {
           <li>Gateron Milky Yellow Switches</li>
           <li>PBT Olivia Keycaps - Cherry Profile</li>
           <li>Masking Tap mod - 4 layers</li>
-          <li>1 layer of Masking Tape underneath stabilizer base</li>
           <li>Foam</li>
           <ul>
             <li>Battery Slot</li>
@@ -25,16 +24,16 @@ export function Tofu60Page() {
             <li>Between PCB and Aluminum Plate</li>
           </ul>
         </ul>
-        <h4>Keycaps</h4>
+        <h3>Materials</h3>
         <p>
           Sed ut massa vitae lectus pellentesque lobortis a ac sapien.
           Vestibulum nibh eros, volutpat nec nisl eget, dictum sodales quam.
           Donec sodales dictum consectetur. Donec eu sem neque. Mauris sit amet
           feugiat arcu. Mauris et vulputate orci. Vestibulum imperdiet vel nisl
           ac tincidunt. Aliquam enim nulla, ullamcorper a quam laoreet, gravida
-          tempus ante.{" "}
+          tempus ante.
         </p>
-        <h4>Plate</h4>
+        <h4>Tofu60 Case</h4>
         <p>
           Sed a hendrerit urna, vitae condimentum libero. Suspendisse lacinia
           nec arcu eu consequat. Cras convallis tincidunt felis, tempor semper
@@ -43,8 +42,7 @@ export function Tofu60Page() {
           malesuada. Morbi mattis dolor mauris. Phasellus condimentum lacus
           nisl, volutpat blandit erat lacinia a.
         </p>
-        <h3>Modding</h3>
-        <h4>Tape Mod</h4>
+        <h4>Aluminum Plate</h4>
         <p>
           Duis neque felis, sollicitudin ac orci sit amet, lacinia auctor quam.
           Quisque fringilla finibus congue. In convallis, odio ut dapibus
@@ -58,6 +56,7 @@ export function Tofu60Page() {
           vulputate. Cras commodo condimentum purus a gravida. Donec pretium
           blandit turpis, imperdiet sollicitudin arcu fringilla at
         </p>
+        <h4>Dz64rgb PCB</h4>
         <p>
           Curabitur consectetur arcu sit amet facilisis mollis. Nunc at quam
           eget velit volutpat lacinia porttitor id urna. Pellentesque id felis
@@ -72,6 +71,33 @@ export function Tofu60Page() {
           Suspendisse mattis odio dapibus, lacinia nibh sit amet, fringilla
           ligula. Quisque imperdiet sem in laoreet elementum.
         </p>
+        <h4>Gateron Milky Yellow Switches</h4>
+        <p>
+          Duis neque felis, sollicitudin ac orci sit amet, lacinia auctor quam.
+          Quisque fringilla finibus congue. In convallis, odio ut dapibus
+          facilisis, arcu elit consectetur lorem, eu fringilla ante lectus at
+          felis. Pellentesque vel nisl eros. Donec at felis placerat, faucibus
+          augue sed, porttitor orci. Praesent ut nibh sagittis, egestas metus
+          ut, interdum sapien. Ut dictum risus ac faucibus lobortis. Nulla nec
+          tristique urna. Sed pellentesque at sem luctus malesuada. Nulla
+          facilisi. Phasellus id euismod turpis, at tristique justo. Aliquam
+          quis dapibus mi, vitae aliquet neque. Morbi fermentum est ut fringilla
+          vulputate. Cras commodo condimentum purus a gravida. Donec pretium
+          blandit turpis, imperdiet sollicitudin arcu fringilla at
+        </p>
+        <h4>Olivia Keycaps</h4>
+        <p>
+          Sed ut massa vitae lectus pellentesque lobortis a ac sapien.
+          Vestibulum nibh eros, volutpat nec nisl eget, dictum sodales quam.
+          Donec sodales dictum consectetur. Donec eu sem neque. Mauris sit amet
+          feugiat arcu. Mauris et vulputate orci. Vestibulum imperdiet vel nisl
+          ac tincidunt. Aliquam enim nulla, ullamcorper a quam laoreet, gravida
+        </p>
+        <h3>Modding</h3>
+        <h4>Foam</h4>
+        <h4>Masking Tape Mod</h4>
+        <h3>Sound Test</h3>
+        <h3>Final Thoughts</h3>
       </MainContentDiv>
     </ScrollDiv>
   );
