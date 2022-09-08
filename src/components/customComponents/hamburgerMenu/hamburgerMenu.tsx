@@ -52,57 +52,62 @@ export function HamburgerMenu({
           }`}
         />
       </div>
+      <FullscreenDiv
+        style={styles.menuContainer}
+        className={`${
+          menuOpen ? "fade-background" : "fade-background-reverse"
+        }`}
+      >
+        <div style={styles.menu}>
+          <Link
+            to="/software"
+            onClick={() => setMenuOpen(false)}
+            style={styles.link}
+            className={menuOpen ? "fade-down-reverse" : "fade-down"}
+          >
+            <h1 style={styles.menuItem} className="secondary">
+              Software
+            </h1>
+          </Link>
+          <Link
+            to="/business"
+            onClick={() => setMenuOpen(false)}
+            style={styles.link}
+            className={menuOpen ? "fade-down-reverse" : "fade-down"}
+          >
+            <h1 style={styles.menuItem} className="secondary">
+              Business
+            </h1>
+          </Link>
+          <Link
+            to="/other"
+            onClick={() => setMenuOpen(false)}
+            style={styles.link}
+            className={menuOpen ? "fade-down-reverse" : "fade-down"}
+          >
+            <h1 style={styles.menuItem} className="secondary">
+              Other
+            </h1>
+          </Link>
+        </div>
 
-      {menuOpen ? (
-        <FullscreenDiv style={styles.menuContainer}>
-          <div style={styles.menu}>
-            <Link
-              to="/software"
-              onClick={() => setMenuOpen(false)}
-              style={styles.link}
-            >
-              <h1 style={styles.menuItem} className="secondary">
-                Software
-              </h1>
+        <div style={styles.footer} className="hamburger-menu-footer">
+          <h4
+            style={{ marginBottom: 16, fontSize: "3vh" }}
+            className="secondary"
+          >
+            joshuakgao@gmail.com
+          </h4>
+          <RowDiv>
+            <Link to="https://github.com/tugonbob" target="_blank">
+              <img className="icon" src={github} />
             </Link>
-            <Link
-              to="/business"
-              onClick={() => setMenuOpen(false)}
-              style={styles.link}
-            >
-              <h1 style={styles.menuItem} className="secondary">
-                Business
-              </h1>
+            <Link to={cvPdf} target="_blank" rel="noreferrer">
+              <img className="icon" src={cv} />
             </Link>
-            <Link
-              to="/other"
-              onClick={() => setMenuOpen(false)}
-              style={styles.link}
-            >
-              <h1 style={styles.menuItem} className="secondary">
-                Other
-              </h1>
-            </Link>
-          </div>
-
-          <div style={styles.footer} className="hamburger-menu-footer">
-            <h4
-              style={{ marginBottom: 16, fontSize: "3vh" }}
-              className="secondary"
-            >
-              joshuakgao@gmail.com
-            </h4>
-            <RowDiv>
-              <Link to="https://github.com/tugonbob" target="_blank">
-                <img className="icon" src={github} />
-              </Link>
-              <Link to={cvPdf} target="_blank" rel="noreferrer">
-                <img className="icon" src={cv} />
-              </Link>
-            </RowDiv>
-          </div>
-        </FullscreenDiv>
-      ) : null}
+          </RowDiv>
+        </div>
+      </FullscreenDiv>
     </>
   );
 }
@@ -131,8 +136,8 @@ const styles: StyleSheet = {
     alignItems: "flex-end",
     justifyContent: "space-between",
     marginRight: 32,
-    opacity: 0.9,
     zIndex: 10,
+    backgroundColor: "#f7f7f7",
     border: "1px black solid",
   },
   menu: {
