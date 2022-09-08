@@ -4,7 +4,7 @@ import { Logo } from "../logo";
 
 export function Navbar({ d }: { d?: boolean }) {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  d = true;
+
   return (
     <div
       style={{
