@@ -247,3 +247,12 @@
     opacity: 1;
   }
 }
+
+.menu-container h1:hover {
+  color: black;
+}
+
+.menu-container .icon:hover {
+  filter: invert(0%) sepia(100%) saturate(21%) hue-rotate(2deg) brightness(101%)
+    contrast(107%);
+}

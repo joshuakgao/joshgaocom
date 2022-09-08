@@ -54,7 +54,7 @@ export function HamburgerMenu({
       </div>
       <FullscreenDiv
         style={styles.menuContainer}
-        className={`${
+        className={`menu-container ${
           menuOpen ? "fade-background" : "fade-background-reverse"
         }`}
       >
