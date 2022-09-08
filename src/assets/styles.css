@@ -9,25 +9,38 @@ body {
   src: url("../assets/fonts/Avenir/Avenir-Book.otf");
 }
 
+@font-face {
+  font-family: "AvenirBold";
+  src: url("../assets/fonts/Avenir/Avenir-Roman.otf");
+}
+
+@font-face {
+  font-family: "AvenirBlacker";
+  src: url("../assets/fonts/Avenir/Avenir-Black.otf");
+}
+
 h1 {
-  /* border: 1px solid black; */
+  margin: 0;
+  font-family: "AvenirBlacker";
+}
+
+h2 {
+  margin: 0;
+  font-family: "AvenirBold";
+}
+
+h3 {
+  margin: 0;
+  font-family: "AvenirBold";
+}
+
+h4 {
   margin: 0;
   font-family: "Avenir";
 }
 
-h2 {
-  font-family: "Avenir";
-}
-
-h3 {
-  font-family: "Avenir";
-}
-
-h4 {
-  font-family: "Avenir";
-}
-
 p {
+  margin: 0;
   font-family: "Avenir";
 }
 
