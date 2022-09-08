@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollDiv } from "../../commonComponents";
+import { ScrollDiv, YoutubeEmbed } from "../../commonComponents";
 import { MainContentDiv } from "../../commonComponents/mainContentDiv/mainContentDiv";
 import { Tofu60Card } from "./tofu60Card";
 
@@ -97,6 +97,7 @@ export function Tofu60Page() {
         <h4>Foam</h4>
         <h4>Masking Tape Mod</h4>
         <h3>Sound Test</h3>
+        <YoutubeEmbed embedId="rhe_ndNJJKU" />
         <h3>Final Thoughts</h3>
       </MainContentDiv>
     </ScrollDiv>
