@@ -214,6 +214,7 @@
   -webkit-animation-name: fade-down;
   -webkit-animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
+  pointer-events: none;
 }
 
 .fade-down-reverse {
