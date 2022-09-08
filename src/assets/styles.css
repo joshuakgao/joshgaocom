@@ -22,21 +22,25 @@ body {
 h1 {
   margin: 0;
   font-family: "AvenirBlacker";
+  font-size: calc(24px + 6vw);
 }
 
 h2 {
   margin: 0;
   font-family: "AvenirBold";
+  font-size: calc(22px + 2vw);
 }
 
 h3 {
   margin: 0;
   font-family: "AvenirBold";
+  font-size: calc(18px + 1.5vw);
 }
 
 h4 {
   margin: 0;
   font-family: "Avenir";
+  font-size: calc(16px + 1vw);
 }
 
 p {

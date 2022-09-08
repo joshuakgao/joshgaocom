@@ -31,11 +31,9 @@ const styles: StyleSheet = {
     textAlign: "left",
   },
   title: {
-    fontSize: "calc(24px + 6vw)",
     fontWeight: "bolder",
   },
   subtitle: {
-    fontSize: "calc(12px + 1vw)",
     marginTop: 8,
   },
 };
