@@ -1,15 +1,14 @@
 import React from "react";
 import { TitleCard } from "../titleCard";
-import watermelon from "../../../assets/images/watermelon.png";
+import tofu60_profile from "../../../assets/projects/tofu60/tofu60_profile.jpeg";
 
 export function Tofu60() {
   return (
     <TitleCard
-      d
-      backgroundImage={watermelon}
-      textLocation={["center", "bottom"]}
+      backgroundImage={tofu60_profile}
+      textLocation={["left", "bottom"]}
     >
-      <h1>Tofu60</h1>
+      <h1 className="primary">Tofu60</h1>
     </TitleCard>
   );
 }
