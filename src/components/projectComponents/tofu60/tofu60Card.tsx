@@ -2,7 +2,7 @@ import React from "react";
 import { TitleCard } from "../titleCard";
 import tofu60_profile from "../../../assets/projects/tofu60/tofu60_profile.jpeg";
 
-export function Tofu60() {
+export function Tofu60Card() {
   return (
     <TitleCard
       backgroundImage={tofu60_profile}

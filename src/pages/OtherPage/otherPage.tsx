@@ -1,13 +1,12 @@
 import React from "react";
 import { ScrollDiv } from "../../components/commonComponents";
-import { Tofu60 } from "../../components/projectComponents";
+import { Tofu60Card } from "../../components/projectComponents";
 import { TitleCard } from "../../components/projectComponents/titleCard";
 
 export function OtherPage() {
   return (
     <ScrollDiv>
-      <Tofu60 />
-      <Tofu60 />
+      <Tofu60Card />
     </ScrollDiv>
   );
 }

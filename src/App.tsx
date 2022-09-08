@@ -1,6 +1,6 @@
 import { Navbar } from "./components/customComponents/navbar/navbar";
 import { HomePage, OtherPage } from "./pages";
-// import { Tofu60Page } from "./components/projectComponents/Tofu60";
+import { Tofu60Page } from "./components/projectComponents/tofu60/tofu60Page";
 import { Route, Routes } from "react-router-dom";
 import "./assets/styles.css";
 
@@ -14,7 +14,7 @@ function App() {
         {/* <Route path="/business" element={<BusinessPage />} /> */}
         <Route path="/other" element={<OtherPage />} />
 
-        {/* <Route path="/other/tofu60" element={<Tofu60Page />} /> */}
+        <Route path="/other/tofu60" element={<Tofu60Page />} />
       </Routes>
     </>
   );
