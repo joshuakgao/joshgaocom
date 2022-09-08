@@ -165,8 +165,6 @@ const styles: StyleSheet = {
   },
   menuItem: {
     fontSize: "10vh",
-    marginTop: "2vh",
-    marginBottom: "2vh",
   },
   link: {
     textDecorationLine: "none",
