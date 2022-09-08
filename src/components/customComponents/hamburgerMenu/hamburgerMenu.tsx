@@ -164,7 +164,7 @@ const styles: StyleSheet = {
     marginTop: "20vh",
   },
   menuItem: {
-    fontSize: "10vh",
+    fontSize: "9.5vh",
   },
   link: {
     textDecorationLine: "none",
