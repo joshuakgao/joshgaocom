@@ -52,3 +52,19 @@
     transform: scale(1.4);
   }
 }
+
+.primary {
+  color: #f7f7f7;
+}
+
+.secondary {
+  color: #353535;
+}
+
+.tertiary {
+  color: #7b7b7b;
+}
+
+.accent {
+  color: #fa6564;
+}

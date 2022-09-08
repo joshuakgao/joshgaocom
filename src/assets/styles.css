@@ -26,10 +26,18 @@ body {
   src: url("../assets/fonts/Vito/Vito-CondensedRegular.woff");
 }
 
+:root {
+  --primary: #f7f7f7;
+  --secondary: #353535;
+  --tertiary: #7b7b7b;
+  --accent: #fa6564;
+}
+
 h1 {
   margin: 0;
   font-family: "AvenirBlacker";
-  font-size: calc(24px + 6vw);
+  font-size: calc(36px + 6vw);
+  color: var(--secondary);
 }
 
 h2 {
@@ -37,7 +45,8 @@ h2 {
   margin-bottom: 0.83em;
   margin-top: 0.83em;
   font-family: "AvenirBold";
-  font-size: calc(22px + 2vw);
+  font-size: calc(32px + 2vw);
+  color: var(--secondary);
 }
 
 h3 {
@@ -45,7 +54,8 @@ h3 {
   margin-bottom: 0.66em;
   margin-top: 0.66em;
   font-family: "AvenirBold";
-  font-size: calc(18px + 1.5vw);
+  font-size: calc(28px + 1.5vw);
+  color: var(--secondary);
 }
 
 h4 {
@@ -53,27 +63,13 @@ h4 {
   margin-bottom: 0.5em;
   margin-top: 0.5em;
   font-family: "Avenir";
-  font-size: calc(16px + 0.8vw);
+  font-size: calc(24px + 0.8vw);
+  color: var(--secondary);
 }
 
 p {
   font-family: "Vito";
   font-size: 22px;
   margin-bottom: 16px;
-}
-
-.primary {
-  color: #f7f7f7;
-}
-
-.secondary {
-  color: #353535;
-}
-
-.tertiary {
-  color: #7b7b7b;
-}
-
-.accent {
-  color: #fa6564;
+  color: var(--secondary);
 }
