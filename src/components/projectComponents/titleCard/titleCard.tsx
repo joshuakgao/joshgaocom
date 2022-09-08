@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./styles.css";
 
 export function TitleCard({
   children,
@@ -39,6 +40,7 @@ export function TitleCard({
         ...styles.projectContainer,
         ...{ border: d ? "1px solid black" : undefined },
       }}
+      className="title-card-container"
     >
       <Link
         to={to}
@@ -51,6 +53,7 @@ export function TitleCard({
             justifyContent,
           },
         }}
+        className="link"
       >
         {children}
       </Link>
