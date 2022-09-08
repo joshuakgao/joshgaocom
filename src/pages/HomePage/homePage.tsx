@@ -8,9 +8,9 @@ export function HomePage() {
         <h1 style={styles.title} className="secondary">
           Joshua Gao
         </h1>
-        <h2 style={styles.subtitle} className="secondary">
+        <h4 style={styles.subtitle} className="secondary">
           Exploring software, business and more
-        </h2>
+        </h4>
       </div>
     </FullscreenDiv>
   );
