@@ -1,23 +1,30 @@
 import React from "react";
 import { ScrollDiv } from "../../commonComponents";
+import { MainContentDiv } from "../../commonComponents/mainContentDiv/mainContentDiv";
 import { Tofu60Card } from "./tofu60Card";
 
 export function Tofu60Page() {
   return (
     <ScrollDiv>
       <Tofu60Card toFullscreen />
-      <main style={styles.content}>
-        <h2>Building a Custom Tofu60 Mechanical Keyboard</h2>
-        <h3>Required Materials</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et
-          viverra mi. In sed malesuada nisl. Fusce vel ex id dui dapibus auctor
-          nec et leo. Morbi ex ante, tempus vitae malesuada non, eleifend eget
-          elit. Aenean ut libero lacus. Sed blandit lectus tellus, vitae
-          interdum nisl auctor sit amet. Nam nec suscipit mauris. Nulla
-          vulputate id magna a mattis. Aenean imperdiet ac nibh in pulvinar. Sed
-          vulputate diam ac lacinia consectetur.{" "}
-        </p>
+      <MainContentDiv>
+        <h2>My Custom Tofu60 Mechanical Keyboard</h2>
+        <h3>Quick Summary</h3>
+        <ul>
+          <li>E-White Tofu60 from KBDfans</li>
+          <li>dz64rgb pcb</li>
+          <li>Aluminum Plate</li>
+          <li>Gateron Milky Yellow Switches</li>
+          <li>PBT Olivia Keycaps - Cherry Profile</li>
+          <li>Masking Tap mod - 4 layers</li>
+          <li>1 layer of Masking Tape underneath stabilizer base</li>
+          <li>Foam</li>
+          <ul>
+            <li>Battery Slot</li>
+            <li>Under PCB</li>
+            <li>Between PCB and Aluminum Plate</li>
+          </ul>
+        </ul>
         <h4>Keycaps</h4>
         <p>
           Sed ut massa vitae lectus pellentesque lobortis a ac sapien.
@@ -65,18 +72,7 @@ export function Tofu60Page() {
           Suspendisse mattis odio dapibus, lacinia nibh sit amet, fringilla
           ligula. Quisque imperdiet sem in laoreet elementum.
         </p>
-      </main>
+      </MainContentDiv>
     </ScrollDiv>
   );
 }
-
-interface StyleSheet {
-  [key: string]: React.CSSProperties;
-}
-
-const styles: StyleSheet = {
-  content: {
-    paddingLeft: "calc(30vw - 115px)",
-    paddingRight: "calc(30vw - 115px)",
-  },
-};
