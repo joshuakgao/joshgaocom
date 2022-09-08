@@ -136,8 +136,9 @@ const styles: StyleSheet = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    height: 50,
-    margin: 32,
+    marginRight: "2vw",
+    marginTop: "2vh",
+    marginBottom: "2vh",
     zIndex: 11,
   },
   line: {

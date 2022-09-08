@@ -15,7 +15,7 @@ export function Logo({
       className="logo"
       style={{
         zIndex: 11,
-        marginLeft: 32,
+        marginLeft: "2vw",
         ...{ border: d ? "1px black solid" : undefined },
       }}
     >
