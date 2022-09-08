@@ -8,12 +8,14 @@ export function TitleCard({
   backgroundImage,
   textLocation = ["top", "left"],
   to = "/",
+  toFullscreen = false,
 }: {
   children?: any;
   d?: boolean;
   backgroundImage?: string;
   textLocation?: [string, string] | [string];
   to?: string;
+  toFullscreen?: boolean;
 }) {
   // parse textLocation
   let alignItems = "";
@@ -40,7 +42,7 @@ export function TitleCard({
         ...styles.projectContainer,
         ...{ border: d ? "1px solid black" : undefined },
       }}
-      className="title-card-container"
+      className={`title-card-container`}
     >
       <Link
         to={to}
@@ -53,7 +55,7 @@ export function TitleCard({
             justifyContent,
           },
         }}
-        className="link"
+        className={toFullscreen ? "enlarge-fullscreen" : "link"}
       >
         {children}
       </Link>
