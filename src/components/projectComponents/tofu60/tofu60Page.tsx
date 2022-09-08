@@ -76,7 +76,7 @@ interface StyleSheet {
 
 const styles: StyleSheet = {
   content: {
-    paddingLeft: "calc(30vw - 64px)",
-    paddingRight: "calc(30vw - 64px)",
+    paddingLeft: "calc(30vw - 115px)",
+    paddingRight: "calc(30vw - 115px)",
   },
 };
