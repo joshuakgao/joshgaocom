@@ -86,5 +86,6 @@ const styles: StyleSheet = {
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
+    textDecorationLine: "none",
   },
 };
