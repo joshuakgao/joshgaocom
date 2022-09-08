@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FullscreenDiv, RowDiv } from "../../commonComponents";
 import github from "../../../assets/images/github.png";
 import cv from "../../../assets/images/cv.png";
@@ -15,6 +15,14 @@ export function HamburgerMenu({
   setMenuOpen: (menuOpen: boolean) => void;
   d?: boolean;
 }) {
+  const [load, setLoad] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoad(true);
+    }, 1000);
+  }, []);
+
   return (
     <>
       <div
@@ -52,61 +60,68 @@ export function HamburgerMenu({
           }`}
         />
       </div>
+
       <FullscreenDiv
-        style={styles.menuContainer}
+        style={{
+          ...styles.menuContainer,
+        }}
         className={`menu-container ${
           menuOpen ? "fade-background" : "fade-background-reverse"
         }`}
       >
-        <div style={styles.menu}>
-          <Link
-            to="/software"
-            onClick={() => setMenuOpen(false)}
-            style={styles.link}
-            className={menuOpen ? "fade-down-reverse" : "fade-down"}
-          >
-            <h1 style={styles.menuItem} className="secondary">
-              Software
-            </h1>
-          </Link>
-          <Link
-            to="/business"
-            onClick={() => setMenuOpen(false)}
-            style={styles.link}
-            className={menuOpen ? "fade-down-reverse" : "fade-down"}
-          >
-            <h1 style={styles.menuItem} className="secondary">
-              Business
-            </h1>
-          </Link>
-          <Link
-            to="/other"
-            onClick={() => setMenuOpen(false)}
-            style={styles.link}
-            className={menuOpen ? "fade-down-reverse" : "fade-down"}
-          >
-            <h1 style={styles.menuItem} className="secondary">
-              Other
-            </h1>
-          </Link>
-        </div>
+        {load ? (
+          <>
+            <div style={styles.menu}>
+              <Link
+                to="/software"
+                onClick={() => setMenuOpen(false)}
+                style={styles.link}
+                className={menuOpen ? "fade-down-reverse" : "fade-down"}
+              >
+                <h1 style={styles.menuItem} className="secondary">
+                  Software
+                </h1>
+              </Link>
+              <Link
+                to="/business"
+                onClick={() => setMenuOpen(false)}
+                style={styles.link}
+                className={menuOpen ? "fade-down-reverse" : "fade-down"}
+              >
+                <h1 style={styles.menuItem} className="secondary">
+                  Business
+                </h1>
+              </Link>
+              <Link
+                to="/other"
+                onClick={() => setMenuOpen(false)}
+                style={styles.link}
+                className={menuOpen ? "fade-down-reverse" : "fade-down"}
+              >
+                <h1 style={styles.menuItem} className="secondary">
+                  Other
+                </h1>
+              </Link>
+            </div>
 
-        <div style={styles.footer} className="hamburger-menu-footer">
-          <h4
-            style={{ marginBottom: 16, fontSize: "3vh" }}
-            className="secondary"
-          >
-            joshuakgao@gmail.com
-          </h4>
-          <RowDiv>
-            <Link to="https://github.com/tugonbob" target="_blank">
-              <img className="icon" src={github} />
-            </Link>
-            <Link to={cvPdf} target="_blank" rel="noreferrer">
-              <img className="icon" src={cv} />
-            </Link>
-          </RowDiv>
-        </div>
+            <div style={styles.footer} className="hamburger-menu-footer">
+              <h4
+                style={{ marginBottom: 16, fontSize: "3vh" }}
+                className="secondary"
+              >
+                joshuakgao@gmail.com
+              </h4>
+              <RowDiv>
+                <Link to="https://github.com/tugonbob" target="_blank">
+                  <img className="icon" src={github} />
+                </Link>
+                <Link to={cvPdf} target="_blank" rel="noreferrer">
+                  <img className="icon" src={cv} />
+                </Link>
+              </RowDiv>
+            </div>
+          </>
+        ) : null}
       </FullscreenDiv>
     </>
   );
