@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.49a4e245.css",
-    "main.js": "/static/js/main.6c6a4f4e.js",
+    "main.js": "/static/js/main.71d7c2ef.js",
     "static/media/tofu60_profile.jpeg": "/static/media/tofu60_profile.7eafaedf957c42aaf019.jpeg",
     "static/media/watermelon.png": "/static/media/watermelon.b4012f507d40a1774201.png",
     "static/media/cv.pdf": "/static/media/cv.ff3357a481d8197f9ad6.pdf",
@@ -10,10 +10,10 @@
     "static/media/Avenir-Roman.otf": "/static/media/Avenir-Roman.0bfb049d9455e81fd1da.otf",
     "index.html": "/index.html",
     "main.49a4e245.css.map": "/static/css/main.49a4e245.css.map",
-    "main.6c6a4f4e.js.map": "/static/js/main.6c6a4f4e.js.map"
+    "main.71d7c2ef.js.map": "/static/js/main.71d7c2ef.js.map"
   },
   "entrypoints": [
     "static/css/main.49a4e245.css",
-    "static/js/main.6c6a4f4e.js"
+    "static/js/main.71d7c2ef.js"
   ]
 }
