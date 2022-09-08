@@ -4,7 +4,7 @@ import { Logo } from "../logo";
 
 export function Navbar({ d }: { d?: boolean }) {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-
+  d = true;
   return (
     <div
       style={{
@@ -28,6 +28,7 @@ interface StyleSheet {
 const styles: StyleSheet = {
   navbarContainer: {
     position: "fixed",
+    height: 100,
     width: "100vw",
     display: "flex",
     justifyContent: "space-between",
