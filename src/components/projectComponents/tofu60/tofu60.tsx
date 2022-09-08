@@ -7,6 +7,7 @@ export function Tofu60() {
     <TitleCard
       backgroundImage={tofu60_profile}
       textLocation={["left", "bottom"]}
+      to="/other/tofu60"
     >
       <h1 className="primary">Tofu60</h1>
     </TitleCard>

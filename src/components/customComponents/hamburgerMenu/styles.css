@@ -187,6 +187,7 @@
   -webkit-animation-name: fade-background-reverse;
   -webkit-animation-duration: 0.8s;
   -webkit-animation-fill-mode: forwards;
+  pointer-events: none;
 }
 
 @keyframes fade-background {

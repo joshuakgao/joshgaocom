@@ -1,15 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export function TitleCard({
   children,
   d,
   backgroundImage,
   textLocation = ["top", "left"],
+  to = "/",
 }: {
   children?: any;
   d?: boolean;
   backgroundImage?: string;
   textLocation?: [string, string] | [string];
+  to?: string;
 }) {
   // parse textLocation
   let alignItems = "";
@@ -37,7 +40,8 @@ export function TitleCard({
         ...{ border: d ? "1px solid black" : undefined },
       }}
     >
-      <div
+      <Link
+        to={to}
         style={{
           ...styles.titleCard,
           ...{
@@ -49,7 +53,7 @@ export function TitleCard({
         }}
       >
         {children}
-      </div>
+      </Link>
     </div>
   );
 }
