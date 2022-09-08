@@ -6,6 +6,7 @@ export function Tofu60Page() {
   return (
     <ScrollDiv>
       <Tofu60Card toFullscreen />
+      <p>wiefjwoeifj</p>
     </ScrollDiv>
   );
 }

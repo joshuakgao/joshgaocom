@@ -40,7 +40,10 @@ export function TitleCard({
     <div
       style={{
         ...styles.projectContainer,
-        ...{ border: d ? "1px solid black" : undefined },
+        ...{
+          border: d ? "1px solid black" : undefined,
+          marginBottom: toFullscreen ? "10vh" : "40vh",
+        },
       }}
       className={`title-card-container`}
     >
@@ -74,17 +77,16 @@ const styles: StyleSheet = {
     width: "100vw",
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: "40vh",
   },
   titleCard: {
     display: "flex",
-    height: "70vh",
-    width: "70vw",
+    height: "calc(80vh - 80px)",
+    width: "calc(70vw + 80px)",
     boxSizing: "border-box",
-    paddingTop: "10vh",
-    paddingBottom: "10vh",
-    paddingRight: "10vw",
-    paddingLeft: "10vw",
+    paddingTop: "calc(10vh + 16px)",
+    paddingBottom: "calc(8vh + 16px)",
+    paddingRight: "calc(8vw + 16px)",
+    paddingLeft: "calc(8vw + 16px",
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",

@@ -33,6 +33,5 @@ const styles: StyleSheet = {
   scrollDiv: {
     display: "flex",
     flexDirection: "column",
-    zIndex: 1,
   },
 };
