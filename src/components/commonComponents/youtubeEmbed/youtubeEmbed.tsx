@@ -20,6 +20,6 @@ const styles: StyleSheet = {
   videoContainer: {
     display: "block",
     width: "100%",
-    height: "calc(60vh + 100px)",
+    height: "calc(40vh + 100px)",
   },
 };
