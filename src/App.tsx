@@ -1,6 +1,6 @@
 import { Navbar } from "./components/customComponents/navbar/navbar";
 import { HomePage, OtherPage, SoftwarePage } from "./pages";
-import { Tofu60Page } from "./components/projectComponents/tofu60/tofu60Page";
+import { Tofu60Page } from "./components/projectComponents/other/tofu60/tofu60Page";
 import { Route, Routes } from "react-router-dom";
 import "./assets/styles.css";
 

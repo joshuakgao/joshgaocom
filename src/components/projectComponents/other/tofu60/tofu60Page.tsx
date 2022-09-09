@@ -1,6 +1,6 @@
 import React from "react";
-import { ScrollDiv, YoutubeEmbed } from "../../commonComponents";
-import { MainContentDiv } from "../../commonComponents/mainContentDiv/mainContentDiv";
+import { ScrollDiv, YoutubeEmbed } from "../../../commonComponents";
+import { MainContentDiv } from "../../../commonComponents/mainContentDiv/mainContentDiv";
 import { Tofu60Card } from "./tofu60Card";
 
 export function Tofu60Page() {
