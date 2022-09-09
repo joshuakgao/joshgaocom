@@ -3,6 +3,7 @@ import { HomePage, OtherPage, SoftwarePage } from "./pages";
 import { Tofu60Page } from "./components/projectComponents/other/tofu60/tofu60Page";
 import { Route, Routes } from "react-router-dom";
 import "./assets/styles.css";
+import { ChatbotBobPage } from "./components/projectComponents/software";
 
 function App() {
   return (
@@ -11,9 +12,11 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/software" element={<SoftwarePage />} />
-        {/* <Route path="/business" element={<BusinessPage />} /> */}
-        <Route path="/other" element={<OtherPage />} />
+        <Route path="/software/chatbotBob" element={<ChatbotBobPage />} />
 
+        {/* <Route path="/business" element={<BusinessPage />} /> */}
+
+        <Route path="/other" element={<OtherPage />} />
         <Route path="/other/tofu60" element={<Tofu60Page />} />
       </Routes>
     </>
