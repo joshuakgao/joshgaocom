@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./styles.css";
 
@@ -17,6 +17,21 @@ export function TitleCard({
   to?: string;
   toFullscreen?: boolean;
 }) {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   // parse textLocation
   let alignItems = "";
   let justifyContent = "";
@@ -60,7 +75,9 @@ export function TitleCard({
         }}
         className={toFullscreen ? "enlarge-fullscreen" : "link"}
       >
-        {children}
+        <div style={{ transform: `translateY(${scrollPosition / 8}px)` }}>
+          {children}
+        </div>
       </Link>
     </div>
   );
@@ -86,7 +103,7 @@ const styles: StyleSheet = {
     paddingTop: "calc(10vh + 16px)",
     paddingBottom: "calc(8vh + 16px)",
     paddingRight: "calc(8vw + 16px)",
-    paddingLeft: "calc(8vw + 16px",
+    paddingLeft: "calc(8vw + 16px)",
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
