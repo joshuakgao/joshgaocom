@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.b906db0e.css",
-    "main.js": "/static/js/main.659ea698.js",
+    "main.js": "/static/js/main.998e8164.js",
     "static/media/tofu60_profile.jpeg": "/static/media/tofu60_profile.7eafaedf957c42aaf019.jpeg",
+    "static/media/chatbot_title_card.png": "/static/media/chatbot_title_card.0803b57c1f27dd24b49e.png",
     "static/media/watermelon.png": "/static/media/watermelon.b4012f507d40a1774201.png",
     "static/media/Vito-CondensedRegular.woff": "/static/media/Vito-CondensedRegular.aeb0a604aa50c3c34b78.woff",
     "static/media/cv.pdf": "/static/media/cv.ff3357a481d8197f9ad6.pdf",
@@ -11,10 +12,10 @@
     "static/media/Avenir-Roman.otf": "/static/media/Avenir-Roman.0bfb049d9455e81fd1da.otf",
     "index.html": "/index.html",
     "main.b906db0e.css.map": "/static/css/main.b906db0e.css.map",
-    "main.659ea698.js.map": "/static/js/main.659ea698.js.map"
+    "main.998e8164.js.map": "/static/js/main.998e8164.js.map"
   },
   "entrypoints": [
     "static/css/main.b906db0e.css",
-    "static/js/main.659ea698.js"
+    "static/js/main.998e8164.js"
   ]
 }
