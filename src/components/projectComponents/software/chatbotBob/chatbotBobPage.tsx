@@ -13,7 +13,14 @@ export function ChatbotBobPage() {
           width="350"
           height="430"
           src="https://console.dialogflow.com/api-client/demo/embedded/b17d18f9-3b6a-48fc-8ea7-956717271319"
+          style={{ marginLeft: "calc(12px + 5vw" }}
         />
+        <h3>Try These Questions</h3>
+        <p>
+          What is your name?
+          <br />
+          How are you?
+        </p>
       </MainContentDiv>
     </ScrollDiv>
   );

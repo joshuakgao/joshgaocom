@@ -14,7 +14,7 @@ export function ChatbotBobCard({
       to="/software/chatbotBob"
       toFullscreen={toFullscreen}
     >
-      <h1>Chatbot Bob</h1>
+      <h1 className="primary">Chatbot Bob</h1>
     </TitleCard>
   );
 }
