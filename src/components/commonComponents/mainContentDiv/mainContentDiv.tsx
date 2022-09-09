@@ -22,5 +22,6 @@ const styles: StyleSheet = {
   content: {
     paddingLeft: "calc(30vw - 115px)",
     paddingRight: "calc(30vw - 115px)",
+    paddingBottom: "calc(8vh + 12px)",
   },
 };
