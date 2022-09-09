@@ -11,11 +11,25 @@ export function Tofu60Page() {
         <h2>My Custom Tofu60 Mechanical Keyboard</h2>
         <h4>Quick Summary</h4>
         <ul>
-          <li>E-White Tofu60 from KBDfans</li>
-          <li>dz64rgb pcb</li>
-          <li>Aluminum Plate</li>
-          <li>Gateron Milky Yellow Switches</li>
-          <li>PBT Olivia Keycaps - Cherry Profile</li>
+          <a
+            href="https://kbdfans.com/products/kbdfans-tofu60-dz64-rgb-hot-swap-diy-kit"
+            target="_blank"
+          >
+            <li>E-White Tofu60 from KBDfans</li>
+          </a>
+          <ul>
+            <li>dz64rgb pcb</li>
+            <li>Aluminum Plate</li>
+          </ul>
+          <a href="https://a.co/d/8k3nlzM" target="_blank">
+            <li>Gateron Milky Yellow Switches</li>
+          </a>
+          <a
+            href="https://www.amazon.com/dp/B08QV2DLP8?psc=1&ref=ppx_yo2ov_dt_b_product_details"
+            target="_blank"
+          >
+            <li>PBT Olivia Keycaps - Cherry Profile</li>
+          </a>
           <li>Masking Tap mod - 4 layers</li>
           <li>Foam</li>
           <ul>
