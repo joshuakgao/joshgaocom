@@ -1,5 +1,5 @@
 import { Navbar } from "./components/customComponents/navbar/navbar";
-import { HomePage, OtherPage } from "./pages";
+import { HomePage, OtherPage, SoftwarePage } from "./pages";
 import { Tofu60Page } from "./components/projectComponents/tofu60/tofu60Page";
 import { Route, Routes } from "react-router-dom";
 import "./assets/styles.css";
@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/software" element={<SoftwarePage />} /> */}
+        <Route path="/software" element={<SoftwarePage />} />
         {/* <Route path="/business" element={<BusinessPage />} /> */}
         <Route path="/other" element={<OtherPage />} />
 
