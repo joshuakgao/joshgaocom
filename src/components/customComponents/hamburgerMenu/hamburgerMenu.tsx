@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FullscreenDiv, RowDiv } from "../../commonComponents";
 import github from "../../../assets/images/github.png";
 import cv from "../../../assets/images/cv.png";
-import cvPdf from "../../../assets/docs/cv.pdf";
+import cvPdf from "../../../assets/docs/Joshua-Gao_Resume.pdf";
 import { Link } from "react-router-dom";
 import "./styles.css";
 
@@ -103,12 +103,16 @@ export function HamburgerMenu({
               joshuakgao@gmail.com
             </h4>
             <RowDiv>
-              <Link to="https://github.com/tugonbob" target="_blank">
+              <a
+                href="https://github.com/tugonbob"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img className="icon" src={github} />
-              </Link>
-              <Link to={cvPdf} target="_blank" rel="noreferrer">
+              </a>
+              <a href={cvPdf} target="_blank" rel="noopener noreferrer">
                 <img className="icon" src={cv} />
-              </Link>
+              </a>
             </RowDiv>
           </div>
         </>
