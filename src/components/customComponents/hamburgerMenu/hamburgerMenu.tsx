@@ -15,14 +15,6 @@ export function HamburgerMenu({
   setMenuOpen: (menuOpen: boolean) => void;
   d?: boolean;
 }) {
-  const [load, setLoad] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoad(true);
-    }, 1000);
-  }, []);
-
   return (
     <>
       <div
@@ -69,59 +61,57 @@ export function HamburgerMenu({
           menuOpen ? "fade-background" : "fade-background-reverse"
         }`}
       >
-        {load ? (
-          <>
-            <div style={styles.menu}>
-              <Link
-                to="/software"
-                onClick={() => setMenuOpen(false)}
-                style={styles.link}
-                className={menuOpen ? "fade-down-reverse" : "fade-down"}
-              >
-                <h1 style={styles.menuItem} className="secondary">
-                  Software
-                </h1>
-              </Link>
-              <Link
-                to="/business"
-                onClick={() => setMenuOpen(false)}
-                style={styles.link}
-                className={menuOpen ? "fade-down-reverse" : "fade-down"}
-              >
-                <h1 style={styles.menuItem} className="secondary">
-                  Business
-                </h1>
-              </Link>
-              <Link
-                to="/other"
-                onClick={() => setMenuOpen(false)}
-                style={styles.link}
-                className={menuOpen ? "fade-down-reverse" : "fade-down"}
-              >
-                <h1 style={styles.menuItem} className="secondary">
-                  Other
-                </h1>
-              </Link>
-            </div>
+        <>
+          <div style={styles.menu}>
+            <Link
+              to="/software"
+              onClick={() => setMenuOpen(false)}
+              style={styles.link}
+              className={menuOpen ? "fade-down-reverse" : "fade-down"}
+            >
+              <h1 style={styles.menuItem} className="secondary">
+                Software
+              </h1>
+            </Link>
+            <Link
+              to="/business"
+              onClick={() => setMenuOpen(false)}
+              style={styles.link}
+              className={menuOpen ? "fade-down-reverse" : "fade-down"}
+            >
+              <h1 style={styles.menuItem} className="secondary">
+                Business
+              </h1>
+            </Link>
+            <Link
+              to="/other"
+              onClick={() => setMenuOpen(false)}
+              style={styles.link}
+              className={menuOpen ? "fade-down-reverse" : "fade-down"}
+            >
+              <h1 style={styles.menuItem} className="secondary">
+                Other
+              </h1>
+            </Link>
+          </div>
 
-            <div style={styles.footer} className="hamburger-menu-footer">
-              <h4
-                style={{ marginBottom: 16, fontSize: "3vh" }}
-                className="secondary"
-              >
-                joshuakgao@gmail.com
-              </h4>
-              <RowDiv>
-                <Link to="https://github.com/tugonbob" target="_blank">
-                  <img className="icon" src={github} />
-                </Link>
-                <Link to={cvPdf} target="_blank" rel="noreferrer">
-                  <img className="icon" src={cv} />
-                </Link>
-              </RowDiv>
-            </div>
-          </>
-        ) : null}
+          <div style={styles.footer} className="hamburger-menu-footer">
+            <h4
+              style={{ marginBottom: 16, fontSize: "3vh" }}
+              className="secondary"
+            >
+              joshuakgao@gmail.com
+            </h4>
+            <RowDiv>
+              <Link to="https://github.com/tugonbob" target="_blank">
+                <img className="icon" src={github} />
+              </Link>
+              <Link to={cvPdf} target="_blank" rel="noreferrer">
+                <img className="icon" src={cv} />
+              </Link>
+            </RowDiv>
+          </div>
+        </>
       </FullscreenDiv>
     </>
   );
