@@ -72,10 +72,10 @@
 
 .title-card-container .fade-in-out {
   animation-name: fade-in-out;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
   -webkit-animation-name: fade-in-out;
-  -webkit-animation-duration: 2s;
+  -webkit-animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
 }
 
