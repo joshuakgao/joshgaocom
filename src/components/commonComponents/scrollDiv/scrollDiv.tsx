@@ -33,5 +33,6 @@ const styles: StyleSheet = {
   scrollDiv: {
     display: "flex",
     flexDirection: "column",
+    backgroundColor: "#f7f7f7",
   },
 };
