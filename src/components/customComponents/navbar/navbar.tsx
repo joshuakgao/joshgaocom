@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { HamburgerMenu } from "../hamburgerMenu";
 import { Logo } from "../logo";
+import "./styles.css";
 
 export function Navbar({ d }: { d?: boolean }) {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -11,6 +12,7 @@ export function Navbar({ d }: { d?: boolean }) {
         ...styles.navbarContainer,
         ...{ border: d ? "1px black solid" : undefined },
       }}
+      className="fade-in"
     >
       <Logo setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)} />
       <HamburgerMenu
