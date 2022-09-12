@@ -6,6 +6,7 @@ export function TitleCard({
   children,
   d,
   backgroundImage,
+  backgroundColor,
   textLocation = ["top", "left"],
   to = "/",
   toFullscreen = false,
@@ -13,6 +14,7 @@ export function TitleCard({
   children?: any;
   d?: boolean;
   backgroundImage?: string;
+  backgroundColor?: string;
   textLocation?: [string, string] | [string];
   to?: string;
   toFullscreen?: boolean;
@@ -69,6 +71,7 @@ export function TitleCard({
           ...{
             border: d ? "1px solid black" : undefined,
             backgroundImage: `url(${backgroundImage})`,
+            backgroundColor,
             alignItems,
             justifyContent,
           },
