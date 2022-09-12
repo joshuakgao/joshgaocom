@@ -12,13 +12,15 @@ export function Navbar({ d }: { d?: boolean }) {
         ...styles.navbarContainer,
         ...{ border: d ? "1px black solid" : undefined },
       }}
-      className="fade-in"
+      className="navbar"
     >
-      <Logo setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)} />
-      <HamburgerMenu
-        menuOpen={menuOpen}
-        setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)}
-      />
+      <div style={{ ...styles.navbarContainer }} className="fade-in">
+        <Logo setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)} />
+        <HamburgerMenu
+          menuOpen={menuOpen}
+          setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)}
+        />
+      </div>
     </div>
   );
 }

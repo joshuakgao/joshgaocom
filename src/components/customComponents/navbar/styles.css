@@ -1,4 +1,4 @@
-.fade-in {
+.navbar .fade-in {
   animation-name: fade-in;
   animation-duration: 1s;
   animation-delay: 2s;
