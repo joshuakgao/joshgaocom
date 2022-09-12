@@ -1,14 +1,15 @@
 import React from "react";
 import { FullscreenDiv } from "../../components/commonComponents";
+import "./styles.css";
 
 export function HomePage() {
   return (
-    <FullscreenDiv style={styles.container}>
+    <FullscreenDiv style={styles.container} className="home-page">
       <div style={styles.contentContainer}>
-        <h1 style={styles.title} className="secondary">
+        <h1 style={styles.title} className="secondary fade-up">
           Joshua Gao
         </h1>
-        <h4 style={styles.subtitle} className="secondary">
+        <h4 style={styles.subtitle} className="secondary fade-up-later">
           Exploring software, business and more
         </h4>
       </div>
