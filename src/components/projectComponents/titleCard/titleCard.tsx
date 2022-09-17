@@ -85,7 +85,7 @@ export function TitleCard({
       >
         <div
           style={{ transform: `translateY(${scrollPosition / 8}px)` }}
-          className={"fade-in-out"}
+          className={toFullscreen ? "fade-in-out" : "remove-fade-in"}
         >
           {children}
         </div>

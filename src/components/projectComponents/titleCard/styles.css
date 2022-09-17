@@ -83,6 +83,30 @@
   }
 }
 
+.title-card-container .remove-fade-in {
+  animation-name: remove-fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: remove-fade-in;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes remove-fade-in {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
 .primary {
   color: #f7f7f7;
 }
