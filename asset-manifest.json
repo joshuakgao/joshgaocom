@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.b906db0e.css",
-    "main.js": "/static/js/main.12907e3b.js",
+    "main.css": "/static/css/main.043e5161.css",
+    "main.js": "/static/js/main.d822def7.js",
     "static/media/tofu60_profile.jpeg": "/static/media/tofu60_profile.7eafaedf957c42aaf019.jpeg",
+    "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
     "static/media/chatbot_title_card.png": "/static/media/chatbot_title_card.0803b57c1f27dd24b49e.png",
     "static/media/watermelon.png": "/static/media/watermelon.b4012f507d40a1774201.png",
     "static/media/Vito-CondensedRegular.woff": "/static/media/Vito-CondensedRegular.aeb0a604aa50c3c34b78.woff",
-    "static/media/cv.pdf": "/static/media/cv.ff3357a481d8197f9ad6.pdf",
+    "static/media/Joshua-Gao_Resume.pdf": "/static/media/Joshua-Gao_Resume.235255821cef865ad8e8.pdf",
     "static/media/Avenir-Black.otf": "/static/media/Avenir-Black.7ce894e12078ca8c5134.otf",
     "static/media/Avenir-Book.otf": "/static/media/Avenir-Book.813557df4c7a90b1a474.otf",
     "static/media/Avenir-Roman.otf": "/static/media/Avenir-Roman.0bfb049d9455e81fd1da.otf",
     "index.html": "/index.html",
-    "main.b906db0e.css.map": "/static/css/main.b906db0e.css.map",
-    "main.12907e3b.js.map": "/static/js/main.12907e3b.js.map"
+    "main.043e5161.css.map": "/static/css/main.043e5161.css.map",
+    "main.d822def7.js.map": "/static/js/main.d822def7.js.map"
   },
   "entrypoints": [
-    "static/css/main.b906db0e.css",
-    "static/js/main.12907e3b.js"
+    "static/css/main.043e5161.css",
+    "static/js/main.d822def7.js"
   ]
 }
