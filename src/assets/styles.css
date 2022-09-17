@@ -13,6 +13,22 @@ body {
   margin: 0;
 }
 
+/* * {
+  outline: 1px solid #f00;
+} */
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: lightgrey;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--tertiary);
+}
+
 @font-face {
   font-family: "Avenir";
   src: url("../assets/fonts/Avenir/Avenir-Book.otf");
