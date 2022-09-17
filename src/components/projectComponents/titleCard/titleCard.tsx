@@ -77,7 +77,11 @@ export function TitleCard({
             justifyContent,
           },
         }}
-        className={toFullscreen ? "enlarge-fullscreen" : "link"}
+        className={
+          toFullscreen
+            ? "enlarge-fullscreen"
+            : "enlarge-fullscreen-reverse link"
+        }
       >
         <div
           style={{ transform: `translateY(${scrollPosition / 8}px)` }}
