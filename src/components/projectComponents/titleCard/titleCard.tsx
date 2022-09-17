@@ -70,6 +70,7 @@ export function TitleCard({
           ...styles.titleCard,
           ...{
             border: d ? "1px solid black" : undefined,
+            pointerEvents: toFullscreen ? "none" : undefined,
             backgroundImage: `url(${backgroundImage})`,
             backgroundColor,
             alignItems,
