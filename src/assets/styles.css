@@ -61,7 +61,7 @@ body::-webkit-scrollbar-thumb {
 h1 {
   margin: 0;
   font-family: "AvenirBlacker";
-  font-size: calc(36px + 6vw);
+  font-size: calc(36px + 5vw);
   color: var(--secondary);
 }
 
