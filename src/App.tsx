@@ -4,6 +4,7 @@ import { Tofu60Page } from "./components/projectComponents/other/tofu60/tofu60Pa
 import { Route, Routes } from "react-router-dom";
 import "./assets/styles.css";
 import { ChatbotBobPage } from "./components/projectComponents/software";
+import { PortfolioTrackerPage } from "./components/projectComponents/business";
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
         <Route path="/software/chatbotBob" element={<ChatbotBobPage />} />
 
         <Route path="/business" element={<BusinessPage />} />
+        <Route
+          path="/business/portfolioTracker"
+          element={<PortfolioTrackerPage />}
+        />
 
         <Route path="/other" element={<OtherPage />} />
         <Route path="/other/tofu60" element={<Tofu60Page />} />
