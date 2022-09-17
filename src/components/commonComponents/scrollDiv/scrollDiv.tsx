@@ -34,5 +34,6 @@ const styles: StyleSheet = {
     display: "flex",
     flexDirection: "column",
     backgroundColor: "#f7f7f7",
+    overflow: "hidden",
   },
 };
