@@ -19,33 +19,35 @@ export function TitleCard({
   to?: string;
   toFullscreen?: boolean;
 }) {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  // const [scrollPosition, setScrollPosition] = useState(0);
 
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
+  // const handleScroll = () => {
+  //   const position = window.pageYOffset;
+  //   setScrollPosition(position);
+  // };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   // parse textLocation
   let alignItems = "";
   let justifyContent = "";
 
+  let location = textLocation.map((e) => e.toLocaleLowerCase());
+
   // deal with all locations except center, because center could be meant for alignItems and justifyContent
-  if (textLocation.includes("left")) justifyContent = "flex-start";
-  else if (textLocation.includes("right")) justifyContent = "flex-end";
-  if (textLocation.includes("top")) alignItems = "flex-start";
-  else if (textLocation.includes("bottom")) alignItems = "flex-end";
+  if (location.includes("left")) justifyContent = "flex-start";
+  else if (location.includes("right")) justifyContent = "flex-end";
+  if (location.includes("top")) alignItems = "flex-start";
+  else if (location.includes("bottom")) alignItems = "flex-end";
 
   // deal with center. If either alignItems and justifyContent is empty, assume center is meant for that variable
-  if (textLocation.includes("center")) {
+  if (location.includes("center")) {
     if (alignItems === "" && justifyContent === "") {
       alignItems = "center";
       justifyContent = "center";
@@ -84,8 +86,8 @@ export function TitleCard({
         }
       >
         <div
-          style={{ transform: `translateY(${scrollPosition / 8}px)` }}
           className={toFullscreen ? "fade-in-out" : "remove-fade-in"}
+          // style={{ transform: `translateY(${scrollPosition}px)` }}
         >
           {children}
         </div>
