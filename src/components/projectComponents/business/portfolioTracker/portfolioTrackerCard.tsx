@@ -1,6 +1,6 @@
 import React from "react";
 import { TitleCard } from "../../titleCard";
-import stockBackground from "../../../../assets/projects/business/PortfolioTracker/stockMarketGoingUp-background.jpg";
+import stockBackground from "../../../../assets/projects/business/PortfolioTracker/background.jpg";
 
 export function PortfolioTrackerCard({
   toFullscreen = false,
@@ -10,7 +10,7 @@ export function PortfolioTrackerCard({
   return (
     <TitleCard
       backgroundImage={stockBackground}
-      textLocation={["top", "right"]}
+      textLocation={["bottom", "left"]}
       to="/business/PortfolioTracker"
       toFullscreen={toFullscreen}
     >
