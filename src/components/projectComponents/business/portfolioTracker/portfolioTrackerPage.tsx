@@ -13,6 +13,12 @@ export function PortfolioTrackerPage() {
           src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_r0kZBuN8E-M-JmVtZQNNa-2UZmzNq0lOSG0YF4ic1o4EiHgGbApFApUizRJc6mPTVEaHFZt34dbx/pubhtml?widget=true&amp;autosize=true&amp;headers=false&amp;chrome=false"
         />
         <h2 style={{ marginTop: "75vh" }}>Tabs Explanations</h2>
+        <h3>Dashboard</h3>
+        <h3>History</h3>
+        <h3>Positions</h3>
+        <h3>Chart Data</h3>
+        <h3>Market Map Data</h3>
+        <h3>Recent Super Investor Trades</h3>
       </MainContentDiv>
     </ScrollDiv>
   );
