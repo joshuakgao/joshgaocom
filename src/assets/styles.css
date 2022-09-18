@@ -91,3 +91,19 @@ li {
   margin-bottom: 6px;
   color: var(--secondary);
 }
+
+.primary {
+  color: var(--primary);
+}
+
+.secondary {
+  color: var(--secondary);
+}
+
+.tertiary {
+  color: var(--tertiary);
+}
+
+.accent {
+  color: var(--accent);
+}

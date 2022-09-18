@@ -6,15 +6,6 @@
   transform: scale(1.02);
 }
 
-@keyframes enlarge {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.02);
-  }
-}
-
 .title-card-container .enlarge-fullscreen {
   animation-name: enlarge-fullscreen;
   animation-duration: 2s;
