@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./styles.css";
 
 export function TitleCard({
@@ -19,20 +19,22 @@ export function TitleCard({
   to?: string;
   toFullscreen?: boolean;
 }) {
-  // const [scrollPosition, setScrollPosition] = useState(0);
+  const navigate = useNavigate();
+  const myRef = useRef<null | HTMLDivElement>(null);
 
-  // const handleScroll = () => {
-  //   const position = window.pageYOffset;
-  //   setScrollPosition(position);
-  // };
+  const goToPage = () => {
+    if (!myRef.current) return;
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll, { passive: true });
+    window.scrollTo({
+      left: 0,
+      top: myRef.current.offsetTop,
+      behavior: "smooth",
+    });
 
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+    setTimeout(() => {
+      navigate(to);
+    }, 500);
+  };
 
   // parse textLocation
   let alignItems = "";
@@ -57,6 +59,7 @@ export function TitleCard({
 
   return (
     <div
+      ref={myRef}
       style={{
         ...styles.projectContainer,
         ...{
@@ -66,12 +69,13 @@ export function TitleCard({
       }}
       className={`title-card-container`}
     >
-      <Link
-        to={to}
+      <div
+        onClick={goToPage}
         style={{
           ...styles.titleCard,
           ...{
             border: d ? "1px solid black" : undefined,
+            cursor: "pointer",
             pointerEvents: toFullscreen ? "none" : undefined,
             backgroundImage: `url(${backgroundImage})`,
             backgroundColor,
@@ -85,13 +89,10 @@ export function TitleCard({
             : "enlarge-fullscreen-reverse link"
         }
       >
-        <div
-          className={toFullscreen ? "fade-in-out" : "remove-fade-in"}
-          // style={{ transform: `translateY(${scrollPosition}px)` }}
-        >
+        <div className={toFullscreen ? "fade-in-out" : "remove-fade-in"}>
           {children}
         </div>
-      </Link>
+      </div>
     </div>
   );
 }
