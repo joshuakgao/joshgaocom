@@ -46,6 +46,5 @@ const styles: StyleSheet = {
   },
   lastName: {
     fontSize: 28,
-    marginTop: 5,
   },
 };
