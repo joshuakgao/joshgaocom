@@ -1,6 +1,7 @@
 import { ScrollDiv } from "../../components/commonComponents";
 import {
   ChatbotBobCard,
+  JoshgaocomCard,
   RedditLaughsCard,
   VolleyballConnectCard,
   ZillowDealFinderCard,
@@ -10,6 +11,7 @@ export function SoftwarePage() {
   return (
     <ScrollDiv>
       <ChatbotBobCard />
+      <JoshgaocomCard />
       <VolleyballConnectCard />
       <RedditLaughsCard />
       <ZillowDealFinderCard />

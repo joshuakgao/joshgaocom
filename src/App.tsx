@@ -10,6 +10,7 @@ import {
   ZillowDealFinderPage,
 } from "./components/projectComponents/software";
 import { PortfolioTrackerPage } from "./components/projectComponents/business";
+import JoshgaocomPage from "./components/projectComponents/software/joshgaocom/joshgaocomPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/software" element={<SoftwarePage />} />
         <Route path="/software/chatbotBob" element={<ChatbotBobPage />} />
+        <Route path="/software/joshgaocom" element={<JoshgaocomPage />} />
         <Route
           path="/software/volleyballConnect"
           element={<VolleyballConnectPage />}
