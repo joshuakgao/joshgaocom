@@ -6,6 +6,7 @@ import "./assets/styles.css";
 import {
   ChatbotBobPage,
   RedditLaughsPage,
+  VolleyballConnectPage,
   ZillowDealFinderPage,
 } from "./components/projectComponents/software";
 import { PortfolioTrackerPage } from "./components/projectComponents/business";
@@ -18,6 +19,10 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/software" element={<SoftwarePage />} />
         <Route path="/software/chatbotBob" element={<ChatbotBobPage />} />
+        <Route
+          path="/software/volleyballConnect"
+          element={<VolleyballConnectPage />}
+        />
         <Route path="/software/redditLaughs" element={<RedditLaughsPage />} />
         <Route
           path="/software/zillowDealFinder"
