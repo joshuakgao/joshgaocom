@@ -11,7 +11,11 @@ export function VolleyballConnectCard({
       backgroundColor="lightblue"
       toFullscreen={toFullscreen}
     >
-      <h1 className="primary">Volleyball Connect</h1>
+      <h1>Volleyball Connect</h1>
+      <h2>
+        A mobile app platform for all volleyball players to connect, meet, and
+        play
+      </h2>
     </TitleCard>
   );
 }

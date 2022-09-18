@@ -9,6 +9,7 @@ export function RedditLaughsCard({ toFullscreen }: { toFullscreen?: boolean }) {
       to="/software/redditLaughs"
     >
       <h1>Reddit Laughs</h1>
+      <h2>Automating a Youtube channel with Reddit content</h2>
     </TitleCard>
   );
 }

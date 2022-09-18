@@ -96,18 +96,12 @@
   }
 }
 
-.primary {
-  color: #f7f7f7;
+.title-card-container h1 {
+  font-size: calc(36px + 3vw);
+  color: var(--primary);
 }
 
-.secondary {
-  color: #353535;
-}
-
-.tertiary {
-  color: #7b7b7b;
-}
-
-.accent {
-  color: #fa6564;
+.title-card-container h2 {
+  font-size: 18px;
+  color: var(--primary);
 }

@@ -7,7 +7,8 @@ export function JoshgaocomCard({ toFullscreen }: { toFullscreen?: boolean }) {
       to="/software/joshgaocom"
       toFullscreen={toFullscreen}
     >
-      <h1 className="primary">joshgao.com</h1>
+      <h1>joshgao.com</h1>
+      <h2>A website showcasing Joshua Gao's projects</h2>
     </TitleCard>
   );
 }

@@ -14,7 +14,8 @@ export function ZillowDealFinderCard({
       to="/software/zillowDealFinder"
       toFullscreen={toFullscreen}
     >
-      <h1 className="primary">Zillow Deal Finder</h1>
+      <h1>Zillow Deal Finder</h1>
+      <h2>Automating the search for your next great real estate deal</h2>
     </TitleCard>
   );
 }

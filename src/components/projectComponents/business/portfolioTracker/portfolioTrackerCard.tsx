@@ -15,6 +15,9 @@ export function PortfolioTrackerCard({
       toFullscreen={toFullscreen}
     >
       <h1 className="primary">Portolio Tracker</h1>
+      <h2 className="tertiary">
+        A personal stock portfolio built with Google Sheets
+      </h2>
     </TitleCard>
   );
 }
