@@ -7,6 +7,8 @@ export function TitleCard({
   d,
   backgroundImage,
   backgroundColor,
+  backgroundSize,
+  backgroundPosition,
   textLocation = ["top", "left"],
   to = "/",
   toFullscreen = false,
@@ -15,6 +17,8 @@ export function TitleCard({
   d?: boolean;
   backgroundImage?: string;
   backgroundColor?: string;
+  backgroundSize?: string | number;
+  backgroundPosition?: string;
   textLocation?: [string, string] | [string];
   to?: string;
   toFullscreen?: boolean;
@@ -79,6 +83,9 @@ export function TitleCard({
             pointerEvents: toFullscreen ? "none" : undefined,
             backgroundImage: `url(${backgroundImage})`,
             backgroundColor,
+            backgroundSize,
+            backgroundPosition,
+            backgroundRepeat: "no-repeat",
             alignItems,
             justifyContent,
           },

@@ -1,21 +1,25 @@
-import React from "react";
+import ZillowLogo from "../../../../assets/projects/software/zillowDealFinder/zillow.jpg";
 import { TitleCard } from "../../titleCard";
-import ZillowLogo from "../../../../assets/projects/software/zillowDealFinder/ZillowLogo.png";
 
 export function ZillowDealFinderCard({
-  toFullscreen = false,
+  toFullscreen,
 }: {
   toFullscreen?: boolean;
 }) {
   return (
     <TitleCard
       backgroundImage={ZillowLogo}
-      textLocation={["center", "center"]}
+      backgroundSize="20vh"
+      backgroundPosition="85% 85%"
+      backgroundColor="#006afe"
+      textLocation={["top", "center"]}
       to="/software/zillowDealFinder"
       toFullscreen={toFullscreen}
     >
-      <h1>Zillow Deal Finder</h1>
-      <h2>Automating the search for your next great real estate deal</h2>
+      <h1 className="primary">Zillow Deal Finder</h1>
+      <h2 className="primary">
+        Automating the search for your next great real estate deal
+      </h2>
     </TitleCard>
   );
 }

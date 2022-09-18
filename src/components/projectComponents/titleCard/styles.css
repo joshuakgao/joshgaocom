@@ -98,10 +98,8 @@
 
 .title-card-container h1 {
   font-size: calc(36px + 3vw);
-  color: var(--primary);
 }
 
 .title-card-container h2 {
   font-size: 18px;
-  color: var(--primary);
 }
