@@ -20,20 +20,6 @@ body {
   outline: 1px solid #f00;
 } */
 
-/* scrollbar */
-
-body::-webkit-scrollbar {
-  width: 0.25rem;
-}
-
-body::-webkit-scrollbar-track {
-  background: lightgrey;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: var(--tertiary);
-}
-
 /* fonts */
 
 @font-face {
