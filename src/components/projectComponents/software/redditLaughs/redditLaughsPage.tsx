@@ -13,7 +13,6 @@ export function RedditLaughsPage() {
       <MainContentDiv>
         <ContentHeader
           date="6/13/2022"
-          skills="Python"
           components="Reddit API Scraping - Python Video Editing"
         />
         <h2>Introduction</h2>

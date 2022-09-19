@@ -12,18 +12,16 @@ export function ContentHeader({
 }) {
   return (
     <div>
-      <p style={styles.p}>Joshua Gao - {date}</p>
+      <p>Joshua Gao - {date}</p>
 
       {skills ? (
         <RowDiv>
-          <p style={styles.p}>Required Skills:</p>
           <p style={styles.bold}>{skills}</p>
         </RowDiv>
       ) : null}
 
       {components ? (
         <RowDiv>
-          <p style={styles.p}>Components:</p>
           <p style={styles.bold}>{components}</p>
         </RowDiv>
       ) : null}
@@ -38,12 +36,7 @@ type StyleSheet = {
 const styles: StyleSheet = {
   bold: {
     fontWeight: "bold",
-    marginLeft: 8,
     marginBottom: 0,
     marginTop: 0,
-  },
-  p: {
-    marginTop: 0,
-    marginBottom: 0,
   },
 };
