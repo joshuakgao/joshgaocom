@@ -1,5 +1,5 @@
 import React from "react";
-import { MainContentDiv, NameDate, ScrollDiv } from "../../../commonComponents";
+import { MainContentDiv, ScrollDiv } from "../../../commonComponents";
 import { ZillowDealFinderCard } from "./zillowDealFinderCard";
 
 export function ZillowDealFinderPage() {
@@ -7,7 +7,7 @@ export function ZillowDealFinderPage() {
     <ScrollDiv>
       <ZillowDealFinderCard toFullscreen />
       <MainContentDiv>
-        <NameDate date="6/10/2022" />
+        <h1>Introduction</h1>
       </MainContentDiv>
     </ScrollDiv>
   );

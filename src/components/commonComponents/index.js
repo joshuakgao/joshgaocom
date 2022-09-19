@@ -3,4 +3,4 @@ export * from "./rowDiv";
 export * from "./scrollDiv";
 export * from "./youtubeEmbed";
 export * from "./mainContentDiv";
-export * from "./nameDate";
+export * from "./contentHeader";

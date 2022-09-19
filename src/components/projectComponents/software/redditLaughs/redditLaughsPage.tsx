@@ -1,5 +1,9 @@
 import React from "react";
-import { MainContentDiv, NameDate, ScrollDiv } from "../../../commonComponents";
+import {
+  ContentHeader,
+  MainContentDiv,
+  ScrollDiv,
+} from "../../../commonComponents";
 import { RedditLaughsCard } from "./redditLaughsCard";
 
 export function RedditLaughsPage() {
@@ -7,7 +11,11 @@ export function RedditLaughsPage() {
     <ScrollDiv>
       <RedditLaughsCard toFullscreen />
       <MainContentDiv>
-        <NameDate date="6/13/2022" />
+        <ContentHeader
+          date="6/13/2022"
+          skills="Python"
+          components="Reddit API Scraping - Python Video Editing"
+        />
         <h2>Introduction</h2>
       </MainContentDiv>
     </ScrollDiv>

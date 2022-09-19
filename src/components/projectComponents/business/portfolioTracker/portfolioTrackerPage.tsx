@@ -1,5 +1,5 @@
 import React from "react";
-import { MainContentDiv, NameDate, ScrollDiv } from "../../../commonComponents";
+import { MainContentDiv, ScrollDiv } from "../../../commonComponents";
 import { PortfolioTrackerCard } from "./portfolioTrackerCard";
 
 export function PortfolioTrackerPage() {
@@ -7,7 +7,6 @@ export function PortfolioTrackerPage() {
     <ScrollDiv>
       <PortfolioTrackerCard toFullscreen />
       <MainContentDiv>
-        <NameDate date="9/12/2021" />
         <h2>Introduction</h2>
         <iframe
           style={styles.iframe}
