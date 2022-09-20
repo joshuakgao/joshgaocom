@@ -14,6 +14,7 @@ export function RedditLaughsPage() {
         <ContentHeader
           date="6/13/2022"
           components="Reddit API Scraping - Python Video Editing"
+          github="https://github.com/tugonbob/RedditLaughs"
         />
         <h2>Introduction</h2>
         <p>
