@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.6fee5a67.css",
-    "main.js": "/static/js/main.34b0f4fe.js",
+    "main.css": "/static/css/main.ee2d3dc8.css",
+    "main.js": "/static/js/main.600509c3.js",
+    "static/media/redditToYoutube.png": "/static/media/redditToYoutube.5a6ff8700937717e62a7.png",
     "static/media/tofu60_profile.jpeg": "/static/media/tofu60_profile.7eafaedf957c42aaf019.jpeg",
     "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
     "static/media/chatbot_title_card.png": "/static/media/chatbot_title_card.0803b57c1f27dd24b49e.png",
@@ -11,12 +12,13 @@
     "static/media/Avenir-Black.otf": "/static/media/Avenir-Black.7ce894e12078ca8c5134.otf",
     "static/media/Avenir-Book.otf": "/static/media/Avenir-Book.813557df4c7a90b1a474.otf",
     "static/media/Avenir-Roman.otf": "/static/media/Avenir-Roman.0bfb049d9455e81fd1da.otf",
+    "static/media/zillow.jpg": "/static/media/zillow.6346a83c5c802a1753ce.jpg",
     "index.html": "/index.html",
-    "main.6fee5a67.css.map": "/static/css/main.6fee5a67.css.map",
-    "main.34b0f4fe.js.map": "/static/js/main.34b0f4fe.js.map"
+    "main.ee2d3dc8.css.map": "/static/css/main.ee2d3dc8.css.map",
+    "main.600509c3.js.map": "/static/js/main.600509c3.js.map"
   },
   "entrypoints": [
-    "static/css/main.6fee5a67.css",
-    "static/js/main.34b0f4fe.js"
+    "static/css/main.ee2d3dc8.css",
+    "static/js/main.600509c3.js"
   ]
 }
