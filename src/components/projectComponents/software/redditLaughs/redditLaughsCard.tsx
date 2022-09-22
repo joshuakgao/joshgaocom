@@ -10,7 +10,7 @@ export function RedditLaughsCard({ toFullscreen }: { toFullscreen?: boolean }) {
       backgroundSize="cover"
       backgroundColor="#1e1e1e"
       foregroundImage={redditLogo}
-      foregroundSize="25vw"
+      foregroundSize="15vw"
       foregroundPosition={["bottom", "center"]}
       toFullscreen={toFullscreen}
       to="/software/redditLaughs"
