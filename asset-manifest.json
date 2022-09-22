@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0a9b8dbc.css",
-    "main.js": "/static/js/main.3bdd2e70.js",
+    "main.js": "/static/js/main.325ce3e4.js",
     "static/media/redditToYoutube.png": "/static/media/redditToYoutube.5a6ff8700937717e62a7.png",
     "static/media/tofu60_profile.jpeg": "/static/media/tofu60_profile.7eafaedf957c42aaf019.jpeg",
     "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
@@ -15,10 +15,10 @@
     "static/media/zillow.jpg": "/static/media/zillow.6346a83c5c802a1753ce.jpg",
     "index.html": "/index.html",
     "main.0a9b8dbc.css.map": "/static/css/main.0a9b8dbc.css.map",
-    "main.3bdd2e70.js.map": "/static/js/main.3bdd2e70.js.map"
+    "main.325ce3e4.js.map": "/static/js/main.325ce3e4.js.map"
   },
   "entrypoints": [
     "static/css/main.0a9b8dbc.css",
-    "static/js/main.3bdd2e70.js"
+    "static/js/main.325ce3e4.js"
   ]
 }
