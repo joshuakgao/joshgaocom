@@ -5,12 +5,11 @@ import "./styles.css";
 
 export function Navbar({ d }: { d?: boolean }) {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-
   return (
     <div
       style={{
-        ...styles.navbarContainer,
         ...{ border: d ? "1px black solid" : undefined },
+        ...styles.navbarContainer,
       }}
       className="navbar"
     >
@@ -37,5 +36,6 @@ const styles: StyleSheet = {
     display: "flex",
     justifyContent: "space-between",
     zIndex: 9,
+    pointerEvents: "none",
   },
 };
