@@ -1,6 +1,6 @@
 import React, { CSSProperties } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FontawesomeObject, SizeProp } from "@fortawesome/fontawesome-svg-core";
+import { SizeProp } from "@fortawesome/fontawesome-svg-core";
 
 export function FaIcon({
   className,
