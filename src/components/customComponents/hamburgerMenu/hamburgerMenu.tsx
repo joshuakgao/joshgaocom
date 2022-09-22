@@ -152,6 +152,7 @@ const styles: StyleSheet = {
     zIndex: 10,
     backgroundColor: "#f7f7f7",
     border: "1px black solid",
+    pointerEvents: "auto",
   },
   menu: {
     display: "flex",
