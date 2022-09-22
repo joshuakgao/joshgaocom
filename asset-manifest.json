@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.c8194278.css",
-    "main.js": "/static/js/main.bb245b5b.js",
-    "static/media/redditToYoutube.png": "/static/media/redditToYoutube.5a6ff8700937717e62a7.png",
+    "main.js": "/static/js/main.cf4d18c6.js",
     "static/media/tofu60_profile.jpeg": "/static/media/tofu60_profile.7eafaedf957c42aaf019.jpeg",
     "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
+    "static/media/memeBackground.jpg": "/static/media/memeBackground.010d73b81e62e75f4760.jpg",
     "static/media/chatbot_title_card.png": "/static/media/chatbot_title_card.0803b57c1f27dd24b49e.png",
     "static/media/watermelon.png": "/static/media/watermelon.b4012f507d40a1774201.png",
+    "static/media/reddit.png": "/static/media/reddit.ad08f878c513c734eeb5.png",
     "static/media/Vito-CondensedRegular.woff": "/static/media/Vito-CondensedRegular.aeb0a604aa50c3c34b78.woff",
     "static/media/Joshua-Gao_Resume.pdf": "/static/media/Joshua-Gao_Resume.235255821cef865ad8e8.pdf",
     "static/media/Avenir-Black.otf": "/static/media/Avenir-Black.7ce894e12078ca8c5134.otf",
@@ -15,10 +16,10 @@
     "static/media/zillow.jpg": "/static/media/zillow.6346a83c5c802a1753ce.jpg",
     "index.html": "/index.html",
     "main.c8194278.css.map": "/static/css/main.c8194278.css.map",
-    "main.bb245b5b.js.map": "/static/js/main.bb245b5b.js.map"
+    "main.cf4d18c6.js.map": "/static/js/main.cf4d18c6.js.map"
   },
   "entrypoints": [
     "static/css/main.c8194278.css",
-    "static/js/main.bb245b5b.js"
+    "static/js/main.cf4d18c6.js"
   ]
 }
