@@ -26,6 +26,13 @@ export function TitleCard({
   const navigate = useNavigate();
   const myRef = useRef<null | HTMLDivElement>(null);
 
+  // window.addEventListener("orientationchange", () => {
+  //   let afterOrientationChange = () => {
+  //     window.removeEventListener("resize", afterOrientationChange);
+  //   };
+  //   window.addEventListener("resize", afterOrientationChange);
+  // });
+
   const goToPage = () => {
     if (!myRef.current) return;
 
@@ -68,7 +75,7 @@ export function TitleCard({
         ...styles.projectContainer,
         ...{
           border: d ? "1px solid black" : undefined,
-          marginBottom: toFullscreen ? "10vh" : "40vh",
+          marginBottom: toFullscreen ? "10%" : "20%",
         },
       }}
       className={`title-card-container`}
@@ -112,14 +119,14 @@ const styles: StyleSheet = {
   projectContainer: {
     display: "flex",
     height: "100vh",
-    width: "100vw",
+    width: "100%",
     alignItems: "center",
     justifyContent: "center",
   },
   titleCard: {
     display: "flex",
-    height: "calc(80vh - 80px)",
-    width: "calc(70vw + 80px)",
+    height: "80%",
+    width: "70%",
     boxSizing: "border-box",
     paddingTop: "calc(10vh + 16px)",
     paddingBottom: "calc(8vh + 16px)",
@@ -129,5 +136,6 @@ const styles: StyleSheet = {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     textDecorationLine: "none",
+    overflow: "hidden",
   },
 };

@@ -35,12 +35,12 @@
 
 @keyframes enlarge-fullscreen-reverse {
   0% {
-    height: 105vh;
-    width: 105vw;
+    height: 105%;
+    width: 105%;
   }
   100% {
-    height: calc(80vh - 80px);
-    width: calc(70vw + 80px);
+    height: 80%;
+    width: 70%;
   }
 }
 
@@ -97,9 +97,9 @@
 }
 
 .title-card-container h1 {
-  font-size: calc(36px + 3vw);
+  font-size: calc(16px + 4vw);
 }
 
 .title-card-container h2 {
-  font-size: 18px;
+  font-size: 16px;
 }
