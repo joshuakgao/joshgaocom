@@ -9,12 +9,12 @@ export function Tofu60Card({
   return (
     <TitleCard
       backgroundImage={tofu60_profile}
-      textLocation={["left", "bottom"]}
+      textPosition={["left", "bottom"]}
       to="/other/tofu60"
       toFullscreen={toFullscreen}
     >
-      <h1>Tofu60</h1>
-      <h2>A custom built mechanical keyboard</h2>
+      <h1 className="primary">Tofu60</h1>
+      <h2 className="primary">A custom built mechanical keyboard</h2>
     </TitleCard>
   );
 }

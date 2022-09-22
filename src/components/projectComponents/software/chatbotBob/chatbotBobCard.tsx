@@ -9,7 +9,7 @@ export function ChatbotBobCard({
   return (
     <TitleCard
       backgroundImage={chatbot_background}
-      textLocation={["bottom", "left"]}
+      textPosition={["bottom", "left"]}
       to="/software/chatbotBob"
       toFullscreen={toFullscreen}
     >

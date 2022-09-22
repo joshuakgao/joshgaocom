@@ -10,7 +10,7 @@ export function PortfolioTrackerCard({
   return (
     <TitleCard
       backgroundImage={stockBackground}
-      textLocation={["bottom", "left"]}
+      textPosition={["bottom", "left"]}
       to="/business/PortfolioTracker"
       toFullscreen={toFullscreen}
     >

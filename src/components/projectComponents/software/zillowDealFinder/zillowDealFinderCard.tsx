@@ -12,7 +12,7 @@ export function ZillowDealFinderCard({
       backgroundSize="20vh"
       backgroundPosition="85% 85%"
       backgroundColor="#006afe"
-      textLocation={["top", "center"]}
+      textPosition={["top", "center"]}
       to="/software/zillowDealFinder"
       toFullscreen={toFullscreen}
     >

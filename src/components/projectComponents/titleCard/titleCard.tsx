@@ -71,10 +71,6 @@ export function TitleCard({
   };
 
   let parseForegroundPosition = () => {
-    // let top = "calc(10vh + 16px)";
-    // let bottom = "calc(10vh + 16px)";
-    // let right = "calc(8vw + 16px)";
-    // let left = "calc(8vw + 16px";
     let top;
     let bottom;
     let right;
@@ -160,25 +156,25 @@ export function TitleCard({
             : "enlarge-fullscreen-reverse link"
         }
       >
-        <div
-          style={{
-            // display: "flex",
-            position: "absolute",
-            margin: "auto",
-            top,
-            bottom,
-            right,
-            left,
-            height: foregroundSize,
-            width: foregroundSize,
-            border: "1px red solid",
-          }}
-        >
-          <img
-            src={foregroundImage}
-            style={{ height: foregroundSize, width: foregroundSize }}
-          />
-        </div>
+        {foregroundImage ? (
+          <div
+            style={{
+              position: "absolute",
+              margin: "auto",
+              top,
+              bottom,
+              right,
+              left,
+              height: foregroundSize,
+              width: foregroundSize,
+            }}
+          >
+            <img
+              src={foregroundImage}
+              style={{ height: foregroundSize, width: foregroundSize }}
+            />
+          </div>
+        ) : null}
 
         <div className={toFullscreen ? "fade-in-out" : "remove-fade-in"}>
           {children}
