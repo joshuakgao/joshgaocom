@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { FullscreenDiv, FaIcon, RowDiv } from "../../commonComponents";
-import github from "../../../assets/images/github.png";
-import cv from "../../../assets/images/cv.png";
-import cvPdf from "../../../assets/docs/Joshua-Gao_Resume.pdf";
-import { Link } from "react-router-dom";
-import { faFile } from "@fortawesome/free-regular-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faFileAlt } from "@fortawesome/free-regular-svg-icons";
+import React from "react";
+import { Link } from "react-router-dom";
+import cvPdf from "../../../assets/docs/Joshua-Gao_Resume.pdf";
+import { FaIcon, FullscreenDiv, RowDiv } from "../../commonComponents";
 import "./styles.css";
 
 export function HamburgerMenu({
@@ -58,6 +56,7 @@ export function HamburgerMenu({
       <FullscreenDiv
         style={{
           ...styles.menuContainer,
+          ...{ pointerEvents: menuOpen ? "auto" : "none" },
         }}
         className={`menu-container ${
           menuOpen ? "fade-background" : "fade-background-reverse"
@@ -106,14 +105,20 @@ export function HamburgerMenu({
             </h4>
             <RowDiv>
               <a
+                style={styles.footerLink}
                 href="https://github.com/tugonbob"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaIcon icon={faGithub} size="3x" />
               </a>
-              <a href={cvPdf} target="_blank" rel="noopener noreferrer">
-                <FaIcon icon={faFile} size="3x" />
+              <a
+                style={styles.footerLink}
+                href={cvPdf}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaIcon icon={faFileAlt} size="3x" />
               </a>
             </RowDiv>
           </div>
@@ -152,7 +157,6 @@ const styles: StyleSheet = {
     zIndex: 10,
     backgroundColor: "#f7f7f7",
     border: "1px black solid",
-    pointerEvents: "auto",
   },
   menu: {
     display: "flex",
@@ -173,5 +177,8 @@ const styles: StyleSheet = {
     alignItems: "flex-end",
     marginRight: 32,
     marginBottom: 16,
+  },
+  footerLink: {
+    marginLeft: 8,
   },
 };
