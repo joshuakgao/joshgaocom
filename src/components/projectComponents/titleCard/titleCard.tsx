@@ -9,7 +9,10 @@ export function TitleCard({
   backgroundColor,
   backgroundSize = "cover",
   backgroundPosition = "center",
-  textLocation = ["top", "left"],
+  foregroundImage,
+  foregroundSize = "100px",
+  foregroundPosition = ["center"],
+  textPosition = ["top", "left"],
   to = "/",
   toFullscreen = false,
 }: {
@@ -19,19 +22,15 @@ export function TitleCard({
   backgroundColor?: string;
   backgroundSize?: string | number;
   backgroundPosition?: string;
-  textLocation?: [string, string] | [string];
+  foregroundImage?: string;
+  foregroundSize?: string;
+  foregroundPosition?: [string, string] | [string];
+  textPosition?: [string, string] | [string];
   to?: string;
   toFullscreen?: boolean;
 }) {
   const navigate = useNavigate();
   const myRef = useRef<null | HTMLDivElement>(null);
-
-  // window.addEventListener("orientationchange", () => {
-  //   let afterOrientationChange = () => {
-  //     window.removeEventListener("resize", afterOrientationChange);
-  //   };
-  //   window.addEventListener("resize", afterOrientationChange);
-  // });
 
   const goToPage = () => {
     if (!myRef.current) return;
@@ -47,26 +46,84 @@ export function TitleCard({
     }, 500);
   };
 
-  // parse textLocation
-  let alignItems = "";
-  let justifyContent = "";
+  let parseTextPosition = () => {
+    let alignItems = "";
+    let justifyContent = "";
 
-  let location = textLocation.map((e) => e.toLocaleLowerCase());
+    let position = textPosition.map((e) => e.toLocaleLowerCase());
 
-  // deal with all locations except center, because center could be meant for alignItems and justifyContent
-  if (location.includes("left")) justifyContent = "flex-start";
-  else if (location.includes("right")) justifyContent = "flex-end";
-  if (location.includes("top")) alignItems = "flex-start";
-  else if (location.includes("bottom")) alignItems = "flex-end";
+    // deal with all positions except center, because center could be meant for alignItems and justifyContent
+    if (position.includes("left")) justifyContent = "flex-start";
+    else if (position.includes("right")) justifyContent = "flex-end";
+    if (position.includes("top")) alignItems = "flex-start";
+    else if (position.includes("bottom")) alignItems = "flex-end";
 
-  // deal with center. If either alignItems and justifyContent is empty, assume center is meant for that variable
-  if (location.includes("center")) {
-    if (alignItems === "" && justifyContent === "") {
-      alignItems = "center";
-      justifyContent = "center";
-    } else if (alignItems === "") alignItems = "center";
-    else if (justifyContent === "") justifyContent = "center";
-  }
+    // deal with center. If either alignItems and justifyContent is empty, assume center is meant for that variable
+    if (position.includes("center")) {
+      if (alignItems === "" && justifyContent === "") {
+        alignItems = "center";
+        justifyContent = "center";
+      } else if (alignItems === "") alignItems = "center";
+      else if (justifyContent === "") justifyContent = "center";
+    }
+
+    return { alignItems, justifyContent };
+  };
+
+  let parseForegroundPosition = () => {
+    // let top = "calc(10vh + 16px)";
+    // let bottom = "calc(10vh + 16px)";
+    // let right = "calc(8vw + 16px)";
+    // let left = "calc(8vw + 16px";
+    let top;
+    let bottom;
+    let right;
+    let left;
+
+    let position = foregroundPosition.map((e) => e.toLocaleLowerCase());
+
+    // deal with all positions except center
+    if (position.includes("left")) left = "calc(8vw + 16px)";
+    else if (position.includes("right")) right = "calc(8vw + 16px)";
+    if (position.includes("top")) top = "calc(10vh + 16px)";
+    else if (position.includes("bottom")) bottom = "calc(10vh + 16px)";
+
+    // deal with center. If either alignItems and justifyContent is empty, assume center is meant for that variable
+    if (position.includes("center")) {
+      if (
+        top === undefined &&
+        bottom === undefined &&
+        right === undefined &&
+        left === undefined
+      ) {
+        top = 0;
+        bottom = 0;
+        right = 0;
+        left = 0;
+      } else if (left === undefined && right === undefined) {
+        left = 0;
+        right = 0;
+      } else if (top === undefined && bottom === undefined) {
+        top = 0;
+        bottom = 0;
+      }
+    }
+
+    return { top, bottom, right, left };
+  };
+
+  // parse textPosition
+  let textPositionObj = parseTextPosition();
+  let alignItems = textPositionObj.alignItems;
+  let justifyContent = textPositionObj.justifyContent;
+
+  // parse foregroundLocation
+  let foregroundPositionObj = parseForegroundPosition();
+  let top = foregroundPositionObj.top;
+  let bottom = foregroundPositionObj.bottom;
+  let right = foregroundPositionObj.right;
+  let left = foregroundPositionObj.left;
+  if (foregroundPosition[0] === "center") console.log(foregroundPositionObj);
 
   return (
     <div
@@ -103,6 +160,26 @@ export function TitleCard({
             : "enlarge-fullscreen-reverse link"
         }
       >
+        <div
+          style={{
+            // display: "flex",
+            position: "absolute",
+            margin: "auto",
+            top,
+            bottom,
+            right,
+            left,
+            height: foregroundSize,
+            width: foregroundSize,
+            border: "1px red solid",
+          }}
+        >
+          <img
+            src={foregroundImage}
+            style={{ height: foregroundSize, width: foregroundSize }}
+          />
+        </div>
+
         <div className={toFullscreen ? "fade-in-out" : "remove-fade-in"}>
           {children}
         </div>
@@ -124,6 +201,7 @@ const styles: StyleSheet = {
     justifyContent: "center",
   },
   titleCard: {
+    position: "relative",
     display: "flex",
     height: "80%",
     width: "70%",

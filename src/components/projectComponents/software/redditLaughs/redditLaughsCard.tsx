@@ -1,12 +1,17 @@
 import { TitleCard } from "../../titleCard";
 import redditYoutube from "../../../../assets/projects/software/redditLaughs/redditToYoutube.png";
+import memeBackground from "../../../../assets/projects/software/redditLaughs/memeBackground.jpg";
+import redditLogo from "../../../../assets/projects/software/redditLaughs/reddit.png";
 
 export function RedditLaughsCard({ toFullscreen }: { toFullscreen?: boolean }) {
   return (
     <TitleCard
-      backgroundImage={redditYoutube}
+      backgroundImage={memeBackground}
       backgroundSize="cover"
       backgroundColor="#1e1e1e"
+      foregroundImage={redditLogo}
+      foregroundSize="25vw"
+      foregroundPosition={["bottom", "center"]}
       toFullscreen={toFullscreen}
       to="/software/redditLaughs"
     >
