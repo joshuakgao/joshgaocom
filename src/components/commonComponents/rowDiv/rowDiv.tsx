@@ -14,9 +14,9 @@ export function RowDiv({
   return (
     <div
       style={{
-        ...style,
-        ...styles.rowDiv,
         ...{ border: d ? "1px black solid" : undefined },
+        ...styles.rowDiv,
+        ...style,
       }}
       className={className}
     >
