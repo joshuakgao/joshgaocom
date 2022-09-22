@@ -5,6 +5,7 @@ import {
   faGithub,
   faJs,
   faYoutube,
+  faPython,
 } from "@fortawesome/free-brands-svg-icons";
 import { FaIcon } from "../faIcon";
 import "./styles.css";
@@ -21,8 +22,9 @@ export function ContentHeader({
   sources?: { [key: string]: string }[];
 }) {
   let skillsObj: { [key: string]: any } = {
-    js: <FaIcon icon={faJs} size="1x" />,
-    googleDrive: <FaIcon icon={faGoogleDrive} size="1x" />,
+    googleDrive: <FaIcon icon={faGoogleDrive} size="lg" />,
+    js: <FaIcon icon={faJs} size="lg" />,
+    python: <FaIcon icon={faPython} size="lg" />,
   };
 
   let sourcesObj: { [key: string]: any } = {
@@ -32,46 +34,53 @@ export function ContentHeader({
   };
 
   return (
-    <RowDiv style={{ alignItems: "center", justifyContent: "space-between" }}>
-      <div>
-        {/* NAME DATE */}
-        <p style={{ marginTop: 0, marginBottom: 0 }}>Joshua Gao: {date}</p>
-
-        {/* SKILLS */}
-        {skills ? (
+    <>
+      <RowDiv style={{ alignItems: "center", justifyContent: "space-between" }}>
+        <div>
           <RowDiv>
-            {skills.map((skill) => {
-              return <div style={{ marginRight: 4 }}>{skillsObj[skill]}</div>;
+            {/* NAME DATE */}
+            <p style={{ marginTop: 0, marginBottom: 0 }}>Joshua Gao: {date}</p>
+
+            {/* SKILLS */}
+            {skills ? (
+              <div style={{ marginLeft: 8 }}>
+                {skills.map((skill) => {
+                  return (
+                    <div style={{ marginLeft: 4 }}>{skillsObj[skill]}</div>
+                  );
+                })}
+              </div>
+            ) : null}
+          </RowDiv>
+
+          {/* MAIN IDEAS */}
+          {projectComponents ? (
+            <div>
+              <p style={styles.bold}>{projectComponents}</p>
+            </div>
+          ) : null}
+        </div>
+
+        {/* SOURCE LINKS */}
+        {sources ? (
+          <RowDiv>
+            {sources.map((obj) => {
+              return (
+                <a
+                  href={obj[Object.keys(obj)[0]]} // get object value with its own key
+                  target="_blank"
+                  rel="nopener noreferrer"
+                  style={{ marginRight: 4 }}
+                >
+                  {sourcesObj[Object.keys(obj)[0]]}
+                </a>
+              );
             })}
           </RowDiv>
         ) : null}
-
-        {/* MAIN IDEAS */}
-        {projectComponents ? (
-          <RowDiv style={{ marginTop: 16 }}>
-            <p style={styles.bold}>{projectComponents}</p>
-          </RowDiv>
-        ) : null}
-      </div>
-
-      {/* SOURCE LINKS */}
-      {sources ? (
-        <RowDiv>
-          {sources.map((obj) => {
-            return (
-              <a
-                href={obj[Object.keys(obj)[0]]} // get object value with its own key
-                target="_blank"
-                rel="nopener noreferrer"
-                style={{ marginRight: 4 }}
-              >
-                {sourcesObj[Object.keys(obj)[0]]}
-              </a>
-            );
-          })}
-        </RowDiv>
-      ) : null}
-    </RowDiv>
+      </RowDiv>
+      <hr />
+    </>
   );
 }
 
@@ -86,12 +95,6 @@ const styles: StyleSheet = {
     marginTop: 0,
   },
   icon: {
-    border: "2px solid var(--tertiary)",
-    borderRadius: "50%",
-    textAlign: "center",
-    lineHeight: 100,
-    verticalAlign: "middle",
-    padding: 8,
-    color: "var(--tertiary)",
+    zIndex: 1,
   },
 };
