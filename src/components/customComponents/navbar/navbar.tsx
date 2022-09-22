@@ -35,7 +35,7 @@ const styles: StyleSheet = {
     width: "100vw",
     display: "flex",
     justifyContent: "space-between",
-    zIndex: 9,
     pointerEvents: "none",
+    zIndex: 1,
   },
 };

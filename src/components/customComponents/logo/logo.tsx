@@ -14,6 +14,7 @@ export function Logo({
     <RowDiv
       className="logo"
       style={{
+        pointerEvents: "auto",
         zIndex: 11,
         marginLeft: "2vw",
         ...{ border: d ? "1px black solid" : undefined },

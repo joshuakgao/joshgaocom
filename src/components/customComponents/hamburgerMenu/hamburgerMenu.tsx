@@ -135,6 +135,7 @@ const styles: StyleSheet = {
     marginRight: "2vw",
     marginTop: "2vh",
     marginBottom: "2vh",
+    pointerEvents: "auto",
     zIndex: 11,
   },
   line: {
