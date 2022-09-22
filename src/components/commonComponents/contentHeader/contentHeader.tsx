@@ -43,13 +43,13 @@ export function ContentHeader({
 
             {/* SKILLS */}
             {skills ? (
-              <div style={{ marginLeft: 8 }}>
+              <RowDiv style={{ marginLeft: 8, marginBottom: 4 }}>
                 {skills.map((skill) => {
                   return (
                     <div style={{ marginLeft: 4 }}>{skillsObj[skill]}</div>
                   );
                 })}
-              </div>
+              </RowDiv>
             ) : null}
           </RowDiv>
 
