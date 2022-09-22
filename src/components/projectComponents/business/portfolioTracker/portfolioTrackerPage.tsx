@@ -1,5 +1,9 @@
 import React from "react";
-import { MainContentDiv, ScrollDiv } from "../../../commonComponents";
+import {
+  ContentHeader,
+  MainContentDiv,
+  ScrollDiv,
+} from "../../../commonComponents";
 import { PortfolioTrackerCard } from "./portfolioTrackerCard";
 
 export function PortfolioTrackerPage() {
@@ -7,6 +11,11 @@ export function PortfolioTrackerPage() {
     <ScrollDiv>
       <PortfolioTrackerCard toFullscreen />
       <MainContentDiv>
+        <ContentHeader
+          date="3/9/2022"
+          projectComponents="Javascript - Google Sheets"
+          googleDrive="https://docs.google.com/spreadsheets/d/1VVdyaR6301wR6bW8tCLX5kh-q9Qt_3s0AiSrbTvzYKQ/edit?usp=sharing"
+        />
         <h2>Introduction</h2>
         <iframe
           style={styles.iframe}

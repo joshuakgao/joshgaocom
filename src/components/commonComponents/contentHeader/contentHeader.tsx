@@ -1,21 +1,25 @@
 import React from "react";
 import { RowDiv } from "../rowDiv";
-import githubIcon from "../../../assets/images/github.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogleDrive, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FaIcon } from "../faIcon";
 
 export function ContentHeader({
   date,
   skills,
-  components,
+  projectComponents,
   github,
+  googleDrive,
 }: {
   date: string;
   skills?: string;
-  components?: string;
+  projectComponents?: string;
   github?: string;
+  googleDrive?: string;
 }) {
   return (
     <div>
-      <p>Joshua Gao - {date}</p>
+      <p>Joshua Gao: {date}</p>
 
       {skills ? (
         <RowDiv>
@@ -23,15 +27,21 @@ export function ContentHeader({
         </RowDiv>
       ) : null}
 
-      {components ? (
+      {projectComponents ? (
         <RowDiv>
-          <p style={styles.bold}>{components}</p>
+          <p style={styles.bold}>{projectComponents}</p>
         </RowDiv>
       ) : null}
 
       {github ? (
         <a href={github} target="_blank" rel="noopener noreferrer">
-          <img style={styles.image} className="icon" src={githubIcon} />
+          <FaIcon style={styles.icon} icon={faGithub} size="2x" />
+        </a>
+      ) : null}
+
+      {googleDrive ? (
+        <a href={googleDrive} target="_blank" rel="noopener noreferrer">
+          <FaIcon style={styles.icon} icon={faGoogleDrive} size="2x" />
         </a>
       ) : null}
     </div>
@@ -48,9 +58,7 @@ const styles: StyleSheet = {
     marginBottom: 0,
     marginTop: 0,
   },
-  image: {
+  icon: {
     marginTop: 16,
-    height: 36,
-    width: 36,
   },
 };

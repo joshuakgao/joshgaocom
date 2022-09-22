@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { FullscreenDiv, RowDiv } from "../../commonComponents";
+import { FullscreenDiv, FaIcon, RowDiv } from "../../commonComponents";
 import github from "../../../assets/images/github.png";
 import cv from "../../../assets/images/cv.png";
 import cvPdf from "../../../assets/docs/Joshua-Gao_Resume.pdf";
 import { Link } from "react-router-dom";
+import { faFile } from "@fortawesome/free-regular-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./styles.css";
 
 export function HamburgerMenu({
@@ -108,10 +110,10 @@ export function HamburgerMenu({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img className="icon" src={github} />
+                <FaIcon icon={faGithub} size="3x" />
               </a>
               <a href={cvPdf} target="_blank" rel="noopener noreferrer">
-                <img className="icon" src={cv} />
+                <FaIcon icon={faFile} size="3x" />
               </a>
             </RowDiv>
           </div>

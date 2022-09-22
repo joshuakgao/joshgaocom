@@ -181,8 +181,8 @@
 }
 
 .hamburger-menu-footer .icon {
-  height: 5vh;
-  width: 5vh;
+  height: 5.5vh;
+  width: 5.5vh;
   filter: invert(18%) sepia(0%) saturate(0%) hue-rotate(318deg) brightness(98%)
     contrast(89%);
 }
