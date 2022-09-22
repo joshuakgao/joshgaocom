@@ -14,6 +14,7 @@ export function PortfolioTrackerPage() {
         <ContentHeader
           date="3/9/2022"
           skills={["js", "googleDrive"]}
+          projectComponents="Data Scraping - Excel Scripting"
           sources={[
             {
               googleDrive:
@@ -21,6 +22,12 @@ export function PortfolioTrackerPage() {
             },
           ]}
         />
+        <h2>Tldr</h2>
+        <p>
+          I created a stock market portfolio tracker with Google Sheets to track
+          my returns. I input every trade, dividend, and desposit and use Google
+          Sheet's App Script to code up the calulations of all the data.
+        </p>
         <h2>Introduction</h2>
         <iframe
           style={styles.iframe}
