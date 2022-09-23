@@ -119,7 +119,6 @@ export function TitleCard({
   let bottom = foregroundPositionObj.bottom;
   let right = foregroundPositionObj.right;
   let left = foregroundPositionObj.left;
-  if (foregroundPosition[0] === "center") console.log(foregroundPositionObj);
 
   return (
     <div
