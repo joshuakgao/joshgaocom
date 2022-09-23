@@ -15,18 +15,17 @@ export function PortfolioTrackerPage() {
           date="3/9/2022"
           skills={["js", "googleDrive"]}
           projectComponents="Data Scraping - Excel Scripting"
-          sources={[
-            {
-              googleDrive:
-                "https://docs.google.com/spreadsheets/d/1VVdyaR6301wR6bW8tCLX5kh-q9Qt_3s0AiSrbTvzYKQ/edit?usp=sharing",
-            },
-          ]}
+          sources={{
+            github: "https://github.com/tugonbob/PortfolioTracker.git",
+            googleDrive:
+              "https://docs.google.com/spreadsheets/d/1VVdyaR6301wR6bW8tCLX5kh-q9Qt_3s0AiSrbTvzYKQ/edit?usp=sharing",
+          }}
         />
-        <h2>Tldr</h2>
+        <h2>Quick Summary</h2>
         <p>
           I created a stock market portfolio tracker with Google Sheets to track
-          my returns. I input every trade, dividend, and desposit and use Google
-          Sheet's App Script to code up the calulations of all the data.
+          my returns. I input every trade, dividend, and deposit and use Google
+          Sheet's App Script to code up the calculation of all the data.
         </p>
         <h2>Introduction</h2>
         <iframe

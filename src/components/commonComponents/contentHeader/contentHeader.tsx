@@ -19,7 +19,7 @@ export function ContentHeader({
   date: string;
   skills?: string[];
   projectComponents?: string;
-  sources?: { [key: string]: string }[];
+  sources?: { [key: string]: string };
 }) {
   let skillsObj: { [key: string]: any } = {
     googleDrive: <FaIcon icon={faGoogleDrive} size="lg" />,
@@ -64,18 +64,16 @@ export function ContentHeader({
         {/* SOURCE LINKS */}
         {sources ? (
           <RowDiv>
-            {sources.map((obj) => {
-              return (
-                <a
-                  href={obj[Object.keys(obj)[0]]} // get object value with its own key
-                  target="_blank"
-                  rel="nopener noreferrer"
-                  style={{ marginRight: 4 }}
-                >
-                  {sourcesObj[Object.keys(obj)[0]]}
-                </a>
-              );
-            })}
+            {Object.keys(sources).map((source) => (
+              <a
+                href={sources[source]} // get object value with its own key
+                target="_blank"
+                rel="nopener noreferrer"
+                style={{ marginRight: 4 }}
+              >
+                {sourcesObj[source]}
+              </a>
+            ))}
           </RowDiv>
         ) : null}
       </RowDiv>

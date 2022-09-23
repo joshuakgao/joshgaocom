@@ -15,10 +15,10 @@ export function RedditLaughsPage() {
         <ContentHeader
           date="6/13/2022"
           projectComponents="Reddit API Scraping - Python Video Editing"
-          sources={[
-            { github: "https://github.com/tugonbob/RedditLaughs" },
-            { youtube: "https://youtu.be/suo1BnijcpE" },
-          ]}
+          sources={{
+            github: "https://github.com/tugonbob/RedditLaughs",
+            youtube: "https://youtu.be/suo1BnijcpE",
+          }}
           skills={["python"]}
         />
         <h2>Introduction</h2>
