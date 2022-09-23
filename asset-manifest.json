@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9b19e4b9.css",
-    "main.js": "/static/js/main.e3a02e27.js",
+    "main.js": "/static/js/main.afc14995.js",
     "static/media/tofu60_profile.jpeg": "/static/media/tofu60_profile.7eafaedf957c42aaf019.jpeg",
     "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
     "static/media/memeBackground.jpg": "/static/media/memeBackground.010d73b81e62e75f4760.jpg",
@@ -16,10 +16,10 @@
     "static/media/zillow.jpg": "/static/media/zillow.6346a83c5c802a1753ce.jpg",
     "index.html": "/index.html",
     "main.9b19e4b9.css.map": "/static/css/main.9b19e4b9.css.map",
-    "main.e3a02e27.js.map": "/static/js/main.e3a02e27.js.map"
+    "main.afc14995.js.map": "/static/js/main.afc14995.js.map"
   },
   "entrypoints": [
     "static/css/main.9b19e4b9.css",
-    "static/js/main.e3a02e27.js"
+    "static/js/main.afc14995.js"
   ]
 }
