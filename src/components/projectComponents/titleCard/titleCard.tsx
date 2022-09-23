@@ -127,7 +127,7 @@ export function TitleCard({
         ...styles.projectContainer,
         ...{
           border: d ? "1px solid black" : undefined,
-          marginBottom: toFullscreen ? "10%" : "20%",
+          marginBottom: toFullscreen ? "128px" : "20%",
         },
       }}
       className={`title-card-container`}
