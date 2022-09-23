@@ -3,17 +3,12 @@ import { HamburgerMenu } from "../hamburgerMenu";
 import { Logo } from "../logo";
 import "./styles.css";
 
-export function Navbar({ d }: { d?: boolean }) {
+export function Navbar() {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
   return (
-    <div
-      style={{
-        ...{ border: d ? "1px black solid" : undefined },
-        ...styles.navbarContainer,
-      }}
-      className="navbar"
-    >
-      <div style={{ ...styles.navbarContainer }} className="fade-in">
+    <div style={styles.navbarContainer} className="navbar">
+      <div style={styles.navbarContainer} className="fade-in">
         <Logo setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)} />
         <HamburgerMenu
           menuOpen={menuOpen}
@@ -36,6 +31,6 @@ const styles: StyleSheet = {
     display: "flex",
     justifyContent: "space-between",
     pointerEvents: "none",
-    zIndex: 1,
+    zIndex: 9,
   },
 };
