@@ -1,5 +1,9 @@
 import React from "react";
-import { ScrollDiv, YoutubeEmbed } from "../../../commonComponents";
+import {
+  ContentHeader,
+  ScrollDiv,
+  YoutubeEmbed,
+} from "../../../commonComponents";
 import { MainContentDiv } from "../../../commonComponents/mainContentDiv/mainContentDiv";
 import { Tofu60Card } from "./tofu60Card";
 
@@ -8,8 +12,11 @@ export function Tofu60Page() {
     <ScrollDiv>
       <Tofu60Card toFullscreen />
       <MainContentDiv>
-        <h2>My Custom Tofu60 Mechanical Keyboard</h2>
-        <h4>Quick Summary</h4>
+        <ContentHeader
+          date={"9/2/2022"}
+          sources={{ youtube: "https://www.youtube.com/watch?v=rhe_ndNJJKU" }}
+        />
+        <h3>Quick Summary</h3>
         <ul>
           <a
             href="https://kbdfans.com/products/kbdfans-tofu60-dz64-rgb-hot-swap-diy-kit"
@@ -38,7 +45,7 @@ export function Tofu60Page() {
             <li>Between PCB and Aluminum Plate</li>
           </ul>
         </ul>
-        <h3>Appearance</h3>
+        <h2>Appearance</h2>
         <p>
           As my first custom mechanical keyboard build, I highly recommend the
           Tofu60 from KBDfans. It’s built with this incredibly solid aluminum
@@ -47,7 +54,7 @@ export function Tofu60Page() {
           accented Olivia keycaps set, it sits beautifully on my desk as a
           center piece to my workstation.
         </p>
-        <h3>Sound</h3>
+        <h2>Sound</h2>
         <p>
           The outside looks incredible, but the most exciting aspect of the
           build is the typing sound that it produces. The Tofu60 comes with some
@@ -59,7 +66,7 @@ export function Tofu60Page() {
           slightly, and no amount of lubing seems to fix this issue. Maybe one
           day, I’ll try and apply the hole-e mod to dampen the sound.
         </p>
-        <h3>Modding</h3>
+        <h2>Modding</h2>
         <p>
           The pristine sound wasn’t achieved by accident however. I applied the
           tape mod and I lubed the Gateron Milky Yellow Switches and the
@@ -72,7 +79,7 @@ export function Tofu60Page() {
           results of all the modding.
         </p>
         <YoutubeEmbed embedId="rhe_ndNJJKU" />
-        <h3>Final Thoughts</h3>
+        <h2>Final Thoughts</h2>
         <p>
           I was quite hesitant to pull the trigger on ordering the Tofu60. The
           price was not trivial and I was worried I wasn’t going to get the same
@@ -84,3 +91,11 @@ export function Tofu60Page() {
     </ScrollDiv>
   );
 }
+
+type StyleSheet = {
+  [key: string]: React.CSSProperties;
+};
+
+const styles: StyleSheet = {
+  link: {},
+};
