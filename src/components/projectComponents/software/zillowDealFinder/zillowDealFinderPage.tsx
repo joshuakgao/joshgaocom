@@ -43,9 +43,9 @@ type StyleSheet = {
 const styles: StyleSheet = {
   iframe: {
     position: "absolute",
-    left: "2vw",
-    height: "65vh",
-    width: "96vw",
+    left: "7vw",
+    height: "86vh",
+    width: "86vw",
     maxWidth: 1615,
     maxHeight: 675,
     border: "1px solid lightgrey",

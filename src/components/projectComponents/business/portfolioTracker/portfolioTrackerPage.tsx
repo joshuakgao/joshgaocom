@@ -108,9 +108,9 @@ type StyleSheet = {
 const styles: StyleSheet = {
   iframe: {
     position: "absolute",
-    left: "2vw",
-    height: "95vh",
-    width: "95vw",
+    left: "3vw",
+    height: "94vh",
+    width: "94vw",
     maxWidth: 1615,
     maxHeight: 675,
     border: "1px solid lightgrey",
