@@ -4,17 +4,17 @@ import {
   JoshgaocomCard,
   RedditLaughsCard,
   VolleyballConnectCard,
-  ZillowDealFinderCard,
+  RealEstateDealFinderCard,
 } from "../../components/projectComponents/software";
 
 export function SoftwarePage() {
   return (
     <ScrollDiv>
-      <ChatbotBobCard />
-      <JoshgaocomCard />
-      <VolleyballConnectCard />
+      {/* <ChatbotBobCard /> */}
+      {/* <JoshgaocomCard /> */}
+      {/* <VolleyballConnectCard /> */}
       <RedditLaughsCard />
-      <ZillowDealFinderCard />
+      <RealEstateDealFinderCard />
     </ScrollDiv>
   );
 }

@@ -7,7 +7,7 @@ import {
   ChatbotBobPage,
   RedditLaughsPage,
   VolleyballConnectPage,
-  ZillowDealFinderPage,
+  RealEstateDealFinderPage,
 } from "./components/projectComponents/software";
 import { PortfolioTrackerPage } from "./components/projectComponents/business";
 import JoshgaocomPage from "./components/projectComponents/software/joshgaocom/joshgaocomPage";
@@ -27,8 +27,8 @@ function App() {
         />
         <Route path="/software/redditLaughs" element={<RedditLaughsPage />} />
         <Route
-          path="/software/zillowDealFinder"
-          element={<ZillowDealFinderPage />}
+          path="/software/realEstateDealFinder"
+          element={<RealEstateDealFinderPage />}
         />
 
         <Route path="/business" element={<BusinessPage />} />

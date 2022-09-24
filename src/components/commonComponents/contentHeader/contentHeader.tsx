@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FaIcon } from "../faIcon";
 import "./styles.css";
+import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 
 export function ContentHeader({
   date,
@@ -25,6 +26,7 @@ export function ContentHeader({
     googleDrive: <FaIcon icon={faGoogleDrive} size="lg" />,
     js: <FaIcon icon={faJs} size="lg" />,
     python: <FaIcon icon={faPython} size="lg" />,
+    sql: <FaIcon icon={faDatabase} size="lg" />,
   };
 
   let sourcesObj: { [key: string]: any } = {
