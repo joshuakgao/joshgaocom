@@ -43,7 +43,7 @@ export function TitleCard({
 
     setTimeout(() => {
       navigate(to);
-    }, 500);
+    }, 400);
   };
 
   let parseTextPosition = () => {
