@@ -1,4 +1,4 @@
-import ZillowLogo from "../../../../assets/projects/software/realEstateDealFinder/zillow.jpg";
+import background from "../../../../assets/projects/software/realEstateDealFinder/house2.jpg";
 import { TitleCard } from "../../titleCard";
 
 export function RealEstateDealFinderCard({
@@ -8,14 +8,12 @@ export function RealEstateDealFinderCard({
 }) {
   return (
     <TitleCard
-      foregroundImage={ZillowLogo}
-      foregroundPosition={["bottom", "right"]}
-      foregroundSize="calc(4vw + 10vh + 16px)"
-      backgroundColor="#006afe"
+      backgroundImage={background}
+      backgroundPosition={"center"}
       to="/software/realEstateDealFinder"
       toFullscreen={toFullscreen}
     >
-      <h1 className="primary">Zillow Deal Finder</h1>
+      <h1 className="primary">Real Estate Deal Finder</h1>
       <h2 className="primary">
         Automating the search for your next great real estate deal
       </h2>

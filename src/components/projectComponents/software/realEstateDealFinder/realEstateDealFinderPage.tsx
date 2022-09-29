@@ -156,7 +156,10 @@ type StyleSheet = {
 const styles: StyleSheet = {
   iframe: {
     position: "absolute",
-    left: "7vw",
+    right: 0,
+    left: 0,
+    marginLeft: "auto",
+    marginRight: "auto",
     height: "86vh",
     width: "86vw",
     maxWidth: 1615,
