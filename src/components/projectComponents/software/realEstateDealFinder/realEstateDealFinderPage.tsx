@@ -161,7 +161,7 @@ const styles: StyleSheet = {
     marginLeft: "auto",
     marginRight: "auto",
     height: "86vh",
-    width: "86vw",
+    width: "calc(40vw + 230px)",
     maxWidth: 1615,
     maxHeight: 675,
     border: "1px solid lightgrey",

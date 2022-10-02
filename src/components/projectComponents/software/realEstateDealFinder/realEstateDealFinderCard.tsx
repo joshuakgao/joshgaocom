@@ -1,4 +1,4 @@
-import background from "../../../../assets/projects/software/realEstateDealFinder/house2.jpg";
+import background from "../../../../assets/projects/software/realEstateDealFinder/beachHouse.jpg";
 import { TitleCard } from "../../titleCard";
 
 export function RealEstateDealFinderCard({
@@ -10,6 +10,7 @@ export function RealEstateDealFinderCard({
     <TitleCard
       backgroundImage={background}
       backgroundPosition={"center"}
+      textPosition={["top", "right"]}
       to="/software/realEstateDealFinder"
       toFullscreen={toFullscreen}
     >
