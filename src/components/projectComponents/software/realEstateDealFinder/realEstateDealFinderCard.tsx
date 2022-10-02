@@ -11,6 +11,7 @@ export function RealEstateDealFinderCard({
       backgroundImage={background}
       backgroundPosition={"center"}
       textPosition={["top", "right"]}
+      textWidth="33vw"
       to="/software/realEstateDealFinder"
       toFullscreen={toFullscreen}
     >

@@ -13,6 +13,7 @@ export function TitleCard({
   foregroundSize = "100px",
   foregroundPosition = ["center"],
   textPosition = ["top", "left"],
+  textWidth = "40vw",
   to = "/",
   toFullscreen = false,
 }: {
@@ -26,6 +27,7 @@ export function TitleCard({
   foregroundSize?: string;
   foregroundPosition?: [string, string] | [string];
   textPosition?: [string, string] | [string];
+  textWidth?: string;
   to?: string;
   toFullscreen?: boolean;
 }) {
@@ -175,7 +177,10 @@ export function TitleCard({
           </div>
         ) : null}
 
-        <div className={toFullscreen ? "fade-in-out" : "remove-fade-in"}>
+        <div
+          style={{ width: textWidth }}
+          className={toFullscreen ? "fade-in-out" : "remove-fade-in"}
+        >
           {children}
         </div>
       </div>
