@@ -241,6 +241,17 @@
   -webkit-animation-name: fade-down-reverse;
   -webkit-animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.fade-down-reverse:nth-child(2) {
+  animation-delay: 0.25s;
+  -webkit-animation-delay: 0.25s;
+}
+
+.fade-down-reverse:nth-child(3) {
+  animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
 }
 
 @keyframes fade-down {
