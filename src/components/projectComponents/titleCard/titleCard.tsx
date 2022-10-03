@@ -208,7 +208,7 @@ const styles: StyleSheet = {
     boxSizing: "border-box",
     paddingTop: "calc(10vh + 16px)",
     paddingBottom: "calc(8vh + 16px)",
-    paddingRight: "calc(8vw + 16px)",
+    paddingRight: "calc(16px)",
     paddingLeft: "calc(8vw + 16px)",
     backgroundPosition: "center",
     backgroundSize: "cover",
