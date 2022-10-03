@@ -4,7 +4,7 @@ import "./styles.css";
 
 export function TitleCard({
   children,
-  d,
+  border,
   backgroundImage,
   backgroundColor,
   backgroundSize = "cover",
@@ -18,7 +18,7 @@ export function TitleCard({
   toFullscreen = false,
 }: {
   children?: any;
-  d?: boolean;
+  border?: string;
   backgroundImage?: string;
   backgroundColor?: string;
   backgroundSize?: string | number;
@@ -128,7 +128,6 @@ export function TitleCard({
       style={{
         ...styles.projectContainer,
         ...{
-          border: d ? "1px solid black" : undefined,
           marginBottom: toFullscreen ? "128px" : "20%",
         },
       }}
@@ -139,7 +138,7 @@ export function TitleCard({
         style={{
           ...styles.titleCard,
           ...{
-            border: d ? "1px solid black" : undefined,
+            border,
             cursor: "pointer",
             pointerEvents: toFullscreen ? "none" : undefined,
             backgroundImage: `url(${backgroundImage})`,
