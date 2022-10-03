@@ -13,8 +13,8 @@ export function ChatbotBobCard({
       to="/software/chatbotBob"
       toFullscreen={toFullscreen}
     >
-      <h1>Chatbot Bob</h1>
-      <h2>
+      <h1 className="primary">Chatbot Bob</h1>
+      <h2 className="primary">
         A custom built chatbot to answer any career inquires for Joshua Gao
       </h2>
     </TitleCard>

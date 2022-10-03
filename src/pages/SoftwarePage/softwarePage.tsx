@@ -10,9 +10,9 @@ import {
 export function SoftwarePage() {
   return (
     <ScrollDiv>
-      {/* <ChatbotBobCard /> */}
-      {/* <JoshgaocomCard /> */}
-      {/* <VolleyballConnectCard /> */}
+      <ChatbotBobCard />
+      <JoshgaocomCard />
+      <VolleyballConnectCard />
       <RedditLaughsCard />
       <RealEstateDealFinderCard />
     </ScrollDiv>
