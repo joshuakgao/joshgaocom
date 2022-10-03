@@ -10,7 +10,7 @@ export function TitleCard({
   backgroundSize = "cover",
   backgroundPosition = "center",
   foregroundImage,
-  foregroundSize = "100px",
+  foregroundSize = "50%",
   foregroundPosition = ["center"],
   textPosition = ["top", "left"],
   textWidth = "40vw",
@@ -166,13 +166,13 @@ export function TitleCard({
               bottom,
               right,
               left,
-              height: foregroundSize,
+              height: undefined,
               width: foregroundSize,
             }}
           >
             <img
               src={foregroundImage}
-              style={{ height: foregroundSize, width: foregroundSize }}
+              style={{ height: undefined, width: foregroundSize }}
             />
           </div>
         ) : null}

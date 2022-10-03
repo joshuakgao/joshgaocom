@@ -1,7 +1,6 @@
 import { TitleCard } from "../../titleCard";
-import redditYoutube from "../../../../assets/projects/software/redditLaughs/redditToYoutube.png";
+import redditYoutube from "../../../../assets/projects/software/redditLaughs/redditAndYoutube.png";
 import memeBackground from "../../../../assets/projects/software/redditLaughs/memeBackground.jpg";
-import redditLogo from "../../../../assets/projects/software/redditLaughs/reddit.png";
 
 export function RedditLaughsCard({ toFullscreen }: { toFullscreen?: boolean }) {
   return (
@@ -9,9 +8,9 @@ export function RedditLaughsCard({ toFullscreen }: { toFullscreen?: boolean }) {
       backgroundImage={memeBackground}
       backgroundSize="cover"
       backgroundColor="#1e1e1e"
-      foregroundImage={redditLogo}
-      foregroundSize="calc(5vw + 5vh + 64px)"
-      foregroundPosition={["bottom", "center"]}
+      foregroundSize="calc(15vw + 15vh + 64px)"
+      foregroundPosition={["center", "center"]}
+      textPosition={["center"]}
       toFullscreen={toFullscreen}
       to="/software/redditLaughs"
     >
