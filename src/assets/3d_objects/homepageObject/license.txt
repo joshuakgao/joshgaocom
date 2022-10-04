@@ -1,0 +1,11 @@
+Model Information:
+* title:	1967_7_Seal rattle
+* source:	https://sketchfab.com/3d-models/1967-7-seal-rattle-57ff956f593942158afd6353266743f7
+* author:	Aalto Archive (https://sketchfab.com/aaltoarchive)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "1967_7_Seal rattle" (https://sketchfab.com/3d-models/1967-7-seal-rattle-57ff956f593942158afd6353266743f7) by Aalto Archive (https://sketchfab.com/aaltoarchive) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
