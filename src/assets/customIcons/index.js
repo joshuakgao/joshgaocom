@@ -1,0 +1,10 @@
+export const firebase = require("./firebase.png");
+export const typescript = require("./typescript.png");
+export const react = require("./react.png");
+export const googleDrive = require("./googleDrive.png");
+export const javascript = require("./javascript.png");
+export const python = require("./python.png");
+export const sql = require("./sql.png");
+export const youtube = require("./youtube.png");
+export const github = require("./github.png");
+export const linkedin = require("./linkedin.png");
