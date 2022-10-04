@@ -15,7 +15,7 @@ export function MyIcon({
   className,
   style,
   icon,
-  size = "sm",
+  size = "lg",
 }: {
   className?: string;
   style?: React.CSSProperties;
