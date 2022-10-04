@@ -17,6 +17,8 @@ import {
   sql,
   youtube,
   github,
+  css,
+  figma,
 } from "../../../assets/customIcons";
 import "./styles.css";
 
@@ -32,6 +34,8 @@ export function ContentHeader({
   sources?: { [key: string]: string };
 }) {
   let skillsObj: { [key: string]: any } = {
+    css: <MyIcon icon={css} />,
+    figma: <MyIcon icon={figma} />,
     firebase: <MyIcon icon={firebase} />,
     googleDrive: <MyIcon icon={googleDrive} />,
     js: <MyIcon icon={javascript} />,

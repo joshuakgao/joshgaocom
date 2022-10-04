@@ -8,3 +8,5 @@ export const sql = require("./sql.png");
 export const youtube = require("./youtube.png");
 export const github = require("./github.png");
 export const linkedin = require("./linkedin.png");
+export const css = require("./css.png");
+export const figma = require("./figma.png");
