@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import { RowDiv } from "../rowDiv";
+import React from "react";
+import { RowDiv, MyIcon, FaIcon } from "../../commonComponents";
 import {
   faGoogleDrive,
   faGithub,
@@ -7,9 +7,18 @@ import {
   faYoutube,
   faPython,
 } from "@fortawesome/free-brands-svg-icons";
-import { FaIcon } from "../faIcon";
+import {
+  firebase,
+  typescript,
+  react,
+  googleDrive,
+  javascript,
+  python,
+  sql,
+  youtube,
+  github,
+} from "../../../assets/customIcons";
 import "./styles.css";
-import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 
 export function ContentHeader({
   date,
@@ -23,16 +32,20 @@ export function ContentHeader({
   sources?: { [key: string]: string };
 }) {
   let skillsObj: { [key: string]: any } = {
-    googleDrive: <FaIcon icon={faGoogleDrive} size="lg" />,
-    js: <FaIcon icon={faJs} size="lg" />,
-    python: <FaIcon icon={faPython} size="lg" />,
-    sql: <FaIcon icon={faDatabase} size="lg" />,
+    firebase: <MyIcon icon={firebase} />,
+    googleDrive: <MyIcon icon={googleDrive} />,
+    js: <MyIcon icon={javascript} />,
+    javascript: <MyIcon icon={javascript} />,
+    python: <MyIcon icon={python} />,
+    react: <MyIcon icon={react} />,
+    sql: <MyIcon icon={sql} />,
+    typescript: <MyIcon icon={typescript} />,
   };
 
   let sourcesObj: { [key: string]: any } = {
-    googleDrive: <FaIcon className="icon" icon={faGoogleDrive} />,
-    github: <FaIcon className="icon" icon={faGithub} />,
-    youtube: <FaIcon className="icon" icon={faYoutube} />,
+    googleDrive: <MyIcon className="icon" icon={googleDrive} />,
+    github: <MyIcon className="icon" icon={github} />,
+    youtube: <MyIcon className="icon" icon={youtube} />,
   };
 
   return (
@@ -45,10 +58,17 @@ export function ContentHeader({
 
             {/* SKILLS */}
             {skills ? (
-              <RowDiv style={{ marginLeft: 8, marginBottom: 4 }}>
+              <RowDiv>
                 {skills.map((skill) => {
                   return (
-                    <div style={{ marginLeft: 4 }}>{skillsObj[skill]}</div>
+                    <div
+                      style={{
+                        display: "flex",
+                        marginLeft: 4,
+                      }}
+                    >
+                      {skillsObj[skill]}
+                    </div>
                   );
                 })}
               </RowDiv>

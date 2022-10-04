@@ -5,3 +5,4 @@ export * from "./youtubeEmbed";
 export * from "./mainContentDiv";
 export * from "./contentHeader";
 export * from "./faIcon";
+export * from "./myIcon";
