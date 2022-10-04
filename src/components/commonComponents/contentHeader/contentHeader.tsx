@@ -47,7 +47,10 @@ export function ContentHeader({
 
   return (
     <>
-      <RowDiv style={{ alignItems: "center", justifyContent: "space-between" }}>
+      <RowDiv
+        className="content-header"
+        style={{ alignItems: "center", justifyContent: "space-between" }}
+      >
         <div>
           <RowDiv>
             {/* NAME DATE */}

@@ -1,4 +1,4 @@
-.icon {
+.content-header .icon {
   border: 2px solid var(--secondary);
   width: 25px;
   height: 25px;
@@ -10,6 +10,6 @@
   transition: transform 0.5s ease;
 }
 
-.icon:hover {
+.content-header .icon:hover {
   transform: scale(1.1);
 }
