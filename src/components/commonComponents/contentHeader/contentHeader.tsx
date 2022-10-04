@@ -1,12 +1,5 @@
 import React from "react";
-import { RowDiv, MyIcon, FaIcon } from "../../commonComponents";
-import {
-  faGoogleDrive,
-  faGithub,
-  faJs,
-  faYoutube,
-  faPython,
-} from "@fortawesome/free-brands-svg-icons";
+import { RowDiv, MyIcon } from "../../commonComponents";
 import {
   firebase,
   typescript,

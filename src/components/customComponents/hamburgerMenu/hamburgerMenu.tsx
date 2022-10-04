@@ -1,9 +1,7 @@
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faFileAlt } from "@fortawesome/free-regular-svg-icons";
 import React from "react";
 import { Link } from "react-router-dom";
 import cvPdf from "../../../assets/docs/Joshua-Gao_Resume.pdf";
-import { FaIcon, FullscreenDiv, MyIcon, RowDiv } from "../../commonComponents";
+import { FullscreenDiv, MyIcon, RowDiv } from "../../commonComponents";
 import { cv, linkedin, github } from "../../../assets/customIcons";
 import "./styles.css";
 
