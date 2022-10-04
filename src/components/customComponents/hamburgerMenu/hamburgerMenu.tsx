@@ -3,7 +3,8 @@ import { faFileAlt } from "@fortawesome/free-regular-svg-icons";
 import React from "react";
 import { Link } from "react-router-dom";
 import cvPdf from "../../../assets/docs/Joshua-Gao_Resume.pdf";
-import { FaIcon, FullscreenDiv, RowDiv } from "../../commonComponents";
+import { FaIcon, FullscreenDiv, MyIcon, RowDiv } from "../../commonComponents";
+import { cv, linkedin, github } from "../../../assets/customIcons";
 import "./styles.css";
 
 export function HamburgerMenu({
@@ -110,7 +111,15 @@ export function HamburgerMenu({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaIcon icon={faGithub} size="3x" />
+                <MyIcon icon={github} size="2xl" />
+              </a>
+              <a
+                style={styles.footerLink}
+                href="https://www.linkedin.com/in/joshua-gao/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MyIcon icon={linkedin} size="2xl" />
               </a>
               <a
                 style={styles.footerLink}
@@ -118,7 +127,7 @@ export function HamburgerMenu({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaIcon icon={faFileAlt} size="3x" />
+                <MyIcon icon={cv} size="2xl" />
               </a>
             </RowDiv>
           </div>

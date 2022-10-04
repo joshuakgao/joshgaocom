@@ -10,3 +10,4 @@ export const github = require("./github.png");
 export const linkedin = require("./linkedin.png");
 export const css = require("./css.png");
 export const figma = require("./figma.png");
+export const cv = require("./cv.png");
