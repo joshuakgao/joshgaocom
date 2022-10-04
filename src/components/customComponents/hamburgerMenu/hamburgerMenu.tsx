@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import cvPdf from "../../../assets/docs/Joshua-Gao_Resume.pdf";
 import { FullscreenDiv, MyIcon, RowDiv } from "../../commonComponents";
-import { cv, linkedin, github } from "../../../assets/customIcons";
+import { cv, linkedin_transparent, github } from "../../../assets/customIcons";
 import "./styles.css";
 
 export function HamburgerMenu({
@@ -109,7 +109,7 @@ export function HamburgerMenu({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MyIcon icon={github} size="2xl" />
+                <MyIcon className="icon" icon={github} size="2xl" monochrome />
               </a>
               <a
                 style={styles.footerLink}
@@ -117,7 +117,12 @@ export function HamburgerMenu({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MyIcon icon={linkedin} size="2xl" />
+                <MyIcon
+                  className="icon"
+                  icon={linkedin_transparent}
+                  size="2xl"
+                  monochrome
+                />
               </a>
               <a
                 style={styles.footerLink}
@@ -125,7 +130,7 @@ export function HamburgerMenu({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MyIcon icon={cv} size="2xl" />
+                <MyIcon className="icon" icon={cv} size="2xl" monochrome />
               </a>
             </RowDiv>
           </div>

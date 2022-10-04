@@ -1,0 +1,4 @@
+.monochrome {
+  filter: invert(19%) sepia(0%) saturate(0%) hue-rotate(72deg) brightness(100%)
+    contrast(25%);
+}

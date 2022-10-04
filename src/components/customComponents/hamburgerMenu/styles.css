@@ -180,13 +180,6 @@
   }
 }
 
-.hamburger-menu-footer .icon {
-  height: 5.5vh;
-  width: 5.5vh;
-  filter: invert(18%) sepia(0%) saturate(0%) hue-rotate(318deg) brightness(98%)
-    contrast(89%);
-}
-
 .fade-background {
   animation-name: fade-background;
   animation-duration: 1s;
@@ -280,11 +273,19 @@
   }
 }
 
+.menu-container h1 {
+  transition: transform 0.5s ease;
+}
+
 .menu-container h1:hover {
   color: black;
+  transform: scale(1.05);
+}
+
+.hamburger-menu-footer .icon {
+  transition: transform 0.5s ease;
 }
 
 .menu-container .icon:hover {
-  filter: invert(0%) sepia(100%) saturate(21%) hue-rotate(2deg) brightness(101%)
-    contrast(107%);
+  transform: scale(1.25);
 }
