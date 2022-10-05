@@ -1,25 +1,39 @@
 {
   "files": {
-    "main.css": "/static/css/main.e9456068.css",
-    "main.js": "/static/js/main.6dddbb47.js",
+    "main.css": "/static/css/main.52ed2ba4.css",
+    "main.js": "/static/js/main.afb29f5b.js",
     "static/media/tofu60_profile.jpeg": "/static/media/tofu60_profile.7eafaedf957c42aaf019.jpeg",
+    "static/media/beachHouse.jpg": "/static/media/beachHouse.9049559d173b0b50c6eb.jpg",
     "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
     "static/media/memeBackground.jpg": "/static/media/memeBackground.010d73b81e62e75f4760.jpg",
-    "static/media/chatbot_title_card.png": "/static/media/chatbot_title_card.0803b57c1f27dd24b49e.png",
+    "static/media/python.png": "/static/media/python.fbebfabd42ff95354ed9.png",
+    "static/media/chatbot_title_card.png": "/static/media/chatbot_title_card.447d65aa79049681e06f.png",
     "static/media/watermelon.png": "/static/media/watermelon.b4012f507d40a1774201.png",
-    "static/media/reddit.png": "/static/media/reddit.ad08f878c513c734eeb5.png",
+    "static/media/beach.jpg": "/static/media/beach.563078ec967cbb28613a.jpg",
+    "static/media/linkedin-transparent.png": "/static/media/linkedin-transparent.a1fe1139f51dd50ff1ae.png",
     "static/media/Vito-CondensedRegular.woff": "/static/media/Vito-CondensedRegular.aeb0a604aa50c3c34b78.woff",
+    "static/media/youtube.png": "/static/media/youtube.8a3ed11c86b689e63d3f.png",
+    "static/media/github.png": "/static/media/github.4bb497e598c121a691f7.png",
+    "static/media/react.png": "/static/media/react.73dbb5bcec516da82694.png",
+    "static/media/linkedin.png": "/static/media/linkedin.72097b5277a499b1902f.png",
     "static/media/Joshua-Gao_Resume.pdf": "/static/media/Joshua-Gao_Resume.235255821cef865ad8e8.pdf",
+    "static/media/typescript.png": "/static/media/typescript.17936c69824e11a996c4.png",
+    "static/media/sql.png": "/static/media/sql.491c6ed79d765bc2af4c.png",
     "static/media/Avenir-Black.otf": "/static/media/Avenir-Black.7ce894e12078ca8c5134.otf",
+    "static/media/googleDrive.png": "/static/media/googleDrive.fe9a48fa877e0f3fe2e9.png",
     "static/media/Avenir-Book.otf": "/static/media/Avenir-Book.813557df4c7a90b1a474.otf",
     "static/media/Avenir-Roman.otf": "/static/media/Avenir-Roman.0bfb049d9455e81fd1da.otf",
-    "static/media/zillow.jpg": "/static/media/zillow.6346a83c5c802a1753ce.jpg",
+    "static/media/cv.png": "/static/media/cv.47f94ee1e2e45d2ff525.png",
+    "static/media/figma.png": "/static/media/figma.72fbc535ebe253a5dbc4.png",
+    "static/media/css.png": "/static/media/css.463e319bad8e0edf1ef7.png",
+    "static/media/firebase.png": "/static/media/firebase.7d2ea0d93c4a927fdfbd.png",
+    "static/media/javascript.png": "/static/media/javascript.266bd9fb2663dcc057b4.png",
     "index.html": "/index.html",
-    "main.e9456068.css.map": "/static/css/main.e9456068.css.map",
-    "main.6dddbb47.js.map": "/static/js/main.6dddbb47.js.map"
+    "main.52ed2ba4.css.map": "/static/css/main.52ed2ba4.css.map",
+    "main.afb29f5b.js.map": "/static/js/main.afb29f5b.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9456068.css",
-    "static/js/main.6dddbb47.js"
+    "static/css/main.52ed2ba4.css",
+    "static/js/main.afb29f5b.js"
   ]
 }
