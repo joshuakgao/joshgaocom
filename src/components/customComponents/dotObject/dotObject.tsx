@@ -1,13 +1,21 @@
-import React from "react";
-import { Canvas, useLoader } from "@react-three/fiber";
+import React, { useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import pointCloud from "../../../assets/3d_objects/homepage_pointcloud.glb";
+import { useMousePosition } from "../../../hooks";
 
 function MyDotObject() {
-  const gltf = useLoader(GLTFLoader, pointCloud);
+  const mousePosition = useMousePosition();
+  const mesh = useRef<any>();
+
+  useFrame(() => {
+    let dY = (window.innerWidth / 2 - mousePosition.x) / 10000;
+    let dX = (window.innerHeight / 2 - mousePosition.y) / 10000;
+    mesh.current.rotation.x += dX;
+    mesh.current.rotation.y += dY;
+  });
+
   return (
-    <mesh scale={3}>
+    <mesh ref={mesh} scale={3}>
       <dodecahedronBufferGeometry attach="geometry" />
       <meshStandardMaterial color="transparent" wireframe />
     </mesh>
