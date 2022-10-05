@@ -7,6 +7,7 @@ import ellipseImage from "../../../assets/3d_objects/textures/ellipse.png";
 function MyDotObject() {
   const [oldMousePosition, setOldMousePosition] = useState({ x: 0, y: 0 });
   const [time, setTime] = useState(0);
+  const [inertia, setInertia] = useState({ iX: 0, iY: 0 });
   const mousePosition = useMousePosition();
   const objRef = useRef<any>();
 
@@ -17,7 +18,7 @@ function MyDotObject() {
       /*
           // used to accelerate then decelerate dot object
 
-          f(tick) = -1 * abs(tick - 50) + 50 
+          f(tick) = -1 * abs(tick - 50) + 50
       */
       objRef.current.rotation.x += (-1 * Math.abs(tick - 50) + 50) / 1000;
       objRef.current.rotation.y += (-1 * Math.abs(tick - 50) + 50) / 1000;
@@ -28,8 +29,29 @@ function MyDotObject() {
     let dY = mousePosition.x - oldMousePosition.x;
     let dX = mousePosition.y - oldMousePosition.y;
 
-    if (dX === 0 && dY === 0) return; // don't rotate if mouse position didn't change
+    // if mouse stopped moving but had movement before, apply inertia
+    if (dX === 0 && dY === 0) {
+      objRef.current.rotation.x -= inertia.iX / 1000;
+      objRef.current.rotation.y -= inertia.iY / 1000;
 
+      // set inertia in a way that decelerates as frames continue.
+      //I do this by subracting out specific fraction of the reminder inertia until it drops below 0.00001 (because it will never go to actual 0)
+      setInertia({
+        iX:
+          inertia.iX < 0.00001 && inertia.iX > -0.00001
+            ? 0
+            : inertia.iX - inertia.iX / 5,
+        iY:
+          inertia.iY < 0.00001 && inertia.iY > -0.00001
+            ? 0
+            : inertia.iY - inertia.iY / 5,
+      });
+    }
+
+    // if mouse moves again, reset inertia
+    if (dX > 0.00001 || (dX < -0.00001 && dY > 0.00001) || dY < -0.00001) {
+      setInertia({ iX: dX, iY: dY });
+    }
     setOldMousePosition(mousePosition);
     objRef.current.rotation.x -= dX / 2000;
     objRef.current.rotation.y -= dY / 2000;
