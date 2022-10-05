@@ -14,14 +14,14 @@ function MyDotObject() {
   useFrame(() => {
     // every about 5 seconds rotate dot object
     let tick = time % 500;
-    if (tick > 0 && tick % 500 < 100) {
+    if (tick > 50 && tick < 150) {
       /*
           // used to accelerate then decelerate dot object
 
           f(tick) = -1 * abs(tick - 50) + 50
       */
-      objRef.current.rotation.x += (-1 * Math.abs(tick - 50) + 50) / 1000;
-      objRef.current.rotation.y += (-1 * Math.abs(tick - 50) + 50) / 1000;
+      objRef.current.rotation.x += (-1 * Math.abs(tick - 75) + 75) / 1000;
+      objRef.current.rotation.y += (-1 * Math.abs(tick - 75) + 75) / 1000;
     }
     setTime(time + 1);
 
@@ -74,9 +74,9 @@ function MyDotObject() {
   );
 }
 
-export function DotObject() {
+export function DotObject({ className }: { className?: string }) {
   return (
-    <div style={styles.object}>
+    <div style={styles.object} className={className}>
       <Suspense fallback={<div>...loading</div>}>
         <Canvas camera={{ fov: 100, near: 0.1, far: 1000 }}>
           <ambientLight intensity={0.5} />

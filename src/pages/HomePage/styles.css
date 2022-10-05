@@ -8,16 +8,21 @@
   opacity: 0;
 }
 
-.home-page .fade-up-later {
+.home-page .dot-object-fade-up {
   animation-name: fade-up;
   animation-duration: 0.8s;
-  animation-delay: 0.5s;
   animation-fill-mode: forwards;
+  animation-delay: 1.25s;
   -webkit-animation-name: fade-up;
   -webkit-animation-duration: 0.8s;
-  -webkit-animation-delay: 0.5s;
   -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay: 1.25s;
   opacity: 0;
+}
+
+.home-page .fade-up:nth-child(2) {
+  animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
 }
 
 @keyframes fade-up {
