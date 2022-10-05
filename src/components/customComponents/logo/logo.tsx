@@ -5,10 +5,8 @@ import { Link } from "react-router-dom";
 
 export function Logo({
   setMenuOpen,
-  d,
 }: {
   setMenuOpen: (menuOpen: boolean) => void;
-  d?: boolean;
 }) {
   return (
     <RowDiv
@@ -17,7 +15,6 @@ export function Logo({
         pointerEvents: "auto",
         zIndex: 11,
         marginLeft: "2vw",
-        ...{ border: d ? "1px black solid" : undefined },
       }}
     >
       <Link to="/" style={styles.link} onClick={() => setMenuOpen(false)}>
@@ -37,11 +34,12 @@ interface StyleSheet {
 const styles: StyleSheet = {
   link: {
     display: "flex",
-    alignItems: "center",
+    alignItems: "flex-start",
     textDecoration: "none",
   },
   image: {
-    height: "1.5rem",
+    marginTop: 4,
+    height: "1.3rem",
     marginRight: 8,
     zIndex: 11,
   },
