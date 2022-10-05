@@ -6,3 +6,4 @@ declare module "*.webp";
 declare module "three/examples/jsm/loaders/GLTFLoader";
 declare module "*.glb";
 declare module "*.gltf";
+declare module "three";
