@@ -11,9 +11,12 @@ function MyDotObject() {
   const objRef = useRef<any>();
 
   useFrame(() => {
+    // every about 5 seconds rotate dot object
     let tick = time % 500;
     if (tick > 0 && tick % 500 < 100) {
       /*
+          // used to accelerate then decelerate dot object
+
           f(tick) = -1 * abs(tick - 50) + 50 
       */
       objRef.current.rotation.x += (-1 * Math.abs(tick - 50) + 50) / 1000;
@@ -21,10 +24,11 @@ function MyDotObject() {
     }
     setTime(time + 1);
 
+    // rotate object along with mouse movement
     let dY = mousePosition.x - oldMousePosition.x;
     let dX = mousePosition.y - oldMousePosition.y;
 
-    if (dX === 0 && dY === 0) return;
+    if (dX === 0 && dY === 0) return; // don't rotate if mouse position didn't change
 
     setOldMousePosition(mousePosition);
     objRef.current.rotation.x -= dX / 2000;
