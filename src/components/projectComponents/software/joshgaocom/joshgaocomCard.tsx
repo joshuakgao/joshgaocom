@@ -1,4 +1,5 @@
 import { TitleCard } from "../../titleCard";
+import homepage from "../../../../assets/projects/software/joshgaocom/homepage.png";
 
 export function JoshgaocomCard({ toFullscreen }: { toFullscreen?: boolean }) {
   return (
@@ -6,7 +7,7 @@ export function JoshgaocomCard({ toFullscreen }: { toFullscreen?: boolean }) {
       to="/software/joshgaocom"
       toFullscreen={toFullscreen}
       textPosition={["left", "center"]}
-      backgroundColor="#e0e0e0"
+      backgroundImage={homepage}
     >
       <h1>joshgao.com</h1>
       <h2>A website showcasing Joshua Gao's projects</h2>
