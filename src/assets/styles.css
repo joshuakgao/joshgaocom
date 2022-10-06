@@ -49,7 +49,7 @@ h1 {
   margin: 0;
   margin-left: -2px;
   font-family: "AvenirBlacker";
-  font-size: calc(36px + 6vw);
+  font-size: calc(36px + 3vw);
   color: var(--secondary);
 }
 

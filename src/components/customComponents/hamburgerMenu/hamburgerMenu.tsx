@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import cvPdf from "../../../assets/docs/Joshua-Gao_Resume.pdf";
+import cvPdf from "../../../assets/docs/cv.pdf";
 import { FullscreenDiv, MyIcon, RowDiv } from "../../commonComponents";
 import { cv, linkedin_transparent, github } from "../../../assets/customIcons";
 import "./styles.css";
