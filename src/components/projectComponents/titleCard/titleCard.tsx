@@ -9,6 +9,7 @@ export function TitleCard({
   backgroundColor,
   backgroundSize = "cover",
   backgroundPosition = "center",
+  backgroundDarken = 0,
   foregroundImage,
   foregroundSize = "50%",
   foregroundPosition = ["center"],
@@ -23,6 +24,7 @@ export function TitleCard({
   backgroundColor?: string;
   backgroundSize?: string | number;
   backgroundPosition?: string;
+  backgroundDarken?: number;
   foregroundImage?: string;
   foregroundSize?: string;
   foregroundPosition?: [string, string] | [string];
@@ -141,7 +143,7 @@ export function TitleCard({
             border,
             cursor: "pointer",
             pointerEvents: toFullscreen ? "none" : undefined,
-            backgroundImage: `url(${backgroundImage})`,
+            backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.${backgroundDarken}) 0%, rgba(0,0,0,0.${backgroundDarken}) 100%), url(${backgroundImage})`,
             backgroundColor,
             backgroundSize,
             backgroundPosition,
@@ -177,7 +179,7 @@ export function TitleCard({
         ) : null}
 
         <div
-          style={{ width: textWidth }}
+          style={{ width: textWidth, filter: "brightness(100%)" }}
           className={toFullscreen ? "fade-in-out" : "remove-fade-in"}
         >
           {children}

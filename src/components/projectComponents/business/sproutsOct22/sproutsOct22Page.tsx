@@ -1,21 +1,19 @@
 import React from "react";
 import {
+  insideSprouts,
+  storeLayout,
+} from "../../../../assets/projects/business/SproutsOct22";
+import {
   ContentHeader,
   MainContentDiv,
   ScrollDiv,
 } from "../../../commonComponents";
 import { SproutsOct22Card } from "./sproutsOct22Card";
-import {
-  storeLayout,
-  insideSprouts,
-  storeFront,
-  storeLocations,
-} from "../../../../assets/projects/business/SproutsOct22";
 
 export default function SproutsOct22Page() {
   return (
     <ScrollDiv>
-      <SproutsOct22Card />
+      <SproutsOct22Card toFullscreen />
       <MainContentDiv>
         <ContentHeader
           date="10/12/2022"
