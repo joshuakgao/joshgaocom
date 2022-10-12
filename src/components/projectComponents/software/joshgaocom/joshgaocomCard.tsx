@@ -10,7 +10,7 @@ export function JoshgaocomCard({ toFullscreen }: { toFullscreen?: boolean }) {
       backgroundImage={homepage}
     >
       <h1>joshgao.com</h1>
-      <h2>A website showcasing Joshua Gao's projects</h2>
+      <h2>A website showcasing Josh Gao's projects</h2>
     </TitleCard>
   );
 }
