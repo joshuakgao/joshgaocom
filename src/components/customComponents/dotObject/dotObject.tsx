@@ -59,7 +59,7 @@ function MyDotObject() {
 
   const dotTexture = useLoader(THREE.TextureLoader, ellipseImage);
   return (
-    <points ref={objRef} scale={2.5}>
+    <points ref={objRef} scale={2.15}>
       <sphereBufferGeometry attach="geometry" />
       <pointsMaterial
         attach="material"
@@ -107,8 +107,8 @@ const styles: StyleSheet = {
     bottom: 0,
     right: 0,
     left: 0,
-    width: "100vw",
-    height: "100vh",
+    width: "75vw",
+    height: "75vh",
     maxWidth: 1024,
     maxHeight: 1024,
   },
