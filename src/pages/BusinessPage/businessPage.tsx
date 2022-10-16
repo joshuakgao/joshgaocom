@@ -6,8 +6,8 @@ import { SproutsOct22Card } from "../../components/projectComponents/business/sp
 export function BusinessPage() {
   return (
     <ScrollDiv>
-      <PortfolioTrackerCard />
       <SproutsOct22Card />
+      <PortfolioTrackerCard />
     </ScrollDiv>
   );
 }

@@ -15,7 +15,7 @@ export function SproutsOct22Card({
       backgroundColor="white"
     >
       <h1 className="secondary">Sprouts Farmers Market</h1>
-      <h2 className="secondary">Growth Play in the Growth Industry?</h2>
+      <h2 className="secondary">Growth Play in the Grocery Industry?</h2>
     </TitleCard>
   );
 }
