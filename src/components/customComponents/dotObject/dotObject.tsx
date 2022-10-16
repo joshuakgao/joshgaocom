@@ -20,8 +20,8 @@ function MyDotObject() {
 
           f(tick) = -1 * abs(tick - 50) + 50
       */
-      objRef.current.rotation.x += (-1 * Math.abs(tick - 75) + 75) / 1000;
-      objRef.current.rotation.y += (-1 * Math.abs(tick - 75) + 75) / 1000;
+      objRef.current.rotation.x += (-1 * Math.abs(tick - 75) + 75) / 2000;
+      objRef.current.rotation.y += (-1 * Math.abs(tick - 75) + 75) / 2000;
     }
     setTime(time + 1);
 
