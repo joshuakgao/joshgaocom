@@ -76,16 +76,14 @@ function MyDotObject() {
 
 export function DotObject({ className }: { className?: string }) {
   return (
-    <div style={styles.objectContainer} className={className}>
-      <div style={styles.object}>
-        <Suspense fallback={<div>...loading</div>}>
-          <Canvas camera={{ fov: 100, near: 0.1, far: 1000 }}>
-            <ambientLight intensity={0.5} />
-            <spotLight intensity={0.8} position={[300, 300, 400]} />
-            <MyDotObject />
-          </Canvas>
-        </Suspense>
-      </div>
+    <div style={styles.object} className={className}>
+      <Suspense fallback={<div>...loading</div>}>
+        <Canvas camera={{ fov: 100, near: 0.1, far: 1000 }}>
+          <ambientLight intensity={0.5} />
+          <spotLight intensity={0.8} position={[300, 300, 400]} />
+          <MyDotObject />
+        </Canvas>
+      </Suspense>
     </div>
   );
 }
@@ -95,21 +93,9 @@ type StyleSheet = {
 };
 
 const styles: StyleSheet = {
-  objectContainer: {
+  object: {
     position: "absolute",
     height: "100vh",
     width: "100vw",
-  },
-  object: {
-    position: "absolute",
-    margin: "auto",
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    width: "75vw",
-    height: "75vh",
-    maxWidth: 1024,
-    maxHeight: 1024,
   },
 };
