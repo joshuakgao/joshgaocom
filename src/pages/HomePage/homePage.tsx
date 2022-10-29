@@ -9,7 +9,7 @@ export function HomePage() {
       <DotObject className="dot-object-fade-up" />
       <div style={styles.contentContainer}>
         <h1 style={styles.title} className="secondary fade-up">
-          Joshua Gao
+          Josh Gao
         </h1>
         <h4 style={styles.subtitle} className="secondary fade-up">
           Exploring software, business and more

@@ -11,6 +11,7 @@ import {
 } from "./components/projectComponents/software";
 import { PortfolioTrackerPage } from "./components/projectComponents/business";
 import JoshgaocomPage from "./components/projectComponents/software/joshgaocom/joshgaocomPage";
+import SproutsOct22Page from "./components/projectComponents/business/sproutsOct22/sproutsOct22Page";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           path="/business/portfolioTracker"
           element={<PortfolioTrackerPage />}
         />
+        <Route path="/business/sproutsOct22" element={<SproutsOct22Page />} />
 
         <Route path="/other" element={<OtherPage />} />
         <Route path="/other/tofu60" element={<Tofu60Page />} />

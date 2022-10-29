@@ -44,6 +44,10 @@
   }
 }
 
+.title-card-container .background-darken {
+  filter: brightness(80%);
+}
+
 .title-card-container .fade-in-out {
   animation-name: fade-in-out;
   animation-duration: 1.5s;

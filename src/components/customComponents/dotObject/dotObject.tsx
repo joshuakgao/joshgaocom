@@ -1,8 +1,8 @@
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import React, { Suspense, useRef, useState } from "react";
 import * as THREE from "three";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import dotImage from "../../../assets/3d_objects/textures/dot.png";
 import { useMousePosition } from "../../../hooks";
-import ellipseImage from "../../../assets/3d_objects/textures/ellipse.png";
 
 function MyDotObject() {
   const [oldMousePosition, setOldMousePosition] = useState({ x: 0, y: 0 });
@@ -20,8 +20,8 @@ function MyDotObject() {
 
           f(tick) = -1 * abs(tick - 50) + 50
       */
-      objRef.current.rotation.x += (-1 * Math.abs(tick - 75) + 75) / 1000;
-      objRef.current.rotation.y += (-1 * Math.abs(tick - 75) + 75) / 1000;
+      objRef.current.rotation.x += (-1 * Math.abs(tick - 75) + 75) / 2000;
+      objRef.current.rotation.y += (-1 * Math.abs(tick - 75) + 75) / 2000;
     }
     setTime(time + 1);
 
@@ -57,9 +57,9 @@ function MyDotObject() {
     objRef.current.rotation.y -= dY / 2000;
   });
 
-  const dotTexture = useLoader(THREE.TextureLoader, ellipseImage);
+  const dotTexture = useLoader(THREE.TextureLoader, dotImage);
   return (
-    <points ref={objRef} scale={2.5}>
+    <points ref={objRef} scale={2.15}>
       <sphereBufferGeometry attach="geometry" />
       <pointsMaterial
         attach="material"

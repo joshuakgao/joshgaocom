@@ -54,7 +54,7 @@ export function ContentHeader({
         <div>
           <RowDiv>
             {/* NAME DATE */}
-            <p style={{ marginTop: 0, marginBottom: 0 }}>Joshua Gao: {date}</p>
+            <p style={{ marginTop: 0, marginBottom: 0 }}>Josh Gao: {date}</p>
 
             {/* SKILLS */}
             {skills ? (

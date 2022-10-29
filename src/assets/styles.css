@@ -49,41 +49,39 @@ h1 {
   margin: 0;
   margin-left: -2px;
   font-family: "AvenirBlacker";
-  font-size: calc(36px + 3vw);
+  font-size: calc(36px + 2vw);
   color: var(--secondary);
 }
 
 h2 {
   margin: 0;
-  margin-bottom: 0.83em;
-  margin-top: 0.83em;
+  margin-top: 1.5em;
   font-family: "AvenirBlacker";
-  font-size: calc(28px + 1.5vw);
+  font-size: calc(28px + 1vw);
   color: var(--secondary);
 }
 
 h3 {
   margin: 0;
-  margin-bottom: 0.66em;
-  margin-top: 0.66em;
+  margin-top: 1em;
   font-family: "AvenirBold";
-  font-size: calc(28px + 1vw);
+  font-size: 28px;
   color: var(--secondary);
 }
 
 h4 {
   margin: 0;
-  margin-bottom: 0.5em;
-  margin-top: 0.5em;
+  margin-top: 0.75em;
   font-family: "Avenir";
   font-size: calc(22px + 0.5vw);
   color: var(--secondary);
 }
 
 p {
+  margin: 0;
   font-family: "Vito";
   font-size: 22px;
-  margin-bottom: 16px;
+  margin-top: 16px;
   color: var(--secondary);
 }
 
