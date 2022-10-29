@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import { MyIcon } from "../../commonComponents";
 import { dialogflow } from "../../../assets/customIcons";
+import "./styles.css";
 
 export default function ChatbotJoshButton() {
   const [showChat, setShowChat] = useState(false);
 
   return (
-    <div style={styles.buttonAndChatContainer}>
+    <div style={styles.buttonAndChatContainer} className="chatbotJoshButton">
       <iframe
+        className={showChat ? "fade-in" : "fade-out"}
         allow="microphone;"
-        height={showChat ? "500" : "0"}
+        height={"500"}
         src="https://console.dialogflow.com/api-client/demo/embedded/a3b4c3fb-13eb-4d22-a5a8-ec7d4f659e0e"
         style={{ border: "0px solid lightgrey", minWidth: "37vw" }}
       />
       <div
+        className="button"
         style={styles.buttonContainer}
         onClick={() => setShowChat(!showChat)}
       >

@@ -54,7 +54,7 @@ const styles: StyleSheet = {
   },
   chatbotJoshButtonContainer: {
     position: "absolute",
-    bottom: 32,
-    right: 32,
+    bottom: 26,
+    right: 26,
   },
 };
