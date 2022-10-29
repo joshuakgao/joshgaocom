@@ -216,5 +216,6 @@ const styles: StyleSheet = {
     backgroundRepeat: "no-repeat",
     textDecorationLine: "none",
     overflow: "hidden",
+    borderRadius: "var(--borderRadius)",
   },
 };

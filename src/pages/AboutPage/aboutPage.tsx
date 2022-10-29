@@ -49,6 +49,7 @@ const styles: StyleSheet = {
     textAlign: "justify",
   },
   img: {
+    borderRadius: "var(--borderRadius)",
     height: "80vh",
     zIndex: "-1",
   },
