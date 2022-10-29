@@ -1,13 +1,13 @@
 import React from "react";
 import { MainContentDiv, ScrollDiv } from "../../../commonComponents";
-import { ChatbotBobCard } from "./chatbotBobCard";
+import { ChatbotJoshCard } from "./chatbotJoshCard";
 
-export function ChatbotBobPage() {
+export function ChatbotJoshPage() {
   return (
     <ScrollDiv>
-      <ChatbotBobCard toFullscreen />
+      <ChatbotJoshCard toFullscreen />
       <MainContentDiv>
-        <h2>Talk to Bob</h2>
+        <h2>Talk to Josh</h2>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <iframe
             allow="microphone;"

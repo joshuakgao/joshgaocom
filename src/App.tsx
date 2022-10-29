@@ -4,7 +4,7 @@ import { Tofu60Page } from "./components/projectComponents/other/tofu60/tofu60Pa
 import { Route, Routes } from "react-router-dom";
 import "./assets/styles.css";
 import {
-  ChatbotBobPage,
+  ChatbotJoshPage,
   RedditLaughsPage,
   VolleyballConnectPage,
   RealEstateDealFinderPage,
@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/software" element={<SoftwarePage />} />
-        <Route path="/software/chatbotBob" element={<ChatbotBobPage />} />
+        <Route path="/software/chatbotJosh" element={<ChatbotJoshPage />} />
         <Route path="/software/joshgaocom" element={<JoshgaocomPage />} />
         <Route
           path="/software/volleyballConnect"
