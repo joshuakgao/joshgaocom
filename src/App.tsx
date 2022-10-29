@@ -12,6 +12,7 @@ import {
 import { PortfolioTrackerPage } from "./components/projectComponents/business";
 import JoshgaocomPage from "./components/projectComponents/software/joshgaocom/joshgaocomPage";
 import SproutsOct22Page from "./components/projectComponents/business/sproutsOct22/sproutsOct22Page";
+import AboutPage from "./pages/AboutPage/aboutPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/software" element={<SoftwarePage />} />
         <Route path="/software/chatbotJosh" element={<ChatbotJoshPage />} />
         <Route path="/software/joshgaocom" element={<JoshgaocomPage />} />

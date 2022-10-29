@@ -93,6 +93,16 @@ export function HamburgerMenu({
                 Other
               </h1>
             </Link>
+            <Link
+              to="/about"
+              onClick={() => setMenuOpen(false)}
+              style={styles.link}
+              className={menuOpen ? "fade-down-reverse" : "fade-down"}
+            >
+              <h1 style={styles.menuItem} className="secondary">
+                About
+              </h1>
+            </Link>
           </div>
 
           <div style={styles.footer} className="hamburger-menu-footer">
