@@ -12,8 +12,12 @@ export function ChatbotJoshPage() {
       <MainContentDiv>
         <ContentHeader
           date="10/29/2022"
-          projectComponents="Dialogflow"
+          projectComponents="Dialogflow - Firebase"
           skills={["dialogflow", "js", "firebase", "googleDrive"]}
+          sources={{
+            googleDrive:
+              "https://docs.google.com/spreadsheets/d/19YN5nMysW3npDchNzWd4R_hfOTCS6ftW6dBrzzR3Hnc/edit?usp=sharing",
+          }}
         />
         <h2 style={{ marginBottom: 15 }}>Talk to Chatbot Josh</h2>
         <div
