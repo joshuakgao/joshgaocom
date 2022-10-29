@@ -12,3 +12,4 @@ export const linkedin_transparent = require("./linkedin-transparent.png");
 export const css = require("./css.png");
 export const figma = require("./figma.png");
 export const cv = require("./cv.png");
+export const dialogflow = require("./dialogflow.png");

@@ -12,6 +12,7 @@ import {
   github,
   css,
   figma,
+  dialogflow,
 } from "../../../assets/customIcons";
 import "./styles.css";
 
@@ -28,6 +29,7 @@ export function ContentHeader({
 }) {
   let skillsObj: { [key: string]: any } = {
     css: <MyIcon icon={css} />,
+    dialogflow: <MyIcon icon={dialogflow} />,
     figma: <MyIcon icon={figma} />,
     firebase: <MyIcon icon={firebase} />,
     googleDrive: <MyIcon icon={googleDrive} />,
@@ -43,6 +45,7 @@ export function ContentHeader({
     googleDrive: <MyIcon className="icon" icon={googleDrive} />,
     github: <MyIcon className="icon" icon={github} />,
     youtube: <MyIcon className="icon" icon={youtube} />,
+    dialogflow: <MyIcon className="icon" icon={dialogflow} />,
   };
 
   return (
