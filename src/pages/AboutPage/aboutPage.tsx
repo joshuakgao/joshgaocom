@@ -1,6 +1,7 @@
 import React from "react";
 import { FullscreenDiv, ScrollDiv } from "../../components/commonComponents";
 import me from "../../assets/images/me.jpg";
+import ChatbotJoshButton from "../../components/customComponents/chatbotJoshButton/chatbotJoshButton";
 
 export default function AboutPage() {
   return (
@@ -17,6 +18,9 @@ export default function AboutPage() {
         </h4>
       </div>
       <img style={styles.img} src={me} />
+      <div style={styles.chatbotJoshButtonContainer}>
+        <ChatbotJoshButton />
+      </div>
     </FullscreenDiv>
   );
 }
@@ -47,5 +51,10 @@ const styles: StyleSheet = {
   img: {
     height: "80vh",
     zIndex: "-1",
+  },
+  chatbotJoshButtonContainer: {
+    position: "absolute",
+    bottom: 32,
+    right: 32,
   },
 };
