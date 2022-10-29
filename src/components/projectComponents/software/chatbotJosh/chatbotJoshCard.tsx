@@ -15,7 +15,7 @@ export function ChatbotJoshCard({
     >
       <h1 className="primary">Chatbot Josh</h1>
       <h2 className="primary">
-        A custom built chatbot to answer any career inquires for Josh Gao
+        A custom built chatbot to answer any career inquires for Josh
       </h2>
     </TitleCard>
   );
