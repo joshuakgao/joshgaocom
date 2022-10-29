@@ -251,6 +251,11 @@
   -webkit-animation-delay: 0.5s;
 }
 
+.fade-down-reverse:nth-child(4) {
+  animation-delay: 0.75s;
+  -webkit-animation-delay: 0.75s;
+}
+
 @keyframes fade-down {
   0% {
     transform: translateY(0px);
