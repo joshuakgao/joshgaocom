@@ -3,6 +3,7 @@ import {
   ContentHeader,
   MainContentDiv,
   ScrollDiv,
+  GoogleSheetsEmbed,
 } from "../../../commonComponents";
 import { RealEstateDealFinderCard } from "./realEstateDealFinderCard";
 
@@ -115,11 +116,8 @@ export function RealEstateDealFinderPage() {
           apply customizable filters {'(first two rows in the "Dashboard" tab)'}
           .
         </p>
-        <iframe
-          style={styles.iframe}
-          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRV3VF8HIPGQal3m6bUSKfPrIRf1bDqNiCrDDPJ2g50TkPMmXnPbYV-k1v19l-yHt6os7fTJ8kcHSzZ/pubhtml?widget=true&amp;headers=false"
-        />
-        <h2 style={{ marginTop: "95vh" }}>Final Thoughts</h2>
+        <GoogleSheetsEmbed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRV3VF8HIPGQal3m6bUSKfPrIRf1bDqNiCrDDPJ2g50TkPMmXnPbYV-k1v19l-yHt6os7fTJ8kcHSzZ/pubhtml?widget=true&amp;headers=false" />
+        <h2>Final Thoughts</h2>
         <p>
           I'm actually quite happy with this script. It works every time without
           fail, despite Zillow's best efforts to thwart bots, and it finds
@@ -148,23 +146,3 @@ export function RealEstateDealFinderPage() {
     </ScrollDiv>
   );
 }
-
-type StyleSheet = {
-  [key: string]: React.CSSProperties;
-};
-
-const styles: StyleSheet = {
-  iframe: {
-    position: "absolute",
-    right: 0,
-    left: 0,
-    marginLeft: "auto",
-    marginRight: "auto",
-    height: "86vh",
-    width: "calc(40vw + 230px)",
-    maxWidth: 1615,
-    maxHeight: 675,
-    border: "1px solid lightgrey",
-    borderRadius: 10,
-  },
-};

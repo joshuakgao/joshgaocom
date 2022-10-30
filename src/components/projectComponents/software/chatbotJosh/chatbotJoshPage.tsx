@@ -1,5 +1,6 @@
 import {
   ContentHeader,
+  GoogleSheetsEmbed,
   MainContentDiv,
   ScrollDiv,
 } from "../../../commonComponents";
@@ -48,30 +49,8 @@ export function ChatbotJoshPage() {
           Note: The training phrases aren't hard coded, but rather uses the bag
           of words algorithm
         </p>
-        <iframe
-          style={styles.iframe}
-          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNtKK5cqO4cF50Qwb5wktpBFNrgGzPgP5XfmFqeh3P57zKu5yCTk8lgvhBc-_JsUFzGjzA5gE9Bkge/pubhtml?widget=true&amp;headers=false"
-        />
+        <GoogleSheetsEmbed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNtKK5cqO4cF50Qwb5wktpBFNrgGzPgP5XfmFqeh3P57zKu5yCTk8lgvhBc-_JsUFzGjzA5gE9Bkge/pubhtml?widget=true&amp;headers=false" />
       </MainContentDiv>
     </ScrollDiv>
   );
 }
-
-type StyleSheet = {
-  [key: string]: React.CSSProperties;
-};
-
-const styles: StyleSheet = {
-  iframe: {
-    // position: "absolute",
-    // left: 0,
-    // right: 0,
-    // margin: "auto",
-    height: "94vh",
-    width: "100%",
-    // maxWidth: 1615,
-    maxHeight: 675,
-    border: "1px solid lightgrey",
-    borderRadius: 10,
-  },
-};

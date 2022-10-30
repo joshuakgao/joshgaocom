@@ -1,6 +1,7 @@
 import React from "react";
 import {
   ContentHeader,
+  GoogleSheetsEmbed,
   MainContentDiv,
   ScrollDiv,
 } from "../../../commonComponents";
@@ -33,9 +34,9 @@ export function PortfolioTrackerPage() {
           See more technical information in the github link in the header as
           well.
         </p>
-        <iframe
-          style={styles.iframe}
+        <GoogleSheetsEmbed
           src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_r0kZBuN8E-M-JmVtZQNNa-2UZmzNq0lOSG0YF4ic1o4EiHgGbApFApUizRJc6mPTVEaHFZt34dbx/pubhtml?widget=true&amp;autosize=true&amp;headers=false&amp;chrome=false"
+          extend
         />
         <h2 style={{ marginTop: "95vh" }}>Tabs Explanations</h2>
         <h3>Dashboard</h3>
@@ -100,22 +101,3 @@ export function PortfolioTrackerPage() {
     </ScrollDiv>
   );
 }
-
-type StyleSheet = {
-  [key: string]: React.CSSProperties;
-};
-
-const styles: StyleSheet = {
-  iframe: {
-    position: "absolute",
-    left: 0,
-    right: 0,
-    margin: "auto",
-    height: "94vh",
-    width: "94vw",
-    maxWidth: 1615,
-    maxHeight: 675,
-    border: "1px solid lightgrey",
-    borderRadius: 10,
-  },
-};
