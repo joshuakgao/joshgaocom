@@ -49,7 +49,7 @@ export function ChatbotJoshPage() {
           Note: The training phrases aren't hard coded, but rather uses the bag
           of words algorithm
         </p>
-        <GoogleSheetsEmbed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNtKK5cqO4cF50Qwb5wktpBFNrgGzPgP5XfmFqeh3P57zKu5yCTk8lgvhBc-_JsUFzGjzA5gE9Bkge/pubhtml?widget=true&amp;headers=false" />
+        <GoogleSheetsEmbed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNtKK5cqO4cF50Qwb5wktpBFNrgGzPgP5XfmFqeh3P57zKu5yCTk8lgvhBc-_JsUFzGjzA5gE9Bkge/pubhtml?" />
       </MainContentDiv>
     </ScrollDiv>
   );

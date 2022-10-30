@@ -7,14 +7,14 @@ export function GoogleSheetsEmbed({
   src,
   gid, // sheet id
   // range, // the rows and columns that are published to the web. For example, A1:B15
-  widget, // If true, the sheet tab is displayed at the bottom
-  headers, // If true, row numbers and column letters are displayed
+  widget = true, // If true, the sheet tab is displayed at the bottom
+  headers = false, // If true, row numbers and column letters are displayed
   // autosize, // boolean, not sure what it does
   // output, // Display google sheet as this type
   // ui, // select the interface version
   // q, // search query
   // gridlines, // If true, the gridlines will be displayed
-  chrome, // If true, the title and footer are displayed
+  chrome = false, // If true, the title and footer are displayed
 }: {
   className?: string;
   style?: React.CSSProperties;
@@ -39,9 +39,9 @@ export function GoogleSheetsEmbed({
 
     if (gid) addons += `&amp;gid=${gid}&amp;single=true`;
     // if (range) addons += `&amp;range=${range}`;
-    if (widget) addons += `&amp;widget=${widget}`;
-    if (headers) addons += `&amp;headers=${headers}`;
-    if (chrome) addons += `&amp;chrome=${chrome}`;
+    addons += `&amp;widget=${widget}`;
+    addons += `&amp;headers=${headers}`;
+    addons += `&amp;chrome=${chrome}`;
     // if (gridlines) addons += `&amp;gridlines=${gridlines}`;
     // if (autosize) addons += `&amp;autosize=${autosize}`;
     // if (output) addons += `&amp;output=${output}`;

@@ -35,12 +35,8 @@ export function PortfolioTrackerPage() {
           well.
         </p>
         <GoogleSheetsEmbed
-          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_r0kZBuN8E-M-JmVtZQNNa-2UZmzNq0lOSG0YF4ic1o4EiHgGbApFApUizRJc6mPTVEaHFZt34dbx/pubhtml?widget=true&amp;autosize=true&amp;headers=false&amp;chrome=false"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_r0kZBuN8E-M-JmVtZQNNa-2UZmzNq0lOSG0YF4ic1o4EiHgGbApFApUizRJc6mPTVEaHFZt34dbx/pubhtml?"
           extend
-          // gid={2}
-          widget
-          headers
-          chrome
         />
         <h2 style={{ marginTop: "95vh" }}>Tabs Explanations</h2>
         <h3>Dashboard</h3>

@@ -116,7 +116,7 @@ export function RealEstateDealFinderPage() {
           apply customizable filters {'(first two rows in the "Dashboard" tab)'}
           .
         </p>
-        <GoogleSheetsEmbed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRV3VF8HIPGQal3m6bUSKfPrIRf1bDqNiCrDDPJ2g50TkPMmXnPbYV-k1v19l-yHt6os7fTJ8kcHSzZ/pubhtml?widget=true&amp;headers=false" />
+        <GoogleSheetsEmbed src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRV3VF8HIPGQal3m6bUSKfPrIRf1bDqNiCrDDPJ2g50TkPMmXnPbYV-k1v19l-yHt6os7fTJ8kcHSzZ/pubhtml?" />
         <h2>Final Thoughts</h2>
         <p>
           I'm actually quite happy with this script. It works every time without
