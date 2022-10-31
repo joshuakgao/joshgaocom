@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6ab84315.css",
-    "main.js": "/static/js/main.5c260bc7.js",
+    "main.js": "/static/js/main.568d1790.js",
     "static/media/tofu60_profile.jpeg": "/static/media/tofu60_profile.7eafaedf957c42aaf019.jpeg",
     "static/media/beachHouse.jpg": "/static/media/beachHouse.9049559d173b0b50c6eb.jpg",
     "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
@@ -38,10 +38,10 @@
     "static/media/javascript.png": "/static/media/javascript.266bd9fb2663dcc057b4.png",
     "index.html": "/index.html",
     "main.6ab84315.css.map": "/static/css/main.6ab84315.css.map",
-    "main.5c260bc7.js.map": "/static/js/main.5c260bc7.js.map"
+    "main.568d1790.js.map": "/static/js/main.568d1790.js.map"
   },
   "entrypoints": [
     "static/css/main.6ab84315.css",
-    "static/js/main.5c260bc7.js"
+    "static/js/main.568d1790.js"
   ]
 }
