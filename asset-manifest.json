@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.ce96f0f7.css",
-    "main.js": "/static/js/main.1c4d676d.js",
+    "main.css": "/static/css/main.6ab84315.css",
+    "main.js": "/static/js/main.3c13800f.js",
     "static/media/tofu60_profile.jpeg": "/static/media/tofu60_profile.7eafaedf957c42aaf019.jpeg",
     "static/media/beachHouse.jpg": "/static/media/beachHouse.9049559d173b0b50c6eb.jpg",
     "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
+    "static/media/me.jpg": "/static/media/me.cfb1de62ffd3148b8fe9.jpg",
     "static/media/memeBackground.jpg": "/static/media/memeBackground.010d73b81e62e75f4760.jpg",
     "static/media/python.png": "/static/media/python.fbebfabd42ff95354ed9.png",
-    "static/media/ellipse.png": "/static/media/ellipse.e231566c16663733d190.png",
     "static/media/chatbot_title_card.png": "/static/media/chatbot_title_card.447d65aa79049681e06f.png",
     "static/media/watermelon.png": "/static/media/watermelon.b4012f507d40a1774201.png",
     "static/media/insideSprouts.webp": "/static/media/insideSprouts.d2a2e5649dff1691f818.webp",
@@ -19,6 +19,7 @@
     "static/media/github.png": "/static/media/github.4bb497e598c121a691f7.png",
     "static/media/react.png": "/static/media/react.73dbb5bcec516da82694.png",
     "static/media/homepage.png": "/static/media/homepage.ead7e82c2bfa2472cc6c.png",
+    "static/media/dot.png": "/static/media/dot.e4cb1a369eed5596f89c.png",
     "static/media/StoreLocations.jpg": "/static/media/StoreLocations.50a9cc6aa312d6499fa3.jpg",
     "static/media/sproutsLogo.png": "/static/media/sproutsLogo.4c96bc89259d6bde3c6c.png",
     "static/media/cv.pdf": "/static/media/cv.ca25ef1d6f2d4ee81f3f.pdf",
@@ -36,11 +37,11 @@
     "static/media/firebase.png": "/static/media/firebase.7d2ea0d93c4a927fdfbd.png",
     "static/media/javascript.png": "/static/media/javascript.266bd9fb2663dcc057b4.png",
     "index.html": "/index.html",
-    "main.ce96f0f7.css.map": "/static/css/main.ce96f0f7.css.map",
-    "main.1c4d676d.js.map": "/static/js/main.1c4d676d.js.map"
+    "main.6ab84315.css.map": "/static/css/main.6ab84315.css.map",
+    "main.3c13800f.js.map": "/static/js/main.3c13800f.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce96f0f7.css",
-    "static/js/main.1c4d676d.js"
+    "static/css/main.6ab84315.css",
+    "static/js/main.3c13800f.js"
   ]
 }
