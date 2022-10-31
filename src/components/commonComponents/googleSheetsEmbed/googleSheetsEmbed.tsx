@@ -55,7 +55,6 @@ export function GoogleSheetsEmbed({
 
   return (
     <>
-      <p>{src}</p>
       <iframe
         className={className}
         style={Object.assign(
