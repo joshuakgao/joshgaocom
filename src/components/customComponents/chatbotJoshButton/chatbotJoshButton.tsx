@@ -11,7 +11,8 @@ export default function ChatbotJoshButton() {
       <iframe
         className={showChat ? "fade-in" : "fade-out"}
         allow="microphone;"
-        height={"500"}
+        height={"100%"}
+        width={"100%"}
         src="https://console.dialogflow.com/api-client/demo/embedded/a3b4c3fb-13eb-4d22-a5a8-ec7d4f659e0e"
         style={{ border: "0px solid lightgrey", minWidth: "37vw" }}
       />
@@ -35,15 +36,18 @@ const styles: StyleSheet = {
     display: "flex",
     flexDirection: "row",
     alignItems: "flex-end",
-    // justifyContent: "flex-end",
+    height: "85vh",
+    width: "90vw",
+    maxHeight: 400,
+    maxWidth: 400 * 1.618,
   },
   buttonContainer: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#ffe135",
-    height: 50,
-    width: 50,
+    minHeight: 50,
+    minWidth: 50,
     borderRadius: 1000,
     marginLeft: 16,
   },
