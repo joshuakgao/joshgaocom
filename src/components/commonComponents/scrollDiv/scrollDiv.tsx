@@ -14,8 +14,8 @@ export function ScrollDiv({
   return (
     <div
       style={{
-        ...style,
         ...styles.scrollDiv,
+        ...style,
         ...{ border: d ? "1px black solid" : undefined },
       }}
       className={className}
