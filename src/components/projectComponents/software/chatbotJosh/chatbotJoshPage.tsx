@@ -16,6 +16,7 @@ export function ChatbotJoshPage() {
           projectComponents="Dialogflow - Firebase"
           skills={["dialogflow", "js", "firebase", "googleDrive"]}
           sources={{
+            github: "https://github.com/tugonbob/JoshGao-CareerChatbot.git",
             googleDrive:
               "https://docs.google.com/spreadsheets/d/19YN5nMysW3npDchNzWd4R_hfOTCS6ftW6dBrzzR3Hnc/edit?usp=sharing",
           }}
