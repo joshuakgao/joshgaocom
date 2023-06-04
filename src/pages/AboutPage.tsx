@@ -46,7 +46,7 @@ export function AboutPage() {
     <ScrollDiv style={styles.container}>
       <div style={styles.textContainer}>
         <h1>More about me</h1>
-        <RowDiv>
+        <RowDiv style={{ flexWrap: "wrap" }}>
           <h4 style={{ color: "var(--tertiary)", marginRight: 16 }}>
             joshuakgao@gmail.com
           </h4>
