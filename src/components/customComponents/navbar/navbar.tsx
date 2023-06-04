@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { HamburgerMenu } from "../hamburgerMenu";
 import { Logo } from "../logo";
 import "./styles.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const location = useLocation();
 
   useEffect(() => {
     // Update the screen width whenever the window is resized
@@ -44,7 +45,13 @@ export function Navbar() {
             <Link
               to="/ai-ml"
               onClick={() => setMenuOpen(false)}
-              style={styles.link}
+              style={{
+                ...styles.link,
+                ...{
+                  textDecorationLine:
+                    location.pathname === "/ai-ml" ? "underline" : "none",
+                },
+              }}
             >
               <h1 style={styles.navText} className="secondary">
                 AI / ML
@@ -53,7 +60,13 @@ export function Navbar() {
             <Link
               to="/app-dev"
               onClick={() => setMenuOpen(false)}
-              style={styles.link}
+              style={{
+                ...styles.link,
+                ...{
+                  textDecorationLine:
+                    location.pathname === "/app-dev" ? "underline" : "none",
+                },
+              }}
             >
               <h1 style={styles.navText} className="secondary">
                 APP DEV
@@ -62,7 +75,13 @@ export function Navbar() {
             <Link
               to="/other"
               onClick={() => setMenuOpen(false)}
-              style={styles.link}
+              style={{
+                ...styles.link,
+                ...{
+                  textDecorationLine:
+                    location.pathname === "/other" ? "underline" : "none",
+                },
+              }}
             >
               <h1 style={styles.navText} className="secondary">
                 OTHER
@@ -71,7 +90,13 @@ export function Navbar() {
             <Link
               to="/about"
               onClick={() => setMenuOpen(false)}
-              style={styles.link}
+              style={{
+                ...styles.link,
+                ...{
+                  textDecorationLine:
+                    location.pathname === "/about" ? "underline" : "none",
+                },
+              }}
             >
               <h1 style={styles.navText} className="secondary">
                 ABOUT
