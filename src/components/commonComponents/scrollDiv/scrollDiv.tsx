@@ -35,5 +35,6 @@ const styles: StyleSheet = {
     flexDirection: "column",
     backgroundColor: "#f7f7f7",
     overflow: "hidden",
+    paddingTop: 16,
   },
 };
