@@ -1,4 +1,4 @@
 export * from "./HomePage";
+export * from "./AimlPage";
 export * from "./OtherPage";
-export * from "./SoftwarePage";
-export * from "./BusinessPage";
+export * from "./AppdevPage";

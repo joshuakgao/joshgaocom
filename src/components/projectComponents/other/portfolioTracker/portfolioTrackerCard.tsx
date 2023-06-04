@@ -11,7 +11,7 @@ export function PortfolioTrackerCard({
     <TitleCard
       backgroundImage={stockBackground}
       textPosition={["bottom", "left"]}
-      to="/business/PortfolioTracker"
+      to="/other/PortfolioTracker"
       toFullscreen={toFullscreen}
     >
       <h1 className="primary">Portolio Tracker</h1>

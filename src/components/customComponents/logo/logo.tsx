@@ -20,7 +20,7 @@ export function Logo({
       <Link to="/" style={styles.link} onClick={() => setMenuOpen(false)}>
         <img className="image" src={watermelon} style={{ ...styles.image }} />
         <h1 style={styles.lastName} className="secondary">
-          Gao
+          Joshua Gao
         </h1>
       </Link>
     </RowDiv>
@@ -38,12 +38,12 @@ const styles: StyleSheet = {
     textDecoration: "none",
   },
   image: {
-    marginTop: 4,
     height: "1.3rem",
     marginRight: 8,
     zIndex: 11,
   },
   lastName: {
-    fontSize: 28,
+    marginLeft: 8,
+    fontSize: 18,
   },
 };

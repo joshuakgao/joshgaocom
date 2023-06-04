@@ -12,7 +12,7 @@ export function RedditLaughsCard({ toFullscreen }: { toFullscreen?: boolean }) {
       foregroundPosition={["center", "center"]}
       textPosition={["center"]}
       toFullscreen={toFullscreen}
-      to="/software/redditLaughs"
+      to="/other/redditLaughs"
     >
       <h1 className="primary">Reddit Laughs</h1>
       <h2 className="primary">

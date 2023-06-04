@@ -12,7 +12,7 @@ export function RealEstateDealFinderCard({
       backgroundPosition={"center"}
       textPosition={["top", "right"]}
       textWidth="33vw"
-      to="/software/realEstateDealFinder"
+      to="/other/realEstateDealFinder"
       toFullscreen={toFullscreen}
     >
       <h1 className="primary">Real Estate Deal Finder</h1>

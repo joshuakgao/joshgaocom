@@ -5,7 +5,7 @@ import {
 } from "../../../commonComponents";
 import { JoshgaocomCard } from "./joshgaocomCard";
 
-export default function JoshgaocomPage() {
+export function JoshgaocomPage() {
   return (
     <ScrollDiv>
       <JoshgaocomCard toFullscreen />

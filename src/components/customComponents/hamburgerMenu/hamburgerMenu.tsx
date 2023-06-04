@@ -64,23 +64,23 @@ export function HamburgerMenu({
         <>
           <div style={styles.menu}>
             <Link
-              to="/software"
+              to="/ai-ml"
               onClick={() => setMenuOpen(false)}
               style={styles.link}
               className={menuOpen ? "fade-down-reverse" : "fade-down"}
             >
               <h1 style={styles.menuItem} className="secondary">
-                Software
+                AI/ML
               </h1>
             </Link>
             <Link
-              to="/business"
+              to="/app-dev"
               onClick={() => setMenuOpen(false)}
               style={styles.link}
               className={menuOpen ? "fade-down-reverse" : "fade-down"}
             >
               <h1 style={styles.menuItem} className="secondary">
-                Business
+                App Dev
               </h1>
             </Link>
             <Link
@@ -91,16 +91,6 @@ export function HamburgerMenu({
             >
               <h1 style={styles.menuItem} className="secondary">
                 Other
-              </h1>
-            </Link>
-            <Link
-              to="/about"
-              onClick={() => setMenuOpen(false)}
-              style={styles.link}
-              className={menuOpen ? "fade-down-reverse" : "fade-down"}
-            >
-              <h1 style={styles.menuItem} className="secondary">
-                About
               </h1>
             </Link>
           </div>

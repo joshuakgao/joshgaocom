@@ -1,26 +1,22 @@
 import React from "react";
-import me from "../../assets/images/me.jpg";
-import { ScrollDiv } from "../../components/commonComponents";
-import ChatbotJoshButton from "../../components/customComponents/chatbotJoshButton/chatbotJoshButton";
+import me from "../assets/images/me.jpg";
+import { ScrollDiv } from "../components/commonComponents";
 
-export default function AboutPage() {
+export function HomePage() {
   return (
     <>
       <ScrollDiv style={styles.container}>
         <div style={styles.textContainer}>
-          <h1>About Me</h1>
+          <h1>Hey, I'm Joshua Gao</h1>
           <h4 style={styles.subtitle} className="fade-up">
-            I'm Josh Gao, I am a Machine Learning Engineer based in Texas. I
-            love analyzing and visualizing large amounts of data and providing
-            unique and helpful insights. Some of my other interests include
-            playing volleyball and writing music.
+            I am a Machine Learning Engineer based in Texas. I love analyzing
+            and visualizing large amounts of data and providing unique and
+            helpful insights. Some of my other interests include playing
+            volleyball and writing music.
           </h4>
         </div>
         <img style={styles.img} src={me} />
       </ScrollDiv>
-      <div style={styles.chatbotJoshButtonContainer}>
-        <ChatbotJoshButton />
-      </div>
     </>
   );
 }
@@ -41,7 +37,7 @@ const styles: StyleSheet = {
     paddingRight: "calc(32px + 10vw)",
   },
   textContainer: {
-    maxWidth: 500,
+    maxWidth: 600,
     marginTop: 50,
   },
   title: {
