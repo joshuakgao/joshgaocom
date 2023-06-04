@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { cv, github, linkedin_transparent } from "../../../assets/customIcons";
 import cvPdf from "../../../assets/docs/cv.pdf";
 import { FullscreenDiv, MyIcon, RowDiv } from "../../commonComponents";
-import { cv, linkedin_transparent, github } from "../../../assets/customIcons";
 import "./styles.css";
 
 export function HamburgerMenu({
@@ -165,10 +165,10 @@ const styles: StyleSheet = {
     flexDirection: "column",
     alignItems: "flex-end",
     justifyContent: "space-between",
+    top: 0,
     marginRight: 32,
     zIndex: 10,
     backgroundColor: "#f7f7f7",
-    border: "1px black solid",
   },
   menu: {
     display: "flex",
