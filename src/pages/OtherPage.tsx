@@ -3,7 +3,6 @@ import {
   PortfolioTrackerCard,
   RealEstateDealFinderCard,
   RedditLaughsCard,
-  Tofu60Card,
 } from "../components/projectComponents/other";
 
 export function OtherPage() {
@@ -12,7 +11,6 @@ export function OtherPage() {
       <RedditLaughsCard />
       <PortfolioTrackerCard />
       <RealEstateDealFinderCard />
-      <Tofu60Card />
     </ScrollDiv>
   );
 }
