@@ -70,7 +70,7 @@ export function HamburgerMenu({
               className={menuOpen ? "fade-down-reverse" : "fade-down"}
             >
               <h1 style={styles.menuItem} className="secondary">
-                AI/ML
+                AI / ML
               </h1>
             </Link>
             <Link
