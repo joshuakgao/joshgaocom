@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.06bbed33.css",
-    "main.js": "/static/js/main.a45de366.js",
+    "main.css": "/static/css/main.cbb0bda1.css",
+    "main.js": "/static/js/main.b249b99c.js",
     "static/media/tofu60_profile.jpeg": "/static/media/tofu60_profile.7eafaedf957c42aaf019.jpeg",
     "static/media/beachHouse.jpg": "/static/media/beachHouse.9049559d173b0b50c6eb.jpg",
     "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
@@ -10,21 +10,15 @@
     "static/media/python.png": "/static/media/python.fbebfabd42ff95354ed9.png",
     "static/media/chatbot_title_card.png": "/static/media/chatbot_title_card.447d65aa79049681e06f.png",
     "static/media/watermelon.png": "/static/media/watermelon.b4012f507d40a1774201.png",
-    "static/media/insideSprouts.webp": "/static/media/insideSprouts.d2a2e5649dff1691f818.webp",
     "static/media/beach.jpg": "/static/media/beach.563078ec967cbb28613a.jpg",
-    "static/media/sproutsStoreFront.jpg": "/static/media/sproutsStoreFront.fd894cae4762b8abc8af.jpg",
     "static/media/linkedin-transparent.png": "/static/media/linkedin-transparent.a1fe1139f51dd50ff1ae.png",
     "static/media/Vito-CondensedRegular.woff": "/static/media/Vito-CondensedRegular.aeb0a604aa50c3c34b78.woff",
     "static/media/youtube.png": "/static/media/youtube.8a3ed11c86b689e63d3f.png",
     "static/media/github.png": "/static/media/github.4bb497e598c121a691f7.png",
     "static/media/react.png": "/static/media/react.73dbb5bcec516da82694.png",
     "static/media/homepage.png": "/static/media/homepage.ead7e82c2bfa2472cc6c.png",
-    "static/media/dot.png": "/static/media/dot.e4cb1a369eed5596f89c.png",
-    "static/media/StoreLocations.jpg": "/static/media/StoreLocations.50a9cc6aa312d6499fa3.jpg",
-    "static/media/sproutsLogo.png": "/static/media/sproutsLogo.4c96bc89259d6bde3c6c.png",
     "static/media/cv.pdf": "/static/media/cv.ca25ef1d6f2d4ee81f3f.pdf",
     "static/media/linkedin.png": "/static/media/linkedin.72097b5277a499b1902f.png",
-    "static/media/sproutsStoreLayout.jpg": "/static/media/sproutsStoreLayout.b03966bad6d894b87a5f.jpg",
     "static/media/typescript.png": "/static/media/typescript.17936c69824e11a996c4.png",
     "static/media/sql.png": "/static/media/sql.491c6ed79d765bc2af4c.png",
     "static/media/Avenir-Black.otf": "/static/media/Avenir-Black.7ce894e12078ca8c5134.otf",
@@ -37,11 +31,11 @@
     "static/media/firebase.png": "/static/media/firebase.7d2ea0d93c4a927fdfbd.png",
     "static/media/javascript.png": "/static/media/javascript.266bd9fb2663dcc057b4.png",
     "index.html": "/index.html",
-    "main.06bbed33.css.map": "/static/css/main.06bbed33.css.map",
-    "main.a45de366.js.map": "/static/js/main.a45de366.js.map"
+    "main.cbb0bda1.css.map": "/static/css/main.cbb0bda1.css.map",
+    "main.b249b99c.js.map": "/static/js/main.b249b99c.js.map"
   },
   "entrypoints": [
-    "static/css/main.06bbed33.css",
-    "static/js/main.a45de366.js"
+    "static/css/main.cbb0bda1.css",
+    "static/js/main.b249b99c.js"
   ]
 }
