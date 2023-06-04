@@ -37,7 +37,6 @@ export function Navbar() {
             style={{
               display: "flex",
               justifyContent: "flex-end",
-              width: "50vw",
               marginRight: 32,
               pointerEvents: "auto",
             }}
