@@ -56,7 +56,7 @@ export function Navbar() {
               style={styles.link}
             >
               <h1 style={styles.navText} className="secondary">
-                App Dev
+                APP DEV
               </h1>
             </Link>
             <Link
@@ -65,7 +65,16 @@ export function Navbar() {
               style={styles.link}
             >
               <h1 style={styles.navText} className="secondary">
-                Other
+                OTHER
+              </h1>
+            </Link>
+            <Link
+              to="/about"
+              onClick={() => setMenuOpen(false)}
+              style={styles.link}
+            >
+              <h1 style={styles.navText} className="secondary">
+                ABOUT
               </h1>
             </Link>
           </div>

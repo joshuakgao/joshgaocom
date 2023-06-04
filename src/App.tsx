@@ -11,7 +11,7 @@ import {
   RedditLaughsPage,
   PortfolioTrackerPage,
 } from "./components/projectComponents/other";
-import { HomePage, AimlPage, OtherPage, AppdevPage } from "./pages";
+import { HomePage, AimlPage, OtherPage, AppdevPage, AboutPage } from "./pages";
 
 function App() {
   return (
@@ -36,11 +36,12 @@ function App() {
           path="/other/realEstateDealFinder"
           element={<RealEstateDealFinderPage />}
         />
-
         <Route
           path="/other/portfolioTracker"
           element={<PortfolioTrackerPage />}
         />
+
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </>
   );

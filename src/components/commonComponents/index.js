@@ -6,3 +6,4 @@ export * from "./mainContentDiv";
 export * from "./contentHeader";
 export * from "./myIcon";
 export * from "./googleSheetsEmbed";
+export * from "./skillDiv";

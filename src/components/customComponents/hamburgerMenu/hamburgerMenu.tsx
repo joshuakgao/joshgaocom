@@ -80,7 +80,7 @@ export function HamburgerMenu({
               className={menuOpen ? "fade-down-reverse" : "fade-down"}
             >
               <h1 style={styles.menuItem} className="secondary">
-                App Dev
+                APP DEV
               </h1>
             </Link>
             <Link
@@ -90,7 +90,17 @@ export function HamburgerMenu({
               className={menuOpen ? "fade-down-reverse" : "fade-down"}
             >
               <h1 style={styles.menuItem} className="secondary">
-                Other
+                OTHER
+              </h1>
+            </Link>
+            <Link
+              to="/about"
+              onClick={() => setMenuOpen(false)}
+              style={styles.link}
+              className={menuOpen ? "fade-down-reverse" : "fade-down"}
+            >
+              <h1 style={styles.menuItem} className="secondary">
+                ABOUT
               </h1>
             </Link>
           </div>
