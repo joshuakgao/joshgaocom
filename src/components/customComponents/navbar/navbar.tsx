@@ -126,7 +126,7 @@ const styles: StyleSheet = {
   },
   navText: {
     margin: 32,
-    fontSize: 22,
+    fontSize: 16,
   },
   link: {
     textDecorationLine: "none",

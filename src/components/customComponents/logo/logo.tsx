@@ -34,17 +34,15 @@ interface StyleSheet {
 const styles: StyleSheet = {
   link: {
     display: "flex",
-    alignItems: "flex-start",
     textDecoration: "none",
   },
   image: {
-    height: "1.3rem",
-    marginRight: 8,
-    marginTop: 3,
+    height: 16,
+    marginRight: 4,
     zIndex: 11,
   },
   lastName: {
     marginLeft: 8,
-    fontSize: 22,
+    fontSize: 16,
   },
 };
