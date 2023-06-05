@@ -12,7 +12,7 @@ export function AskGptPage() {
       <MainContentDiv>
         <ContentHeader
           date="6/4/2023"
-          skills={["react-native", "typescript", "firebase"]}
+          skills={["react", "typescript", "firebase"]}
           projectComponents="Mobile Application Integration with Chat-GPT"
         />
         <h2>Introduction</h2>

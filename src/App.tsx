@@ -1,7 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import "./assets/styles.css";
 import { Navbar } from "./components/customComponents/navbar/navbar";
-import { JoshgaocomPage } from "./components/projectComponents/appdev";
+import {
+  AskGptPage,
+  JoshgaocomPage,
+} from "./components/projectComponents/appdev";
 import {
   RealEstateDealFinderPage,
   RedditLaughsPage,
@@ -19,8 +22,8 @@ function App() {
         <Route path="/ai-ml" element={<AimlPage />} />
 
         <Route path="/app-dev" element={<AppdevPage />} />
+        <Route path="/app-dev/askGpt" element={<AskGptPage />} />
         <Route path="/app-dev/joshgaocom" element={<JoshgaocomPage />} />
-        <Route path="/app-dev/volleyballConnect" />
 
         <Route path="/other" element={<OtherPage />} />
         <Route path="/other/redditLaughs" element={<RedditLaughsPage />} />
