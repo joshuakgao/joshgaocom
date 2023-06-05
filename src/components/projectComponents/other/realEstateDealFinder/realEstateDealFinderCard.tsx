@@ -1,4 +1,4 @@
-import background from "../../../../assets/projects/software/realEstateDealFinder/beachHouse.jpg";
+import background from "../../../../assets/projects/other/realEstateDealFinder/beachHouse.jpg";
 import { TitleCard } from "../../titleCard";
 
 export function RealEstateDealFinderCard({

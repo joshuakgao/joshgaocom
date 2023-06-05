@@ -1,6 +1,5 @@
 import { TitleCard } from "../../titleCard";
-import redditYoutube from "../../../../assets/projects/software/redditLaughs/redditAndYoutube.png";
-import memeBackground from "../../../../assets/projects/software/redditLaughs/memeBackground.jpg";
+import memeBackground from "../../../../assets/projects/other/redditLaughs/memeBackground.jpg";
 
 export function RedditLaughsCard({ toFullscreen }: { toFullscreen?: boolean }) {
   return (
