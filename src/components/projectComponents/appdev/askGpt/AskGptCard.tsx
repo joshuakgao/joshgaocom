@@ -1,7 +1,7 @@
-import { TitleCard } from "../../titleCard";
 import homepage from "../../../../assets/projects/software/joshgaocom/homepage.png";
+import { TitleCard } from "../../titleCard";
 
-export function JoshgaocomCard({ toFullscreen }: { toFullscreen?: boolean }) {
+export function AskGptCard({ toFullscreen }: { toFullscreen?: boolean }) {
   return (
     <TitleCard
       to="/app-dev/joshgaocom"
@@ -9,8 +9,8 @@ export function JoshgaocomCard({ toFullscreen }: { toFullscreen?: boolean }) {
       textPosition={["left", "center"]}
       backgroundImage={homepage}
     >
-      <h1>joshgao.com</h1>
-      <h2>A website showcasing Josh Gao's projects</h2>
+      <h1>Ask GPT</h1>
+      <h2>A mobile app that lets you talk to Chat-GPT</h2>
     </TitleCard>
   );
 }

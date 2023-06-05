@@ -1,9 +1,13 @@
 import { ScrollDiv } from "../components/commonComponents";
-import { JoshgaocomCard } from "../components/projectComponents/appdev";
+import {
+  AskGptCard,
+  JoshgaocomCard,
+} from "../components/projectComponents/appdev";
 
 export function AppdevPage() {
   return (
     <ScrollDiv>
+      <AskGptCard />
       <JoshgaocomCard />
     </ScrollDiv>
   );
