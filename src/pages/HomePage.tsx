@@ -31,11 +31,9 @@ const styles: StyleSheet = {
     alignItems: "center",
     justifyContent: "space-evenly",
     minHeight: "98.5vh",
-    paddingLeft: "calc(32px + 10vw)",
-    paddingRight: "calc(32px + 10vw)",
   },
   textContainer: {
-    maxWidth: 600,
+    maxWidth: 500,
     marginTop: 50,
   },
   title: {
