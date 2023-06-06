@@ -93,11 +93,10 @@ export function AboutPage() {
           hesitate to contact me.
         </h4>
       </div>
-      <div style={{ ...styles.textContainer, ...{ marginLeft: 128 } }}>
+      <div style={styles.textContainer}>
         <h1>My skills</h1>
         <div
           style={{
-            width: "calc(25vw)",
             marginTop: 32,
           }}
         >
