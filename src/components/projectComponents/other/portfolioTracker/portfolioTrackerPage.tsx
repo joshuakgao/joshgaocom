@@ -19,26 +19,26 @@ export function PortfolioTrackerPage() {
           sources={{
             github: "https://github.com/tugonbob/PortfolioTracker.git",
             googleDrive:
-              "https://docs.google.com/spreadsheets/d/1VVdyaR6301wR6bW8tCLX5kh-q9Qt_3s0AiSrbTvzYKQ/edit?usp=sharing",
+              "https://docs.google.com/spreadsheets/d/1wrPfNQtEmuMB3GUdjDgKffgdOIyPkrvQC0l_QhYNKxE/edit?usp=sharing",
           }}
         />
-        <h2>Quick Summary</h2>
+        <h2>Introduction</h2>
         <p>
-          I created a stock market portfolio tracker with Google Sheets to track
-          my returns. I input every trade, dividend, and deposit and use Google
-          Sheet's App Script to code up the calculation of all the data. I
-          update my actions regularly.
+          Ever since I started investing, I've always wanted a birds eye view of
+          my stock market portfolio. I wanted to track every single penny that I
+          made {"("}or more commonly lost{")"} and glean important insights from
+          my portfolio.
         </p>
-        <p>
+        <p style={{ marginBottom: 64, color: "var(--tertiary)" }}>
           If the sheet below doesn't load, open it with the link in the header.
           See more technical information in the github link in the header as
           well.
         </p>
         <GoogleSheetsEmbed
-          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_r0kZBuN8E-M-JmVtZQNNa-2UZmzNq0lOSG0YF4ic1o4EiHgGbApFApUizRJc6mPTVEaHFZt34dbx/pubhtml?"
+          src="https://docs.google.com/spreadsheets/d/1wrPfNQtEmuMB3GUdjDgKffgdOIyPkrvQC0l_QhYNKxE/edit?usp=sharing"
           extend
         />
-        <h2 style={{ marginTop: "95vh" }}>Tabs Explanations</h2>
+        <h2 style={{ marginTop: "100vh" }}>Tabs Explanations</h2>
         <h3>Dashboard</h3>
         <p>
           Here is the main tab of the whole spreadsheet. It features some
@@ -87,9 +87,16 @@ export function PortfolioTrackerPage() {
           "Dashboard" tab.
         </p>
         <h3>Market Map Data</h3>
+        <p>Here is where the S{"&"}P 500 map's data lives.</p>
+        <h3>VOO Price History</h3>
         <p>
-          Here is where the S{"&"}P 500 map's data lives. I also keep track of
-          major inidices day gain and YTD gain.
+          I needed to be able to compare my portfolio performance to the S&P500.
+          First, I took a history of every trading day of prices since I started
+          investing. Then, every time I deposited money into a investment
+          account, I would pretend to buy the S&P500. And whenever I withdrew
+          money, I would pretend to sell the S&P500. This way I can see the vast
+          difference in how much I am lagging the S&P500 to each and every
+          penny.
         </p>
         <h3>Super Investor</h3>
         <p>
