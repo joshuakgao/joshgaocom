@@ -53,13 +53,13 @@ export function RedditLaughsPage() {
         </p>
         <h2>Python Video Editing</h2>
         <p>
-          After I have gathered my content, I need to put them together to
-          create the full meme compilation video. There is this handy dandy
-          python package called MoviePy. Perfect for automating video editing.
-          Using the package, I simply made a bunch of video appends and slapped
-          a "like and subscribe" animation to the beginning of the video. And
-          just like that, a freshly minted Youtube video was born and ready to
-          be uploaded.
+          After I gathered my content, I needed to put them together to create
+          the full meme compilation video. There is this handy dandy python
+          package called MoviePy. Perfect for automating video editing. Using
+          the package, I simply made a bunch of video appends and slapped a
+          "like and subscribe" animation to the beginning of the video. And just
+          like that, a freshly minted Youtube video was born and ready to be
+          uploaded.
         </p>
         <h2>Other Thoughts</h2>
         <p>
@@ -70,7 +70,7 @@ export function RedditLaughsPage() {
           depths of Reddit can manufacture.
         </p>
         <h2>Demonstration</h2>
-        <p>
+        <p style={{ marginBottom: 32 }}>
           Here, I show the process of creating a 60 second "perfectly cut
           screams" video compilation. However, you can define your required
           video length to be as long or short as you want, as well as which

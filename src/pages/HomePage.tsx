@@ -52,7 +52,7 @@ const styles: StyleSheet = {
     marginTop: 32,
     marginBottom: 32,
     width: "100%",
-    maxWidth: 422,
+    maxWidth: 500,
     minWidth: 200,
     height: undefined,
   },

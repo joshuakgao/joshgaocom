@@ -36,11 +36,11 @@ export function RealEstateDealFinderPage() {
           Trying to find your next great real estate investment is tedious when
           your looking through Zillow and clicking on random houses over and
           over. That's when it occurred to me that I could automate this
-          process. With a few criterion, I could go through thousands of Zillow
-          listings and filter out the obvious losers and go into a deeper dive
-          into potential good deals.
+          process. With a few criteria in mind, I can sift through thousands of
+          Zillow listings, identifying and filtering out the obvious losers, and
+          then conduct a more thorough analysis of potential good deals.
         </p>
-        <h2>My Real Estate Criterion</h2>
+        <h2>My Real Estate Criteria</h2>
         <p>
           I wanted to find a house in a good area in Greater Houston that would
           cash flow at a decent rate. Since a "good area" is a very subjective
@@ -48,7 +48,7 @@ export function RealEstateDealFinderPage() {
           decided on school ratings because not only does a better school rating
           mean a better area, but also the area appreciates more as well. To
           estimate cash flow, I would normally estimate the cap rate of the
-          property, but neither Zillow or Redfin gave estimates on operating
+          property, but neither Zillow or Redfin give estimates on operating
           expenses. Therefore, I moved to the common rule of thumb that the
           estimated monthly rent of a property should be at least 1% of the
           purchase price. But first, we need to gather that information for each
@@ -56,7 +56,7 @@ export function RealEstateDealFinderPage() {
         </p>
         <h2>Data Collection</h2>
         <p>
-          I collect data by scraping's Zillow website source code and by taking
+          I collect data by scraping Zillow's website source code and by taking
           advantage of a Python package called Redfin that provides Redfin data.
         </p>
         <p>
@@ -97,7 +97,7 @@ export function RealEstateDealFinderPage() {
           are located all over the world with their own unique ip address.
         </p>
         <p>
-          Then, I scrape a bunch of proxy servers from the website:
+          So, I scraped a bunch of proxy servers from the website:
           www.free-proxy-list.net. And one by one hit the Zillow website with
           each of these proxies. Unfortunately, not every proxy worked, and it
           would take about 5 seconds to try each proxy. This would considerably
@@ -111,8 +111,8 @@ export function RealEstateDealFinderPage() {
         <h2>Data Analysis</h2>
         <p>
           Below is an excel sheet used to apply filters based on my property
-          criterions. I'm looking for a "Schools Rating" of above 7 and a "Rent
-          to Price Ratio" of above 1%. I used Google Sheet's own SQL flavor to
+          criteria. I'm looking for a "Schools Rating" of above 7 and a "Rent to
+          Price Ratio" of above 1%. I used Google Sheet's own SQL flavor to
           apply customizable filters {'(first two rows in the "Dashboard" tab)'}
           .
         </p>
@@ -120,14 +120,14 @@ export function RealEstateDealFinderPage() {
         <h2>Final Thoughts</h2>
         <p>
           I'm actually quite happy with this script. It works every time without
-          fail, despite Zillow's best efforts to thwart bots, and it finds
-          houses that fit my criterion. All while doing this process way faster
-          than I could have done manually.
+          fail, despite Zillow's best efforts to thwart bots. It finds houses
+          that fit my criteria much faster than I would have been able to do so
+          manually.
         </p>
         <p>
           However, there are downsides. Namely, the speed of the script is not
           as fast as I would like it to be. It can take more than a whole day to
-          scan the Greater Houston Area and even after the data analysis, will
+          scan the Greater Houston Area. And even after the data analysis, will
           often find very low quality houses. Why you may ask? Because when
           estimated rents are high but the selling price is cheap, many times
           this will produce a property that requires so much rehab that it
