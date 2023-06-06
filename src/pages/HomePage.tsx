@@ -36,7 +36,7 @@ const styles: StyleSheet = {
     minHeight: "98.5vh",
   },
   textContainer: {
-    maxWidth: 422,
+    maxWidth: 550,
     marginTop: 50,
   },
   title: {
@@ -52,7 +52,7 @@ const styles: StyleSheet = {
     marginTop: 32,
     marginBottom: 32,
     width: "100%",
-    maxWidth: 500,
+    maxWidth: 422,
     minWidth: 200,
     height: undefined,
   },
