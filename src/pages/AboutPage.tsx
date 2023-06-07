@@ -126,11 +126,12 @@ const styles: StyleSheet = {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-evenly",
+    flexWrap: "wrap",
     minHeight: "100vh",
     paddingTop: 128,
   },
   textContainer: {
-    maxWidth: "33vw",
+    width: 500,
     marginTop: 50,
   },
   footerLink: {
