@@ -17,7 +17,7 @@ export function SkillDiv({
       style={{ ...styles.container, ...{ backgroundColor: backgroundColor } }}
     >
       {icon ? <MyIcon icon={icon} style={{ marginRight: 8 }} /> : null}
-      <b style={{ ...styles.text, ...{ color: textColor } }}>{text}</b>
+      <h4 style={{ ...styles.text, ...{ color: textColor } }}>{text}</h4>
     </div>
   );
 }
@@ -40,6 +40,7 @@ const styles: StyleSheet = {
     marginBottom: 16,
   },
   text: {
+    margin: 0,
     fontSize: 18,
   },
 };
