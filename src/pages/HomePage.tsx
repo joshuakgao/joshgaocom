@@ -10,14 +10,14 @@ export function HomePage() {
         <h1 style={{ fontSize: "calc(16px + 2vw)" }} className="fade-in-0">
           Hey, I'm Joshua Gao
         </h1>
-        <h4 style={styles.subtitle} className="fade-in-3">
+        <h4 style={styles.subtitle} className="fade-in-4">
           I am a Machine Learning Engineer based in Texas. I love analyzing and
           visualizing large amounts of data and providing unique and helpful
           insights. Some of my other interests include playing volleyball and
           writing music.
         </h4>
       </div>
-      <img style={styles.img} src={me} className="fade-in-4" />
+      <img style={styles.img} src={me} className="fade-in-5" />
     </ScrollDiv>
   );
 }
