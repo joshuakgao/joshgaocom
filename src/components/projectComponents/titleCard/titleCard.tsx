@@ -174,6 +174,7 @@ export function TitleCard({
             <img
               src={foregroundImage}
               style={{ height: undefined, width: foregroundSize }}
+              alt="" // required by eslint
             />
           </div>
         ) : null}

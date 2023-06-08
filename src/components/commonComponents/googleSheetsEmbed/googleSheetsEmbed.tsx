@@ -63,6 +63,7 @@ export function GoogleSheetsEmbed({
           style
         )}
         src={src}
+        title={src} // required by eslint
       />
     </>
   );

@@ -17,7 +17,12 @@ export function HomePage() {
           writing music.
         </h4>
       </div>
-      <img style={styles.img} src={me} className="fade-in-5" />
+      <img
+        style={styles.img}
+        src={me}
+        className="fade-in-5"
+        alt="" // required by eslint
+      />
     </ScrollDiv>
   );
 }

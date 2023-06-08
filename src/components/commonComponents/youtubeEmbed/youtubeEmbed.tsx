@@ -3,8 +3,8 @@ import React from "react";
 export function YoutubeEmbed({ embedId }: { embedId: string }) {
   return (
     <iframe
+      title={embedId} // required by eslint
       src={`https://youtube.com/embed/${embedId}`}
-      frameBorder="0"
       allow="autoplay; encrypted-media"
       allowFullScreen
       style={styles.videoContainer}

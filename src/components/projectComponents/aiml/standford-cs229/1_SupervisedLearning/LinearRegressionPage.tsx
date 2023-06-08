@@ -1,13 +1,9 @@
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { github } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import {
-  Code,
   ContentHeader,
   MainContentDiv,
   ScrollDiv,
 } from "../../../../commonComponents";
 import { LinearRegressionCard } from "./LinearRegressionCard";
-import { MathJax } from "better-react-mathjax";
 
 export function LinearRegressionPage() {
   return (

@@ -1,7 +1,6 @@
 import {
   ContentHeader,
   MainContentDiv,
-  RowDiv,
   ScrollDiv,
 } from "../../../commonComponents";
 import { JoshgaocomCard } from "./joshgaocomCard";

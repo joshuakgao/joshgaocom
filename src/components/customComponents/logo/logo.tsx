@@ -18,7 +18,12 @@ export function Logo({
       }}
     >
       <Link to="/" style={styles.link} onClick={() => setMenuOpen(false)}>
-        <img className="image" src={watermelon} style={{ ...styles.image }} />
+        <img
+          className="image"
+          src={watermelon}
+          style={{ ...styles.image }}
+          alt="" // required by eslint
+        />
         <h1 style={styles.lastName} className="secondary">
           JOSHUA GAO
         </h1>
