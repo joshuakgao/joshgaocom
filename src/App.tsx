@@ -11,15 +11,21 @@ import {
   PortfolioTrackerPage,
 } from "./components/projectComponents/other";
 import { HomePage, AimlPage, OtherPage, AppdevPage, AboutPage } from "./pages";
+import { LinearRegressionPage } from "./components/projectComponents/aiml";
+import { MathJaxContext } from "better-react-mathjax";
 
 function App() {
   return (
-    <>
+    <MathJaxContext>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
 
         <Route path="/ai-ml" element={<AimlPage />} />
+        <Route
+          path="/ai-ml/standford-cs229-linearRegression"
+          element={<LinearRegressionPage />}
+        />
 
         <Route path="/app-dev" element={<AppdevPage />} />
         <Route path="/app-dev/askGpt" element={<AskGptPage />} />
@@ -38,7 +44,7 @@ function App() {
 
         <Route path="/about" element={<AboutPage />} />
       </Routes>
-    </>
+    </MathJaxContext>
   );
 }
 
