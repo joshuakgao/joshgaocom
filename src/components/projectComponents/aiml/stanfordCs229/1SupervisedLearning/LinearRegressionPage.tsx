@@ -1,6 +1,7 @@
 import {
   ContentHeader,
   MainContentDiv,
+  RowDiv,
   ScrollDiv,
 } from "../../../../commonComponents";
 import { LinearRegressionCard } from "./LinearRegressionCard";
@@ -56,8 +57,24 @@ export function LinearRegressionPage() {
           scatter plots, with house size on the x-axis and sale price on the
           y-axis and lot size on
         </p>
-        <img src={sqftVsPrice} alt="" />
-        <img src={lotSizeVsPrice} alt="" />
+        <RowDiv
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            src={sqftVsPrice}
+            style={{ width: "50%", minWidth: 450 }}
+            alt=""
+          />
+          <img
+            src={lotSizeVsPrice}
+            style={{ width: "50%", minWidth: 450 }}
+            alt=""
+          />
+        </RowDiv>
         <h2>Hypothesis</h2>
         <h2>Cost Function</h2>
         <h2>Minimizing the Cost Function</h2>

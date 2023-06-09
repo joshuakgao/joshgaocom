@@ -15,9 +15,7 @@ export function LinearRegressionCard({
       backgroundDarken={30}
     >
       <h1 className="primary">1.1 Linear Regression</h1>
-      <h2 className="primary">
-        Stanford CS229: Machine Learning taught by Andrew Ng
-      </h2>
+      <h2 className="primary">Stanford CS229: Machine Learning</h2>
     </TitleCard>
   );
 }
