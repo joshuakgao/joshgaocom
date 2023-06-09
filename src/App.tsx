@@ -11,7 +11,10 @@ import {
   PortfolioTrackerPage,
 } from "./components/projectComponents/other";
 import { HomePage, AimlPage, OtherPage, AppdevPage, AboutPage } from "./pages";
-import { LinearRegressionPage } from "./components/projectComponents/aiml";
+import {
+  LinearRegressionPage,
+  StanfordCs229Page,
+} from "./components/projectComponents/aiml";
 import { MathJaxContext } from "better-react-mathjax";
 
 function App() {
@@ -22,8 +25,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
 
         <Route path="/ai-ml" element={<AimlPage />} />
+        <Route path="/ai-ml/stanfordCs299" element={<StanfordCs229Page />} />
         <Route
-          path="/ai-ml/standford-cs229-linearRegression"
+          path="/ai-ml/stanfordCs229/linearRegression"
           element={<LinearRegressionPage />}
         />
 

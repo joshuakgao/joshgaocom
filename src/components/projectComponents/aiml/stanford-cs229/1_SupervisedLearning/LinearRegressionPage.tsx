@@ -4,6 +4,8 @@ import {
   ScrollDiv,
 } from "../../../../commonComponents";
 import { LinearRegressionCard } from "./LinearRegressionCard";
+import sqftVsPrice from "../../../../../assets/projects/ai-ml/standford-cs229/1.1 Linear Regression/houseSizeVsPrice.png";
+import lotSizeVsPrice from "../../../../../assets/projects/ai-ml/standford-cs229/1.1 Linear Regression/lotSizeVsPrice.png";
 
 export function LinearRegressionPage() {
   return (
@@ -43,17 +45,19 @@ export function LinearRegressionPage() {
         <p>
           To illustrate linear regression, let's consider a real estate dataset.
           The dataset contains information about different houses, such as the
-          size of the house (in square feet) and the corresponding sale prices
-          (in dollars). Our goal is to build a linear regression model that
-          predicts the house price based on its size.
+          size of the house and lot (in square feet) and the corresponding sale
+          prices (in dollars). Our goal is to build a linear regression model
+          that predicts the house price based on its size.
         </p>
-        <h2>Data Visiualization</h2>
+        <h3>Data Visualization</h3>
         <p>
           Before diving into model building, it's crucial to explore and
-          visualize the data to gain insights. Let's plot the data points on a
-          scatter plot, with house size on the x-axis and sale price on the
-          y-axis.
+          visualize the data to gain insights. Let's plot the data points on two
+          scatter plots, with house size on the x-axis and sale price on the
+          y-axis and lot size on
         </p>
+        <img src={sqftVsPrice} alt="" />
+        <img src={lotSizeVsPrice} alt="" />
         <h2>Hypothesis</h2>
         <h2>Cost Function</h2>
         <h2>Minimizing the Cost Function</h2>
