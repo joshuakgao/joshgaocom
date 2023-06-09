@@ -17,6 +17,7 @@ export function TitleCard({
   textWidth = "40vw",
   to = "/",
   toFullscreen = false,
+  isFolder = false,
 }: {
   children?: any;
   border?: string;
@@ -32,6 +33,7 @@ export function TitleCard({
   textWidth?: string;
   to?: string;
   toFullscreen?: boolean;
+  isFolder?: boolean;
 }) {
   const navigate = useNavigate();
   const myRef = useRef<null | HTMLDivElement>(null);
@@ -125,68 +127,136 @@ export function TitleCard({
   let left = foregroundPositionObj.left;
 
   return (
-    <div
-      ref={myRef}
-      style={{
-        ...styles.projectContainer,
-        ...{
-          marginBottom: toFullscreen ? "128px" : "20%",
-        },
-      }}
-      className={`title-card-container`}
-    >
+    <>
+      {isFolder ? (
+        <div
+          ref={myRef}
+          style={{
+            ...styles.projectContainer,
+            ...{
+              marginBottom: toFullscreen ? "128px" : "20%",
+              position: "absolute",
+              left: -20,
+              top: -5,
+            },
+          }}
+          className={`title-card-container`}
+        >
+          <div
+            onClick={goToPage}
+            style={{
+              ...styles.titleCard,
+              ...{
+                cursor: "pointer",
+                pointerEvents: toFullscreen ? "none" : undefined,
+                // backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.${backgroundDarken}) 0%, rgba(0,0,0,0.${backgroundDarken}) 100%), url(${backgroundImage})`,
+                backgroundColor: "lightgray",
+                backgroundSize,
+                backgroundPosition,
+                backgroundRepeat: "no-repeat",
+                alignItems,
+                justifyContent,
+              },
+            }}
+            className={
+              toFullscreen
+                ? "enlarge-fullscreen"
+                : "enlarge-fullscreen-reverse link"
+            }
+          >
+            {foregroundImage ? (
+              <div
+                style={{
+                  position: "absolute",
+                  margin: "auto",
+                  top,
+                  bottom,
+                  right,
+                  left,
+                  height: undefined,
+                  width: foregroundSize,
+                }}
+              >
+                <img
+                  src={foregroundImage}
+                  style={{ height: undefined, width: foregroundSize }}
+                  alt="" // required by eslint
+                />
+              </div>
+            ) : null}
+
+            <div
+              style={{ width: textWidth, filter: "brightness(100%)" }}
+              className={toFullscreen ? "fade-in-out" : "remove-fade-in"}
+            >
+              {children}
+            </div>
+          </div>
+        </div>
+      ) : null}
       <div
-        onClick={goToPage}
+        ref={myRef}
         style={{
-          ...styles.titleCard,
+          ...styles.projectContainer,
           ...{
-            border,
-            cursor: "pointer",
-            pointerEvents: toFullscreen ? "none" : undefined,
-            backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.${backgroundDarken}) 0%, rgba(0,0,0,0.${backgroundDarken}) 100%), url(${backgroundImage})`,
-            backgroundColor,
-            backgroundSize,
-            backgroundPosition,
-            backgroundRepeat: "no-repeat",
-            alignItems,
-            justifyContent,
+            marginBottom: toFullscreen ? "128px" : "20%",
           },
         }}
-        className={
-          toFullscreen
-            ? "enlarge-fullscreen"
-            : "enlarge-fullscreen-reverse link"
-        }
+        className={`title-card-container`}
       >
-        {foregroundImage ? (
-          <div
-            style={{
-              position: "absolute",
-              margin: "auto",
-              top,
-              bottom,
-              right,
-              left,
-              height: undefined,
-              width: foregroundSize,
-            }}
-          >
-            <img
-              src={foregroundImage}
-              style={{ height: undefined, width: foregroundSize }}
-              alt="" // required by eslint
-            />
-          </div>
-        ) : null}
-
         <div
-          style={{ width: textWidth, filter: "brightness(100%)" }}
-          className={toFullscreen ? "fade-in-out" : "remove-fade-in"}
+          onClick={goToPage}
+          style={{
+            ...styles.titleCard,
+            ...{
+              border,
+              cursor: "pointer",
+              pointerEvents: toFullscreen ? "none" : undefined,
+              backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.${backgroundDarken}) 0%, rgba(0,0,0,0.${backgroundDarken}) 100%), url(${backgroundImage})`,
+              backgroundColor,
+              backgroundSize,
+              backgroundPosition,
+              backgroundRepeat: "no-repeat",
+              alignItems,
+              justifyContent,
+            },
+          }}
+          className={
+            toFullscreen
+              ? "enlarge-fullscreen"
+              : "enlarge-fullscreen-reverse link"
+          }
         >
-          {children}
+          {foregroundImage ? (
+            <div
+              style={{
+                position: "absolute",
+                margin: "auto",
+                top,
+                bottom,
+                right,
+                left,
+                height: undefined,
+                width: foregroundSize,
+              }}
+            >
+              <img
+                src={foregroundImage}
+                style={{ height: undefined, width: foregroundSize }}
+                alt="" // required by eslint
+              />
+            </div>
+          ) : null}
+
+          <div
+            style={{ width: textWidth, filter: "brightness(100%)" }}
+            className={toFullscreen ? "fade-in-out" : "remove-fade-in"}
+          >
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

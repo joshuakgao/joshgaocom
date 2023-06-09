@@ -13,6 +13,7 @@ export function StanfordCs229Card({
       textPosition={["left", "center"]}
       backgroundDarken={30}
       backgroundImage={thumbnail}
+      isFolder
     >
       <h1 className="primary">Stanford CS229: Machine Learning</h1>
       <h2 className="primary">Lectures presented by Andrew Ng</h2>
