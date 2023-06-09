@@ -7,7 +7,7 @@ import {
 
 export function OtherPage() {
   return (
-    <ScrollDiv>
+    <ScrollDiv className="fade-in-2">
       <RedditLaughsCard />
       <PortfolioTrackerCard />
       <RealEstateDealFinderCard />

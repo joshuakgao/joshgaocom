@@ -6,7 +6,7 @@ import {
 
 export function AppdevPage() {
   return (
-    <ScrollDiv>
+    <ScrollDiv className="fade-in-2">
       <AskGptCard />
       <JoshgaocomCard />
     </ScrollDiv>

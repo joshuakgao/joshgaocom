@@ -3,7 +3,7 @@ import { LinearRegressionCard } from "./1SupervisedLearning";
 
 export function StanfordCs229Page() {
   return (
-    <ScrollDiv>
+    <ScrollDiv className="fade-in-2">
       <LinearRegressionCard />
     </ScrollDiv>
   );

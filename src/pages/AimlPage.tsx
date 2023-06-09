@@ -3,7 +3,7 @@ import { StanfordCs229Card } from "../components/projectComponents";
 
 export function AimlPage() {
   return (
-    <ScrollDiv>
+    <ScrollDiv className="fade-in-2">
       <StanfordCs229Card />
     </ScrollDiv>
   );

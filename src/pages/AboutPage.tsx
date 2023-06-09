@@ -44,7 +44,7 @@ const SKILLS = [
 export function AboutPage() {
   return (
     <ScrollDiv style={styles.container}>
-      <div style={styles.textContainer}>
+      <div style={styles.textContainer} className="fade-in-2">
         <h1>More about me</h1>
         <RowDiv style={{ flexWrap: "wrap" }}>
           <h4 style={{ color: "var(--tertiary)", marginRight: 16 }}>
@@ -93,7 +93,7 @@ export function AboutPage() {
           hesitate to contact me.
         </h4>
       </div>
-      <div style={styles.textContainer}>
+      <div style={styles.textContainer} className="fade-in-4">
         <h1>My skills</h1>
         <div
           style={{
