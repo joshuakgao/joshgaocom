@@ -43,13 +43,13 @@ export function Navbar() {
             }}
           >
             <Link
-              to="/ai-ml"
+              to="/aiml"
               onClick={() => setMenuOpen(false)}
               style={{
                 ...styles.link,
                 ...{
                   textDecorationLine:
-                    location.pathname === "/ai-ml" ? "underline" : "none",
+                    location.pathname === "/aiml" ? "underline" : "none",
                 },
               }}
             >
@@ -58,13 +58,13 @@ export function Navbar() {
               </h1>
             </Link>
             <Link
-              to="/app-dev"
+              to="/appdev"
               onClick={() => setMenuOpen(false)}
               style={{
                 ...styles.link,
                 ...{
                   textDecorationLine:
-                    location.pathname === "/app-dev" ? "underline" : "none",
+                    location.pathname === "/appdev" ? "underline" : "none",
                 },
               }}
             >

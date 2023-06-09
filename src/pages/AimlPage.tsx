@@ -1,10 +1,10 @@
 import { ScrollDiv } from "../components/commonComponents";
-import { LinearRegressionCard } from "../components/projectComponents";
+import { StanfordCs229Card } from "../components/projectComponents";
 
 export function AimlPage() {
   return (
     <ScrollDiv>
-      <LinearRegressionCard />
+      <StanfordCs229Card />
     </ScrollDiv>
   );
 }

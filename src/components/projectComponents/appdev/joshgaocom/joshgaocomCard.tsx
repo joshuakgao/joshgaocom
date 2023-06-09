@@ -1,10 +1,10 @@
 import { TitleCard } from "../../titleCard";
-import homepage from "../../../../assets/projects/app-dev/joshgaocom/homepage.png";
+import homepage from "../../../../assets/projects/appdev/joshgaocom/homepage.png";
 
 export function JoshgaocomCard({ toFullscreen }: { toFullscreen?: boolean }) {
   return (
     <TitleCard
-      to="/app-dev/joshgaocom"
+      to="/appdev/joshgaocom"
       toFullscreen={toFullscreen}
       textPosition={["left", "center"]}
       backgroundImage={homepage}

@@ -1,1 +1,1 @@
-export * from "./standford-cs229";
+export * from "./stanfordCs229";

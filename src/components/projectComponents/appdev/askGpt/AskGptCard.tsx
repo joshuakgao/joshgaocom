@@ -1,10 +1,10 @@
-import appPreview from "../../../../assets/projects/app-dev/askGpt/chatpage-background.png";
+import appPreview from "../../../../assets/projects/appdev/askGpt/chatpage-background.png";
 import { TitleCard } from "../../titleCard";
 
 export function AskGptCard({ toFullscreen }: { toFullscreen?: boolean }) {
   return (
     <TitleCard
-      to="/app-dev/askGpt"
+      to="/appdev/askGpt"
       toFullscreen={toFullscreen}
       textPosition={["left", "center"]}
       backgroundImage={appPreview}

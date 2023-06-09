@@ -4,8 +4,8 @@ import {
   ScrollDiv,
 } from "../../../../commonComponents";
 import { LinearRegressionCard } from "./LinearRegressionCard";
-import sqftVsPrice from "../../../../../assets/projects/ai-ml/standford-cs229/1.1 Linear Regression/houseSizeVsPrice.png";
-import lotSizeVsPrice from "../../../../../assets/projects/ai-ml/standford-cs229/1.1 Linear Regression/lotSizeVsPrice.png";
+import sqftVsPrice from "../../../../../assets/projects/aiml/stanfordCs229/1.1 Linear Regression/houseSizeVsPrice.png";
+import lotSizeVsPrice from "../../../../../assets/projects/aiml/stanfordCs229/1.1 Linear Regression/lotSizeVsPrice.png";
 
 export function LinearRegressionPage() {
   return (

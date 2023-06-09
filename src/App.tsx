@@ -2,19 +2,20 @@ import { Route, Routes } from "react-router-dom";
 import "./assets/styles.css";
 import { Navbar } from "./components/customComponents/navbar/navbar";
 import {
+  LinearRegressionPage,
+  StanfordCs229Page,
+} from "./components/projectComponents/aiml";
+import {
   AskGptPage,
   JoshgaocomPage,
 } from "./components/projectComponents/appdev";
 import {
+  PortfolioTrackerPage,
   RealEstateDealFinderPage,
   RedditLaughsPage,
-  PortfolioTrackerPage,
 } from "./components/projectComponents/other";
-import { HomePage, AimlPage, OtherPage, AppdevPage, AboutPage } from "./pages";
-import {
-  LinearRegressionPage,
-  StanfordCs229Page,
-} from "./components/projectComponents/aiml";
+import { AboutPage, AimlPage, AppdevPage, HomePage, OtherPage } from "./pages";
+// @ts-ignore
 import { MathJaxContext } from "better-react-mathjax";
 
 function App() {
@@ -24,16 +25,16 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
 
-        <Route path="/ai-ml" element={<AimlPage />} />
-        <Route path="/ai-ml/stanfordCs299" element={<StanfordCs229Page />} />
+        <Route path="/aiml" element={<AimlPage />} />
+        <Route path="/aiml/stanfordCs229" element={<StanfordCs229Page />} />
         <Route
-          path="/ai-ml/stanfordCs229/linearRegression"
+          path="/aiml/stanfordCs229/linearRegression"
           element={<LinearRegressionPage />}
         />
 
-        <Route path="/app-dev" element={<AppdevPage />} />
-        <Route path="/app-dev/askGpt" element={<AskGptPage />} />
-        <Route path="/app-dev/joshgaocom" element={<JoshgaocomPage />} />
+        <Route path="/appdev" element={<AppdevPage />} />
+        <Route path="/appdev/askGpt" element={<AskGptPage />} />
+        <Route path="/appdev/joshgaocom" element={<JoshgaocomPage />} />
 
         <Route path="/other" element={<OtherPage />} />
         <Route path="/other/redditLaughs" element={<RedditLaughsPage />} />

@@ -1,4 +1,4 @@
-import thumbnail from "../../../../../assets/projects/ai-ml/standford-cs229/lectureThumbnail.jpg";
+import thumbnail from "../../../../../assets/projects/aiml/stanfordCs229/lectureThumbnail.jpg";
 import { TitleCard } from "../../../titleCard";
 
 export function LinearRegressionCard({
@@ -8,7 +8,7 @@ export function LinearRegressionCard({
 }) {
   return (
     <TitleCard
-      to="/ai-ml/standford-cs229-linearRegression"
+      to="/aiml/stanfordCs229/linearRegression"
       toFullscreen={toFullscreen}
       textPosition={["left", "center"]}
       backgroundImage={thumbnail}
@@ -16,7 +16,7 @@ export function LinearRegressionCard({
     >
       <h1 className="primary">1.1 Linear Regression</h1>
       <h2 className="primary">
-        Standford CS229: Machine Learning taught by Andrew Ng
+        Stanford CS229: Machine Learning taught by Andrew Ng
       </h2>
     </TitleCard>
   );

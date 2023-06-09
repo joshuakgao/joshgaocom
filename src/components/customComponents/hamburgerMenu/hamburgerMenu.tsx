@@ -64,7 +64,7 @@ export function HamburgerMenu({
         <>
           <div style={styles.menu}>
             <Link
-              to="/ai-ml"
+              to="/aiml"
               onClick={() => setMenuOpen(false)}
               style={styles.link}
               className={menuOpen ? "fade-down-reverse" : "fade-down"}
@@ -74,7 +74,7 @@ export function HamburgerMenu({
               </h1>
             </Link>
             <Link
-              to="/app-dev"
+              to="/appdev"
               onClick={() => setMenuOpen(false)}
               style={styles.link}
               className={menuOpen ? "fade-down-reverse" : "fade-down"}
