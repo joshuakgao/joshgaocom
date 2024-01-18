@@ -47,6 +47,7 @@ const styles: StyleSheet = {
     zIndex: 11,
   },
   lastName: {
+    marginTop: 0,
     marginLeft: 8,
     fontSize: 16,
   },
