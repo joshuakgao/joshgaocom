@@ -93,19 +93,19 @@ export function RealEstateLinearRegressionPage() {
             }
           </Latex>
           <p>Where:</p>
-          <Spacer vertical size={4} />
+          <Spacer horizontal size={4} />
           <Latex>{"$ \\theta_j = $ the parameters to be changed"}</Latex>
-          <Spacer vertical size={4} />
+          <Spacer horizontal size={4} />
           <Latex>{"$ \\alpha = $ learning rate"}</Latex>
-          <Spacer vertical size={4} />
+          <Spacer horizontal size={4} />
           <Latex>{"$ x_j^{(i)} = $ the sqft and lot size as a vector"}</Latex>
-          <Spacer vertical size={4} />
+          <Spacer horizontal size={4} />
           <Latex>
             {
               "$ h_\\theta(x^{(i)}) = $ linear regression real estate price prediction, given $x$ as inputs"
             }
           </Latex>
-          <Spacer vertical size={4} />
+          <Spacer horizontal size={4} />
           <Latex>{"$ y^{(i)} = $ actual real estate price"}</Latex>
         </LatexDiv>
         <p>
@@ -120,14 +120,14 @@ export function RealEstateLinearRegressionPage() {
               "$$ \\begin{bmatrix} \\theta_0 \\\\ \\theta_1 \\\\ \\theta_2 \\end{bmatrix} $$"
             }
           </Latex>
-          <Spacer vertical size={4} />
+          <Spacer horizontal size={4} />
           <p>Where:</p>
           <Latex>
             {"$ \\theta_0 = $ bias or more simply, the y-intercept"}
           </Latex>
-          <Spacer vertical size={4} />
+          <Spacer horizontal size={4} />
           <Latex>{"$ \\theta_1 = $ lot size multiplier"}</Latex>
-          <Spacer vertical size={4} />
+          <Spacer horizontal size={4} />
           <Latex>{"$ \\theta_2 = $ sqft multiplier"}</Latex>
         </LatexDiv>
         <h2>Result</h2>

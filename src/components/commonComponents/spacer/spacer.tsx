@@ -2,12 +2,12 @@ import React, { CSSProperties } from "react";
 
 export function Spacer({
   size = 16,
-  vertical = false,
+  horizontal = false,
   style,
   className,
 }: {
   size?: number;
-  vertical?: boolean;
+  horizontal?: boolean;
   style?: CSSProperties;
   className?: string;
 }) {
@@ -16,8 +16,8 @@ export function Spacer({
       style={{
         ...styles.container,
         ...{
-          height: vertical ? size : "auto",
-          width: !vertical ? size : "auto",
+          height: !horizontal ? size : "auto",
+          width: horizontal ? size : "auto",
         },
         ...style,
       }}

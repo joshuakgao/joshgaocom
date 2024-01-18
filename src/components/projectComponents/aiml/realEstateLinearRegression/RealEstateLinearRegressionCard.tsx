@@ -8,7 +8,7 @@ export function RealEstateLinearRegressionCard({
 }) {
   return (
     <TitleCard
-      to="/aiml/linearRegression"
+      to="/aiml/realEstateLinearRegression"
       toFullscreen={toFullscreen}
       textPosition={["left", "top"]}
       backgroundImage={thumbnail}

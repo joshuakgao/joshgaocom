@@ -1,4 +1,5 @@
 import React, { CSSProperties } from "react";
+import Latex from "react-latex-next";
 
 export function LatexDiv({
   children,
@@ -11,7 +12,7 @@ export function LatexDiv({
 }) {
   return (
     <div style={{ ...styles.latexDiv, ...style }}>
-      <p style={{ fontSize: 18 }}>{children}</p>
+      <p style={{ fontSize: 20 }}>{children}</p>
     </div>
   );
 }

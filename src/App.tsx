@@ -14,6 +14,7 @@ import {
 import { AboutPage, AimlPage, AppdevPage, HomePage, OtherPage } from "./pages";
 // @ts-ignore
 import { MathJaxContext } from "better-react-mathjax";
+import { CifarKnnImageClassificationPage } from "./components/projectComponents/aiml/cifarKnnImageClassification/CifarKnnImageClassificationPage";
 
 function App() {
   return (
@@ -24,8 +25,12 @@ function App() {
 
         <Route path="/aiml" element={<AimlPage />} />
         <Route
-          path="/aiml/linearRegression"
+          path="/aiml/realEstateLinearRegression"
           element={<RealEstateLinearRegressionPage />}
+        />
+        <Route
+          path="/aiml/cifarKnnImageClassification"
+          element={<CifarKnnImageClassificationPage />}
         />
 
         <Route path="/appdev" element={<AppdevPage />} />
