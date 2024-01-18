@@ -1,5 +1,5 @@
 .title-card-container .link {
-  transition: transform 0.5s ease;
+  transition: transform 1s ease;
 }
 
 .title-card-container .link:hover {
@@ -8,19 +8,19 @@
 
 .title-card-container .enlarge-fullscreen {
   animation-name: enlarge-fullscreen;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
   -webkit-animation-name: enlarge-fullscreen;
-  -webkit-animation-duration: 2s;
+  -webkit-animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
 }
 
 .title-card-container .enlarge-fullscreen-reverse {
   animation-name: enlarge-fullscreen-reverse;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
   animation-fill-mode: forwards;
   -webkit-animation-name: enlarge-fullscreen-reverse;
-  -webkit-animation-duration: 1s;
+  -webkit-animation-duration: 1.5s;
   -webkit-animation-fill-mode: forwards;
 }
 
@@ -50,10 +50,10 @@
 
 .title-card-container .fade-in-out {
   animation-name: fade-in-out;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
   -webkit-animation-name: fade-in-out;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
 }
 
@@ -78,10 +78,10 @@
 
 .title-card-container .remove-fade-in {
   animation-name: remove-fade-in;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
   -webkit-animation-name: remove-fade-in;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
 }
 

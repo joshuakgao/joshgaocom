@@ -1,10 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./assets/styles.css";
 import { Navbar } from "./components/customComponents/navbar/navbar";
-import {
-  LinearRegressionPage,
-  StanfordCs229Page,
-} from "./components/projectComponents/aiml";
+import { LinearRegressionPage } from "./components/projectComponents/aiml";
 import {
   AskGptPage,
   JoshgaocomPage,
@@ -26,7 +23,6 @@ function App() {
         <Route path="/" element={<HomePage />} />
 
         <Route path="/aiml" element={<AimlPage />} />
-        <Route path="/aiml/stanfordCs229" element={<StanfordCs229Page />} />
         <Route
           path="/aiml/stanfordCs229/linearRegression"
           element={<LinearRegressionPage />}

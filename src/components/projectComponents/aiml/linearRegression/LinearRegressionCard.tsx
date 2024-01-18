@@ -1,5 +1,5 @@
-import thumbnail from "../../../../../assets/projects/aiml/stanfordCs229/lectureThumbnail.jpg";
-import { TitleCard } from "../../../titleCard";
+import thumbnail from "../../../../assets/projects/aiml/stanfordCs229/lectureThumbnail.jpg";
+import { TitleCard } from "../../titleCard";
 
 export function LinearRegressionCard({
   toFullscreen,

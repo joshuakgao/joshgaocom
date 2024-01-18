@@ -3,10 +3,10 @@ import {
   MainContentDiv,
   RowDiv,
   ScrollDiv,
-} from "../../../../commonComponents";
+} from "../../../commonComponents";
 import { LinearRegressionCard } from "./LinearRegressionCard";
-import sqftVsPrice from "../../../../../assets/projects/aiml/stanfordCs229/1.1 Linear Regression/houseSizeVsPrice.png";
-import lotSizeVsPrice from "../../../../../assets/projects/aiml/stanfordCs229/1.1 Linear Regression/lotSizeVsPrice.png";
+import sqftVsPrice from "../../../../assets/projects/aiml/stanfordCs229/1.1 Linear Regression/houseSizeVsPrice.png";
+import lotSizeVsPrice from "../../../../assets/projects/aiml/stanfordCs229/1.1 Linear Regression/lotSizeVsPrice.png";
 
 export function LinearRegressionPage() {
   return (

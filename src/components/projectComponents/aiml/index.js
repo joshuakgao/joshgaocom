@@ -1,1 +1,1 @@
-export * from "./stanfordCs229";
+export * from "./linearRegression";
