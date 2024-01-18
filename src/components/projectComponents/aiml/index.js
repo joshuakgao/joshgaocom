@@ -1,1 +1,1 @@
-export * from "./linearRegression";
+export * from "./realEstateLinearRegression";
