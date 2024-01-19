@@ -1,5 +1,5 @@
 import React from "react";
-import { TitleCard } from "../../titleCard";
+import { TitleCard } from "../../../customComponents/titleCard";
 import stockBackground from "../../../../assets/projects/other/PortfolioTracker/piechart.jpg";
 
 export function PortfolioTrackerCard({

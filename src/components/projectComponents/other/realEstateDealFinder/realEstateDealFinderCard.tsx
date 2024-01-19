@@ -1,5 +1,5 @@
 import background from "../../../../assets/projects/other/realEstateDealFinder/beachHouse.jpg";
-import { TitleCard } from "../../titleCard";
+import { TitleCard } from "../../../customComponents/titleCard";
 
 export function RealEstateDealFinderCard({
   toFullscreen,

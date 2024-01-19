@@ -1,5 +1,5 @@
 import appPreview from "../../../../assets/projects/appdev/askGpt/chatpage-background.png";
-import { TitleCard } from "../../titleCard";
+import { TitleCard } from "../../../customComponents/titleCard";
 
 export function AskGptCard({ toFullscreen }: { toFullscreen?: boolean }) {
   return (

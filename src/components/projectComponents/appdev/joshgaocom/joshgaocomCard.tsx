@@ -1,4 +1,4 @@
-import { TitleCard } from "../../titleCard";
+import { TitleCard } from "../../../customComponents/titleCard";
 import homepage from "../../../../assets/projects/appdev/joshgaocom/homepage.png";
 
 export function JoshgaocomCard({ toFullscreen }: { toFullscreen?: boolean }) {

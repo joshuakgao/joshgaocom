@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, ChangeEvent } from "react";
 import {
   ContentHeader,
   LatexDiv,
@@ -11,6 +11,39 @@ import Latex from "react-latex-next";
 import cifarImages from "../../../../assets/projects/aiml/cifarKnnImageClassification/cifarImages.png";
 
 export function CifarKnnImageClassificationPage() {
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [data, setData] = useState<any>(null);
+
+  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+
+    if (file) setSelectedFile(file);
+  };
+
+  const handleUpload = async () => {
+    if (selectedFile) {
+      const formData = new FormData();
+      formData.append("image", selectedFile);
+
+      // Replace 'your-api-endpoint' with the actual API endpoint
+      const response = await fetch(
+        "https://relaxing-vulture-trusty.ngrok-free.app/aiml/test",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("Upload successful:", data);
+      setData(data);
+    }
+  };
+
   return (
     <ScrollDiv>
       <CifarKnnImageClassificationCard toFullscreen />
@@ -88,6 +121,12 @@ export function CifarKnnImageClassificationPage() {
           </Latex>
         </LatexDiv>
         <h2>Interactive Demo</h2>
+        <h3>Upload Image</h3>
+        <div>
+          <input type="file" onChange={handleFileChange} />
+          <button onClick={handleUpload}>Upload Image</button>
+          <img src={`data:image/jpeg;base64,${data.resized_image}`} />
+        </div>
       </MainContentDiv>
     </ScrollDiv>
   );

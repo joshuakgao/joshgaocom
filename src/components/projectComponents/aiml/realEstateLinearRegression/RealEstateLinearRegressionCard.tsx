@@ -1,5 +1,5 @@
 import thumbnail from "../../../../assets/projects/aiml/Linear Regression/thumbnail.png";
-import { TitleCard } from "../../titleCard";
+import { TitleCard } from "../../../customComponents/titleCard";
 
 export function RealEstateLinearRegressionCard({
   toFullscreen,

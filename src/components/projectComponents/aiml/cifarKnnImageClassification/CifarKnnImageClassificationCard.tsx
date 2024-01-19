@@ -1,5 +1,5 @@
 import React from "react";
-import { TitleCard } from "../../titleCard";
+import { TitleCard } from "../../../customComponents/titleCard";
 import knnResult from "../../../../assets/projects/aiml/cifarKnnImageClassification/knnResult.png";
 
 export function CifarKnnImageClassificationCard({
