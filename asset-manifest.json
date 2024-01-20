@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.a0944c8e.css",
-    "main.js": "/static/js/main.1fd1cbcf.js",
+    "main.css": "/static/css/main.2e25f1e1.css",
+    "main.js": "/static/js/main.5bdfe673.js",
+    "static/media/yuuki.jpeg": "/static/media/yuuki.a7b04bb44aa4dfc55325.jpeg",
     "static/media/beachHouse.jpg": "/static/media/beachHouse.9049559d173b0b50c6eb.jpg",
     "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
     "static/media/cifarImages.png": "/static/media/cifarImages.e5243394e401c29dabea.png",
@@ -20,6 +21,7 @@
     "static/media/github.png": "/static/media/github.4bb497e598c121a691f7.png",
     "static/media/react.png": "/static/media/react.73dbb5bcec516da82694.png",
     "static/media/homepage.png": "/static/media/homepage.ead7e82c2bfa2472cc6c.png",
+    "static/media/dot.png": "/static/media/dot.e4cb1a369eed5596f89c.png",
     "static/media/KaTeX_AMS-Regular.ttf": "/static/media/KaTeX_AMS-Regular.853be92419a6c3766b9a.ttf",
     "static/media/cv.pdf": "/static/media/cv.ca25ef1d6f2d4ee81f3f.pdf",
     "static/media/KaTeX_Main-Regular.ttf": "/static/media/KaTeX_Main-Regular.9eba1d77abcf2aa6e94e.ttf",
@@ -96,11 +98,11 @@
     "static/media/KaTeX_Size3-Regular.woff": "/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/index.html",
-    "main.a0944c8e.css.map": "/static/css/main.a0944c8e.css.map",
-    "main.1fd1cbcf.js.map": "/static/js/main.1fd1cbcf.js.map"
+    "main.2e25f1e1.css.map": "/static/css/main.2e25f1e1.css.map",
+    "main.5bdfe673.js.map": "/static/js/main.5bdfe673.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0944c8e.css",
-    "static/js/main.1fd1cbcf.js"
+    "static/css/main.2e25f1e1.css",
+    "static/js/main.5bdfe673.js"
   ]
 }
