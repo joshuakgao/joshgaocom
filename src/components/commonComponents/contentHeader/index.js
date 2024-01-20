@@ -1,1 +1,1 @@
-export * from "./contentHeader";
+export * from "./ContentHeader";

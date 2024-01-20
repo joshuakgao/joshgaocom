@@ -1,5 +1,5 @@
 import React from "react";
-import { RowDiv, MyIcon } from "../../commonComponents";
+import { RowDiv, MyIcon } from "..";
 import {
   firebase,
   typescript,

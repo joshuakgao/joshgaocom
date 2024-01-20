@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./assets/styles.css";
-import { Navbar } from "./components/customComponents/navbar/navbar";
+import { Navbar } from "./components/customComponents/navbar/Navbar";
 import { RealEstateLinearRegressionPage } from "./components/projectComponents/aiml";
 import {
   AskGptPage,

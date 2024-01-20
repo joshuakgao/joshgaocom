@@ -1,1 +1,1 @@
-export * from "./scrollDiv";
+export * from "./ScrollDiv";

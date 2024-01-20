@@ -1,2 +1,2 @@
-export * from "./redditLaughsCard";
-export * from "./redditLaughsPage";
+export * from "./RedditLaughsCard";
+export * from "./RedditLaughsPage";

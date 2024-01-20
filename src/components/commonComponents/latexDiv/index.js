@@ -1,1 +1,1 @@
-export * from "./latexDiv";
+export * from "./LatexDiv";

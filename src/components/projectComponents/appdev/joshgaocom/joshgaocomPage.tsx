@@ -3,7 +3,7 @@ import {
   MainContentDiv,
   ScrollDiv,
 } from "../../../commonComponents";
-import { JoshgaocomCard } from "./joshgaocomCard";
+import { JoshgaocomCard } from "./JoshgaocomCard";
 
 export function JoshgaocomPage() {
   return (

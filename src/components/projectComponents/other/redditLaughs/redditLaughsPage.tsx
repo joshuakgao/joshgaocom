@@ -5,7 +5,7 @@ import {
   ScrollDiv,
   YoutubeEmbed,
 } from "../../../commonComponents";
-import { RedditLaughsCard } from "./redditLaughsCard";
+import { RedditLaughsCard } from "./RedditLaughsCard";
 
 export function RedditLaughsPage() {
   return (

@@ -1,1 +1,1 @@
-export * from "./googleSheetsEmbed";
+export * from "./GoogleSheetsEmbed";

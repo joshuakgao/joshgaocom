@@ -1,2 +1,2 @@
-export * from "./joshgaocomCard";
-export * from "./joshgaocomPage";
+export * from "./JoshgaocomCard";
+export * from "./JoshgaocomPage";

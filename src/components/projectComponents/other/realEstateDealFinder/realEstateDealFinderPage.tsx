@@ -5,7 +5,7 @@ import {
   ScrollDiv,
   GoogleSheetsEmbed,
 } from "../../../commonComponents";
-import { RealEstateDealFinderCard } from "./realEstateDealFinderCard";
+import { RealEstateDealFinderCard } from "./RealEstateDealFinderCard";
 
 export function RealEstateDealFinderPage() {
   return (

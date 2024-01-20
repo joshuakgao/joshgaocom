@@ -5,7 +5,7 @@ import {
   MainContentDiv,
   ScrollDiv,
 } from "../../../commonComponents";
-import { PortfolioTrackerCard } from "./portfolioTrackerCard";
+import { PortfolioTrackerCard } from "./PortfolioTrackerCard";
 
 export function PortfolioTrackerPage() {
   return (
