@@ -53,6 +53,83 @@ export function CifarKnnImageClassificationPage() {
             github: "https://github.com/tugonbob/cifar-knn-classifer",
           }}
         />
+        <h2>Interactive Demo</h2>
+        <div
+          style={{
+            border: "1px solid lightgrey",
+            borderRadius: "var(--borderRadius)",
+            padding: 52,
+          }}
+        >
+          <RowDiv style={{ alignItems: "start" }}>
+            <ImageUploader image={image} setImage={setImage} />
+            <div
+              style={{
+                marginLeft: 32,
+                display: "flex",
+                flexDirection: "column",
+                width: 200,
+                height: "100%",
+              }}
+            >
+              <label htmlFor="k dropdown">k:</label>
+              <select
+                id="k dropdown"
+                value={k}
+                onChange={(e) => setK(e.target.value)}
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <Spacer />
+              <label htmlFor="distance function dropdown">
+                Distance Function:
+              </label>
+              <select
+                id="k dropdown"
+                value={distanceFunction}
+                onChange={(e) => setDistanceFunction(e.target.value)}
+              >
+                <option value="l1">l1 (Manhattan Distance)</option>
+                <option value="l2">l2 (Euclidean Distance)</option>
+              </select>
+              <Spacer />
+              <ColorBoxButton
+                style={{ alignSelf: "center", minHeight: 50 }}
+                onClick={runKnn}
+                isLoading={loading}
+              >
+                <p style={{ margin: 0, color: "var(--primary)" }}>Run KNN</p>
+              </ColorBoxButton>
+            </div>
+          </RowDiv>
+          <Spacer />
+          {knnResponse ? (
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                border: "1px solid var(--accent)",
+                borderRadius: "var(--borderRadius)",
+                padding: 16,
+              }}
+            >
+              <img
+                src={`data:image/jpeg;base64,${knnResponse?.knn_result_image}`}
+                style={{ maxWidth: "100%" }}
+              />
+            </div>
+          ) : null}
+        </div>
         <h2>K-Nearest Neighbors Algorithm</h2>
         <p>
           <Latex>
@@ -117,83 +194,15 @@ export function CifarKnnImageClassificationPage() {
             }
           </Latex>
         </LatexDiv>
-        <h2>Interactive Demo</h2>
-        <div
-          style={{
-            border: "1px solid lightgrey",
-            borderRadius: "var(--borderRadius)",
-            padding: 52,
-          }}
-        >
-          <RowDiv style={{ alignItems: "start" }}>
-            <ImageUploader image={image} setImage={setImage} />
-            <div
-              style={{
-                marginLeft: 32,
-                display: "flex",
-                flexDirection: "column",
-                width: 200,
-                height: "100%",
-              }}
-            >
-              <label htmlFor="k dropdown">k:</label>
-              <select
-                id="k dropdown"
-                value={k}
-                onChange={(e) => setK(e.target.value)}
-              >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
-              <Spacer />
-              <label htmlFor="distance function dropdown">
-                Distance Function:
-              </label>
-              <select
-                id="k dropdown"
-                value={distanceFunction}
-                onChange={(e) => setDistanceFunction(e.target.value)}
-              >
-                <option value="l1">l1 (Manhattan Distance)</option>
-                <option value="l2">l2 (Euclidean Distance)</option>
-              </select>
-              <Spacer />
-              <ColorBoxButton
-                style={{ alignSelf: "center", minHeight: 50 }}
-                onClick={runKnn}
-                isLoading={loading}
-              >
-                <p style={{ margin: 0, color: "var(--primary)" }}>Run KNN</p>
-              </ColorBoxButton>
-            </div>
-          </RowDiv>
-          <Spacer />
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              border: "1px solid var(--accent)",
-              borderRadius: "var(--borderRadius)",
-              padding: 16,
-            }}
-          >
-            {knnResponse ? (
-              <img
-                src={`data:image/jpeg;base64,${knnResponse?.knn_result_image}`}
-                style={{ maxWidth: "100%" }}
-              />
-            ) : null}
-          </div>
-        </div>
+        <h2>Caveats</h2>
+        <p>
+          KNN algorithm is almost never used for image classification because of
+          its computationally intensive nature. Here, I only use 32x32 images.
+          As I scale up those images, the number of calculations required will
+          exponentially increase. Additionally, the classifiation process is
+          heavily influenced by database bias and fails to generalize to other
+          images.
+        </p>
       </MainContentDiv>
     </ScrollDiv>
   );

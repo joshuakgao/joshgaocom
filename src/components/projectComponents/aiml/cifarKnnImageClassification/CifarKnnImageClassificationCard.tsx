@@ -16,6 +16,7 @@ export function CifarKnnImageClassificationCard({
       backgroundDarken={40}
     >
       <h1 className="primary">Cifar Knn Image Classification</h1>
+      <h2 className="primary">With Interactive Demo</h2>
     </TitleCard>
   );
 }

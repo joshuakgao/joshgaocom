@@ -57,27 +57,30 @@ def get_result_visualization(input_image, pred, knn_images):
 
     # display images and their predictions
     matplotlib.use('agg')   # to avoid gui error with flask
-    fig, axes = plt.subplots(1, K+2, figsize=(K * 2 + 1, 2))
+    fig, axes = plt.subplots(2, K+2, figsize=(K * 2 + 3, 4))
     fig.set_facecolor('#f7f7f7')
 
     for k in range(K+2):
-        axes[k].set_facecolor("#f7f7f7")
-        axes[k].axis('off')
+        for l in range(2):
+            axes[l][k].set_facecolor("#f7f7f7")
+            axes[l][k].axis('off')
 
         # for input image
         if k == 0:
-            axes[k].set_title(pred.upper(), color='red')
-            axes[k].imshow(input_image)
+            axes[0][k].set_title("Prediction: " + pred.upper(), color='red')
+            axes[0][k].imshow(input_image)
         
         # for arrow
         elif k == 1:
             arrow = FancyArrow(0.5, 0.5, 0.2, 0, width=0.05, color='black')
-            axes[1].add_patch(arrow)
+            axes[0][1].add_patch(arrow)
 
         # for knn images
         else:
-            axes[k].set_title(knn_images[k-2][2])
-            axes[k].imshow(knn_images[k-2][1])
+            axes[0][k].set_title(knn_images[k-2][2])
+            axes[0][k].imshow(knn_images[k-2][1])
+    
+    axes[1][int((k+3)/2)].set_title("Most Similar Images")
 
     plt.tight_layout()  # used to prevent image overlap
 
