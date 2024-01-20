@@ -3,6 +3,7 @@ import React, {
   ChangeEvent,
   Dispatch,
   SetStateAction,
+  useEffect,
   useRef,
   useState,
 } from "react";
@@ -23,6 +24,21 @@ export function ImageUploader({
 }) {
   const [stringImage, setStringImage] = useState<string>(yuuki);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const loadImageAsFile = async () => {
+      // Import the image from the assets folder
+      const response = await fetch(yuuki);
+      const blob = await response.blob();
+
+      // Create a File object
+      const file = new File([blob], "myImage.jpg", { type: "image/jpeg" });
+
+      setImage(file);
+    };
+
+    loadImageAsFile();
+  }, []);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];

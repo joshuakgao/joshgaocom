@@ -5,13 +5,8 @@ export function BoxButton({
   children,
   style,
   className,
-  onClick = () => {},
-}: HTMLProps<HTMLButtonElement> & {
-  children?: any;
-  style?: CSSProperties;
-  className?: string;
-  onClick?: any;
-}) {
+  onClick,
+}: HTMLProps<HTMLButtonElement>) {
   return (
     <button
       style={{ ...styles.boxButtonContainer, ...style }}
@@ -39,5 +34,6 @@ const styles: StyleSheet = {
     padding: 8,
     minWidth: 100,
     minHeight: 100,
+    cursor: "pointer",
   },
 };

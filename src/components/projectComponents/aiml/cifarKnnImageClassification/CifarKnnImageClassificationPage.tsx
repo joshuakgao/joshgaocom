@@ -3,42 +3,35 @@ import {
   ContentHeader,
   LatexDiv,
   MainContentDiv,
+  RowDiv,
   ScrollDiv,
   Spacer,
 } from "../../../commonComponents";
 import { CifarKnnImageClassificationCard } from "./CifarKnnImageClassificationCard";
 import Latex from "react-latex-next";
 import cifarImages from "../../../../assets/projects/aiml/cifarKnnImageClassification/cifarImages.png";
-import { BoxButton } from "../../../commonComponents/boxButton";
 import { ImageUploader } from "../../../commonComponents/imageUploader";
+import { BoxButton } from "../../../commonComponents/boxButton";
+import { ColorBoxButton } from "../../../commonComponents/colorBoxButton";
 
 export function CifarKnnImageClassificationPage() {
   const [image, setImage] = useState<File | null>(null);
+  const [k, setK] = useState<string>("5");
+  const [distanceFunction, setDistanceFunction] = useState<string>("l1");
   const [knnResponse, setKnnResponse] = useState<any>(null);
 
-  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-
-    if (file) setImage(file);
-  };
-
-  const handleUpload = async () => {
+  const runKnn = async () => {
     if (image) {
       const formData = new FormData();
       formData.append("image", image);
 
-      // Replace 'your-api-endpoint' with the actual API endpoint
       const response = await fetch(
-        "https://relaxing-vulture-trusty.ngrok-free.app/aiml/cifar-knn-image-classification?k=5&distance_function=l1",
+        `https://relaxing-vulture-trusty.ngrok-free.app/aiml/cifar-knn-image-classification?k=${k}&distance_function=${distanceFunction}`,
         {
           method: "POST",
           body: formData,
         }
       );
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
 
       const data = await response.json();
       setKnnResponse(data);
@@ -124,17 +117,62 @@ export function CifarKnnImageClassificationPage() {
         <h2>Interactive Demo</h2>
         <div
           style={{
-            display: "flex",
-            alignItems: "center",
-            border: "1px solid grey",
+            border: "1px solid lightgrey",
             borderRadius: "var(--borderRadius)",
-            padding: 16,
+            padding: 52,
           }}
         >
-          <ImageUploader image={image} setImage={setImage} />
+          <RowDiv style={{ alignItems: "start" }}>
+            <ImageUploader image={image} setImage={setImage} />
+            <div
+              style={{
+                marginLeft: 32,
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <label htmlFor="k dropdown">k:</label>
+              <select
+                id="k dropdown"
+                value={k}
+                onChange={(e) => setK(e.target.value)}
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <Spacer />
+              <label htmlFor="distance function dropdown">
+                Distance Function:
+              </label>
+              <select
+                id="k dropdown"
+                value={distanceFunction}
+                onChange={(e) => setDistanceFunction(e.target.value)}
+              >
+                <option value="l1">l1 (Manhattan Distance)</option>
+                <option value="l2">l2 (Euclidean Distance)</option>
+              </select>
+              <Spacer />
+              <ColorBoxButton
+                style={{ alignSelf: "center", minHeight: 0 }}
+                onClick={runKnn}
+              >
+                <p style={{ margin: 0, color: "var(--primary)" }}>Run KNN</p>
+              </ColorBoxButton>
+            </div>
+          </RowDiv>
           <img
             src={`data:image/jpeg;base64,${knnResponse?.knn_result_image}`}
           />
+          <p>{knnResponse?.error}</p>
         </div>
       </MainContentDiv>
     </ScrollDiv>
