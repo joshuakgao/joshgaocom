@@ -27,7 +27,7 @@ export function CifarKnnImageClassificationPage() {
 
       // Replace 'your-api-endpoint' with the actual API endpoint
       const response = await fetch(
-        "https://relaxing-vulture-trusty.ngrok-free.app/aiml/test",
+        "https://relaxing-vulture-trusty.ngrok-free.app/aiml/cifar-knn-image-classification?k=5&distance_function=l1",
         {
           method: "POST",
           body: formData,
@@ -39,7 +39,6 @@ export function CifarKnnImageClassificationPage() {
       }
 
       const data = await response.json();
-      console.log("Upload successful:", data);
       setData(data);
     }
   };
@@ -125,7 +124,7 @@ export function CifarKnnImageClassificationPage() {
         <div>
           <input type="file" onChange={handleFileChange} />
           <button onClick={handleUpload}>Upload Image</button>
-          <img src={`data:image/jpeg;base64,${data.resized_image}`} />
+          <img src={`data:image/jpeg;base64,${data?.knn_result_image}`} />
         </div>
       </MainContentDiv>
     </ScrollDiv>

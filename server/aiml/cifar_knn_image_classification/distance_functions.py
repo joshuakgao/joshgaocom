@@ -1,4 +1,3 @@
-import math
 import numpy as np
 
 def l1_distance(img1, img2):

@@ -5,8 +5,8 @@ npm start # start react dev server
 
 cd api
 pip install -r requirements.txt
-flask run
+sudo python api.py
 
 # first open ngrok.exe, then:
-ngrok http --domain=relaxing-vulture-trusty.ngrok-free.app 5000
+ngrok http --domain=relaxing-vulture-trusty.ngrok-free.app 80
 ```

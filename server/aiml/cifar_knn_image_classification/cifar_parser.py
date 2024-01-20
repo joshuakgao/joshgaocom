@@ -1,9 +1,9 @@
 import numpy as np
-
+import os
 
 def unpickle_cifar_batch(file):
     import pickle
-    with open(file, 'rb') as fo:
+    with open(os.getcwd() + "/aiml/cifar_knn_image_classification/" + file, 'rb') as fo:
         dict = pickle.load(fo, encoding='latin1')
     return dict
 
