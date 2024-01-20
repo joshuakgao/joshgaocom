@@ -14,7 +14,7 @@ import { ImageUploader } from "../../../commonComponents/imageUploader";
 
 export function CifarKnnImageClassificationPage() {
   const [image, setImage] = useState<File | null>(null);
-  const [data, setData] = useState<any>(null);
+  const [knnResponse, setKnnResponse] = useState<any>(null);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -41,7 +41,7 @@ export function CifarKnnImageClassificationPage() {
       }
 
       const data = await response.json();
-      setData(data);
+      setKnnResponse(data);
     }
   };
 
@@ -125,12 +125,16 @@ export function CifarKnnImageClassificationPage() {
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
             alignItems: "center",
+            border: "1px solid grey",
+            borderRadius: "var(--borderRadius)",
+            padding: 16,
           }}
         >
           <ImageUploader image={image} setImage={setImage} />
-          <img src={`data:image/jpeg;base64,${data?.knn_result_image}`} />
+          <img
+            src={`data:image/jpeg;base64,${knnResponse?.knn_result_image}`}
+          />
         </div>
       </MainContentDiv>
     </ScrollDiv>

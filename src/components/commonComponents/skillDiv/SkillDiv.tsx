@@ -35,7 +35,7 @@ const styles: StyleSheet = {
     paddingLeft: 16,
     paddingRight: 16,
     flexDirection: "row",
-    borderRadius: 8,
+    borderRadius: "var(--borderRadius)",
     marginRight: 16,
     marginBottom: 16,
   },

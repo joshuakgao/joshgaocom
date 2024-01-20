@@ -9,7 +9,7 @@ export function Code({
   customStyle = {
     backgroundColor: "var(--primary)",
     border: "1px solid lightgray",
-    borderRadius: 25,
+    borderRadius: "var(--borderRadius)",
     padding: 16,
     fontSize: 14,
   },

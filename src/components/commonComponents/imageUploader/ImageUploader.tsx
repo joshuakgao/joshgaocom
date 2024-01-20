@@ -97,7 +97,7 @@ const styles: StyleSheet = {
     flexDirection: "row",
     backgroundColor: "var(--primary)",
     border: "1px grey dashed",
-    borderRadius: 12,
+    borderRadius: "var(--borderRadius)",
     padding: 32,
     width: "100%",
     maxWidth: 500,

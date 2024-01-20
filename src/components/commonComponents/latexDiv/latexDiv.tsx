@@ -23,8 +23,8 @@ interface StyleSheet {
 
 const styles: StyleSheet = {
   latexDiv: {
-    border: "1px black solid",
-    borderRadius: "10px",
+    border: "1px grey solid",
+    borderRadius: "var(--borderRadius)",
     padding: "16px",
   },
 };

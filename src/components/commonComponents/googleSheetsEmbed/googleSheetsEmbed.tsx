@@ -79,7 +79,7 @@ const styles: StyleSheet = {
     width: "100%",
     marginTop: 32,
     border: "1px solid lightgrey",
-    borderRadius: 10,
+    borderRadius: "var(--borderRadius)",
   },
   extendIframe: {
     position: "absolute",
@@ -91,6 +91,6 @@ const styles: StyleSheet = {
     maxWidth: 1615,
     maxHeight: 675,
     border: "1px solid lightgrey",
-    borderRadius: 10,
+    borderRadius: "var(--borderRadius)",
   },
 };

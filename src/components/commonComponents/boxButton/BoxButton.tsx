@@ -35,7 +35,7 @@ const styles: StyleSheet = {
     justifyContent: "center",
     backgroundColor: "var(--primary)",
     border: "1px black solid",
-    borderRadius: 12,
+    borderRadius: "var(--borderRadius)",
     padding: 8,
     minWidth: 100,
     minHeight: 100,
