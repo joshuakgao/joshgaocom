@@ -9,6 +9,7 @@ import {
 import { CifarKnnImageClassificationCard } from "./CifarKnnImageClassificationCard";
 import Latex from "react-latex-next";
 import cifarImages from "../../../../assets/projects/aiml/cifarKnnImageClassification/cifarImages.png";
+import { BoxButton } from "../../../commonComponents/boxButton";
 
 export function CifarKnnImageClassificationPage() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
