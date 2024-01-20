@@ -10,21 +10,22 @@ import { CifarKnnImageClassificationCard } from "./CifarKnnImageClassificationCa
 import Latex from "react-latex-next";
 import cifarImages from "../../../../assets/projects/aiml/cifarKnnImageClassification/cifarImages.png";
 import { BoxButton } from "../../../commonComponents/boxButton";
+import { ImageUploader } from "../../../commonComponents/imageUploader";
 
 export function CifarKnnImageClassificationPage() {
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [image, setImage] = useState<File | null>(null);
   const [data, setData] = useState<any>(null);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
 
-    if (file) setSelectedFile(file);
+    if (file) setImage(file);
   };
 
   const handleUpload = async () => {
-    if (selectedFile) {
+    if (image) {
       const formData = new FormData();
-      formData.append("image", selectedFile);
+      formData.append("image", image);
 
       // Replace 'your-api-endpoint' with the actual API endpoint
       const response = await fetch(
@@ -121,10 +122,14 @@ export function CifarKnnImageClassificationPage() {
           </Latex>
         </LatexDiv>
         <h2>Interactive Demo</h2>
-        <h3>Upload Image</h3>
-        <div>
-          <input type="file" onChange={handleFileChange} />
-          <button onClick={handleUpload}>Upload Image</button>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <ImageUploader image={image} setImage={setImage} />
           <img src={`data:image/jpeg;base64,${data?.knn_result_image}`} />
         </div>
       </MainContentDiv>
