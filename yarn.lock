@@ -8404,6 +8404,13 @@ react-latex-next@^2.2.0:
   dependencies:
     katex "^0.13.0"
 
+react-loading-indicators@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/react-loading-indicators/-/react-loading-indicators-0.2.3.tgz#4af8b75ab12bd9a3671d73c3adfcec976cf0deec"
+  integrity sha512-nIgzS+e0eWXTWSzi9t66a8i5NokKHti+CpK/tzlk4bqpIngUfB5GgcRLUV2mQSgT47LoY9jJQAS4D+PDUFXTRg==
+  dependencies:
+    tinycolor2 "^1.6.0"
+
 react-merge-refs@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-1.1.0.tgz#73d88b892c6c68cbb7a66e0800faa374f4c38b06"
@@ -9602,6 +9609,11 @@ thunky@^1.0.2:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/thunky/-/thunky-1.1.0.tgz#5abaf714a9405db0504732bbccd2cedd9ef9537d"
   integrity sha512-eHY7nBftgThBqOyHGVN+l8gF0BucP09fMo0oO/Lb0w1OF80dJv+lDVpXG60WMQvkcxAkNybKsrEIE3ZtKGmPrA==
+
+tinycolor2@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.6.0.tgz#f98007460169b0263b97072c5ae92484ce02d09e"
+  integrity sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==
 
 tmpl@1.0.5:
   version "1.0.5"

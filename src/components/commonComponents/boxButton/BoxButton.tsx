@@ -1,4 +1,5 @@
-import React, { CSSProperties, HTMLProps, MouseEventHandler } from "react";
+import React, { HTMLProps } from "react";
+import { ThreeDot } from "react-loading-indicators";
 import "./styles.css";
 
 export function BoxButton({
@@ -6,14 +7,16 @@ export function BoxButton({
   style,
   className,
   onClick,
-}: HTMLProps<HTMLButtonElement>) {
+  isLoading,
+}: HTMLProps<HTMLButtonElement> & { isLoading?: boolean }) {
   return (
     <button
       style={{ ...styles.boxButtonContainer, ...style }}
       className={`boxButton ${className}`}
       onClick={onClick}
+      disabled={isLoading}
     >
-      {children}
+      {isLoading ? <ThreeDot size="small" color="var(--primary)" /> : children}
     </button>
   );
 }

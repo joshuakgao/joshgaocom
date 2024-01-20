@@ -18,10 +18,12 @@ export function CifarKnnImageClassificationPage() {
   const [image, setImage] = useState<File | null>(null);
   const [k, setK] = useState<string>("5");
   const [distanceFunction, setDistanceFunction] = useState<string>("l1");
+  const [loading, setLoading] = useState<boolean>(false);
   const [knnResponse, setKnnResponse] = useState<any>(null);
 
   const runKnn = async () => {
     if (image) {
+      setLoading(true);
       const formData = new FormData();
       formData.append("image", image);
 
@@ -35,6 +37,7 @@ export function CifarKnnImageClassificationPage() {
 
       const data = await response.json();
       setKnnResponse(data);
+      setLoading(false);
     }
   };
 
@@ -129,6 +132,8 @@ export function CifarKnnImageClassificationPage() {
                 marginLeft: 32,
                 display: "flex",
                 flexDirection: "column",
+                width: 200,
+                height: "100%",
               }}
             >
               <label htmlFor="k dropdown">k:</label>
@@ -162,17 +167,32 @@ export function CifarKnnImageClassificationPage() {
               </select>
               <Spacer />
               <ColorBoxButton
-                style={{ alignSelf: "center", minHeight: 0 }}
+                style={{ alignSelf: "center", minHeight: 50 }}
                 onClick={runKnn}
+                isLoading={loading}
               >
                 <p style={{ margin: 0, color: "var(--primary)" }}>Run KNN</p>
               </ColorBoxButton>
             </div>
           </RowDiv>
-          <img
-            src={`data:image/jpeg;base64,${knnResponse?.knn_result_image}`}
-          />
-          <p>{knnResponse?.error}</p>
+          <Spacer />
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              border: "1px solid var(--accent)",
+              borderRadius: "var(--borderRadius)",
+              padding: 16,
+            }}
+          >
+            {knnResponse ? (
+              <img
+                src={`data:image/jpeg;base64,${knnResponse?.knn_result_image}`}
+                style={{ maxWidth: "100%" }}
+              />
+            ) : null}
+          </div>
         </div>
       </MainContentDiv>
     </ScrollDiv>

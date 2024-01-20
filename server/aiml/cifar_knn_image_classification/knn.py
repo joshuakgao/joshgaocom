@@ -57,7 +57,7 @@ def get_result_visualization(input_image, pred, knn_images):
 
     # display images and their predictions
     matplotlib.use('agg')   # to avoid gui error with flask
-    fig, axes = plt.subplots(1, K+2, figsize=(K * 2, 7))
+    fig, axes = plt.subplots(1, K+2, figsize=(K * 2 + 1, 2))
     fig.set_facecolor('#f7f7f7')
 
     for k in range(K+2):
@@ -66,7 +66,7 @@ def get_result_visualization(input_image, pred, knn_images):
 
         # for input image
         if k == 0:
-            axes[k].set_title("Pred:\n" + pred.upper())
+            axes[k].set_title(pred.upper(), color='red')
             axes[k].imshow(input_image)
         
         # for arrow

@@ -116,7 +116,6 @@ const styles: StyleSheet = {
     borderRadius: "var(--borderRadius)",
     padding: 32,
     width: "100%",
-    maxWidth: 500,
     height: 300,
   },
 };

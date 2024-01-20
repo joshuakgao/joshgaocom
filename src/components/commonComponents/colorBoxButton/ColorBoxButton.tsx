@@ -6,12 +6,15 @@ export function ColorBoxButton({
   style,
   className,
   onClick,
-}: HTMLProps<HTMLButtonElement>) {
+  isLoading,
+}: HTMLProps<HTMLButtonElement> & { isLoading?: boolean }) {
   return (
     <BoxButton
       style={{ ...styles.container, ...style }}
       className={className}
       onClick={onClick}
+      isLoading={isLoading}
+      disabled={isLoading}
     >
       {children}
     </BoxButton>
