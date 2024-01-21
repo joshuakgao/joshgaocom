@@ -88,4 +88,5 @@ def get_result_visualization(input_image, pred, knn_images):
     result_image_path = os.getcwd() + '/aiml/cifar_knn_image_classification/knn_result.jpeg'
     plt.savefig(result_image_path)
     result = Image.open(result_image_path)
+    os.remove(result_image_path)
     return result
