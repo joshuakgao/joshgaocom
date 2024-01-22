@@ -11,7 +11,7 @@ import {
   RealEstateDealFinderPage,
   RedditLaughsPage,
 } from "./components/projectComponents/other";
-import { AboutPage, AimlPage, AppdevPage, HomePage, OtherPage } from "./pages";
+import { AimlPage, AppdevPage, HomePage, OtherPage } from "./pages";
 // @ts-ignore
 import { MathJaxContext } from "better-react-mathjax";
 import { CifarKnnImageClassificationPage } from "./components/projectComponents/aiml/cifarKnnImageClassification/CifarKnnImageClassificationPage";
@@ -47,8 +47,6 @@ function App() {
           path="/other/portfolioTracker"
           element={<PortfolioTrackerPage />}
         />
-
-        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </MathJaxContext>
   );

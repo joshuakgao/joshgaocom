@@ -58,7 +58,7 @@ export function MyIcon({
       src={icon}
       width={sizes[size]}
       height={sizes[size]}
-      alt="" // required by eslint
+      alt="icon"
     />
   );
 }

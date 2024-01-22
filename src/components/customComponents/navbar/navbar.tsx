@@ -87,21 +87,6 @@ export function Navbar() {
                 OTHER
               </h1>
             </Link>
-            <Link
-              to="/about"
-              onClick={() => setMenuOpen(false)}
-              style={{
-                ...styles.link,
-                ...{
-                  textDecorationLine:
-                    location.pathname === "/about" ? "underline" : "none",
-                },
-              }}
-            >
-              <h1 style={styles.navText} className="secondary">
-                ABOUT
-              </h1>
-            </Link>
           </div>
         )}
       </div>

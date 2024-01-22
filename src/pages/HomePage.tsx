@@ -1,7 +1,14 @@
 import React from "react";
 import me from "../assets/images/me.jpg";
-import { ScrollDiv } from "../components/commonComponents";
+import {
+  MyIcon,
+  RowDiv,
+  ScrollDiv,
+  Spacer,
+} from "../components/commonComponents";
 import "../assets/styles.css";
+import { cv, github, linkedin_transparent } from "../assets/customIcons";
+import cvPdf from "../assets/docs/cv.pdf";
 
 export function HomePage() {
   return (
@@ -10,12 +17,50 @@ export function HomePage() {
         <h1 style={{ fontSize: "calc(16px + 2vw)" }} className="fade-in-0">
           Hey, I'm Joshua Gao
         </h1>
-        <h4 style={styles.subtitle} className="fade-in-4">
-          I am a Machine Learning Engineer based in Texas. I love analyzing and
-          visualizing large amounts of data and providing unique and helpful
-          insights. Some of my other interests include playing volleyball and
-          writing music.
+        <h4 style={styles.subtitle} className="fade-in-3">
+          By day, I'm an AI Engineer navigating the realms of Computer Vision
+          and Natural Language Processing. I'm passionate about unraveling
+          complex algorithms and creating new machine learning models, and am
+          genuinely excited to shape the future of technology. By night, I'm an
+          avid volleyball player.
         </h4>
+        <Spacer />
+        <RowDiv className="fade-in-4">
+          <h4
+            style={{ color: "var(--tertiary)", marginRight: 16, marginTop: 0 }}
+          >
+            joshuakgao@gmail.com
+          </h4>
+          <a
+            style={styles.footerLink}
+            href="https://github.com/tugonbob"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MyIcon className="icon" icon={github} size="2xl" monochrome />
+          </a>
+          <a
+            style={styles.footerLink}
+            href="https://www.linkedin.com/in/joshua-gao/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MyIcon
+              className="icon"
+              icon={linkedin_transparent}
+              size="2xl"
+              monochrome
+            />
+          </a>
+          <a
+            style={styles.footerLink}
+            href={cvPdf}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MyIcon className="icon" icon={cv} size="2xl" monochrome />
+          </a>
+        </RowDiv>
       </div>
       <img
         style={styles.img}
@@ -65,5 +110,10 @@ const styles: StyleSheet = {
     position: "fixed",
     bottom: "calc(16px + 1vw)",
     right: "calc(16px + 1vw)",
+  },
+  footerLink: {
+    display: "flex",
+    alignItems: "center",
+    marginLeft: 8,
   },
 };
