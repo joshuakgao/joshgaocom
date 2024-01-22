@@ -13,12 +13,11 @@ import {
 } from "./components/projectComponents/other";
 import { AimlPage, AppdevPage, HomePage, OtherPage } from "./pages";
 // @ts-ignore
-import { MathJaxContext } from "better-react-mathjax";
 import { CifarKnnImageClassificationPage } from "./components/projectComponents/aiml/cifarKnnImageClassification/CifarKnnImageClassificationPage";
 
 function App() {
   return (
-    <MathJaxContext>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -48,7 +47,7 @@ function App() {
           element={<PortfolioTrackerPage />}
         />
       </Routes>
-    </MathJaxContext>
+    </>
   );
 }
 

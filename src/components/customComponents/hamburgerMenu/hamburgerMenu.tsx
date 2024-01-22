@@ -93,16 +93,6 @@ export function HamburgerMenu({
                 OTHER
               </h1>
             </Link>
-            <Link
-              to="/about"
-              onClick={() => setMenuOpen(false)}
-              style={styles.link}
-              className={menuOpen ? "fade-down-reverse" : "fade-down"}
-            >
-              <h1 style={styles.menuItem} className="secondary">
-                ABOUT
-              </h1>
-            </Link>
           </div>
 
           <div style={styles.footer} className="hamburger-menu-footer">
@@ -185,10 +175,11 @@ const styles: StyleSheet = {
     flexDirection: "column",
     alignItems: "flex-end",
     marginRight: 32,
-    marginTop: "20vh",
+    marginTop: 116,
   },
   menuItem: {
-    fontSize: "9.5vh",
+    marginTop: 16,
+    fontSize: "5vh",
   },
   link: {
     textDecorationLine: "none",

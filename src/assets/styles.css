@@ -10,8 +10,8 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
   caret-color: transparent; /* remove text cursor */
   width: "100vw";
   background-color: var(--primary);
