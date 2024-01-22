@@ -109,6 +109,7 @@ interface StyleSheet {
 
 const styles: StyleSheet = {
   imageUploaderButton: {
+    display: "flex",
     position: "relative",
     flexDirection: "row",
     backgroundColor: "var(--primary)",

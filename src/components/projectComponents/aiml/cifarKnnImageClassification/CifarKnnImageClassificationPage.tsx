@@ -61,19 +61,18 @@ export function CifarKnnImageClassificationPage() {
             padding: 52,
           }}
         >
-          <RowDiv style={{ alignItems: "start" }}>
-            <ImageUploader image={image} setImage={setImage} />
+          <ImageUploader image={image} setImage={setImage} />
+          <Spacer />
+          <RowDiv style={{ justifyContent: "flex-start", flexWrap: "wrap" }}>
             <div
               style={{
-                marginLeft: 32,
                 display: "flex",
                 flexDirection: "column",
-                width: 200,
-                height: "100%",
               }}
             >
-              <label htmlFor="k dropdown">k:</label>
+              <label htmlFor="k dropdown">K:</label>
               <select
+                style={{ width: 50 }}
                 id="k dropdown"
                 value={k}
                 onChange={(e) => setK(e.target.value)}
@@ -89,11 +88,19 @@ export function CifarKnnImageClassificationPage() {
                 <option value="9">9</option>
                 <option value="10">10</option>
               </select>
-              <Spacer />
+            </div>
+            <Spacer horizontal />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
               <label htmlFor="distance function dropdown">
                 Distance Function:
               </label>
               <select
+                style={{ width: 180 }}
                 id="k dropdown"
                 value={distanceFunction}
                 onChange={(e) => setDistanceFunction(e.target.value)}
@@ -101,16 +108,18 @@ export function CifarKnnImageClassificationPage() {
                 <option value="l1">l1 (Manhattan Distance)</option>
                 <option value="l2">l2 (Euclidean Distance)</option>
               </select>
-              <Spacer />
-              <ColorBoxButton
-                style={{ alignSelf: "center", minHeight: 50 }}
-                onClick={runKnn}
-                isLoading={loading}
-              >
-                <p style={{ margin: 0, color: "var(--primary)" }}>Run KNN</p>
-              </ColorBoxButton>
             </div>
           </RowDiv>
+          <Spacer />
+          <div>
+            <ColorBoxButton
+              style={{ alignSelf: "center", minHeight: 50 }}
+              onClick={runKnn}
+              isLoading={loading}
+            >
+              <p style={{ margin: 0, color: "var(--primary)" }}>Run KNN</p>
+            </ColorBoxButton>
+          </div>
           <Spacer />
           {knnResponse ? (
             <div
