@@ -1,5 +1,5 @@
 import React from "react";
-import { RowDiv, MyIcon } from "..";
+import { Row, Col, MyIcon } from "..";
 import {
   firebase,
   typescript,
@@ -50,45 +50,38 @@ export function ContentHeader({
 
   return (
     <>
-      <RowDiv
+      <Row
         className="content-header"
         style={{ alignItems: "center", justifyContent: "space-between" }}
       >
-        <div>
-          <RowDiv>
+        <Col>
+          <Row>
             {/* NAME DATE */}
             <p style={{ marginTop: 0, marginBottom: 0 }}>Joshua Gao: {date}</p>
 
             {/* SKILLS */}
             {skills ? (
-              <RowDiv style={{ marginBottom: 5 }}>
+              <Row style={{ marginBottom: 5 }}>
                 {skills.map((skill) => {
                   return (
-                    <div
-                      style={{
-                        display: "flex",
-                        marginLeft: 4,
-                      }}
-                    >
-                      {skillsObj[skill]}
-                    </div>
+                    <Col style={{ marginLeft: 4 }}>{skillsObj[skill]}</Col>
                   );
                 })}
-              </RowDiv>
+              </Row>
             ) : null}
-          </RowDiv>
+          </Row>
 
           {/* MAIN IDEAS */}
           {projectComponents ? (
-            <div>
+            <Col>
               <p style={styles.bold}>{projectComponents}</p>
-            </div>
+            </Col>
           ) : null}
-        </div>
+        </Col>
 
         {/* SOURCE LINKS */}
         {sources ? (
-          <RowDiv>
+          <Row>
             {Object.keys(sources).map((source) => (
               <a
                 href={sources[source]} // get object value with its own key
@@ -99,9 +92,9 @@ export function ContentHeader({
                 {sourcesObj[source]}
               </a>
             ))}
-          </RowDiv>
+          </Row>
         ) : null}
-      </RowDiv>
+      </Row>
       <hr />
     </>
   );

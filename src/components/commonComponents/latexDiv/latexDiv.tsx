@@ -1,5 +1,6 @@
 import React, { CSSProperties } from "react";
 import Latex from "react-latex-next";
+import { Col } from "../col";
 
 export function LatexDiv({
   children,
@@ -11,9 +12,9 @@ export function LatexDiv({
   className?: string;
 }) {
   return (
-    <div style={{ ...styles.latexDiv, ...style }}>
-      <p style={{ fontSize: 20 }}>{children}</p>
-    </div>
+    <Col style={{ ...styles.latexDiv, ...style }}>
+      <p style={{ fontSize: 20, margin: 0 }}>{children}</p>
+    </Col>
   );
 }
 

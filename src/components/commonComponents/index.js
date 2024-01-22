@@ -1,5 +1,5 @@
 export * from "./fullscreenDiv";
-export * from "./rowDiv";
+export * from "./row";
 export * from "./scrollDiv";
 export * from "./youtubeEmbed";
 export * from "./mainContentDiv";
@@ -10,3 +10,4 @@ export * from "./skillDiv";
 export * from "./code";
 export * from "./spacer";
 export * from "./latexDiv";
+export * from "./col";

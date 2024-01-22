@@ -2,9 +2,10 @@ import React from "react";
 import me from "../assets/images/me.jpg";
 import {
   MyIcon,
-  RowDiv,
+  Row,
   ScrollDiv,
   Spacer,
+  Col,
 } from "../components/commonComponents";
 import "../assets/styles.css";
 import { cv, github, linkedin_transparent } from "../assets/customIcons";
@@ -13,7 +14,7 @@ import cvPdf from "../assets/docs/cv.pdf";
 export function HomePage() {
   return (
     <ScrollDiv style={styles.container}>
-      <div style={styles.textContainer}>
+      <Col style={styles.textContainer}>
         <h1 style={{ fontSize: "calc(16px + 2vw)" }} className="fade-in-0">
           Hey, I'm Joshua Gao
         </h1>
@@ -25,7 +26,7 @@ export function HomePage() {
           avid volleyball player.
         </h4>
         <Spacer />
-        <RowDiv className="fade-in-4">
+        <Row className="fade-in-4">
           <h4
             style={{ color: "var(--tertiary)", marginRight: 16, marginTop: 0 }}
           >
@@ -60,8 +61,8 @@ export function HomePage() {
           >
             <MyIcon className="icon" icon={cv} size="2xl" monochrome />
           </a>
-        </RowDiv>
-      </div>
+        </Row>
+      </Col>
       <img
         style={styles.img}
         src={me}

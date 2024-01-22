@@ -1,9 +1,10 @@
 import React, { useState, ChangeEvent } from "react";
 import {
+  Col,
   ContentHeader,
   LatexDiv,
   MainContentDiv,
-  RowDiv,
+  Row,
   ScrollDiv,
   Spacer,
 } from "../../../commonComponents";
@@ -54,7 +55,7 @@ export function CifarKnnImageClassificationPage() {
           }}
         />
         <h2>Interactive Demo</h2>
-        <div
+        <Col
           style={{
             border: "1px solid lightgrey",
             borderRadius: "var(--borderRadius)",
@@ -63,8 +64,8 @@ export function CifarKnnImageClassificationPage() {
         >
           <ImageUploader image={image} setImage={setImage} />
           <Spacer />
-          <RowDiv style={{ justifyContent: "flex-start", flexWrap: "wrap" }}>
-            <div
+          <Row style={{ justifyContent: "flex-start", flexWrap: "wrap" }}>
+            <Col
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -88,9 +89,9 @@ export function CifarKnnImageClassificationPage() {
                 <option value="9">9</option>
                 <option value="10">10</option>
               </select>
-            </div>
+            </Col>
             <Spacer horizontal />
-            <div
+            <Col
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -108,10 +109,10 @@ export function CifarKnnImageClassificationPage() {
                 <option value="l1">l1 (Manhattan Distance)</option>
                 <option value="l2">l2 (Euclidean Distance)</option>
               </select>
-            </div>
-          </RowDiv>
+            </Col>
+          </Row>
           <Spacer />
-          <div>
+          <Col>
             <ColorBoxButton
               style={{ alignSelf: "center", minHeight: 50 }}
               onClick={runKnn}
@@ -119,10 +120,10 @@ export function CifarKnnImageClassificationPage() {
             >
               <p style={{ margin: 0, color: "var(--primary)" }}>Run KNN</p>
             </ColorBoxButton>
-          </div>
+          </Col>
           <Spacer />
           {knnResponse ? (
-            <div
+            <Col
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -136,9 +137,9 @@ export function CifarKnnImageClassificationPage() {
                 src={`data:image/jpeg;base64,${knnResponse?.knn_result_image}`}
                 style={{ maxWidth: "100%" }}
               />
-            </div>
+            </Col>
           ) : null}
-        </div>
+        </Col>
         <h2>K-Nearest Neighbors Algorithm</h2>
         <p>
           <Latex>

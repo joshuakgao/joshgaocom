@@ -1,28 +1,27 @@
 import React, { CSSProperties } from "react";
-import { Col } from "../col";
 
-export function ScrollDiv({
+export function Col({
   children,
-  d,
   style,
   className,
+  d,
 }: {
   children?: any;
-  d?: boolean;
   style?: CSSProperties;
   className?: string;
+  d?: boolean;
 }) {
   return (
-    <Col
+    <div
       style={{
-        ...styles.scrollDiv,
-        ...style,
         ...{ border: d ? "1px black solid" : undefined },
+        ...styles.colFlexDiv,
+        ...style,
       }}
       className={className}
     >
       {children}
-    </Col>
+    </div>
   );
 }
 
@@ -31,9 +30,8 @@ interface StyleSheet {
 }
 
 const styles: StyleSheet = {
-  scrollDiv: {
-    backgroundColor: "#f7f7f7",
-    overflow: "hidden",
-    padding: 16,
+  colFlexDiv: {
+    display: "flex",
+    flexDirection: "column",
   },
 };

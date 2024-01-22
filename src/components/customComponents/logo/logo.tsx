@@ -1,5 +1,5 @@
 import React from "react";
-import { RowDiv } from "../../commonComponents";
+import { Row } from "../../commonComponents";
 import watermelon from "../../../assets/images/watermelon.png";
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,7 @@ export function Logo({
   setMenuOpen: (menuOpen: boolean) => void;
 }) {
   return (
-    <RowDiv
+    <Row
       className="logo"
       style={{
         pointerEvents: "auto",
@@ -28,7 +28,7 @@ export function Logo({
           JOSHUA GAO
         </h1>
       </Link>
-    </RowDiv>
+    </Row>
   );
 }
 

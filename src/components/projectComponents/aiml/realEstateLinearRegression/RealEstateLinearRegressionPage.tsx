@@ -2,7 +2,7 @@ import {
   ContentHeader,
   LatexDiv,
   MainContentDiv,
-  RowDiv,
+  Row,
   ScrollDiv,
   Spacer,
 } from "../../../commonComponents";
@@ -61,7 +61,7 @@ export function RealEstateLinearRegressionPage() {
           scatter plots, with house size on the x-axis and sale price on the
           y-axis and lot size on
         </p>
-        <RowDiv
+        <Row
           style={{
             display: "flex",
             flexWrap: "wrap",
@@ -78,7 +78,7 @@ export function RealEstateLinearRegressionPage() {
             style={{ width: "50%", minWidth: 450 }}
             alt=""
           />
-        </RowDiv>
+        </Row>
         <h2>Stochastic Gradient Descent</h2>
         <p>
           In order to find the line of best fit, we stochastic gradient descent
@@ -131,13 +131,13 @@ export function RealEstateLinearRegressionPage() {
           <Latex>{"$ \\theta_2 = $ sqft multiplier"}</Latex>
         </LatexDiv>
         <h2>Result</h2>
-        <RowDiv>
+        <Row>
           <img src={sqftVsPriceGif} style={{ width: "50%", minWidth: 450 }} />
           <img
             src={lotSizeVsPriceGif}
             style={{ width: "50%", minWidth: 450 }}
           />
-        </RowDiv>
+        </Row>
         <p>
           <Latex>{"$\\theta$ resulted in the following values:"}</Latex>
         </p>

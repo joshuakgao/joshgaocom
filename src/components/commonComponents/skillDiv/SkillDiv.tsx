@@ -1,5 +1,6 @@
 import React from "react";
 import { MyIcon } from "../myIcon";
+import { Col } from "../col";
 
 export function SkillDiv({
   icon,
@@ -13,12 +14,12 @@ export function SkillDiv({
   backgroundColor?: string;
 }) {
   return (
-    <div
+    <Col
       style={{ ...styles.container, ...{ backgroundColor: backgroundColor } }}
     >
       {icon ? <MyIcon icon={icon} style={{ marginRight: 8 }} /> : null}
       <h4 style={{ ...styles.text, ...{ color: textColor } }}>{text}</h4>
-    </div>
+    </Col>
   );
 }
 

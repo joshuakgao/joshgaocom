@@ -10,6 +10,7 @@ import React, {
 import { BoxButton } from "../boxButton";
 import yuuki from "../../../assets/images/yuuki.jpeg";
 import { MdOutlineAddPhotoAlternate } from "react-icons/md";
+import { Col } from "../col";
 
 export function ImageUploader({
   image,
@@ -64,25 +65,21 @@ export function ImageUploader({
         fileInputRef.current?.click();
       }}
     >
-      <div
+      <Col
         style={{
           position: "absolute",
           top: 8,
           left: 8,
-          display: "flex",
           flexDirection: "row",
-          alignItems: "center",
         }}
       >
         <MdOutlineAddPhotoAlternate size={16} color={"grey"} />
         <p style={{ fontSize: 12, marginTop: 3, marginLeft: 4 }}>
           Upload Image
         </p>
-      </div>
-      <div
+      </Col>
+      <Col
         style={{
-          display: "flex",
-          alignItems: "center",
           justifyContent: "center",
           height: "100%",
           width: "100%",
@@ -98,7 +95,7 @@ export function ImageUploader({
           ref={fileInputRef}
           onChange={handleFileChange}
         />
-      </div>
+      </Col>
     </BoxButton>
   );
 }

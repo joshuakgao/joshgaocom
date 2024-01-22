@@ -1,6 +1,6 @@
 import React, { CSSProperties } from "react";
 
-export function RowDiv({
+export function Row({
   children,
   style,
   className,
