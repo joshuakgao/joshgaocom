@@ -19,11 +19,11 @@ export function HomePage() {
           Hey, I'm Joshua Gao
         </h1>
         <h4 style={styles.subtitle} className="fade-in-3">
-          By day, I'm an AI Engineer navigating the realms of Computer Vision
-          and Natural Language Processing. I'm passionate about unraveling
+          By day, I'm an AI Engineer navigating the realms of computer vision
+          and natural language processing. I'm passionate about unraveling
           complex algorithms and creating new machine learning models, and am
           genuinely excited to shape the future of technology. By night, I'm an
-          avid volleyball player.
+          avid volleyball player and coach.
         </h4>
         <Spacer />
         <Row className="fade-in-4">
