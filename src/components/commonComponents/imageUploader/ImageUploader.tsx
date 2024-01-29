@@ -87,7 +87,12 @@ export function ImageUploader({
       >
         <img
           src={stringImage}
-          style={{ maxHeight: "100%", maxWidth: "100%" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            display: "block",
+          }}
         />
         <input
           type="file"
