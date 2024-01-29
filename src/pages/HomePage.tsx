@@ -15,7 +15,10 @@ export function HomePage() {
   return (
     <ScrollDiv style={styles.container}>
       <Col style={styles.textContainer}>
-        <h1 style={{ fontSize: "calc(16px + 2vw)" }} className="fade-in-0">
+        <h1
+          style={{ fontSize: "calc(16px + 2vw)", margin: 0 }}
+          className="fade-in-0"
+        >
           Hey, I'm Joshua Gao
         </h1>
         <h4 style={styles.subtitle} className="fade-in-3">
