@@ -3,7 +3,7 @@
 ```
 npm start # start react dev server
 
-cd api
+cd server
 pip install -r requirements.txt
 sudo python api.py
 
