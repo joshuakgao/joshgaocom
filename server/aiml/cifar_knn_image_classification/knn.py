@@ -6,6 +6,7 @@ from matplotlib.patches import FancyArrow
 import numpy as np
 from PIL import Image
 import os
+import time
 
 
 def resize_uploaded_image(uploaded_img):
@@ -88,5 +89,4 @@ def get_result_visualization(input_image, pred, knn_images):
     result_image_path = os.getcwd() + '/aiml/cifar_knn_image_classification/knn_result.jpeg'
     plt.savefig(result_image_path)
     result = Image.open(result_image_path)
-    os.remove(result_image_path)
     return result

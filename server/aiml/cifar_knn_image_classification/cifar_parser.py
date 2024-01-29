@@ -18,7 +18,7 @@ def get_cifar_batch(file):
 
 
 def get_cifar_data():
-    X, Y = get_cifar_batch('cifar-10-batches-py/data_batch_1')
+    X, Y = get_cifar_batch('cifar_db/data_batch_1')
     # data_batch_file_paths = ['cifar-10-batches-py/data_batch_2', 'cifar-10-batches-py/data_batch_3', 'cifar-10-batches-py/data_batch_4', 'cifar-10-batches-py/data_batch_5']
     # for path in data_batch_file_paths:
     #     x, y = get_cifar_batch(path)
@@ -28,7 +28,7 @@ def get_cifar_data():
 
 
 def get_cifar_classes():
-    data = unpickle_cifar_batch('cifar-10-batches-py/batches.meta')
+    data = unpickle_cifar_batch('cifar_db/batches.meta')
     return data['label_names']
 
 
