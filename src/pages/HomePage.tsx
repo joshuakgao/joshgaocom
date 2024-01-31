@@ -10,6 +10,7 @@ import {
 import "../assets/styles.css";
 import { cv, github, linkedin_transparent } from "../assets/customIcons";
 import cvPdf from "../assets/docs/cv.pdf";
+import emailImg from "../assets/images/email.png";
 
 export function HomePage() {
   return (
@@ -30,11 +31,7 @@ export function HomePage() {
         </h4>
         <Spacer />
         <Row className="fade-in-4">
-          <h4
-            style={{ color: "var(--tertiary)", marginRight: 16, marginTop: 0 }}
-          >
-            joshuakgao@gmail.com
-          </h4>
+          <img src={emailImg} style={{ maxHeight: 26 }} />
           <a
             style={styles.footerLink}
             href="https://github.com/tugonbob"
