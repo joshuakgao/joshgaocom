@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.7218bfee.css",
-    "main.js": "/static/js/main.b1fe8e0e.js",
+    "main.js": "/static/js/main.b86bf25b.js",
     "static/media/yuuki.jpeg": "/static/media/yuuki.a7b04bb44aa4dfc55325.jpeg",
     "static/media/beachHouse.jpg": "/static/media/beachHouse.9049559d173b0b50c6eb.jpg",
     "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
@@ -74,6 +74,7 @@
     "static/media/KaTeX_SansSerif-Regular.woff": "/static/media/KaTeX_SansSerif-Regular.02271ec5cb9f5b4588ac.woff",
     "static/media/KaTeX_Size1-Regular.ttf": "/static/media/KaTeX_Size1-Regular.6de7d4b539221a49e9e2.ttf",
     "static/media/KaTeX_SansSerif-Bold.woff2": "/static/media/KaTeX_SansSerif-Bold.95591a929f0d32aa282a.woff2",
+    "static/media/email.png": "/static/media/email.9c018ff2e3b67f800d86.png",
     "static/media/KaTeX_SansSerif-Italic.woff2": "/static/media/KaTeX_SansSerif-Italic.7d393d382f3e7fb1c637.woff2",
     "static/media/KaTeX_Size2-Regular.ttf": "/static/media/KaTeX_Size2-Regular.57f5c1837853986ea1db.ttf",
     "static/media/KaTeX_Fraktur-Bold.woff2": "/static/media/KaTeX_Fraktur-Bold.931d67ea207ab37ee693.woff2",
@@ -99,10 +100,10 @@
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/index.html",
     "main.7218bfee.css.map": "/static/css/main.7218bfee.css.map",
-    "main.b1fe8e0e.js.map": "/static/js/main.b1fe8e0e.js.map"
+    "main.b86bf25b.js.map": "/static/js/main.b86bf25b.js.map"
   },
   "entrypoints": [
     "static/css/main.7218bfee.css",
-    "static/js/main.b1fe8e0e.js"
+    "static/js/main.b86bf25b.js"
   ]
 }
