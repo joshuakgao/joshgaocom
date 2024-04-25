@@ -3,7 +3,7 @@ import {
   MainContentDiv,
   ScrollDiv,
 } from "../../../commonComponents";
-import { AskGptCard } from "./AskGptCard";
+import { AskGptCard } from "./askGptCard";
 
 export function AskGptPage() {
   return (

@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./assets/styles.css";
-import { Navbar } from "./components/customComponents/navbar/Navbar";
+import { Navbar } from "./components/customComponents/navbar/navbar";
 import { RealEstateLinearRegressionPage } from "./components/projectComponents/aiml";
 import {
   AskGptPage,
@@ -13,7 +13,7 @@ import {
 } from "./components/projectComponents/other";
 import { AimlPage, AppdevPage, HomePage, OtherPage } from "./pages";
 // @ts-ignore
-import { CifarKnnImageClassificationPage } from "./components/projectComponents/aiml/cifarKnnImageClassification/CifarKnnImageClassificationPage";
+import { CifarKnnImageClassificationPage } from "./components/projectComponents/aiml/cifarKnnImageClassification/cifarKnnImageClassificationPage";
 
 function App() {
   return (

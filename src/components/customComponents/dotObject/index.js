@@ -1,1 +1,1 @@
-export * from "./DotObject";
+export * from "./dotObject";

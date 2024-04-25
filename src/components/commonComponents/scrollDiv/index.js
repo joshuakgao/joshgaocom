@@ -1,2 +1,1 @@
-export * from "./ScrollDiv";
-//
+export * from "./scrollDiv";

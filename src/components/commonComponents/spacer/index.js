@@ -1,2 +1,1 @@
-export * from "./Spacer";
-//
+export * from "./spacer";

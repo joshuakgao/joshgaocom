@@ -1,1 +1,1 @@
-export * from "./ColorBoxButton";
+export * from "./colorBoxButton";

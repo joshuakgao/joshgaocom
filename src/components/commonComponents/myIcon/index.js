@@ -1,2 +1,1 @@
-//
-export * from "./MyIcon";
+export * from "./myIcon";

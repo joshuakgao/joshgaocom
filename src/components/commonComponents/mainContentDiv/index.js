@@ -1,2 +1,1 @@
-export * from "./MainContentDiv";
-//
+export * from "./mainContentDiv";

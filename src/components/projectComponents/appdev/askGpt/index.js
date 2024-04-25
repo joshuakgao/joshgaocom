@@ -1,2 +1,2 @@
-export * from "./AskGptCard";
-export * from "./AskGptPage";
+export * from "./askGptCard";
+export * from "./askGptPage";

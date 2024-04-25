@@ -1,3 +1,2 @@
-export * from "./RealEstateDealFinderCard";
-
-export * from "./RealEstateDealFinderPage";
+export * from "./realEstateDealFinderCard";
+export * from "./realEstateDealFinderPage";

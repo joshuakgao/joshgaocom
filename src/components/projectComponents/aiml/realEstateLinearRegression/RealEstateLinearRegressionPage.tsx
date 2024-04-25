@@ -6,7 +6,7 @@ import {
   ScrollDiv,
   Spacer,
 } from "../../../commonComponents";
-import { RealEstateLinearRegressionCard } from "./RealEstateLinearRegressionCard";
+import { RealEstateLinearRegressionCard } from "./realEstateLinearRegressionCard";
 import sqftVsPrice from "../../../../assets/projects/aiml/Linear Regression/houseSizeVsPrice.png";
 import lotSizeVsPrice from "../../../../assets/projects/aiml/Linear Regression/lotSizeVsPrice.png";
 import "katex/dist/katex.min.css";

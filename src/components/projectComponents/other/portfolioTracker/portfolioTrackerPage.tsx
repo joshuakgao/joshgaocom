@@ -1,11 +1,10 @@
-import React from "react";
 import {
   ContentHeader,
   GoogleSheetsEmbed,
   MainContentDiv,
   ScrollDiv,
 } from "../../../commonComponents";
-import { PortfolioTrackerCard } from "./PortfolioTrackerCard";
+import { PortfolioTrackerCard } from "./portfolioTrackerCard";
 
 export function PortfolioTrackerPage() {
   return (

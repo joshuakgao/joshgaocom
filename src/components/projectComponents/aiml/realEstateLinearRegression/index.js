@@ -1,2 +1,2 @@
-export * from "./RealEstateLinearRegressionCard";
-export * from "./RealEstateLinearRegressionPage";
+export * from "./realEstateLinearRegressionCard";
+export * from "./realEstateLinearRegressionPage";

@@ -1,11 +1,10 @@
-import React from "react";
 import {
   ContentHeader,
+  GoogleSheetsEmbed,
   MainContentDiv,
   ScrollDiv,
-  GoogleSheetsEmbed,
 } from "../../../commonComponents";
-import { RealEstateDealFinderCard } from "./RealEstateDealFinderCard";
+import { RealEstateDealFinderCard } from "./realEstateDealFinderCard";
 
 export function RealEstateDealFinderPage() {
   return (

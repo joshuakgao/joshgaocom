@@ -1,3 +1,2 @@
-export * from "./PortfolioTrackerCard";
-
-export * from "./PortfolioTrackerPage";
+export * from "./portfolioTrackerCard";
+export * from "./portfolioTrackerPage";

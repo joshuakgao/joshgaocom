@@ -1,6 +1,6 @@
 import { ScrollDiv } from "../components/commonComponents";
 import { RealEstateLinearRegressionCard } from "../components/projectComponents";
-import { CifarKnnImageClassificationCard } from "../components/projectComponents/aiml/cifarKnnImageClassification/CifarKnnImageClassificationCard";
+import { CifarKnnImageClassificationCard } from "../components/projectComponents/aiml/cifarKnnImageClassification/cifarKnnImageClassificationCard";
 
 export function AimlPage() {
   return (

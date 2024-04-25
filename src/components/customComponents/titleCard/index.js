@@ -1,2 +1,1 @@
-export * from "./TitleCard";
-//
+export * from "./titleCard";

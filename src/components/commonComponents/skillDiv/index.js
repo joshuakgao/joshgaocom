@@ -1,1 +1,1 @@
-export * from "./SkillDiv";
+export * from "./skillDiv";

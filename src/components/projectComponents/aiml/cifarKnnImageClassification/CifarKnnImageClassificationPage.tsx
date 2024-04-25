@@ -8,7 +8,7 @@ import {
   ScrollDiv,
   Spacer,
 } from "../../../commonComponents";
-import { CifarKnnImageClassificationCard } from "./CifarKnnImageClassificationCard";
+import { CifarKnnImageClassificationCard } from "./cifarKnnImageClassificationCard";
 import Latex from "react-latex-next";
 import cifarImages from "../../../../assets/projects/aiml/cifarKnnImageClassification/cifarImages.png";
 import { ImageUploader } from "../../../commonComponents/imageUploader";
