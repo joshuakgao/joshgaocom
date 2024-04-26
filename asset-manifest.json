@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.7218bfee.css",
-    "main.js": "/static/js/main.b86bf25b.js",
-    "static/media/yuuki.jpeg": "/static/media/yuuki.a7b04bb44aa4dfc55325.jpeg",
+    "main.js": "/static/js/main.d21dcf13.js",
     "static/media/beachHouse.jpg": "/static/media/beachHouse.9049559d173b0b50c6eb.jpg",
     "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
     "static/media/cifarImages.png": "/static/media/cifarImages.e5243394e401c29dabea.png",
     "static/media/me.jpg": "/static/media/me.cfb1de62ffd3148b8fe9.jpg",
     "static/media/memeBackground.jpg": "/static/media/memeBackground.010d73b81e62e75f4760.jpg",
+    "static/media/cat.jpeg": "/static/media/cat.cd95ffce51fe2f45c673.jpeg",
     "static/media/python.png": "/static/media/python.fbebfabd42ff95354ed9.png",
     "static/media/knnResult.png": "/static/media/knnResult.fa0708fd49ce0941494a.png",
     "static/media/watermelon.png": "/static/media/watermelon.b4012f507d40a1774201.png",
@@ -100,10 +100,10 @@
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/index.html",
     "main.7218bfee.css.map": "/static/css/main.7218bfee.css.map",
-    "main.b86bf25b.js.map": "/static/js/main.b86bf25b.js.map"
+    "main.d21dcf13.js.map": "/static/js/main.d21dcf13.js.map"
   },
   "entrypoints": [
     "static/css/main.7218bfee.css",
-    "static/js/main.b86bf25b.js"
+    "static/js/main.d21dcf13.js"
   ]
 }
