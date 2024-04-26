@@ -8,7 +8,7 @@ import React, {
   useState,
 } from "react";
 import { BoxButton } from "../boxButton";
-import yuuki from "../../../assets/images/yuuki.jpeg";
+import yuuki from "../../../assets/images/cat.jpeg";
 import { MdOutlineAddPhotoAlternate } from "react-icons/md";
 import { Col } from "../col";
 

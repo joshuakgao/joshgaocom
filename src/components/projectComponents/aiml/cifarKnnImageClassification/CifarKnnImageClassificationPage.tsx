@@ -21,13 +21,17 @@ export function CifarKnnImageClassificationPage() {
   const [distanceFunction, setDistanceFunction] = useState<string>("l1");
   const [loading, setLoading] = useState<boolean>(false);
   const [knnResponse, setKnnResponse] = useState<any>(null);
+  const [error, setError] = useState(false);
 
   const runKnn = async () => {
-    if (image) {
-      setLoading(true);
-      const formData = new FormData();
-      formData.append("image", image);
+    if (!image) return;
 
+    setError(false);
+    setLoading(true);
+    const formData = new FormData();
+    formData.append("image", image);
+
+    try {
       const response = await fetch(
         `http://34.132.225.204:8080/aiml/cifar-knn-image-classification?k=${k}&distance_function=${distanceFunction}`,
         {
@@ -41,6 +45,9 @@ export function CifarKnnImageClassificationPage() {
 
       const data = await response.json();
       setKnnResponse(data);
+    } catch (error) {
+      setError(true);
+    } finally {
       setLoading(false);
     }
   };
@@ -123,6 +130,11 @@ export function CifarKnnImageClassificationPage() {
             >
               <p style={{ margin: 0, color: "var(--primary)" }}>Run KNN</p>
             </ColorBoxButton>
+            {error ? (
+              <p style={{ color: "red", fontSize: 16, alignSelf: "center" }}>
+                Something went wrong, please try again.
+              </p>
+            ) : null}
           </Col>
           <Spacer />
           {knnResponse ? (
