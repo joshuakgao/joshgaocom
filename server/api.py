@@ -16,10 +16,6 @@ def hello():
 
 @app.route('/aiml/cifar-knn-image-classification', methods=['POST'])
 def cifar_knn_image_classification():
-    authorized, error_response = validate_api_key()
-    if not authorized:
-        return error_response
-
     try:
         # get url string params
         input_image = request.files['image']
