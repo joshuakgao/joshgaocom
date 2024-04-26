@@ -33,13 +33,10 @@ export function CifarKnnImageClassificationPage() {
 
     try {
       const response = await fetch(
-        `http://34.132.225.204:8080/aiml/cifar-knn-image-classification?k=${k}&distance_function=${distanceFunction}`,
+        `http://${backend.url}/aiml/cifar-knn-image-classification?k=${k}&distance_function=${distanceFunction}`,
         {
           method: "POST",
           body: formData,
-          headers: {
-            "X-Api-Key": backend.apiKey,
-          },
         }
       );
 

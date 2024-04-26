@@ -1,12 +1,9 @@
+from aiml.cifar_knn_image_classification.knn import (get_result_visualization,
+                                                     knn)
 from flask import Flask, jsonify, request, send_file
 from flask_cors import CORS
 from PIL import Image
-import io
-import base64
 from utils.image_utils import convert_image_to_base64
-from aiml.cifar_knn_image_classification.knn import knn, get_result_visualization
-
-
 
 app = Flask(__name__)
 CORS(app)
@@ -56,12 +53,6 @@ def cifar_knn_image_classification():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-def validate_api_key():
-    api_key = request.headers.get('X-Api-Key')
-    if not api_key:
-        return False, jsonify({'error': 'Missing API key'}), 401
-    return True, None
-
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", ssl_context=('cert.pem', 'key.pem'))
-    # app.run(host="0.0.0.0", debug=True, port='8080')
+    # app.run(ssl_context=('cert.pem', 'key.pem'))
+    app.run(host="0.0.0.0", debug=True, port='8080')
