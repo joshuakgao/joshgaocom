@@ -14,11 +14,15 @@ CORS(app)
 
 @app.route('/')
 def hello():
-    return 'Hello, World!'
+    return "Hello! You've reached the backend of joshgao.com"
 
 
 @app.route('/aiml/cifar-knn-image-classification', methods=['POST'])
 def cifar_knn_image_classification():
+    authorized, error_response = validate_api_key()
+    if not authorized:
+        return error_response
+
     try:
         # get url string params
         input_image = request.files['image']
@@ -52,7 +56,11 @@ def cifar_knn_image_classification():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-
+def validate_api_key():
+    api_key = request.headers.get('X-Api-Key')
+    if not api_key:
+        return False, jsonify({'error': 'Missing API key'}), 401
+    return True, None
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=True, port='8080')

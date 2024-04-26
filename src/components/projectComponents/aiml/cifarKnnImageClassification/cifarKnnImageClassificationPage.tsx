@@ -13,6 +13,7 @@ import {
 import { ColorBoxButton } from "../../../commonComponents/colorBoxButton";
 import { ImageUploader } from "../../../commonComponents/imageUploader";
 import { CifarKnnImageClassificationCard } from "./cifarKnnImageClassificationCard";
+import { backend } from "../../../../backend";
 
 export function CifarKnnImageClassificationPage() {
   const [image, setImage] = useState<File | null>(null);
@@ -28,10 +29,13 @@ export function CifarKnnImageClassificationPage() {
       formData.append("image", image);
 
       const response = await fetch(
-        `https://relaxing-vulture-trusty.ngrok-free.app/aiml/cifar-knn-image-classification?k=${k}&distance_function=${distanceFunction}`,
+        `http://34.132.225.204:8080/aiml/cifar-knn-image-classification?k=${k}&distance_function=${distanceFunction}`,
         {
           method: "POST",
           body: formData,
+          headers: {
+            "X-Api-Key": backend.apiKey,
+          },
         }
       );
 
