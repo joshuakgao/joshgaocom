@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Latex from "react-latex-next";
 import cifarImages from "../../../../assets/projects/aiml/cifarKnnImageClassification/cifarImages.png";
+import { backend } from "../../../../backend";
 import {
   Col,
   ContentHeader,
@@ -13,14 +14,16 @@ import {
 import { ColorBoxButton } from "../../../commonComponents/colorBoxButton";
 import { ImageUploader } from "../../../commonComponents/imageUploader";
 import { CifarKnnImageClassificationCard } from "./cifarKnnImageClassificationCard";
-import { backend } from "../../../../backend";
 
 export function CifarKnnImageClassificationPage() {
   const [image, setImage] = useState<File | null>(null);
   const [k, setK] = useState<string>("5");
   const [distanceFunction, setDistanceFunction] = useState<string>("l1");
   const [loading, setLoading] = useState<boolean>(false);
-  const [knnResponse, setKnnResponse] = useState<any>(null);
+  const [knnResponse, setKnnResponse] = useState<{
+    prediction: string;
+    knn_image_and_labels: { image: string; label: string }[];
+  }>();
   const [error, setError] = useState(false);
 
   const runKnn = async () => {
@@ -39,7 +42,6 @@ export function CifarKnnImageClassificationPage() {
           body: formData,
         }
       );
-
       const data = await response.json();
       setKnnResponse(data);
     } catch (error) {
@@ -143,12 +145,39 @@ export function CifarKnnImageClassificationPage() {
                 border: "1px solid var(--accent)",
                 borderRadius: "var(--borderRadius)",
                 padding: 16,
+                paddingBottom: 32,
               }}
             >
-              <img
-                src={`data:image/jpeg;base64,${knnResponse?.knn_result_image}`}
-                style={{ maxWidth: "100%" }}
-              />
+              <h4>Prediction:</h4>
+              <p style={{ marginTop: 0 }}>
+                (The most common category in the below nearest images)
+              </p>
+              <h3 style={{ marginTop: 0, color: "red" }}>
+                {knnResponse.prediction.toUpperCase()}
+              </h3>
+              <h4>Most Similar Images:</h4>
+              <Row
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  maxWidth: 500,
+                  flexWrap: "wrap",
+                }}
+              >
+                {knnResponse.knn_image_and_labels.map(({ image, label }, i) => (
+                  <Col
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      marginRight: 5,
+                      marginLeft: 5,
+                    }}
+                  >
+                    <p>{label}</p>
+                    <img key={i} src={image} style={{ width: 75 }} />
+                  </Col>
+                ))}
+              </Row>
             </Col>
           ) : null}
         </Col>

@@ -1,8 +1,8 @@
-from aiml.cifar_knn_image_classification.knn import (get_result_visualization, knn)
+from aiml.cifar_knn_image_classification.knn import knn
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from PIL import Image
-from utils.image_utils import convert_image_to_base64
+from utils.image_utils import convert_numpy_arr_image_to_base64, convert_image_to_base64
 
 app = Flask(__name__)
 CORS(app)
@@ -48,13 +48,14 @@ def cifar_knn_image_classification():
         # run knn
         input_image, pred, knn_images = knn(input_image, k, distance_function)
 
-        # get knn visualization
-        result_image = get_result_visualization(input_image, pred, knn_images)
+        # convert knn image to base 64
+        response_knn_image_and_labels = []
+        for knn_image_data in knn_images:
+            distance, image, label = knn_image_data
+            image_base64 = convert_numpy_arr_image_to_base64(image)
+            response_knn_image_and_labels.append({'image': image_base64, 'label': label})
 
-        # convert visualization to base64
-        result_image_base64 = convert_image_to_base64(result_image)
-
-        return jsonify({'knn_result_image': result_image_base64})
+        return jsonify({'knn_image_and_labels': response_knn_image_and_labels, 'prediction': pred}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
