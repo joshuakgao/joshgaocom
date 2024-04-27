@@ -22,7 +22,7 @@ def hi():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/aiml/cifar-knn-image-classification', methods=['POST'])
+@app.route('/aiml/cifar-knn-image-classification', methods=['POST', 'GET'])
 def cifar_knn_image_classification():
     try:
         # get url string params
