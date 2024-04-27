@@ -99,7 +99,7 @@ export function ImageUploader({
           style={{ display: "none" }}
           ref={fileInputRef}
           onChange={handleFileChange}
-          accept="iamge/png, image/jpeg"
+          accept="image/png, image/jpeg"
         />
       </Col>
     </BoxButton>
