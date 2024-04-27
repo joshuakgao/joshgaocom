@@ -2,7 +2,7 @@ from aiml.cifar_knn_image_classification.knn import knn
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from PIL import Image
-from utils.image_utils import convert_numpy_arr_image_to_base64, convert_image_to_base64
+from utils.image_utils import *
 
 app = Flask(__name__)
 CORS(app)
@@ -44,6 +44,12 @@ def cifar_knn_image_classification():
         # handle distance_function edge cases
         if distance_function == 'None':
             distance_function = 'l1'
+
+        # convert image to pillow jpeg image
+        input_image = convert_image_to_jpeg(input_image)
+
+        # resize pillow image
+        input_image = resize_image(input_image)
 
         # run knn
         input_image, pred, knn_images = knn(input_image, k, distance_function)

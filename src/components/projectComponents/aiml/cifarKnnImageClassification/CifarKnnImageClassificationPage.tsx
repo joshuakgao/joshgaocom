@@ -166,6 +166,7 @@ export function CifarKnnImageClassificationPage() {
               >
                 {knnResponse.knn_image_and_labels.map(({ image, label }, i) => (
                   <Col
+                    key={i}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -174,7 +175,7 @@ export function CifarKnnImageClassificationPage() {
                     }}
                   >
                     <p>{label}</p>
-                    <img key={i} src={image} style={{ width: 75 }} />
+                    <img src={image} style={{ width: 75 }} />
                   </Col>
                 ))}
               </Row>

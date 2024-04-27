@@ -7,9 +7,9 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { BoxButton } from "../boxButton";
-import yuuki from "../../../assets/images/cat.jpeg";
 import { MdOutlineAddPhotoAlternate } from "react-icons/md";
+import yuuki from "../../../assets/images/cat.jpeg";
+import { BoxButton } from "../boxButton";
 import { Col } from "../col";
 
 export function ImageUploader({
@@ -99,6 +99,7 @@ export function ImageUploader({
           style={{ display: "none" }}
           ref={fileInputRef}
           onChange={handleFileChange}
+          accept="iamge/png, image/jpeg"
         />
       </Col>
     </BoxButton>

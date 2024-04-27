@@ -1,14 +1,6 @@
 from .distance_functions import l1_distance, l2_distance
 from .cifar_parser import get_cifar_data, get_cifar_classes
 import numpy as np
-from PIL import Image
-
-
-def resize_uploaded_image(uploaded_img):
-    image = Image.open(uploaded_img)
-    resized_image = image.resize((32, 32))
-    numpy_image = np.array(resized_image)
-    return numpy_image
 
 
 def knn(input_image, k=1, distance_function="l1"):
@@ -19,7 +11,7 @@ def knn(input_image, k=1, distance_function="l1"):
         distance_function = l2_distance
 
     # convert pillow image to 32x32 numpy array image
-    input_image = resize_uploaded_image(input_image)
+    input_image = np.array(input_image)
 
     # parse cifar dataset
     train_x, train_y = get_cifar_data()
