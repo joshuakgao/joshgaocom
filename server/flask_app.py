@@ -13,6 +13,14 @@ CORS(app)
 def hello():
     return "Hello! You've reached the backend of joshgao.com"
 
+@app.route('/image', methods=['GET'])
+def hi():
+    try:
+        image = Image.open('./cat.jpeg')
+        final_image = convert_image_to_base64(image)
+        return jsonify({"image": final_image}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/aiml/cifar-knn-image-classification', methods=['POST'])
 def cifar_knn_image_classification():
