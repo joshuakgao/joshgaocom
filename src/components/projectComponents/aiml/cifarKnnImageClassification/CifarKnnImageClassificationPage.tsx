@@ -42,7 +42,11 @@ export function CifarKnnImageClassificationPage() {
           body: formData,
         }
       );
+
       const data = await response.json();
+
+      if (!response.ok) throw new Error("" + data.error);
+
       setKnnResponse(data);
     } catch (error) {
       setError(true);
