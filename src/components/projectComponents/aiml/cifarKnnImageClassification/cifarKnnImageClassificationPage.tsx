@@ -196,9 +196,9 @@ export function CifarKnnImageClassificationPage() {
         </p>
         <h2>Selected Database</h2>
         <p>
-          The CIFAR-10 dataset consists of 60000 32x32 colour images in 10
-          classes, with 6000 images per class. There are 50000 training images
-          and 10000 test images.
+          The CIFAR-10 dataset consists of 60,000 32x32 colour images in 10
+          classes, with 6,000 images per class. There are 50,000 training images
+          and 10,000 test images.
         </p>
         <Spacer />
         <img
