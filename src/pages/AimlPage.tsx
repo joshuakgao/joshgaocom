@@ -1,10 +1,14 @@
 import { ScrollDiv } from "../components/commonComponents";
-import { RealEstateLinearRegressionCard } from "../components/projectComponents";
-import { CifarKnnImageClassificationCard } from "../components/projectComponents/aiml/cifarKnnImageClassification/cifarKnnImageClassificationCard";
+import {
+  RealEstateLinearRegressionCard,
+  BackpropagationVisualizationCard,
+  CifarKnnImageClassificationCard,
+} from "../components/projectComponents";
 
 export function AimlPage() {
   return (
     <ScrollDiv className="fade-in-1">
+      <BackpropagationVisualizationCard />
       <RealEstateLinearRegressionCard />
       <CifarKnnImageClassificationCard />
     </ScrollDiv>

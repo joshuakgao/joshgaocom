@@ -1,7 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import "./assets/styles.css";
 import { Navbar } from "./components/customComponents/navbar/navbar";
-import { RealEstateLinearRegressionPage } from "./components/projectComponents/aiml";
+import {
+  RealEstateLinearRegressionPage,
+  CifarKnnImageClassificationPage,
+  BackpropagationVisualizationPage,
+} from "./components/projectComponents/aiml";
 import {
   AskGptPage,
   JoshgaocomPage,
@@ -12,8 +16,6 @@ import {
   RedditLaughsPage,
 } from "./components/projectComponents/other";
 import { AimlPage, AppdevPage, HomePage, OtherPage } from "./pages";
-// @ts-ignore
-import { CifarKnnImageClassificationPage } from "./components/projectComponents/aiml/cifarKnnImageClassification/cifarKnnImageClassificationPage";
 
 function App() {
   return (
@@ -23,6 +25,10 @@ function App() {
         <Route path="/" element={<HomePage />} />
 
         <Route path="/aiml" element={<AimlPage />} />
+        <Route
+          path="/aiml/backpropagationVisualization"
+          element={<BackpropagationVisualizationPage />}
+        />
         <Route
           path="/aiml/realEstateLinearRegression"
           element={<RealEstateLinearRegressionPage />}
