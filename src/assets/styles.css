@@ -79,6 +79,15 @@ h4 {
   color: var(--secondary);
 }
 
+b {
+  margin: 0;
+  font-family: "Vito";
+  font-size: 22px;
+  margin-top: 16px;
+  color: var(--secondary);
+  text-align: justify;
+}
+
 p {
   margin: 0;
   font-family: "Vito";
