@@ -44,7 +44,6 @@ export function ValueInputNode({ id, data }: NodeProps) {
           }}
           value={isNaN(data.value) ? "" : data.value}
           onChange={(e) => onValueUpdate(data.ref, parseFloat(e.target.value))}
-          type="number"
         />
         <p style={{ marginTop: 4 }}>Grad: {data.gradient.toFixed(3)}</p>
       </Col>
