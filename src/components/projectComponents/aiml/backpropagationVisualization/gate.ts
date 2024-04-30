@@ -4,13 +4,13 @@ class Gate {
   public children: Gate[];
   public gradient: number;
   public _backward: () => void;
-  public operation: "+" | "*" | "sigmoid" | "";
+  public operation: "+" | "*" | "sigmoid" | "relu" | "";
 
   constructor(
     label: string,
     value: number,
     children: Gate[] = [],
-    operation: "+" | "*" | "sigmoid" | "" = ""
+    operation: "+" | "*" | "sigmoid" | "relu" | "" = ""
   ) {
     this.label = label;
     this.value = value;
@@ -52,6 +52,22 @@ class Gate {
     return outputNode;
   }
 
+  relu(label = "ReLU") {
+    const outputNode = new Gate(
+      label,
+      this.value < 0 ? 0.0 : this.value,
+      [this],
+      "relu"
+    );
+
+    outputNode._backward = () => {
+      this.gradient +=
+        (outputNode.value > 0.0 ? 1.0 : 0.0) * outputNode.gradient;
+    };
+
+    return outputNode;
+  }
+
   sigmoid(label = "\\sigma(x)") {
     const sigmoidFunction = (n: number) => 1 / (1 + Math.exp(-n));
     const sigmoidGradientFunction = (n: number) => (1 - n) * n;
@@ -65,7 +81,6 @@ class Gate {
 
     outputNode._backward = () => {
       this.gradient = sigmoidGradientFunction(outputNode.value);
-      console.log(outputNode.value, this.gradient);
     };
 
     return outputNode;
@@ -125,7 +140,8 @@ class Gate {
     return parent || new Gate("", 0);
   }
 
-  update(val: number, root: Gate) {
+  update(val: string, root: Gate) {
+    let value = parseFloat(val);
     function forward(v: Gate, d: number) {
       if (v.label === root.label) {
         v.value = d;
@@ -148,7 +164,7 @@ class Gate {
       forward(parent, newData);
     }
 
-    forward(this, val);
+    forward(this, value);
     root.backward();
   }
 }

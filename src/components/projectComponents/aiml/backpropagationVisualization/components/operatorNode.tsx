@@ -3,6 +3,21 @@ import { Handle, NodeProps, Position } from "reactflow";
 import { Col } from "../../../../commonComponents";
 
 export function OperatorNode({ id, data }: NodeProps) {
+  function roundIfNotInt(value: number) {
+    // Handle non-numeric input
+    if (isNaN(value)) {
+      return "";
+    }
+
+    // Check if the value is an integer using Number.isInteger() (ES6+)
+    if (Number.isInteger(value)) {
+      return value; // No need to round integers
+    }
+
+    // Round the non-integer to 3 decimal places
+    return value.toFixed(2);
+  }
+
   return (
     <div
       style={{
@@ -29,8 +44,8 @@ export function OperatorNode({ id, data }: NodeProps) {
         >
           <Latex>{"$" + data.label + "$"}</Latex>
         </b>
-        <p style={{ marginTop: 4 }}>Value: {data.value.toFixed(3)}</p>
-        <p style={{ marginTop: 4 }}>Grad: {data.gradient.toFixed(3)}</p>
+        <p style={{ marginTop: 4 }}>Value: {roundIfNotInt(data.value)}</p>
+        <p style={{ marginTop: 4 }}>Grad: {roundIfNotInt(data.gradient)}</p>
       </Col>
       <Handle
         type="target"

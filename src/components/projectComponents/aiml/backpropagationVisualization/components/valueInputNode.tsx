@@ -7,6 +7,21 @@ import { AppContext } from "../backpropagationVisualizationPage";
 export function ValueInputNode({ id, data }: NodeProps) {
   const { onValueUpdate } = useContext(AppContext);
 
+  function roundIfNotInt(value: number) {
+    // Handle non-numeric input
+    if (isNaN(value)) {
+      return "";
+    }
+
+    // Check if the value is an integer using Number.isInteger() (ES6+)
+    if (Number.isInteger(value)) {
+      return value; // No need to round integers
+    }
+
+    // Round the non-integer to 3 decimal places
+    return value.toFixed(2);
+  }
+
   return (
     <div
       style={{
@@ -42,10 +57,11 @@ export function ValueInputNode({ id, data }: NodeProps) {
             padding: 4,
             marginTop: 4,
           }}
-          value={isNaN(data.value) ? "" : data.value}
-          onChange={(e) => onValueUpdate(data.ref, parseFloat(e.target.value))}
+          value={roundIfNotInt(data.value)}
+          onChange={(e) => onValueUpdate(data.ref, e.target.value)}
+          type="number"
         />
-        <p style={{ marginTop: 4 }}>Grad: {data.gradient.toFixed(3)}</p>
+        <p style={{ marginTop: 4 }}>Grad: {data.gradient}</p>
       </Col>
       <Handle
         type="source"

@@ -1,10 +1,4 @@
-import {
-  createContext,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { createContext, useCallback, useMemo, useState } from "react";
 import ReactFlow, {
   applyNodeChanges,
   Background,
@@ -26,7 +20,7 @@ import Gate from "./gate";
 import { layout, trace, useFitViewOnResize } from "./utils";
 
 export const AppContext = createContext({
-  onValueUpdate: (ref: Gate, val: number) => {}, // need to init an empty function for typescript
+  onValueUpdate: (ref: Gate, val: string) => {}, // need to init an empty function for typescript
 });
 
 export function BackpropagationVisualizationPage() {
@@ -48,7 +42,7 @@ export function BackpropagationVisualizationPage() {
 
   // update values and gradients on node value change
   const onValueUpdate = useCallback(
-    (ref: Gate, val: number) => {
+    (ref: Gate, val: string) => {
       ref.update(val, root);
       const { nodes: newNodes, edges: newEdges } = trace(root);
       const layoutNodes = layout(newNodes, newEdges);
