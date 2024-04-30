@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
 import { HashRouter } from "react-router-dom";
+import { ReactFlowProvider } from "reactflow";
+import App from "./App";
 import { ScrollToTop } from "./components/customComponents";
 
 const root = ReactDOM.createRoot(
@@ -11,7 +12,9 @@ root.render(
   <React.StrictMode>
     <HashRouter>
       <ScrollToTop />
-      <App />
+      <ReactFlowProvider>
+        <App />
+      </ReactFlowProvider>
     </HashRouter>
   </React.StrictMode>
 );

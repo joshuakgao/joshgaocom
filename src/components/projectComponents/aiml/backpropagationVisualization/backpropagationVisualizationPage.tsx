@@ -1,4 +1,10 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import ReactFlow, {
   applyNodeChanges,
   Background,
@@ -14,155 +20,45 @@ import {
   MainContentDiv,
   ScrollDiv,
 } from "../../../commonComponents";
-import { BackpropagationVisualizationCard } from "./backpropagationVisualizationCard";
 import { OperatorNode, ValueInputNode } from "./components";
+import { defaultEdges, defaultNodes, root } from "./default";
+import Gate from "./gate";
+import { layout, trace, useFitViewOnResize } from "./utils";
 
-const initialNodes: Node[] = [
-  {
-    id: "x1",
-    type: "valueInputNode",
-    position: { x: 0, y: 0 },
-    data: { inputValue: 2, label: "x_1", grad: 1.0 },
-    draggable: false,
-  },
-  {
-    id: "w1",
-    type: "valueInputNode",
-    position: { x: 0, y: 150 },
-    data: { inputValue: 4, label: "w_1", grad: 4 },
-    draggable: false,
-  },
-  {
-    id: "x2",
-    type: "valueInputNode",
-    position: { x: 0, y: 350 },
-    data: { inputValue: 6, label: "x_2", grad: 5 },
-    draggable: false,
-  },
-  {
-    id: "w2",
-    type: "valueInputNode",
-    position: { x: 0, y: 500 },
-    data: { inputValue: 6, label: "w_2", grad: 5 },
-    draggable: false,
-  },
-  {
-    id: "x1w1",
-    type: "operatorNode",
-    position: { x: 200, y: 75 },
-    data: { operator: "*", grad: 1, label: "x_1w_1", value: 3 },
-    draggable: false,
-  },
-  {
-    id: "x2w2",
-    type: "operatorNode",
-    position: { x: 200, y: 425 },
-    data: { operator: "*", grad: 1, label: "x_2w_2", value: 3 },
-    draggable: false,
-  },
-  {
-    id: "Wx",
-    type: "operatorNode",
-    position: { x: 400, y: 250 },
-    data: { operator: "+", grad: 3, label: "Wx", value: 3 },
-    draggable: false,
-  },
-  {
-    id: "b",
-    type: "valueInputNode",
-    position: { x: 400, y: 500 },
-    data: { inputValue: 2, label: "b", grad: 4 },
-    draggable: false,
-  },
-  {
-    id: "Wx+b",
-    type: "operatorNode",
-    position: { x: 600, y: 375 },
-    data: { operator: "+", grad: 4, label: "Wx+b", value: 3 },
-    draggable: false,
-  },
-  {
-    id: "sigmoid",
-    type: "operatorNode",
-    position: { x: 850, y: 375 },
-    data: {
-      operator: "sigmoid",
-      grad: 1,
-      label: "\\sigma \\text{ Gate}",
-      value: 6,
-    },
-  },
-];
-
-const initialEdges: Edge[] = [
-  {
-    id: "x1->x1w1",
-    source: "x1",
-    target: "x1w1",
-    animated: true,
-  },
-  {
-    id: "w1->x1w1",
-    source: "w1",
-    target: "x1w1",
-    animated: true,
-  },
-  {
-    id: "x2->x2w2",
-    source: "x2",
-    target: "x2w2",
-    animated: true,
-  },
-  {
-    id: "w2->x2w2",
-    source: "w2",
-    target: "x2w2",
-    animated: true,
-  },
-  {
-    id: "x1w1->x1w1+x2w2",
-    source: "x1w1",
-    target: "Wx",
-    animated: true,
-  },
-  {
-    id: "x2w2->x1w1+x2w2",
-    source: "x2w2",
-    target: "Wx",
-    animated: true,
-  },
-  {
-    id: "Wx->Wx+b",
-    source: "Wx",
-    target: "Wx+b",
-    animated: true,
-  },
-  {
-    id: "b->Wx+b",
-    source: "b",
-    target: "Wx+b",
-    animated: true,
-  },
-  {
-    id: "Wx+b->sigmoid",
-    source: "Wx+b",
-    target: "sigmoid",
-    animated: true,
-  },
-];
+export const AppContext = createContext({
+  onValueUpdate: (ref: Gate, val: number) => {},
+});
 
 export function BackpropagationVisualizationPage() {
-  const [nodes, setNodes] = useState<Node[]>(initialNodes);
-  const [edges, setEdges] = useState<Edge[]>(initialEdges);
+  useFitViewOnResize();
+  const [nodes, setNodes] = useState<Node[]>(defaultNodes);
+  const [edges, setEdges] = useState<Edge[]>(defaultEdges);
+
+  // define a string id to each type of node like so: {[Node Type]: [Node Component]}
   const nodeTypes: NodeTypes = useMemo(
     () => ({ valueInputNode: ValueInputNode, operatorNode: OperatorNode }),
     []
   );
 
+  // update nodes when interacted with
   const onNodesChange: OnNodesChange = useCallback(
     (changes) => setNodes((nds) => applyNodeChanges(changes, nds)),
     [setNodes]
   );
+
+  // update values and gradients on node value change
+  const onValueUpdate = useCallback(
+    (ref: Gate, val: number) => {
+      ref.update(val, root);
+      const { nodes: newNodes, edges: newEdges } = trace(root);
+      const layoutNodes = layout(newNodes, newEdges);
+      setNodes(layoutNodes);
+      setEdges(newEdges);
+    },
+    [setNodes, setEdges]
+  );
+
+  const appContext = { onValueUpdate };
 
   useEffect(() => {
     console.log(nodes);
@@ -170,7 +66,7 @@ export function BackpropagationVisualizationPage() {
 
   return (
     <ScrollDiv>
-      <BackpropagationVisualizationCard toFullscreen />
+      {/* <BackpropagationVisualizationCard toFullscreen /> */}
       <MainContentDiv>
         <ContentHeader
           date="1/18/2024"
@@ -189,17 +85,22 @@ export function BackpropagationVisualizationPage() {
             padding: 8,
           }}
         >
-          <ReactFlow
-            nodes={nodes}
-            edges={edges}
-            onNodesChange={onNodesChange}
-            nodeTypes={nodeTypes}
-            fitView
-            edgesFocusable={false}
-          >
-            <Background variant={BackgroundVariant.Dots} gap={32} size={1} />
-          </ReactFlow>
+          <AppContext.Provider value={appContext}>
+            <ReactFlow
+              nodes={nodes}
+              edges={edges}
+              onNodesChange={onNodesChange}
+              nodeTypes={nodeTypes}
+              fitView
+              edgesFocusable={false}
+            >
+              <Background variant={BackgroundVariant.Dots} gap={32} size={2} />
+            </ReactFlow>
+          </AppContext.Provider>
         </div>
+        <h1>JI</h1>
+        <h1>aowiefj</h1>
+        <h1>fjwioej</h1>
       </MainContentDiv>
     </ScrollDiv>
   );
