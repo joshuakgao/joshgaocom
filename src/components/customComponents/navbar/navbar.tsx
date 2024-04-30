@@ -50,17 +50,16 @@ export function Navbar() {
       >
         <Logo
           setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)}
-          size={screenWidth > 900 ? "full" : "small"}
+          size={screenWidth > 800 ? "full" : "small"}
         />
         <HamburgerMenu
           menuOpen={menuOpen}
           setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)}
-          hidden={screenWidth > 1600 || location.pathname == "/"}
+          hidden={screenWidth > 800}
         />
         <div
           style={{
-            display:
-              screenWidth < 1600 && location.pathname !== "/" ? "none" : "flex",
+            display: screenWidth < 800 ? "none" : "flex",
             justifyContent: "flex-end",
             marginRight: 32,
             pointerEvents: "auto",
