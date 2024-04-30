@@ -168,7 +168,7 @@ const styles: StyleSheet = {
     top: 0,
     marginRight: 32,
     zIndex: 10,
-    backgroundColor: "#f7f7f7",
+    backgroundColor: "var(--primary)",
   },
   menu: {
     display: "flex",

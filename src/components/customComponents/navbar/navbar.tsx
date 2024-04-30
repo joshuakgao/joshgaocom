@@ -5,6 +5,8 @@ import "./styles.css";
 import { Link, useLocation } from "react-router-dom";
 
 export function Navbar() {
+  const [visible, setVisible] = useState<boolean>(true);
+  const [lastScrollY, setLastSrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const location = useLocation();
@@ -24,11 +26,37 @@ export function Navbar() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollUp = lastScrollY > currentScrollY; // Scrolling up
+
+      // Update visibility based on scroll direction and minimum scroll threshold
+      setVisible(scrollUp || currentScrollY < 50); // Show on scroll up or within 50px from top
+
+      setLastSrollY(currentScrollY); // Update previous scroll position
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]); // Only re-run on lastScrollY change
+
+  useEffect(() => {
+    console.log(visible);
+  }, [visible]);
+
   return (
     <div style={styles.navbarContainer} className="navbar">
-      <div style={styles.navbarContainer} className="fade-in">
-        <Logo setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)} />
-        {screenWidth < 800 ? (
+      <div
+        style={styles.navbarContainer}
+        className={`${visible ? "fade-in" : "fade-out"}`}
+      >
+        <Logo
+          setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)}
+          size={screenWidth > 900 ? "full" : "small"}
+        />
+        {screenWidth < 1600 ? (
           <HamburgerMenu
             menuOpen={menuOpen}
             setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)}
@@ -101,7 +129,7 @@ interface StyleSheet {
 const styles: StyleSheet = {
   navbarContainer: {
     position: "fixed",
-    height: 100,
+    height: 75,
     width: "100vw",
     display: "flex",
     alignItems: "center",

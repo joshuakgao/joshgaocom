@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 
 export function Logo({
   setMenuOpen,
+  size = "full",
 }: {
   setMenuOpen: (menuOpen: boolean) => void;
+  size: "full" | "small";
 }) {
   return (
     <Row
@@ -18,14 +20,8 @@ export function Logo({
       }}
     >
       <Link to="/" style={styles.link} onClick={() => setMenuOpen(false)}>
-        <img
-          className="image"
-          src={watermelon}
-          style={{ ...styles.image }}
-          alt="" // required by eslint
-        />
         <h1 style={styles.lastName} className="secondary">
-          JOSHUA GAO
+          {size === "full" ? "JOSHUA GAO" : "JOSH"}
         </h1>
       </Link>
     </Row>

@@ -32,7 +32,7 @@ interface StyleSheet {
 
 const styles: StyleSheet = {
   scrollDiv: {
-    backgroundColor: "#f7f7f7",
+    backgroundColor: "var(--primary)",
     overflow: "hidden",
     padding: 16,
   },
