@@ -11,13 +11,17 @@ import ReactFlow, {
 import "reactflow/dist/style.css";
 import {
   ContentHeader,
+  LatexDiv,
   MainContentDiv,
   ScrollDiv,
+  Spacer,
 } from "../../../commonComponents";
 import { OperatorNode, ValueInputNode } from "./components";
 import { defaultEdges, defaultNodes, root } from "./defaults";
 import Gate from "./gate";
 import { layout, trace, useFitViewOnResize } from "./utils";
+import Latex from "react-latex-next";
+import diagram from "../../../../assets/projects/aiml/backpropagationVisualization/gradientDiagram.png";
 
 export const AppContext = createContext({
   onValueUpdate: (ref: Gate, val: string) => {}, // need to init an empty function for typescript
@@ -66,6 +70,10 @@ export function BackpropagationVisualizationPage() {
               "https://github.com/tugonbob/joshgao-com/tree/main/src/components/projectComponents/aiml/backpropagationVisualization",
           }}
         />
+        <p>
+          Change the values of the input nodes and watch how the gradients
+          change.
+        </p>
         <div
           style={{
             width: "100%",
@@ -88,6 +96,64 @@ export function BackpropagationVisualizationPage() {
             </ReactFlow>
           </AppContext.Provider>
         </div>
+        <h2>Backpropagation</h2>
+        <p>
+          Backpropagation is an algorithm used to train artificial neural
+          networks. It's an efficient way to calculate the gradients of a loss
+          function with respect to the weights of the network. It does this by
+          iterating backwards from the output node and calculates the gradients
+          through the use of the chain rule. The intuition behind gradients is
+          that the value at the node affects the output of the node by a factor
+          of the gradient.
+        </p>
+        <h3>Calculation</h3>
+        <img src={diagram} style={{ width: "100%" }} />
+        <p>
+          <LatexDiv>
+            <p style={{ fontSize: 12 }}>
+              <Latex>
+                {
+                  "$$ [\\text{Downstream Gradient}] = [\\text{Upstream Gradient}] \\times [\\text{Local Gradient}] $$"
+                }
+              </Latex>
+              <Latex>
+                {
+                  "$$ \\frac{\\partial L}{\\partial x} = \\frac{\\partial L}{\\partial z} \\frac{\\partial z}{\\partial x} $$"
+                }
+              </Latex>
+              <Spacer />
+              <Latex>
+                {
+                  "$ \\text{Where:} \\\\ L = \\text{entire computational graph} \\\\ x = \\text{downstream node} \\\\ z = \\text{upstream node} $"
+                }
+              </Latex>
+            </p>
+          </LatexDiv>
+        </p>
+        <h3>Intuition</h3>
+        <p>
+          <Latex>
+            {
+              "We want to find the effect of node $x$ on the entire function $L$. Therefore, we are looking for $\\frac{\\partial L}{\\partial x}$, otherwise known as the downstream gradient. $\\frac{\\partial L}{\\partial z}$ is the effect of the upstream node $z$ on the entire function $L$. Additionally, $\\frac{\\partial z}{\\partial x}$ is the effect of $x$ on the local node $z$ also called the local gradient."
+            }
+          </Latex>
+        </p>
+        <h2>Gate Intuitions</h2>
+        <h3>Addition Node</h3>
+        <p>
+          The addition nodes act as a gradient distributor, passing along the
+          upstream gradient to all downstream gradient branches.
+        </p>
+        <h3>Multiplication Node</h3>
+        <p>
+          The multiplication nodes act as a switcher and scaler, taking the
+          upstream gradient and scaling it by the value of the other branch.
+        </p>
+        <h3>ReLU or Max Node</h3>
+        <p>
+          The max nodes act as a gradient router, passing along the upstream
+          gradient to only one of the branches.
+        </p>
       </MainContentDiv>
     </ScrollDiv>
   );
