@@ -1,4 +1,4 @@
-import knnResult from "../../../../assets/projects/aiml/cifarKnnImageClassification/knnResult.png";
+import backpropVisual from "../../../../assets/projects/aiml/backpropagationVisualization/titleCardImage.png";
 import { TitleCard } from "../../../customComponents/titleCard";
 
 export function BackpropagationVisualizationCard({
@@ -10,11 +10,11 @@ export function BackpropagationVisualizationCard({
     <TitleCard
       to="/aiml/backpropagationVisualization"
       toFullscreen={toFullscreen}
-      textPosition={["left", "middle"]}
-      backgroundImage={knnResult}
-      backgroundDarken={40}
+      textPosition={["top", "right"]}
+      backgroundImage={backpropVisual}
+      backgroundDarken={10}
     >
-      <h1 className="primary">Interactive Backpropagation Visualization</h1>
+      <h1 className="accent">Backpropagation Visualization</h1>
     </TitleCard>
   );
 }
