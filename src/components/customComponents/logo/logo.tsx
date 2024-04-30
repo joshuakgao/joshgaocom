@@ -21,7 +21,7 @@ export function Logo({
     >
       <Link to="/" style={styles.link} onClick={() => setMenuOpen(false)}>
         <h1 style={styles.lastName} className="secondary">
-          {size === "full" ? "JOSHUA GAO" : "JOSH"}
+          {size === "full" ? "JOSHUA GAO" : "JG"}
         </h1>
       </Link>
     </Row>
