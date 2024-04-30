@@ -26,8 +26,8 @@ export function OperatorNode({ id, data }: NodeProps) {
         border: "1px solid var(--accent)",
         borderRadius: "100%",
         background: "white",
-        height: 150,
-        width: 150,
+        height: 100,
+        width: 100,
         padding: 20,
       }}
     >

@@ -1,4 +1,5 @@
 import { createContext, useCallback, useMemo, useState } from "react";
+import Latex from "react-latex-next";
 import ReactFlow, {
   applyNodeChanges,
   Background,
@@ -9,6 +10,7 @@ import ReactFlow, {
   OnNodesChange,
 } from "reactflow";
 import "reactflow/dist/style.css";
+import diagram from "../../../../assets/projects/aiml/backpropagationVisualization/gradientDiagram.png";
 import {
   ContentHeader,
   LatexDiv,
@@ -20,8 +22,6 @@ import { OperatorNode, ValueInputNode } from "./components";
 import { defaultEdges, defaultNodes, root } from "./defaults";
 import Gate from "./gate";
 import { layout, trace, useFitViewOnResize } from "./utils";
-import Latex from "react-latex-next";
-import diagram from "../../../../assets/projects/aiml/backpropagationVisualization/gradientDiagram.png";
 
 export const AppContext = createContext({
   onValueUpdate: (ref: Gate, val: string) => {}, // need to init an empty function for typescript
@@ -70,14 +70,9 @@ export function BackpropagationVisualizationPage() {
               "https://github.com/tugonbob/joshgao-com/tree/main/src/components/projectComponents/aiml/backpropagationVisualization",
           }}
         />
-        <p>
-          Change the values of the input nodes and watch how the gradients
-          change.
-        </p>
         <div
           style={{
-            width: "100%",
-            height: 500,
+            height: 400,
             border: "1px solid lightgray",
             borderRadius: "var(--borderRadius)",
             padding: 8,
@@ -96,6 +91,10 @@ export function BackpropagationVisualizationPage() {
             </ReactFlow>
           </AppContext.Provider>
         </div>
+        <p style={{ marginTop: 16 }}>
+          Change the values of the input nodes and watch how the gradients
+          change.
+        </p>
         <h2>Backpropagation</h2>
         <p>
           Backpropagation is an algorithm used to train artificial neural

@@ -4,7 +4,7 @@ import { Edge, Node, useReactFlow } from "reactflow";
 import Gate from "./gate";
 
 const nodeWidth = 200;
-const nodeHeight = 150;
+const nodeHeight = 100;
 
 const dagreGraph = new dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
