@@ -8,10 +8,12 @@ import "./styles.css";
 export function HamburgerMenu({
   menuOpen,
   setMenuOpen,
+  hidden,
   d,
 }: {
   menuOpen: boolean;
   setMenuOpen: (menuOpen: boolean) => void;
+  hidden: boolean;
   d?: boolean;
 }) {
   return (
@@ -21,6 +23,7 @@ export function HamburgerMenu({
           ...styles.hamburgerContainer,
           ...{
             border: d ? "1px solid black" : undefined,
+            display: hidden ? "none" : "flex",
           },
         }}
         onClick={() => setMenuOpen(!menuOpen)}
@@ -146,19 +149,17 @@ interface StyleSheet {
 
 const styles: StyleSheet = {
   hamburgerContainer: {
-    display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    marginRight: "2vw",
-    marginTop: "2vh",
-    marginBottom: "2vh",
+    marginRight: "3vw",
     pointerEvents: "auto",
     zIndex: 11,
   },
   line: {
     border: "1px solid black",
     height: 0,
-    width: 32,
+    width: 16,
+    margin: 2,
   },
   menuContainer: {
     display: "flex",
@@ -179,7 +180,7 @@ const styles: StyleSheet = {
   },
   menuItem: {
     marginTop: 16,
-    fontSize: "5vh",
+    fontSize: "4vh",
   },
   link: {
     textDecorationLine: "none",

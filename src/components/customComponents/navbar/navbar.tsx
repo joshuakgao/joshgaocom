@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { HamburgerMenu } from "../hamburgerMenu";
 import { Logo } from "../logo";
 import "./styles.css";
-import { Link, useLocation } from "react-router-dom";
 
 export function Navbar() {
   const [visible, setVisible] = useState<boolean>(true);
@@ -26,6 +26,7 @@ export function Navbar() {
     };
   }, []);
 
+  // hide navbar on scroll down
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -33,7 +34,6 @@ export function Navbar() {
 
       // Update visibility based on scroll direction and minimum scroll threshold
       setVisible(scrollUp || currentScrollY < 50); // Show on scroll up or within 50px from top
-
       setLastSrollY(currentScrollY); // Update previous scroll position
     };
 
@@ -41,10 +41,6 @@ export function Navbar() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]); // Only re-run on lastScrollY change
-
-  useEffect(() => {
-    console.log(visible);
-  }, [visible]);
 
   return (
     <div style={styles.navbarContainer} className="navbar">
@@ -56,67 +52,66 @@ export function Navbar() {
           setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)}
           size={screenWidth > 900 ? "full" : "small"}
         />
-        {screenWidth < 1600 ? (
-          <HamburgerMenu
-            menuOpen={menuOpen}
-            setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)}
-          />
-        ) : (
-          <div
+        <HamburgerMenu
+          menuOpen={menuOpen}
+          setMenuOpen={(changeMenu) => setMenuOpen(changeMenu)}
+          hidden={screenWidth > 1600 || location.pathname == "/"}
+        />
+        <div
+          style={{
+            display:
+              screenWidth < 1600 && location.pathname !== "/" ? "none" : "flex",
+            justifyContent: "flex-end",
+            marginRight: 32,
+            pointerEvents: "auto",
+          }}
+        >
+          <Link
+            to="/aiml"
+            onClick={() => setMenuOpen(false)}
             style={{
-              display: "flex",
-              justifyContent: "flex-end",
-              marginRight: 32,
-              pointerEvents: "auto",
+              ...styles.link,
+              ...{
+                textDecorationLine:
+                  location.pathname === "/aiml" ? "underline" : "none",
+              },
             }}
           >
-            <Link
-              to="/aiml"
-              onClick={() => setMenuOpen(false)}
-              style={{
-                ...styles.link,
-                ...{
-                  textDecorationLine:
-                    location.pathname === "/aiml" ? "underline" : "none",
-                },
-              }}
-            >
-              <h1 style={styles.navText} className="secondary">
-                AI / ML
-              </h1>
-            </Link>
-            <Link
-              to="/appdev"
-              onClick={() => setMenuOpen(false)}
-              style={{
-                ...styles.link,
-                ...{
-                  textDecorationLine:
-                    location.pathname === "/appdev" ? "underline" : "none",
-                },
-              }}
-            >
-              <h1 style={styles.navText} className="secondary">
-                APP DEV
-              </h1>
-            </Link>
-            <Link
-              to="/other"
-              onClick={() => setMenuOpen(false)}
-              style={{
-                ...styles.link,
-                ...{
-                  textDecorationLine:
-                    location.pathname === "/other" ? "underline" : "none",
-                },
-              }}
-            >
-              <h1 style={styles.navText} className="secondary">
-                OTHER
-              </h1>
-            </Link>
-          </div>
-        )}
+            <h1 style={styles.navText} className="secondary">
+              AI / ML
+            </h1>
+          </Link>
+          <Link
+            to="/appdev"
+            onClick={() => setMenuOpen(false)}
+            style={{
+              ...styles.link,
+              ...{
+                textDecorationLine:
+                  location.pathname === "/appdev" ? "underline" : "none",
+              },
+            }}
+          >
+            <h1 style={styles.navText} className="secondary">
+              APP DEV
+            </h1>
+          </Link>
+          <Link
+            to="/other"
+            onClick={() => setMenuOpen(false)}
+            style={{
+              ...styles.link,
+              ...{
+                textDecorationLine:
+                  location.pathname === "/other" ? "underline" : "none",
+              },
+            }}
+          >
+            <h1 style={styles.navText} className="secondary">
+              OTHER
+            </h1>
+          </Link>
+        </div>
       </div>
     </div>
   );
