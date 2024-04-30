@@ -107,20 +107,24 @@ export function BackpropagationVisualizationPage() {
         </p>
         <h3>Calculation</h3>
         <img src={diagram} style={{ width: "100%" }} />
-        <p>
+        <p style={{ flexWrap: "wrap" }}>
           <LatexDiv>
-            <p style={{ fontSize: 12 }}>
+            <p style={{ fontSize: 10 }}>
               <Latex>
                 {
-                  "$$ [\\text{Downstream Gradient}] = [\\text{Upstream Gradient}] \\times [\\text{Local Gradient}] $$"
+                  "$$ [\\text{Downstream Grad}] = [\\text{Upstream Grad}] \\times [\\text{Local Grad}] $$"
                 }
               </Latex>
+            </p>
+            <p style={{ fontSize: 12 }}>
               <Latex>
                 {
                   "$$ \\frac{\\partial L}{\\partial x} = \\frac{\\partial L}{\\partial z} \\frac{\\partial z}{\\partial x} $$"
                 }
               </Latex>
               <Spacer />
+            </p>
+            <p style={{ fontSize: 10 }}>
               <Latex>
                 {
                   "$ \\text{Where:} \\\\ L = \\text{entire computational graph} \\\\ x = \\text{downstream node} \\\\ z = \\text{upstream node} $"
