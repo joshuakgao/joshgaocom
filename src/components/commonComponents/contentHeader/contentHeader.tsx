@@ -57,7 +57,9 @@ export function ContentHeader({
         <Col>
           <Row>
             {/* NAME DATE */}
-            <p style={{ marginTop: 0, marginBottom: 0 }}>Joshua Gao: {date}</p>
+            <p style={{ marginTop: 0, marginBottom: 0, fontSize: 16 }}>
+              {date}
+            </p>
 
             {/* SKILLS */}
             {skills ? (

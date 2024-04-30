@@ -1,17 +1,19 @@
 import React, { CSSProperties } from "react";
 
 export function MainContentDiv({
-  d,
   className,
   style,
   children,
 }: {
-  d?: boolean;
   className?: string;
   style?: CSSProperties;
   children: any;
 }) {
-  return <main style={styles.content}>{children}</main>;
+  return (
+    <main style={{ ...styles.content, ...style }} className={className}>
+      {children}
+    </main>
+  );
 }
 
 interface StyleSheet {

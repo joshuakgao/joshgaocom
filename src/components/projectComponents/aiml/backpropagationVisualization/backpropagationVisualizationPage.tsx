@@ -21,12 +21,12 @@ import {
   ScrollDiv,
 } from "../../../commonComponents";
 import { OperatorNode, ValueInputNode } from "./components";
-import { defaultEdges, defaultNodes, root } from "./default";
+import { defaultEdges, defaultNodes, root } from "./defaults";
 import Gate from "./gate";
 import { layout, trace, useFitViewOnResize } from "./utils";
 
 export const AppContext = createContext({
-  onValueUpdate: (ref: Gate, val: number) => {},
+  onValueUpdate: (ref: Gate, val: number) => {}, // need to init an empty function for typescript
 });
 
 export function BackpropagationVisualizationPage() {
@@ -60,20 +60,16 @@ export function BackpropagationVisualizationPage() {
 
   const appContext = { onValueUpdate };
 
-  useEffect(() => {
-    console.log(nodes);
-  }, [nodes]);
-
   return (
     <ScrollDiv>
-      {/* <BackpropagationVisualizationCard toFullscreen /> */}
-      <MainContentDiv>
+      <MainContentDiv style={{ marginTop: 50 }}>
         <ContentHeader
-          date="1/18/2024"
-          skills={["python"]}
-          projectComponents="K Nearest Neighbor Algorithm with CIFAR-10 Database Interactive Demo"
+          date="4/30/2024"
+          skills={["typescript", "react"]}
+          projectComponents="Backpropagation Visualizer"
           sources={{
-            github: "https://github.com/tugonbob/cifar-knn-classifer",
+            github:
+              "https://github.com/tugonbob/joshgao-com/tree/main/src/components/projectComponents/aiml/backpropagationVisualization",
           }}
         />
         <div
@@ -98,9 +94,6 @@ export function BackpropagationVisualizationPage() {
             </ReactFlow>
           </AppContext.Provider>
         </div>
-        <h1>JI</h1>
-        <h1>aowiefj</h1>
-        <h1>fjwioej</h1>
       </MainContentDiv>
     </ScrollDiv>
   );
