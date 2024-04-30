@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.17b7e5a5.css",
-    "main.js": "/static/js/main.364b0d38.js",
+    "main.css": "/static/css/main.eb5c5f98.css",
+    "main.js": "/static/js/main.e948dc5b.js",
     "static/media/beachHouse.jpg": "/static/media/beachHouse.9049559d173b0b50c6eb.jpg",
     "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
     "static/media/cifarImages.png": "/static/media/cifarImages.e5243394e401c29dabea.png",
@@ -100,11 +100,11 @@
     "static/media/KaTeX_Size3-Regular.woff": "/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/index.html",
-    "main.17b7e5a5.css.map": "/static/css/main.17b7e5a5.css.map",
-    "main.364b0d38.js.map": "/static/js/main.364b0d38.js.map"
+    "main.eb5c5f98.css.map": "/static/css/main.eb5c5f98.css.map",
+    "main.e948dc5b.js.map": "/static/js/main.e948dc5b.js.map"
   },
   "entrypoints": [
-    "static/css/main.17b7e5a5.css",
-    "static/js/main.364b0d38.js"
+    "static/css/main.eb5c5f98.css",
+    "static/js/main.e948dc5b.js"
   ]
 }
