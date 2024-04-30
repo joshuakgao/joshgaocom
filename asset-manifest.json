@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.bfced587.css",
-    "main.js": "/static/js/main.60555839.js",
+    "main.css": "/static/css/main.46a1cc47.css",
+    "main.js": "/static/js/main.1f8ee64a.js",
     "static/media/beachHouse.jpg": "/static/media/beachHouse.9049559d173b0b50c6eb.jpg",
     "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
     "static/media/cifarImages.png": "/static/media/cifarImages.e5243394e401c29dabea.png",
@@ -10,7 +10,6 @@
     "static/media/cat.jpeg": "/static/media/cat.cd95ffce51fe2f45c673.jpeg",
     "static/media/python.png": "/static/media/python.fbebfabd42ff95354ed9.png",
     "static/media/knnResult.png": "/static/media/knnResult.fa0708fd49ce0941494a.png",
-    "static/media/watermelon.png": "/static/media/watermelon.b4012f507d40a1774201.png",
     "static/media/thumbnail.png": "/static/media/thumbnail.bcf8e9a188c3b2343145.png",
     "static/media/lotSizeVsPrice.gif": "/static/media/lotSizeVsPrice.7b7a901099f0ce28d0f0.gif",
     "static/media/sqftVsPrice.gif": "/static/media/sqftVsPrice.d2bd11f75c65a2a05831.gif",
@@ -99,11 +98,11 @@
     "static/media/KaTeX_Size3-Regular.woff": "/static/media/KaTeX_Size3-Regular.7947224e8a9914fa332b.woff",
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/index.html",
-    "main.bfced587.css.map": "/static/css/main.bfced587.css.map",
-    "main.60555839.js.map": "/static/js/main.60555839.js.map"
+    "main.46a1cc47.css.map": "/static/css/main.46a1cc47.css.map",
+    "main.1f8ee64a.js.map": "/static/js/main.1f8ee64a.js.map"
   },
   "entrypoints": [
-    "static/css/main.bfced587.css",
-    "static/js/main.60555839.js"
+    "static/css/main.46a1cc47.css",
+    "static/js/main.1f8ee64a.js"
   ]
 }
