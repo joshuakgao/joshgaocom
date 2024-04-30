@@ -12,7 +12,7 @@ export function ValueInputNode({ id, data }: NodeProps) {
       style={{
         display: "flex",
         alignItems: "center",
-        border: "1px solid var(--tertiary)",
+        border: "1px solid var(--accent)",
         borderRadius: "100%",
         background: "white",
         height: 150,
@@ -34,11 +34,13 @@ export function ValueInputNode({ id, data }: NodeProps) {
           <Latex>{"$" + data.label + "$"}</Latex>
         </b>
         <input
+          id={id}
           style={{
             width: 75,
             fontSize: 16,
             border: "1px solid var(--tertiary)",
             padding: 4,
+            marginTop: 4,
           }}
           value={isNaN(data.value) ? "" : data.value}
           onChange={(e) => onValueUpdate(data.ref, parseFloat(e.target.value))}

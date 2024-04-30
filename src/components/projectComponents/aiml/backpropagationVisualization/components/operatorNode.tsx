@@ -8,7 +8,7 @@ export function OperatorNode({ id, data }: NodeProps) {
       style={{
         display: "flex",
         alignItems: "center",
-        border: "1px solid var(--tertiary)",
+        border: "1px solid var(--accent)",
         borderRadius: "100%",
         background: "white",
         height: 150,
