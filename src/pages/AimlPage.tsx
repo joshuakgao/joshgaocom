@@ -9,8 +9,8 @@ export function AimlPage() {
   return (
     <ScrollDiv className="fade-in-1">
       <BackpropagationVisualizationCard />
-      <RealEstateLinearRegressionCard />
       <CifarKnnImageClassificationCard />
+      <RealEstateLinearRegressionCard />
     </ScrollDiv>
   );
 }
