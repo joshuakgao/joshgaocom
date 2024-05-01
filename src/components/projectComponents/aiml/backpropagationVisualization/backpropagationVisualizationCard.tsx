@@ -10,11 +10,19 @@ export function BackpropagationVisualizationCard({
     <TitleCard
       to="/aiml/backpropagationVisualization"
       toFullscreen={toFullscreen}
-      textPosition={["top", "right"]}
+      textPosition={["top", "center"]}
       backgroundImage={backpropVisual}
       backgroundDarken={10}
     >
-      <h1 className="accent">Backpropagation Visualization</h1>
+      <h1
+        className="accent"
+        style={{
+          fontSize: "calc(2vw + 16px)",
+          textAlign: "right",
+        }}
+      >
+        Backpropagation Visualization
+      </h1>
     </TitleCard>
   );
 }
