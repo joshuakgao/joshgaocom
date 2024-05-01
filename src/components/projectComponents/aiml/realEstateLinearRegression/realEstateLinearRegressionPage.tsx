@@ -7,12 +7,12 @@ import {
   Spacer,
 } from "../../../commonComponents";
 import { RealEstateLinearRegressionCard } from "./realEstateLinearRegressionCard";
-import sqftVsPrice from "../../../../assets/projects/aiml/Linear Regression/houseSizeVsPrice.png";
-import lotSizeVsPrice from "../../../../assets/projects/aiml/Linear Regression/lotSizeVsPrice.png";
+import sqftVsPrice from "../../../../assets/projects/aiml/realEstateLinearRegression/houseSizeVsPrice.png";
+import lotSizeVsPrice from "../../../../assets/projects/aiml/realEstateLinearRegression/lotSizeVsPrice.png";
 import "katex/dist/katex.min.css";
 import Latex from "react-latex-next";
-import sqftVsPriceGif from "../../../../assets/projects/aiml/Linear Regression/sqftVsPrice.gif";
-import lotSizeVsPriceGif from "../../../../assets/projects/aiml/Linear Regression/lotSizeVsPrice.gif";
+import sqftVsPriceGif from "../../../../assets/projects/aiml/realEstateLinearRegression/sqftVsPrice.gif";
+import lotSizeVsPriceGif from "../../../../assets/projects/aiml/realEstateLinearRegression/lotSizeVsPrice.gif";
 
 export function RealEstateLinearRegressionPage() {
   return (
