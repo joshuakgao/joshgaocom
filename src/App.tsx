@@ -15,7 +15,7 @@ import {
   RealEstateDealFinderPage,
   RedditLaughsPage,
 } from "./components/projectComponents/other";
-import { AimlPage, AppdevPage, HomePage, OtherPage } from "./pages";
+import { AimlPage, AppdevPage, HomePage, OtherPage, MenuPage } from "./pages";
 
 function App() {
   return (
@@ -23,6 +23,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+
+        <Route path="/menu" element={<MenuPage />} />
 
         <Route path="/aiml" element={<AimlPage />} />
         <Route
