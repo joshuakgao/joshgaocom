@@ -5,6 +5,7 @@ import {
   RealEstateLinearRegressionPage,
   CifarKnnImageClassificationPage,
   BackpropagationVisualizationPage,
+  GptNanoPage,
 } from "./components/projectComponents/aiml";
 import {
   AskGptPage,
@@ -27,6 +28,7 @@ function App() {
         <Route path="/menu" element={<MenuPage />} />
 
         <Route path="/aiml" element={<AimlPage />} />
+        <Route path="/aiml/gptNano" element={<GptNanoPage />} />
         <Route
           path="/aiml/backpropagationVisualization"
           element={<BackpropagationVisualizationPage />}
