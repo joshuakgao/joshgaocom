@@ -63,7 +63,9 @@ def compare_gpt_models(query, max_length=100):
     base_dir = os.path.dirname(__file__)
     gpt_nano_path = os.path.join(base_dir, 'models', 'model_19072.pt')
     civil_finetune_path = os.path.join(base_dir, 'models', 'civil_finetune_v3_model_00200.pt')
-
+    print(gpt_nano_path)
+    print(civil_finetune_path)
+    
     gpt_nano_model = load_gpt_nano_model(gpt_nano_path)
     gpt_2_model = load_gpt_2_model()
     civil_finetune_model = load_gpt_nano_model(civil_finetune_path)
