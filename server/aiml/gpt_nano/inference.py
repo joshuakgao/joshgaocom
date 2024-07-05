@@ -1,6 +1,6 @@
 import torch
 from torch.nn import functional as F
-from model import GPT, GPTConfig
+from .model import GPT, GPTConfig
 import tiktoken
 from transformers import GPT2LMHeadModel
 import os
@@ -79,6 +79,6 @@ def compare_gpt_models(query, max_length=100):
     }
 
 
-if __name__ == "__main__":
-    response = compare_gpt_models("Once upon a time", 10)
-    print(response)
+# if __name__ == "__main__":
+#     response = compare_gpt_models("Once upon a time", 10)
+#     print(response)
