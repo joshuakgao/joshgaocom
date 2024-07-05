@@ -3,6 +3,8 @@ from dataclasses import dataclass
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
+import __main__
+
 
 
 class CausalSelfAttention(nn.Module):
@@ -75,7 +77,7 @@ class GPTConfig():
     n_layer: int = 12 # number of layers
     n_head: int = 12 # number of heads
     n_embd: int = 768 # embedding dimension
-
+__main__.GPTConfig = GPTConfig # for flask app importing
 
 class GPT(nn.Module):
 
