@@ -1,8 +1,7 @@
 import torch
 from torch.nn import functional as F
 import os, sys
-sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-from aiml.gpt_nano.model import GPT, GPTConfig
+from aiml.gpt_nano.model import GPTConfig, GPT
 import tiktoken
 from transformers import GPT2LMHeadModel
 
