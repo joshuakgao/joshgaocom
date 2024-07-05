@@ -75,7 +75,7 @@ def gpt_nano():
         print("Starting")
         # get url strin params
         query = str(request.args.get('query'))
-        max_length = str(request.args.get('max_length'))
+        max_length = int(request.args.get('max_length'))
         print("comparing...")
         # query gpt-nano, gpt-2, and civil-finetune models
         model_responses = compare_gpt_models(query, max_length=max_length)  # dict of responses
