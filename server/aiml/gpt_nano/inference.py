@@ -1,6 +1,6 @@
 import torch
 from torch.nn import functional as F
-import os, sys
+import os
 from aiml.gpt_nano.model import GPTConfig, GPT
 import tiktoken
 from transformers import GPT2LMHeadModel

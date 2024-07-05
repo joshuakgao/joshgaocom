@@ -4,6 +4,8 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 from PIL import Image
 from utils.image_utils import *
+import traceback 
+
 
 app = Flask(__name__)
 CORS(app)
@@ -80,7 +82,7 @@ def gpt_nano():
         print("done")
         return jsonify(model_responses), 200
     except Exception as e:
-        print(str(e))
+        traceback.print_exc()
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
