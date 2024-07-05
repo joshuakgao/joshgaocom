@@ -23,6 +23,7 @@ def read_image_test():
         final_image = convert_image_to_base64(image)
         return jsonify({'image': final_image}), 200
     except Exception as e:
+        traceback.print_exc()
         return jsonify({'error': str(e)}), 500
 
 
@@ -66,24 +67,25 @@ def cifar_knn_image_classification():
 
         return jsonify({'knn_image_and_labels': response_knn_image_and_labels, 'prediction': pred}), 200
     except Exception as e:
+        traceback.print_exc()
         return jsonify({'error': str(e)}), 500
     
 
 @app.route('/aiml/gpt-nano', methods=['GET'])
 def gpt_nano():
     try:
-        print("Starting")
         # get url strin params
         query = str(request.args.get('query'))
         max_length = int(request.args.get('max_length'))
-        print("comparing...")
+
         # query gpt-nano, gpt-2, and civil-finetune models
         model_responses = compare_gpt_models(query, max_length=max_length)  # dict of responses
-        print("done")
+
         return jsonify(model_responses), 200
     except Exception as e:
         traceback.print_exc()
         return jsonify({'error': str(e)}), 500
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000, debug=False)
