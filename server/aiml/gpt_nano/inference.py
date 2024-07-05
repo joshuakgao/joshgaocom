@@ -53,30 +53,32 @@ def query_model(model, query, max_length=100, num_return_sequences = 1):
             x = torch.cat((x, xcol), dim=1)
 
     # print the generated text
-    for i in range(num_return_sequences):
-        tokens = x[i, :max_length].tolist()
-        decoded = enc.decode(tokens)
-        print(">", decoded, "\n")
+    tokens = x[0, :max_length].tolist()
+    decoded = enc.decode(tokens)
+    return decoded
 
 
 def compare_gpt_models(query, max_length=100):
     base_dir = os.path.dirname(__file__)
     gpt_nano_path = os.path.join(base_dir, 'models', 'model_19072.pt')
-    # civil_finetune_path = os.path.join(base_dir, 'models', 'civil_finetune_v3_model_00200.pt')
+    civil_finetune_path = os.path.join(base_dir, 'models', 'civil_finetune_v3_model_00200.pt')
 
     gpt_nano_model = load_gpt_nano_model(gpt_nano_path)
-    # civil_finetune_model = load_gpt_nano_model(civil_finetune_path)
     gpt_2_model = load_gpt_2_model()
+    civil_finetune_model = load_gpt_nano_model(civil_finetune_path)
 
     query = query.strip()
-    gpt_nano_response = query_model(gpt_nano_model, max_length=max_length)
-    gpt_2_response = query_model(gpt_2_model, max_length=max_length)
+    gpt_nano_response = query_model(gpt_nano_model, query, max_length=max_length)
+    gpt_2_response = query_model(gpt_2_model, query, max_length=max_length)
+    civil_finetune_response = query_model(civil_finetune_model, query, max_length=max_length)
 
     return {
         "gpt_nano": gpt_nano_response,
-        "gpt_2": gpt_2_response
+        "gpt_2": gpt_2_response,
+        "civil_finetune": civil_finetune_response
     }
 
 
 if __name__ == "__main__":
-    compare_gpt_models("Once upon a time")
+    response = compare_gpt_models("Once upon a time", 10)
+    print(response)
