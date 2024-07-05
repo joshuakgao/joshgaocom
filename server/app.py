@@ -70,13 +70,14 @@ def cifar_knn_image_classification():
 @app.route('/aiml/gpt-nano', methods=['GET'])
 def gpt_nano():
     try:
+        print("Starting")
         # get url strin params
         query = str(request.args.get('query'))
         max_length = str(request.args.get('max_length'))
-
+        print("comparing...")
         # query gpt-nano, gpt-2, and civil-finetune models
         model_responses = compare_gpt_models(query, max_length=max_length)  # dict of responses
-        
+        print("done")
         return jsonify(model_responses), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
