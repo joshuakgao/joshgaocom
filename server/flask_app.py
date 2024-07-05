@@ -1,4 +1,5 @@
 from aiml.cifar_knn_image_classification.knn import knn
+from aiml.gpt_nano.inference import compare_gpt_models
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from PIL import Image
@@ -64,7 +65,21 @@ def cifar_knn_image_classification():
         return jsonify({'knn_image_and_labels': response_knn_image_and_labels, 'prediction': pred}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+    
 
+@app.route('/aiml/gpt-nano', methods=['GET'])
+def gpt_nano():
+    try:
+        # get url strin params
+        query = str(request.args.get('query'))
+        max_length = str(request.args.get('max_length'))
+
+        # query gpt-nano, gpt-2, and civil-finetune models
+        model_responses = compare_gpt_models(query, max_length=max_length)  # dict of responses
+        
+        return jsonify(model_responses), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run()
