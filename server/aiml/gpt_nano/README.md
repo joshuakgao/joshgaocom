@@ -9,10 +9,13 @@ https://drive.google.com/drive/folders/1EgImVRmw1NTImNfnl2vmXEDskEZ8V3F4?usp=dri
 
 Then add models to the `models/` directory.
 
-### Download Dependecies
+### Download Through Command Line
 
-```
-pip install -r requirements.txt
+```shell
+# download models
+gdown --folder --id 1EgImVRmw1NTImNfnl2vmXEDskEZ8V3F4
+# rename folder
+mv gptNano models
 ```
 
 ### Serve to API

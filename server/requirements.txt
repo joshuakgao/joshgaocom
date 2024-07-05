@@ -7,3 +7,4 @@ tiktoken
 transformers
 datasets
 torch
+gdown # to install google drive assets through command line

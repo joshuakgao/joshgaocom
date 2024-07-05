@@ -7,12 +7,6 @@
 Go to: https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
 Unzip "cifar-10-batches-py" folder into your working directory
 
-### Download Dependencies
-
-```
-pip install -r requirements.txt
-```
-
 ### Serve to API
 
 Import `knn()` to Flask App.
