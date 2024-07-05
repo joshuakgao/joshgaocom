@@ -67,7 +67,7 @@ class Block(nn.Module):
         return x
 
 
-class GPTConfig:
+class GPTConfig():
   """
   Configuration for GPT model.
   """
