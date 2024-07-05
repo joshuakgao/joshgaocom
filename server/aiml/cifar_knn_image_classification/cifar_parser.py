@@ -1,5 +1,5 @@
 import numpy as np
-import os
+
 
 def unpickle_cifar_batch(file):
     import pickle

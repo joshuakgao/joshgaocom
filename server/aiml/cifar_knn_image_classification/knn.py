@@ -1,5 +1,5 @@
-from .distance_functions import l1_distance, l2_distance
-from .cifar_parser import get_cifar_data, get_cifar_classes
+from aiml.cifar_knn_image_classification.distance_functions import l1_distance, l2_distance
+from aiml.cifar_knn_image_classification.cifar_parser import get_cifar_data, get_cifar_classes
 import numpy as np
 
 
