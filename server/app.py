@@ -76,10 +76,10 @@ def gpt_nano():
     try:
         # get url strin params
         query = str(request.args.get('query'))
-        max_length = int(request.args.get('max_length'))
+        max_tokens = int(request.args.get('max_tokens'))
 
         # query gpt-nano, gpt-2, and civil-finetune models
-        model_responses = compare_gpt_models(query, max_length=max_length)  # dict of responses
+        model_responses = compare_gpt_models(query, max_tokens=max_tokens)  # dict of responses
 
         return jsonify(model_responses), 200
     except Exception as e:

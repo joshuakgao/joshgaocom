@@ -25,7 +25,7 @@ def load_gpt_2_model():
     return model
 
 
-def query_model(model, query, max_length=100, num_return_sequences = 1):
+def query_model(model, query, max_tokens=100, num_return_sequences = 1):
     # prep model input
     enc = tiktoken.get_encoding('gpt2')
     tokens = enc.encode(query)
@@ -34,7 +34,7 @@ def query_model(model, query, max_length=100, num_return_sequences = 1):
     x = tokens.to(DEVICE)
 
     # generate!
-    while x.size(1) < max_length: # max_length=30
+    while x.size(1) < max_tokens: # max_tokens=30
         # forward the model to get the logits
         with torch.no_grad():
             logits = model(x)[0] # (B, T, vocab_size)
@@ -54,12 +54,12 @@ def query_model(model, query, max_length=100, num_return_sequences = 1):
             x = torch.cat((x, xcol), dim=1)
 
     # print the generated text
-    tokens = x[0, :max_length].tolist()
+    tokens = x[0, :max_tokens].tolist()
     decoded = enc.decode(tokens)
     return decoded
 
 
-def compare_gpt_models(query, max_length=100):
+def compare_gpt_models(query, max_tokens=100):
     base_dir = os.path.dirname(__file__)
     gpt_nano_path = os.path.join(base_dir, 'models', 'model_19072.pt')
     # civil_finetune_path = os.path.join(base_dir, 'models', 'civil_finetune_v3_model_00200.pt')
@@ -69,9 +69,9 @@ def compare_gpt_models(query, max_length=100):
     # civil_finetune_model = load_gpt_nano_model(civil_finetune_path)
 
     query = query.strip()
-    gpt_nano_response = query_model(gpt_nano_model, query, max_length=max_length)
-    gpt_2_response = query_model(gpt_2_model, query, max_length=max_length)
-    # civil_finetune_response = query_model(civil_finetune_model, query, max_length=max_length)
+    gpt_nano_response = query_model(gpt_nano_model, query, max_tokens=max_tokens)
+    gpt_2_response = query_model(gpt_2_model, query, max_tokens=max_tokens)
+    # civil_finetune_response = query_model(civil_finetune_model, query, max_tokens=max_tokens)
 
     return {
         "gpt_nano": gpt_nano_response,

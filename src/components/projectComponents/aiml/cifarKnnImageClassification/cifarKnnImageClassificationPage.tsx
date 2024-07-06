@@ -10,9 +10,9 @@ import {
   Row,
   ScrollDiv,
   Spacer,
+  ColorBoxButton,
+  ImageUploader,
 } from "../../../commonComponents";
-import { ColorBoxButton } from "../../../commonComponents/colorBoxButton";
-import { ImageUploader } from "../../../commonComponents/imageUploader";
 import { CifarKnnImageClassificationCard } from "./cifarKnnImageClassificationCard";
 
 export function CifarKnnImageClassificationPage() {

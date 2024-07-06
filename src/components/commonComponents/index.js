@@ -11,3 +11,5 @@ export * from "./code";
 export * from "./spacer";
 export * from "./latexDiv";
 export * from "./col";
+export * from "./colorBoxButton";
+export * from "./imageUploader";
