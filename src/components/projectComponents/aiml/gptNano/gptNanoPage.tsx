@@ -19,8 +19,8 @@ export function GptNanoPage() {
     gpt_nano: string;
     gpt_2: string;
   }>({
-    gpt_nano: `The meaning of life is: The meaning of life should be in God to us, to man, and also to the environment. It is not merely that life is good and healthy, it is also that it improves the nature of life and nature`,
-    gpt_2: `The meaning of life is: "Let him give you up to the angels." 1 James 10:32 We have become free, and so have God. Romans 5:5 He is "wonderful" because we cannot`,
+    gpt_nano: `The meaning of life is: an important thing for people, who are living and dying. The concept of existence includes every aspect of life, which has value over all the aspects in life so that one lives in balance. People who live with their faith`,
+    gpt_2: `The meaning of life is: You are immortal in the same way if I live. It's just that I'm always right there. If you don't give me enough money and then you want me to do a better job, that's`,
   });
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState(false);
@@ -75,7 +75,11 @@ export function GptNanoPage() {
         >
           <Col>
             <label htmlFor="models query">Query:</label>
-            <input value={query} onChange={(e) => setQuery(e.target.value)} />
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              style={{ width: 200 }}
+            />
             <Spacer />
             <label htmlFor="max tokens">Max Tokens:</label>
             <select
@@ -84,16 +88,16 @@ export function GptNanoPage() {
               value={maxTokens}
               onChange={(e) => setMaxTokens(e.target.value)}
             >
-              <option value="1">10</option>
-              <option value="2">20</option>
-              <option value="3">30</option>
-              <option value="4">40</option>
-              <option value="5">50</option>
-              <option value="6">60</option>
-              <option value="7">70</option>
-              <option value="8">80</option>
-              <option value="9">90</option>
-              <option value="10">100</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+              <option value="40">40</option>
+              <option value="50">50</option>
+              <option value="60">60</option>
+              <option value="70">70</option>
+              <option value="80">80</option>
+              <option value="90">90</option>
+              <option value="100">100</option>
             </select>
             <Spacer size={32} />
             <Col>
