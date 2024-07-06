@@ -122,17 +122,17 @@ export function GptNanoPage() {
               alignItems: "flex-start",
               border: "1px solid var(--accent)",
               borderRadius: "var(--borderRadius)",
-              padding: 16,
+              padding: 32,
               minHeight: 164,
             }}
           >
             <Col style={{ flex: 1 }}>
-              <h3 style={{ textAlign: "center" }}>gpt-nano</h3>
+              <h3 style={{ textAlign: "center", marginTop: 0 }}>gpt-nano</h3>
               <p style={{ textAlign: "justify" }}>{modelResponses?.gpt_nano}</p>
             </Col>
             <Spacer horizontal size={32} />
             <Col style={{ flex: 1 }}>
-              <h3 style={{ textAlign: "center" }}>gpt-2</h3>
+              <h3 style={{ textAlign: "center", marginTop: 0 }}>gpt-2</h3>
               <p style={{ textAlign: "justify" }}>{modelResponses?.gpt_2}</p>
             </Col>
           </Row>
