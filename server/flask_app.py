@@ -73,7 +73,6 @@ def cifar_knn_image_classification():
 
 @app.route('/aiml/gpt-nano', methods=['GET'])
 def gpt_nano():
-    print('hi')
     try:
         # get url strin params
         query = str(request.args.get('query'))

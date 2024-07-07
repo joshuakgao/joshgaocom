@@ -1,8 +1,7 @@
 import torch
 from torch.nn import functional as F
 import os, sys
-from model import GPTConfig, GPT
-sys.path.append('../../')
+from aiml.gpt_nano.model import GPTConfig, GPT
 from utils.device_detector import detect_device
 import tiktoken
 from transformers import GPT2LMHeadModel
@@ -85,7 +84,7 @@ def compare_gpt_models(query, max_tokens=100):
 
 if __name__ == "__main__":
     start_time = time.time()
-    response = compare_gpt_models("Once upon a time", 100)
+    response = compare_gpt_models("Once upon a time", 50)
     end_time = time.time()
     print(response)
     print(end_time-start_time)
