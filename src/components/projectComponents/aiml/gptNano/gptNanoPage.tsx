@@ -38,7 +38,6 @@ export function GptNanoPage() {
           method: "GET",
         }
       );
-      console.log(backend.url);
 
       const data = await response.json();
 
