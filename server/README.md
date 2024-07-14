@@ -15,5 +15,8 @@ Go through each projects readme and follow the setup instructions.
 ## Expose API
 
 ```shell
-python flask_app.py
+# in first shell:
+python server/flask_app.py
+# in second shell:
+ngrok http --domain=api.joshgao.com 8181
 ```

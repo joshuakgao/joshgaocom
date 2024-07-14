@@ -13,7 +13,6 @@ CORS(app)
 
 @app.route('/')
 def hello():
-    print("hello")
     return jsonify({'response': "Hello! You've reached the backend of joshgao.com"})
 
 
