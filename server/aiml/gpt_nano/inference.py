@@ -88,6 +88,7 @@ def compare_gpt_models(query, max_tokens=100):
     # remove string after <|endoftext|> token
     eot_token = "<|endoftext|>"
     gpt_nano_response = remove_after_string(gpt_nano_response, eot_token)
+    gpt_2_response = remove_after_string(gpt_2_response, eot_token)
     # civil_finetune_response = remove_after_string(gpt_nano_response, eot_token)
 
     return {

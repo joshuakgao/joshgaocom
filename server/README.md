@@ -16,6 +16,7 @@ Go through each projects readme and follow the setup instructions.
 
 ```shell
 # in first shell:
+conda activate joshgaocom
 python server/flask_app.py
 # in second shell:
 ngrok http --domain=api.joshgao.com 8181
