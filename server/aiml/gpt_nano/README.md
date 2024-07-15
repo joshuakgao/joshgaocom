@@ -2,14 +2,7 @@
 
 ## Getting Started
 
-### Download Models
-
-Download both models from the following google drive:
-https://drive.google.com/drive/folders/1EgImVRmw1NTImNfnl2vmXEDskEZ8V3F4?usp=drive_link
-
-Then add models to the `models/` directory.
-
-### Download Through Command Line
+### Download Models Through Command Line
 
 ```shell
 # download models

@@ -1,5 +1,6 @@
 from aiml.cifar_knn_image_classification.knn import knn
 from aiml.gpt_nano.inference import compare_gpt_models
+from other.ip_getter.ip_getter import get_ip_address
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from PIL import Image
@@ -22,7 +23,7 @@ def read_image_test():
         image = Image.open("./cat.jpeg")
         final_image = convert_image_to_base64(image)
         return jsonify({"image": final_image}), 200
-    except Exception as e:
+    except:
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
@@ -82,7 +83,7 @@ def cifar_knn_image_classification():
             ),
             200,
         )
-    except Exception as e:
+    except:
         print(traceback.format_exc(0))
         return jsonify({"error": traceback.format_exc()}), 500
 
@@ -100,7 +101,17 @@ def gpt_nano():
         )  # dict of responses
 
         return jsonify(model_responses), 200
-    except Exception as e:
+    except:
+        print(traceback.format_exc())
+        return jsonify({"error": traceback.format_exc()}), 500
+
+
+@app.route("/other/ip-getter", methods=["GET"])
+def ip_change_notifier():
+    try:
+        ip_address = get_ip_address()
+        return jsonify({"ip_address": ip_address})
+    except:
         print(traceback.format_exc())
         return jsonify({"error": traceback.format_exc()}), 500
 
