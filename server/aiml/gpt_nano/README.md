@@ -13,9 +13,7 @@ Then add models to the `models/` directory.
 
 ```shell
 # download models
-gdown --folder --id 1EgImVRmw1NTImNfnl2vmXEDskEZ8V3F4
-# rename folder
-mv gptNano models
+gdown --folder --id 16fKjgJsCBLIhdJXVvq25eTFlNZqmEi9-
 ```
 
 ### Serve to API
