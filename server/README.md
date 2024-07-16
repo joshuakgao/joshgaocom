@@ -3,6 +3,10 @@
 ## Download Dependencies
 
 ```shell
+conda create -n jg python=3.9 -y
+conda activate jg
+# GET PYTORCH DOWNLOAD COMMAND WITH THIS LINK: https://pytorch.org/get-started/locally/
+<RUN PYTORCH DOWNLOAD COMMAND>
 pip install -r requirements.txt
 ```
 
