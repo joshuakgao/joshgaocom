@@ -109,6 +109,9 @@ def gpt_nano():
 @app.route("/other/ip-getter", methods=["GET"])
 def ip_change_notifier():
     try:
+        key = str(request.args.get("key"))
+        if key != "am1208":
+            raise "Access denied"
         ip_address = get_ip_address()
         return jsonify({"ip_address": ip_address})
     except:
