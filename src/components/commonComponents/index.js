@@ -13,3 +13,4 @@ export * from "./latexDiv";
 export * from "./col";
 export * from "./colorBoxButton";
 export * from "./imageUploader";
+export * from "./badge";

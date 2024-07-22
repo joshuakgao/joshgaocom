@@ -1,13 +1,15 @@
-import { Col } from "../../commonComponents";
+import { Badge, Col, Row, Spacer } from "../../commonComponents";
 
 export function DrinkMenuItem({
   image,
   title,
   description,
+  isPremium,
 }: {
   image: string;
   title: string;
   description: string;
+  isPremium: boolean;
 }) {
   return (
     <Col
@@ -25,9 +27,24 @@ export function DrinkMenuItem({
         height="100%"
         alt={title}
       />
-      <h3 style={{ textAlign: "center", fontSize: "calc(22px + 0.2vw)" }}>
-        {title}
-      </h3>
+      <Spacer />
+      <Row
+        style={{
+          justifyContent: "center",
+        }}
+      >
+        <h3
+          style={{
+            textAlign: "center",
+            fontSize: "calc(22px + 0.2vw)",
+            marginTop: 8,
+          }}
+        >
+          {title}
+        </h3>
+        <Spacer horizontal size={4} />
+        {/* {isPremium ? <Badge text={"Premium"} /> : null} */}
+      </Row>
       <p style={{ textAlign: "center" }}>{description}</p>
     </Col>
   );
