@@ -1,15 +1,69 @@
-import { ScrollDiv } from "../components/commonComponents";
+import drinkImages from "../assets/images/drinksMenu";
+import {
+  MainContentDiv,
+  Row,
+  ScrollDiv,
+  Spacer,
+} from "../components/commonComponents";
+import { DrinkMenuItem } from "../components/customComponents";
 
 export function MenuPage() {
+  const drinks: { title: string; description: string; image: string }[][] = [
+    [
+      {
+        title: "Matcha Latte",
+        description:
+          "A vibrant and earthy beverage that blends matcha with milk and honey, creating a smooth and creamy drink.",
+        image: drinkImages.matchaLatte,
+      },
+      {
+        title: "Thai Tea",
+        description:
+          "A refreshing blend of Assam black tea and condensed milk creating a perfect balance between bold and sweet.",
+        image: drinkImages.thaiTea,
+      },
+    ],
+    [
+      {
+        title: "Milk Tea",
+        description:
+          "Savor the classic taste of our Milk Tea, a delightful fusion of a tea of your choice and velvety smooth milk.",
+        image: drinkImages.milkTea,
+      },
+      {
+        title: "Vietnamese Coffee",
+        description:
+          "Experience the rich and bold flavors of traditional Vietnamese drip coffee sweetened with condensed milk.",
+        image: drinkImages.vietnameseCoffee,
+      },
+    ],
+  ];
+
   return (
     <ScrollDiv>
-      <h1>Menu</h1>
-      <h2>Teas</h2>
-      <p>Milk Tea</p>
-      <p>Thai Tea</p>
-      <h2>Coffee</h2>
-      <p>Latte</p>
-      <p>Americano</p>
+      <MainContentDiv>
+        <h1>Drinks Menu</h1>
+        {drinks.map((drinkPair, i) => (
+          <>
+            <Spacer size={128} />
+            <Row>
+              {console.log(drinkPair)}
+              <DrinkMenuItem
+                title={drinkPair[0].title}
+                description={drinkPair[0].description}
+                image={drinkPair[0].image}
+              />
+              <Spacer horizontal size={64} />
+              <DrinkMenuItem
+                title={drinkPair[1].title}
+                description={drinkPair[1].description}
+                image={drinkPair[1].image}
+              />
+            </Row>
+          </>
+        ))}
+        <Spacer size={100} />
+      </MainContentDiv>
     </ScrollDiv>
   );
 }

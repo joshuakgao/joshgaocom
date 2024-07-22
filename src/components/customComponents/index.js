@@ -4,3 +4,4 @@ export * from "./dotObject";
 export * from "./hamburgerMenu";
 export * from "./titleCard";
 export * from "./scrollToTop";
+export * from "./drinkMenuItem";
