@@ -1,20 +1,23 @@
 {
   "files": {
     "main.css": "/static/css/main.eb602b06.css",
-    "main.js": "/static/js/main.bf0e99d2.js",
+    "main.js": "/static/js/main.81590d18.js",
     "static/media/beachHouse.jpg": "/static/media/beachHouse.9049559d173b0b50c6eb.jpg",
     "static/media/piechart.jpg": "/static/media/piechart.c8186d6e10f257f265d8.jpg",
     "static/media/cifarImages.png": "/static/media/cifarImages.e5243394e401c29dabea.png",
     "static/media/me.jpg": "/static/media/me.cfb1de62ffd3148b8fe9.jpg",
     "static/media/gradientDiagram.png": "/static/media/gradientDiagram.d144e21deb94d208c550.png",
     "static/media/memeBackground.jpg": "/static/media/memeBackground.010d73b81e62e75f4760.jpg",
+    "static/media/vietnameseCoffee.jpg": "/static/media/vietnameseCoffee.8639552c50859c6bac4d.jpg",
     "static/media/cat.jpeg": "/static/media/cat.cd95ffce51fe2f45c673.jpeg",
     "static/media/python.png": "/static/media/python.fbebfabd42ff95354ed9.png",
     "static/media/knnResult.png": "/static/media/knnResult.fa0708fd49ce0941494a.png",
     "static/media/thumbnail.png": "/static/media/thumbnail.bcf8e9a188c3b2343145.png",
     "static/media/lotSizeVsPrice.gif": "/static/media/lotSizeVsPrice.7b7a901099f0ce28d0f0.gif",
     "static/media/sqftVsPrice.gif": "/static/media/sqftVsPrice.d2bd11f75c65a2a05831.gif",
+    "static/media/matchaLatte.jpg": "/static/media/matchaLatte.724b461e9e4f1032347a.jpg",
     "static/media/linkedin-transparent.png": "/static/media/linkedin-transparent.a1fe1139f51dd50ff1ae.png",
+    "static/media/milkTea.jpg": "/static/media/milkTea.528f64b29f3aa69fb53a.jpg",
     "static/media/Vito-CondensedRegular.woff": "/static/media/Vito-CondensedRegular.aeb0a604aa50c3c34b78.woff",
     "static/media/chatpage-background.png": "/static/media/chatpage-background.16129a418b9750bed165.png",
     "static/media/youtube.png": "/static/media/youtube.8a3ed11c86b689e63d3f.png",
@@ -28,6 +31,7 @@
     "static/media/KaTeX_Main-Regular.ttf": "/static/media/KaTeX_Main-Regular.9eba1d77abcf2aa6e94e.ttf",
     "static/media/KaTeX_Main-Bold.ttf": "/static/media/KaTeX_Main-Bold.8169508bf58f8bd92ad8.ttf",
     "static/media/linkedin.png": "/static/media/linkedin.72097b5277a499b1902f.png",
+    "static/media/thaiTea.jpeg": "/static/media/thaiTea.cf7c330b950512424540.jpeg",
     "static/media/houseSizeVsPrice.png": "/static/media/houseSizeVsPrice.db5b320e7c70744ddb7f.png",
     "static/media/lotSizeVsPrice.png": "/static/media/lotSizeVsPrice.4888cf244338d9077b56.png",
     "static/media/KaTeX_Main-Italic.ttf": "/static/media/KaTeX_Main-Italic.fa675e5e4bec9eb250b6.ttf",
@@ -101,10 +105,10 @@
     "static/media/KaTeX_Size3-Regular.woff2": "/static/media/KaTeX_Size3-Regular.e1951519f6f0596f7356.woff2",
     "index.html": "/index.html",
     "main.eb602b06.css.map": "/static/css/main.eb602b06.css.map",
-    "main.bf0e99d2.js.map": "/static/js/main.bf0e99d2.js.map"
+    "main.81590d18.js.map": "/static/js/main.81590d18.js.map"
   },
   "entrypoints": [
     "static/css/main.eb602b06.css",
-    "static/js/main.bf0e99d2.js"
+    "static/js/main.81590d18.js"
   ]
 }
