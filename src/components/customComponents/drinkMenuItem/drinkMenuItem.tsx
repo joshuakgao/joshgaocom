@@ -16,15 +16,15 @@ export function DrinkMenuItem({
       style={{
         flex: 1,
         justifyContent: "flex-start",
-        border: "none",
-        minHeight: 500,
+        minHeight: "calc(15vw + 300px)",
+        minWidth: "calc(15vw + 100px)",
+        margin: 16,
+        marginTop: 64,
       }}
     >
       <img
-        style={{ borderRadius: "var(--borderRadius)" }}
+        style={{ borderRadius: "var(--borderRadius)", aspectRatio: 1 }}
         src={image}
-        width="100%"
-        height="100%"
         alt={title}
       />
       <Spacer />
