@@ -2,8 +2,7 @@
 
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import { Row } from "./row";
-
+import { Row, P } from "@/components/ui";
 interface ProjectItemProps {
   title: string;
   year: string;
@@ -14,8 +13,8 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ title, year }) => {
 
   return (
     <div
-      className={`flex justify-between items-center p-4 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 ${
-        isMobile ? "" : "max-w-72"
+      className={`flex justify-between items-center p-4 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 hover:scale-105 backface-hidden backdrop-blur-0 ${
+        isMobile ? "w-full" : "max-w-72"
       }`}
     >
       {isMobile ? (
@@ -25,8 +24,8 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ title, year }) => {
         </div>
       ) : (
         <Row className="w-full justify-between ">
-          <p>{title}</p>
-          <p className="text-right">{year}</p>
+          <P>{title}</P>
+          <P className="text-right text-gray-500">{year}</P>
         </Row>
       )}
     </div>

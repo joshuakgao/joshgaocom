@@ -50,7 +50,7 @@ export const Lead = createComponent<HTMLParagraphElement>(
 
 export const P = createComponent<HTMLParagraphElement>(
   "p",
-  "leading-relaxed mt-6 font-roboto",
+  "tracking-tightmt-6 font-roboto text-[17px]",
   "P"
 );
 
