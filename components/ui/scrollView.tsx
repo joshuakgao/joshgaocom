@@ -1,4 +1,4 @@
-import React, { CSSProperties } from "react";
+import React from "react";
 import { Col } from "@/components/ui";
 
 export function ScrollDiv({
@@ -9,30 +9,17 @@ export function ScrollDiv({
 }: {
   children?: any;
   d?: boolean;
-  style?: CSSProperties;
+  style?: React.CSSProperties;
   className?: string;
 }) {
   return (
     <Col
-      style={{
-        ...styles.scrollDiv,
-        ...style,
-        ...{ border: d ? "1px black solid" : undefined },
-      }}
-      className={className}
+      className={`bg-primary overflow-hidden ${
+        d ? "border border-black" : ""
+      } ${className}`}
+      style={style}
     >
       {children}
     </Col>
   );
 }
-
-interface StyleSheet {
-  [key: string]: React.CSSProperties;
-}
-
-const styles: StyleSheet = {
-  scrollDiv: {
-    backgroundColor: "var(--primary)",
-    overflow: "hidden",
-  },
-};

@@ -10,12 +10,27 @@ import {
 } from "@/components/ui";
 import ProjectItem from "@/components/ui/projectItem";
 import { useMediaQuery } from "react-responsive";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
+  const [bgColor, setBgColor] = useState("#fafaf9");
+
+  useEffect(() => {
+    const colors = ["#fffcff", "#fafdff", "#fffcf7", "#fafaf9"]; // pink, blue, orange, white
+    let index = 0;
+    const interval = setInterval(() => {
+      setBgColor(colors[index]);
+      index = (index + 1) % colors.length;
+    }, 5000); // Change color every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <ScrollDiv className="pl-6 pr-6">
+    <ScrollDiv
+      className={`pl-6 pr-6 transition-colors duration-500`}
+      style={{ backgroundColor: bgColor }}
+    >
       <ScreenSizeIndicator />
       {isMobile ? (
         <>
