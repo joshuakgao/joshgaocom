@@ -14,19 +14,17 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ title, year }) => {
 
   return (
     <div
-      className={`flex justify-between items-center p-4 rounded-3xl ${
-        isMobile
-          ? ""
-          : "hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 max-w-64"
+      className={`flex justify-between items-center p-4 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 ${
+        isMobile ? "" : "max-w-72"
       }`}
     >
       {isMobile ? (
-        <button className="w-full text-left">
+        <div className="w-full justify-between">
           <span>{title}</span>
           <span className="float-right">{year}</span>
-        </button>
+        </div>
       ) : (
-        <Row className="justify-between w-full">
+        <Row className="w-full justify-between ">
           <p>{title}</p>
           <p className="text-right">{year}</p>
         </Row>
