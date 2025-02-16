@@ -28,8 +28,11 @@ export default function Home() {
 
   return (
     <ScrollDiv
-      className={`pl-6 pr-6 transition-colors duration-500`}
-      style={{ backgroundColor: bgColor }}
+      className="pl-6 pr-6"
+      style={{
+        backgroundColor: bgColor,
+        transition: "background-color 3000ms",
+      }}
     >
       <ScreenSizeIndicator />
       {isMobile ? (
