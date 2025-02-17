@@ -1,16 +1,9 @@
 "use client";
 
-import {
-  Col,
-  H1,
-  H2,
-  H3,
-  ScreenSizeIndicator,
-  ScrollDiv,
-} from "@/components/ui";
+import { Col, H1, H2, H3, ScrollDiv } from "@/components/ui";
 import ProjectItem from "@/components/ui/projectItem";
-import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -76,7 +69,7 @@ export default function Home() {
 
   return (
     <ScrollDiv
-      className="pl-6 pr-6"
+      className="pl-6 pr-6 min-h-screen"
       style={{
         backgroundColor: bgColor,
       }}
@@ -112,48 +105,37 @@ export default function Home() {
           </Col>
           <Col>
             <H3 className="mb-4">Research</H3>
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
+            <ProjectItem
+              title="Change Detection"
+              year="2024"
+              link="https://google.com"
+              video="assets/file_example_MP4_480_1_5MG.mp4"
+            />
+            <ProjectItem title="Something" year="2024" />
+            <ProjectItem title="Something" year="2024" />
+            <ProjectItem title="Something" year="2024" />
+            <ProjectItem title="Something" year="2024" />
+            <ProjectItem title="Something" year="2024" />
+            <ProjectItem title="Something" year="2024" />
+            <ProjectItem title="Something" year="2024" />
           </Col>
         </>
       ) : (
         <>
           <Col className={`w-1/3 pl-[calc(10vw)] pt-[calc(25vh)]`}>
             <H3 className="mb-4">Research</H3>
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
-            <ProjectItem title="Change Detection" year="2024" />
+            <ProjectItem
+              title="Change Detection"
+              year="2024"
+              link="https://google.com"
+              video="./assets/file_example_MP4_480_1_5MG.mp4"
+            />
+            <ProjectItem title="Something" year="2024" />
+            <ProjectItem title="Something" year="2024" />
+            <ProjectItem title="Something" year="2024" />
+            <ProjectItem title="Something" year="2024" />
+            <ProjectItem title="Something" year="2024" />
+            <ProjectItem title="Something" year="2024" />
           </Col>
           <Col className="fixed right-0 top-0 h-full w-3/5 flex items-start justify-center pl-6">
             <div>
