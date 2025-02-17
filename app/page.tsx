@@ -72,27 +72,36 @@ export default function Home() {
       <H1>
         Joshua Gao,
         <br />
-        deep learning researcher at SAIL lab
+        deep learning researcher at{" "}
+        <a
+          href="https://sail.cive.uh.edu/people"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text font-bold transition-all duration-300"
+        >
+          SAIL
+        </a>{" "}
+        lab
       </H1>
       <H2 className="flex flex-row gap-4 text-gray-500">
-        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+        <a href="/assets/docs/cv.pdf" target="_blank" rel="noopener noreferrer">
           CV
         </a>
-        <a href="mailto:joshuakgao@gmail.com">Email</a>
         <a
-          href="https://www.linkedin.com/in/joshua-gao"
+          href="https://scholar.google.com/citations?user=E7cW1dQAAAAJ&hl=en"
           target="_blank"
           rel="noopener noreferrer"
         >
-          LinkedIn
+          Scholar
         </a>
         <a
-          href="https://github.com/joshua-gao"
+          href="https://github.com/tugonbob"
           target="_blank"
           rel="noopener noreferrer"
         >
           Github
         </a>
+        <a href="mailto:joshuakgao@gmail.com">Email</a>
       </H2>
     </>
   );
