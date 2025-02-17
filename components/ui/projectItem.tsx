@@ -40,6 +40,9 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   useEffect(() => {
     if (!isHovered && videoRef.current) {
       videoRef.current.currentTime = 0;
+      videoRef.current.pause();
+    } else if (isHovered && videoRef.current) {
+      videoRef.current.play();
     }
   }, [isHovered]);
 
@@ -49,16 +52,17 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
         className={`flex justify-between items-center p-4 w-64 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 hover:scale-105 backface-hidden backdrop-blur-0 ${
           isMobile ? "w-full" : ""
         }`}
       >
-        <a href={link} className="flex flex-row w-full justify-between">
-          <P>{title}</P>
-          <P className="text-right text-gray-500">{year}</P>
-        </a>
-      </div>
+        <P>{title}</P>
+        <P className="text-right text-gray-500">{year}</P>
+      </a>
 
       {video && (
         <div
@@ -78,9 +82,8 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
         >
           <video
             ref={videoRef}
-            autoPlay
             muted
-            loop
+            playsInline
             className="w-full h-full object-cover"
           >
             <source src={video} type="video/mp4" />
