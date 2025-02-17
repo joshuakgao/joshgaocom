@@ -13,8 +13,14 @@ export function ResearchSection() {
         video="assets/file_example_MP4_480_1_5MG.mp4"
       />
       <Spacer size={64} />
+
       <H3 className="mb-4">Other Works</H3>
-      <ProjectItem title="Gpt Nano" year="2023" />
+      <ProjectItem
+        title="Gpt Nano"
+        year="2023"
+        video="assets/projects/other/gptNano/gptNanoPreview.mp4"
+        link="https://github.com/tugonbob/gpt-nano"
+      />
       <ProjectItem title="Knn Image Search" year="2023" />
       <ProjectItem
         title="Real Estate Valuation"
