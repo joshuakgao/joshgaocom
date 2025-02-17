@@ -20,6 +20,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const videoRef = React.useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -34,7 +35,13 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []); // Removed isHovered dependency
+  }, []);
+
+  useEffect(() => {
+    if (!isHovered && videoRef.current) {
+      videoRef.current.currentTime = 0;
+    }
+  }, [isHovered]);
 
   return (
     <div
@@ -55,7 +62,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
 
       {video && (
         <div
-          className={`fixed z-50 rounded-lg overflow-hidden shadow-xl transition-all duration-300 ease-out pointer-events-none ${
+          className={`fixed z-50 rounded-3xl overflow-hidden shadow-xl transition-all duration-300 ease-out pointer-events-none ${
             isHovered ? "opacity-100" : "opacity-0"
           }`}
           style={{
@@ -69,7 +76,13 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
             width: "50vw",
           }}
         >
-          <video autoPlay muted loop className="w-full h-full object-cover">
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            className="w-full h-full object-cover"
+          >
             <source src={video} type="video/mp4" />
           </video>
         </div>
