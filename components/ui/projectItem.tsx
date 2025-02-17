@@ -43,13 +43,13 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`flex justify-between items-center p-4 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 hover:scale-105 backface-hidden backdrop-blur-0 ${
-          isMobile ? "w-full" : "max-w-72"
+        className={`flex justify-between items-center p-4 w-64 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 hover:scale-105 backface-hidden backdrop-blur-0 ${
+          isMobile ? "w-full" : ""
         }`}
       >
         <a href={link} className="flex flex-row w-full justify-between">
           <P>{title}</P>
-          <P className="text-right text-gray-400">{year}</P>
+          <P className="text-right text-gray-500">{year}</P>
         </a>
       </div>
 

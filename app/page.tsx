@@ -81,7 +81,7 @@ export default function Home() {
         >
           SAIL
         </a>{" "}
-        lab
+        laboratory
       </H1>
       <H2 className="flex flex-row gap-4 text-gray-500">
         <a href="/assets/docs/cv.pdf" target="_blank" rel="noopener noreferrer">
@@ -122,7 +122,7 @@ export default function Home() {
         </>
       ) : (
         <>
-          <Col className={`w-1/3 pl-[calc(10vw)] pt-[calc(25vh)]`}>
+          <Col className={`w-1/4 pl-[calc(15vw-80px)] pt-[calc(25vh)]`}>
             <ResearchSection />
           </Col>
           <Col className="fixed right-0 top-0 h-full w-3/5 flex items-start justify-center pl-6">
