@@ -26,7 +26,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile && !isTouchDevice) {
       const handleMouseMove = (e: MouseEvent) => {
         // Calculate mouse position relative to window center
         const x = (e.clientX / window.innerWidth - 0.5) * 200;
@@ -40,10 +40,10 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
         window.removeEventListener("mousemove", handleMouseMove);
       };
     }
-  }, [isMobile]);
+  }, [isMobile, isTouchDevice]);
 
   useEffect(() => {
-    if (!isMobile) {
+    if (!isMobile && !isTouchDevice) {
       if (!isHovered && videoRef.current) {
         videoRef.current.currentTime = 0;
         videoRef.current.pause();
@@ -51,22 +51,22 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
         videoRef.current.play();
       }
     }
-  }, [isHovered, isMobile]);
+  }, [isHovered, isMobile, isTouchDevice]);
 
   const handleClick = () => {
-    if (isMobile && video) {
-      setShowModal(true);
+    if (video) {
+      setShowModal(true); // Always show modal if video exists and device is touch-based
     }
-    if (!isMobile && link) {
-      window.open(link, "_blank");
+    if (!isTouchDevice && link) {
+      window.open(link, "_blank"); // Open link in new tab for non-touch devices
     }
   };
 
   return (
     <div
       className="relative"
-      onMouseEnter={() => !isMobile && setIsHovered(true)}
-      onMouseLeave={() => !isMobile && setIsHovered(false)}
+      onMouseEnter={() => !isMobile && !isTouchDevice && setIsHovered(true)}
+      onMouseLeave={() => !isMobile && !isTouchDevice && setIsHovered(false)}
     >
       <div
         onClick={handleClick}
@@ -78,6 +78,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
         <P className="text-right text-gray-500">{year}</P>
       </div>
 
+      {/* Hover-based video display (only for non-touch devices) */}
       {!isMobile && !isTouchDevice && video && (
         <div
           className={`fixed z-50 rounded-3xl overflow-hidden shadow-xl transition-all duration-300 ease-out pointer-events-none ${
@@ -106,7 +107,8 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
         </div>
       )}
 
-      {isMobile && showModal && video && (
+      {/* Modal for touch devices (always shown if isTouchDevice is true) */}
+      {showModal && video && isTouchDevice && (
         <div
           onClick={(e) => {
             e.stopPropagation();
