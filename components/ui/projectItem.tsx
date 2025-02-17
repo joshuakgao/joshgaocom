@@ -101,6 +101,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
             autoPlay
             muted
             playsInline
+            loop
             className="w-full h-full object-cover"
           >
             <source src={video} type="video/mp4" />
@@ -118,11 +119,12 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
             }}
             className="fixed flex-col justify-center inset-0 bg-black bg-opacity-50 z-50 flex items-center p-3"
           >
-            <div className="relative w-full max-w-[min(90vw,calc(60vh*16/9))] min-h-[calc(min(90vw,calc(60vh*16/9))*9/16)] rounded-3xl overflow-hidden aspect-video">
+            <div className="relative w-full max-w-[min(99vw,calc(60vh*16/9))] min-h-[calc(min(99vw,calc(60vh*16/9))*9/16)] rounded-3xl overflow-hidden aspect-video">
               <video
                 autoPlay
                 muted
                 playsInline
+                loop
                 className="w-full h-full object-cover"
                 onClick={(e) => e.stopPropagation()} // Prevent closing modal when tapping the video
               >
