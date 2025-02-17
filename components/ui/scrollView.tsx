@@ -7,7 +7,7 @@ export function ScrollDiv({
   style,
   className,
 }: {
-  children?: any;
+  children?: React.ReactNode;
   d?: boolean;
   style?: React.CSSProperties;
   className?: string;
