@@ -1,7 +1,7 @@
 "use client";
 
 import { ResearchSection } from "@/components/content";
-import { Col, H1, H2, ScrollDiv } from "@/components/ui";
+import { Col, H1, H2, ScrollDiv, Spacer } from "@/components/ui";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
@@ -137,6 +137,7 @@ export default function Home() {
           </div>
         </>
       )}
+      <Spacer size={64} />
     </ScrollDiv>
   );
 }
