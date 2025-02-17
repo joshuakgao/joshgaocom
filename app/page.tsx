@@ -126,7 +126,7 @@ export default function Home() {
         </>
       ) : (
         <>
-          <Col className={`w-1/4 pl-[calc(15vw-80px)] pt-[calc(25vh)]`}>
+          <Col className={`w-2/5 pl-[calc(15vw-80px)] pt-[calc(25vh)]`}>
             <ResearchSection />
           </Col>
           <Col className="fixed right-0 top-0 h-full w-3/5 flex items-start justify-center pl-6">
