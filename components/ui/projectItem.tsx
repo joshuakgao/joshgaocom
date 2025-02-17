@@ -21,6 +21,8 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showModal, setShowModal] = useState(false);
+  const isTouchDevice =
+    "maxTouchPoints" in navigator && navigator.maxTouchPoints > 0;
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -76,7 +78,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
         <P className="text-right text-gray-500">{year}</P>
       </div>
 
-      {!isMobile && video && (
+      {!isMobile && !isTouchDevice && video && (
         <div
           className={`fixed z-50 rounded-3xl overflow-hidden shadow-xl transition-all duration-300 ease-out pointer-events-none ${
             isHovered ? "opacity-100" : "opacity-0"
@@ -94,6 +96,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
         >
           <video
             ref={videoRef}
+            autoPlay
             muted
             playsInline
             className="w-full h-full object-cover"
@@ -127,8 +130,8 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
               autoPlay
               muted
               playsInline
-              controls
               className="w-full h-full object-cover"
+              onClick={(e) => e.stopPropagation()} // Prevent closing modal when tapping the video
             >
               <source src={video} type="video/mp4" />
             </video>
