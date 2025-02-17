@@ -3,6 +3,7 @@
 import { P } from "@/components/ui";
 import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { IoLinkOutline } from "react-icons/io5";
 
 interface ProjectItemProps {
   title?: string;
@@ -57,7 +58,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     if (video) {
       setShowModal(true); // Always show modal if video exists and device is touch-based
     }
-    if (!isTouchDevice && link) {
+    if (!isTouchDevice && !isMobile && link) {
       window.open(link, "_blank"); // Open link in new tab for non-touch devices
     }
   };
@@ -79,7 +80,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
       </div>
 
       {/* Hover-based video display (only for non-touch devices) */}
-      {!isMobile && !isTouchDevice && video && (
+      {video && !isMobile && !isTouchDevice && (
         <div
           className={`fixed z-50 rounded-3xl overflow-hidden shadow-xl transition-all duration-300 ease-out pointer-events-none ${
             isHovered ? "opacity-100" : "opacity-0"
@@ -107,39 +108,42 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
         </div>
       )}
 
-      {/* Modal for touch devices (always shown if isTouchDevice is true) */}
-      {showModal && video && isTouchDevice && (
-        <div
-          onClick={(e) => {
-            e.stopPropagation();
-            setShowModal(false);
-          }}
-          className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-3"
-        >
-          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 flex gap-4 flex-row items-center text-white">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                window.open(link, "_blank");
-              }}
-              className="w-16 h-16 flex items-center justify-center rounded-full bg-black bg-opacity-50 text-white text-2xl"
-            >
-              →
-            </button>
+      {showModal &&
+        video &&
+        (isTouchDevice || (isMobile && !isTouchDevice)) && (
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowModal(false);
+            }}
+            className="fixed flex-col justify-center inset-0 bg-black bg-opacity-50 z-50 flex items-center p-3"
+          >
+            <div className="relative w-full max-w-[min(90vw,calc(60vh*16/9))] min-h-[calc(min(90vw,calc(60vh*16/9))*9/16)] rounded-3xl overflow-hidden aspect-video">
+              <video
+                autoPlay
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+                onClick={(e) => e.stopPropagation()} // Prevent closing modal when tapping the video
+              >
+                <source src={video} type="video/mp4" />
+              </video>
+            </div>
+
+            {/* Button positioned below the video */}
+            <div className="fixed bottom-[5vh] z-10 flex gap-4 flex-row items-end justify-end text-white">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(link, "_blank");
+                }}
+                className="w-[calc(5vw+5vh)] h-[calc(5vw+5vh)] max-w-16 max-h-16 flex items-center justify-center rounded-full bg-black bg-opacity-50 text-white text-xl"
+              >
+                <IoLinkOutline />
+              </button>
+            </div>
           </div>
-          <div className="relative w-full max-w-3xl rounded-3xl overflow-hidden">
-            <video
-              autoPlay
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-              onClick={(e) => e.stopPropagation()} // Prevent closing modal when tapping the video
-            >
-              <source src={video} type="video/mp4" />
-            </video>
-          </div>
-        </div>
-      )}
+        )}
     </div>
   );
 };

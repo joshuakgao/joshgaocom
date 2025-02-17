@@ -80,8 +80,7 @@ export default function Home() {
           className="bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text font-bold transition-all duration-300"
         >
           SAIL
-        </a>{" "}
-        laboratory
+        </a>
       </H1>
       <H2 className="flex flex-row gap-4 text-gray-500">
         <a href="/assets/docs/cv.pdf" target="_blank" rel="noopener noreferrer">
