@@ -11,7 +11,7 @@ interface ProjectItemProps {
   video?: string;
 }
 
-const ProjectItem: React.FC<ProjectItemProps> = ({
+export const ProjectItem: React.FC<ProjectItemProps> = ({
   title,
   year,
   link,
@@ -77,5 +77,3 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
     </div>
   );
 };
-
-export default ProjectItem;

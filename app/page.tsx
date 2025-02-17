@@ -1,8 +1,7 @@
 "use client";
 
-import { Col, H1, H2, H3, ScrollDiv } from "@/components/ui";
 import { ResearchSection } from "@/components/content";
-import ProjectItem from "@/components/ui/projectItem";
+import { Col, H1, H2, ScrollDiv } from "@/components/ui";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 

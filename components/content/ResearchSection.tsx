@@ -1,7 +1,6 @@
 "use client";
 
-import { Col, H3 } from "@/components/ui";
-import ProjectItem from "@/components/ui/projectItem";
+import { H3, ProjectItem } from "@/components/ui";
 
 export function ResearchSection() {
   return (
