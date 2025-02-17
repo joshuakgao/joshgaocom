@@ -10,7 +10,7 @@ export default function Home() {
   const [bgColor, setBgColor] = useState("#fafaf9");
 
   useEffect(() => {
-    const colors = ["#fbf2ff", "#f2f5ff", "#fff2f2", "#fafaf9"]; // pink, blue, orange, white
+    const colors = ["#fafaf9", "#fbf2ff", "#f2f5ff", "#fff2f2", "#fafaf9"]; // pink, blue, orange, white
     let index = 0;
 
     // Create a smooth transition between colors using animation frames
@@ -20,7 +20,7 @@ export default function Home() {
       // Decrease duration for pink to blue transition
       const duration =
         startColor === "#fbf2ff" && endColor === "#f2f5ff"
-          ? 3000 // 5 seconds for pink to blue
+          ? 3000 // 3 seconds for pink to blue
           : 10000; // 10 seconds for other transitions
 
       const startTime = performance.now();
