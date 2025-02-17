@@ -106,9 +106,11 @@ export default function Home() {
     </>
   );
 
+  const asOfDate = "Feb '24";
+
   return (
     <ScrollDiv
-      className="pl-6 pr-6 min-h-screen"
+      className="pl-6 pr-6 min-h-screen relative"
       style={{ backgroundColor: bgColor }}
     >
       {isMobile ? (
@@ -119,6 +121,9 @@ export default function Home() {
           <Col>
             <ResearchSection />
           </Col>
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-gray-500">
+            As of {asOfDate}
+          </div>
         </>
       ) : (
         <>
@@ -128,6 +133,9 @@ export default function Home() {
           <Col className="fixed right-0 top-0 h-full w-3/5 flex items-start justify-center pl-6">
             <Bio />
           </Col>
+          <div className="fixed bottom-4 right-6 text-sm text-gray-500">
+            As of {asOfDate}
+          </div>
         </>
       )}
     </ScrollDiv>
