@@ -1,6 +1,7 @@
 "use client";
 
 import { Col, H1, H2, H3, ScrollDiv } from "@/components/ui";
+import { ResearchSection } from "@/components/content";
 import ProjectItem from "@/components/ui/projectItem";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -67,104 +68,57 @@ export default function Home() {
     return () => {};
   }, []);
 
+  const Bio = () => (
+    <>
+      <H1>
+        Joshua Gao,
+        <br />
+        deep learning researcher at SAIL lab
+      </H1>
+      <H2 className="flex flex-row gap-4 text-gray-500">
+        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+          CV
+        </a>
+        <a href="mailto:joshuakgao@gmail.com">Email</a>
+        <a
+          href="https://www.linkedin.com/in/joshua-gao"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/joshua-gao"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Github
+        </a>
+      </H2>
+    </>
+  );
+
   return (
     <ScrollDiv
       className="pl-6 pr-6 min-h-screen"
-      style={{
-        backgroundColor: bgColor,
-      }}
+      style={{ backgroundColor: bgColor }}
     >
       {isMobile ? (
         <>
           <Col className="pt-[calc(20vh)] pb-[calc(20vh)]">
-            <H1>
-              Joshua Gao,
-              <br />
-              deep learning researcher at SAIL lab
-            </H1>
-            <H2 className="flex flex-row gap-4 text-gray-500">
-              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
-                CV
-              </a>
-              <a href="mailto:joshuakgao@gmail.com">Email</a>
-              <a
-                href="https://www.linkedin.com/in/joshua-gao"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://github.com/joshua-gao"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Github
-              </a>
-            </H2>
+            <Bio />
           </Col>
           <Col>
-            <H3 className="mb-4">Research</H3>
-            <ProjectItem
-              title="Change Detection"
-              year="2024"
-              link="https://google.com"
-              video="assets/file_example_MP4_480_1_5MG.mp4"
-            />
-            <ProjectItem title="Something" year="2024" />
-            <ProjectItem title="Something" year="2024" />
-            <ProjectItem title="Something" year="2024" />
-            <ProjectItem title="Something" year="2024" />
-            <ProjectItem title="Something" year="2024" />
-            <ProjectItem title="Something" year="2024" />
-            <ProjectItem title="Something" year="2024" />
+            <ResearchSection />
           </Col>
         </>
       ) : (
         <>
           <Col className={`w-1/3 pl-[calc(10vw)] pt-[calc(25vh)]`}>
-            <H3 className="mb-4">Research</H3>
-            <ProjectItem
-              title="Change Detection"
-              year="2024"
-              link="https://google.com"
-              video="./assets/file_example_MP4_480_1_5MG.mp4"
-            />
-            <ProjectItem title="Something" year="2024" />
-            <ProjectItem title="Something" year="2024" />
-            <ProjectItem title="Something" year="2024" />
-            <ProjectItem title="Something" year="2024" />
-            <ProjectItem title="Something" year="2024" />
-            <ProjectItem title="Something" year="2024" />
+            <ResearchSection />
           </Col>
           <Col className="fixed right-0 top-0 h-full w-3/5 flex items-start justify-center pl-6">
-            <div>
-              <H1>
-                Joshua Gao,
-                <br />
-                deep learning researcher at SAIL lab
-              </H1>
-              <H2 className="flex flex-row gap-4 text-gray-500">
-                <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
-                  CV
-                </a>
-                <a href="mailto:joshuakgao@gmail.com">Email</a>
-                <a
-                  href="https://www.linkedin.com/in/joshua-gao"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href="https://github.com/joshua-gao"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Github
-                </a>
-              </H2>
-            </div>
+            <Bio />
           </Col>
         </>
       )}
