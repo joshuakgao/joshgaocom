@@ -30,8 +30,8 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     if (!isMobile && !isTouchDevice) {
       const handleMouseMove = (e: MouseEvent) => {
         // Calculate mouse position relative to window center
-        const x = (e.clientX / window.innerWidth - 0.5) * 200;
-        const y = (e.clientY / window.innerHeight - 0.5) * 200;
+        const x = (e.clientX / window.innerWidth - 0.5) * 1000;
+        const y = (e.clientY / window.innerHeight - 0.5) * 1000;
         setMousePosition({ x, y });
       };
 
@@ -115,7 +115,14 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
           <div
             onClick={(e) => {
               e.stopPropagation();
-              setShowModal(false);
+              window.open(link, "_blank");
+            }}
+            onTouchStart={(e) => {
+              e.stopPropagation();
+            }}
+            onTouchEnd={(e) => {
+              e.stopPropagation();
+              window.open(link, "_blank");
             }}
             className="fixed flex-col justify-center inset-0 bg-black bg-opacity-50 z-50 flex items-center p-3"
           >
