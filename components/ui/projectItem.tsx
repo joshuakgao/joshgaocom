@@ -116,6 +116,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
           <div className="fixed flex-col justify-center inset-0 bg-black bg-opacity-50 z-50 flex items-center p-3">
             <div className="relative w-full max-w-[min(99vw,calc(60vh*16/9))] min-h-[calc(min(99vw,calc(60vh*16/9))*9/16)] rounded-3xl overflow-hidden aspect-video">
               <video
+                ref={videoRef}
                 autoPlay
                 muted
                 playsInline
