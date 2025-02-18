@@ -2,7 +2,7 @@
 
 import { H3, ProjectItem, Spacer } from "@/components/ui";
 
-export function ResearchSection() {
+export function ProjectsList() {
   return (
     <>
       <H3 className="mb-4">Research Publications</H3>

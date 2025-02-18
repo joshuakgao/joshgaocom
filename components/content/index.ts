@@ -1,1 +1,1 @@
-export * from "./ResearchSection";
+export * from "./ProjectsList";

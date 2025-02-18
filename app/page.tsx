@@ -1,6 +1,6 @@
 "use client";
 
-import { ResearchSection } from "@/components/content";
+import { ProjectsList } from "@/components/content";
 import { Col, H1, H2, ScrollDiv, Spacer } from "@/components/ui";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
@@ -118,7 +118,7 @@ export default function Home() {
             <Bio />
           </Col>
           <Col>
-            <ResearchSection />
+            <ProjectsList />
           </Col>
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-gray-500">
             As of {asOfDate}
@@ -127,7 +127,7 @@ export default function Home() {
       ) : (
         <>
           <Col className={`w-2/5 pl-[calc(15vw-80px)] pt-[calc(25vh)]`}>
-            <ResearchSection />
+            <ProjectsList />
           </Col>
           <Col className="fixed right-0 top-0 h-full w-3/5 flex items-start justify-center pl-6">
             <Bio />
