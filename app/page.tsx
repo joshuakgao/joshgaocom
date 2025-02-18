@@ -10,18 +10,14 @@ export default function Home() {
   const [bgColor, setBgColor] = useState("#fafaf9");
 
   useEffect(() => {
-    const colors = ["#fafaf9", "#fbf2ff", "#f2f5ff", "#fff2f2", "#fafaf9"]; // pink, blue, orange, white
+    const colors = ["#fafaf9", "#fbf2ff", "#f2f5ff", "#fff2f2"]; // pink, blue, orange, white
     let index = 0;
 
     // Create a smooth transition between colors using animation frames
     const animate = () => {
       const startColor = colors[index];
       const endColor = colors[(index + 1) % colors.length];
-      // Decrease duration for pink to blue transition
-      const duration =
-        startColor === "#fbf2ff" && endColor === "#f2f5ff"
-          ? 3000 // 3 seconds for pink to blue
-          : 10000; // 10 seconds for other transitions
+      const duration = 10000; // 10 seconds for other transitions
 
       const startTime = performance.now();
 
@@ -120,8 +116,8 @@ export default function Home() {
           <Col>
             <ProjectsList />
           </Col>
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm text-gray-500">
-            As of {asOfDate}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
+            <p className="text-xs text-gray-400">As of {asOfDate}</p>
           </div>
         </>
       ) : (
@@ -132,8 +128,8 @@ export default function Home() {
           <Col className="fixed right-0 top-0 h-full w-3/5 flex items-start justify-center pl-6">
             <Bio />
           </Col>
-          <div className="fixed bottom-4 right-6 text-sm text-gray-500">
-            As of {asOfDate}
+          <div className="fixed bottom-6 right-6 text-sm text-gray-500">
+            <p className="text-xs text-gray-400">As of {asOfDate}</p>
           </div>
         </>
       )}
