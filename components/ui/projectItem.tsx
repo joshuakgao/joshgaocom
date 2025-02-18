@@ -30,8 +30,8 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     if (!isMobile && !isTouchDevice) {
       const handleMouseMove = (e: MouseEvent) => {
         // Calculate mouse position relative to window center
-        const x = e.clientX / window.innerWidth - 0.5;
-        const y = e.clientY / window.innerHeight - 0.5;
+        const x = (e.clientX / window.innerWidth - 0.5) * 1000;
+        const y = (e.clientY / window.innerHeight - 0.5) * 1000;
         setMousePosition({ x, y });
       };
 
