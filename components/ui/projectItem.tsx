@@ -26,6 +26,33 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     "maxTouchPoints" in navigator && navigator.maxTouchPoints > 0;
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
+  const touchStartX = React.useRef(null);
+
+  const handleClick = (e: any) => {
+    if (
+      touchStartX.current !== null &&
+      Math.abs(e.changedTouches[0].clientX - touchStartX.current) > 5
+    ) {
+      return; // Do nothing if it looks like a scroll
+    }
+
+    if (video) {
+      setShowModal(true);
+    }
+    if (!isTouchDevice && !isMobile && link) {
+      window.open(link, "_blank");
+    }
+  };
+
+  const handleTouchStart = (e: any) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: any) => {
+    handleClick(e);
+    touchStartX.current = null;
+  };
+
   useEffect(() => {
     if (!isMobile && !isTouchDevice) {
       const handleMouseMove = (e: MouseEvent) => {
@@ -58,21 +85,11 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     }
   }, [isHovered, isMobile, isTouchDevice]);
 
-  const handleClick = () => {
-    if (video) {
-      setShowModal(true); // Always show modal if video exists and device is touch-based
-    }
-    if (!isTouchDevice && !isMobile && link) {
-      window.open(link, "_blank"); // Open link in new tab for non-touch devices
-    }
-  };
-
   return (
     <div className="relative">
       <div
-        // onClick={handleClick}
-        // onTouchStart={handleClick}
-        onTouchEnd={handleClick}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
         className={`flex justify-between items-center p-4 w-64 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 backface-hidden backdrop-blur-0 ${
           isMobile ? "w-full" : ""
         } cursor-pointer`}
