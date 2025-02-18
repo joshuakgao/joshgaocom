@@ -30,8 +30,8 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     if (!isMobile && !isTouchDevice) {
       const handleMouseMove = (e: MouseEvent) => {
         // Calculate mouse position relative to window center
-        const x = (e.clientX / window.innerWidth - 0.5) * 1000;
-        const y = (e.clientY / window.innerHeight - 0.5) * 1000;
+        const x = (e.clientX / window.innerWidth - 0.5) * 200;
+        const y = (e.clientY / window.innerHeight - 0.5) * 200;
         setMousePosition({ x, y });
       };
 
@@ -64,16 +64,16 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   };
 
   return (
-    <div
-      className="relative"
-      onMouseEnter={() => !isMobile && !isTouchDevice && setIsHovered(true)}
-      onMouseLeave={() => !isMobile && !isTouchDevice && setIsHovered(false)}
-    >
+    <div className="relative">
       <div
         onClick={handleClick}
-        className={`flex justify-between items-center p-4 w-64 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 hover:scale-105 backface-hidden backdrop-blur-0 ${
+        onTouchStart={handleClick}
+        onTouchEnd={handleClick}
+        className={`flex justify-between items-center p-4 w-64 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 backface-hidden backdrop-blur-0 ${
           isMobile ? "w-full" : ""
         } cursor-pointer`}
+        onMouseEnter={() => !isMobile && !isTouchDevice && setIsHovered(true)}
+        onMouseLeave={() => !isMobile && !isTouchDevice && setIsHovered(false)}
       >
         <P>{title}</P>
         <P className="text-right text-gray-500">{year}</P>
@@ -115,14 +115,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
           <div
             onClick={(e) => {
               e.stopPropagation();
-              window.open(link, "_blank");
-            }}
-            onTouchStart={(e) => {
-              e.stopPropagation();
-            }}
-            onTouchEnd={(e) => {
-              e.stopPropagation();
-              window.open(link, "_blank");
+              setShowModal(false);
             }}
             className="fixed flex-col justify-center inset-0 bg-black bg-opacity-50 z-50 flex items-center p-3"
           >
