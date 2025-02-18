@@ -22,6 +22,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showModal, setShowModal] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const isTouchDevice =
     "maxTouchPoints" in navigator && navigator.maxTouchPoints > 0;
   const videoRef = React.useRef<HTMLVideoElement>(null);
@@ -60,12 +61,6 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   }, [isHovered, isMobile, isTouchDevice]);
 
   const handleClick = () => {
-    const currentScrollY = window.scrollY; // Get current scroll position
-    if (Math.abs(currentScrollY - scrollYRef.current) > 5) {
-      // If scroll position changed significantly, assume it's a scroll, not a click
-      return;
-    }
-
     if (video) {
       setShowModal(true); // Always show modal if video exists and device is touch-based
     }
@@ -88,8 +83,15 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     <div className="relative">
       <div
         onClick={handleClick}
-        // onTouchStart={handleClick}
-        onTouchEnd={handleClick}
+        onTouchStart={() => {
+          setScrollPosition(window.scrollY + window.scrollX);
+        }}
+        onTouchEnd={() => {
+          if (window.scrollY + window.scrollX !== scrollPosition) {
+            return;
+          }
+          handleClick();
+        }}
         className={`flex justify-between items-center p-4 w-64 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 backface-hidden backdrop-blur-0 ${
           isMobile ? "w-full" : ""
         } cursor-pointer`}
