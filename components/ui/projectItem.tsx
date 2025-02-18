@@ -44,6 +44,10 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   }, [isMobile, isTouchDevice]);
 
   useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.pause();
+    }
     if (!isMobile && !isTouchDevice) {
       if (!isHovered && videoRef.current) {
         videoRef.current.currentTime = 0;
