@@ -153,6 +153,10 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
                   e.stopPropagation();
                   window.open(link, "_blank");
                 }}
+                onTouchEnd={(e) => {
+                  e.stopPropagation();
+                  window.open(link, "_blank");
+                }}
                 className="w-[calc(5vw+5vh)] h-[calc(5vw+5vh)] max-w-16 max-h-16 flex items-center justify-center rounded-full bg-black bg-opacity-50 text-white text-xl"
               >
                 <IoLinkOutline />
@@ -160,6 +164,10 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
               {/* Added a close button here as well for mobile users */}
               <button
                 onClick={(e) => {
+                  e.stopPropagation();
+                  setShowModal(false);
+                }}
+                onTouchEnd={(e) => {
                   e.stopPropagation();
                   setShowModal(false);
                 }}
