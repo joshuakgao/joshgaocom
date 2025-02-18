@@ -26,9 +26,9 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     "maxTouchPoints" in navigator && navigator.maxTouchPoints > 0;
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
-  const touchStartX = React.useRef(null);
+  const touchStartX = React.useRef<number | null>(null);
 
-  const handleClick = (e: any) => {
+  const handleClick = (e: TouchEvent) => {
     if (
       touchStartX.current !== null &&
       Math.abs(e.changedTouches[0].clientX - touchStartX.current) > 5
@@ -44,11 +44,11 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     }
   };
 
-  const handleTouchStart = (e: any) => {
+  const handleTouchStart = (e: TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
 
-  const handleTouchEnd = (e: any) => {
+  const handleTouchEnd = (e: TouchEvent) => {
     handleClick(e);
     touchStartX.current = null;
   };
