@@ -25,33 +25,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   const isTouchDevice =
     "maxTouchPoints" in navigator && navigator.maxTouchPoints > 0;
   const videoRef = React.useRef<HTMLVideoElement>(null);
-
-  const touchStartX = React.useRef<number | null>(null);
-
-  const handleClick = (e: TouchEvent) => {
-    if (
-      touchStartX.current !== null &&
-      Math.abs(e.changedTouches[0].clientX - touchStartX.current) > 5
-    ) {
-      return; // Do nothing if it looks like a scroll
-    }
-
-    if (video) {
-      setShowModal(true);
-    }
-    if (!isTouchDevice && !isMobile && link) {
-      window.open(link, "_blank");
-    }
-  };
-
-  const handleTouchStart = (e: TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: TouchEvent) => {
-    handleClick(e);
-    touchStartX.current = null;
-  };
+  const scrollYRef = React.useRef<number>(window.scrollY); // Track scroll position
 
   useEffect(() => {
     if (!isMobile && !isTouchDevice) {
@@ -85,11 +59,37 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     }
   }, [isHovered, isMobile, isTouchDevice]);
 
+  const handleClick = () => {
+    const currentScrollY = window.scrollY; // Get current scroll position
+    if (Math.abs(currentScrollY - scrollYRef.current) > 5) {
+      // If scroll position changed significantly, assume it's a scroll, not a click
+      return;
+    }
+
+    if (video) {
+      setShowModal(true); // Always show modal if video exists and device is touch-based
+    }
+    if (!isTouchDevice && !isMobile && link) {
+      window.open(link, "_blank"); // Open link in new tab for non-touch devices
+    }
+  };
+
+  // Update scroll position on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      scrollYRef.current = window.scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="relative">
       <div
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
+        onClick={handleClick}
+        onTouchStart={handleClick}
+        onTouchEnd={handleClick}
         className={`flex justify-between items-center p-4 w-64 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 backface-hidden backdrop-blur-0 ${
           isMobile ? "w-full" : ""
         } cursor-pointer`}
