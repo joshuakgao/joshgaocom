@@ -41,6 +41,7 @@ export function ResearchSection() {
         title="Portfolio Tracker"
         year="2022"
         link="https://docs.google.com/spreadsheets/d/1xQtttuAGk5ZZ3QMbSqwCcG1vzEMsXRZjo-5jyx6V-8U/edit?usp=sharing"
+        video="/assets/projects/other/portfolioTracker/portfolioTrackerPreview.mp4"
       />
     </>
   );
