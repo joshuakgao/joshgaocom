@@ -25,7 +25,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   const isTouchDevice =
     "maxTouchPoints" in navigator && navigator.maxTouchPoints > 0;
   const videoRef = React.useRef<HTMLVideoElement>(null);
-  const scrollYRef = React.useRef<number>(window.scrollY); // Track scroll position
+  const scrollYRef = React.useRef<number>(0); // Track scroll position
 
   useEffect(() => {
     if (!isMobile && !isTouchDevice) {
