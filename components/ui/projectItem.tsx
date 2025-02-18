@@ -3,7 +3,7 @@
 import { P } from "@/components/ui";
 import React, { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { IoLinkOutline } from "react-icons/io5";
+import { IoLinkOutline, IoClose } from "react-icons/io5";
 
 interface ProjectItemProps {
   title?: string;
@@ -30,8 +30,8 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     if (!isMobile && !isTouchDevice) {
       const handleMouseMove = (e: MouseEvent) => {
         // Calculate mouse position relative to window center
-        const x = (e.clientX / window.innerWidth - 0.5) * 200;
-        const y = (e.clientY / window.innerHeight - 0.5) * 200;
+        const x = e.clientX / window.innerWidth - 0.5;
+        const y = e.clientY / window.innerHeight - 0.5;
         setMousePosition({ x, y });
       };
 
@@ -88,11 +88,9 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
           style={{
             left: "50%",
             top: "50%",
-            transform: `translate(calc(-10vw + ${
-              mousePosition.x
-            }px + 70px), calc(-50% + ${mousePosition.y}px)) scale(${
-              isHovered ? 1.1 : 0.9
-            })`,
+            transform: `translate(calc(${mousePosition.x * 0.5}px), calc(${
+              mousePosition.y
+            }px)) scale(${isHovered ? 1.1 : 0.9}) translateY(-50%)`,
             width: "50vw",
           }}
         >
@@ -108,17 +106,10 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
           </video>
         </div>
       )}
-
       {showModal &&
         video &&
         (isTouchDevice || (isMobile && !isTouchDevice)) && (
-          <div
-            onClick={(e) => {
-              e.stopPropagation();
-              setShowModal(false);
-            }}
-            className="fixed flex-col justify-center inset-0 bg-black bg-opacity-50 z-50 flex items-center p-3"
-          >
+          <div className="fixed flex-col justify-center inset-0 bg-black bg-opacity-50 z-50 flex items-center p-3">
             <div className="relative w-full max-w-[min(99vw,calc(60vh*16/9))] min-h-[calc(min(99vw,calc(60vh*16/9))*9/16)] rounded-3xl overflow-hidden aspect-video">
               <video
                 autoPlay
@@ -126,14 +117,13 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
                 playsInline
                 loop
                 className="w-full h-full object-cover"
-                onClick={(e) => e.stopPropagation()} // Prevent closing modal when tapping the video
+                onClick={(e) => e.stopPropagation()}
               >
                 <source src={video} type="video/mp4" />
               </video>
             </div>
 
-            {/* Button positioned below the video */}
-            <div className="fixed bottom-[5vh] z-10 flex gap-4 flex-row items-end justify-end text-white">
+            <div className="fixed bottom-[5vh] z-10 flex gap-4 flex-row items-end justify-center text-white w-full px-3">
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -142,6 +132,16 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
                 className="w-[calc(5vw+5vh)] h-[calc(5vw+5vh)] max-w-16 max-h-16 flex items-center justify-center rounded-full bg-black bg-opacity-50 text-white text-xl"
               >
                 <IoLinkOutline />
+              </button>
+              {/* Added a close button here as well for mobile users */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowModal(false);
+                }}
+                className="fixed top-4 right-4 z-10 w-[calc(5vw+5vh)] h-[calc(5vw+5vh)] max-w-16 max-h-16 flex items-center justify-center rounded-full bg-black bg-opacity-50 text-white text-xl"
+              >
+                <IoClose size={24} /> {/* Use IoClose icon */}
               </button>
             </div>
           </div>
