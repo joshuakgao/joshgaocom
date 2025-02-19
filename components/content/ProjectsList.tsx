@@ -22,9 +22,10 @@ export function ProjectsList() {
         video="assets/projects/other/gptNano/gptNanoPreview.mp4"
       />
       <ProjectItem
-        title="Knn Image Search"
+        title="Image Search"
         year="2023"
         link="https://github.com/tugonbob/cifar-knn-classifer"
+        video="assets/projects/other/imageSearch/imageSearchPreview.mp4"
       />
       {/* <ProjectItem title="Medical Chatbot" year="2023" /> */}
       <ProjectItem
