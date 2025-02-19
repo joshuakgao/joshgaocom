@@ -3,6 +3,7 @@
 import { ProjectsList } from "@/components/content";
 import { Col, H1, H2, ScrollDiv, Spacer } from "@/components/ui";
 import { useMediaQuery } from "react-responsive";
+import Head from "next/head";
 
 export default function Home() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
