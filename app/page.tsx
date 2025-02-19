@@ -2,66 +2,10 @@
 
 import { ProjectsList } from "@/components/content";
 import { Col, H1, H2, ScrollDiv, Spacer } from "@/components/ui";
-import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 export default function Home() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const [bgColor, setBgColor] = useState("#fafaf9");
-
-  useEffect(() => {
-    const colors = ["#fafaf9", "#fbf2ff", "#f2f5ff", "#fff2f2"]; // pink, blue, orange, white
-    let index = 0;
-
-    // Create a smooth transition between colors using animation frames
-    const animate = () => {
-      const startColor = colors[index];
-      const endColor = colors[(index + 1) % colors.length];
-      const duration = 10000; // 10 seconds for other transitions
-
-      const startTime = performance.now();
-
-      const interpolateColor = (
-        start: string,
-        end: string,
-        progress: number
-      ) => {
-        const r1 = parseInt(start.slice(1, 3), 16);
-        const g1 = parseInt(start.slice(3, 5), 16);
-        const b1 = parseInt(start.slice(5, 7), 16);
-        const r2 = parseInt(end.slice(1, 3), 16);
-        const g2 = parseInt(end.slice(3, 5), 16);
-        const b2 = parseInt(end.slice(5, 7), 16);
-
-        const r = Math.round(r1 + (r2 - r1) * progress);
-        const g = Math.round(g1 + (g2 - g1) * progress);
-        const b = Math.round(b1 + (b2 - b1) * progress);
-
-        return `#${r.toString(16).padStart(2, "0")}${g
-          .toString(16)
-          .padStart(2, "0")}${b.toString(16).padStart(2, "0")}`;
-      };
-
-      const step = (currentTime: number) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-
-        setBgColor(interpolateColor(startColor, endColor, progress));
-
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        } else {
-          index = (index + 1) % colors.length;
-          requestAnimationFrame(animate);
-        }
-      };
-
-      requestAnimationFrame(step);
-    };
-
-    animate();
-    return () => {};
-  }, []);
 
   const Bio = () => (
     <>
@@ -104,10 +48,7 @@ export default function Home() {
   const asOfDate = "Feb '24";
 
   return (
-    <ScrollDiv
-      className="pl-6 pr-6 min-h-screen relative"
-      style={{ backgroundColor: bgColor }}
-    >
+    <ScrollDiv className="pl-6 pr-6 min-h-screen relative bg-transparent">
       {isMobile ? (
         <>
           <Col className="pt-[calc(20vh)] pb-[calc(20vh)]">
