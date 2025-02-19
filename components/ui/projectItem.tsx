@@ -92,7 +92,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
           }
           handleClick();
         }}
-        className={`flex justify-between items-center p-4 w-64 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 backface-hidden backdrop-blur-0 ${
+        className={`flex justify-between items-center p-4 w-64 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 hover:scale-105 backface-hidden backdrop-blur-0 ${
           isMobile ? "w-full" : ""
         } cursor-pointer`}
         onMouseEnter={() => !isMobile && !isTouchDevice && setIsHovered(true)}
