@@ -17,7 +17,7 @@ export default function Home() {
           href="https://sail.cive.uh.edu/people"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text font-bold transition-all duration-300"
+          className="bg-gradient-to-r from-purple-600 to-pink-500 text-transparent bg-clip-text font-bold transition-all duration-300"
         >
           SAIL
         </a>
