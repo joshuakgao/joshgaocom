@@ -84,7 +84,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     touchTimerRef.current = setTimeout(() => {
       // Long press detected, prevent click
       touchTimerRef.current = null;
-    }, 50); // Adjust delay as needed
+    }, 20); // Adjust delay as needed
   };
 
   const handleTouchEnd = () => {
