@@ -1,7 +1,7 @@
 "use client";
 
 import { P } from "@/components/ui";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { IoLinkOutline, IoClose } from "react-icons/io5";
 
@@ -22,11 +22,11 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showModal, setShowModal] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
   const isTouchDevice =
     "maxTouchPoints" in navigator && navigator.maxTouchPoints > 0;
   const videoRef = React.useRef<HTMLVideoElement>(null);
   const scrollYRef = React.useRef<number>(0); // Track scroll position
+  const touchTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (!isMobile && !isTouchDevice) {
@@ -79,18 +79,35 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleTouchStart = () => {
+    scrollYRef.current = window.scrollY;
+    touchTimerRef.current = setTimeout(() => {
+      // Long press detected, prevent click
+      touchTimerRef.current = null;
+    }, 200); // Adjust delay as needed
+  };
+
+  const handleTouchEnd = () => {
+    if (touchTimerRef.current) {
+      clearTimeout(touchTimerRef.current);
+      touchTimerRef.current = null;
+      if (window.scrollY === scrollYRef.current) {
+        handleClick();
+      }
+    }
+  };
+
   return (
     <div className="relative">
       <div
         onClick={handleClick}
-        onTouchStart={() => {
-          setScrollPosition(window.scrollY + window.scrollX);
-        }}
-        onTouchEnd={() => {
-          if (window.scrollY + window.scrollX !== scrollPosition) {
-            return;
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchCancel={() => {
+          if (touchTimerRef.current) {
+            clearTimeout(touchTimerRef.current);
+            touchTimerRef.current = null;
           }
-          handleClick();
         }}
         className={`flex justify-between items-center p-4 w-64 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 hover:scale-105 backface-hidden backdrop-blur-0 ${
           isMobile ? "w-full" : ""
