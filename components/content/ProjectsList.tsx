@@ -4,7 +4,7 @@ import { H3, ProjectItem, Spacer } from "@/components/ui";
 
 export function ProjectsList() {
   return (
-    <div className="space-y-2">
+    <div>
       <H3 className="mb-4">Research Publications</H3>
       <ProjectItem
         title="Change Detection"
