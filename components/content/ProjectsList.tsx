@@ -4,13 +4,14 @@ import { H3, ProjectItem, Spacer } from "@/components/ui";
 
 export function ProjectsList() {
   return (
-    <>
+    <div className="space-y-2">
       <H3 className="mb-4">Research Publications</H3>
       <ProjectItem
         title="Change Detection"
         year="2024"
         link="https://arxiv.org/abs/2412.07612v1"
         video="assets/file_example_MP4_480_1_5MG.mp4"
+        starred
       />
       <Spacer size={64} />
 
@@ -20,6 +21,7 @@ export function ProjectsList() {
         year="2023"
         link="https://github.com/tugonbob/gpt-nano"
         video="assets/projects/other/gptNano/gptNanoPreview.mp4"
+        starred
       />
       <ProjectItem
         title="Image Search"
@@ -44,6 +46,6 @@ export function ProjectsList() {
         link="https://docs.google.com/spreadsheets/d/1xQtttuAGk5ZZ3QMbSqwCcG1vzEMsXRZjo-5jyx6V-8U/edit?usp=sharing"
         video="/assets/projects/other/portfolioTracker/portfolioTrackerPreview.mp4"
       />
-    </>
+    </div>
   );
 }

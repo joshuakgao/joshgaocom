@@ -3,13 +3,14 @@
 import { P } from "@/components/ui";
 import React, { useEffect, useState, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
-import { IoLinkOutline, IoClose } from "react-icons/io5";
+import { IoLinkOutline, IoClose, IoStar } from "react-icons/io5";
 
 interface ProjectItemProps {
   title?: string;
   year?: string;
   link?: string;
   video?: string;
+  starred?: boolean;
 }
 
 export const ProjectItem: React.FC<ProjectItemProps> = ({
@@ -17,6 +18,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   year,
   link,
   video,
+  starred,
 }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [isHovered, setIsHovered] = useState(false);
@@ -109,16 +111,20 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
             touchTimerRef.current = null;
           }
         }}
-        className={`flex justify-between items-center p-4 w-64 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 hover:scale-105 backface-hidden backdrop-blur-0 ${
+        className={`flex justify-between items-center p-4 w-64 rounded-3xl hover:bg-white hover:shadow-lg hover:transition-all hover:duration-300 hover:scale-105 backface-hidden backdrop-blur-0 cursor-pointer radius${
           isMobile ? "w-full" : ""
-        } cursor-pointer`}
+        }`}
         onMouseEnter={() => !isMobile && !isTouchDevice && setIsHovered(true)}
         onMouseLeave={() => !isMobile && !isTouchDevice && setIsHovered(false)}
       >
-        <P>{title}</P>
-        <P className="text-right text-gray-500">{year}</P>
+        <div className="flex flex-row">
+          {starred ? (
+            <IoStar color="#b32bb0" className="mt-[3px] mr-2" />
+          ) : null}
+          <P> {title}</P>
+        </div>
+        <P className={`text-right text-gray-500`}>{year}</P>
       </div>
-
       {/* Hover-based video display (only for non-touch devices) */}
       {video && !isMobile && !isTouchDevice && (
         <div
