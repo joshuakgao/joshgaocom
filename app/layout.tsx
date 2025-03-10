@@ -15,6 +15,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MG8V3DLK');
+    `,
+          }}
+        />
         <link rel="icon" href="/favicon.png" type="image/png" />
       </head>
       <script
@@ -38,6 +49,18 @@ export default function RootLayout({
         />
       </Head>
       <body className="p-[env(safe-area-inset-top)_env(safe-area-inset-right)_env(safe-area-inset-bottom)_env(safe-area-inset-left)]">
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `
+              <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-MG8V3DLK"
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"
+              ></iframe>
+            `,
+          }}
+        />
         {children}
       </body>
     </html>
