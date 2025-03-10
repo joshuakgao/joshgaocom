@@ -118,10 +118,15 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
         onMouseLeave={() => !isMobile && !isTouchDevice && setIsHovered(false)}
       >
         <div className="flex flex-row">
-          {starred ? (
-            <IoStar color="#b32bb0" className="mt-[3px] mr-2" />
-          ) : null}
-          <P> {title}</P>
+          <P
+            className={`${
+              starred
+                ? "bg-gradient-to-r from-[#a855f7] to-[#ec4899] bg-clip-text text-transparent"
+                : ""
+            }`}
+          >
+            {title}
+          </P>
         </div>
         <P className={`text-right text-gray-500`}>{year}</P>
       </div>
