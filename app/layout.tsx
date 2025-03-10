@@ -17,6 +17,20 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
       </head>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-ENMR4WHP42"
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-ENMR4WHP42');
+        `,
+        }}
+      />
       <Head>
         <meta
           name="viewport"
