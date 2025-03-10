@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Head from "next/head";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -28,11 +29,11 @@ export default function RootLayout({
         />
         <link rel="icon" href="/favicon.png" type="image/png" />
       </head>
-      <script
+      <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-ENMR4WHP42"
       />
-      <script
+      <Script
         dangerouslySetInnerHTML={{
           __html: `
           window.dataLayer = window.dataLayer || [];
