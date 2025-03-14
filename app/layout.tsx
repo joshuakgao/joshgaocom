@@ -17,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script
+          id="google-analytics"
           dangerouslySetInnerHTML={{
             __html: `
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -30,10 +31,12 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" type="image/png" />
       </head>
       <Script
+        id="google-tag-manager"
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-ENMR4WHP42"
       />
       <Script
+        id="google-tag-datalayer"
         dangerouslySetInnerHTML={{
           __html: `
           window.dataLayer = window.dataLayer || [];
