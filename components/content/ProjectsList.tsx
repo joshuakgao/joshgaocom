@@ -9,13 +9,14 @@ export function ProjectsList() {
       <ProjectItem
         title="Change Detection"
         year="2024"
-        link="https://arxiv.org/abs/2412.07612v1"
+        link="https://joshuakgao.github.io/viewdelta/"
         video="assets/file_example_MP4_480_1_5MG.mp4"
         starred
       />
       <Spacer size={64} />
 
       <H3 className="mb-4">Other Works</H3>
+      <ProjectItem title="Self Hosted Cloud" year="2024" />
       <ProjectItem
         title="Gpt Nano"
         year="2023"

@@ -121,7 +121,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
           <P
             className={`${
               starred
-                ? "bg-gradient-to-r from-[#a855f7] to-[#ec4899] bg-clip-text text-transparent"
+                ? "bg-gradient-to-r from-[#a855f7] to-[#ec4899] bg-clip-text text-transparent font-bold"
                 : ""
             }`}
           >
