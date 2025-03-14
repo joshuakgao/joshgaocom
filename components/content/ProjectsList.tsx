@@ -16,7 +16,11 @@ export function ProjectsList() {
       <Spacer size={64} />
 
       <H3 className="mb-4">Other Works</H3>
-      <ProjectItem title="Self Hosted Cloud" year="2024" />
+      <ProjectItem
+        title="Self Hosted Cloud"
+        year="2024"
+        link="https://cloud.joshgao.com"
+      />
       <ProjectItem
         title="Gpt Nano"
         year="2023"
