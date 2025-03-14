@@ -3,7 +3,7 @@
 import { P } from "@/components/ui";
 import React, { useEffect, useState, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
-import { IoLinkOutline, IoClose, IoStar } from "react-icons/io5";
+import { IoLinkOutline, IoClose } from "react-icons/io5";
 
 interface ProjectItemProps {
   title?: string;
