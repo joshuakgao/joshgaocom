@@ -40,6 +40,7 @@ export function ProjectsList() {
         title="Real Estate Valuation"
         year="2023"
         link="https://github.com/tugonbob/stanford-cs229-andrew-ng/blob/main/Ch1-SupervisedLearning/1-LinearRegression/1.1.1-LmsAlgorithm.ipynb"
+        video="assets/projects/other/realEstateValuation/realEstateValuationPreview.mp4"
       />
       <ProjectItem
         title="Auto Youtube"
