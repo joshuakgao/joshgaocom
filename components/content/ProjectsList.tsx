@@ -45,6 +45,7 @@ export function ProjectsList() {
         title="Auto Youtube"
         year="2022"
         link="https://github.com/tugonbob/reddit-laughs"
+        video="assets/projects/other/autoYoutube/autoYoutubePreview.mp4"
       />
       <ProjectItem
         title="Portfolio Tracker"
