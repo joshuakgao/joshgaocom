@@ -20,6 +20,7 @@ export function ProjectsList() {
         title="Self Hosted Cloud"
         year="2024"
         link="https://cloud.joshgao.com"
+        video="assets/projects/other/selfHostedCloud/selfHostedCloudPreview.mp4"
       />
       <ProjectItem
         title="Gpt Nano"
