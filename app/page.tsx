@@ -45,7 +45,7 @@ export default function Home() {
     </>
   );
 
-  const asOfDate = "Feb '24";
+  const asOfDate = "Mar '25";
 
   return (
     <ScrollDiv className="pl-6 pr-6 min-h-screen relative bg-transparent">
