@@ -10,7 +10,7 @@ export function ProjectsList() {
         title="Change Detection"
         year="2024"
         link="https://joshuakgao.github.io/viewdelta/"
-        video="assets/file_example_MP4_480_1_5MG.mp4"
+        video="assets/projects/research/changeDetection/changeDetectionPreview.mp4"
         starred
       />
       <Spacer size={64} />
