@@ -29,7 +29,23 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   const videoRef = React.useRef<HTMLVideoElement>(null);
   const scrollYRef = React.useRef<number>(0); // Track scroll position
   const touchTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const [maxVideoHeight, setMaxVideoHeight] = useState(500); // Default height
 
+  // Calculate hover video max height depending on window size
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const calculateMaxHeight = () => {
+        const windowHeight = window.innerHeight;
+        setMaxVideoHeight(Math.min(windowHeight - 100, windowHeight * 0.8));
+      };
+
+      calculateMaxHeight();
+      window.addEventListener("resize", calculateMaxHeight);
+      return () => window.removeEventListener("resize", calculateMaxHeight);
+    }
+  }, []);
+
+  // Mouse position tracker
   useEffect(() => {
     if (!isMobile && !isTouchDevice) {
       const handleMouseMove = (e: MouseEvent) => {
@@ -47,6 +63,7 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     }
   }, [isMobile, isTouchDevice]);
 
+  // Mobile button touch handler
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.currentTime = 0;
@@ -139,10 +156,13 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
           style={{
             left: "50%",
             top: "50%",
-            transform: `translate(calc(${mousePosition.x * 0.5}px), calc(${
-              mousePosition.y
-            }px)) scale(${isHovered ? 1.1 : 0.9}) translateY(-50%)`,
-            width: "50vw",
+            transform: `translate(calc(${
+              mousePosition.x * 0.5
+            }px), calc(-50% + ${mousePosition.y * 0.2}px))`,
+            maxHeight: `${maxVideoHeight}px`,
+            maxWidth: `calc(min(50vw, ${maxVideoHeight * (16 / 9)}px))`,
+            aspectRatio: "16/9",
+            willChange: "transform, opacity",
           }}
         >
           <video

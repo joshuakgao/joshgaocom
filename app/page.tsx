@@ -74,7 +74,7 @@ export default function Home() {
           </div>
         </>
       )}
-      <Spacer size={64} />
+      <Spacer size={256} />
     </ScrollDiv>
   );
 }
