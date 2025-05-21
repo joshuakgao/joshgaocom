@@ -110,7 +110,6 @@ export default function Home() {
       <>
         <Col className="w-full flex items-center justify-center p-4">
           <Header />
-          <Spacer size={128} />
           <ProjectsList />
         </Col>
       </>

@@ -3,14 +3,17 @@
 import { Col, ExtraSmall, H1, Muted, P, Spacer } from "@/components/ui";
 import React, { useMemo } from "react";
 
-interface BlogCardProps {
-  title?: string;
+export interface BlogCardProps {
+  title: string;
   description?: string;
   authors?: string[];
-  tag?: string;
-  date?: string;
-  link?: string;
-  thumbnail?: string;
+  journal?: string;
+  hightlightJournal?: boolean;
+  tags?: string[];
+  contentType?: string;
+  date: string;
+  link: string;
+  thumbnail: string;
   starred?: boolean;
 }
 
@@ -28,7 +31,10 @@ export const BlogCard: React.FC<BlogCardProps> = ({
   title,
   description,
   authors,
-  tag,
+  journal,
+  hightlightJournal,
+  tags,
+  contentType,
   date,
   link,
   thumbnail,
@@ -77,35 +83,20 @@ export const BlogCard: React.FC<BlogCardProps> = ({
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div
-            className="rounded-t-lg w-full"
-            style={{ aspectRatio: "4 / 3", overflow: "hidden" }}
-          >
-            {thumbnail?.endsWith(".mp4") ? (
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-              >
-                <source src={thumbnail} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            ) : (
-              <img
-                src={thumbnail}
-                alt={title}
-                className="w-full h-full object-cover"
-              />
-            )}
-          </div>
+          {thumbnail?.endsWith(".mp4") ? (
+            <video autoPlay loop muted playsInline className="rounded-lg">
+              <source src={thumbnail} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <img src={thumbnail} alt={title} className="w-auto rounded-t-lg" />
+          )}
           <Spacer size={8} />
           <div className="flex-1 min-w-0 p-4">
-            <Muted className="text-gray-500">{tag}</Muted>
+            <Muted className="text-gray-500">{contentType}</Muted>
             <H1>{title}</H1>
             <Spacer size={4} />
-            <Muted className="text-gray-500">
+            <P>
               {authors?.map((author, index) => (
                 <span key={index}>
                   <span
@@ -116,8 +107,20 @@ export const BlogCard: React.FC<BlogCardProps> = ({
                   {index < authors.length - 1 ? ", " : ""}
                 </span>
               ))}
-            </Muted>
+            </P>
             <Spacer size={4} />
+            {journal && (
+              <P>
+                {hightlightJournal ? (
+                  <span className="bg-gradient-to-r from-purple-600 to-pink-500 text-transparent bg-clip-text font-bold transition-all duration-300">
+                    {journal}
+                  </span>
+                ) : (
+                  journal
+                )}
+              </P>
+            )}
+            <Spacer size={16} />
             <P>{description}</P>
             <Spacer size={16} />
             <ExtraSmall>{date}</ExtraSmall>
