@@ -1,7 +1,13 @@
 "use client";
 
-import { BlogCard, BlogCardProps, Col, Row, Small } from "@/components/ui";
-import { AnimatePresence, motion } from "framer-motion";
+import {
+  BlogCard,
+  BlogCardProps,
+  Col,
+  Row,
+  Small,
+  Spacer,
+} from "@/components/ui";
 import { Calendar, Tags } from "lucide-react";
 import { useMemo, useState } from "react";
 
@@ -168,14 +174,14 @@ export function ProjectsList() {
                 <button
                   key={year}
                   onClick={() => setSelectedYear(year)}
-                  className="px-3 py-1 rounded-md hover:underline transition"
+                  className="px-2 py-1 rounded-md hover:underline transition"
                 >
                   <Small>{year}</Small>
                 </button>
               ))
             ) : (
               <div className="flex items-center gap-2">
-                <span className="ml-2 px-3 py-1 rounded-md bg-indigo-400 text-white">
+                <span className="ml-2 px-2 py-1 rounded-md bg-indigo-400 text-white">
                   <Small>{selectedYear}</Small>
                 </span>
                 <button
@@ -189,6 +195,7 @@ export function ProjectsList() {
             )}
           </div>
         </Row>
+        <Spacer size={8} />
 
         {/* Tag Filter */}
         <Row>
@@ -199,14 +206,14 @@ export function ProjectsList() {
                 <button
                   key={tag}
                   onClick={() => setSelectedTag(tag)}
-                  className="px-3 py-1 text-sm rounded-full hover:underline transition"
+                  className="px-2 py-1 text-sm rounded-full hover:underline transition"
                 >
                   {tag}
                 </button>
               ))
             ) : (
               <div className="flex items-center gap-2">
-                <span className="ml-2 px-3 py-1 text-sm rounded-md bg-indigo-400 text-white">
+                <span className="ml-2 px-2 py-1 text-sm rounded-md bg-indigo-400 text-white">
                   {selectedTag}
                 </span>
                 <button
@@ -223,30 +230,13 @@ export function ProjectsList() {
       </Col>
 
       {/* Masonry Cards */}
-      <AnimatePresence mode="popLayout">
-        <motion.div layout className="columns-1 sm:columns-2 lg:columns-3">
-          {filteredProjects.map((props, idx) => (
-            <motion.div
-              layout
-              key={props.title + idx}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                ease: "easeOut",
-                delay: idx * 0.02, // 🎯 stagger each card by index
-              }}
-              className="break-inside-avoid mb-6"
-            >
-              <BlogCard {...props} />
-            </motion.div>
-          ))}
-          {/* Phantom cards to balance layout */}
-          <div className="break-inside-avoid mb-6 opacity-100 pointer-events-none">
-            <div className="h-[0px]"> </div>
+      <div className="columns-1 sm:columns-2 lg:columns-3">
+        {filteredProjects.map((props, idx) => (
+          <div key={props.title + idx} className="break-inside-avoid mb-6">
+            <BlogCard {...props} />
           </div>
-        </motion.div>
-      </AnimatePresence>
+        ))}
+      </div>
     </Col>
   );
 }
