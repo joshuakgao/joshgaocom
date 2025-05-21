@@ -1,5 +1,5 @@
-import React, { forwardRef } from "react";
 import { cn } from "@/lib/utils";
+import React, { forwardRef } from "react";
 
 // Reusable helper to create components with consistent structure
 const createComponent = <T extends HTMLElement>(
@@ -50,7 +50,7 @@ export const Lead = createComponent<HTMLParagraphElement>(
 
 export const P = createComponent<HTMLParagraphElement>(
   "p",
-  "tracking-tightmt-6 font-roboto text-[17px]",
+  "tracking-tightmt-6 font-roboto text-[16px]",
   "P"
 );
 
@@ -66,10 +66,16 @@ export const Small = createComponent<HTMLParagraphElement>(
   "Small"
 );
 
-export const Muted = createComponent<HTMLSpanElement>(
-  "span",
-  "text-sm text-gray-500 font-roboto",
-  "Muted"
+export const ExtraSmall = createComponent<HTMLParagraphElement>(
+  "p",
+  "text-xs font-normal text-gray-500 leading-tight font-roboto",
+  "ExtraSmall"
+);
+
+export const Muted = createComponent<HTMLParagraphElement>(
+  "p",
+  "text-gray-500 font-roboto",
+  "P"
 );
 
 export const InlineCode = createComponent<HTMLSpanElement>(
