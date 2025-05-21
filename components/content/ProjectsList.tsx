@@ -1,16 +1,16 @@
 "use client";
 
-import { BlogCard, Col, H1, P, Row, Small } from "@/components/ui";
-import { useMemo, useState } from "react";
-import { BlogCardProps } from "@/components/ui";
+import { BlogCard, BlogCardProps, Col, Row, Small } from "@/components/ui";
+import { AnimatePresence, motion } from "framer-motion";
 import { Calendar, Tags } from "lucide-react";
+import { useMemo, useState } from "react";
 
 const projectsByYear: { year: string; items: BlogCardProps[] }[] = [
   {
     year: "2025",
     items: [
       {
-        contentType: "Research Paper",
+        // contentType: "Research Paper",
         thumbnail: "/assets/projects/2025/viewDelta/thumbnail.png",
         title: "ViewDelta: Text-Prompted Change Detection in Unaligned Images",
         authors: ["Subin Varghese", "Joshua Gao", "Vedhus Hoskere"],
@@ -156,7 +156,7 @@ export function ProjectsList() {
   }, [selectedYear, selectedTag, allProjects]);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 md:px-0">
+    <Col className="w-full max-w-7xl mx-auto px-4 md:px-0">
       {/* Filters */}
       <Col className="my-8">
         {/* Year Filter */}
@@ -175,7 +175,7 @@ export function ProjectsList() {
               ))
             ) : (
               <div className="flex items-center gap-2">
-                <span className="mx-2 px-3 py-1 rounded-md bg-indigo-400 text-white">
+                <span className="ml-2 px-3 py-1 rounded-md bg-indigo-400 text-white">
                   <Small>{selectedYear}</Small>
                 </span>
                 <button
@@ -206,7 +206,7 @@ export function ProjectsList() {
               ))
             ) : (
               <div className="flex items-center gap-2">
-                <span className="mx-2 px-3 py-1 text-sm rounded-md bg-indigo-400 text-white">
+                <span className="ml-2 px-3 py-1 text-sm rounded-md bg-indigo-400 text-white">
                   {selectedTag}
                 </span>
                 <button
@@ -223,13 +223,30 @@ export function ProjectsList() {
       </Col>
 
       {/* Masonry Cards */}
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-        {filteredProjects.map((props, idx) => (
-          <div key={idx} className="break-inside-avoid mb-6">
-            <BlogCard {...props} />
+      <AnimatePresence mode="popLayout">
+        <motion.div layout className="columns-1 sm:columns-2 lg:columns-3">
+          {filteredProjects.map((props, idx) => (
+            <motion.div
+              layout
+              key={props.title + idx}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                ease: "easeOut",
+                delay: idx * 0.02, // 🎯 stagger each card by index
+              }}
+              className="break-inside-avoid mb-6"
+            >
+              <BlogCard {...props} />
+            </motion.div>
+          ))}
+          {/* Phantom cards to balance layout */}
+          <div className="break-inside-avoid mb-6 opacity-100 pointer-events-none">
+            <div className="h-[0px]"> </div>
           </div>
-        ))}
-      </div>
-    </div>
+        </motion.div>
+      </AnimatePresence>
+    </Col>
   );
 }

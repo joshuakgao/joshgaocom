@@ -33,7 +33,6 @@ export const BlogCard: React.FC<BlogCardProps> = ({
   authors,
   journal,
   hightlightJournal,
-  tags,
   contentType,
   date,
   link,
