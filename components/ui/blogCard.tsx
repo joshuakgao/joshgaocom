@@ -48,9 +48,9 @@ export const BlogCard: React.FC<BlogCardProps> = ({
 
   return (
     <Col
-      className={`flex w-auto h-full shadow-sm rounded-lg bg-white cursor-pointer hover:shadow-md transition-shadow ${
+      className={`flex w-auto h-full shadow-sm rounded-lg bg-white cursor-pointer transition-shadow ${
         starred ? "relative p-1" : ""
-      } hover:scale-102 transition-transform`}
+      } transition-transform`}
       style={
         starred
           ? {
@@ -93,7 +93,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({
           <Spacer size={8} />
           <div className="flex-1 min-w-0 p-4">
             <Muted className="text-gray-500">{contentType}</Muted>
-            <H1>{title}</H1>
+            <H1 className="hover:underline">{title}</H1>
             <Spacer size={4} />
             <P>
               {authors?.map((author, index) => (

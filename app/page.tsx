@@ -92,7 +92,7 @@ export default function Home() {
               Scholar
             </a>
             <a
-              href="https://github.com/tugonbob"
+              href="https://github.com/joshuakgao"
               target="_blank"
               rel="noopener noreferrer"
             >
