@@ -86,3 +86,109 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  /* === BASE TEXT COLORS === */
+  .text-gradient {
+    @apply inline-block font-normal transition-all duration-500 ease-in-out;
+    background-image: linear-gradient(
+      to right,
+      #7e22ce,
+      #db2777,
+      #ea7d08,
+      #db2777,
+      #7e22ce
+    );
+    background-size: 200% auto;
+    background-position: 0% 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .text-black-to-gradient {
+    @apply inline-block transition-all duration-500 ease-in-out;
+    background-image: linear-gradient(
+      to right,
+      #7e22ce,
+      #db2777,
+      #ea7d08,
+      #db2777,
+      #7e22ce
+    );
+    background-size: 200% auto;
+    background-position: 0% 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: color 0.5s ease, background-position 2s ease;
+  }
+
+  .text-black-to-gradient:hover {
+    color: transparent;
+  }
+
+  /* === ANIMATION BEHAVIORS === */
+  .gradient-animate {
+    animation: gradientMove 3s ease-in-out alternate-reverse infinite;
+  }
+
+  .gradient-animate-hover:hover {
+    animation: gradientMove 1s ease forwards;
+  }
+
+  /* In your CSS utilities */
+  .text-black-to-gradient.parent-hovered {
+    color: transparent;
+    animation: gradientMove 1s ease forwards;
+  }
+
+  /* Or alternatively, you can modify the existing classes */
+  .text-black-to-gradient {
+    @apply inline-block transition-all duration-500 ease-in-out;
+    background-image: linear-gradient(
+      to right,
+      #7e22ce,
+      #db2777,
+      #ea7d08,
+      #db2777,
+      #7e22ce
+    );
+    background-size: 200% auto;
+    background-position: 0% 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: color 0.2s ease, background-position 2s ease;
+  }
+
+  /* This will make the text gradient when parent is hovered */
+  .parent:hover .text-black-to-gradient {
+    color: transparent;
+    animation: gradientMove 1s ease forwards;
+  }
+
+  /* === KEYFRAMES === */
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes gradient-border {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .hover\\:scale-102:hover {
+    transform: scale(1.02);
+  }
+}

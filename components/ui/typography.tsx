@@ -18,6 +18,12 @@ const createComponent = <T extends HTMLElement>(
   return Component;
 };
 
+export const H0 = createComponent<HTMLHeadingElement>(
+  "h1",
+  "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl font-roboto",
+  "H0"
+);
+
 export const H1 = createComponent<HTMLHeadingElement>(
   "h1",
   "scroll-m-20 text-2xl font-bold tracking-tight lg:text-2xl font-roboto",
@@ -50,7 +56,7 @@ export const Lead = createComponent<HTMLParagraphElement>(
 
 export const P = createComponent<HTMLParagraphElement>(
   "p",
-  "tracking-tightmt-6 font-roboto text-[16px]",
+  "tracking-tight font-roboto text-[16px]",
   "P"
 );
 

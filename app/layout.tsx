@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Head from "next/head";
 import Script from "next/script";
 import "./globals.css";
+import Header from "@/components/ui/header";
 
 export const metadata: Metadata = {
   title: "Joshua Gao",
@@ -62,6 +63,7 @@ export default function RootLayout({
             `,
           }}
         />
+        <Header />
         {children}
       </body>
     </html>

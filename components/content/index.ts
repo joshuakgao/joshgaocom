@@ -1,1 +1,2 @@
-export * from "./ProjectsList";
+export * from "./postsMasonryLayout";
+export * from "./postData";

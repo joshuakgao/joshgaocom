@@ -1,20 +1,21 @@
-import React, { CSSProperties, ReactNode } from "react";
+import React, { CSSProperties, ReactNode, HTMLAttributes } from "react";
 
-interface RowProps {
+interface RowProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
   style?: CSSProperties;
   className?: string;
 }
 
-export function Row({ children, style, className }: RowProps) {
+export function Row({ children, style, className, ...rest }: RowProps) {
   return (
     <div
       style={{
         display: "flex",
         alignItems: "center",
-        ...style, // Inline styles passed via props take precedence
+        ...style,
       }}
       className={className}
+      {...rest}
     >
       {children}
     </div>

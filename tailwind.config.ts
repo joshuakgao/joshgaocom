@@ -56,8 +56,22 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      animation: {
+        gradient: "gradient 1s ease forwards",
+      },
+      keyframes: {
+        gradient: {
+          "0%": {
+            "background-position": "0% 50%",
+          },
+          "100%": {
+            "background-position": "100%, 50%",
+          },
+        },
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
 };
+
 export default config;
