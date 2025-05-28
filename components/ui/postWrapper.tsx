@@ -1,8 +1,7 @@
 "use client";
 
-import { ActionBar, Col, ExtraSmall, H0, H1, P, Spacer } from "@/components/ui";
 import { PostProps } from "@/components/types";
-import Image from "next/image";
+import { ActionBar, Col, ExtraSmall, H0, H1, P, Spacer } from "@/components/ui";
 
 export function PostWrapper({
   post,
@@ -21,55 +20,57 @@ export function PostWrapper({
   }
 
   return (
-    <Col className="max-w-4xl mx-auto p-8 rounded-lg h-full bg-white my-16 space-y-4">
-      <H0>{post.title}</H0>
-      {post.date && <ExtraSmall>Joshua Gao · {post.date}</ExtraSmall>}
+    <Col className="min-h-screen items-center justify-center bg-gray-100">
+      <Col className="max-w-4xl mx-4 p-8 rounded-lg bg-white space-y-4">
+        <H0>{post.title}</H0>
+        {post.date && <ExtraSmall>Joshua Gao · {post.date}</ExtraSmall>}
 
-      {post.thumbnail?.endsWith(".mp4") ? (
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="rounded-lg w-full object-cover"
-        >
-          <source src={post.thumbnail} type="video/mp4" />
-        </video>
-      ) : (
-        post.thumbnail && (
-          <Image
-            src={post.thumbnail}
-            alt={post.title}
+        {post.thumbnail?.endsWith(".mp4") ? (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className="rounded-lg w-full object-cover"
-          />
-        )
-      )}
+          >
+            <source src={post.thumbnail} type="video/mp4" />
+          </video>
+        ) : (
+          post.thumbnail && (
+            <img
+              src={post.thumbnail}
+              alt={post.title}
+              className="rounded-lg w-full object-cover"
+            />
+          )
+        )}
 
-      <ActionBar claps={28} />
+        <ActionBar claps={28} />
 
-      {post.contentType === "Research" && (
-        <Col>
-          <Spacer size={8} />
-          <P>
-            <strong>Authors:</strong>{" "}
-            {post.authors.map((a, i) => (
-              <span key={i}>
-                {a}
-                {post.authors && i < post.authors.length - 1 ? ", " : ""}
-              </span>
-            ))}
-          </P>
+        {post.contentType === "Research" && (
+          <Col>
+            <Spacer size={8} />
+            <P>
+              <strong>Authors:</strong>{" "}
+              {post.authors.map((a, i) => (
+                <span key={i}>
+                  {a}
+                  {post.authors && i < post.authors.length - 1 ? ", " : ""}
+                </span>
+              ))}
+            </P>
 
-          <P>
-            <strong>Published In:</strong> {post.journal}
-          </P>
+            <P>
+              <strong>Published In:</strong> {post.journal}
+            </P>
 
-          <P>
-            <strong>Type:</strong> {post.contentType}
-          </P>
-        </Col>
-      )}
-      <Col className="space-y-4">{children}</Col>
+            <P>
+              <strong>Type:</strong> {post.contentType}
+            </P>
+          </Col>
+        )}
+        <Col className="space-y-4">{children}</Col>
+      </Col>
     </Col>
   );
 }

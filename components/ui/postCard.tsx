@@ -8,7 +8,6 @@ import {
   P,
   Spacer,
 } from "@/components/ui";
-import Image from "next/image";
 import Link from "next/link";
 import React, { useMemo } from "react";
 
@@ -66,11 +65,7 @@ export const PostCard: React.FC<PostProps> = ({
               Your browser does not support the video tag.
             </video>
           ) : (
-            <Image
-              src={thumbnail}
-              alt={title}
-              className="w-auto rounded-t-lg"
-            />
+            <img src={thumbnail} alt={title} className="rounded-t-lg" />
           )}
           <Spacer size={8} />
           <div className="flex-1 min-w-0 p-4">
