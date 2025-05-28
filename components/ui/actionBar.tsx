@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { PiHandsClappingLight } from "react-icons/pi";
-import { IoShareOutline, IoLink } from "react-icons/io5";
-import { IoLogoYoutube } from "react-icons/io";
-import { FaGithub } from "react-icons/fa";
 import { IconButton } from "@/components/ui/iconButton";
 import { P } from "@/components/ui/typography";
+import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
+import { IoLogoYoutube } from "react-icons/io";
+import { IoLink } from "react-icons/io5";
+import { PiHandsClappingLight } from "react-icons/pi";
 
 type ActionBarProps = {
   claps: number;

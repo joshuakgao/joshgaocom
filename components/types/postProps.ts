@@ -12,7 +12,7 @@ export type BaseProps = {
 };
 
 // 2. Research-specific
-export type ResearchPaperProps = BaseProps & {
+export type ResearchProps = BaseProps & {
   contentType: "Research";
   authors: string[];
   journal: string;
@@ -32,4 +32,4 @@ export type TalkProps = BaseProps & {
 };
 
 // 5. Unified post type
-export type PostProps = ResearchPaperProps | ProjectProps | TalkProps;
+export type PostProps = ResearchProps | ProjectProps | TalkProps;

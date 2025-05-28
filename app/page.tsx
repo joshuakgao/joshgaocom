@@ -1,9 +1,7 @@
 "use client";
 
 import { ProjectsList } from "@/components/content";
-import { Col, H1, H2, Row, ScrollDiv, Spacer } from "@/components/ui";
-import { useState } from "react";
-import { useMediaQuery } from "react-responsive";
+import { Col, ScrollDiv, Spacer } from "@/components/ui";
 
 export default function Home() {
   return (

@@ -1,3 +1,4 @@
+import { PostProps, ResearchProps } from "@/components/types";
 import {
   Col,
   ExtraSmall,
@@ -7,9 +8,9 @@ import {
   P,
   Spacer,
 } from "@/components/ui";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useMemo } from "react";
-import { PostProps } from "@/components/types";
 
 // Fisher-Yates shuffle
 function shuffle<T>(array: T[]): T[] {
@@ -25,7 +26,6 @@ export const PostCard: React.FC<PostProps> = ({
   slug,
   title,
   description,
-  tags,
   contentType,
   date,
   year,
@@ -40,8 +40,6 @@ export const PostCard: React.FC<PostProps> = ({
     const shuffled = shuffle(colors);
     return `linear-gradient(270deg, ${shuffled.join(", ")})`;
   }, []);
-
-  const isResearch = contentType === "Research";
 
   return (
     <Col
@@ -68,7 +66,11 @@ export const PostCard: React.FC<PostProps> = ({
               Your browser does not support the video tag.
             </video>
           ) : (
-            <img src={thumbnail} alt={title} className="w-auto rounded-t-lg" />
+            <Image
+              src={thumbnail}
+              alt={title}
+              className="w-auto rounded-t-lg"
+            />
           )}
           <Spacer size={8} />
           <div className="flex-1 min-w-0 p-4">
@@ -81,9 +83,9 @@ export const PostCard: React.FC<PostProps> = ({
             <Spacer size={4} />
 
             {/* Research-specific authors */}
-            {isResearch && (
+            {contentType === "Research" && (
               <P>
-                {(props as any).authors?.map(
+                {(props as ResearchProps).authors?.map(
                   (author: string, index: number) => (
                     <span key={index}>
                       <span
@@ -91,7 +93,9 @@ export const PostCard: React.FC<PostProps> = ({
                       >
                         {author}
                       </span>
-                      {index < (props as any).authors.length - 1 ? ", " : ""}
+                      {index < (props as ResearchProps).authors.length - 1
+                        ? ", "
+                        : ""}
                     </span>
                   )
                 )}
@@ -99,14 +103,14 @@ export const PostCard: React.FC<PostProps> = ({
             )}
 
             {/* Research-specific journal */}
-            {isResearch && (props as any).journal && (
+            {(props as ResearchProps).journal && (
               <P>
-                {(props as any).journalHighlighted ? (
+                {(props as ResearchProps).journalHighlighted ? (
                   <span className="bg-gradient-to-r from-purple-600 to-pink-500 text-transparent bg-clip-text font-bold transition-all duration-300">
-                    {(props as any).journal}
+                    {(props as ResearchProps).journal}
                   </span>
                 ) : (
-                  (props as any).journal
+                  (props as ResearchProps).journal
                 )}
               </P>
             )}

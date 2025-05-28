@@ -2,6 +2,7 @@
 
 import { ActionBar, Col, ExtraSmall, H0, H1, P, Spacer } from "@/components/ui";
 import { PostProps } from "@/components/types";
+import Image from "next/image";
 
 export function PostWrapper({
   post,
@@ -14,7 +15,7 @@ export function PostWrapper({
     return (
       <Col className="max-w-4xl mx-auto p-8 text-center space-y-2">
         <H1>Post not found</H1>
-        <P>We couldn't find the page you're looking for.</P>
+        <P>We couldn&#39;t find the page you&#39;re looking for.</P>
       </Col>
     );
   }
@@ -36,7 +37,7 @@ export function PostWrapper({
         </video>
       ) : (
         post.thumbnail && (
-          <img
+          <Image
             src={post.thumbnail}
             alt={post.title}
             className="rounded-lg w-full object-cover"

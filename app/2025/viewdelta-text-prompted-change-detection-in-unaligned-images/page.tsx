@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 export default function ViewDelta2025() {
   const pathname = usePathname();
-  const [_, year, slug] = pathname.split("/");
+  const [, year, slug] = pathname.split("/");
 
   const post = posts.find((item) => item.slug === slug && item.year === year);
 

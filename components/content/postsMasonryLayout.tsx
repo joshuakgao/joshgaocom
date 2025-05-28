@@ -1,7 +1,7 @@
 import { posts } from "@/components/content";
 import { Col, PostCard, Row, Small } from "@/components/ui";
 import { useMemo, useState } from "react";
-import { IoCalendarClearOutline, IoPricetags } from "react-icons/io5";
+import { IoCalendarClearOutline } from "react-icons/io5";
 import { RiHashtag } from "react-icons/ri";
 
 export function ProjectsList() {
