@@ -9,7 +9,7 @@ import {
 } from "@/components/ui";
 import Link from "next/link";
 import React, { useMemo } from "react";
-import { PostProps } from "@/types";
+import { PostProps } from "@/components/types";
 
 // Fisher-Yates shuffle
 function shuffle<T>(array: T[]): T[] {
@@ -41,7 +41,7 @@ export const PostCard: React.FC<PostProps> = ({
     return `linear-gradient(270deg, ${shuffled.join(", ")})`;
   }, []);
 
-  const isResearch = contentType === "research";
+  const isResearch = contentType === "Research";
 
   return (
     <Col
@@ -72,7 +72,9 @@ export const PostCard: React.FC<PostProps> = ({
           )}
           <Spacer size={8} />
           <div className="flex-1 min-w-0 p-4">
-            <Muted className="text-gray-500">{contentType}</Muted>
+            {contentType !== "Project" ? (
+              <Muted className="text-gray-500">{contentType}</Muted>
+            ) : undefined}
             <H1>
               <GradientText parentHovered={isHovered}>{title}</GradientText>
             </H1>

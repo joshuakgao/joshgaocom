@@ -1,9 +1,9 @@
-import { PostProps } from "@/types";
+import { PostProps } from "@/components/types";
 
 export const posts: PostProps[] = [
   {
+    contentType: "Research",
     slug: "viewdelta-text-prompted-change-detection-in-unaligned-images",
-    contentType: "research",
     thumbnail: "/assets/projects/2025/viewDelta/thumbnail.png",
     title: "ViewDelta: Text-Prompted Change Detection in Unaligned Images",
     authors: ["Subin Varghese", "Joshua Gao", "Vedhus Hoskere"],
@@ -18,6 +18,7 @@ export const posts: PostProps[] = [
   },
 
   {
+    contentType: "Project",
     slug: "self-hosted-cloud-storage-is-game-changing",
     thumbnail: "/assets/projects/2024/selfHostedCloud/thumbnail.jpg",
     title: "Self Hosted Cloud Storage Is Game Changing",
@@ -29,6 +30,7 @@ export const posts: PostProps[] = [
     year: "2024",
   },
   {
+    contentType: "Project",
     slug: "how-do-you-do-change-detection-on-unaligned-images-heres-how",
     title: "How Do You Do Change Detection on Unaligned Images? Here's how.",
     description:
@@ -40,29 +42,32 @@ export const posts: PostProps[] = [
     year: "2024",
   },
   {
+    contentType: "Project",
     slug: "tired-of-writing-inspection-reports-let-ai-do-it",
     title: "Tired of Writing Inspection Reports? Let AI Do It!",
     description:
       "We utilize the power of LLMs, computer vision, and change detection to automate the process of writing engineering inspection reports. Say goodbye to tedious manual work and hello to efficiency!",
     thumbnail: "/assets/projects/2025/viewDelta/thumbnail.png",
-    link: "https://github.com/tugonbob/reddit-laughs",
+    // link: "https://github.com/tugonbob/reddit-laughs",
     date: "Sep 2024",
     year: "2024",
     tags: ["AI"],
   },
   {
+    contentType: "Project",
     slug: "how-do-you-find-duplicate-images-despite-different-views-and-time-taken-hloc-might-help",
     title:
       "How do you find duplicate images despite different views and time taken? HLoc might help.",
     description:
       "Think two photos are totally different? Think again. Discover how HLoc uncovers duplicates hiding in plain sight—even when angles, lighting, or backgrounds change.",
     thumbnail: "/assets/images/cat.jpeg",
-    link: "https://github.com/tugonbob/reddit-laughs",
+    // link: "https://github.com/tugonbob/reddit-laughs",
     date: "Sep 2024",
     year: "2024",
     tags: ["AI"],
   },
   {
+    contentType: "Project",
     slug: "gptnano-beating-openais-gpt-2",
     title: "GptNano: Beating OpenAI's GPT-2",
     description:
@@ -70,20 +75,22 @@ export const posts: PostProps[] = [
     thumbnail: "/assets/projects/2024/gptNano/thumbnail.jpeg",
     date: "May 2024",
     year: "2024",
-    link: "https://github.com/tugonbob/gpt-nano",
+    // link: "https://github.com/tugonbob/gpt-nano",
     tags: ["AI"],
   },
   {
+    contentType: "Project",
     slug: "knn-image-classification",
     title: "KNN Image Classification",
     description: "A KNN image classifier trained on CIFAR-10 dataset.",
     thumbnail: "/assets/images/cat.jpeg",
     date: "2023",
     year: "2023",
-    link: "https://github.com/tugonbob/cifar-knn-classifer",
+    // link: "https://github.com/tugonbob/cifar-knn-classifer",
     tags: ["AI"],
   },
   {
+    contentType: "Project",
     slug: "how-much-is-your-home-worth-we-optimized-amachine-learning-model",
     title: "How Much Is Your Home Worth? We Optimized a Machine Learning Model",
     description:
@@ -91,24 +98,26 @@ export const posts: PostProps[] = [
     thumbnail: "/assets/projects/2023/realEstateValuation/thumbnail.mp4",
     date: "Jun 2023",
     year: "2023",
-    link: "https://github.com/tugonbob/stanford-cs229-andrew-ng/blob/main/Ch1-SupervisedLearning/1-LinearRegression/1.1.1-LmsAlgorithm.ipynb",
+    // link: "https://github.com/tugonbob/stanford-cs229-andrew-ng/blob/main/Ch1-SupervisedLearning/1-LinearRegression/1.1.1-LmsAlgorithm.ipynb",
     tags: ["AI"],
   },
   {
+    contentType: "Project",
     slug: "auto-youtube",
     title: "Auto Youtube",
     date: "2022",
     year: "2022",
-    link: "https://github.com/tugonbob/reddit-laughs",
+    // link: "https://github.com/tugonbob/reddit-laughs",
     thumbnail: "/assets/projects/2023/realEstateValuation/thumbnail.mp4",
     tags: ["Other"],
   },
   {
+    contentType: "Project",
     slug: "portfolio-tracker",
     title: "Portfolio Tracker",
     date: "2022",
     year: "2022",
-    link: "https://docs.google.com/spreadsheets/d/1xQtttuAGk5ZZ3QMbSqwCcG1vzEMsXRZjo-5jyx6V-8U/edit?usp=sharing",
+    // link: "https://docs.google.com/spreadsheets/d/1xQtttuAGk5ZZ3QMbSqwCcG1vzEMsXRZjo-5jyx6V-8U/edit?usp=sharing",
     thumbnail: "/assets/projects/2023/realEstateValuation/thumbnail.mp4",
     tags: ["Other"],
   },

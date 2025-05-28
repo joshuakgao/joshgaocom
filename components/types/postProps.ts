@@ -4,7 +4,7 @@ export type BaseProps = {
   title: string;
   description?: string;
   tags?: string[];
-  contentType: "research" | "project" | "talk"; // ← key for narrowing
+  contentType: "Research" | "Project" | "Talk"; // ← key for narrowing
   date: string;
   year: string;
   thumbnail: string;
@@ -13,7 +13,7 @@ export type BaseProps = {
 
 // 2. Research-specific
 export type ResearchPaperProps = BaseProps & {
-  contentType: "research";
+  contentType: "Research";
   authors: string[];
   journal: string;
   journalHighlighted: boolean;
@@ -21,13 +21,13 @@ export type ResearchPaperProps = BaseProps & {
 
 // 3. Project-specific
 export type ProjectProps = BaseProps & {
-  contentType: "project";
+  contentType: "Project";
   // add any project-specific fields here in the future
 };
 
 // 4. Talk-specific
 export type TalkProps = BaseProps & {
-  contentType: "talk";
+  contentType: "Talk";
   // add talk-specific fields here later
 };
 

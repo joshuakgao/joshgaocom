@@ -4,7 +4,6 @@ export * from "./col";
 export * from "./spacer";
 export * from "./scrollView";
 export * from "./screenSizeIndicator";
-export * from "./projectItem";
 export * from "./postCard";
 export * from "./header";
 export * from "./gradientText";

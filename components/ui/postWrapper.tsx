@@ -1,7 +1,7 @@
 "use client";
 
 import { ActionBar, Col, ExtraSmall, H0, H1, P, Spacer } from "@/components/ui";
-import { PostProps } from "@/types";
+import { PostProps } from "@/components/types";
 
 export function PostWrapper({
   post,
@@ -45,10 +45,10 @@ export function PostWrapper({
       )}
 
       <ActionBar claps={28} />
-      <Spacer size={8} />
 
-      {post.contentType === "research" && (
+      {post.contentType === "Research" && (
         <Col>
+          <Spacer size={8} />
           <P>
             <strong>Authors:</strong>{" "}
             {post.authors.map((a, i) => (
@@ -67,13 +67,6 @@ export function PostWrapper({
             <strong>Type:</strong> {post.contentType}
           </P>
         </Col>
-      )}
-
-      {post.description && (
-        <>
-          <Spacer size={8} />
-          <P>{post.description}</P>
-        </>
       )}
       <Col className="space-y-4">{children}</Col>
     </Col>
