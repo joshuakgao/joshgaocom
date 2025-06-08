@@ -45,7 +45,6 @@ export default function StockPortfolioTracker() {
       <PostImg
         src="/assets/projects/2022/stock-portfolio-tracker/portfolioOverview.png"
         alt="portfolio overview"
-        className="w-1/3 max-w-1/3"
       />
       <P>
         The portfolio overview sheet gives you a quick glance at your
