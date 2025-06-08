@@ -21,7 +21,7 @@ export function PostWrapper({
 
   return (
     <Col className="min-h-screen items-center justify-center bg-gray-100">
-      <Col className="max-w-4xl mx-4 p-8 rounded-lg bg-white space-y-4">
+      <Col className="max-w-4xl mx-4 p-8 my-8 rounded-lg bg-white space-y-4">
         <H0>{post.title}</H0>
         {post.date && <ExtraSmall>Joshua Gao · {post.date}</ExtraSmall>}
 
