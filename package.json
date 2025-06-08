@@ -12,6 +12,8 @@
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "eslint": "^9.28.0",
+    "eslint-config-next": "^15.3.3",
     "firebase": "^11.8.1",
     "framer-motion": "^12.12.1",
     "next": "^15.3.3",
