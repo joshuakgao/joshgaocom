@@ -52,8 +52,28 @@ export function PostList() {
   if (loading) {
     return (
       <Col className="w-full max-w-7xl mx-auto px-4 md:px-0">
+        <Col className="my-8 space-y-4">
+          <Row className="gap-2 flex-wrap items-center animate-pulse">
+            {/* Calendar icon */}
+            <div className="h-4 w-4 bg-gray-300 rounded" />
+
+            {/* Placeholder buttons */}
+            {Array.from({ length: allYears.length }).map((_, idx) => (
+              <div key={idx} className="h-6 w-12 bg-gray-200 rounded-md" />
+            ))}
+          </Row>
+          <Row className="gap-2 flex-wrap items-center animate-pulse">
+            {/* Calendar icon */}
+            <div className="h-4 w-4 bg-gray-300 rounded" />
+
+            {/* Placeholder buttons */}
+            {Array.from({ length: allYears.length }).map((_, idx) => (
+              <div key={idx} className="h-6 w-12 bg-gray-200 rounded-md" />
+            ))}
+          </Row>
+        </Col>
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
-          {Array.from({ length: 9 }).map((_, idx) => (
+          {Array.from({ length: posts.length }).map((_, idx) => (
             <div className="break-inside-avoid mb-6 w-full h-full rounded-lg bg-white shadow-sm animate-pulse">
               {/* Thumbnail placeholder */}
               <div
@@ -99,6 +119,7 @@ export function PostList() {
   return (
     <Col className="w-full max-w-7xl mx-auto px-4 md:px-0">
       {/* Filters */}
+
       <Col className="my-8 space-y-4">
         {/* Year Filter */}
         <Row className="gap-2 flex-wrap items-center">
