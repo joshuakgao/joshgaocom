@@ -2,7 +2,6 @@
 
 import { PostProps } from "@/components/types";
 import { ActionBar, Col, ExtraSmall, H0, H1, P, Spacer } from "@/components/ui";
-import { useEffect, useState } from "react";
 
 export function PostWrapper({
   post,
@@ -11,15 +10,6 @@ export function PostWrapper({
   post: PostProps | undefined;
   children?: React.ReactNode;
 }) {
-  const [isWide, setIsWide] = useState(true);
-
-  useEffect(() => {
-    const checkWidth = () => setIsWide(window.innerWidth >= 896);
-    checkWidth();
-    window.addEventListener("resize", checkWidth);
-    return () => window.removeEventListener("resize", checkWidth);
-  }, []);
-
   if (!post) {
     return (
       <Col className="max-w-4xl mx-auto p-8 text-center space-y-2">
@@ -31,9 +21,7 @@ export function PostWrapper({
   return (
     <Col className="min-h-screen items-center justify-center bg-gray-100">
       <Col
-        className={`w-full max-w-4xl mx-4 p-8 rounded-lg bg-white space-y-4 ${
-          isWide ? "my-8" : ""
-        }`}
+        className={`w-full max-w-4xl mx-4 p-8 rounded-lg bg-white space-y-4 md:my-8`}
       >
         <H0>{post.title}</H0>
         {post.date && <ExtraSmall>Joshua Gao · {post.date}</ExtraSmall>}
