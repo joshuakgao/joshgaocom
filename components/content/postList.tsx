@@ -1,5 +1,5 @@
 import { posts } from "@/components/content";
-import { Col, GradientText, H0, PostCard, Row, Small } from "@/components/ui";
+import { Col, PostCard, Row, Small } from "@/components/ui";
 import { db } from "@/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useMemo, useState } from "react";
@@ -51,10 +51,47 @@ export function PostList() {
 
   if (loading) {
     return (
-      <Col className="items-center justify-center w-full h-96">
-        <GradientText base="gradient" animate="always">
-          <H0>Hi! I'm Joshua Gao</H0>
-        </GradientText>
+      <Col className="w-full max-w-7xl mx-auto px-4 md:px-0">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
+          {Array.from({ length: 9 }).map((_, idx) => (
+            <div className="break-inside-avoid mb-6 w-full h-full rounded-lg bg-white shadow-sm animate-pulse">
+              {/* Thumbnail placeholder */}
+              <div
+                className="w-full bg-gray-200 rounded-t-lg"
+                style={{
+                  height: `${160 + Math.floor(Math.random() * 128)}px`, // random height between 160px and 224px
+                }}
+              />
+
+              <div className="flex-1 min-w-0 p-4 space-y-3">
+                {/* ContentType */}
+                <div className="h-3 w-24 bg-gray-300 rounded" />
+
+                {/* Title */}
+                <div className="h-5 w-3/4 bg-gray-300 rounded" />
+
+                {/* Authors */}
+                <div className="h-4 w-1/2 bg-gray-200 rounded" />
+
+                {/* Journal */}
+                <div className="h-4 w-1/3 bg-gray-200 rounded" />
+
+                {/* Description */}
+                <div className="h-4 w-full bg-gray-100 rounded" />
+                <div className="h-4 w-5/6 bg-gray-100 rounded" />
+
+                {/* Footer row */}
+                <div className="flex items-center justify-between pt-4">
+                  <div className="h-3 w-16 bg-gray-300 rounded" />
+                  <div className="flex gap-1 items-center">
+                    <div className="h-4 w-4 bg-gray-300 rounded-full" />
+                    <div className="h-3 w-6 bg-gray-300 rounded" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </Col>
     );
   }

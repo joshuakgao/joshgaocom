@@ -1,6 +1,6 @@
 "use client";
 
-import { PostLists } from "@/components/content";
+import { PostList } from "@/components/content";
 import { Col, ScrollDiv, Spacer } from "@/components/ui";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
     <ScrollDiv className="min-h-screen relative bg-transparent">
       <>
         <Col className="w-full flex items-center justify-center p-4">
-          <PostLists />
+          <PostList />
         </Col>
       </>
       <Spacer size={256} />
