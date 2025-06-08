@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { IoCalendarClearOutline } from "react-icons/io5";
 import { RiHashtag } from "react-icons/ri";
 
-export function PostLists() {
+export function PostList() {
   const [selectedYear, setSelectedYear] = useState<string | "All">("All");
   const [selectedTag, setSelectedTag] = useState<string | "All">("All");
   const [loading, setLoading] = useState(true);

@@ -1,2 +1,2 @@
-export * from "./postLists";
+export * from "./postList";
 export * from "./postData";
