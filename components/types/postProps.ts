@@ -8,6 +8,7 @@ export type BaseProps = {
   date: string;
   year: string;
   thumbnail: string;
+  claps: number | undefined;
   starred?: boolean;
   links?: { [key: string]: string };
 };

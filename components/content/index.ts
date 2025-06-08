@@ -1,2 +1,2 @@
-export * from "./postsMasonryLayout";
+export * from "./postLists";
 export * from "./postData";

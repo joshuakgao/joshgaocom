@@ -12,53 +12,48 @@ import { PiHandsClappingLight } from "react-icons/pi";
 import { PostProps } from "../types";
 
 export function ActionBar({ post }: { post: PostProps }) {
-  const [claps, setClaps] = useState<undefined | number>(undefined);
+  const [claps, setClaps] = useState<undefined | number>(
+    post.claps ?? undefined
+  );
   const [hasClapped, setHasClapped] = useState(false);
 
   useEffect(() => {
-    if (post.slug) {
-      const fetchlaps = async () => {
-        try {
-          const docRef = doc(db, "posts", post.slug);
-          const docSnap = await getDoc(docRef);
-          if (docSnap.exists()) {
-            const data = docSnap.data();
-            setClaps(data.claps ?? 0);
-          } else {
-            setClaps(0);
-          }
-        } catch (error) {
-          setClaps(0);
-        }
-      };
-      fetchlaps();
-    } else {
-      setClaps(0);
-    }
+    // avoid fetching claps if already fetched from db
+    if (claps !== undefined) return;
+
+    const fetchlaps = async () => {
+      const docRef = doc(db, "claps", "claps");
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        setClaps(docSnap.data()[post.slug]);
+      } else {
+        setClaps(0);
+      }
+    };
+
+    fetchlaps();
   }, []);
 
   const handleClap = async () => {
     setClaps((prev) => (prev ?? 0) + 1);
     setHasClapped(true);
-    try {
-      if (post.slug) {
-        const docRef = doc(db, "posts", post.slug);
-        const docSnap = await getDoc(docRef);
+    if (post.slug) {
+      const docRef = doc(db, "claps", "claps");
+      const docSnap = await getDoc(docRef);
 
-        if (docSnap.exists()) {
-          console.log("Document data:", docSnap.data());
-          await updateDoc(docRef, {
-            claps: increment(1),
-          });
-        } else {
-          console.log("No such document!");
-          await setDoc(docRef, {
-            claps: 1,
-          });
-        }
+      if (!docSnap.exists()) return;
+
+      const data = docSnap.data();
+      if (data.hasOwnProperty(post.slug)) {
+        await updateDoc(docRef, {
+          [post.slug]: increment(1),
+        });
+      } else {
+        await updateDoc(docRef, {
+          [post.slug]: 1,
+        });
       }
-    } catch (error) {
-      console.error("Failed to update claps:", error);
     }
   };
 

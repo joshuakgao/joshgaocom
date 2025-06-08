@@ -1,12 +1,34 @@
 import { posts } from "@/components/content";
-import { Col, PostCard, Row, Small } from "@/components/ui";
-import { useMemo, useState } from "react";
+import { Col, GradientText, H0, PostCard, Row, Small } from "@/components/ui";
+import { db } from "@/firebase";
+import { doc, getDoc } from "firebase/firestore";
+import { useEffect, useMemo, useState } from "react";
 import { IoCalendarClearOutline } from "react-icons/io5";
 import { RiHashtag } from "react-icons/ri";
 
-export function ProjectsList() {
+export function PostLists() {
   const [selectedYear, setSelectedYear] = useState<string | "All">("All");
   const [selectedTag, setSelectedTag] = useState<string | "All">("All");
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchClaps = async () => {
+      const clapsDoc = await getDoc(doc(db, "claps", "claps"));
+      if (clapsDoc.exists()) {
+        const data = clapsDoc.data();
+
+        for (const key in data) {
+          posts.forEach((post) => {
+            if (post.slug === key) {
+              post.claps = data[key];
+            }
+          });
+        }
+      }
+      setLoading(false);
+    };
+    fetchClaps();
+  }, []);
 
   const allYears = useMemo(() => {
     const years = new Set(posts.map((p) => p.year));
@@ -26,6 +48,16 @@ export function ProjectsList() {
         (selectedTag === "All" || post.tags?.includes(selectedTag))
     );
   }, [selectedYear, selectedTag]);
+
+  if (loading) {
+    return (
+      <Col className="items-center justify-center w-full h-96">
+        <GradientText base="gradient" animate="always">
+          <H0>Hi! I'm Joshua Gao</H0>
+        </GradientText>
+      </Col>
+    );
+  }
 
   return (
     <Col className="w-full max-w-7xl mx-auto px-4 md:px-0">

@@ -1,6 +1,6 @@
 import { PostProps } from "@/components/types";
 
-export const posts: PostProps[] = [
+export let posts: PostProps[] = [
   {
     contentType: "Research",
     slug: "viewdelta-text-prompted-change-detection-in-unaligned-images",
@@ -11,10 +11,10 @@ export const posts: PostProps[] = [
     journalHighlighted: false,
     description: `Can you spot the difference between these two images? ViewDelta can! We show you how ViewDelta solves text-prompted change detection in many domains.`,
     date: "Nov 2025",
+    claps: undefined,
     // link: "https://joshuakgao.github.io/viewdelta/",
     tags: ["Research Paper", "AI"],
     year: "2025",
-    starred: true,
   },
 
   {
@@ -26,6 +26,7 @@ export const posts: PostProps[] = [
       "All it takes to avoid Google Drive and DropBox subscriptions is a RasberryPi and NextCloud.",
     // link: "https://github.com/tugonbob/reddit-laughs",
     date: "Dec 2024",
+    claps: undefined,
     tags: ["Hardware"],
     year: "2024",
   },
@@ -38,6 +39,7 @@ export const posts: PostProps[] = [
     thumbnail: "/assets/images/cat.jpeg",
     // link: "https://github.com/tugonbob/reddit-laughs",
     date: "Nov 2024",
+    claps: undefined,
     tags: ["AI"],
     year: "2024",
   },
@@ -51,6 +53,7 @@ export const posts: PostProps[] = [
     // link: "https://github.com/tugonbob/reddit-laughs",
     date: "Sep 2024",
     year: "2024",
+    claps: undefined,
     tags: ["AI"],
   },
   {
@@ -64,6 +67,7 @@ export const posts: PostProps[] = [
     // link: "https://github.com/tugonbob/reddit-laughs",
     date: "Sep 2024",
     year: "2024",
+    claps: undefined,
     tags: ["AI"],
   },
   {
@@ -76,6 +80,7 @@ export const posts: PostProps[] = [
     date: "May 2024",
     year: "2024",
     // link: "https://github.com/tugonbob/gpt-nano",
+    claps: undefined,
     tags: ["AI"],
   },
   {
@@ -87,6 +92,7 @@ export const posts: PostProps[] = [
     date: "2023",
     year: "2023",
     // link: "https://github.com/tugonbob/cifar-knn-classifer",
+    claps: undefined,
     tags: ["AI"],
   },
   {
@@ -99,6 +105,7 @@ export const posts: PostProps[] = [
     date: "Jun 2023",
     year: "2023",
     // link: "https://github.com/tugonbob/stanford-cs229-andrew-ng/blob/main/Ch1-SupervisedLearning/1-LinearRegression/1.1.1-LmsAlgorithm.ipynb",
+    claps: undefined,
     tags: ["AI"],
   },
   {
@@ -109,6 +116,7 @@ export const posts: PostProps[] = [
     year: "2022",
     // link: "https://github.com/tugonbob/reddit-laughs",
     thumbnail: "/assets/projects/2023/realEstateValuation/thumbnail.mp4",
+    claps: undefined,
     tags: ["Other"],
   },
   {
@@ -118,6 +126,7 @@ export const posts: PostProps[] = [
     date: "Dec 2022",
     year: "2022",
     thumbnail: "/assets/projects/2022/stock-portfolio-tracker/thumbnail.png",
+    claps: undefined,
     tags: ["Other"],
     links: {
       googleDrive:

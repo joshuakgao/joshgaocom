@@ -6,10 +6,12 @@ import {
   H1,
   Muted,
   P,
+  Row,
   Spacer,
 } from "@/components/ui";
 import Link from "next/link";
 import React, { useMemo } from "react";
+import { PiHandsClappingLight } from "react-icons/pi";
 
 // Fisher-Yates shuffle
 function shuffle<T>(array: T[]): T[] {
@@ -30,6 +32,7 @@ export const PostCard: React.FC<PostProps> = ({
   year,
   thumbnail,
   starred,
+  claps,
   ...props
 }) => {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -113,7 +116,15 @@ export const PostCard: React.FC<PostProps> = ({
             <Spacer size={16} />
             <P>{description}</P>
             <Spacer size={16} />
-            <ExtraSmall>{date}</ExtraSmall>
+            <Row className="items-center justify-between">
+              <ExtraSmall>{date}</ExtraSmall>
+              {claps && (
+                <Row className="gap-x-[2px]">
+                  <PiHandsClappingLight size={16} className="text-gray-500" />
+                  <ExtraSmall className="mt-0.5">{claps}</ExtraSmall>
+                </Row>
+              )}
+            </Row>
           </div>
         </div>
       </Link>
