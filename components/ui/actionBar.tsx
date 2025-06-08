@@ -6,6 +6,7 @@ import { IoLogoYoutube } from "react-icons/io";
 import { IoLink } from "react-icons/io5";
 import { PiHandsClappingLight } from "react-icons/pi";
 import { PostProps } from "../types";
+import { GrDocumentPdf } from "react-icons/gr";
 
 type ActionBarProps = {
   claps: number;
@@ -68,6 +69,11 @@ export function ActionBar({ claps, post }: ActionBarProps) {
             onClick={() => window.open(post.links?.youtube, "_blank")}
           >
             <IoLogoYoutube size={22} className="hover:text-red-500" />
+          </IconButton>
+        )}
+        {post.links?.pdf && (
+          <IconButton onClick={() => window.open(post.links?.pdf, "_blank")}>
+            <GrDocumentPdf size={22} />
           </IconButton>
         )}
         {post.links?.website && (
