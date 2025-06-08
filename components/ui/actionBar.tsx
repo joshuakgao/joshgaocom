@@ -2,11 +2,11 @@ import { IconButton } from "@/components/ui/iconButton";
 import { ExtraSmall, P } from "@/components/ui/typography";
 import { useState } from "react";
 import { FaGithub, FaGoogleDrive } from "react-icons/fa";
+import { GrDocumentPdf } from "react-icons/gr";
 import { IoLogoYoutube } from "react-icons/io";
 import { IoLink } from "react-icons/io5";
 import { PiHandsClappingLight } from "react-icons/pi";
 import { PostProps } from "../types";
-import { GrDocumentPdf } from "react-icons/gr";
 
 type ActionBarProps = {
   claps: number;
@@ -29,7 +29,7 @@ export function ActionBar({ claps, post }: ActionBarProps) {
     if (!hasClapped) return "";
     const offset = clapCount - claps;
     const color = colorHexes[offset % colorHexes.length];
-    return `text-[${color}]`;
+    return color;
   };
 
   const clapColor = getClapColor();
@@ -45,9 +45,10 @@ export function ActionBar({ claps, post }: ActionBarProps) {
         >
           <PiHandsClappingLight
             size={22}
-            className={`${clapColor} ${transitionClass} pointer-events-none`}
+            className={`${transitionClass} pointer-events-none`}
+            color={clapColor}
           />
-          <P className={`${clapColor} ${transitionClass} pointer-events-none`}>
+          <P className={`${transitionClass} pointer-events-none`}>
             {clapCount}
           </P>
         </IconButton>
