@@ -14,16 +14,16 @@ export function PostList() {
   useEffect(() => {
     const fetchClaps = async () => {
       const clapsDoc = await getDoc(doc(db, "claps", "claps"));
-      if (clapsDoc.exists()) {
-        const data = clapsDoc.data();
+      if (!clapsDoc.exists()) return setLoading(false);
 
-        for (const key in data) {
-          posts.forEach((post) => {
-            if (post.slug === key) {
-              post.claps = data[key];
-            }
-          });
-        }
+      const data = clapsDoc.data();
+
+      for (const key in data) {
+        posts.forEach((post) => {
+          if (post.slug === key) {
+            post.claps = data[key];
+          }
+        });
       }
       setLoading(false);
     };

@@ -2,7 +2,7 @@ import { Row } from "@/components/ui";
 import { IconButton } from "@/components/ui/iconButton";
 import { ExtraSmall, P } from "@/components/ui/typography";
 import { db } from "@/firebase";
-import { doc, getDoc, increment, setDoc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, increment, updateDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { FaGithub, FaGoogleDrive } from "react-icons/fa";
 import { GrDocumentPdf } from "react-icons/gr";
@@ -12,24 +12,24 @@ import { PiHandsClappingLight } from "react-icons/pi";
 import { PostProps } from "../types";
 
 export function ActionBar({ post }: { post: PostProps }) {
-  const [claps, setClaps] = useState<undefined | number>(
-    post.claps ?? undefined
-  );
+  const [claps, setClaps] = useState<undefined | number>(post.claps ?? 0);
   const [hasClapped, setHasClapped] = useState(false);
 
   useEffect(() => {
     // avoid fetching claps if already fetched from db
-    if (claps !== undefined) return;
+    if (post.claps !== undefined) return;
 
     const fetchlaps = async () => {
       const docRef = doc(db, "claps", "claps");
       const docSnap = await getDoc(docRef);
 
-      if (docSnap.exists()) {
-        setClaps(docSnap.data()[post.slug]);
-      } else {
-        setClaps(0);
-      }
+      if (!docSnap.exists()) return;
+
+      const data = docSnap.data();
+      if (!data.hasOwnProperty(post.slug)) return;
+
+      // get claps if exists for this post
+      setClaps(data[post.slug]);
     };
 
     fetchlaps();
