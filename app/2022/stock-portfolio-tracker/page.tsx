@@ -40,11 +40,12 @@ export default function StockPortfolioTracker() {
           this, so don't mess it up!
         </span>
       </P>
+
       <H1>Portfolio Overview</H1>
       <PostImg
         src="/assets/projects/2022/stock-portfolio-tracker/portfolioOverview.png"
         alt="portfolio overview"
-        className="w-2/5"
+        className="w-1/3 max-w-1/3"
       />
       <P>
         The portfolio overview sheet gives you a quick glance at your
@@ -52,6 +53,7 @@ export default function StockPortfolioTracker() {
         or loss. You can also see the percentage of your portfolio in each
         stock, which helps you understand your diversification.
       </P>
+
       <H1>Position Breakdown</H1>
       <PostImg
         src="/assets/projects/2022/stock-portfolio-tracker/positionsSheet.png"
@@ -80,6 +82,7 @@ export default function StockPortfolioTracker() {
         yielding 50% on his Coca-Cola stock! Imagine paying $1,000 for a stock,
         and making $500 every year 😳.
       </P>
+
       <H1>Performance Against S&P500 Tracker</H1>
       <PostImg
         src="/assets/projects/2022/stock-portfolio-tracker/performanceTracker.png"
@@ -100,6 +103,7 @@ export default function StockPortfolioTracker() {
         You can also see this chart in periods of 1 day, 1 month, YTD, 1 year, 5
         years, and the lifetime chart.
       </P>
+
       <H1>Follow Super Investor Trades</H1>
       <P>
         Have you ever wondered what the biggest investors in the world are
