@@ -56,7 +56,7 @@ export function PostWrapper({
             />
           )
         )}
-        <ActionBar claps={28} post={post} />
+        <ActionBar post={post} />
         {post.contentType === "Research" && (
           <Col>
             <Spacer size={8} />
