@@ -10,3 +10,5 @@ export * from "./gradientText";
 export * from "./postWrapper";
 export * from "./actionBar";
 export * from "./iconButton";
+export * from "./postImg";
+export * from "./postLink";

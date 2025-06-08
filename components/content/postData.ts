@@ -113,12 +113,15 @@ export const posts: PostProps[] = [
   },
   {
     contentType: "Project",
-    slug: "portfolio-tracker",
-    title: "Portfolio Tracker",
-    date: "2022",
+    slug: "stock-portfolio-tracker",
+    title: "How to Track Your Stock Portfolio with Google Sheets",
+    date: "Dec 2022",
     year: "2022",
-    // link: "https://docs.google.com/spreadsheets/d/1xQtttuAGk5ZZ3QMbSqwCcG1vzEMsXRZjo-5jyx6V-8U/edit?usp=sharing",
-    thumbnail: "/assets/projects/2023/realEstateValuation/thumbnail.mp4",
+    thumbnail: "/assets/projects/2022/stock-portfolio-tracker/thumbnail.png",
     tags: ["Other"],
+    links: {
+      googleDrive:
+        "https://docs.google.com/spreadsheets/d/1wrPfNQtEmuMB3GUdjDgKffgdOIyPkrvQC0l_QhYNKxE/edit?usp=sharing",
+    },
   },
 ];

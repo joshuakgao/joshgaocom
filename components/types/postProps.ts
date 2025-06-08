@@ -9,6 +9,7 @@ export type BaseProps = {
   year: string;
   thumbnail: string;
   starred?: boolean;
+  links?: { [key: string]: string };
 };
 
 // 2. Research-specific
