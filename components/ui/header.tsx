@@ -1,9 +1,8 @@
 "use client";
 
-import { Col, H1, H2, Row, GradientText } from "@/components/ui";
+import { GradientText, H1, H2, Row } from "@/components/ui";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
+import { useState } from "react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,25 +10,28 @@ export default function Header() {
   return (
     <Row className="items-center justify-center px-2 shadow-[0_4px_8px_-4px_rgba(0,0,0,0.10)] w-full bg-white">
       <Row className="w-full mx-8 items-center justify-between">
-        <Col>
+        <Row>
           <Link href="/">
             <H1 className="translate-y-[5px]">
               <GradientText>Joshua Gao,</GradientText>
             </H1>
+            <H2 className="pt-0 pb-0 text-gray-500 translate-y-[-5px]">
+              deep learning researcher at
+            </H2>
           </Link>
-          <H2 className="pt-0 pb-0 text-gray-500 translate-y-[-5px]">
-            deep learning researcher at{" "}
-            <Link
-              href="https://sail.cive.uh.edu/"
-              target="_blank"
-              rel="noopener noreferrer"
+          <Link
+            href="https://sail.cive.uh.edu/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GradientText
+              base="gradient"
+              className="font-medium translate-y-[12px] translate-x-[5px]"
             >
-              <GradientText base="gradient" className="font-medium">
-                SAIL
-              </GradientText>
-            </Link>
-          </H2>
-        </Col>
+              SAIL
+            </GradientText>
+          </Link>
+        </Row>
 
         {/* Hamburger Menu for Mobile */}
         <div className="md:hidden relative">
