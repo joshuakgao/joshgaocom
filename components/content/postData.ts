@@ -16,19 +16,19 @@ export let posts: PostProps[] = [
   //   tags: ["Research Paper", "AI"],
   //   year: "2025",
   // },
-  // {
-  //   contentType: "Project",
-  //   slug: "self-hosted-cloud-storage-is-game-changing",
-  //   thumbnail: "/assets/projects/2024/selfHostedCloud/thumbnail.jpg",
-  //   title: "Self Hosted Cloud Storage Is Game Changing",
-  //   description:
-  //     "All it takes to avoid Google Drive and DropBox subscriptions is a RasberryPi and NextCloud.",
-  //   // link: "https://github.com/tugonbob/reddit-laughs",
-  //   date: "Dec 2024",
-  //   claps: undefined,
-  //   tags: ["Hardware"],
-  //   year: "2024",
-  // },
+  {
+    contentType: "Project",
+    slug: "self-hosted-cloud-storage",
+    thumbnail: "/assets/projects/2024/self-hosted-cloud-storage/thumbnail.jpg",
+    title: "Self Hosted NextCloud Is Game Changing",
+    description:
+      "All it takes to avoid Google Drive and DropBox subscriptions is a RasberryPi and NextCloud.",
+    links: { website: "https://cloud.joshgao.com" },
+    date: "Dec 2024",
+    claps: undefined,
+    tags: ["Hardware"],
+    year: "2024",
+  },
   // {
   //   contentType: "Project",
   //   slug: "how-do-you-do-change-detection-on-unaligned-images-heres-how",

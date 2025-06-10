@@ -32,13 +32,13 @@ export const H1 = createComponent<HTMLHeadingElement>(
 
 export const H2 = createComponent<HTMLHeadingElement>(
   "h2",
-  "scroll-m-20 py-2 text-lg font-medium tracking-tight first:mt-0 font-roboto",
+  "scroll-m-20 py-2 text-xl font-medium tracking-tight first:mt-0 font-roboto",
   "H2"
 );
 
 export const H3 = createComponent<HTMLHeadingElement>(
   "h3",
-  "scroll-m-20 text-lg font-bold tracking-tight font-roboto",
+  "scroll-m-20 text-lg font-medium tracking-tight font-roboto",
   "H3"
 );
 
