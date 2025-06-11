@@ -163,33 +163,33 @@ export default function SelfHostedCloud() {
       <P>
         Here's a breakdown of the costs for this self-hosted cloud storage
         setup:
-        <List>
-          <li>
-            <b>Raspberry Pi 5 (8GB RAM):</b> $75
-          </li>
-          <li>
-            <b>Pironman 5 Case:</b> $79
-          </li>
-          <li>
-            <b>NVMe SSD (1TB - 8TB):</b> ~$50 - $400 (depending on capacity)
-          </li>
-          <li>
-            <b>USB WiFi Dongle (optional):</b> ~$10
-          </li>
-          <li>
-            <b>Ngrok Subscription (optional, for remote access):</b> $10/month
-          </li>
-          <li>
-            <b>Domain Name (optional, for remote access):</b> ~$10/year
-          </li>
-        </List>
-        <P>
-          <b>Estimated one-time hardware cost:</b> $214 - $564+ (depending on
-          SSD size and optional accessories)
-        </P>
-        <P>
-          <b>Estimated recurring cost:</b> $10/month (Ngrok), $10/year (domain)
-        </P>
+      </P>
+      <List>
+        <li>
+          <P>Raspberry Pi 5 (8GB RAM): $75</P>
+        </li>
+        <li>
+          <P>Pironman 5 Case: $79</P>
+        </li>
+        <li>
+          <P>NVMe SSD (1TB - 8TB): ~$50 - $400 (depending on capacity)</P>
+        </li>
+        <li>
+          <P>USB WiFi Dongle (optional): ~$10</P>
+        </li>
+        <li>
+          <P>Ngrok Subscription (optional, for remote access): $10/month</P>
+        </li>
+        <li>
+          <P>Domain Name (optional, for remote access): ~$10/year</P>
+        </li>
+      </List>
+      <P>
+        <b>Estimated one-time hardware cost:</b> $214 - $564+ (depending on SSD
+        size and optional accessories)
+      </P>
+      <P>
+        <b>Estimated recurring cost:</b> $10/month (Ngrok), $10/year (domain)
       </P>
       <P>
         I chose a 2TB NVMe SSD, which cost me $120, which is a great balance
