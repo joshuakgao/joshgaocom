@@ -1,14 +1,10 @@
 "use client";
 
-import { posts } from "@/components/content";
+import { getPostMetadata } from "@/components/content";
 import { P, PostWrapper } from "@/components/ui";
-import { usePathname } from "next/navigation";
 
-export default function ViewDelta2025() {
-  const pathname = usePathname();
-  const [, year, slug] = pathname.split("/");
-
-  const post = posts.find((item) => item.slug === slug && item.year === year);
+export default function ViewDelta() {
+  const { year, slug, assetsPath, post } = getPostMetadata();
 
   return (
     <PostWrapper post={post}>

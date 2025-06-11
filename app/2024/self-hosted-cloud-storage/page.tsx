@@ -1,8 +1,7 @@
 "use client";
 
-import { posts } from "@/components/content";
+import { getPostMetadata } from "@/components/content";
 import {
-  ExtraSmall,
   H1,
   H2,
   InlineCode,
@@ -13,8 +12,6 @@ import {
   PostWrapper,
   Small,
 } from "@/components/ui";
-import { usePathname } from "next/navigation";
-import { getPostMetadata } from "@/components/content";
 
 export default function SelfHostedCloud() {
   const { year, slug, assetsPath, post } = getPostMetadata();

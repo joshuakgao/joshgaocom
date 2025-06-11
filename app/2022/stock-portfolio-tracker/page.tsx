@@ -1,14 +1,10 @@
 "use client";
 
-import { posts } from "@/components/content";
+import { getPostMetadata } from "@/components/content";
 import { H1, P, PostImg, PostLink, PostWrapper } from "@/components/ui";
-import { usePathname } from "next/navigation";
 
 export default function StockPortfolioTracker() {
-  const pathname = usePathname();
-  const [, year, slug] = pathname.split("/");
-
-  const post = posts.find((item) => item.slug === slug && item.year === year);
+  const { year, slug, assetsPath, post } = getPostMetadata();
 
   return (
     <PostWrapper post={post}>
@@ -27,10 +23,7 @@ export default function StockPortfolioTracker() {
         <span className="font-mono">Extensions {">"} App Script.</span>
       </P>
       <H1>Trade History</H1>
-      <PostImg
-        src="/assets/projects/2022/stock-portfolio-tracker/historySheet.png"
-        alt="history sheet"
-      />
+      <PostImg src={`${assetsPath}/historySheet.png`} alt="history sheet" />
       <P>
         First up, we have a sheet where you can track all your trades. You can
         enter the date, ticker, type of transaction, number of shares, and price
@@ -43,7 +36,7 @@ export default function StockPortfolioTracker() {
 
       <H1>Portfolio Overview</H1>
       <PostImg
-        src="/assets/projects/2022/stock-portfolio-tracker/portfolioOverview.png"
+        src={`${assetsPath}portfolioOverview.png`}
         alt="portfolio overview"
       />
       <P>
@@ -55,7 +48,7 @@ export default function StockPortfolioTracker() {
 
       <H1>Position Breakdown</H1>
       <PostImg
-        src="/assets/projects/2022/stock-portfolio-tracker/positionsSheet.png"
+        src={`${assetsPath}positionsSheet.png`}
         alt="positions sheet"
         className="max-w-none"
       />
@@ -84,7 +77,7 @@ export default function StockPortfolioTracker() {
 
       <H1>Performance Against S&P500 Tracker</H1>
       <PostImg
-        src="/assets/projects/2022/stock-portfolio-tracker/performanceTracker.png"
+        src={`${assetsPath}performanceTracker.png`}
         alt="performance sheet"
       />
       <P>
@@ -109,7 +102,7 @@ export default function StockPortfolioTracker() {
         buying? Well, I have a section for that too!
       </P>
       <PostImg
-        src="/assets/projects/2022/stock-portfolio-tracker/superInvestors.png"
+        src={`${assetsPath}superInvestors.png`}
         alt="super investor trades"
       />
       <P>
