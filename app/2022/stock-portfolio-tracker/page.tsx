@@ -36,7 +36,7 @@ export default function StockPortfolioTracker() {
 
       <H1>Portfolio Overview</H1>
       <PostImg
-        src={`${assetsPath}portfolioOverview.png`}
+        src={`${assetsPath}/portfolioOverview.png`}
         alt="portfolio overview"
       />
       <P>
@@ -48,7 +48,7 @@ export default function StockPortfolioTracker() {
 
       <H1>Position Breakdown</H1>
       <PostImg
-        src={`${assetsPath}positionsSheet.png`}
+        src={`${assetsPath}/positionsSheet.png`}
         alt="positions sheet"
         className="max-w-none"
       />
@@ -77,7 +77,7 @@ export default function StockPortfolioTracker() {
 
       <H1>Performance Against S&P500 Tracker</H1>
       <PostImg
-        src={`${assetsPath}performanceTracker.png`}
+        src={`${assetsPath}/performanceTracker.png`}
         alt="performance sheet"
       />
       <P>
@@ -102,7 +102,7 @@ export default function StockPortfolioTracker() {
         buying? Well, I have a section for that too!
       </P>
       <PostImg
-        src={`${assetsPath}superInvestors.png`}
+        src={`${assetsPath}/superInvestors.png`}
         alt="super investor trades"
       />
       <P>
