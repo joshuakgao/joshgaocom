@@ -5,6 +5,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useMemo, useState } from "react";
 import { IoCalendarClearOutline } from "react-icons/io5";
 import { RiHashtag } from "react-icons/ri";
+import Masonry from "react-masonry-css";
 
 export function PostList() {
   const [selectedYear, setSelectedYear] = useState<string | "All">("All");
@@ -12,7 +13,8 @@ export function PostList() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchClaps = async () => {
+    const fetchClapsAndViews = async () => {
+      // Fetch claps
       const clapsDoc = await getDoc(doc(db, "claps", "claps"));
       if (!clapsDoc.exists()) return setLoading(false);
 
@@ -25,9 +27,22 @@ export function PostList() {
           }
         });
       }
+
+      // Fetch views
+      const viewsDoc = await getDoc(doc(db, "views", "views"));
+      if (!viewsDoc.exists()) return setLoading(false);
+      const viewsData = viewsDoc.data();
+      for (const key in viewsData) {
+        posts.forEach((post) => {
+          if (post.slug === key) {
+            post.views = viewsData[key];
+          }
+        });
+      }
+
       setLoading(false);
     };
-    fetchClaps();
+    fetchClapsAndViews();
   }, []);
 
   const allYears = useMemo(() => {
@@ -74,14 +89,12 @@ export function PostList() {
         </Col>
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
           {Array.from({ length: posts.length }).map((_, idx) => (
-            <div className="break-inside-avoid mb-6 w-full h-full rounded-lg bg-white shadow-sm animate-pulse">
+            <div
+              key={idx}
+              className="break-inside-avoid mb-6 w-full h-full rounded-lg bg-white shadow-sm animate-pulse"
+            >
               {/* Thumbnail placeholder */}
-              <div
-                className="w-full bg-gray-200 rounded-t-lg"
-                style={{
-                  height: `${160 + Math.floor(Math.random() * 128)}px`, // random height between 160px and 224px
-                }}
-              />
+              <div className="w-full bg-gray-200 rounded-t-lg h-[300px]" />
 
               <div className="flex-1 min-w-0 p-4 space-y-3">
                 {/* ContentType */}
@@ -119,7 +132,6 @@ export function PostList() {
   return (
     <Col className="w-full max-w-7xl mx-auto px-4 md:px-0">
       {/* Filters */}
-
       <Col className="my-8 space-y-4">
         {/* Year Filter */}
         <Row className="gap-2 flex-wrap items-center">
@@ -177,18 +189,17 @@ export function PostList() {
           )}
         </Row>
       </Col>
-
-      {/* Masonry Cards - Horizontal First, Then Vertical */}
-      <div className="flex flex-wrap -mx-2">
+      <Masonry
+        breakpointCols={{ default: 3, 1024: 2, 768: 1 }}
+        className="flex -ml-4"
+        columnClassName="pl-4"
+      >
         {filteredProjects.map((props, idx) => (
-          <div
-            key={props.slug || idx}
-            className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-6 flex-shrink-0"
-          >
+          <div key={props.slug || idx} className="mb-4">
             <PostCard {...props} />
           </div>
         ))}
-      </div>
+      </Masonry>
     </Col>
   );
 }

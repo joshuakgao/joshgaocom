@@ -12,6 +12,7 @@ export let posts: PostProps[] = [
   //   description: `Can you spot the difference between these two images? ViewDelta can! We show you how ViewDelta solves text-prompted change detection in many domains.`,
   //   date: "Nov 2025",
   //   claps: undefined,
+  //   views:undefined,
   //   // link: "https://joshuakgao.github.io/viewdelta/",
   //   tags: ["Research Paper", "AI"],
   //   year: "2025",
@@ -26,6 +27,7 @@ export let posts: PostProps[] = [
     links: { website: "https://cloud.joshgao.com" },
     date: "Dec 2024",
     claps: undefined,
+    views: undefined,
     tags: ["Hardware"],
     year: "2024",
   },
@@ -39,6 +41,7 @@ export let posts: PostProps[] = [
   //   // link: "https://github.com/tugonbob/reddit-laughs",
   //   date: "Nov 2024",
   //   claps: undefined,
+  //   views: undefined,
   //   tags: ["AI"],
   //   year: "2024",
   // },
@@ -53,6 +56,7 @@ export let posts: PostProps[] = [
   //   date: "Sep 2024",
   //   year: "2024",
   //   claps: undefined,
+  //   views: undefined,
   //   tags: ["AI"],
   // },
   // {
@@ -67,6 +71,7 @@ export let posts: PostProps[] = [
   //   date: "Sep 2024",
   //   year: "2024",
   //   claps: undefined,
+  //   views: undefined,
   //   tags: ["AI"],
   // },
   // {
@@ -80,6 +85,7 @@ export let posts: PostProps[] = [
   //   year: "2024",
   //   // link: "https://github.com/tugonbob/gpt-nano",
   //   claps: undefined,
+  //   views: undefined,
   //   tags: ["AI"],
   // },
   // {
@@ -92,6 +98,7 @@ export let posts: PostProps[] = [
   //   year: "2023",
   //   // link: "https://github.com/tugonbob/cifar-knn-classifer",
   //   claps: undefined,
+  //   views: undefined,
   //   tags: ["AI"],
   // },
   // {
@@ -105,6 +112,7 @@ export let posts: PostProps[] = [
   //   year: "2023",
   //   // link: "https://github.com/tugonbob/stanford-cs229-andrew-ng/blob/main/Ch1-SupervisedLearning/1-LinearRegression/1.1.1-LmsAlgorithm.ipynb",
   //   claps: undefined,
+  //   views: undefined,
   //   tags: ["AI"],
   // },
   // {
@@ -116,6 +124,7 @@ export let posts: PostProps[] = [
   //   // link: "https://github.com/tugonbob/reddit-laughs",
   //   thumbnail: "/assets/projects/2023/realEstateValuation/thumbnail.mp4",
   //   claps: undefined,
+  //   views: undefined,
   //   tags: ["Other"],
   // },
   {
@@ -126,6 +135,7 @@ export let posts: PostProps[] = [
     year: "2022",
     thumbnail: "/assets/projects/2022/stock-portfolio-tracker/thumbnail.png",
     claps: undefined,
+    views: undefined,
     tags: ["Other"],
     links: {
       googleDrive:

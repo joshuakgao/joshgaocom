@@ -9,17 +9,19 @@ import { GrDocumentPdf } from "react-icons/gr";
 import { IoLogoYoutube } from "react-icons/io";
 import { IoLink } from "react-icons/io5";
 import { PiHandsClappingLight } from "react-icons/pi";
+import { PiEye } from "react-icons/pi";
 import { PostProps } from "../types";
 
 export function ActionBar({ post }: { post: PostProps }) {
   const [claps, setClaps] = useState<undefined | number>(post.claps ?? 0);
+  const [views, setViews] = useState<undefined | number>(post.views ?? 0);
   const [hasClapped, setHasClapped] = useState(false);
 
   useEffect(() => {
     // avoid fetching claps if already fetched from db
     if (post.claps !== undefined) return;
 
-    const fetchlaps = async () => {
+    const fetchClaps = async () => {
       const docRef = doc(db, "claps", "claps");
       const docSnap = await getDoc(docRef);
 
@@ -32,7 +34,50 @@ export function ActionBar({ post }: { post: PostProps }) {
       setClaps(data[post.slug]);
     };
 
-    fetchlaps();
+    fetchClaps();
+  }, []);
+
+  useEffect(() => {
+    // avoid fetching views if already fetched from db
+    if (post.claps !== undefined) return;
+
+    const fetchViews = async () => {
+      const docRef = doc(db, "views", "views");
+      const docSnap = await getDoc(docRef);
+
+      if (!docSnap.exists()) return;
+
+      const data = docSnap.data();
+      if (!data.hasOwnProperty(post.slug)) return;
+
+      // update views count for this post
+      setViews(data[post.slug]);
+    };
+
+    fetchViews();
+  }, []);
+
+  useEffect(() => {
+    const incrementViews = async () => {
+      if (!post.slug) return;
+
+      const docRef = doc(db, "views", "views");
+      const docSnap = await getDoc(docRef);
+      if (!docSnap.exists()) return;
+
+      const data = docSnap.data();
+      if (data.hasOwnProperty(post.slug)) {
+        await updateDoc(docRef, {
+          [post.slug]: increment(1),
+        });
+      } else {
+        await updateDoc(docRef, {
+          [post.slug]: 1,
+        });
+      }
+      setViews((prev) => (prev ?? 0) + 1);
+    };
+    incrementViews();
   }, []);
 
   const handleClap = async () => {
@@ -72,6 +117,10 @@ export function ActionBar({ post }: { post: PostProps }) {
     <Row className="justify-between border-t border-b py-3 px-2 text-gray-500 text-sm">
       {/* Left side */}
       <Row className="gap-2">
+        <Row className="gap-1">
+          <PiEye size={22} />
+          <P>{views}</P>
+        </Row>
         <IconButton
           onClick={handleClap}
           className="flex items-center gap-1 border-none"

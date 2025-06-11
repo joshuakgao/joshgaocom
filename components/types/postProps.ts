@@ -9,6 +9,7 @@ export type BaseProps = {
   year: string;
   thumbnail: string;
   claps: number | undefined;
+  views: number | undefined;
   starred?: boolean;
   links?: { [key: string]: string };
 };

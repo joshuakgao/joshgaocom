@@ -11,7 +11,7 @@ import {
 } from "@/components/ui";
 import Link from "next/link";
 import React, { useMemo } from "react";
-import { PiHandsClappingLight } from "react-icons/pi";
+import { PiEye, PiHandsClappingLight } from "react-icons/pi";
 
 // Fisher-Yates shuffle
 function shuffle<T>(array: T[]): T[] {
@@ -33,6 +33,7 @@ export const PostCard: React.FC<PostProps> = ({
   thumbnail,
   starred,
   claps,
+  views,
   ...props
 }) => {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -45,7 +46,7 @@ export const PostCard: React.FC<PostProps> = ({
 
   return (
     <Col
-      className={`group flex w-auto h-full shadow-sm rounded-lg bg-white cursor-pointer hover:shadow-lg ${
+      className={`group flex w-auto shadow-sm rounded-lg bg-white cursor-pointer hover:shadow-lg ${
         starred ? "relative p-[6px]" : ""
       } transition-transform`}
       style={
@@ -118,12 +119,20 @@ export const PostCard: React.FC<PostProps> = ({
             <Spacer size={16} />
             <Row className="items-center justify-between">
               <ExtraSmall>{date}</ExtraSmall>
-              {claps && (
-                <Row className="gap-x-[2px]">
-                  <PiHandsClappingLight size={16} className="text-gray-500" />
-                  <ExtraSmall className="mt-0.5">{claps}</ExtraSmall>
-                </Row>
-              )}
+              <Row>
+                {claps && (
+                  <Row className="gap-x-[2px]">
+                    <PiHandsClappingLight size={16} className="text-gray-500" />
+                    <ExtraSmall className="mt-0.5">{claps}</ExtraSmall>
+                  </Row>
+                )}
+                {views && (
+                  <Row className="gap-x-[4px] ml-2">
+                    <PiEye size={17} className="text-gray-500 mt-0.5" />
+                    <ExtraSmall className="mt-0.5">{views}</ExtraSmall>
+                  </Row>
+                )}
+              </Row>
             </Row>
           </div>
         </div>
