@@ -178,10 +178,13 @@ export function PostList() {
         </Row>
       </Col>
 
-      {/* Masonry Cards */}
-      <div className="columns-1 sm:columns-2 lg:columns-3">
+      {/* Masonry Cards - Horizontal First, Then Vertical */}
+      <div className="flex flex-wrap -mx-2">
         {filteredProjects.map((props, idx) => (
-          <div key={props.slug || idx} className="break-inside-avoid mb-6">
+          <div
+            key={props.slug || idx}
+            className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-6 flex-shrink-0"
+          >
             <PostCard {...props} />
           </div>
         ))}
