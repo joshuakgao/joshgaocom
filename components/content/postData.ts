@@ -1,22 +1,27 @@
 import { PostProps } from "@/components/types";
 
 export let posts: PostProps[] = [
-  // {
-  //   contentType: "Research",
-  //   slug: "viewdelta-text-prompted-change-detection-in-unaligned-images",
-  //   thumbnail: "/assets/projects/2025/viewDelta/thumbnail.png",
-  //   title: "ViewDelta: Text-Prompted Change Detection in Unaligned Images",
-  //   authors: ["Subin Varghese", "Joshua Gao", "Vedhus Hoskere"],
-  //   journal: "ICCV 2025",
-  //   journalHighlighted: false,
-  //   description: `Can you spot the difference between these two images? ViewDelta can! We show you how ViewDelta solves text-prompted change detection in many domains.`,
-  //   date: "Nov 2025",
-  //   claps: undefined,
-  //   views:undefined,
-  //   // link: "https://joshuakgao.github.io/viewdelta/",
-  //   tags: ["Research Paper", "AI"],
-  //   year: "2025",
-  // },
+  {
+    contentType: "Research",
+    slug: "viewdelta-text-prompted-change-detection-in-unaligned-images",
+    thumbnail: "/assets/projects/2025/viewDelta/thumbnail.png",
+    title:
+      "Introducing ViewDelta: A New Era in Change Detection with Language and Vision",
+    authors: ["Subin Varghese", "Joshua Gao", "Vedhus Hoskere"],
+    journal: "ICCV 2025 Workshop SEA",
+    journalHighlighted: true,
+    description: `Can you spot the difference between these two images? ViewDelta can! We show you how ViewDelta solves text-prompted change detection in many domains.`,
+    date: "Jul 2025",
+    claps: undefined,
+    views: undefined,
+    links: {
+      website: "https://joshuakgao.github.io/viewdelta/",
+      pdf: "https://arxiv.org/pdf/2412.07612",
+      github: "https://github.com/drags99/ViewDelta",
+    },
+    tags: ["Research Paper", "AI"],
+    year: "2025",
+  },
   {
     contentType: "Project",
     slug: "self-hosted-cloud-storage",
