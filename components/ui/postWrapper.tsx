@@ -50,10 +50,12 @@ export function PostWrapper({
             <Spacer size={8} />
             <P>
               <strong>Authors:</strong>{" "}
-              {post.authors.map((a, i) => (
+              {post.authors.map((author, i) => (
                 <span key={i}>
-                  {a}
-                  {post.authors && i < post.authors.length - 1 ? ", " : ""}
+                  <span className={author === "Joshua Gao" ? "underline" : ""}>
+                    {author}
+                  </span>
+                  {i < post.authors.length - 1 ? ", " : ""}
                 </span>
               ))}
             </P>
