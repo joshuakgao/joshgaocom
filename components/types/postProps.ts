@@ -8,6 +8,7 @@ export type BaseProps = {
   date: string;
   year: string;
   thumbnail: string;
+  video?: string;
   claps: number | undefined;
   views: number | undefined;
   starred?: boolean;

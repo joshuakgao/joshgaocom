@@ -63,13 +63,26 @@ export const PostCard: React.FC<PostProps> = ({
     >
       <Link href={`/${year}/${slug}`} passHref>
         <div className={starred ? "rounded-lg bg-white w-full h-full" : ""}>
-          {thumbnail?.endsWith(".mp4") ? (
-            <video autoPlay loop muted playsInline className="rounded-lg">
+          {thumbnail.endsWith(".mp4") ? (
+            <video controls autoPlay className="rounded-lg w-full object-cover">
               <source src={thumbnail} type="video/mp4" />
-              Your browser does not support the video tag.
             </video>
+          ) : thumbnail.includes("youtu.be") ? (
+            <iframe
+              src={`https://www.youtube.com/embed/${
+                thumbnail.split("youtu.be/")[1]
+              }`}
+              title={title}
+              className="rounded-lg w-full aspect-video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           ) : (
-            <img src={thumbnail} alt={title} className="rounded-t-lg" />
+            <img
+              src={thumbnail}
+              alt={title}
+              className="rounded-lg w-full object-cover"
+            />
           )}
           <Spacer size={8} />
           <div className="flex-1 min-w-0 p-4">

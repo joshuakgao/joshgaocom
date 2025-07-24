@@ -1,7 +1,7 @@
 "use client";
 
 import { getPostMetadata } from "@/components/content";
-import { P, PostWrapper } from "@/components/ui";
+import { P, PostWrapper, PostLink } from "@/components/ui";
 
 export default function ViewDelta() {
   const { year, slug, assetsPath, post } = getPostMetadata();
@@ -9,29 +9,32 @@ export default function ViewDelta() {
   return (
     <PostWrapper post={post}>
       <P>
-        Change detection has long been a cornerstone of computer vision
-        applications, from infrastructure monitoring to environmental analysis.
-        Yet traditional methods struggle when faced with unaligned image pairs
-        or unfamiliar change types. Enter ViewDelta — a groundbreaking approach
-        that merges the power of vision transformers with natural language
-        understanding to detect user-specified changes across a wide range of
-        real-world scenarios.
+        Remember how long it took to play spot the difference puzzles? With
+        ViewDelta, you can do it in seconds!
       </P>
       <P>
-        ViewDelta introduces a multimodal architecture capable of processing
-        text prompts and unaligned image pairs to produce precise change
-        segmentation maps. Unlike conventional models locked into rigid
-        definitions of change, ViewDelta adapts to the user’s intent — be it
-        identifying construction updates, vehicle movements, or altered
-        landscapes — all through a simple text prompt.
+        This project introduces a groundbreaking approach to change detection
+        using text prompts and unaligned images, making it easier than ever to
+        identify changes across various domains.
       </P>
       <P>
-        To support this new task, the team also created CSeg, the first
-        large-scale dataset tailored for prompt-conditioned change detection,
-        featuring over 500,000 image pairs with corresponding prompts and
-        labels. With state-of-the-art performance across diverse datasets and
-        domains, ViewDelta sets a new standard for flexibility, scalability, and
-        accuracy in change detection.
+        Designed with a vision transformer, ViewDelta is a multimodal model that
+        is capable of processing text prompts and unaligned image pairs to
+        produce change segmentation maps. But unlike traditional change
+        detection methods, ViewDelta can focus on relevant changes through a
+        text prompt.
+      </P>
+      <P>
+        If you want to learn more about ViewDelta, check out the{" "}
+        <PostLink href="https://joshuakgao.github.io/viewdelta/">
+          project website
+        </PostLink>
+        , read the{" "}
+        <PostLink href="https://arxiv.org/pdf/2412.07612">paper</PostLink>, or
+        explore the{" "}
+        <PostLink href="https://github.com/drags99/ViewDelta">
+          GitHub repository.
+        </PostLink>
       </P>
     </PostWrapper>
   );

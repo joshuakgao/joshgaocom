@@ -25,24 +25,25 @@ export function PostWrapper({
       >
         <H0>{post.title}</H0>
         {post.date && <ExtraSmall>Joshua Gao · {post.date}</ExtraSmall>}
-        {post.thumbnail?.endsWith(".mp4") ? (
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="rounded-lg w-full object-cover"
-          >
+        {post.video ? (
+          <iframe
+            src={`https://www.youtube.com/embed/${
+              post.video.split("youtu.be/")[1]
+            }?rel=0`}
+            title="YouTube video player"
+            className="rounded-lg w-full aspect-video"
+            allowFullScreen
+          />
+        ) : post.thumbnail.endsWith(".mp4") ? (
+          <video controls className="rounded-lg w-full object-cover">
             <source src={post.thumbnail} type="video/mp4" />
           </video>
         ) : (
-          post.thumbnail && (
-            <img
-              src={post.thumbnail}
-              alt={post.title}
-              className="rounded-lg w-full object-cover"
-            />
-          )
+          <img
+            src={post.thumbnail}
+            alt={post.title}
+            className="rounded-lg w-full object-cover"
+          />
         )}
         <ActionBar post={post} />
         {post.contentType === "Research" && (
