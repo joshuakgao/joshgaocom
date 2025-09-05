@@ -1,7 +1,7 @@
 import React from "react";
 import { Spacer } from "../spacer";
 import { H1, P } from "../typography";
-import { PostContent } from "../postContent";
+import { PostContent } from "./postContent";
 
 export function PostAbstract({
   children,

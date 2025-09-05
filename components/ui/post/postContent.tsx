@@ -1,5 +1,5 @@
 import React from "react";
-import { Col } from "./col";
+import { Col } from "../col";
 
 export function PostContent({
   size = "max-w-2xl",
