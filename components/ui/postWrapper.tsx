@@ -79,6 +79,7 @@ export function PostWrapper({
         )}
       </PostContent>
       <Col className="space-y-4 items-center justify-center">{children}</Col>
+      <Spacer size={128} />
     </Col>
   );
 }

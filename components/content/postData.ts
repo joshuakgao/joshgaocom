@@ -22,7 +22,7 @@ export let posts: PostProps[] = [
     thumbnail: "/assets/projects/2025/viewDelta/thumbnail.png",
     video: "https://youtu.be/aPWwDmOWxoU",
     title:
-      "Introducing ViewDelta: A New Era in Change Detection with Language and Vision",
+      "ViewDelta: Scaling Scene Change Detection through Text-Conditioning",
     authors: ["Subin Varghese", "Joshua Gao", "Vedhus Hoskere"],
     journal: "ICCV 2025, SEA Workshop",
     journalHighlighted: true,
@@ -30,9 +30,10 @@ export let posts: PostProps[] = [
     date: "19 Oct 2025",
     links: {
       publication: "https://arxiv.org/pdf/2412.07612",
-      // website: "https://joshuakgao.github.io/viewdelta/",
+      website: "https://joshuakgao.github.io/viewdelta/",
       pdf: "https://arxiv.org/pdf/2412.07612",
       // github: "https://github.com/drags99/ViewDelta",
+      huggingface: "https://huggingface.co/datasets/hoskerelab/CSeg",
     },
     year: "2025",
   },

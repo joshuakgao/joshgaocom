@@ -12,3 +12,4 @@ export * from "./post/actionBar";
 export * from "./postImg";
 export * from "./postLink";
 export * from "./postContent";
+export * from "./post/postAbstract";

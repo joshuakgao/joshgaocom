@@ -43,7 +43,7 @@ export default function Home() {
               ))}
             </div>
 
-            <Spacer size={128} />
+            <Spacer size={64} />
 
             {/* Improved Publications Section */}
             <Row className="justify-between items-end">
@@ -56,7 +56,7 @@ export default function Home() {
             <div className="mt-8 space-y-8">
               {publications.map((publication, idx) => (
                 <Link
-                  href={publication.links?.website || ""}
+                  href={`/blog/${publication.year}/${publication.slug}`}
                   key={publication.slug || idx}
                 >
                   <Row className="items-start gap-6 p-4 border-b border-gray-20 hover:bg-gray-50 transition-colors duration-300">
