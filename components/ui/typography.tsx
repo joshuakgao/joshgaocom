@@ -26,7 +26,7 @@ export const H0 = createComponent<HTMLHeadingElement>(
 
 export const H1 = createComponent<HTMLHeadingElement>(
   "h1",
-  "scroll-m-20 text-2xl text-gray-800",
+  "scroll-m-20 text-2xl sm:text-4xl text-gray-800",
   "H1"
 );
 

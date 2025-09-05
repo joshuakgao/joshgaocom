@@ -23,8 +23,6 @@ export const PostCard: React.FC<PostProps> = ({
   year,
   thumbnail,
   starred,
-  claps,
-  views,
   ...props
 }) => {
   return (
@@ -63,20 +61,6 @@ export const PostCard: React.FC<PostProps> = ({
             {/* Footer pinned at bottom */}
             <Row className="items-center justify-between mt-auto">
               <ExtraSmall>{date}</ExtraSmall>
-              <Row>
-                {claps && (
-                  <Row className="gap-x-[2px]">
-                    <PiHandsClappingLight size={16} className="text-gray-500" />
-                    <ExtraSmall className="mt-0.5">{claps}</ExtraSmall>
-                  </Row>
-                )}
-                {views && (
-                  <Row className="gap-x-[4px] ml-2">
-                    <PiEye size={17} className="text-gray-500 mt-0.5" />
-                    <ExtraSmall className="mt-0.5">{views}</ExtraSmall>
-                  </Row>
-                )}
-              </Row>
             </Row>
           </Col>
         </Col>
