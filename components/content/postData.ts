@@ -11,8 +11,6 @@ export let posts: PostProps[] = [
   //   journalHighlighted: false,
   //   description: "",
   //   date: "Sep 2025",
-  //   claps: undefined,
-  //   views: undefined,
   //   links: {
   //     website: "",
   //   },
@@ -30,8 +28,6 @@ export let posts: PostProps[] = [
     journalHighlighted: true,
     description: `Can you spot the difference between these two images? ViewDelta can! We show you how ViewDelta solves text-prompted change detection in many domains.`,
     date: "19 Oct 2025",
-    claps: undefined,
-    views: undefined,
     links: {
       publication: "https://arxiv.org/pdf/2412.07612",
       // website: "https://joshuakgao.github.io/viewdelta/",
@@ -48,9 +44,7 @@ export let posts: PostProps[] = [
     description:
       "All it takes to avoid Google Drive and DropBox subscriptions is a RasberryPi and NextCloud.",
     links: { website: "https://cloud.joshgao.com" },
-    date: "Dec 2024",
-    claps: undefined,
-    views: undefined,
+    date: "9 Dec 2024",
     year: "2024",
   },
   // {
@@ -62,8 +56,6 @@ export let posts: PostProps[] = [
   //   thumbnail: "/assets/images/cat.jpeg",
   //   // link: "https://github.com/tugonbob/reddit-laughs",
   //   date: "Nov 2024",
-  //   claps: undefined,
-  //   views: undefined,
   //   tags: ["AI"],
   //   year: "2024",
   // },
@@ -77,8 +69,6 @@ export let posts: PostProps[] = [
   //   // link: "https://github.com/tugonbob/reddit-laughs",
   //   date: "Sep 2024",
   //   year: "2024",
-  //   claps: undefined,
-  //   views: undefined,
   //   tags: ["AI"],
   // },
   // {
@@ -92,8 +82,6 @@ export let posts: PostProps[] = [
   //   // link: "https://github.com/tugonbob/reddit-laughs",
   //   date: "Sep 2024",
   //   year: "2024",
-  //   claps: undefined,
-  //   views: undefined,
   //   tags: ["AI"],
   // },
   // {
@@ -106,23 +94,20 @@ export let posts: PostProps[] = [
   //   date: "May 2024",
   //   year: "2024",
   //   // link: "https://github.com/tugonbob/gpt-nano",
-  //   claps: undefined,
-  //   views: undefined,
   //   tags: ["AI"],
   // },
-  // {
-  //   contentType: "Project",
-  //   slug: "knn-image-classification",
-  //   title: "KNN Image Classification",
-  //   description: "A KNN image classifier trained on CIFAR-10 dataset.",
-  //   thumbnail: "/assets/images/cat.jpeg",
-  //   date: "2023",
-  //   year: "2023",
-  //   // link: "https://github.com/tugonbob/cifar-knn-classifer",
-  //   claps: undefined,
-  //   views: undefined,
-  //   tags: ["AI"],
-  // },
+  {
+    contentType: "Project",
+    slug: "knn-image-classification",
+    title: "KNN Image Classification",
+    description: "A KNN image classifier trained on CIFAR-10 dataset.",
+    thumbnail: "/assets/projects/2023/knn-image-classification/thumbnail.png",
+    date: "16 Dec 2023",
+    year: "2023",
+    links: {
+      github: "https://github.com/tugonbob/cifar-knn-classifer",
+    },
+  },
   // {
   //   contentType: "Project",
   //   slug: "how-much-is-your-home-worth-we-optimized-amachine-learning-model",
@@ -133,8 +118,6 @@ export let posts: PostProps[] = [
   //   date: "Jun 2023",
   //   year: "2023",
   //   // link: "https://github.com/tugonbob/stanford-cs229-andrew-ng/blob/main/Ch1-SupervisedLearning/1-LinearRegression/1.1.1-LmsAlgorithm.ipynb",
-  //   claps: undefined,
-  //   views: undefined,
   //   tags: ["AI"],
   // },
   // {
@@ -145,8 +128,6 @@ export let posts: PostProps[] = [
   //   year: "2022",
   //   // link: "https://github.com/tugonbob/reddit-laughs",
   //   thumbnail: "/assets/projects/2023/realEstateValuation/thumbnail.mp4",
-  //   claps: undefined,
-  //   views: undefined,
   //   tags: ["Other"],
   // },
   {
@@ -156,8 +137,6 @@ export let posts: PostProps[] = [
     date: "Dec 2022",
     year: "2022",
     thumbnail: "/assets/projects/2022/stock-portfolio-tracker/thumbnail.png",
-    claps: undefined,
-    views: undefined,
     links: {
       googleDrive:
         "https://docs.google.com/spreadsheets/d/1wrPfNQtEmuMB3GUdjDgKffgdOIyPkrvQC0l_QhYNKxE/edit?usp=sharing",

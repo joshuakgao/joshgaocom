@@ -36,7 +36,9 @@ export function ActionBar({ post }: { post: PostProps }) {
             onClick={() => window.open(post.links?.github, "_blank")}
             variant="outline"
           >
-            <FaGithub size={22} />
+            <Row>
+              Github <FaGithub size={22} className="ml-1" />
+            </Row>
           </Button>
         )}
         {post.links?.youtube && (

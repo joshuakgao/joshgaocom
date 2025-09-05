@@ -77,8 +77,8 @@ export function PostWrapper({
             </P>
           </Col>
         )}
-        <Col className="space-y-4">{children}</Col>
       </PostContent>
+      <Col className="space-y-4 items-center justify-center">{children}</Col>
     </Col>
   );
 }

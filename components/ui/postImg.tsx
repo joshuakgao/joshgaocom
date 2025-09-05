@@ -14,7 +14,7 @@ export function PostImg({
       <img
         src={src}
         alt={alt}
-        className={`rounded-lg max-w-2xl w-full object-cover my-4 ${className}`}
+        className={`rounded-lg w-full object-cover my-4 ${className}`}
       />
     </div>
   );
