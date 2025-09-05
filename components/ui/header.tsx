@@ -17,7 +17,7 @@ export default function Header() {
       <Row className="w-full mx-8 items-center justify-between">
         <Row>
           <Link href="/">
-            <H1 className="translate-y-[5px]">
+            <H1 className="translate-y-[5px] sm:text-2xl">
               <GradientText parentHovered={hovered}>Joshua Gao,</GradientText>
             </H1>
             <H2 className="pt-0 pb-0 text-gray-500 translate-y-[-5px]">
