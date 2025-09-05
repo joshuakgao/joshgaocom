@@ -1,5 +1,5 @@
 import React from "react";
-import { Col } from "@/components/ui";
+import { Col, Spacer } from "@/components/ui";
 
 export function ScrollDiv({
   children,
@@ -20,6 +20,7 @@ export function ScrollDiv({
       style={style}
     >
       {children}
+      <Spacer size={128} />
     </Col>
   );
 }

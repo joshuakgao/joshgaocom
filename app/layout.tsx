@@ -3,6 +3,23 @@ import Head from "next/head";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/ui/header";
+import { DM_Sans } from "next/font/google";
+
+const dm_sans = DM_Sans({
+  subsets: ["latin"],
+  weight: [
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900",
+    "1000",
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Joshua Gao",
@@ -15,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={dm_sans.className}>
       <head>
         <Script
           id="google-analytics"

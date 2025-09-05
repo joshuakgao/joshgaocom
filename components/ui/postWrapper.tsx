@@ -1,7 +1,16 @@
 "use client";
 
 import { PostProps } from "@/components/types";
-import { ActionBar, Col, ExtraSmall, H0, H1, P, Spacer } from "@/components/ui";
+import {
+  ActionBar,
+  Col,
+  ExtraSmall,
+  H0,
+  H1,
+  P,
+  PostContent,
+  Spacer,
+} from "@/components/ui";
 
 export function PostWrapper({
   post,
@@ -19,12 +28,13 @@ export function PostWrapper({
     );
   }
   return (
-    <Col className="min-h-screen items-center justify-center bg-gray-100">
-      <Col
-        className={`w-full max-w-4xl mx-4 p-8 rounded-lg bg-white space-y-4 md:my-8`}
-      >
+    <Col className="min-h-screen items-center justify-center">
+      <PostContent>
+        <P>{post.contentType}</P>
         <H0>{post.title}</H0>
         {post.date && <ExtraSmall>Joshua Gao · {post.date}</ExtraSmall>}
+      </PostContent>
+      <PostContent size="max-w-7xl">
         {post.video ? (
           <iframe
             src={`https://www.youtube.com/embed/${
@@ -45,8 +55,10 @@ export function PostWrapper({
             className="rounded-lg w-full object-cover"
           />
         )}
+      </PostContent>
+      <PostContent>
         <ActionBar post={post} />
-        {post.contentType === "Research" && (
+        {post.authors && post.journal && post.contentType && (
           <Col>
             <Spacer size={8} />
             <P>
@@ -56,22 +68,17 @@ export function PostWrapper({
                   <span className={author === "Joshua Gao" ? "underline" : ""}>
                     {author}
                   </span>
-                  {i < post.authors.length - 1 ? ", " : ""}
+                  {post.authors && i < post.authors.length - 1 ? ", " : ""}
                 </span>
               ))}
             </P>
-
             <P>
               <strong>Published In:</strong> {post.journal}
-            </P>
-
-            <P>
-              <strong>Type:</strong> {post.contentType}
             </P>
           </Col>
         )}
         <Col className="space-y-4">{children}</Col>
-      </Col>
+      </PostContent>
     </Col>
   );
 }

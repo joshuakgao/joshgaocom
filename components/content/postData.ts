@@ -1,6 +1,23 @@
 import { PostProps } from "@/components/types";
 
 export let posts: PostProps[] = [
+  // {
+  //   contentType: "Research",
+  //   slug: "domain-specific-rag-evaluation",
+  //   thumbnail: "/assets/projects/2025/viewDelta/thumbnail.png",
+  //   title: "Domain Specific RAG Evaluation",
+  //   authors: ["Joshua Gao", "Huy Pham", "Vedhus Hoskere"],
+  //   journal: "arvix",
+  //   journalHighlighted: false,
+  //   description: "",
+  //   date: "Sep 2025",
+  //   claps: undefined,
+  //   views: undefined,
+  //   links: {
+  //     website: "",
+  //   },
+  //   year: "2025",
+  // },
   {
     contentType: "Research",
     slug: "viewdelta-text-prompted-change-detection-in-unaligned-images",
@@ -9,22 +26,22 @@ export let posts: PostProps[] = [
     title:
       "Introducing ViewDelta: A New Era in Change Detection with Language and Vision",
     authors: ["Subin Varghese", "Joshua Gao", "Vedhus Hoskere"],
-    journal: "ICCV 2025 Workshop SEA",
+    journal: "ICCV 2025, SEA Workshop",
     journalHighlighted: true,
     description: `Can you spot the difference between these two images? ViewDelta can! We show you how ViewDelta solves text-prompted change detection in many domains.`,
-    date: "Jul 2025",
+    date: "19 Oct 2025",
     claps: undefined,
     views: undefined,
     links: {
-      website: "https://joshuakgao.github.io/viewdelta/",
+      publication: "https://arxiv.org/pdf/2412.07612",
+      // website: "https://joshuakgao.github.io/viewdelta/",
       pdf: "https://arxiv.org/pdf/2412.07612",
-      github: "https://github.com/drags99/ViewDelta",
+      // github: "https://github.com/drags99/ViewDelta",
     },
-    tags: ["Research Paper", "AI"],
     year: "2025",
   },
   {
-    contentType: "Project",
+    contentType: "Hardware",
     slug: "self-hosted-cloud-storage",
     thumbnail: "/assets/projects/2024/self-hosted-cloud-storage/thumbnail.jpg",
     title: "Self Hosted NextCloud Is Game Changing",
@@ -34,7 +51,6 @@ export let posts: PostProps[] = [
     date: "Dec 2024",
     claps: undefined,
     views: undefined,
-    tags: ["Hardware"],
     year: "2024",
   },
   // {
@@ -134,7 +150,7 @@ export let posts: PostProps[] = [
   //   tags: ["Other"],
   // },
   {
-    contentType: "Project",
+    contentType: "Finance",
     slug: "stock-portfolio-tracker",
     title: "How to Track Your Stock Portfolio with Google Sheets",
     date: "Dec 2022",
@@ -142,7 +158,6 @@ export let posts: PostProps[] = [
     thumbnail: "/assets/projects/2022/stock-portfolio-tracker/thumbnail.png",
     claps: undefined,
     views: undefined,
-    tags: ["Other"],
     links: {
       googleDrive:
         "https://docs.google.com/spreadsheets/d/1wrPfNQtEmuMB3GUdjDgKffgdOIyPkrvQC0l_QhYNKxE/edit?usp=sharing",

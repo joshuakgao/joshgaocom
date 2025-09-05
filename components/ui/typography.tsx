@@ -20,90 +20,90 @@ const createComponent = <T extends HTMLElement>(
 
 export const H0 = createComponent<HTMLHeadingElement>(
   "h1",
-  "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl font-roboto",
+  "scroll-m-20 text-2xl sm:text-5xl text-gray-800",
   "H0"
 );
 
 export const H1 = createComponent<HTMLHeadingElement>(
   "h1",
-  "scroll-m-20 text-2xl font-bold tracking-tight lg:text-2xl font-roboto",
+  "scroll-m-20 text-2xl text-gray-800",
   "H1"
 );
 
 export const H2 = createComponent<HTMLHeadingElement>(
   "h2",
-  "scroll-m-20 py-2 text-xl font-medium tracking-tight first:mt-0 font-roboto",
+  "scroll-m-20 py-2 text-xl first:mt-0 text-gray-700",
   "H2"
 );
 
 export const H3 = createComponent<HTMLHeadingElement>(
   "h3",
-  "scroll-m-20 text-lg font-medium tracking-tight font-roboto",
+  "scroll-m-20 text-lg",
   "H3"
 );
 
 export const H4 = createComponent<HTMLHeadingElement>(
   "h4",
-  "scroll-m-20 text-md font-medium tracking-tight font-roboto",
+  "scroll-m-20 text-md",
   "H4"
 );
 
 export const Lead = createComponent<HTMLParagraphElement>(
   "p",
-  "text-lg text-gray-600 font-roboto",
+  "text-lg text-gray-600",
   "Lead"
 );
 
 export const P = createComponent<HTMLParagraphElement>(
   "p",
-  "tracking-tight font-roboto text-[16px]",
+  "text-[16px] text-gray-600",
   "P"
 );
 
 export const Large = createComponent<HTMLDivElement>(
   "div",
-  "text-lg font-medium font-roboto",
+  "text-lg font-medium",
   "Large"
 );
 
 export const Small = createComponent<HTMLParagraphElement>(
   "p",
-  "text-sm font-normal leading-tight font-roboto",
+  "text-sm text-gray-600",
   "Small"
 );
 
 export const ExtraSmall = createComponent<HTMLParagraphElement>(
   "p",
-  "text-xs font-normal text-gray-500 leading-tight font-roboto",
+  "text-xs text-gray-500",
   "ExtraSmall"
 );
 
 export const Muted = createComponent<HTMLParagraphElement>(
   "p",
-  "text-gray-500 font-roboto",
-  "P"
+  "text-gray-500",
+  "Muted"
 );
 
 export const InlineCode = createComponent<HTMLSpanElement>(
   "code",
-  "relative rounded bg-gray-100 px-1 py-0.5 font-mono text-sm font-medium font-roboto",
+  "relative rounded bg-gray-100 px-1 py-0.5 font-mono text-sm font-medium",
   "InlineCode"
 );
 
 export const MultilineCode = createComponent<HTMLPreElement>(
   "pre",
-  "relative rounded bg-gray-100 p-4 font-mono text-sm font-medium overflow-x-auto font-roboto",
+  "relative rounded bg-gray-100 p-4 font-mono text-sm font-medium overflow-x-auto",
   "MultilineCode"
 );
 
 export const List = createComponent<HTMLUListElement>(
   "ul",
-  "my-4 ml-4 list-disc space-y-2 font-roboto",
+  "my-4 ml-4 list-disc space-y-2",
   "List"
 );
 
 export const Quote = createComponent<HTMLQuoteElement>(
   "blockquote",
-  "mt-4 border-l-4 pl-4 italic text-gray-600 font-roboto",
+  "mt-4 border-l-4 pl-4 italic text-gray-600",
   "Quote"
 );

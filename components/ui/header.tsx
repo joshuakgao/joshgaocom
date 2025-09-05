@@ -6,14 +6,19 @@ import { useState } from "react";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   return (
-    <Row className="items-center justify-center px-2 shadow-[0_4px_8px_-4px_rgba(0,0,0,0.10)] w-full bg-white">
+    <Row
+      className="items-center justify-center px-2 w-full bg-white"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       <Row className="w-full mx-8 items-center justify-between">
         <Row>
           <Link href="/">
             <H1 className="translate-y-[5px]">
-              <GradientText>Joshua Gao,</GradientText>
+              <GradientText parentHovered={hovered}>Joshua Gao,</GradientText>
             </H1>
             <H2 className="pt-0 pb-0 text-gray-500 translate-y-[-5px]">
               deep learning researcher at

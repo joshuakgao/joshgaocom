@@ -1,49 +1,12 @@
 import { posts } from "@/components/content";
-import { Col, PostCard, Row, Small } from "@/components/ui";
-import { db } from "@/firebase";
-import { doc, getDoc } from "firebase/firestore";
-import { useEffect, useMemo, useState } from "react";
+import { Col, H0, PostCard, Row, Small, Spacer } from "@/components/ui";
+import { useMemo, useState } from "react";
 import { IoCalendarClearOutline } from "react-icons/io5";
 import { RiHashtag } from "react-icons/ri";
-import Masonry from "react-masonry-css";
 
 export function PostList() {
   const [selectedYear, setSelectedYear] = useState<string | "All">("All");
   const [selectedTag, setSelectedTag] = useState<string | "All">("All");
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchClapsAndViews = async () => {
-      // Fetch claps
-      const clapsDoc = await getDoc(doc(db, "claps", "claps"));
-      if (!clapsDoc.exists()) return setLoading(false);
-
-      const data = clapsDoc.data();
-
-      for (const key in data) {
-        posts.forEach((post) => {
-          if (post.slug === key) {
-            post.claps = data[key];
-          }
-        });
-      }
-
-      // Fetch views
-      const viewsDoc = await getDoc(doc(db, "views", "views"));
-      if (!viewsDoc.exists()) return setLoading(false);
-      const viewsData = viewsDoc.data();
-      for (const key in viewsData) {
-        posts.forEach((post) => {
-          if (post.slug === key) {
-            post.views = viewsData[key];
-          }
-        });
-      }
-
-      setLoading(false);
-    };
-    fetchClapsAndViews();
-  }, []);
 
   const allYears = useMemo(() => {
     const years = new Set(posts.map((p) => p.year));
@@ -51,86 +14,28 @@ export function PostList() {
   }, []);
 
   const allTags = useMemo(() => {
-    const tags = new Set<string>();
-    posts.forEach((post) => post.tags?.forEach((tag) => tags.add(tag)));
-    return Array.from(tags).sort();
+    const tagCounts: Record<string, number> = {};
+    posts.forEach((post) => {
+      tagCounts[post.contentType] = (tagCounts[post.contentType] || 0) + 1;
+    });
+    return Object.entries(tagCounts)
+      .sort((a, b) => b[1] - a[1])
+      .map(([tag]) => tag);
   }, []);
 
   const filteredProjects = useMemo(() => {
     return posts.filter(
       (post) =>
         (selectedYear === "All" || post.year === selectedYear) &&
-        (selectedTag === "All" || post.tags?.includes(selectedTag))
+        (selectedTag === "All" || post.contentType === selectedTag)
     );
   }, [selectedYear, selectedTag]);
 
-  if (loading) {
-    return (
-      <Col className="w-full max-w-7xl mx-auto px-4 md:px-0">
-        <Col className="my-8 space-y-4">
-          <Row className="gap-2 flex-wrap items-center animate-pulse">
-            {/* Calendar icon */}
-            <div className="h-4 w-4 bg-gray-300 rounded" />
-
-            {/* Placeholder buttons */}
-            {Array.from({ length: allYears.length }).map((_, idx) => (
-              <div key={idx} className="h-6 w-12 bg-gray-200 rounded-md" />
-            ))}
-          </Row>
-          <Row className="gap-2 flex-wrap items-center animate-pulse">
-            {/* Calendar icon */}
-            <div className="h-4 w-4 bg-gray-300 rounded" />
-
-            {/* Placeholder buttons */}
-            {Array.from({ length: allYears.length }).map((_, idx) => (
-              <div key={idx} className="h-6 w-12 bg-gray-200 rounded-md" />
-            ))}
-          </Row>
-        </Col>
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
-          {Array.from({ length: posts.length }).map((_, idx) => (
-            <div
-              key={idx}
-              className="break-inside-avoid mb-6 w-full h-full rounded-lg bg-white shadow-sm animate-pulse"
-            >
-              {/* Thumbnail placeholder */}
-              <div className="w-full bg-gray-200 rounded-t-lg h-[300px]" />
-
-              <div className="flex-1 min-w-0 p-4 space-y-3">
-                {/* ContentType */}
-                <div className="h-3 w-24 bg-gray-300 rounded" />
-
-                {/* Title */}
-                <div className="h-5 w-3/4 bg-gray-300 rounded" />
-
-                {/* Authors */}
-                <div className="h-4 w-1/2 bg-gray-200 rounded" />
-
-                {/* Journal */}
-                <div className="h-4 w-1/3 bg-gray-200 rounded" />
-
-                {/* Description */}
-                <div className="h-4 w-full bg-gray-100 rounded" />
-                <div className="h-4 w-5/6 bg-gray-100 rounded" />
-
-                {/* Footer row */}
-                <div className="flex items-center justify-between pt-4">
-                  <div className="h-3 w-16 bg-gray-300 rounded" />
-                  <div className="flex gap-1 items-center">
-                    <div className="h-4 w-4 bg-gray-300 rounded-full" />
-                    <div className="h-3 w-6 bg-gray-300 rounded" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Col>
-    );
-  }
-
   return (
     <Col className="w-full max-w-7xl mx-auto px-4 md:px-0">
+      <Spacer size={64} />
+      <H0>Blog</H0>
+      <Spacer size={64} />
       {/* Filters */}
       <Col className="my-8 space-y-4">
         {/* Year Filter */}
@@ -189,17 +94,11 @@ export function PostList() {
           )}
         </Row>
       </Col>
-      <Masonry
-        breakpointCols={{ default: 3, 1024: 2, 768: 1 }}
-        className="flex -ml-4"
-        columnClassName="pl-4"
-      >
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
         {filteredProjects.map((props, idx) => (
-          <div key={props.slug || idx} className="mb-4">
-            <PostCard {...props} />
-          </div>
+          <PostCard key={props.slug || idx} {...props} />
         ))}
-      </Masonry>
+      </div>
     </Col>
   );
 }
