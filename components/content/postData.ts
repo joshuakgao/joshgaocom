@@ -50,30 +50,6 @@ export let posts: PostProps[] = [
   },
   // {
   //   contentType: "Project",
-  //   slug: "how-do-you-do-change-detection-on-unaligned-images-heres-how",
-  //   title: "How Do You Do Change Detection on Unaligned Images? Here's how.",
-  //   description:
-  //     "We leverage the power of vision LLMs and HLoc to do just that.",
-  //   thumbnail: "/assets/images/cat.jpeg",
-  //   // link: "https://github.com/tugonbob/reddit-laughs",
-  //   date: "Nov 2024",
-  //   tags: ["AI"],
-  //   year: "2024",
-  // },
-  // {
-  //   contentType: "Project",
-  //   slug: "tired-of-writing-inspection-reports-let-ai-do-it",
-  //   title: "Tired of Writing Inspection Reports? Let AI Do It!",
-  //   description:
-  //     "We utilize the power of LLMs, computer vision, and change detection to automate the process of writing engineering inspection reports. Say goodbye to tedious manual work and hello to efficiency!",
-  //   thumbnail: "/assets/projects/2025/viewDelta/thumbnail.png",
-  //   // link: "https://github.com/tugonbob/reddit-laughs",
-  //   date: "Sep 2024",
-  //   year: "2024",
-  //   tags: ["AI"],
-  // },
-  // {
-  //   contentType: "Project",
   //   slug: "how-do-you-find-duplicate-images-despite-different-views-and-time-taken-hloc-might-help",
   //   title:
   //     "How do you find duplicate images despite different views and time taken? HLoc might help.",
@@ -124,16 +100,17 @@ export let posts: PostProps[] = [
         "https://github.com/tugonbob/stanford-cs229-andrew-ng/blob/main/Ch1-SupervisedLearning/1-LinearRegression/1.1.1-LmsAlgorithm.ipynb",
     },
   },
-  // {
-  //   contentType: "Project",
-  //   slug: "auto-youtube",
-  //   title: "Auto Youtube",
-  //   date: "2022",
-  //   year: "2022",
-  //   // link: "https://github.com/tugonbob/reddit-laughs",
-  //   thumbnail: "/assets/projects/2023/realEstateValuation/thumbnail.mp4",
-  //   tags: ["Other"],
-  // },
+  {
+    contentType: "Software",
+    slug: "reddit-laughs",
+    title: "Reddit Laughs",
+    date: "13 Jun 2022",
+    year: "2022",
+    links: {
+      github: "https://github.com/tugonbob/reddit-laughs",
+    },
+    thumbnail: "/assets/projects/2022/reddit-laughs/thumbnail.jpg",
+  },
   {
     contentType: "Finance",
     slug: "stock-portfolio-tracker",
