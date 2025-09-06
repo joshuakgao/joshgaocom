@@ -109,7 +109,7 @@ export let posts: PostProps[] = [
     links: {
       github: "https://github.com/tugonbob/reddit-laughs",
     },
-    thumbnail: "/assets/projects/2022/reddit-laughs/thumbnail.jpg",
+    thumbnail: "/assets/projects/2022/reddit-laughs/thumbnail.png",
   },
   {
     contentType: "Finance",
