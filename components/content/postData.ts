@@ -85,18 +85,19 @@ export let posts: PostProps[] = [
   //   year: "2024",
   //   tags: ["AI"],
   // },
-  // {
-  //   contentType: "Project",
-  //   slug: "gptnano-beating-openais-gpt-2",
-  //   title: "GptNano: Beating OpenAI's GPT-2",
-  //   description:
-  //     "Who says size matters? Meet GptNano: the pint-sized powerhouse that outsmarts GPT-2 without breaking a sweat (or your GPU). Find out how this tiny titan is punching way above its weight.",
-  //   thumbnail: "/assets/projects/2024/gptNano/thumbnail.jpeg",
-  //   date: "May 2024",
-  //   year: "2024",
-  //   // link: "https://github.com/tugonbob/gpt-nano",
-  //   tags: ["AI"],
-  // },
+  {
+    contentType: "AI",
+    slug: "gpt-nano",
+    title: "GptNano: Beating OpenAI's GPT-2",
+    description:
+      "Meet GptNano: the pint-sized powerhouse that outsmarts GPT-2.",
+    thumbnail: "/assets/projects/2024/gpt-nano/thumbnail2.png",
+    date: "May 2024",
+    year: "2024",
+    links: {
+      github: "https://github.com/tugonbob/gpt-nano",
+    },
+  },
   {
     contentType: "Project",
     slug: "knn-image-classification",

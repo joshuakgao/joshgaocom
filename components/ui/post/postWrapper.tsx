@@ -28,7 +28,7 @@ export function PostWrapper({
     );
   }
   return (
-    <Col className="min-h-screen items-center justify-center">
+    <Col className="min-h-screen items-center justify-center space-y-8">
       <PostContent>
         <P>{post.contentType}</P>
         <H0>{post.title}</H0>
