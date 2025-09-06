@@ -3,6 +3,7 @@
 import { GradientText, H1, H2, Row } from "@/components/ui";
 import Link from "next/link";
 import { useState } from "react";
+import { toast } from "sonner";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -76,12 +77,15 @@ export default function Header() {
               >
                 Github
               </a>
-              <a
-                href="mailto:joshuakgao@gmail.com"
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              <div
+                className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
+                onClick={() => {
+                  toast("Email has been copied to clipboard!");
+                  navigator.clipboard.writeText("joshuakgao@gmail.com");
+                }}
               >
                 Email
-              </a>
+              </div>
             </div>
           )}
         </div>
@@ -112,12 +116,15 @@ export default function Header() {
           >
             Github
           </a>
-          <a
-            href="mailto:joshuakgao@gmail.com"
-            className="hover:text-gray-700 transition-colors"
+          <div
+            className="hover:text-gray-700 transition-colors cursor-pointer"
+            onClick={() => {
+              toast("Email has been copied to clipboard!");
+              navigator.clipboard.writeText("joshuakgao@gmail.com");
+            }}
           >
             Email
-          </a>
+          </div>
         </H2>
       </Row>
     </Row>
