@@ -92,7 +92,7 @@ export let posts: PostProps[] = [
     description:
       "Meet GptNano: the pint-sized powerhouse that outsmarts GPT-2.",
     thumbnail: "/assets/projects/2024/gpt-nano/thumbnail2.png",
-    date: "May 2024",
+    date: "27 Jun 2024",
     year: "2024",
     links: {
       github: "https://github.com/tugonbob/gpt-nano",
