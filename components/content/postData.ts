@@ -99,7 +99,7 @@ export let posts: PostProps[] = [
     },
   },
   {
-    contentType: "Project",
+    contentType: "AI",
     slug: "knn-image-classification",
     title: "KNN Image Classification",
     description: "A KNN image classifier trained on CIFAR-10 dataset.",
@@ -110,18 +110,20 @@ export let posts: PostProps[] = [
       github: "https://github.com/tugonbob/cifar-knn-classifer",
     },
   },
-  // {
-  //   contentType: "Project",
-  //   slug: "how-much-is-your-home-worth-we-optimized-amachine-learning-model",
-  //   title: "How Much Is Your Home Worth? We Optimized a Machine Learning Model",
-  //   description:
-  //     "A machine learning model trained on Zillow data with multi variable stochastic gradient descent.",
-  //   thumbnail: "/assets/projects/2023/realEstateValuation/thumbnail.mp4",
-  //   date: "Jun 2023",
-  //   year: "2023",
-  //   // link: "https://github.com/tugonbob/stanford-cs229-andrew-ng/blob/main/Ch1-SupervisedLearning/1-LinearRegression/1.1.1-LmsAlgorithm.ipynb",
-  //   tags: ["AI"],
-  // },
+  {
+    contentType: "AI",
+    slug: "ml-real-estate-valuation",
+    title: "How Much Is Your Home Worth? We Optimized a Machine Learning Model",
+    description:
+      "A machine learning model trained on Zillow data with multi variable stochastic gradient descent.",
+    thumbnail: "/assets/projects/2023/ml-real-estate-valuation/thumbnail.png",
+    date: "8 Jun 2023",
+    year: "2023",
+    links: {
+      github:
+        "https://github.com/tugonbob/stanford-cs229-andrew-ng/blob/main/Ch1-SupervisedLearning/1-LinearRegression/1.1.1-LmsAlgorithm.ipynb",
+    },
+  },
   // {
   //   contentType: "Project",
   //   slug: "auto-youtube",

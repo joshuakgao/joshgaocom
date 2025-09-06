@@ -1,7 +1,7 @@
 "use client";
 
 import { getPostMetadata } from "@/components/content";
-import { PostAbstract, PostContent, PostWrapper } from "@/components/ui";
+import { PostAbstract, PostWrapper } from "@/components/ui";
 
 export default function ViewDelta() {
   const { year, slug, assetsPath, post } = getPostMetadata();

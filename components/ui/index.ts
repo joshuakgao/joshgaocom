@@ -13,3 +13,4 @@ export * from "./post/postImg";
 export * from "./post/postLink";
 export * from "./post/postContent";
 export * from "./post/postAbstract";
+export * from "./post/postVideo";

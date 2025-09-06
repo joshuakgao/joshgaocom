@@ -1,16 +1,9 @@
 "use client";
 
 import { getPostMetadata } from "@/components/content";
-import {
-  H1,
-  P,
-  PostContent,
-  PostImg,
-  PostLink,
-  PostWrapper,
-} from "@/components/ui";
+import { H1, P, PostContent, PostImg, PostWrapper } from "@/components/ui";
 
-export default function StockPortfolioTracker() {
+export default function KnnImageClassification() {
   const { year, slug, assetsPath, post } = getPostMetadata();
 
   return (

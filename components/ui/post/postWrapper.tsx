@@ -9,6 +9,7 @@ import {
   H1,
   P,
   PostContent,
+  PostImg,
   Spacer,
 } from "@/components/ui";
 
@@ -49,10 +50,11 @@ export function PostWrapper({
             <source src={post.thumbnail} type="video/mp4" />
           </video>
         ) : (
-          <img
+          <PostImg
             src={post.thumbnail}
             alt={post.title}
             className="rounded-lg w-full object-cover"
+            aspectRatio={16 / 9}
           />
         )}
       </PostContent>

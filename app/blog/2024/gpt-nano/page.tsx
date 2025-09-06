@@ -4,13 +4,11 @@ import { getPostMetadata } from "@/components/content";
 import {
   H1,
   P,
-  PostAbstract,
   PostContent,
   PostImg,
   PostLink,
   PostWrapper,
 } from "@/components/ui";
-import { Button } from "@/components/ui/button";
 
 export default function GptNano() {
   const { year, slug, assetsPath, post } = getPostMetadata();
