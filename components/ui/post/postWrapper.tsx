@@ -29,7 +29,7 @@ export function PostWrapper({
     );
   }
   return (
-    <Col className="min-h-screen items-center justify-center space-y-8">
+    <Col className="min-h-screen items-center justify-center space-y-8 p-4">
       <PostContent>
         <P>{post.contentType}</P>
         <H0>{post.title}</H0>
@@ -80,7 +80,9 @@ export function PostWrapper({
           </Col>
         )}
       </PostContent>
-      <Col className="space-y-4 items-center justify-center">{children}</Col>
+      <PostContent>
+        <Col className="space-y-4 items-center justify-center">{children}</Col>
+      </PostContent>
       <Spacer size={128} />
     </Col>
   );
