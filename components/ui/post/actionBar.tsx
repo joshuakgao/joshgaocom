@@ -2,7 +2,7 @@ import { Row } from "@/components/ui";
 import { FaGithub, FaGoogleDrive } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
 import { LuArrowDownToLine, LuExternalLink } from "react-icons/lu";
-import { SiHuggingface } from "react-icons/si";
+import { SiHuggingface, SiLichess } from "react-icons/si";
 
 import { PostProps } from "../../types";
 import { Button } from "../button";
@@ -29,6 +29,14 @@ export function ActionBar({ post }: { post: PostProps }) {
             <Row>
               Visit Website <LuExternalLink size={22} className="ml-1" />
             </Row>
+          </Button>
+        )}
+        {post.links?.lichess && (
+          <Button
+            variant="default"
+            onClick={() => window.open(post.links?.lichess, "_blank")}
+          >
+            <SiLichess /> Challenge Athena (Set Time Control to Real Time)
           </Button>
         )}
         {post.links?.pdf && (
