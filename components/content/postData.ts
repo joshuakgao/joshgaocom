@@ -28,7 +28,8 @@ export let posts: PostProps[] = [
     links: {
       lichess: "https://lichess.org/@/athena-bot",
       github: "https://github.com/joshuakgao/athena/tree/main",
-      huggingface: "https://huggingface.co/datasets/joshuakgao/chessbenchmate",
+      huggingfaceDataset:
+        "https://huggingface.co/datasets/joshuakgao/chessbenchmate",
     },
   },
   {
@@ -44,11 +45,11 @@ export let posts: PostProps[] = [
     description: `Can you spot the difference between these two images? ViewDelta can! We show you how ViewDelta solves text-prompted change detection in many domains.`,
     date: "19 Oct 2025",
     links: {
-      publication: "https://arxiv.org/pdf/2412.07612",
+      publication: "https://arxiv.org/abs/2412.07612",
       website: "https://joshuakgao.github.io/viewdelta/",
       pdf: "https://arxiv.org/pdf/2412.07612",
       // github: "https://github.com/drags99/ViewDelta",
-      huggingface: "https://huggingface.co/datasets/hoskerelab/CSeg",
+      huggingfaceDataset: "https://huggingface.co/datasets/hoskerelab/CSeg",
     },
     year: "2025",
   },
