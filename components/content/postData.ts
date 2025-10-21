@@ -36,7 +36,7 @@ export let posts: PostProps[] = [
     contentType: "Research",
     slug: "viewdelta-text-prompted-change-detection-in-unaligned-images",
     thumbnail: "/assets/projects/2025/viewDelta/thumbnail.png",
-    video: "https://youtu.be/aPWwDmOWxoU",
+    video: "https://youtu.be/snSC3JZe_GA",
     title:
       "ViewDelta: Scaling Scene Change Detection through Text-Conditioning",
     authors: ["Subin Varghese", "Joshua Gao", "Vedhus Hoskere"],
