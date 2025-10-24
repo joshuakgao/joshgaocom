@@ -1,21 +1,18 @@
 "use client";
 
-import * as React from "react";
 import {
   Col,
-  H4,
-  H2,
-  Small,
-  Row,
-  H3,
   Collapsible,
-  CollapsibleTrigger,
   CollapsibleContent,
+  CollapsibleTrigger,
   P,
+  Row,
+  Small,
 } from "@/components/ui";
 import Link from "next/link";
-import { MdOutlineExpandMore, MdOutlineExpandLess } from "react-icons/md";
+import * as React from "react";
 import { LuExternalLink } from "react-icons/lu";
+import { MdOutlineExpandLess, MdOutlineExpandMore } from "react-icons/md";
 import { Button } from "./button";
 
 export type TimelineItemProps = {

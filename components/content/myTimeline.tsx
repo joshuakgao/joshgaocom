@@ -1,16 +1,4 @@
-import {
-  Col,
-  H4,
-  PostImg,
-  Small,
-  Row,
-  Collapsible,
-  P,
-  CollapsibleContent,
-  CollapsibleTrigger,
-  TimelineItemCollapsible,
-  TimelineItemProps,
-} from "@/components/ui";
+import { P, TimelineItemCollapsible, TimelineItemProps } from "@/components/ui";
 import Timeline from "@mui/lab/Timeline";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
@@ -18,7 +6,6 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import Link from "next/link";
 
 export const timelineData: TimelineItemProps[] = [
   {
@@ -26,7 +13,7 @@ export const timelineData: TimelineItemProps[] = [
     title: "Published ICCV'25 Workshop Paper - ViewDelta",
     description:
       "Published research on text-prompted change detection in unaligned images, presented at ICCV 2025 SEA Workshop.",
-    img: "/assets/projects/2025/viewdelta/thumbnail2.png",
+    img: "/assets/projects/2025/viewdelta/paper_thumbnail.png",
     link: "https://joshuakgao.github.io/viewdelta/",
     linkText: "ViewDelta",
     icon: "research",
