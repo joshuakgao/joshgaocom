@@ -26,7 +26,7 @@ export default function Home() {
       <>
         <Col className="w-full flex items-center justify-center p-8 lg:p-16">
           <Col className={`w-full max-w-7xl mx-4 rounded-lg space-y-4 md:my-8`}>
-            <H0>My Timeline</H0>
+            <H0>AI Journey</H0>
             <MyTimeline />
 
             <Spacer size={32} />
