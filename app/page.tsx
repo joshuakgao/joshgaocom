@@ -26,13 +26,13 @@ export default function Home() {
       <>
         <Col className="w-full flex items-center justify-center p-8 lg:p-16">
           <Col className={`w-full max-w-7xl mx-4 rounded-lg space-y-4 md:my-8`}>
-            <H0>AI Journey</H0>
+            <H0>My AI Journey</H0>
             <MyTimeline />
 
             <Spacer size={32} />
 
             <Row className="justify-between">
-              <H0>Latest works</H0>
+              <H0>Latest Works</H0>
               <Button asChild variant={"ghost"} className="text-blue-500">
                 <Link href="/blog">
                   <Row>
