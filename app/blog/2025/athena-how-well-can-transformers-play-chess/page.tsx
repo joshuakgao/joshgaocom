@@ -30,7 +30,17 @@ export default function Athena() {
           model. I label 15.3 billion chess positions using Stockfish 17 to
           create a comprehensive dataset for training.
         </P>
+
         <H1>Chessbenchmate Dataset</H1>
+        <P>
+          The dataset consists of all unique board positions based on 10 million{" "}
+          <PostLink href="https://database.lichess.org">LiChess</PostLink>{" "}
+          games. For each unique position, all legal moves were labeled with
+          Stockfish 17 for 0.05 seconds with unbounded depth for win probability
+          and mate-in-N. This results in 15.3 billion position and move pairs.
+          Note that positions that mate-in-N are labeled with win probability of
+          0% or 100% depending on which side is potentially mated.
+        </P>
       </PostContent>
     </PostWrapper>
   );

@@ -1,7 +1,7 @@
 import { Row } from "@/components/ui";
-import { FaGithub, FaGoogleDrive } from "react-icons/fa";
+import { FaGithub, FaGoogleDrive, FaRegFilePdf } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
-import { LuArrowDownToLine, LuExternalLink } from "react-icons/lu";
+import { LuExternalLink } from "react-icons/lu";
 import { SiHuggingface, SiLichess } from "react-icons/si";
 import { PostProps } from "../../types";
 import { Button } from "../button";
@@ -21,7 +21,7 @@ export function ActionBar({ post }: { post: PostProps }) {
       label: "Challenge Athena (Set Time Control to Real Time)",
     },
     pdf: {
-      icon: <LuArrowDownToLine size={22} />,
+      icon: <FaRegFilePdf size={22} />,
       label: "PDF",
     },
     github: {
@@ -68,7 +68,7 @@ export function ActionBar({ post }: { post: PostProps }) {
     : [];
 
   return (
-    <Row className="py-3 px-2 text-sm border-t">
+    <Row className="py-3 px-2 text-sm border-t border-t-gray-400">
       <Row className="gap-4">{orderedButtons}</Row>
     </Row>
   );
