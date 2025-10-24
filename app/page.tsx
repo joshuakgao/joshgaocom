@@ -1,6 +1,6 @@
 "use client";
 
-import { posts } from "@/components/content";
+import { posts, MyTimeline } from "@/components/content";
 import {
   Col,
   H0,
@@ -26,6 +26,11 @@ export default function Home() {
       <>
         <Col className="w-full flex items-center justify-center p-8 lg:p-16">
           <Col className={`w-full max-w-7xl mx-4 rounded-lg space-y-4 md:my-8`}>
+            <H0>My Timeline</H0>
+            <MyTimeline />
+
+            <Spacer size={32} />
+
             <Row className="justify-between">
               <H0>Latest works</H0>
               <Button asChild variant={"ghost"} className="text-blue-500">
@@ -36,7 +41,9 @@ export default function Home() {
                 </Link>
               </Button>
             </Row>
+
             <Spacer size={32} />
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
               {posts.slice(0, 3).map((props, idx) => (
                 <PostCard key={props.slug || idx} {...props} />

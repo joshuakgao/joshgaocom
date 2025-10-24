@@ -131,7 +131,7 @@ export let posts: PostProps[] = [
     contentType: "Finance",
     slug: "stock-portfolio-tracker",
     title: "How to Track Your Stock Portfolio with Google Sheets",
-    date: "Dec 2022",
+    date: "21 Dec 2022",
     year: "2022",
     thumbnail: "/assets/projects/2022/stock-portfolio-tracker/thumbnail.png",
     links: {

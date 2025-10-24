@@ -15,3 +15,5 @@ export * from "./post/postContent";
 export * from "./post/postAbstract";
 export * from "./post/postVideo";
 export * from "./post/postYoutube";
+export * from "./collapsible";
+export * from "./timelineItemCollapsible";
