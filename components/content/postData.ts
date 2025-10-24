@@ -16,22 +16,22 @@ export let posts: PostProps[] = [
   //   },
   //   year: "2025",
   // },
-  {
-    contentType: "AI",
-    slug: "athena-how-well-can-transformers-play-chess",
-    thumbnail: "/assets/projects/2025/athena/thumbnail.png",
-    title: "Athena: How Well Can Transformers Play Chess?",
-    description:
-      "Discover how Athena, a transformer-based model, is pushing the boundaries of chess AI, challenging traditional engines and human players alike.",
-    date: "28 Oct 2025",
-    year: "2025",
-    links: {
-      lichess: "https://lichess.org/@/athena-bot",
-      github: "https://github.com/joshuakgao/athena/tree/main",
-      huggingfaceDataset:
-        "https://huggingface.co/datasets/joshuakgao/chessbenchmate",
-    },
-  },
+  // {
+  //   contentType: "AI",
+  //   slug: "athena-how-well-can-transformers-play-chess",
+  //   thumbnail: "/assets/projects/2025/athena/thumbnail.png",
+  //   title: "Athena: How Well Can Transformers Play Chess?",
+  //   description:
+  //     "Discover how Athena, a transformer-based model, is pushing the boundaries of chess AI, challenging traditional engines and human players alike.",
+  //   date: "28 Oct 2025",
+  //   year: "2025",
+  //   links: {
+  //     lichess: "https://lichess.org/@/athena-bot",
+  //     github: "https://github.com/joshuakgao/athena/tree/main",
+  //     huggingfaceDataset:
+  //       "https://huggingface.co/datasets/joshuakgao/chessbenchmate",
+  //   },
+  // },
   {
     contentType: "Research",
     slug: "viewdelta-text-prompted-change-detection-in-unaligned-images",
