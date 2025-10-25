@@ -13,7 +13,7 @@ export const timelineData: TimelineItemProps[] = [
     title: "Published ICCV'25 Workshop Paper - ViewDelta",
     description:
       "Published research on text-prompted change detection in unaligned images, presented at ICCV 2025 SEA Workshop.",
-    img: "/assets/projects/2025/viewdelta/thumbnail2.png",
+    img: "/assets/projects/2025/viewdelta/thumbnail2.jpg",
     link: "https://joshuakgao.github.io/viewdelta/",
     linkText: "ViewDelta",
     icon: "research",
