@@ -41,15 +41,19 @@ export const timelineData: TimelineItemProps[] = [
   },
 ];
 
-export function MyTimeline({ className }: { className?: string }) {
+export function MyTimeline() {
   return (
-    <Timeline className={className} position="right">
+    <Timeline position="right" sx={{ padding: 0 }}>
       {timelineData.map((item, idx) => (
         <TimelineItem key={idx}>
           <TimelineOppositeContent
             className="relative top-[2px] md:top-[-2px]"
             color="text.secondary"
-            sx={{ flex: 0.1, minWidth: 70 }}
+            sx={{
+              flex: 0,
+              paddingLeft: 0,
+              paddingRight: 1,
+            }}
           >
             <P className="text-sm md:text-lg">{item.label}</P>
           </TimelineOppositeContent>
@@ -59,7 +63,7 @@ export function MyTimeline({ className }: { className?: string }) {
           </TimelineSeparator>
           <TimelineContent
             className="relative top-[1px] md:top-[-1px]"
-            sx={{ flex: 1 }}
+            sx={{ flex: 1, paddingLeft: 1, paddingRight: 0 }}
           >
             <TimelineItemCollapsible {...item} />
           </TimelineContent>

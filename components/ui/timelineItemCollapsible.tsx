@@ -48,33 +48,28 @@ export function TimelineItemCollapsible({
     <Collapsible open={open} onOpenChange={setOpen}>
       <Col className="cursor-pointer">
         <CollapsibleTrigger asChild>
-          <Row className="items-start">
-            <Col>
-              <Row>
-                <P className="font-semibold text-sm md:text-lg">{title}</P>
-                <Col>
-                  {open ? (
-                    <MdOutlineExpandLess
-                      size={"22"}
-                      className="ml-1 text-gray-400"
-                    />
-                  ) : (
-                    <MdOutlineExpandMore
-                      size={"22"}
-                      className="ml-1 text-gray-400"
-                    />
-                  )}
-                </Col>
-              </Row>
-              <Small
-                className={`max-w-md ${
-                  open ? "line-clamp-none" : "line-clamp-1"
-                }`}
-              >
-                {description}
-              </Small>
-            </Col>
-          </Row>
+          <Col>
+            <Row className="justify-between items-start md:max-w-xl">
+              <P className="font-semibold text-sm md:text-lg">{title}</P>
+
+              {open ? (
+                <Row>
+                  <MdOutlineExpandLess size={"16"} className="text-gray-500" />
+                </Row>
+              ) : (
+                <Row>
+                  <MdOutlineExpandMore size={"16"} className="text-gray-500" />
+                </Row>
+              )}
+            </Row>
+            <Small
+              className={`md:max-w-lg ${
+                open ? "line-clamp-none" : "line-clamp-1"
+              }`}
+            >
+              {description}
+            </Small>
+          </Col>
         </CollapsibleTrigger>
 
         <CollapsibleContent className="cursor-default">
@@ -82,7 +77,7 @@ export function TimelineItemCollapsible({
             <img
               src={img}
               alt={title}
-              className="my-2 rounded-lg max-w-sm md:max-w-md"
+              className="my-2 rounded-lg  md:max-w-lg"
             />
           )}
           {link && (
