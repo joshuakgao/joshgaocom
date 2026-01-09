@@ -1,6 +1,6 @@
 "use client";
 
-import { posts, MyTimeline } from "@/components/content";
+import { posts, MyTimeline, MyVbTimeline } from "@/components/content";
 import {
   Col,
   H0,
@@ -83,6 +83,11 @@ export default function Home() {
                 </Link>
               ))}
             </div>
+
+            <Spacer size={64} />
+
+            <H0>Volleyball Achievements</H0>
+            <MyVbTimeline />
           </Col>
         </Col>
         <Spacer size={256} />
