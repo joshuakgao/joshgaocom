@@ -1,13 +1,5 @@
 import { H3, P, TimelineItemProps, PostImg } from "@/components/ui";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 
 export const vbTimelineData: TimelineItemProps[] = [
   {
@@ -63,39 +55,25 @@ export const vbTimelineData: TimelineItemProps[] = [
 
 export function MyVbTimeline() {
   return (
-    <Carousel
-      className="w-[90%] lg:w-full self-center"
-      plugins={[
-        Autoplay({
-          delay: 7000,
-        }),
-      ]}
-    >
-      <CarouselContent className="-ml-2 md:-ml-4">
-        {vbTimelineData.map((item, idx) => (
-          <CarouselItem
-            key={idx}
-            className="pl-2 md:pl-4 md:basis-[45%] lg:basis-[30%]"
-          >
-            <Card>
-              <CardContent className="flex flex-col p-6">
-                <P className="text-sm md:text-lg text-muted-foreground mb-2">
-                  {item.label}
-                </P>
-                <H3 className="text-xl font-semibold mb-2 truncate">
-                  {item.title}
-                </H3>
-                <P className="text-muted-foreground">{item.description}</P>
-                {item.img && (
-                  <PostImg src={item.img} alt={item.title} aspectRatio="1/1" />
-                )}
-              </CardContent>
-            </Card>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {vbTimelineData.map((item, idx) => (
+        <Card key={idx}>
+          <CardContent className="flex flex-col p-6">
+            <P className="text-sm md:text-lg text-muted-foreground mb-2">
+              {item.label}
+            </P>
+            <H3 className="text-xl font-semibold mb-2 truncate">
+              {item.title}
+            </H3>
+            <P className="text-muted-foreground line-clamp-2">
+              {item.description}
+            </P>
+            {item.img && (
+              <PostImg src={item.img} alt={item.title} aspectRatio="1/1" />
+            )}
+          </CardContent>
+        </Card>
+      ))}
+    </div>
   );
 }

@@ -86,8 +86,21 @@ export default function Home() {
 
             <Spacer size={64} />
 
-            <H0>Volleyball Achievements</H0>
-            <MyVbTimeline />
+            <Col>
+              <H0>Misc</H0>
+              <Button
+                asChild
+                variant={"ghost"}
+                className="text-blue-500 justify-start"
+              >
+                <Link href="/misc/volleyball">
+                  <Row>
+                    Volleyball Timeline{" "}
+                    <LuArrowRight size={18} className="ml-2" />
+                  </Row>
+                </Link>
+              </Button>
+            </Col>
           </Col>
         </Col>
         <Spacer size={256} />
