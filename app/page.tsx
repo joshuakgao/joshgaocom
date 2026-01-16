@@ -100,6 +100,17 @@ export default function Home() {
                   </Row>
                 </Link>
               </Button>
+              <Button
+                asChild
+                variant={"ghost"}
+                className="text-blue-500 justify-start"
+              >
+                <Link href="/misc/bridgeEqa">
+                  <Row>
+                    BridgeEQA <LuArrowRight size={18} className="ml-2" />
+                  </Row>
+                </Link>
+              </Button>
             </Col>
           </Col>
         </Col>
