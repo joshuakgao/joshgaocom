@@ -1,6 +1,6 @@
 "use client";
 
-import { GradientText, H1, H2, Row } from "@/components/ui";
+import { Col, GradientText, H1, H2, H3, H4, Row } from "@/components/ui";
 import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -10,34 +10,38 @@ export default function Header() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Row
-      className="items-center justify-center px-2 w-full bg-white"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
+    <Row className="items-center justify-center px-1 md:px-2 w-full bg-white">
       <Row className="w-full mx-8 items-center justify-between">
-        <Row>
+        <Col>
           <Link href="/">
-            <H1 className="translate-y-[5px] sm:text-2xl">
-              <GradientText parentHovered={hovered}>Joshua Gao,</GradientText>
-            </H1>
-            <H2 className="pt-0 pb-0 text-gray-500 translate-y-[-5px]">
+            <Row className="translate-y-[5px]">
+              <H1
+                className="text-lg md:text-2xl"
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+              >
+                <GradientText parentHovered={hovered}>Joshua Gao</GradientText>
+              </H1>
+            </Row>
+          </Link>
+          <Row>
+            <H2 className="text-gray-500 text-md md:text-xl translate-y-[-5px]">
               deep learning researcher at
             </H2>
-          </Link>
-          <Link
-            href="https://sail.cive.uh.edu/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GradientText
-              base="gradient"
-              className="font-medium translate-y-[12px] translate-x-[5px]"
+            <Link
+              href="https://sail.cive.uh.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              SAIL
-            </GradientText>
-          </Link>
-        </Row>
+              <GradientText
+                base="gradient"
+                className="text-sm md:text-lg font-bold translate-y-[-4.5px] md:translate-y-[-3.5px] translate-x-[5px]"
+              >
+                SAIL
+              </GradientText>
+            </Link>
+          </Row>
+        </Col>
 
         {/* Hamburger Menu for Mobile */}
         <div className="md:hidden relative">

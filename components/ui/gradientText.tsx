@@ -37,10 +37,10 @@ export const GradientText = ({
   return (
     <span
       className={clsx(
-        "inline-block font-medium transition-all duration-500 ease-in-out",
+        "inline-block transition-all duration-500 ease-in-out",
         effectiveBaseClass,
         animateClass[animate],
-        className
+        className,
       )}
     >
       {children}

@@ -1,25 +1,56 @@
 import Header from "@/components/ui/header";
 import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
+
 import Head from "next/head";
 import Script from "next/script";
 import "./globals.css";
 
-const dm_sans = DM_Sans({
-  subsets: ["latin"],
-  weight: [
-    "100",
-    "200",
-    "300",
-    "400",
-    "500",
-    "600",
-    "700",
-    "800",
-    "900",
-    "1000",
+const googleSans = localFont({
+  src: [
+    {
+      path: "../public/assets/fonts/Google_Sans/static/GoogleSans-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/assets/fonts/Google_Sans/static/GoogleSans-Italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../public/assets/fonts/Google_Sans/static/GoogleSans-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/assets/fonts/Google_Sans/static/GoogleSans-MediumItalic.ttf",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "../public/assets/fonts/Google_Sans/static/GoogleSans-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/assets/fonts/Google_Sans/static/GoogleSans-SemiBoldItalic.ttf",
+      weight: "600",
+      style: "italic",
+    },
+    {
+      path: "../public/assets/fonts/Google_Sans/static/GoogleSans-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/assets/fonts/Google_Sans/static/GoogleSans-BoldItalic.ttf",
+      weight: "700",
+      style: "italic",
+    },
   ],
+  variable: "--font-google-sans",
 });
 
 export const metadata: Metadata = {
@@ -33,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={dm_sans.className}>
+    <html lang="en" className={googleSans.variable}>
       <head>
         <Script
           id="google-analytics"

@@ -4,6 +4,7 @@ import { posts, MyTimeline, MyVbTimeline } from "@/components/content";
 import {
   Col,
   H0,
+  H1,
   P,
   PostCard,
   Row,
@@ -18,7 +19,7 @@ import { LuArrowRight } from "react-icons/lu";
 export default function Home() {
   // Filter publications (assuming they have a type or category property)
   const publications = posts.filter(
-    (post) => post.contentType === "Research" || post.journal
+    (post) => post.contentType === "Research" || post.journal,
   );
 
   return (
@@ -26,13 +27,13 @@ export default function Home() {
       <>
         <Col className="w-full flex items-center justify-center p-8 lg:p-16">
           <Col className={`w-full max-w-7xl mx-4 rounded-lg space-y-4 md:my-8`}>
-            <H0>My AI Journey</H0>
+            <H1>My AI Journey</H1>
             <MyTimeline />
 
             <Spacer size={32} />
 
             <Row className="justify-between">
-              <H0>Latest Works</H0>
+              <H1>Latest Works</H1>
               <Button asChild variant={"ghost"} className="text-blue-500">
                 <Link href="/blog">
                   <Row>
@@ -54,7 +55,7 @@ export default function Home() {
 
             {/* Improved Publications Section */}
             <Row className="justify-between items-end">
-              <H0>Publications</H0>
+              <H1>Publications</H1>
               {/* <PostLink href="/publications">View all publications</PostLink> */}
             </Row>
 
@@ -87,7 +88,7 @@ export default function Home() {
             <Spacer size={64} />
 
             <Col>
-              <H0>Misc</H0>
+              <H1>Misc</H1>
               <Button
                 asChild
                 variant={"ghost"}
