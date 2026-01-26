@@ -2,6 +2,13 @@
 
 import { MyTimeline, posts } from "@/components/content";
 import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
   Col,
   H1,
   H2,
@@ -33,9 +40,7 @@ export default function Home() {
               <Spacer size={16} />
               <MyTimeline />
             </Col>
-
             <Spacer size={64} line />
-
             <Row className="justify-between">
               <Col>
                 <H1>Things I've Built</H1>
@@ -49,25 +54,42 @@ export default function Home() {
                 </Link>
               </Button>
             </Row>
-
             <Spacer size={16} />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+            {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
               {posts.slice(0, 3).map((props, idx) => (
                 <PostCard key={props.slug || idx} {...props} />
               ))}
+            </div> */}
+
+            <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+              <Carousel
+                className="relative px-8 lg:px-16"
+                opts={{
+                  align: "start",
+                  loop: false,
+                }}
+              >
+                <CarouselContent>
+                  {posts.map((props, idx) =>
+                    props.starred ? (
+                      <CarouselItem className="basis-[400px] mr-10">
+                        <PostCard key={props.slug || idx} {...props} />
+                      </CarouselItem>
+                    ) : null,
+                  )}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
             </div>
 
             <Spacer size={64} line />
-
             {/* Improved Publications Section */}
             <Row className="justify-between items-end">
               <H1>Publications</H1>
               {/* <PostLink href="/publications">View all publications</PostLink> */}
             </Row>
-
             <Spacer size={16} />
-
             <div className="mt-8 space-y-8">
               {publications.map((publication, idx) => (
                 <Link
@@ -91,9 +113,7 @@ export default function Home() {
                 </Link>
               ))}
             </div>
-
             <Spacer size={64} />
-
             <Col>
               <H1>Misc</H1>
               <Spacer size={16} />

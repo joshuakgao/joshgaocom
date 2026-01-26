@@ -1,5 +1,4 @@
-import { H3, P, TimelineItemProps, PostImg } from "@/components/ui";
-import { Card, CardContent } from "@/components/ui/card";
+import { Col, H3, P, PostImg, TimelineItemProps } from "@/components/ui";
 
 export const vbTimelineData: TimelineItemProps[] = [
   {
@@ -55,24 +54,20 @@ export const vbTimelineData: TimelineItemProps[] = [
 
 export function MyVbTimeline() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
       {vbTimelineData.map((item, idx) => (
-        <Card key={idx}>
-          <CardContent className="flex flex-col p-6">
-            <P className="text-sm md:text-lg text-muted-foreground mb-2">
-              {item.label}
-            </P>
-            <H3 className="text-xl font-semibold mb-2 truncate">
-              {item.title}
-            </H3>
-            <P className="text-muted-foreground line-clamp-2">
-              {item.description}
-            </P>
-            {item.img && (
-              <PostImg src={item.img} alt={item.title} aspectRatio="1/1" />
-            )}
-          </CardContent>
-        </Card>
+        <Col key={idx}>
+          <P className="text-sm md:text-lg text-muted-foreground mb-2">
+            {item.label}
+          </P>
+          <H3 className="text-xl font-semibold mb-2 truncate">{item.title}</H3>
+          <P className="text-muted-foreground line-clamp-2">
+            {item.description}
+          </P>
+          {item.img && (
+            <PostImg src={item.img} alt={item.title} aspectRatio="1/1" />
+          )}
+        </Col>
       ))}
     </div>
   );

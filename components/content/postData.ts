@@ -52,6 +52,7 @@ export let posts: PostProps[] = [
       huggingfaceDataset: "https://huggingface.co/datasets/hoskerelab/CSeg",
     },
     year: "2025",
+    starred: true,
   },
   {
     contentType: "Hardware",
@@ -63,6 +64,7 @@ export let posts: PostProps[] = [
     links: { website: "https://cloud.joshgao.com" },
     date: "9 Dec 2024",
     year: "2024",
+    starred: true,
   },
   // {
   //   contentType: "Project",
@@ -89,6 +91,7 @@ export let posts: PostProps[] = [
     links: {
       github: "https://github.com/tugonbob/gpt-nano",
     },
+    starred: true,
   },
   {
     contentType: "AI",
@@ -115,6 +118,7 @@ export let posts: PostProps[] = [
       github:
         "https://github.com/tugonbob/stanford-cs229-andrew-ng/blob/main/Ch1-SupervisedLearning/1-LinearRegression/1.1.1-LmsAlgorithm.ipynb",
     },
+    starred: true,
   },
   {
     contentType: "Software",
