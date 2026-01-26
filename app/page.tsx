@@ -1,10 +1,10 @@
 "use client";
 
-import { posts, MyTimeline, MyVbTimeline } from "@/components/content";
+import { MyTimeline, posts } from "@/components/content";
 import {
   Col,
-  H0,
   H1,
+  H2,
   P,
   PostCard,
   Row,
@@ -27,13 +27,20 @@ export default function Home() {
       <>
         <Col className="w-full flex items-center justify-center p-8 lg:p-16">
           <Col className={`w-full max-w-7xl mx-4 rounded-lg space-y-4 md:my-8`}>
-            <H1>My AI Journey</H1>
-            <MyTimeline />
+            <Col>
+              <H1 className="mb-0 mt-0">My AI Timeline</H1>
+              <H2 className="mt-0 pb-0">A snapshot of my major milestones</H2>
+              <Spacer size={16} />
+              <MyTimeline />
+            </Col>
 
-            <Spacer size={32} />
+            <Spacer size={64} line />
 
             <Row className="justify-between">
-              <H1>Latest Works</H1>
+              <Col>
+                <H1>Things I've Built</H1>
+                <H2>From research papers to weekend tinkering</H2>
+              </Col>
               <Button asChild variant={"ghost"} className="text-blue-500">
                 <Link href="/blog">
                   <Row>
@@ -43,7 +50,7 @@ export default function Home() {
               </Button>
             </Row>
 
-            <Spacer size={32} />
+            <Spacer size={16} />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
               {posts.slice(0, 3).map((props, idx) => (
@@ -51,7 +58,7 @@ export default function Home() {
               ))}
             </div>
 
-            <Spacer size={64} />
+            <Spacer size={64} line />
 
             {/* Improved Publications Section */}
             <Row className="justify-between items-end">
@@ -59,7 +66,7 @@ export default function Home() {
               {/* <PostLink href="/publications">View all publications</PostLink> */}
             </Row>
 
-            <Spacer size={32} />
+            <Spacer size={16} />
 
             <div className="mt-8 space-y-8">
               {publications.map((publication, idx) => (
@@ -89,6 +96,7 @@ export default function Home() {
 
             <Col>
               <H1>Misc</H1>
+              <Spacer size={16} />
               <Button
                 asChild
                 variant={"ghost"}
