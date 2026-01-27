@@ -104,7 +104,6 @@ export let posts: PostProps[] = [
     links: {
       github: "https://github.com/tugonbob/cifar-knn-classifer",
     },
-    starred: true,
   },
   {
     contentType: "AI",
