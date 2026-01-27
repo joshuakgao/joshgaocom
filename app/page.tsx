@@ -30,10 +30,10 @@ export default function Home() {
   );
 
   return (
-    <ScrollDiv className="min-h-screen relative bg-transparent">
+    <ScrollDiv className="min-h-screen bg-transparent">
       <>
-        <Col className="w-full flex items-center justify-center p-8 lg:p-16">
-          <Col className={`w-full max-w-7xl mx-4 rounded-lg space-y-4 md:my-8`}>
+        <Col className="w-full flex items-center justify-center p-8 md:p-16">
+          <Col className={`w-full max-w-7xl rounded-lg space-y-4 md:my-8`}>
             <Col>
               <H1 className="mb-0 mt-0">My AI Timeline</H1>
               <H2 className="mt-0 pb-0">A snapshot of my major milestones</H2>
@@ -55,25 +55,23 @@ export default function Home() {
               </Button>
             </Row>
             <Spacer size={16} />
-            {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-              {posts.slice(0, 3).map((props, idx) => (
-                <PostCard key={props.slug || idx} {...props} />
-              ))}
-            </div> */}
 
-            <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+            <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] pb-16">
               <Carousel
-                className="relative px-8 lg:px-16"
+                className="relative"
                 opts={{
                   align: "start",
                   loop: false,
                 }}
               >
-                <CarouselContent>
+                <CarouselContent className="ml-[max(1rem,calc((98vw-theme(maxWidth.7xl))/2))] md:ml-[max(3rem,calc((98vw-theme(maxWidth.7xl))/2))] md:mr-[max(1rem,calc((96vw-theme(maxWidth.7xl))/2))]">
                   {posts.map((props, idx) =>
                     props.starred ? (
-                      <CarouselItem className="basis-[400px] mr-10">
-                        <PostCard key={props.slug || idx} {...props} />
+                      <CarouselItem
+                        key={props.slug || idx}
+                        className="basis-[400px] mr-10"
+                      >
+                        <PostCard {...props} />
                       </CarouselItem>
                     ) : null,
                   )}
@@ -98,13 +96,13 @@ export default function Home() {
                 >
                   <Row className="items-start gap-6 p-4 border-b border-gray-20 hover:bg-gray-50 transition-colors duration-300">
                     {/* Date for larger screens - hidden on small screens */}
-                    <div className="flex-shrink-0 w-32 hidden sm:block">
+                    <div className="flex-shrink-0 w-32 hidden md:block">
                       <P>{publication.date}</P>
                     </div>
 
                     <Col className="align-start justify-start flex-1">
                       {/* Date for small screens - shown only on small screens */}
-                      <P className="sm:hidden mb-2">{publication.date}</P>
+                      <P className="md:hidden mb-2">{publication.date}</P>
                       <P className="text-black">{publication.title}</P>
                       <Small>{publication.authors?.join(", ")}</Small>
                       <Small>{publication.journal}</Small>
