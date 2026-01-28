@@ -11,10 +11,10 @@ export function PostAbstract({
   size?: string;
 }) {
   return (
-    <PostContent size="max-w-xl">
+    <PostContent className="w-full items-center">
       <H1>Abstract</H1>
       <Spacer size={8} />
-      <P className="text-justify">{children}</P>
+      <P className="items-center max-w-xl text-justify">{children}</P>
     </PostContent>
   );
 }

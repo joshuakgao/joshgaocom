@@ -1,10 +1,9 @@
-import { Row } from "@/components/ui";
+import { Button, Row } from "@/components/ui";
 import { FaGithub, FaGoogleDrive, FaRegFilePdf } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
 import { LuExternalLink } from "react-icons/lu";
 import { SiHuggingface, SiLichess } from "react-icons/si";
 import { PostProps } from "../../types";
-import { Button } from "../button";
 
 export function ActionBar({ post }: { post: PostProps }) {
   const linkConfig = {
@@ -68,7 +67,7 @@ export function ActionBar({ post }: { post: PostProps }) {
     : [];
 
   return (
-    <Row className="py-3 px-2 text-sm border-t border-t-gray-400">
+    <Row className="py-3 px-2 text-sm border-t border-t-gray-400 w-full">
       <Row className="gap-4">{orderedButtons}</Row>
     </Row>
   );

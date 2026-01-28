@@ -4,9 +4,10 @@ import { PostProps } from "@/components/types";
 import {
   ActionBar,
   Col,
-  ExtraSmall,
   H0,
   H1,
+  H3,
+  H4,
   P,
   PostContent,
   PostImg,
@@ -29,11 +30,11 @@ export function PostWrapper({
     );
   }
   return (
-    <Col className="min-h-screen items-center justify-center space-y-8 p-4">
-      <PostContent>
-        <P>{post.contentType}</P>
-        <H0>{post.title}</H0>
-        {post.date && <ExtraSmall>Joshua Gao · {post.date}</ExtraSmall>}
+    <Col className="min-h-screen items-center space-y-8 p-8 mt-16">
+      <PostContent className="items-center max-w-4xl space-y-8">
+        <H4>{post.contentType}</H4>
+        <H0 className="text-center">{post.title}</H0>
+        {post.date && <H3>Joshua Gao · {post.date}</H3>}
       </PostContent>
       <PostContent size="max-w-7xl">
         {post.video ? (
@@ -81,7 +82,9 @@ export function PostWrapper({
         )}
       </PostContent>
       <PostContent>
-        <Col className="space-y-4 items-center justify-center">{children}</Col>
+        <Col className="w-full space-y-4 items-center justify-center">
+          {children}
+        </Col>
       </PostContent>
       <Spacer size={128} />
     </Col>
