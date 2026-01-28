@@ -49,20 +49,7 @@ export const PostCard: React.FC<PostProps> = ({
             <Muted className="text-gray-500">{contentType}</Muted>
             <H2>{title}</H2>
             <Spacer size={8} />
-            <P
-              className="line-clamp-2"
-              style={{
-                display: "-webkit-box",
-                WebkitLineClamp: 2,
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                minHeight: "2.8em", // ensures space for two lines
-              }}
-            >
-              {description}
-              {description && description.length > 80 ? "..." : ""}
-            </P>
+            <P className="line-clamp-3">{description}</P>
             <Row className="items-center justify-between mt-auto">
               <ExtraSmall>{date}</ExtraSmall>
             </Row>

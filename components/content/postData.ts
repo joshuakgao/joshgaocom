@@ -37,12 +37,11 @@ export let posts: PostProps[] = [
     slug: "viewdelta-text-prompted-change-detection-in-unaligned-images",
     thumbnail: "/assets/projects/2025/viewDelta/viewdelta.mp4",
     video: "https://youtu.be/snSC3JZe_GA",
-    title:
-      "ViewDelta: Scaling Scene Change Detection through Text-Conditioning",
+    title: "ViewDelta",
     authors: ["Subin Varghese", "Joshua Gao", "Vedhus Hoskere"],
     journal: "ICCV 2025, SEA Workshop",
     journalHighlighted: true,
-    description: `Can you spot the difference between these two images? ViewDelta can! We show you how ViewDelta solves text-prompted change detection in many domains.`,
+    description: "Scaling change detection through text-conditioning.",
     date: "19 Oct 2025",
     links: {
       publication: "https://arxiv.org/abs/2412.07612",
@@ -58,9 +57,8 @@ export let posts: PostProps[] = [
     contentType: "Hardware",
     slug: "self-hosted-cloud-storage",
     thumbnail: "/assets/projects/2024/self-hosted-cloud-storage/thumbnail.jpg",
-    title: "Self Hosted NextCloud Is Game Changing",
-    description:
-      "All it takes to avoid Google Drive and DropBox subscriptions is a RasberryPi and NextCloud.",
+    title: "Self Hosting Cloud Storage",
+    description: "Avoiding cloud storage fees with a RasberryPi and NextCloud.",
     links: { website: "https://cloud.joshgao.com" },
     date: "9 Dec 2024",
     year: "2024",
@@ -82,9 +80,8 @@ export let posts: PostProps[] = [
   {
     contentType: "AI",
     slug: "gpt-nano",
-    title: "GptNano: Beating OpenAI's GPT-2",
-    description:
-      "Meet GptNano: the pint-sized powerhouse that outsmarts GPT-2.",
+    title: "GptNano",
+    description: "Outperforming OpenAI's GPT-2.",
     thumbnail: "/assets/projects/2024/gpt-nano/thumbnail2.png",
     date: "27 Jun 2024",
     year: "2024",
@@ -108,7 +105,7 @@ export let posts: PostProps[] = [
   {
     contentType: "AI",
     slug: "ml-real-estate-valuation",
-    title: "How Much Is Your Home Worth? We Optimized a Machine Learning Model",
+    title: "How Much Is Your Home Worth?",
     description:
       "A machine learning model trained on Zillow data with multi variable stochastic gradient descent.",
     thumbnail: "/assets/projects/2023/ml-real-estate-valuation/thumbnail.png",
@@ -124,6 +121,7 @@ export let posts: PostProps[] = [
     contentType: "Software",
     slug: "reddit-laughs",
     title: "Reddit Laughs",
+    description: "Fully Automating a Youtube Channel.",
     date: "13 Jun 2022",
     year: "2022",
     links: {
@@ -134,7 +132,9 @@ export let posts: PostProps[] = [
   {
     contentType: "Finance",
     slug: "stock-portfolio-tracker",
-    title: "How to Track Your Stock Portfolio with Google Sheets",
+    title: "Google Sheets Stock Portfolio Tracker",
+    description:
+      "Track your performance against the S&P 500 and keep up with super-investor trades.",
     date: "21 Dec 2022",
     year: "2022",
     thumbnail: "/assets/projects/2022/stock-portfolio-tracker/thumbnail.png",
