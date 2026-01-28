@@ -102,21 +102,24 @@ export function MyTimeline() {
           );
 
           return (
-            <Row key={idx} className="space-x-2">
+            <Row key={idx}>
               {idx != 0 ? <BreadcrumbSeparator /> : null}
+              <Spacer horizontal size={8} />
               {isTouchDevice ? (
                 <Popover>
                   <PopoverTrigger asChild>
                     <H3>{item.shortLabel}</H3>
                   </PopoverTrigger>
-                  <PopoverContent>{content}</PopoverContent>
+                  <PopoverContent align="start" className="w-96">
+                    {content}
+                  </PopoverContent>
                 </Popover>
               ) : (
                 <HoverCard openDelay={0} closeDelay={0}>
                   <HoverCardTrigger>
                     <H3>{item.longLabel}</H3>
                   </HoverCardTrigger>
-                  <HoverCardContent className="z-50 w-96 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 origin-[--radix-hover-card-content-transform-origin]">
+                  <HoverCardContent align="start" className="w-96">
                     {content}
                   </HoverCardContent>
                 </HoverCard>
