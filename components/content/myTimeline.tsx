@@ -85,6 +85,9 @@ export function MyTimeline() {
                   autoPlay
                   loop
                   muted
+                  playsInline
+                  disablePictureInPicture
+                  disableRemotePlayback
                   className="rounded-lg md:max-w-lg"
                 />
               ) : (
