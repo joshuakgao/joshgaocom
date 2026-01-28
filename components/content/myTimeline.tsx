@@ -21,8 +21,7 @@ import { LuExternalLink } from "react-icons/lu";
 
 export const timelineData = [
   {
-    longLabel: "Sharp Vision Software",
-    shortLabel: "SVS",
+    label: "Sharp Vision Software",
     title: "Head of AI",
     description:
       "Developed AI medical simulation prototype that secured $1.3M Defense Health Agency research funding. Engineered a secure AI deployment pipeline for U.S. Navy Fleet Readiness Center.",
@@ -31,8 +30,7 @@ export const timelineData = [
     date: "May 2021 – Aug 2024",
   },
   {
-    longLabel: "Structures and Aritifical Intelligence Lab",
-    shortLabel: "SAIL",
+    label: "Structures and Aritifical Intelligence Lab",
     title: "Research Assistant",
     description: "Exploring how AI can transform real-world engineering.",
     img: "/assets/images/sail.mov",
@@ -40,8 +38,7 @@ export const timelineData = [
     date: "May 2024 – Present",
   },
   {
-    longLabel: "ICCV'25 Publication",
-    shortLabel: "ICCV'25",
+    label: "ICCV'25 Publication",
     title: "ViewDelta Publication",
     link: "https://joshuakgao.github.io/viewdelta/",
     description:
@@ -103,27 +100,27 @@ export function MyTimeline() {
 
           return (
             <Row key={idx}>
-              {idx != 0 ? <BreadcrumbSeparator /> : null}
-              <Spacer horizontal size={8} />
               {isTouchDevice ? (
                 <Popover>
                   <PopoverTrigger asChild>
-                    <H3>{item.shortLabel}</H3>
+                    <H3>{item.label}</H3>
                   </PopoverTrigger>
-                  <PopoverContent align="start" className="w-80 md:w-96">
+                  <PopoverContent align="start" className="w-64">
                     {content}
                   </PopoverContent>
                 </Popover>
               ) : (
                 <HoverCard openDelay={0} closeDelay={0}>
                   <HoverCardTrigger>
-                    <H3>{item.longLabel}</H3>
+                    <H3>{item.label}</H3>
                   </HoverCardTrigger>
-                  <HoverCardContent align="start" className="w-80 md:w-96">
+                  <HoverCardContent align="start" className="w-96">
                     {content}
                   </HoverCardContent>
                 </HoverCard>
               )}
+              <Spacer horizontal size={8} />
+              {idx != timelineData.length - 1 ? <BreadcrumbSeparator /> : null}
             </Row>
           );
         })}
