@@ -20,11 +20,26 @@ export const PostCard: React.FC<PostProps> = ({
     >
       <Link href={`/blog/${year}/${slug}`} passHref className="w-full h-full">
         <Col className="overflow-hidden w-full h-full">
-          <img
+          {thumbnail.endsWith(".mov") || thumbnail.endsWith(".mp4") ? (
+            <video
+              src={thumbnail}
+              autoPlay
+              loop
+              muted
+              className="rounded-lg md:max-w-lg"
+            />
+          ) : (
+            <img
+              src={thumbnail}
+              alt={title}
+              className="inset-0 w-full h-full object-cover aspect-video rounded-2xl"
+            />
+          )}
+          {/* <img
             src={thumbnail}
             alt={title}
             className="inset-0 w-full h-full object-cover aspect-video rounded-2xl"
-          />
+          /> */}
           <Spacer size={32} />
           {/* Content area as flex column */}
           <Col className="min-w-0 h-full flex flex-col">
