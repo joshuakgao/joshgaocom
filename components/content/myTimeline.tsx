@@ -105,7 +105,7 @@ export function MyTimeline() {
                   <PopoverTrigger asChild>
                     <H3>{item.label}</H3>
                   </PopoverTrigger>
-                  <PopoverContent align="start" className="w-64">
+                  <PopoverContent align="start" className="w-72">
                     {content}
                   </PopoverContent>
                 </Popover>
