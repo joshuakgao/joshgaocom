@@ -1,6 +1,6 @@
-import { Col, H3, P, PostImg, TimelineItemProps } from "@/components/ui";
+import { Col, H3, P, PostImg } from "@/components/ui";
 
-export const vbTimelineData: TimelineItemProps[] = [
+export const vbTimelineData = [
   {
     label: "Nov 2025",
     title: "(2nd) Gobble Gobble Tournament",

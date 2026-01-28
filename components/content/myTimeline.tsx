@@ -1,20 +1,20 @@
 import {
-  P,
-  Row,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
   Breadcrumb,
   BreadcrumbList,
   BreadcrumbSeparator,
-  HoverCard,
   Col,
-  Small,
   H3,
-  PostLink,
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+  P,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Row,
+  Small,
   Spacer,
 } from "@/components/ui";
-import { HoverCardContent, HoverCardTrigger } from "@radix-ui/react-hover-card";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LuExternalLink } from "react-icons/lu";

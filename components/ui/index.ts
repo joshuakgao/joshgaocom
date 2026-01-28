@@ -19,3 +19,5 @@ export * from "./collapsible";
 export * from "./hover-card";
 export * from "./popover";
 export * from "./breadcrumb";
+export * from "./carousel";
+export * from "./button";

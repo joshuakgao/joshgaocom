@@ -27,7 +27,7 @@ export function PostList() {
     return posts.filter(
       (post) =>
         (selectedYear === "All" || post.year === selectedYear) &&
-        (selectedTag === "All" || post.contentType === selectedTag)
+        (selectedTag === "All" || post.contentType === selectedTag),
     );
   }, [selectedYear, selectedTag]);
 

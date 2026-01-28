@@ -1,15 +1,7 @@
 "use client";
 
 import { getPostMetadata } from "@/components/content";
-import {
-  H1,
-  P,
-  PostContent,
-  PostImg,
-  PostLink,
-  PostWrapper,
-  PostYoutube,
-} from "@/components/ui";
+import { H1, P, PostContent, PostWrapper, PostYoutube } from "@/components/ui";
 
 export default function Page() {
   const { year, slug, assetsPath, post } = getPostMetadata();

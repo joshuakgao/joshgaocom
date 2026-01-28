@@ -1,14 +1,7 @@
 "use client";
 
 import { getPostMetadata } from "@/components/content";
-import {
-  H1,
-  P,
-  PostContent,
-  PostImg,
-  PostLink,
-  PostWrapper,
-} from "@/components/ui";
+import { H1, P, PostContent, PostLink, PostWrapper } from "@/components/ui";
 
 export default function Athena() {
   const { year, slug, assetsPath, post } = getPostMetadata();

@@ -2,13 +2,12 @@
 
 import { MyTimeline, posts } from "@/components/content";
 import {
+  Button,
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import {
   Col,
   H1,
   H2,
@@ -19,7 +18,6 @@ import {
   Small,
   Spacer,
 } from "@/components/ui";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { LuArrowRight } from "react-icons/lu";
 

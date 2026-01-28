@@ -1,19 +1,6 @@
 "use client";
 
-import { getPostMetadata, MyVbTimeline } from "@/components/content";
-import {
-  Col,
-  H0,
-  H1,
-  P,
-  PostContent,
-  PostImg,
-  PostLink,
-  PostWrapper,
-  ScrollDiv,
-  Spacer,
-  PostVideo,
-} from "@/components/ui";
+import { PostContent, PostVideo, ScrollDiv } from "@/components/ui";
 
 export default function BridgeEqa() {
   return (
