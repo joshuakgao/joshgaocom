@@ -1,74 +1,126 @@
-import { P, TimelineItemCollapsible, TimelineItemProps } from "@/components/ui";
-import Timeline from "@mui/lab/Timeline";
-import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
-import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
+import {
+  P,
+  Row,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+  HoverCard,
+  Col,
+  Small,
+  H3,
+  PostLink,
+  Spacer,
+} from "@/components/ui";
+import { HoverCardContent, HoverCardTrigger } from "@radix-ui/react-hover-card";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { LuExternalLink } from "react-icons/lu";
 
-export const timelineData: TimelineItemProps[] = [
+export const timelineData = [
   {
-    label: "2025",
-    title: "Published ICCV'25 Workshop Paper - ViewDelta",
+    longLabel: "Sharp Vision Software",
+    shortLabel: "SVS",
+    title: "Head of AI",
     description:
-      "Published research on text-prompted change detection in unaligned images, presented at ICCV 2025 SEA Workshop.",
-    img: "/assets/projects/2025/viewDelta/thumbnail2.jpg",
-    link: "https://joshuakgao.github.io/viewdelta/",
-    linkText: "ViewDelta",
-    icon: "research",
-    color: "warning",
-  },
-  {
-    label: "2024",
-    title: "Joined SAIL Research Lab",
-    description:
-      "Conducting research on vision-language AI and their applications in civil engineering.",
-    img: "/assets/images/sail.png",
-    link: "https://sail.cive.uh.edu/",
-    linkText: "SAIL",
-    color: "grey",
-  },
-  {
-    label: "2021",
-    title: "Head of AI Development - SVS",
-    description:
-      "Developed AI medical simulation prototype that secured $1.3M Defense Health Agency research funding. Engineered a secure AI deployment pipeline for U.S. Navy Fleet Readiness Center and established company-wide DevOps infrastructure.",
+      "Developed AI medical simulation prototype that secured $1.3M Defense Health Agency research funding. Engineered a secure AI deployment pipeline for U.S. Navy Fleet Readiness Center.",
     img: "/assets/projects/2023/svs-medical-simulation/thumbnail.png",
     link: "https://www.sbir.gov/awards/206325",
-    linkText: "SBIR Award",
-    color: "grey",
+    date: "May 2021 – Aug 2024",
+  },
+  {
+    longLabel: "Structures and Aritifical Intelligence Lab",
+    shortLabel: "SAIL",
+    title: "Research Assistant",
+    description: "Exploring how AI can transform real-world engineering.",
+    img: "/assets/images/sail.mov",
+    link: "https://sail.cive.uh.edu/",
+    date: "May 2024 – Present",
+  },
+  {
+    longLabel: "ICCV'25 Publication",
+    shortLabel: "ICCV'25",
+    title: "ViewDelta Publication",
+    link: "https://joshuakgao.github.io/viewdelta/",
+    description:
+      "Published research on text-prompted change detection in unaligned images, presented at ICCV 2025 SEA Workshop.",
+    img: "/assets/projects/2025/viewDelta/viewdelta.mp4",
+    date: "Oct 2025",
   },
 ];
 
 export function MyTimeline() {
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  useEffect(() => {
+    // Check if touch events are supported
+    const hasTouchScreen =
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    setIsTouchDevice(hasTouchScreen);
+  }, []);
+
   return (
-    <Timeline position="right" sx={{ padding: 0 }}>
-      {timelineData.map((item, idx) => (
-        <TimelineItem key={idx}>
-          <TimelineOppositeContent
-            className="relative top-[2px] md:top-[-2px]"
-            color="text.secondary"
-            sx={{
-              flex: 0,
-              paddingLeft: 0,
-              paddingRight: 1,
-            }}
-          >
-            <P className="text-sm md:text-lg">{item.label}</P>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot color={item.color || "grey"} />
-            {idx < timelineData.length - 1 && <TimelineConnector />}
-          </TimelineSeparator>
-          <TimelineContent
-            className="relative top-[1px] md:top-[-1px]"
-            sx={{ flex: 1, paddingLeft: 1, paddingRight: 0 }}
-          >
-            <TimelineItemCollapsible {...item} />
-          </TimelineContent>
-        </TimelineItem>
-      ))}
-    </Timeline>
+    <Breadcrumb>
+      <BreadcrumbList>
+        {timelineData.map((item, idx) => {
+          const content = (
+            <Col className="space-y-2">
+              <Col>
+                <Row>
+                  <H3>{item.title}</H3>
+                  <Spacer horizontal size={8} />
+                  <Link href={item.link}>
+                    <LuExternalLink size={16} />
+                  </Link>
+                </Row>
+                <Small>{item.date}</Small>
+              </Col>
+              <P>{item.description}</P>
+              <Spacer size={2} />
+              {item.img.endsWith(".mov") || item.img.endsWith(".mp4") ? (
+                <video
+                  src={item.img}
+                  autoPlay
+                  loop
+                  muted
+                  className="rounded-lg md:max-w-lg"
+                />
+              ) : (
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="rounded-lg md:max-w-lg"
+                />
+              )}
+            </Col>
+          );
+
+          return (
+            <Row key={idx} className="space-x-2">
+              {idx != 0 ? <BreadcrumbSeparator /> : null}
+              {isTouchDevice ? (
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <H3>{item.shortLabel}</H3>
+                  </PopoverTrigger>
+                  <PopoverContent>{content}</PopoverContent>
+                </Popover>
+              ) : (
+                <HoverCard openDelay={0} closeDelay={0}>
+                  <HoverCardTrigger>
+                    <H3>{item.longLabel}</H3>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="z-50 w-96 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 origin-[--radix-hover-card-content-transform-origin]">
+                    {content}
+                  </HoverCardContent>
+                </HoverCard>
+              )}
+            </Row>
+          );
+        })}
+      </BreadcrumbList>
+    </Breadcrumb>
   );
 }

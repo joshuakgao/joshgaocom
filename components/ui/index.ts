@@ -16,4 +16,6 @@ export * from "./post/postAbstract";
 export * from "./post/postVideo";
 export * from "./post/postYoutube";
 export * from "./collapsible";
-export * from "./timelineItemCollapsible";
+export * from "./hover-card";
+export * from "./popover";
+export * from "./breadcrumb";
