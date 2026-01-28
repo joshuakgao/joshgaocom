@@ -47,9 +47,12 @@ export function PostWrapper({
             allowFullScreen
           />
         ) : post.thumbnail.endsWith(".mp4") ? (
-          <video controls className="rounded-lg w-full object-cover">
-            <source src={post.thumbnail} type="video/mp4" />
-          </video>
+          <video
+            src={post.thumbnail}
+            controls
+            className="rounded-lg w-full object-cover"
+            preload="auto"
+          />
         ) : (
           <PostImg
             src={post.thumbnail}

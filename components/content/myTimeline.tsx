@@ -15,6 +15,7 @@ import {
   Small,
   Spacer,
 } from "@/components/ui";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LuExternalLink } from "react-icons/lu";
@@ -89,12 +90,15 @@ export function MyTimeline() {
                   disablePictureInPicture
                   disableRemotePlayback
                   className="rounded-lg md:max-w-lg"
+                  preload="auto"
                 />
               ) : (
-                <img
+                <Image
                   src={item.img}
                   alt={item.title}
                   className="rounded-lg md:max-w-lg"
+                  preload
+                  priority
                 />
               )}
             </Col>

@@ -1,5 +1,6 @@
 import { PostProps } from "@/components/types";
 import { Col, ExtraSmall, H2, Muted, P, Row, Spacer } from "@/components/ui";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -30,20 +31,20 @@ export const PostCard: React.FC<PostProps> = ({
               disablePictureInPicture
               disableRemotePlayback
               className="inset-0 w-full h-full object-cover aspect-video rounded-2xl"
+              preload="auto"
             />
           ) : (
-            <img
+            <Image
               src={thumbnail}
               alt={title}
               className="inset-0 w-full h-full object-cover aspect-video rounded-2xl"
+              preload
+              priority
             />
           )}
-          {/* <img
-            src={thumbnail}
-            alt={title}
-            className="inset-0 w-full h-full object-cover aspect-video rounded-2xl"
-          /> */}
+
           <Spacer size={32} />
+
           {/* Content area as flex column */}
           <Col className="min-w-0 h-full flex flex-col">
             <Muted className="text-gray-500">{contentType}</Muted>

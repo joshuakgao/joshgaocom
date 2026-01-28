@@ -41,6 +41,7 @@ export function PostVideo({
         title={title}
         className={`rounded-lg w-full max-w-full object-contain ${className}`}
         playsInline
+        preload="auto"
       >
         {/* Fallback for browsers that don't support video */}
         <p>

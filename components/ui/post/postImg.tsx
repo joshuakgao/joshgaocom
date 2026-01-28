@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 
 export function PostImg({
   src,
@@ -23,11 +23,13 @@ export function PostImg({
 
   return (
     <div className="flex justify-center">
-      <img
+      <Image
         src={src}
         alt={alt}
         style={style}
         className={`rounded-lg w-full object-cover my-4 ${className}`}
+        preload
+        priority
       />
     </div>
   );
