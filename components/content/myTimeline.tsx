@@ -119,7 +119,7 @@ export function MyTimeline() {
                   <HoverCardTrigger>
                     <H3>{item.longLabel}</H3>
                   </HoverCardTrigger>
-                  <HoverCardContent align="start" className="w-96">
+                  <HoverCardContent align="start" className="w-80 md:w-96">
                     {content}
                   </HoverCardContent>
                 </HoverCard>
