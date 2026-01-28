@@ -62,12 +62,12 @@ export default function Home() {
                   loop: false,
                 }}
               >
-                <CarouselContent className="ml-[max(1rem,calc((98vw-theme(maxWidth.7xl))/2))] md:ml-[max(3rem,calc((98vw-theme(maxWidth.7xl))/2))] md:mr-[max(1rem,calc((96vw-theme(maxWidth.7xl))/2))]">
+                <CarouselContent className="ml-[max(1rem,calc((98vw-theme(maxWidth.7xl))/2))] md:ml-[max(3rem,calc((98vw-theme(maxWidth.7xl))/2))] mr-[max(1rem,calc((96vw-theme(maxWidth.7xl))/2))] md:mr-[max(3rem,calc((96vw-theme(maxWidth.7xl))/2))]">
                   {posts.map((props, idx) =>
                     props.starred ? (
                       <CarouselItem
                         key={props.slug || idx}
-                        className="basis-[360px] md:basis-[430px] mr-8"
+                        className="basis-[340px] md:basis-[430px] mr-4 md:mr-8"
                       >
                         <PostCard {...props} />
                       </CarouselItem>
