@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export function PostImg({
   src,
   alt,
@@ -23,13 +21,11 @@ export function PostImg({
 
   return (
     <div className="flex justify-center">
-      <Image
+      <img
         src={src}
         alt={alt}
         style={style}
         className={`rounded-lg w-full object-cover my-4 ${className}`}
-        preload
-        priority
       />
     </div>
   );

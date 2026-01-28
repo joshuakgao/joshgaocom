@@ -1,6 +1,5 @@
 import { PostProps } from "@/components/types";
 import { Col, ExtraSmall, H2, Muted, P, Row, Spacer } from "@/components/ui";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -34,12 +33,10 @@ export const PostCard: React.FC<PostProps> = ({
               preload="auto"
             />
           ) : (
-            <Image
+            <img
               src={thumbnail}
               alt={title}
               className="inset-0 w-full h-full object-cover aspect-video rounded-2xl"
-              preload
-              priority
             />
           )}
 
