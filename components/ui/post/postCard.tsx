@@ -16,7 +16,7 @@ export const PostCard: React.FC<PostProps> = ({
 }) => {
   return (
     <Col
-      className={`group flex w-[300px] md:w-auto h-[440px] bg-white cursor-pointer scale-[98%] hover:scale-[100%] transition-all duration-300`}
+      className={`group flex w-[360px] md:w-[430px] bg-white cursor-pointer scale-[98%] hover:scale-[100%] transition-all duration-300`}
     >
       <Link href={`/blog/${year}/${slug}`} passHref className="w-full h-full">
         <Col className="overflow-hidden w-full h-full">
@@ -29,7 +29,7 @@ export const PostCard: React.FC<PostProps> = ({
               playsInline
               disablePictureInPicture
               disableRemotePlayback
-              className="rounded-lg md:max-w-lg"
+              className="inset-0 w-full h-full object-cover aspect-video rounded-2xl"
             />
           ) : (
             <img

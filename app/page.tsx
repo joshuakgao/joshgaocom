@@ -67,7 +67,7 @@ export default function Home() {
                     props.starred ? (
                       <CarouselItem
                         key={props.slug || idx}
-                        className="basis-[400px] mr-1 md:mr-10"
+                        className="basis-[360px] md:basis-[430px] mr-8"
                       >
                         <PostCard {...props} />
                       </CarouselItem>
