@@ -31,14 +31,14 @@ export default function Home() {
     <ScrollDiv className="min-h-screen bg-transparent">
       <>
         <Col className="w-full flex items-center justify-center p-8 md:p-16">
-          <Col className={`w-full max-w-7xl rounded-lg space-y-4 md:my-8`}>
+          <Col className={`w-full max-w-7xl rounded-lg space-y-8 md:my-8`}>
             <Col>
-              <H1 className="mb-0 mt-0">My AI Timeline</H1>
-              <H2 className="mt-0 pb-0">A snapshot of my major milestones</H2>
-              <Spacer size={16} />
-              <MyTimeline />
+              <H1>My AI Timeline</H1>
+              <H2>A snapshot of my major milestones</H2>
             </Col>
-            <Spacer size={64} line />
+            <MyTimeline />
+
+            <Spacer size={64} />
             <Row className="justify-between">
               <Col>
                 <H1>Things I've Built</H1>
@@ -52,9 +52,8 @@ export default function Home() {
                 </Link>
               </Button>
             </Row>
-            <Spacer size={16} />
 
-            <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] pb-16">
+            <Col className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] pb-16">
               <Carousel
                 className="relative"
                 opts={{
@@ -77,16 +76,12 @@ export default function Home() {
                 <CarouselPrevious />
                 <CarouselNext />
               </Carousel>
-            </div>
+            </Col>
 
-            <Spacer size={64} line />
-            {/* Improved Publications Section */}
-            <Row className="justify-between items-end">
-              <H1>Publications</H1>
-              {/* <PostLink href="/publications">View all publications</PostLink> */}
-            </Row>
-            <Spacer size={16} />
-            <div className="mt-8 space-y-8">
+            <Spacer size={64} />
+
+            <H1>Publications</H1>
+            <Col>
               {publications.map((publication, idx) => (
                 <Link
                   href={`/blog/${publication.year}/${publication.slug}`}
@@ -94,9 +89,9 @@ export default function Home() {
                 >
                   <Row className="items-start gap-6 p-4 border-b border-gray-20 hover:bg-gray-50 transition-colors duration-300">
                     {/* Date for larger screens - hidden on small screens */}
-                    <div className="flex-shrink-0 w-32 hidden md:block">
+                    <Row className="flex-shrink-0 w-32 hidden md:block">
                       <P>{publication.date}</P>
-                    </div>
+                    </Row>
 
                     <Col className="align-start justify-start flex-1">
                       {/* Date for small screens - shown only on small screens */}
@@ -108,11 +103,10 @@ export default function Home() {
                   </Row>
                 </Link>
               ))}
-            </div>
+            </Col>
             <Spacer size={64} />
+            <H1>Misc</H1>
             <Col>
-              <H1>Misc</H1>
-              <Spacer size={16} />
               <Button
                 asChild
                 variant={"ghost"}
