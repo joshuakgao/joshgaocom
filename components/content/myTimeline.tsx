@@ -4,20 +4,16 @@ import {
   BreadcrumbSeparator,
   Col,
   H3,
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
   P,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
   Row,
   Small,
   Spacer,
 } from "@/components/ui";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { LuExternalLink } from "react-icons/lu";
+
+const CYCLE_INTERVAL = 4000;
 
 export const timelineData = [
   {
@@ -30,7 +26,7 @@ export const timelineData = [
     date: "May 2021 – Aug 2024",
   },
   {
-    label: "Structures and Aritifical Intelligence Lab",
+    label: "Structures and Artificial Intelligence Lab",
     title: "Research Assistant",
     description: "Exploring how AI can transform real-world engineering.",
     img: "/assets/images/sail.mov",
@@ -42,89 +38,149 @@ export const timelineData = [
     title: "ViewDelta Publication",
     link: "https://joshuakgao.github.io/viewdelta/",
     description:
-      "Published research on text-prompted change detection in unaligned images, presented at ICCV 2025 SEA Workshop.",
+      "ICCV 2025 SEA Workshop research publication on text-prompted change detection in unaligned images.",
     img: "/assets/projects/2025/viewDelta/viewdelta.mp4",
     date: "Oct 2025",
   },
+  {
+    label: "CVPR'26 Publication",
+    title: "BridgeEQA Publication",
+    link: "https://joshgao.com/blog/2026/bridge-eqa",
+    description:
+      "CVPR 2026 research publication on virtual embodied agents for real bridge inspections.",
+    img: "/assets/projects/2026/bridgeEQA/bridge_eqa.mp4",
+    date: "Jun 2026",
+  },
 ];
 
+const LAST = timelineData.length - 1;
+
 export function MyTimeline() {
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [activeIdx, setActiveIdx] = useState<number>(0);
+  const [visible, setVisible] = useState(true);
+  const activeIdxRef = useRef(activeIdx);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const transitionTo = useCallback((idx: number) => {
+    setVisible(false);
+    setTimeout(() => {
+      activeIdxRef.current = idx;
+      setActiveIdx(idx);
+      setVisible(true);
+    }, 200);
+  }, []);
+  const startCycle = useCallback(
+    (firstTickDelay?: number) => {
+      if (timerRef.current) clearInterval(timerRef.current);
+
+      timerRef.current = setTimeout(() => {
+        const prev = activeIdxRef.current;
+        const next = prev === LAST ? 0 : prev + 1;
+        transitionTo(next);
+
+        // After the first (possibly delayed) tick, resume normal cadence
+        timerRef.current = setInterval(() => {
+          const p = activeIdxRef.current;
+          const n = p === LAST ? 0 : p + 1;
+          transitionTo(n);
+        }, CYCLE_INTERVAL);
+      }, firstTickDelay ?? CYCLE_INTERVAL);
+    },
+    [transitionTo],
+  );
 
   useEffect(() => {
-    // Check if touch events are supported
-    const hasTouchScreen =
-      "ontouchstart" in window || navigator.maxTouchPoints > 0;
-    setIsTouchDevice(hasTouchScreen);
-  }, []);
+    startCycle();
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [startCycle]);
+
+  const handleSelect = (idx: number) => {
+    if (idx === activeIdxRef.current) return;
+    transitionTo(idx);
+    startCycle(10000); // stay on clicked item for 10s before advancing
+  };
+
+  const item = timelineData[activeIdx];
+  const isVideo = item.img.endsWith(".mov") || item.img.endsWith(".mp4");
 
   return (
-    <Breadcrumb>
-      <BreadcrumbList>
-        {timelineData.map((item, idx) => {
-          const content = (
-            <Col className="space-y-2">
-              <Col>
-                <Row>
-                  <H3>{item.title}</H3>
-                  <Spacer horizontal size={8} />
-                  <Link href={item.link}>
-                    <LuExternalLink size={16} />
-                  </Link>
-                </Row>
-                <Small>{item.date}</Small>
-              </Col>
-              <P>{item.description}</P>
-              <Spacer size={2} />
-              {item.img.endsWith(".mov") || item.img.endsWith(".mp4") ? (
-                <video
-                  src={item.img}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  disablePictureInPicture
-                  disableRemotePlayback
-                  className="rounded-lg md:max-w-lg"
-                  preload="auto"
-                />
-              ) : (
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="rounded-lg md:max-w-lg aspect-video"
-                />
-              )}
-            </Col>
-          );
-
-          return (
-            <Row key={idx}>
-              {isTouchDevice ? (
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <H3>{item.label}</H3>
-                  </PopoverTrigger>
-                  <PopoverContent align="start" className="w-72">
-                    {content}
-                  </PopoverContent>
-                </Popover>
-              ) : (
-                <HoverCard openDelay={0} closeDelay={0}>
-                  <HoverCardTrigger>
-                    <H3>{item.label}</H3>
-                  </HoverCardTrigger>
-                  <HoverCardContent align="start" className="w-96">
-                    {content}
-                  </HoverCardContent>
-                </HoverCard>
-              )}
+    <Col className="space-y-6">
+      <Breadcrumb>
+        <BreadcrumbList>
+          {timelineData.map((entry, idx) => (
+            <Row key={idx} style={{ alignItems: "center" }}>
+              <button
+                onClick={() => handleSelect(idx)}
+                style={{
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                  cursor: "pointer",
+                  color: activeIdx === idx ? "#ea7d08" : "gray",
+                  // opacity: activeIdx === idx ? 1 : 0.6,
+                  transition: "color 0.2s ease",
+                }}
+              >
+                <H3>{entry.label}</H3>
+              </button>
               <Spacer horizontal size={8} />
-              {idx != timelineData.length - 1 ? <BreadcrumbSeparator /> : null}
+              {idx !== timelineData.length - 1 ? <BreadcrumbSeparator /> : null}
             </Row>
-          );
-        })}
-      </BreadcrumbList>
-    </Breadcrumb>
+          ))}
+        </BreadcrumbList>
+      </Breadcrumb>
+
+      <Col
+        className="space-y-2"
+        style={{
+          opacity: visible ? 1 : 0,
+          transform: visible ? "translateY(0)" : "translateY(6px)",
+          transition: "opacity 0.2s ease, transform 0.2s ease",
+          borderLeft: "2px solid #e5e7eb",
+          paddingLeft: "1rem",
+        }}
+      >
+        <Row className="gap-8">
+          <Link
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-row items-center space-x-2"
+          >
+            <H3>{item.title}</H3>
+            <LuExternalLink size={12} />
+          </Link>
+        </Row>
+
+        <P className="max-w-7xl">{item.description}</P>
+        <Small>{item.date}</Small>
+
+        <Spacer size={4} />
+
+        {isVideo ? (
+          <video
+            key={item.img}
+            src={item.img}
+            autoPlay
+            loop
+            muted
+            playsInline
+            disablePictureInPicture
+            disableRemotePlayback
+            className="rounded-lg max-w-xl w-full aspect-video"
+            preload="auto"
+          />
+        ) : (
+          <img
+            key={item.img}
+            src={item.img}
+            alt={item.title}
+            className="rounded-lg max-w-xl w-full aspect-video"
+          />
+        )}
+      </Col>
+    </Col>
   );
 }
