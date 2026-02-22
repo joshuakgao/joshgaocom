@@ -34,7 +34,23 @@ export function PostWrapper({
       <PostContent className="items-center max-w-4xl space-y-8">
         <H4>{post.contentType}</H4>
         <H0 className="text-center">{post.title}</H0>
-        {post.date && <H3>Joshua Gao · {post.date}</H3>}
+        <Col className="items-center space-y-4">
+          {post.contentType === "Research" ? (
+            <H3>
+              {post.authors?.map((author, i) => (
+                <span key={i}>
+                  <span className={author === "Joshua Gao" ? "underline" : ""}>
+                    {author}
+                  </span>
+                  {post.authors && i < post.authors.length - 1 ? ", " : ""}
+                </span>
+              ))}
+            </H3>
+          ) : (
+            <H3>Joshua Gao</H3>
+          )}
+          <H4>{post.date}</H4>
+        </Col>
       </PostContent>
       <PostContent size="max-w-7xl">
         {post.video ? (
