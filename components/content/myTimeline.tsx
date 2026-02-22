@@ -43,15 +43,15 @@ export const timelineData = [
     img: "/assets/projects/2025/viewDelta/viewdelta.mp4",
     date: "Oct 2025",
   },
-  {
-    label: "CVPR'26 Publication",
-    title: "BridgeEQA Publication",
-    link: "https://joshgao.com/blog/2026/bridge-eqa",
-    description:
-      "CVPR 2026 research publication on virtual embodied agents for real bridge inspections.",
-    img: "/assets/projects/2026/bridgeEQA/bridge_eqa.mp4",
-    date: "Jun 2026",
-  },
+  // {
+  //   label: "CVPR'26 Publication",
+  //   title: "BridgeEQA Publication",
+  //   link: "https://joshgao.com/blog/2026/bridge-eqa",
+  //   description:
+  //     "CVPR 2026 research publication on virtual embodied agents for real bridge inspections.",
+  //   img: "/assets/projects/2026/bridgeEQA/bridge_eqa.mp4",
+  //   date: "Jun 2026",
+  // },
 ];
 
 const LAST = timelineData.length - 1;
