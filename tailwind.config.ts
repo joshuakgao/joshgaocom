@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        pop: "#ea7d08",
+        pop: "#818cf8",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

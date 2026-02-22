@@ -2,6 +2,7 @@ import {
   Breadcrumb,
   BreadcrumbList,
   BreadcrumbSeparator,
+  Button,
   Col,
   H3,
   P,
@@ -111,14 +112,15 @@ export function MyTimeline() {
         <BreadcrumbList>
           {timelineData.map((entry, idx) => (
             <Row key={idx} className="items-center">
-              <button
+              <Button
+                variant={"ghost"}
                 onClick={() => handleSelect(idx)}
-                className={`bg-transparent border-0 p-0 cursor-pointer transition-colors duration-200 ${
+                className={`px-0 hover:bg-transparent hover:text-none transition-colors duration-200 ${
                   activeIdx === idx ? "text-pop" : "text-gray-400"
                 }`}
               >
                 <H3>{entry.label}</H3>
-              </button>
+              </Button>
               <Spacer horizontal size={8} />
               {idx !== timelineData.length - 1 ? <BreadcrumbSeparator /> : null}
             </Row>

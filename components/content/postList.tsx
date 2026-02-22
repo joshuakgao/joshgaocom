@@ -46,15 +46,15 @@ export function PostList() {
               <button
                 key={year}
                 onClick={() => setSelectedYear(year)}
-                className="px-2 py-1 rounded-md hover:underline transition"
+                className="px-2 py-1 text-sm rounded-md hover:underline transition"
               >
-                <Small>{year}</Small>
+                {year}
               </button>
             ))
           ) : (
             <div className="flex items-center gap-2">
-              <span className="ml-2 px-2 py-1 rounded-md bg-indigo-400 text-white">
-                <Small>{selectedYear}</Small>
+              <span className="ml-2 px-2 py-1 text-sm rounded-md bg-pop text-white">
+                {selectedYear}
               </span>
               <button
                 onClick={() => setSelectedYear("All")}
@@ -81,7 +81,7 @@ export function PostList() {
             ))
           ) : (
             <div className="flex items-center gap-2">
-              <span className="ml-2 px-2 py-1 text-sm rounded-md bg-indigo-400 text-white">
+              <span className="ml-2 px-2 py-1 text-sm rounded-md bg-pop text-white">
                 {selectedTag}
               </span>
               <button
