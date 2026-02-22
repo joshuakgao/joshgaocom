@@ -1,6 +1,27 @@
 import { PostProps } from "@/components/types";
 
 export let posts: PostProps[] = [
+  {
+    contentType: "Research",
+    slug: "bridge-eqa",
+    thumbnail: "/assets/projects/2026/bridgeEqa/bridge_eqa.mp4",
+    // video: "https://youtu.be/snSC3JZe_GA",
+    title: "BridgeEQA",
+    authors: ["Subin Varghese", "Joshua Gao", "Asad Rahman", "Vedhus Hoskere"],
+    journal: "CVPR 2026",
+    journalHighlighted: true,
+    description: "Virtual Embodied Agents for Real Bridge Inspections",
+    date: "3 Jun 2026",
+    links: {
+      publication: "https://arxiv.org/abs/2511.12676",
+      // website: "https://joshuakgao.github.io/viewdelta/",
+      pdf: "https://arxiv.org/pdf/2511.12676",
+      // github: "https://github.com/drags99/ViewDelta",
+      // huggingfaceDataset: "https://huggingface.co/datasets/hoskerelab/CSeg",
+    },
+    year: "2026",
+    starred: true,
+  },
   // {
   //   contentType: "Research",
   //   slug: "domain-specific-rag-evaluation",
