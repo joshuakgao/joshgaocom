@@ -116,7 +116,9 @@ export function MyTimeline() {
                 variant={"ghost"}
                 onClick={() => handleSelect(idx)}
                 className={`px-0 hover:bg-transparent hover:text-none transition-colors duration-200 ${
-                  activeIdx === idx ? "text-pop" : "text-gray-400"
+                  activeIdx === idx
+                    ? "text-gray-600 underline"
+                    : "text-gray-400"
                 }`}
               >
                 <H3>{entry.label}</H3>
