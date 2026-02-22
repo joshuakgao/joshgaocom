@@ -69,6 +69,7 @@ export function MyTimeline() {
       setVisible(true);
     }, 200);
   }, []);
+
   const startCycle = useCallback(
     (firstTickDelay?: number) => {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -78,7 +79,6 @@ export function MyTimeline() {
         const next = prev === LAST ? 0 : prev + 1;
         transitionTo(next);
 
-        // After the first (possibly delayed) tick, resume normal cadence
         timerRef.current = setInterval(() => {
           const p = activeIdxRef.current;
           const n = p === LAST ? 0 : p + 1;
@@ -99,7 +99,7 @@ export function MyTimeline() {
   const handleSelect = (idx: number) => {
     if (idx === activeIdxRef.current) return;
     transitionTo(idx);
-    startCycle(10000); // stay on clicked item for 10s before advancing
+    startCycle(10000);
   };
 
   const item = timelineData[activeIdx];
@@ -110,18 +110,12 @@ export function MyTimeline() {
       <Breadcrumb>
         <BreadcrumbList>
           {timelineData.map((entry, idx) => (
-            <Row key={idx} style={{ alignItems: "center" }}>
+            <Row key={idx} className="items-center">
               <button
                 onClick={() => handleSelect(idx)}
-                style={{
-                  background: "none",
-                  border: "none",
-                  padding: 0,
-                  cursor: "pointer",
-                  color: activeIdx === idx ? "#ea7d08" : "gray",
-                  // opacity: activeIdx === idx ? 1 : 0.6,
-                  transition: "color 0.2s ease",
-                }}
+                className={`bg-transparent border-0 p-0 cursor-pointer transition-colors duration-200 ${
+                  activeIdx === idx ? "text-accent" : "text-gray-400"
+                }`}
               >
                 <H3>{entry.label}</H3>
               </button>
@@ -133,14 +127,9 @@ export function MyTimeline() {
       </Breadcrumb>
 
       <Col
-        className="space-y-2"
-        style={{
-          opacity: visible ? 1 : 0,
-          transform: visible ? "translateY(0)" : "translateY(6px)",
-          transition: "opacity 0.2s ease, transform 0.2s ease",
-          borderLeft: "2px solid #e5e7eb",
-          paddingLeft: "1rem",
-        }}
+        className={`space-y-2 border-l-2 border-gray-200 pl-4 transition-all duration-200 ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1.5"
+        }`}
       >
         <Row className="gap-8">
           <Link
@@ -177,7 +166,7 @@ export function MyTimeline() {
             key={item.img}
             src={item.img}
             alt={item.title}
-            className="rounded-lg max-w-xl w-full aspect-video"
+            className="rounded-lg max-w-xl w-full aspect-video object-cover"
           />
         )}
       </Col>
