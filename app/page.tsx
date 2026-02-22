@@ -44,7 +44,7 @@ export default function Home() {
                 <H1>Things I've Built</H1>
                 <H2>From research papers to weekend tinkering</H2>
               </Col>
-              <Button asChild variant={"ghost"} className="text-blue-500">
+              <Button asChild variant={"ghost"} className="text-pop">
                 <Link href="/blog">
                   <Row>
                     View all works <LuArrowRight size={18} className="ml-2" />
@@ -110,23 +110,12 @@ export default function Home() {
               <Button
                 asChild
                 variant={"ghost"}
-                className="text-blue-500 justify-start"
+                className="text-pop justify-start"
               >
                 <Link href="/misc/volleyball">
                   <Row>
                     Volleyball Timeline{" "}
                     <LuArrowRight size={18} className="ml-2" />
-                  </Row>
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant={"ghost"}
-                className="text-blue-500 justify-start"
-              >
-                <Link href="/misc/bridgeEqa">
-                  <Row>
-                    BridgeEQA <LuArrowRight size={18} className="ml-2" />
                   </Row>
                 </Link>
               </Button>

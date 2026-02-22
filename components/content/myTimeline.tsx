@@ -114,7 +114,7 @@ export function MyTimeline() {
               <button
                 onClick={() => handleSelect(idx)}
                 className={`bg-transparent border-0 p-0 cursor-pointer transition-colors duration-200 ${
-                  activeIdx === idx ? "text-accent" : "text-gray-400"
+                  activeIdx === idx ? "text-pop" : "text-gray-400"
                 }`}
               >
                 <H3>{entry.label}</H3>
