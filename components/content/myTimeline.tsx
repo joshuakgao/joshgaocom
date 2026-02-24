@@ -1,6 +1,7 @@
 import { Button, Col, H3, P, Small } from "@/components/ui";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import React from "react";
 import { LuExternalLink } from "react-icons/lu";
 
 const CYCLE_INTERVAL = 5000;
@@ -72,6 +73,7 @@ export function MyTimeline() {
   const [visible, setVisible] = useState(true);
   const activeIdxRef = useRef(activeIdx);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const transitionTo = useCallback((idx: number) => {
     setVisible(false);
@@ -108,6 +110,18 @@ export function MyTimeline() {
     };
   }, [startCycle]);
 
+  useEffect(() => {
+    videoRefs.current.forEach((ref, i) => {
+      if (!ref) return;
+      if (i === activeIdx) {
+        ref.currentTime = 0;
+        ref.play().catch(() => {});
+      } else {
+        ref.pause();
+      }
+    });
+  }, [activeIdx]);
+
   const handleSelect = (idx: number) => {
     if (idx === activeIdxRef.current) return;
     transitionTo(idx);
@@ -115,7 +129,6 @@ export function MyTimeline() {
   };
 
   const item = timelineData[activeIdx];
-  const isVideo = item.img.endsWith(".mov") || item.img.endsWith(".mp4");
 
   return (
     <div className="flex flex-col gap-6 md:flex-row md:gap-12 md:items-start">
@@ -162,31 +175,42 @@ export function MyTimeline() {
         </Col>
         <P>{item.description}</P>
 
-        {isVideo ? (
-          <div className="rounded-2xl overflow-hidden w-full aspect-video mt-2">
-            <video
-              key={item.img}
-              src={item.img}
-              autoPlay
-              loop
-              muted
-              playsInline
-              disablePictureInPicture
-              disableRemotePlayback
-              className="w-full h-full object-cover"
-              preload="auto"
-            />
-          </div>
-        ) : (
-          <div className="rounded-2xl overflow-hidden w-full aspect-video mt-2">
-            <img
-              key={item.img}
-              src={item.img}
-              alt={item.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        )}
+        {/* Pre-render all media stacked; show only the active one via opacity */}
+        <div className="relative rounded-2xl overflow-hidden w-full aspect-video mt-2">
+          {timelineData.map((d, i) => {
+            const isVid = d.img.endsWith(".mov") || d.img.endsWith(".mp4");
+            return (
+              <div
+                key={d.img}
+                className={`absolute inset-0 w-full h-full transition-opacity duration-200 ${
+                  i === activeIdx ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                {isVid ? (
+                  <video
+                    ref={(el) => {
+                      videoRefs.current[i] = el;
+                    }}
+                    src={d.img}
+                    loop
+                    muted
+                    playsInline
+                    disablePictureInPicture
+                    disableRemotePlayback
+                    preload="auto"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <img
+                    src={d.img}
+                    alt={d.title}
+                    className="w-full h-full object-cover"
+                  />
+                )}
+              </div>
+            );
+          })}
+        </div>
       </Col>
     </div>
   );

@@ -36,6 +36,7 @@ export const PostCard: React.FC<PostProps> = ({
             <img
               src={thumbnail}
               alt={title}
+              loading="eager"
               className="inset-0 w-full h-full object-cover aspect-video rounded-2xl"
             />
           )}
