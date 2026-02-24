@@ -1,20 +1,9 @@
-import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbSeparator,
-  Button,
-  Col,
-  H3,
-  P,
-  Row,
-  Small,
-  Spacer,
-} from "@/components/ui";
+import { Button, Col, H3, P, Small } from "@/components/ui";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { LuExternalLink } from "react-icons/lu";
 
-const CYCLE_INTERVAL = 4000;
+const CYCLE_INTERVAL = 5000;
 
 export const timelineData = [
   {
@@ -54,6 +43,28 @@ export const timelineData = [
   // },
 ];
 
+function getStartYear(date: string): string {
+  const match = date.match(/\b(\d{4})\b/);
+  return match ? match[1] : "";
+}
+
+type YearGroup = { year: string; items: { idx: number; label: string }[] };
+
+function buildYearGroups(): YearGroup[] {
+  const seen = new Map<string, YearGroup>();
+  const order: string[] = [];
+  timelineData.forEach((item, idx) => {
+    const year = getStartYear(item.date);
+    if (!seen.has(year)) {
+      seen.set(year, { year, items: [] });
+      order.push(year);
+    }
+    seen.get(year)!.items.push({ idx, label: item.label });
+  });
+  return order.map((y) => seen.get(y)!);
+}
+
+const yearGroups = buildYearGroups();
 const LAST = timelineData.length - 1;
 
 export function MyTimeline() {
@@ -107,73 +118,76 @@ export function MyTimeline() {
   const isVideo = item.img.endsWith(".mov") || item.img.endsWith(".mp4");
 
   return (
-    <Col className="space-y-6">
-      <Breadcrumb>
-        <BreadcrumbList>
-          {timelineData.map((entry, idx) => (
-            <Row key={idx} className="items-center">
+    <div className="flex flex-col gap-6 md:flex-row md:gap-12 md:items-start">
+      {/* Left column: year groups with item labels */}
+      <Col className="md:shrink-0 space-y-4">
+        {yearGroups.map(({ year, items }) => (
+          <Col key={year} className="space-y-1">
+            <Small className="text-gray-400 font-semibold tracking-wide">
+              {year}
+            </Small>
+            {items.map(({ idx, label }) => (
               <Button
-                variant={"ghost"}
+                key={idx}
+                variant="ghost"
                 onClick={() => handleSelect(idx)}
-                className={`px-0 hover:bg-transparent hover:text-none transition-colors duration-200 ${
-                  activeIdx === idx
-                    ? "text-gray-600 underline"
-                    : "text-gray-400"
+                className={`justify-start px-0 h-auto py-0.5 hover:bg-transparent transition-colors duration-200 ${
+                  activeIdx === idx ? "text-gray-800" : "text-gray-400"
                 }`}
               >
-                <H3>{entry.label}</H3>
+                {label}
               </Button>
-              <Spacer horizontal size={8} />
-              {idx !== timelineData.length - 1 ? <BreadcrumbSeparator /> : null}
-            </Row>
-          ))}
-        </BreadcrumbList>
-      </Breadcrumb>
+            ))}
+          </Col>
+        ))}
+      </Col>
 
+      {/* Right side: content card */}
       <Col
-        className={`space-y-2 border-l-2 border-gray-200 pl-4 transition-all duration-200 ${
+        className={`flex-1 border border-gray-200 rounded-xl p-6 space-y-4 transition-all duration-200 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1.5"
         }`}
       >
-        <Row className="gap-8">
+        <Col>
           <Link
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-row items-center space-x-2"
+            className="flex flex-row items-center space-x-2 w-fit"
           >
             <H3>{item.title}</H3>
             <LuExternalLink size={12} />
           </Link>
-        </Row>
-
-        <P className="max-w-7xl">{item.description}</P>
-        <Small>{item.date}</Small>
-
-        <Spacer size={4} />
+          <Small className="text-gray-400">{item.date}</Small>
+        </Col>
+        <P>{item.description}</P>
 
         {isVideo ? (
-          <video
-            key={item.img}
-            src={item.img}
-            autoPlay
-            loop
-            muted
-            playsInline
-            disablePictureInPicture
-            disableRemotePlayback
-            className="rounded-lg max-w-xl w-full aspect-video"
-            preload="auto"
-          />
+          <div className="rounded-2xl overflow-hidden w-full aspect-video mt-2">
+            <video
+              key={item.img}
+              src={item.img}
+              autoPlay
+              loop
+              muted
+              playsInline
+              disablePictureInPicture
+              disableRemotePlayback
+              className="w-full h-full object-cover"
+              preload="auto"
+            />
+          </div>
         ) : (
-          <img
-            key={item.img}
-            src={item.img}
-            alt={item.title}
-            className="rounded-lg max-w-xl w-full aspect-video object-cover"
-          />
+          <div className="rounded-2xl overflow-hidden w-full aspect-video mt-2">
+            <img
+              key={item.img}
+              src={item.img}
+              alt={item.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
         )}
       </Col>
-    </Col>
+    </div>
   );
 }
