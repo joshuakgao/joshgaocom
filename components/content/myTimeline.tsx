@@ -71,6 +71,8 @@ const LAST = timelineData.length - 1;
 export function MyTimeline() {
   const [activeIdx, setActiveIdx] = useState<number>(0);
   const [visible, setVisible] = useState(true);
+  // Track which indices have been loaded at least once
+  const [loadedIndices, setLoadedIndices] = useState<Set<number>>(new Set([0]));
   const activeIdxRef = useRef(activeIdx);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
@@ -80,6 +82,8 @@ export function MyTimeline() {
     setTimeout(() => {
       activeIdxRef.current = idx;
       setActiveIdx(idx);
+      // Mark this index as loaded so its media is rendered in the DOM
+      setLoadedIndices((prev) => new Set(prev).add(idx));
       setVisible(true);
     }, 200);
   }, []);
@@ -175,10 +179,21 @@ export function MyTimeline() {
         </Col>
         <P>{item.description}</P>
 
-        {/* Pre-render all media stacked; show only the active one via opacity */}
+        {/* Only render media for indices that have been visited */}
         <div className="relative rounded-2xl overflow-hidden w-full aspect-video mt-2">
           {timelineData.map((d, i) => {
             const isVid = d.img.endsWith(".mov") || d.img.endsWith(".mp4");
+
+            // Don't mount media until this slide has been active at least once
+            if (!loadedIndices.has(i)) {
+              return (
+                <div
+                  key={d.img}
+                  className="absolute inset-0 w-full h-full opacity-0"
+                />
+              );
+            }
+
             return (
               <div
                 key={d.img}
