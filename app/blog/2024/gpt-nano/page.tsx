@@ -54,14 +54,10 @@ export default function GptNano() {
           models (29.55% accuracy for GPT-2).
         </P>
         <H1>Training Run Results</H1>
-      </PostContent>
-      <PostContent className="max-w-7xl">
         <PostImg
           alt="Training run results for GPT-Nano"
-          src="/assets/projects/2024/gpt-nano/results.png"
+          src={`${assetsPath}/results.png`}
         />
-      </PostContent>
-      <PostContent>
         <P>
           The left figure is the Loss curve, and the right figure is the
           Accuracy curve on the HellaSwag dataset. The model achieves a final
@@ -76,7 +72,7 @@ export default function GptNano() {
         <H1>Qualitative</H1>
         <PostImg
           alt="GPT-Nano qualitative results"
-          src="/assets/projects/2024/gpt-nano/pre-train-qualitative.png"
+          src={`${assetsPath}/pre-train-qualitative.png`}
         />
         <P>
           GPT-Nano does give a better response than GPT-2 to the prompt: "The
@@ -95,7 +91,7 @@ export default function GptNano() {
         </P>
         <PostImg
           alt="Civil Engineering finetune qualitative results"
-          src="/assets/projects/2024/gpt-nano/finetune-qualitative.png"
+          src={`${assetsPath}/finetune-qualitative.png`}
         />
         <P>
           Neither GPT-2 nor GPT-Nano were able to correctly identify what
