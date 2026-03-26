@@ -55,7 +55,7 @@ export default function GptNano() {
         </P>
         <H1>Training Run Results</H1>
       </PostContent>
-      <PostContent size="max-w-7xl">
+      <PostContent className="max-w-7xl">
         <PostImg
           alt="Training run results for GPT-Nano"
           src="/assets/projects/2024/gpt-nano/results.png"

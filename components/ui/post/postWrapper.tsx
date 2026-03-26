@@ -52,7 +52,7 @@ export function PostWrapper({
           <H4>{post.date}</H4>
         </Col>
       </PostContent>
-      <PostContent size="max-w-7xl">
+      <PostContent className="max-w-6xl items-center">
         {post.video ? (
           <iframe
             src={`https://www.youtube.com/embed/${

@@ -71,7 +71,7 @@ export default function SelfHostedCloud() {
           management system.
         </P>
       </PostContent>
-      <PostContent size="max-w-7xl">
+      <PostContent className="max-w-7xl">
         <PostImg
           src={`${assetsPath}/nextcloudFiles.png`}
           alt="nextcloud files"
@@ -84,7 +84,7 @@ export default function SelfHostedCloud() {
           even need to pay for iCloud storage that locks you in so easily.
         </P>
       </PostContent>
-      <PostContent size="max-w-7xl">
+      <PostContent className="max-w-7xl">
         <PostImg
           src={`${assetsPath}/nextcloudPhotos.png`}
           alt="nextcloud photos"

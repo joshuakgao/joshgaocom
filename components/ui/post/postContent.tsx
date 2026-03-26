@@ -3,7 +3,6 @@ import React, { HTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
 export function PostContent({
-  size = "max-w-3xl",
   children,
   className,
   ...props
@@ -14,7 +13,7 @@ export function PostContent({
 }) {
   return (
     <Col
-      className={cn(`w-full ${size} mx-4 space-y-4 items-start`, className)}
+      className={cn(`w-full max-w-3xl mx-4 space-y-4 items-start`, className)}
       {...props}
     >
       {children}

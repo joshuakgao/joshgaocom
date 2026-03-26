@@ -57,15 +57,10 @@ export default function StockPortfolioTracker() {
         </P>
 
         <H1>Position Breakdown</H1>
-      </PostContent>
-      <PostContent size="max-w-7xl">
         <PostImg
           src={`${assetsPath}/positionsSheet.png`}
           alt="positions sheet"
-          className="max-w-none"
         />
-      </PostContent>
-      <PostContent>
         <P>
           I bet you are wondering: "Wait a minute, how do I know which stock is
           making me the most money?". Well, this is where I tell you! In the
