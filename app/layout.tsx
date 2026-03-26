@@ -1,5 +1,6 @@
 import Header from "@/components/ui/header";
 import { Toaster } from "@/components/ui/sonner";
+import "katex/dist/katex.min.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 

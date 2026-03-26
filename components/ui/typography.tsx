@@ -92,7 +92,7 @@ export const InlineCode = createComponent<HTMLSpanElement>(
 
 export const MultilineCode = createComponent<HTMLPreElement>(
   "pre",
-  "relative rounded bg-gray-100 p-4 font-mono text-sm font-medium overflow-x-auto",
+  "relative rounded bg-gray-100 p-4 font-mono text-sm font-medium overflow-x-auto w-full",
   "MultilineCode",
 );
 
