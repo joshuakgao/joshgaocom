@@ -13,11 +13,11 @@ export const timelineData = [
     link: "https://joshgao.com/blog/2026/bridge-eqa",
     description:
       "CVPR 2026 research publication on virtual embodied agents for real bridge inspections.",
-    img: "/assets/projects/2026/bridgeEQA/bridge_eqa_short.mp4",
+    img: "/assets/projects/2026/bridgeEqa/bridge_eqa_short.mp4",
     date: "Jun 2026",
   },
   {
-    label: "ICCV'25 Publication",
+    label: "ICCVW'25 Publication",
     title: "ViewDelta Publication",
     link: "https://joshuakgao.github.io/viewdelta/",
     description:
