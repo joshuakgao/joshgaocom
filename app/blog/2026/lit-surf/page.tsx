@@ -19,7 +19,7 @@ export default function Athena() {
       <PostContent>
         <P className="italic">
           Literature reviews are painful. I built an AI-powered research wiki to
-          fix that — here's how.
+          fix that. Here's how.
         </P>
         <P>
           Reading research papers has never been the boring part of a literature
@@ -35,21 +35,31 @@ export default function Athena() {
           By the end of this setup, you'll have a searchable knowledge base with
           paper summaries, topic overviews, trend analysis, and a visual
           knowledge graph, all generated automatically when you ingest a new
-          paper.
+          paper. You can also ask Claude Code questions directly and it will
+          traverse your entire knowledge base to find the answer.
         </P>
         <H1>Setup</H1>
         <P>
-          Create a fresh Obsidian vault and start up Claude Code in that
-          directory. Then paste this{" "}
+          Create a fresh Obsidian vault and start up{" "}
+          <PostLink href="https://www.anthropic.com/claude-code">
+            Claude Code
+          </PostLink>{" "}
+          (Anthropic's AI-powered terminal tool for coding and file management)
+          in that directory. Then paste this{" "}
           <PostLink href="https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f">
             GitHub Gist
           </PostLink>{" "}
-          by Andrej Karpathy into Claude Code to initialize the system. It will
-          create a CLAUDE.md file that instructs the AI on how to operate over
-          your knowledge base. You can edit this file to your liking. From
-          there, you can tell Claude Code to "ingest SAM3.pdf" and it will
-          automatically file the paper, extract key concepts, write a summary,
-          and link it to related research areas.
+          by Andrej Karpathy, an AI researcher and former OpenAI founding
+          member, into Claude Code to initialize the system. It will create a
+          CLAUDE.md file that instructs the AI on how to operate over your
+          knowledge base. You can edit this file to your liking. From there, you
+          can tell Claude Code to "ingest SAM3.pdf" and it will automatically
+          file the paper, extract key concepts, write a summary, and link it to
+          related research areas.
+        </P>
+        <P>
+          Setup takes roughly 15 to 20 minutes. Ingesting each paper takes about
+          30 to 60 seconds depending on length.
         </P>
         <H1>My Knowledge Base</H1>
         <P>
@@ -95,6 +105,17 @@ export default function Athena() {
           directions or writing related work sections.
         </P>
         <PostImg src={`${assetsPath}/paper.gif`} alt="Paper Overview Gif" />
+        <H2>Asking Questions</H2>
+        <P>
+          One of the most useful features is being able to ask Claude Code
+          questions directly. Rather than manually searching through your notes,
+          you can ask something like "What do the papers in my knowledge base
+          say about attention mechanisms?" or "What are some research gaps I can
+          fill?" and Claude Code will traverse your entire wiki to pull together
+          a synthesized answer, with references to the relevant papers. It turns
+          your knowledge base from a filing system into something closer to a
+          research assistant you can have a conversation with.
+        </P>
         <H1>Try It Yourself</H1>
         <P>
           If you're doing any kind of literature review, this setup is worth the
@@ -102,8 +123,8 @@ export default function Athena() {
           <PostLink href="https://github.com/joshuakgao/lit-surf.git">
             LitSurf repo
           </PostLink>{" "}
-          includes the current state of my LLM wiki and includes my CLAUDE.md as
-          a starting point you can adapt to your own research area.
+          has everything you need to get started, including my CLAUDE.md as a
+          starting point you can adapt to your own research area.
         </P>
       </PostContent>
     </PostWrapper>
