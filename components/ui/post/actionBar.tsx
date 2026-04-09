@@ -39,6 +39,10 @@ export function ActionBar({ post }: { post: PostProps }) {
       icon: <SiHuggingface size={22} />,
       label: "Dataset",
     },
+    huggingfaceModel: {
+      icon: <SiHuggingface size={22} />,
+      label: "Model",
+    },
   };
 
   const orderedButtons = post.links

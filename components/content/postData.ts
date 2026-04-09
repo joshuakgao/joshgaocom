@@ -51,6 +51,7 @@ export let posts: PostProps[] = [
       github: "https://github.com/joshuakgao/athena/tree/main",
       huggingfaceDataset:
         "https://huggingface.co/datasets/joshuakgao/chessbenchmate",
+      huggingfaceModel: "https://huggingface.co/joshuakgao/athena-chess",
     },
     starred: true,
   },
