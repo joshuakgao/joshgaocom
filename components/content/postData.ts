@@ -20,6 +20,9 @@ export let posts: PostProps[] = [
       "Turning scattered research papers into an evolving, structured knowledge base that compounds over time.",
     date: "9 Apr 2026",
     year: "2026",
+    links: {
+      github: "https://github.com/joshuakgao/lit-surf",
+    },
     starred: true,
   },
   {
