@@ -23,7 +23,7 @@ export default function Athena() {
       <PostContent>
         <P className="italic">
           Presenting Athena: Follow how this transformer based chess model
-          achieves an ELO of 1900.
+          achieves an ELO of 1959.
         </P>
         <H1>Approach</H1>
         <P>
@@ -115,7 +115,7 @@ export default function Athena() {
         </P>
         <PostImg src={`${assetsPath}/elo_accuracy.png`} alt="Elo Accuracy" />
         <P>
-          Additionally, Athena reaches a surprisingly strong peak elo of 1900 on
+          Additionally, Athena reaches a surprisingly strong peak elo of 1959 on
           Lichess against other bots. You can challenge Athena or watch it play
           other bots{" "}
           <PostLink href="https://lichess.org/@/athena-bot">here</PostLink>.
