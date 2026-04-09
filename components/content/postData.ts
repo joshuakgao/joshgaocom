@@ -2,6 +2,17 @@ import { PostProps } from "@/components/types";
 
 export let posts: PostProps[] = [
   {
+    contentType: "Software",
+    slug: "twinfra",
+    thumbnail: "/assets/projects/2026/bridgeEqa/bridge_eqa.mp4",
+    title: "Twinfra",
+    description:
+      "AI powered software suite for automated safety inspection of structures and equipment.",
+    date: "9 Apr 2026",
+    year: "2026",
+    starred: true,
+  },
+  {
     contentType: "Research",
     slug: "bridge-eqa",
     thumbnail: "/assets/projects/2026/bridgeEqa/bridge_eqa.mp4",
@@ -137,7 +148,6 @@ export let posts: PostProps[] = [
       github:
         "https://github.com/tugonbob/stanford-cs229-andrew-ng/blob/main/Ch1-SupervisedLearning/1-LinearRegression/1.1.1-LmsAlgorithm.ipynb",
     },
-    starred: true,
   },
   {
     contentType: "Software",
