@@ -10,6 +10,16 @@ export let posts: PostProps[] = [
       "AI powered software suite for automated safety inspection of structures and equipment.",
     date: "9 Apr 2026",
     year: "2026",
+  },
+  {
+    contentType: "AI",
+    slug: "lit-surf",
+    thumbnail: "/assets/projects/2026/lit-surf/thumbnail.png",
+    title: "LitSurf",
+    description:
+      "Turning scattered research papers into an evolving, structured knowledge base that compounds over time.",
+    date: "9 Apr 2026",
+    year: "2026",
     starred: true,
   },
   {
