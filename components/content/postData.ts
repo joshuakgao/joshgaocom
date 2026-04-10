@@ -4,7 +4,7 @@ export let posts: PostProps[] = [
   {
     contentType: "Software",
     slug: "twinfra",
-    thumbnail: "/assets/projects/2026/bridgeEqa/bridge_eqa.mp4",
+    thumbnail: "/assets/projects/2026/twinfra/thumbnail.png",
     title: "Twinfra",
     description:
       "AI powered software suite for automated safety inspection of structures and equipment.",
