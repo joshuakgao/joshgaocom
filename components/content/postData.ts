@@ -28,8 +28,8 @@ export let posts: PostProps[] = [
   {
     contentType: "Research",
     slug: "bridge-eqa",
-    thumbnail: "/assets/projects/2026/bridgeEqa/bridge_eqa.mp4",
-    // video: "https://youtu.be/snSC3JZe_GA",
+    thumbnail: "/assets/projects/2026/bridgeEqa/thumbnail.png",
+    video: "https://youtu.be/zdS89m0cZ48?si=-K-JcDvlbrTaYNfh",
     title: "BridgeEQA",
     authors: ["Subin Varghese", "Joshua Gao", "Asad Rahman", "Vedhus Hoskere"],
     journal: "CVPR 2026",
@@ -38,10 +38,11 @@ export let posts: PostProps[] = [
     date: "3 Jun 2026",
     links: {
       publication: "https://arxiv.org/abs/2511.12676",
-      // website: "https://joshuakgao.github.io/viewdelta/",
-      pdf: "https://arxiv.org/pdf/2511.12676",
-      // github: "https://github.com/drags99/ViewDelta",
-      // huggingfaceDataset: "https://huggingface.co/datasets/hoskerelab/CSeg",
+      website: "https://drags99.github.io/bridge-eqa/",
+      // pdf: "https://arxiv.org/pdf/2511.12676",
+      github: "https://github.com/drags99/bridge-eqa",
+      huggingfaceDataset:
+        "https://huggingface.co/datasets/hoskerelab/bridge-eqa",
     },
     year: "2026",
     starred: true,
