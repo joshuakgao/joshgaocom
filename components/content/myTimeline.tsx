@@ -4,7 +4,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import React from "react";
 import { LuExternalLink } from "react-icons/lu";
 
-const CYCLE_INTERVAL = 5000;
+// Fallback dwell time for slides that have no natural "end" (e.g. images)
+const IMAGE_INTERVAL = 8000;
 
 export const timelineData = [
   {
@@ -74,7 +75,7 @@ export function MyTimeline() {
   // Track which indices have been loaded at least once
   const [loadedIndices, setLoadedIndices] = useState<Set<number>>(new Set([0]));
   const activeIdxRef = useRef(activeIdx);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   const transitionTo = useCallback((idx: number) => {
@@ -88,31 +89,11 @@ export function MyTimeline() {
     }, 200);
   }, []);
 
-  const startCycle = useCallback(
-    (firstTickDelay?: number) => {
-      if (timerRef.current) clearInterval(timerRef.current);
-
-      timerRef.current = setTimeout(() => {
-        const prev = activeIdxRef.current;
-        const next = prev === LAST ? 0 : prev + 1;
-        transitionTo(next);
-
-        timerRef.current = setInterval(() => {
-          const p = activeIdxRef.current;
-          const n = p === LAST ? 0 : p + 1;
-          transitionTo(n);
-        }, CYCLE_INTERVAL);
-      }, firstTickDelay ?? CYCLE_INTERVAL);
-    },
-    [transitionTo],
-  );
-
-  useEffect(() => {
-    startCycle();
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [startCycle]);
+  const advanceToNext = useCallback(() => {
+    const prev = activeIdxRef.current;
+    const next = prev === LAST ? 0 : prev + 1;
+    transitionTo(next);
+  }, [transitionTo]);
 
   useEffect(() => {
     videoRefs.current.forEach((ref, i) => {
@@ -124,12 +105,23 @@ export function MyTimeline() {
         ref.pause();
       }
     });
-  }, [activeIdx]);
+
+    // Videos advance via their onEnded handler; slides without a natural
+    // end (images) fall back to a fixed dwell timer.
+    const current = timelineData[activeIdx];
+    const isVid = current.img.endsWith(".mov") || current.img.endsWith(".mp4");
+    if (isVid) return;
+
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(advanceToNext, IMAGE_INTERVAL);
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [activeIdx, advanceToNext]);
 
   const handleSelect = (idx: number) => {
     if (idx === activeIdxRef.current) return;
     transitionTo(idx);
-    startCycle(10000);
   };
 
   const item = timelineData[activeIdx];
@@ -207,12 +199,17 @@ export function MyTimeline() {
                       videoRefs.current[i] = el;
                     }}
                     src={d.img}
-                    loop
                     muted
                     playsInline
                     disablePictureInPicture
                     disableRemotePlayback
                     preload="auto"
+                    onEnded={() => {
+                      if (i === activeIdxRef.current) advanceToNext();
+                    }}
+                    onError={() => {
+                      if (i === activeIdxRef.current) advanceToNext();
+                    }}
                     className="w-full h-full object-cover"
                   />
                 ) : (
