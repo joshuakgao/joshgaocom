@@ -2,15 +2,35 @@ import { PostProps } from "@/components/types";
 
 export let posts: PostProps[] = [
   {
-    contentType: "Software",
-    slug: "twinfra",
-    thumbnail: "/assets/projects/2026/twinfra/thumbnail.png",
-    title: "Twinfra",
+    contentType: "Research",
+    slug: "pe-civil-bench",
+    thumbnail: "/assets/projects/2026/pe-civil-bench/thumbnail.png",
+    title: "PE Civil Bench",
     description:
-      "AI powered software suite for automated safety inspection of structures and equipment.",
-    date: "9 Apr 2026",
+      "Advancing Agentic Retrieval-Augmented Generation Performance of Large Language Models on Exam Problems and Automated Component Design",
+    authors: [
+      "Subin Varghese",
+      "Joshua Gao",
+      "Subin Varghese",
+      "Vedhus Hoskere",
+    ],
+    journal: "Computer-Aided Civil and Infrastructure Engineering",
+    date: "16 Jun 2026",
     year: "2026",
+    links: {
+      pdf: "https://www.sciencedirect.com/science/article/pii/S1093968726031129",
+    },
   },
+  // {
+  //   contentType: "Software",
+  //   slug: "twinfra",
+  //   thumbnail: "/assets/projects/2026/twinfra/thumbnail.png",
+  //   title: "Twinfra",
+  //   description:
+  //     "AI powered software suite for automated safety inspection of structures and equipment.",
+  //   date: "9 Apr 2026",
+  //   year: "2026",
+  // },
   {
     contentType: "AI",
     slug: "lit-surf",
@@ -23,7 +43,6 @@ export let posts: PostProps[] = [
     links: {
       github: "https://github.com/joshuakgao/lit-surf",
     },
-    starred: true,
   },
   {
     contentType: "Research",
@@ -34,7 +53,7 @@ export let posts: PostProps[] = [
     authors: ["Subin Varghese", "Joshua Gao", "Asad Rahman", "Vedhus Hoskere"],
     journal: "CVPR 2026",
     journalHighlighted: true,
-    description: "Virtual Embodied Agents for Real Bridge Inspections",
+    description: "Virtual Embodied Agents for Real Bridge Inspections.",
     date: "3 Jun 2026",
     links: {
       publication: "https://arxiv.org/abs/2511.12676",
