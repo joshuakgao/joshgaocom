@@ -10,13 +10,10 @@ import {
   CarouselPrevious,
   Col,
   H1,
-  H2,
-  P,
   PostCard,
   PublicationCard,
   Row,
   ScrollDiv,
-  Small,
   Spacer,
 } from "@/components/ui";
 import Link from "next/link";
@@ -27,6 +24,8 @@ export default function Home() {
   const publications = posts.filter(
     (post) => post.contentType === "Research" || post.journal,
   );
+
+  const works = posts.filter((post) => post.contentType !== "Research");
 
   return (
     <ScrollDiv className="min-h-screen bg-transparent">
@@ -80,7 +79,7 @@ export default function Home() {
                 }}
               >
                 <CarouselContent className="ml-[max(1rem,calc((98vw-theme(maxWidth.7xl))/2))] md:ml-[max(3rem,calc((98vw-theme(maxWidth.7xl))/2))] mr-[max(1rem,calc((96vw-theme(maxWidth.7xl))/2))] md:mr-[max(3rem,calc((96vw-theme(maxWidth.7xl))/2))]">
-                  {posts.map((props, idx) =>
+                  {works.map((props, idx) =>
                     props.starred ? (
                       <CarouselItem
                         key={props.slug || idx}

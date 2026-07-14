@@ -131,6 +131,7 @@ export let posts: PostProps[] = [
     links: { website: "https://cloud.joshgao.com" },
     date: "9 Dec 2024",
     year: "2024",
+    starred: true,
   },
   // {
   //   contentType: "Project",
