@@ -5,7 +5,8 @@ export let posts: PostProps[] = [
     contentType: "Research",
     slug: "pe-civil-bench",
     thumbnail: "/assets/projects/2026/pe-civil-bench/thumbnail.png",
-    title: "PE Civil Bench",
+    title:
+      "PE Civil Bench: Advancing Agentic Retrieval-Augmented Generation Performance of Large Language Models on Exam Problems and Automated Component Design",
     description:
       "Advancing Agentic Retrieval-Augmented Generation Performance of Large Language Models on Exam Problems and Automated Component Design",
     authors: [
@@ -49,7 +50,7 @@ export let posts: PostProps[] = [
     slug: "bridge-eqa",
     thumbnail: "/assets/projects/2026/bridgeEqa/thumbnail.png",
     video: "https://youtu.be/zdS89m0cZ48?si=-K-JcDvlbrTaYNfh",
-    title: "BridgeEQA",
+    title: "BridgeEQA: Virtual Embodied Agents for Real Bridge Inspections",
     authors: ["Subin Varghese", "Joshua Gao", "Asad Rahman", "Vedhus Hoskere"],
     journal: "CVPR 2026",
     journalHighlighted: true,
@@ -104,7 +105,8 @@ export let posts: PostProps[] = [
     slug: "viewdelta-text-prompted-change-detection-in-unaligned-images",
     thumbnail: "/assets/projects/2025/viewDelta/viewdelta.mp4",
     video: "https://youtu.be/snSC3JZe_GA",
-    title: "ViewDelta",
+    title:
+      "ViewDelta: Scaling Scene Change Detection through Text-Conditioning",
     authors: ["Subin Varghese", "Joshua Gao", "Vedhus Hoskere"],
     journal: "ICCV 2025, SEA Workshop",
     journalHighlighted: true,

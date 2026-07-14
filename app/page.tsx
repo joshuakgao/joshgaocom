@@ -13,6 +13,7 @@ import {
   H2,
   P,
   PostCard,
+  PublicationCard,
   Row,
   ScrollDiv,
   Small,
@@ -32,18 +33,35 @@ export default function Home() {
       <>
         <Col className="w-full flex items-center justify-center p-8 md:p-16">
           <Col className={`w-full max-w-7xl rounded-lg space-y-8 md:my-8`}>
-            <Col>
-              <H1>My AI Timeline</H1>
-              <H2>A snapshot of my major milestones</H2>
-            </Col>
+            <H1>My AI Timeline</H1>
             <MyTimeline />
 
             <Spacer size={64} />
+
             <Row className="justify-between">
               <Col>
-                <H1>Things I've Built</H1>
-                <H2>From research papers to weekend tinkering</H2>
+                <H1>Highlighted Publications</H1>
               </Col>
+              <Button asChild variant={"ghost"} className="text-pop">
+                <Link href="/publications">
+                  <Row>
+                    View all publications{" "}
+                    <LuArrowRight size={18} className="ml-2" />
+                  </Row>
+                </Link>
+              </Button>
+            </Row>
+            <Col>
+              {publications.map((props, idx) =>
+                props.starred ? (
+                  <PublicationCard key={props.slug || idx} {...props} />
+                ) : null,
+              )}
+            </Col>
+
+            <Spacer size={64} />
+            <Row className="justify-between">
+              <H1>Highlighted Works</H1>
               <Button asChild variant={"ghost"} className="text-pop">
                 <Link href="/blog">
                   <Row>
@@ -80,31 +98,6 @@ export default function Home() {
 
             <Spacer size={64} />
 
-            <H1>Publications</H1>
-            <Col>
-              {publications.map((publication, idx) => (
-                <Link
-                  href={`/blog/${publication.year}/${publication.slug}`}
-                  key={publication.slug || idx}
-                >
-                  <Row className="items-start gap-6 p-4 border-b border-gray-20 hover:bg-gray-50 transition-colors duration-300">
-                    {/* Date for larger screens - hidden on small screens */}
-                    <Row className="flex-shrink-0 w-32 hidden md:block">
-                      <P>{publication.date}</P>
-                    </Row>
-
-                    <Col className="align-start justify-start flex-1">
-                      {/* Date for small screens - shown only on small screens */}
-                      <P className="md:hidden mb-2">{publication.date}</P>
-                      <P className="text-black">{publication.title}</P>
-                      <Small>{publication.authors?.join(", ")}</Small>
-                      <Small>{publication.journal}</Small>
-                    </Col>
-                  </Row>
-                </Link>
-              ))}
-            </Col>
-            <Spacer size={64} />
             <H1>Misc</H1>
             <Col>
               <Button
