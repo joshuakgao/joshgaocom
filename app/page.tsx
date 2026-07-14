@@ -97,7 +97,7 @@ export default function Home() {
 
             <Spacer size={64} />
 
-            <H1>Misc</H1>
+            {/* <H1>Misc</H1>
             <Col>
               <Button
                 asChild
@@ -111,7 +111,7 @@ export default function Home() {
                   </Row>
                 </Link>
               </Button>
-            </Col>
+            </Col> */}
           </Col>
         </Col>
         <Spacer size={256} />
