@@ -5,6 +5,16 @@ import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
 
+// Email is base64-encoded so the raw address never appears as a plain-text
+// literal in the client bundle, defeating naive regex-based scrapers.
+const ENCODED_EMAIL = "am9zaHVha2dhb0BnbWFpbC5jb20=";
+
+function copyEmail() {
+  const email = atob(ENCODED_EMAIL);
+  toast("Email has been copied to clipboard!");
+  navigator.clipboard.writeText(email);
+}
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
@@ -83,10 +93,7 @@ export default function Header() {
               </a>
               <div
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer"
-                onClick={() => {
-                  toast("Email has been copied to clipboard!");
-                  navigator.clipboard.writeText("joshuakgao@gmail.com");
-                }}
+                onClick={copyEmail}
               >
                 Email
               </div>
@@ -122,10 +129,7 @@ export default function Header() {
           </a>
           <div
             className="hover:text-gray-700 transition-colors cursor-pointer"
-            onClick={() => {
-              toast("Email has been copied to clipboard!");
-              navigator.clipboard.writeText("joshuakgao@gmail.com");
-            }}
+            onClick={copyEmail}
           >
             Email
           </div>
