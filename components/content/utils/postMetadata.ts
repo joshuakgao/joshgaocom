@@ -1,5 +1,5 @@
 import { usePathname } from "next/navigation";
-import { posts } from "@/components/content";
+import { posts } from "@/app";
 
 export function getPostMetadata() {
   const pathname = usePathname();

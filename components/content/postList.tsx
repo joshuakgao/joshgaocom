@@ -1,4 +1,4 @@
-import { posts } from "@/components/content";
+import { posts } from "@/app";
 import { Col, H0, PostCard, Row, Small, Spacer } from "@/components/ui";
 import { useMemo, useState } from "react";
 import { IoCalendarClearOutline } from "react-icons/io5";

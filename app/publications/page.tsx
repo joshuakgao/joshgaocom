@@ -1,6 +1,6 @@
 "use client";
 
-import { MyVbTimeline, posts } from "@/components/content";
+import { posts } from "@/app";
 import { Col, H0, PublicationCard, ScrollDiv, Spacer } from "@/components/ui";
 
 export default function Volleyball() {

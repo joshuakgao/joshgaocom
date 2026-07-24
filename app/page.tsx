@@ -1,6 +1,7 @@
 "use client";
 
-import { MyTimeline, posts } from "@/components/content";
+import { posts } from "@/app";
+import { MyTimeline } from "@/components/content";
 import {
   Button,
   Carousel,
