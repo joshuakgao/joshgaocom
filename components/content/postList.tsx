@@ -8,28 +8,33 @@ export function PostList() {
   const [selectedYear, setSelectedYear] = useState<string | "All">("All");
   const [selectedTag, setSelectedTag] = useState<string | "All">("All");
 
+  const visiblePosts = useMemo(
+    () => posts.filter((post) => post.contentType !== "Research"),
+    [],
+  );
+
   const allYears = useMemo(() => {
-    const years = new Set(posts.map((p) => p.year));
+    const years = new Set(visiblePosts.map((p) => p.year));
     return Array.from(years).sort((a, b) => Number(b) - Number(a)); // most recent first
-  }, []);
+  }, [visiblePosts]);
 
   const allTags = useMemo(() => {
     const tagCounts: Record<string, number> = {};
-    posts.forEach((post) => {
+    visiblePosts.forEach((post) => {
       tagCounts[post.contentType] = (tagCounts[post.contentType] || 0) + 1;
     });
     return Object.entries(tagCounts)
       .sort((a, b) => b[1] - a[1])
       .map(([tag]) => tag);
-  }, []);
+  }, [visiblePosts]);
 
   const filteredProjects = useMemo(() => {
-    return posts.filter(
+    return visiblePosts.filter(
       (post) =>
         (selectedYear === "All" || post.year === selectedYear) &&
         (selectedTag === "All" || post.contentType === selectedTag),
     );
-  }, [selectedYear, selectedTag]);
+  }, [visiblePosts, selectedYear, selectedTag]);
 
   return (
     <Col className="w-full max-w-7xl mx-auto px-4 md:px-0">
