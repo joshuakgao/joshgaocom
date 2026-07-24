@@ -97,21 +97,6 @@ export default function Home() {
 
             <Spacer size={64} />
 
-            {/* <H1>Misc</H1>
-            <Col>
-              <Button
-                asChild
-                variant={"ghost"}
-                className="text-pop justify-start"
-              >
-                <Link href="/misc/volleyball">
-                  <Row>
-                    Volleyball Timeline{" "}
-                    <LuArrowRight size={18} className="ml-2" />
-                  </Row>
-                </Link>
-              </Button>
-            </Col> */}
           </Col>
         </Col>
         <Spacer size={256} />
