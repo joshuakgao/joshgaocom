@@ -22,7 +22,7 @@ export default function KnnImageClassification() {
           closest neighbor.
         </P>
         <H1>Results</H1>
-        <PostImg src={`${assetsPath}/knn.png`} alt="KNN Results" />
+        <PostImg src={`${assetsPath}/knn.webp`} alt="KNN Results" />
         <P>
           Since KNN relies on the distance of color values at each corresponding
           pixel location, the results can be very unreliable.

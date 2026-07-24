@@ -30,7 +30,7 @@ export const timelineData = [
     label: "Structures and Artificial Intelligence Lab",
     title: "Research Assistant",
     description: "Exploring how AI can transform real-world engineering.",
-    img: "/assets/images/sail.mov",
+    img: "/assets/images/sail.mp4",
     link: "https://sail.cive.uh.edu/",
     date: "May 2024 – Present",
   },
@@ -39,7 +39,7 @@ export const timelineData = [
     title: "Head of AI",
     description:
       "Developed AI medical simulation prototype that secured $1.3M Defense Health Agency research funding. Engineered a secure AI deployment pipeline for U.S. Navy Fleet Readiness Center.",
-    img: "/assets/projects/2023/svs-medical-simulation/thumbnail.png",
+    img: "/assets/projects/2023/svs-medical-simulation/thumbnail.webp",
     link: "https://www.sbir.gov/awards/206325",
     date: "May 2021 – Aug 2024",
   },

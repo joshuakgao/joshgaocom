@@ -31,7 +31,7 @@ export default function SelfHostedCloud() {
         </P>
         <H1>Raspberry Pi 5</H1>
         <PostImg
-          src={`${assetsPath}/raspberrypi5.jpg`}
+          src={`${assetsPath}/raspberrypi5.webp`}
           alt="raspberrypi 5"
           className="max-w-[300px]"
         />
@@ -48,7 +48,7 @@ export default function SelfHostedCloud() {
           the Pironman 5 comes in.
         </P>
         <H1>Pironman 5 Case</H1>
-        <PostImg src={`${assetsPath}/pironman5.png`} alt="pironman5" />
+        <PostImg src={`${assetsPath}/pironman5.webp`} alt="pironman5" />
         <P>
           I'm going be honest, I could have just bought $8 basic NVMe hat
           instead of this $79 PC case, and everything would have worked fine.
@@ -73,7 +73,7 @@ export default function SelfHostedCloud() {
       </PostContent>
       <PostContent className="max-w-7xl">
         <PostImg
-          src={`${assetsPath}/nextcloudFiles.png`}
+          src={`${assetsPath}/nextcloudFiles.webp`}
           alt="nextcloud files"
         />
       </PostContent>
@@ -86,7 +86,7 @@ export default function SelfHostedCloud() {
       </PostContent>
       <PostContent className="max-w-7xl">
         <PostImg
-          src={`${assetsPath}/nextcloudPhotos.png`}
+          src={`${assetsPath}/nextcloudPhotos.webp`}
           alt="nextcloud photos"
         />
       </PostContent>

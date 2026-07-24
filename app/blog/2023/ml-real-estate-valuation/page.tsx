@@ -29,11 +29,11 @@ export default function MlRealEstateValuation() {
           Below is a distribution of the square footage and lot size vs price.
         </P>
         <PostImg
-          src={`${assetsPath}/zillow-dataset-sqft.png`}
+          src={`${assetsPath}/zillow-dataset-sqft.webp`}
           alt="Zillow Square Footage vs Price"
         />
         <PostImg
-          src={`${assetsPath}/zillow-dataset-lot.png`}
+          src={`${assetsPath}/zillow-dataset-lot.webp`}
           alt="Zillow Lot Size vs Price"
         />
 

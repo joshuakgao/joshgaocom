@@ -7,6 +7,7 @@ import {
   P,
   PostContent,
   PostImg,
+  PostVideo,
   PostLink,
   PostWrapper,
 } from "@/components/ui";
@@ -78,7 +79,7 @@ export default function Athena() {
           clean file structure organized by research topic, plus a knowledge
           graph that links related concepts across papers.
         </P>
-        <PostImg src={`${assetsPath}/graph.png`} alt="Graph" />
+        <PostImg src={`${assetsPath}/graph.webp`} alt="Graph" />
         <H2>Research Topic Index</H2>
         <P>
           The index sorts papers by year and displays thumbnail images alongside
@@ -86,7 +87,14 @@ export default function Athena() {
           rather than digging through folders. Each thumbnail gives just enough
           visual context to jog your memory without having to open anything.
         </P>
-        <PostImg src={`${assetsPath}/index.gif`} alt="Index Gif" />
+        <PostVideo
+          src={`${assetsPath}/index.mp4`}
+          title="Index"
+          autoPlay
+          muted
+          loop
+          controls={false}
+        />
         <H2>Research Topic Overview</H2>
         <P>
           Each research topic gets an auto-generated overview that goes beyond
@@ -96,7 +104,14 @@ export default function Athena() {
           order. The kind of synthesis that would normally take hours to write
           manually.
         </P>
-        <PostImg src={`${assetsPath}/overview.gif`} alt="Overview Gif" />
+        <PostVideo
+          src={`${assetsPath}/overview.mp4`}
+          title="Overview"
+          autoPlay
+          muted
+          loop
+          controls={false}
+        />
         <H2>Paper Overview</H2>
         <P>
           Individual paper pages include a summary, key contributions, and most
@@ -104,7 +119,14 @@ export default function Athena() {
           section I return to most often when thinking through research
           directions or writing related work sections.
         </P>
-        <PostImg src={`${assetsPath}/paper.gif`} alt="Paper Overview Gif" />
+        <PostVideo
+          src={`${assetsPath}/paper.mp4`}
+          title="Paper Overview"
+          autoPlay
+          muted
+          loop
+          controls={false}
+        />
         <H2>Asking Questions</H2>
         <P>
           One of the most useful features is being able to ask Claude Code

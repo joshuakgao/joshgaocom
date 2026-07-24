@@ -126,7 +126,7 @@ export default function Athena() {
           largely flattened by this point.
         </P>
         <PostImg
-          src={`${assetsPath}/wandb_puzzle_accuracy.png`}
+          src={`${assetsPath}/wandb_puzzle_accuracy.webp`}
           alt="Wandb Puzzle Accuracy"
         />
         <P>
@@ -134,7 +134,7 @@ export default function Athena() {
           Even so, Athena solves a meaningful fraction of the hardest puzzles in
           the set.
         </P>
-        <PostImg src={`${assetsPath}/elo_accuracy.png`} alt="Elo Accuracy" />
+        <PostImg src={`${assetsPath}/elo_accuracy.webp`} alt="Elo Accuracy" />
         <P>
           In live play, Athena reaches a peak ELO of 1959 on Lichess competing
           against other bots, a strong result for a model with no search at
@@ -164,7 +164,7 @@ export default function Athena() {
         </P>
         <Col className="items-center w-full">
           <PostImg
-            src={`${assetsPath}/bin_ablation.png`}
+            src={`${assetsPath}/bin_ablation.webp`}
             alt="Bin Ablations"
             className="max-w-md"
           />

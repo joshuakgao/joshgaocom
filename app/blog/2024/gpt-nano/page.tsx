@@ -56,7 +56,7 @@ export default function GptNano() {
         <H1>Training Run Results</H1>
         <PostImg
           alt="Training run results for GPT-Nano"
-          src={`${assetsPath}/results.png`}
+          src={`${assetsPath}/results.webp`}
         />
         <P>
           The left figure is the Loss curve, and the right figure is the
@@ -72,7 +72,7 @@ export default function GptNano() {
         <H1>Qualitative</H1>
         <PostImg
           alt="GPT-Nano qualitative results"
-          src={`${assetsPath}/pre-train-qualitative.png`}
+          src={`${assetsPath}/pre-train-qualitative.webp`}
         />
         <P>
           GPT-Nano does give a better response than GPT-2 to the prompt: "The
@@ -91,7 +91,7 @@ export default function GptNano() {
         </P>
         <PostImg
           alt="Civil Engineering finetune qualitative results"
-          src={`${assetsPath}/finetune-qualitative.png`}
+          src={`${assetsPath}/finetune-qualitative.webp`}
         />
         <P>
           Neither GPT-2 nor GPT-Nano were able to correctly identify what

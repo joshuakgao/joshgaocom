@@ -33,7 +33,7 @@ export default function StockPortfolioTracker() {
           menu <span className="font-mono">Extensions {">"} App Script.</span>
         </P>
         <H1>Trade History</H1>
-        <PostImg src={`${assetsPath}/historySheet.png`} alt="history sheet" />
+        <PostImg src={`${assetsPath}/historySheet.webp`} alt="history sheet" />
         <P>
           First up, we have a sheet where you can track all your trades. You can
           enter the date, ticker, type of transaction, number of shares, and
@@ -46,7 +46,7 @@ export default function StockPortfolioTracker() {
 
         <H1>Portfolio Overview</H1>
         <PostImg
-          src={`${assetsPath}/portfolioOverview.png`}
+          src={`${assetsPath}/portfolioOverview.webp`}
           alt="portfolio overview"
         />
         <P>
@@ -58,7 +58,7 @@ export default function StockPortfolioTracker() {
 
         <H1>Position Breakdown</H1>
         <PostImg
-          src={`${assetsPath}/positionsSheet.png`}
+          src={`${assetsPath}/positionsSheet.webp`}
           alt="positions sheet"
         />
         <P>
@@ -86,7 +86,7 @@ export default function StockPortfolioTracker() {
 
         <H1>Performance Against S&P500 Tracker</H1>
         <PostImg
-          src={`${assetsPath}/performanceTracker.png`}
+          src={`${assetsPath}/performanceTracker.webp`}
           alt="performance sheet"
         />
         <P>
@@ -112,7 +112,7 @@ export default function StockPortfolioTracker() {
           buying? Well, I have a section for that too!
         </P>
         <PostImg
-          src={`${assetsPath}/superInvestors.png`}
+          src={`${assetsPath}/superInvestors.webp`}
           alt="super investor trades"
         />
         <P>

@@ -4,7 +4,7 @@ export let posts: PostProps[] = [
   {
     contentType: "Research",
     slug: "pe-civil-bench",
-    thumbnail: "/assets/projects/2026/pe-civil-bench/thumbnail.png",
+    thumbnail: "/assets/projects/2026/pe-civil-bench/thumbnail.webp",
     title:
       "PE Civil Bench: Advancing Agentic Retrieval-Augmented Generation Performance of Large Language Models on Exam Problems and Automated Component Design",
     description:
@@ -25,7 +25,7 @@ export let posts: PostProps[] = [
   // {
   //   contentType: "Software",
   //   slug: "twinfra",
-  //   thumbnail: "/assets/projects/2026/twinfra/thumbnail.png",
+  //   thumbnail: "/assets/projects/2026/twinfra/thumbnail.webp",
   //   title: "Twinfra",
   //   description:
   //     "AI powered software suite for automated safety inspection of structures and equipment.",
@@ -35,7 +35,7 @@ export let posts: PostProps[] = [
   {
     contentType: "AI",
     slug: "lit-surf",
-    thumbnail: "/assets/projects/2026/lit-surf/thumbnail.png",
+    thumbnail: "/assets/projects/2026/lit-surf/thumbnail.webp",
     title: "LitSurf",
     description:
       "Turning scattered research papers into an evolving, structured knowledge base that compounds over time.",
@@ -48,7 +48,7 @@ export let posts: PostProps[] = [
   {
     contentType: "Research",
     slug: "bridge-eqa",
-    thumbnail: "/assets/projects/2026/bridgeEqa/thumbnail.png",
+    thumbnail: "/assets/projects/2026/bridgeEqa/thumbnail.webp",
     video: "https://youtu.be/zdS89m0cZ48?si=-K-JcDvlbrTaYNfh",
     title: "BridgeEQA: Virtual Embodied Agents for Real Bridge Inspections",
     authors: ["Subin Varghese", "Joshua Gao", "Asad Rahman", "Vedhus Hoskere"],
@@ -70,7 +70,7 @@ export let posts: PostProps[] = [
   // {
   //   contentType: "Research",
   //   slug: "domain-specific-rag-evaluation",
-  //   thumbnail: "/assets/projects/2025/viewDelta/thumbnail.png",
+  //   thumbnail: "/assets/projects/2025/viewDelta/thumbnail.webp",
   //   title: "Domain Specific RAG Evaluation",
   //   authors: ["Joshua Gao", "Huy Pham", "Vedhus Hoskere"],
   //   journal: "arvix",
@@ -85,7 +85,7 @@ export let posts: PostProps[] = [
   {
     contentType: "AI",
     slug: "athena-chess",
-    thumbnail: "/assets/projects/2025/athena-chess/thumbnail.png",
+    thumbnail: "/assets/projects/2025/athena-chess/thumbnail.webp",
     title: "Athena: How Well Can Transformers Play Chess?",
     description:
       "Discover how Athena, a transformer-based model, is pushing the boundaries of chess AI, challenging traditional engines and human players alike.",
@@ -125,7 +125,7 @@ export let posts: PostProps[] = [
   {
     contentType: "Hardware",
     slug: "self-hosted-cloud-storage",
-    thumbnail: "/assets/projects/2024/self-hosted-cloud-storage/thumbnail.jpg",
+    thumbnail: "/assets/projects/2024/self-hosted-cloud-storage/thumbnail.webp",
     title: "Self Hosting Cloud Storage",
     description: "Avoiding cloud storage fees with a RasberryPi and NextCloud.",
     links: { website: "https://cloud.joshgao.com" },
@@ -151,7 +151,7 @@ export let posts: PostProps[] = [
     slug: "gpt-nano",
     title: "GptNano",
     description: "Outperforming OpenAI's GPT-2.",
-    thumbnail: "/assets/projects/2024/gpt-nano/thumbnail2.png",
+    thumbnail: "/assets/projects/2024/gpt-nano/thumbnail2.webp",
     date: "27 Jun 2024",
     year: "2024",
     links: {
@@ -164,7 +164,7 @@ export let posts: PostProps[] = [
     slug: "knn-image-classification",
     title: "KNN Image Classification",
     description: "A KNN image classifier trained on CIFAR-10 dataset.",
-    thumbnail: "/assets/projects/2023/knn-image-classification/thumbnail.png",
+    thumbnail: "/assets/projects/2023/knn-image-classification/thumbnail.webp",
     date: "16 Dec 2023",
     year: "2023",
     links: {
@@ -177,7 +177,7 @@ export let posts: PostProps[] = [
     title: "How Much Is Your Home Worth?",
     description:
       "A machine learning model trained on Zillow data with multi variable stochastic gradient descent.",
-    thumbnail: "/assets/projects/2023/ml-real-estate-valuation/thumbnail.png",
+    thumbnail: "/assets/projects/2023/ml-real-estate-valuation/thumbnail.webp",
     date: "8 Jun 2023",
     year: "2023",
     links: {
@@ -195,7 +195,7 @@ export let posts: PostProps[] = [
     links: {
       github: "https://github.com/tugonbob/reddit-laughs",
     },
-    thumbnail: "/assets/projects/2022/reddit-laughs/thumbnail.png",
+    thumbnail: "/assets/projects/2022/reddit-laughs/thumbnail.webp",
   },
   {
     contentType: "Finance",
@@ -205,7 +205,7 @@ export let posts: PostProps[] = [
       "Track your performance against the S&P 500 and keep up with super-investor trades.",
     date: "21 Dec 2022",
     year: "2022",
-    thumbnail: "/assets/projects/2022/stock-portfolio-tracker/thumbnail.png",
+    thumbnail: "/assets/projects/2022/stock-portfolio-tracker/thumbnail.webp",
     links: {
       googleDrive:
         "https://docs.google.com/spreadsheets/d/1wrPfNQtEmuMB3GUdjDgKffgdOIyPkrvQC0l_QhYNKxE/edit?usp=sharing",
