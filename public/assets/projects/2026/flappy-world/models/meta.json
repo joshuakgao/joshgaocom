@@ -1,0 +1,9 @@
+{
+  "frame_height": 128,
+  "frame_width": 72,
+  "img_channels": 3,
+  "latent_size": 32,
+  "hidden_size": 256,
+  "action_dim": 2,
+  "gaussians": 3
+}

@@ -2,6 +2,19 @@ import { PostProps } from "@/components/types";
 
 export let posts: PostProps[] = [
   {
+    contentType: "AI",
+    slug: "flappy-world",
+    thumbnail: "/assets/projects/2026/flappy-world/dream.gif",
+    title: "Mastering Flappy Birds through World Models",
+    description: "hi",
+    date: "24 Jul 2026",
+    year: "2026",
+    links: {
+      github: "https://github.com/joshuakgao/flappy-world.git",
+    },
+    starred: true,
+  },
+  {
     contentType: "Research",
     slug: "pe-civil-bench",
     thumbnail: "/assets/projects/2026/pe-civil-bench/thumbnail.webp",
