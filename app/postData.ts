@@ -4,7 +4,7 @@ export let posts: PostProps[] = [
   {
     contentType: "AI",
     slug: "flappy-world",
-    thumbnail: "/assets/projects/2026/flappy-world/dream.gif",
+    thumbnail: "/assets/projects/2026/flappy-world/thumbnail.webp",
     title: "Mastering Flappy Birds through World Models",
     description: "hi",
     date: "24 Jul 2026",

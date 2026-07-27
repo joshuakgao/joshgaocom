@@ -12,12 +12,11 @@ export default function FlappyWorld() {
       <PostContent>
         <P>
           This is a <em>World Model</em> playing Flappy Bird — but there is no
-          game running. Everything below is a &ldquo;dream&rdquo;: a neural
-          network hallucinating each frame from its own imagination, following
-          the recipe from Ha &amp; Schmidhuber&rsquo;s{" "}
-          <em>World Models</em>. A tiny controller flies the bird inside that
-          dream. Press <strong>Space</strong> (or tap the frame) and{" "}
-          <strong>you</strong> take the stick.
+          game running. Everything below is a &ldquo;dream&rdquo;: a{" "}
+          <strong>DreamerV3</strong> world model hallucinating each frame from
+          its own imagination. A learned actor flies the bird inside that dream.
+          Press <strong>Space</strong> (or tap the frame) and <strong>you</strong>{" "}
+          take the stick.
         </P>
       </PostContent>
 
@@ -28,37 +27,45 @@ export default function FlappyWorld() {
       <PostContent>
         <H2>How it works</H2>
         <P>
-          Three small networks, all frozen and exported to ONNX, run entirely in
-          your browser with onnxruntime-web:
+          Unlike the two-stage World Models recipe (a VAE, then a separate
+          memory RNN), DreamerV3 learns one <em>joint</em> world model end to
+          end — a Recurrent State-Space Model (RSSM). Its latent state at each
+          step splits in two: a <strong>deterministic</strong> part{" "}
+          <em>h</em> (a GRU carrying history) and a <strong>stochastic</strong>{" "}
+          part <em>z</em> — here 32 independent 32-way categoricals, sampled
+          fresh each step. Everything below runs frozen and exported to ONNX,
+          entirely in your browser with onnxruntime-web.
         </P>
         <P>
-          <strong>V — Vision (a VAE).</strong> A convolutional variational
-          autoencoder compresses each 72×128 frame into a 32-number latent code{" "}
-          <em>z</em>. Its decoder turns any latent back into a frame — that
-          decoder is what paints every image you see above.
+          <strong>The RSSM (dynamics).</strong> A GRU folds the previous
+          stochastic state and your action into <em>h</em>, and a{" "}
+          <em>prior</em> network predicts the distribution over the next{" "}
+          <em>z</em> from history <em>alone</em> — no observation needed. Rolling
+          that prior forward is the dream. During training a{" "}
+          <em>posterior</em> that also sees the real frame is pulled toward the
+          prior (a KL term), so the prior alone becomes a competent forward model
+          of pipes and gravity.
         </P>
         <P>
-          <strong>M — Memory (an MDN-RNN).</strong> An LSTM with a
-          mixture-density head takes the current latent and action and predicts a{" "}
-          <em>distribution</em> over the next latent, plus how likely the run is
-          to end. Rolling it forward — decoding each predicted latent with the
-          VAE — is the dream. It never touches a real game; the physics of pipes
-          and gravity live entirely in its weights.
+          <strong>The decoder + heads.</strong> From the combined feature{" "}
+          <em>[h, z]</em>, a convolutional decoder reconstructs the frame you
+          see, while reward and continue heads predict the expected reward and
+          the probability the episode keeps going. That continue probability is
+          what ends a dream when it drops.
         </P>
         <P>
-          <strong>C — Controller.</strong> A small MLP that maps{" "}
-          <em>(latent, memory)</em> to an action. It was trained by evolution
-          strategies to survive as long as possible — crucially, trained{" "}
-          <em>inside the dream</em>, never on the real environment.
+          <strong>The actor.</strong> A small policy mapping <em>[h, z]</em> to
+          an action, trained <em>entirely</em> on trajectories the world model
+          imagines — never on the real environment.
         </P>
         <P>
-          Each tick the loop is: decode <em>z</em> to the frame you see → the
-          controller (or your Space bar) picks flap / no-flap → the MDN-RNN folds
-          that action into its memory and imagines the next latent. When the
-          model&rsquo;s own predicted crash probability crosses a threshold, the
-          dream ends and a fresh one is seeded from a real starting frame. Your
-          flap and the controller&rsquo;s share the same stick, so you&rsquo;re
-          steering the policy through its own hallucination.
+          Each tick the loop is: decode <em>[h, z]</em> to the frame you see →
+          the actor (or your Space bar) picks flap / no-flap → the RSSM advances
+          its GRU and samples the next <em>z</em>. When the continue head&rsquo;s
+          probability crosses a threshold, the dream ends and a fresh one is
+          seeded from a real starting state. Your flap and the actor&rsquo;s
+          share the same stick, so you&rsquo;re steering the policy through its
+          own hallucination.
         </P>
       </PostContent>
     </PostWrapper>

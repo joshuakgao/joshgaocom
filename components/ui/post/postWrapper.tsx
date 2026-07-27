@@ -10,7 +10,6 @@ import {
   H4,
   P,
   PostContent,
-  PostImg,
   Spacer,
 } from "@/components/ui";
 
@@ -53,30 +52,32 @@ export function PostWrapper({
         </Col>
       </PostContent>
       <PostContent className="max-w-3xl items-center">
-        {post.video ? (
-          <iframe
-            src={`https://www.youtube.com/embed/${
-              post.video.split("youtu.be/")[1]
-            }?rel=0`}
-            title="YouTube video player"
-            className="rounded-lg w-full aspect-video"
-            allowFullScreen
-          />
-        ) : post.thumbnail.endsWith(".mp4") ? (
-          <video
-            src={post.thumbnail}
-            controls
-            className="rounded-lg w-full object-cover"
-            preload="auto"
-          />
-        ) : (
-          <PostImg
-            src={post.thumbnail}
-            alt={post.title}
-            className="rounded-lg w-full object-cover"
-            aspectRatio={16 / 9}
-          />
-        )}
+        {/* Fixed 16/9 frame; every thumbnail type fills and crops it to cover. */}
+        <div className="relative w-full aspect-video overflow-hidden rounded-lg">
+          {post.video ? (
+            <iframe
+              src={`https://www.youtube.com/embed/${
+                post.video.split("youtu.be/")[1]
+              }?rel=0`}
+              title="YouTube video player"
+              className="absolute inset-0 h-full w-full"
+              allowFullScreen
+            />
+          ) : post.thumbnail.endsWith(".mp4") ? (
+            <video
+              src={post.thumbnail}
+              controls
+              className="absolute inset-0 h-full w-full object-cover"
+              preload="auto"
+            />
+          ) : (
+            <img
+              src={post.thumbnail}
+              alt={post.title}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          )}
+        </div>
       </PostContent>
       <PostContent>
         <ActionBar post={post} />

@@ -1,68 +1,60 @@
 "use client";
 
 /**
- * Flappy World — a playable "dream".
+ * Flappy World — a playable DreamerV3 "dream".
  *
- * Runs the frozen World Models (Ha) V / M / C stack entirely in the browser with
+ * Runs the frozen DreamerV3 world model + actor entirely in the browser with
  * onnxruntime-web. There is no game engine here: every frame is *hallucinated* by
- * the VAE decoder from a latent the MDN-RNN imagines, exactly like
- * `src/flappy_world/ha/dream.py`'s human mode. Each tick:
+ * the RSSM's decoder from a latent state the model imagines, exactly like
+ * `src/flappy_world/dreamer/dream.py`'s human mode. Each tick:
  *
- *   z_t  --VAE decoder-->  the frame you see
- *   a_t  =  SPACE this frame ? flap : Controller(z_t, h_t)   (you can override the AI)
- *   (mus, sigmas, logpi), (h_{t+1}, c_{t+1})  =  MDRNN(a_t, z_t, h_t, c_t)
- *   z_{t+1}  =  the GMM's mode (deterministic dream, matching the config)
+ *   feat_t = [deter_t, flatten(stoch_t)]  --decoder-->  the frame you see
+ *   a_t    = SPACE this frame ? flap : Actor(feat_t)     (you can override the AI)
+ *   (next_deter, prior_logits)  =  RSSM.img_step(stoch_t, a_t, deter_t)
+ *   stoch_{t+1}  ~  categorical(prior_logits)            (the dream's stochastic draw)
  *
- * The controller flies on its own; pressing SPACE forces a flap that frame, so you
- * and the policy share the stick inside the model's imagination. When the MDRNN's
- * own predicted crash probability crosses the threshold, the dream ends and a new
- * one is seeded.
+ * The actor flies on its own; pressing SPACE forces a flap that frame, so you and
+ * the policy share the stick inside the model's imagination. The continue head
+ * predicts p(episode continues); when it drops below threshold the dream ends and
+ * a new one is seeded from a precomputed real starting state.
+ *
+ * The seed states (deter + stoch, an encoded real reset frame run through the
+ * RSSM posterior) are precomputed in Python, so the browser never needs the
+ * encoder or the posterior graph — only decoder / actor / rssm_img / heads.
  */
 
 import { useEffect, useRef, useState } from "react";
 
 // Shapes come from meta.json (fetched at runtime), but these are the trained values.
 type Meta = {
-  frame_height: number;
-  frame_width: number;
+  img_height: number;
+  img_width: number;
   img_channels: number;
-  latent_size: number;
-  hidden_size: number;
+  stoch: number; // number of categorical groups (S)
+  classes: number; // classes per group (K)
+  deter: number; // deterministic GRU state width (D)
+  feat_dim: number; // D + S*K
   action_dim: number;
-  gaussians: number;
 };
 
-// Match src/flappy_world/ha/config.yaml (dream section): decode the GMM *mode*
-// (no sampling noise) for the steadiest, cleanest dream. p(crash) past the
-// threshold ends the episode, but only after a grace period while the LSTM's
-// memory warms up from the seed frame.
-const DETERMINISTIC = true;
-const TEMPERATURE = 1.0;
-const DONE_THRESHOLD = 0.01;
+type Seed = { deter: number[]; stoch: number[] };
+
+// Match src/flappy_world/dreamer/config.yaml (dream section): the actor acts
+// greedily (argmax), and the dream ends when the continue head's p(continue)
+// drops below the threshold — but only after a grace period while the state
+// settles from the seed frame.
+const GREEDY = true;
+const CONT_THRESHOLD = 0.99;
 const GRACE_STEPS = 45;
 const FPS = 30; // target rate; wasm fallback just runs as fast as it can
 const DISPLAY_SCALE = 3;
 
 const FLAP = 1;
-const NOOP = 0;
-
-function sigmoid(x: number) {
-  return 1 / (1 + Math.exp(-x));
-}
 
 function argmax(a: ArrayLike<number>) {
   let best = 0;
   for (let i = 1; i < a.length; i++) if (a[i] > a[best]) best = i;
   return best;
-}
-
-// Standard normal via Box–Muller, for the (optional) stochastic dream.
-function gauss() {
-  let u = 0;
-  let v = 0;
-  while (u === 0) u = Math.random();
-  while (v === 0) v = Math.random();
-  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
 }
 
 export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
@@ -84,36 +76,32 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
     let cancelled = false;
     // Handles created inside init(); released on cleanup.
     let decoder: any = null;
-    let mdrnn: any = null;
-    let controller: any = null;
+    let actor: any = null;
+    let rssmImg: any = null;
+    let heads: any = null;
     let ort: any = null;
 
     const modelsPath = `${basePath}/models`;
 
     async function init() {
       // Dynamic import keeps onnxruntime-web out of SSR/prerender (it needs a
-      // browser). The webgpu build runs the conv-heavy VAE decoder on the GPU —
-      // the same idea deeplearn.js used for the original worldmodels.github.io
-      // demos, and the reason those feel instant. Glue (.jsep.mjs) + binary
-      // (.jsep.wasm) load from public/ort at wasmPaths; unsupported ops fall
-      // back to wasm within that same build (no COOP/COEP needed).
-      //
-      // We pick the build by capability instead of loading the heavy 26 MB
-      // WebGPU/JSEP module everywhere: browsers without navigator.gpu load the
-      // plain wasm build. This also keeps the fallback clean — a failed GPU
-      // init poisons its own wasm module, so we recover by importing the
-      // separate plain-wasm build fresh rather than reusing the dead one.
+      // browser). The webgpu build runs the conv-heavy decoder on the GPU — the
+      // same idea deeplearn.js used for the original worldmodels.github.io demos.
+      // Pick the build by capability: browsers without navigator.gpu load the
+      // plain wasm build (a failed GPU init poisons its own wasm module, so the
+      // fallback imports the separate plain-wasm build fresh).
       const meta: Meta = await fetch(`${modelsPath}/meta.json`).then((r) =>
         r.json()
       );
-      const seeds: number[][] = await fetch(`${modelsPath}/seeds.json`)
+      const seeds: Seed[] = await fetch(`${modelsPath}/seeds.json`)
         .then((r) => r.json())
         .catch(() => []); // fall back to a zero seed if unavailable
 
       const urls = [
-        `${modelsPath}/vae_decoder.onnx`,
-        `${modelsPath}/mdrnn.onnx`,
-        `${modelsPath}/controller.onnx`,
+        `${modelsPath}/decoder.onnx`,
+        `${modelsPath}/actor.onnx`,
+        `${modelsPath}/rssm_img.onnx`,
+        `${modelsPath}/heads.onnx`,
       ];
       const create = (eps: string[]) =>
         Promise.all(
@@ -139,24 +127,26 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
           ort = await import("onnxruntime-web/webgpu");
           ort.env.wasm.wasmPaths = "/ort/";
           ort.env.wasm.numThreads = 1;
-          [decoder, mdrnn, controller] = await create(["webgpu"]);
+          [decoder, actor, rssmImg, heads] = await create(["webgpu"]);
           usedBackend = "webgpu";
         } catch (e) {
           console.warn("WebGPU init failed, falling back to wasm:", e);
-          [decoder, mdrnn, controller] = await loadWasm();
+          [decoder, actor, rssmImg, heads] = await loadWasm();
         }
       } else {
-        [decoder, mdrnn, controller] = await loadWasm();
+        [decoder, actor, rssmImg, heads] = await loadWasm();
       }
       if (cancelled) return;
       setBackend(usedBackend);
 
-      const L = meta.latent_size;
-      const Hd = meta.hidden_size;
+      const S = meta.stoch;
+      const K = meta.classes;
+      const SK = S * K;
+      const D = meta.deter;
+      const F = meta.feat_dim; // D + SK
       const A = meta.action_dim;
-      const G = meta.gaussians;
-      const H = meta.frame_height;
-      const W = meta.frame_width;
+      const H = meta.img_height;
+      const W = meta.img_width;
       const HW = H * W;
 
       // --- Canvas: an offscreen native-res frame, upscaled onto the visible one.
@@ -171,67 +161,57 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
       const imgData = octx.createImageData(W, H);
 
       function drawFrame(data: Float32Array) {
+        // Decoder output is centered ([-0.5, 0.5]); undo it and clamp to [0, 1].
         const px = imgData.data;
         for (let p = 0; p < HW; p++) {
           const o = p << 2;
-          px[o] = Math.max(0, Math.min(255, data[p] * 255)); // R plane
-          px[o + 1] = Math.max(0, Math.min(255, data[HW + p] * 255)); // G plane
-          px[o + 2] = Math.max(0, Math.min(255, data[2 * HW + p] * 255)); // B plane
+          px[o] = Math.max(0, Math.min(255, (data[p] + 0.5) * 255)); // R plane
+          px[o + 1] = Math.max(0, Math.min(255, (data[HW + p] + 0.5) * 255)); // G
+          px[o + 2] = Math.max(0, Math.min(255, (data[2 * HW + p] + 0.5) * 255)); // B
           px[o + 3] = 255;
         }
         octx.putImageData(imgData, 0, 0);
         ctx.drawImage(off, 0, 0, W, H, 0, 0, canvas.width, canvas.height);
       }
 
-      // --- Dream state: latent + LSTM memory (h, c).
-      let z = new Float32Array(L);
-      let h = new Float32Array(Hd);
-      let c = new Float32Array(Hd);
+      // --- Dream state: deterministic GRU memory + one-hot stochastic latent.
+      let deter = new Float32Array(D);
+      let stoch = new Float32Array(SK); // flattened (S groups × K classes)
+      const feat = new Float32Array(F); // reused each step: [deter, flatten(stoch)]
       let step = 0;
 
       function seedDream() {
-        // Start from a real encoded frame (precomputed in Python), zero memory —
-        // exactly what dream.py's seed_dream returns. Zeros if seeds missing.
-        z = seeds.length
-          ? Float32Array.from(seeds[(Math.random() * seeds.length) | 0])
-          : new Float32Array(L);
-        h = new Float32Array(Hd);
-        c = new Float32Array(Hd);
+        // Start from a precomputed real posterior state (encoder + RSSM posterior
+        // over one real reset frame, done offline). Zeros if seeds missing.
+        if (seeds.length) {
+          const s = seeds[(Math.random() * seeds.length) | 0];
+          deter = Float32Array.from(s.deter);
+          stoch = Float32Array.from(s.stoch);
+        } else {
+          deter = new Float32Array(D);
+          stoch = new Float32Array(SK);
+        }
         step = 0;
       }
 
-      function nextLatent(
-        mus: Float32Array,
-        sigmas: Float32Array,
-        logpi: Float32Array
-      ) {
-        // Deterministic: decode the highest-weight component's mean (no noise).
-        if (DETERMINISTIC) {
-          const k = argmax(logpi);
-          const out = new Float32Array(L);
-          for (let i = 0; i < L; i++) out[i] = mus[k * L + i];
-          return out;
-        }
-        // Stochastic: temperature-scaled mixture sample (World Models dream knob).
-        const tau = TEMPERATURE;
-        const logits = new Float32Array(G);
-        for (let g = 0; g < G; g++) logits[g] = logpi[g] / tau;
-        const m = Math.max(...logits);
-        let sum = 0;
-        for (let g = 0; g < G; g++) {
-          logits[g] = Math.exp(logits[g] - m);
-          sum += logits[g];
-        }
-        let r = Math.random() * sum;
-        let k = 0;
-        for (; k < G - 1; k++) {
-          r -= logits[k];
-          if (r <= 0) break;
-        }
-        const out = new Float32Array(L);
-        const sscale = Math.sqrt(tau);
-        for (let i = 0; i < L; i++) {
-          out[i] = mus[k * L + i] + sigmas[k * L + i] * sscale * gauss();
+      function sampleStoch(logits: Float32Array) {
+        // Per group: softmax over K classes (logits already have unimix baked in),
+        // draw a class, emit its one-hot. Returns a fresh (S*K) buffer.
+        const out = new Float32Array(SK);
+        for (let g = 0; g < S; g++) {
+          const base = g * K;
+          let maxL = -Infinity;
+          for (let k = 0; k < K; k++)
+            if (logits[base + k] > maxL) maxL = logits[base + k];
+          let sum = 0;
+          for (let k = 0; k < K; k++) sum += Math.exp(logits[base + k] - maxL);
+          let r = Math.random() * sum;
+          let k = 0;
+          for (; k < K - 1; k++) {
+            r -= Math.exp(logits[base + k] - maxL);
+            if (r <= 0) break;
+          }
+          out[base + k] = 1;
         }
         return out;
       }
@@ -240,36 +220,35 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
         new ort.Tensor("float32", buf, dims);
 
       async function stepOnce() {
+        // feat = [deter, flatten(stoch)]
+        feat.set(deter, 0);
+        feat.set(stoch, D);
+
         // 1. Render what the model currently imagines.
-        const dec = await decoder.run({ z: t(z, [1, L]) });
+        const dec = await decoder.run({ feat: t(feat, [1, F]) });
         drawFrame(dec.frame.data as Float32Array);
 
-        // 2. Controller's action from (z, h) — unless you flap this frame.
-        const cout = await controller.run({ z: t(z, [1, L]), h: t(h, [1, Hd]) });
-        const aiAction = argmax(cout.logits.data as Float32Array);
+        // 2. Continue head -> p(episode continues); crash when it drops.
+        const hd = await heads.run({ feat: t(feat, [1, F]) });
+        const cont = (hd.cont.data as Float32Array)[0];
+
+        // 3. Actor's action (greedy argmax over unimixed probs) — unless you flap.
+        const act = await actor.run({ feat: t(feat, [1, F]) });
+        const aiAction = argmax(act.probs.data as Float32Array);
         const human = flapRef.current;
         flapRef.current = false;
         const action = human ? FLAP : aiAction;
 
-        // 3. MDRNN folds (a, z) into memory and predicts the next-latent GMM.
+        // 4. Prior step: advance the GRU, get next-latent logits, sample stoch.
         const aOneHot = new Float32Array(A);
-        aOneHot[action] = 1; // F.one_hot(action, action_dim)
-        const m = await mdrnn.run({
+        aOneHot[action] = 1;
+        const out = await rssmImg.run({
+          stoch: t(stoch, [1, S, K]),
           a: t(aOneHot, [1, A]),
-          z: t(z, [1, L]),
-          h: t(h, [1, Hd]),
-          c: t(c, [1, Hd]),
+          deter: t(deter, [1, D]),
         });
-        const doneProb = sigmoid((m.done.data as Float32Array)[0]);
-
-        // 4. Advance: next memory, next latent.
-        h = m.nh.data as Float32Array;
-        c = m.nc.data as Float32Array;
-        z = nextLatent(
-          m.mus.data as Float32Array,
-          m.sigmas.data as Float32Array,
-          m.logpi.data as Float32Array
-        );
+        deter = Float32Array.from(out.next_deter.data as ArrayLike<number>);
+        stoch = sampleStoch(out.logits.data as Float32Array);
         step++;
 
         if (!cancelled) {
@@ -281,8 +260,8 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
           }
         }
 
-        // The model dreams a crash -> end this episode, seed a fresh one.
-        return doneProb > DONE_THRESHOLD && step > GRACE_STEPS;
+        // The model predicts termination -> end this episode, seed a fresh one.
+        return cont < CONT_THRESHOLD && step > GRACE_STEPS;
       }
 
       // --- Main loop: paced to FPS, never overlapping async runs.
@@ -342,8 +321,9 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
       window.removeEventListener("keydown", onKey);
       // Release sessions on unmount (StrictMode double-invoke in dev is safe).
       decoder?.release?.();
-      mdrnn?.release?.();
-      controller?.release?.();
+      actor?.release?.();
+      rssmImg?.release?.();
+      heads?.release?.();
     };
   }, [basePath]);
 
@@ -411,12 +391,13 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
         Flap
       </button>
       <p className="max-w-md text-center text-xs text-neutral-500 dark:text-neutral-400">
-        The controller flies on its own inside the model&#39;s dream. Press{" "}
+        A DreamerV3 world model imagines the game; its actor flies on its own.
+        Press{" "}
         <kbd className="rounded border border-neutral-400 px-1 dark:border-neutral-600">
           Space
         </kbd>{" "}
         (or tap the frame) to take over and flap. Nothing here is a real game —
-        every pixel is hallucinated by the VAE from a latent the MDN-RNN imagines.
+        every pixel is hallucinated by the RSSM from a latent it imagines.
         {backend && (
           <>
             {" "}

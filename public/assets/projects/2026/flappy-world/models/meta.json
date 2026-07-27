@@ -1,9 +1,13 @@
 {
-  "frame_height": 128,
-  "frame_width": 72,
+  "img_height": 128,
+  "img_width": 72,
   "img_channels": 3,
-  "latent_size": 32,
-  "hidden_size": 256,
+  "embed_dim": 512,
+  "stoch": 32,
+  "classes": 32,
+  "deter": 64,
+  "feat_dim": 1088,
   "action_dim": 2,
-  "gaussians": 3
+  "num_bins": 255,
+  "unimix": 0.01
 }
