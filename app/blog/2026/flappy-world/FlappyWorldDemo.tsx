@@ -25,6 +25,9 @@
 
 import { useEffect, useRef, useState } from "react";
 
+import { Switch } from "@/components/ui/switch";
+import { Small } from "@/components/ui";
+
 // Shapes come from meta.json (fetched at runtime), but these are the trained values.
 type Meta = {
   img_height: number;
@@ -50,6 +53,7 @@ const FPS = 30; // target rate; wasm fallback just runs as fast as it can
 const DISPLAY_SCALE = 3;
 
 const FLAP = 1;
+const NOOP = 0;
 
 function argmax(a: ArrayLike<number>) {
   let best = 0;
@@ -61,16 +65,26 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const flapRef = useRef(false); // a queued human flap, consumed next step
   const runningRef = useRef(false);
+  const assistRef = useRef(true); // mirrors `assist` so the loop reads it live
 
   const [status, setStatus] = useState<"loading" | "running" | "error">(
     "loading"
   );
   const [backend, setBackend] = useState<"webgpu" | "wasm" | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-  const [steps, setSteps] = useState(0);
-  const [best, setBest] = useState(0);
+  // Two leaderboards: a run counts as assisted from the moment the actor picks
+  // a frame's action, so flying the whole episode yourself scores unassisted.
+  const [bestAssisted, setBestAssisted] = useState(0);
+  const [bestUnassisted, setBestUnassisted] = useState(0);
   const [crashed, setCrashed] = useState(false);
   const [youFlapped, setYouFlapped] = useState(false);
+  const [assist, setAssist] = useState(true);
+
+  // The dream loop lives in a long-running effect, so it reads the toggle
+  // through a ref rather than a captured state value.
+  useEffect(() => {
+    assistRef.current = assist;
+  }, [assist]);
 
   useEffect(() => {
     let cancelled = false;
@@ -179,6 +193,7 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
       let stoch = new Float32Array(SK); // flattened (S groups × K classes)
       const feat = new Float32Array(F); // reused each step: [deter, flatten(stoch)]
       let step = 0;
+      let usedAssist = false; // did the actor drive any frame of this episode?
 
       function seedDream() {
         // Start from a precomputed real posterior state (encoder + RSSM posterior
@@ -192,6 +207,7 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
           stoch = new Float32Array(SK);
         }
         step = 0;
+        usedAssist = false;
       }
 
       function sampleStoch(logits: Float32Array) {
@@ -233,11 +249,16 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
         const cont = (hd.cont.data as Float32Array)[0];
 
         // 3. Actor's action (greedy argmax over unimixed probs) — unless you flap.
-        const act = await actor.run({ feat: t(feat, [1, F]) });
-        const aiAction = argmax(act.probs.data as Float32Array);
+        // With assist off the actor never runs: you're the only pilot, and the
+        // dream coasts on NOOP whenever you don't flap.
         const human = flapRef.current;
         flapRef.current = false;
-        const action = human ? FLAP : aiAction;
+        let action = human ? FLAP : NOOP;
+        if (!human && assistRef.current) {
+          const act = await actor.run({ feat: t(feat, [1, F]) });
+          action = argmax(act.probs.data as Float32Array);
+          usedAssist = true;
+        }
 
         // 4. Prior step: advance the GRU, get next-latent logits, sample stoch.
         const aOneHot = new Float32Array(A);
@@ -252,7 +273,7 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
         step++;
 
         if (!cancelled) {
-          setSteps(step);
+          const setBest = usedAssist ? setBestAssisted : setBestUnassisted;
           setBest((b) => (step > b ? step : b));
           if (human) {
             setYouFlapped(true);
@@ -287,10 +308,7 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
           await new Promise((r) => setTimeout(r, 1300));
           if (cancelled || !runningRef.current) break;
           seedDream();
-          if (!cancelled) {
-            setCrashed(false);
-            setSteps(0);
-          }
+          if (!cancelled) setCrashed(false);
           continue;
         }
         const dt = performance.now() - t0;
@@ -348,13 +366,17 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
         />
 
         {/* HUD */}
-        <div className="pointer-events-none absolute left-0 top-0 flex w-full items-start justify-between p-2 text-[11px] font-medium text-white/90">
-          <span className="rounded bg-black/40 px-1.5 py-0.5 tabular-nums">
-            step {steps}
-          </span>
-          <span className="rounded bg-black/40 px-1.5 py-0.5 tabular-nums">
-            best {best}
-          </span>
+        {/* The dream frame is only 72px wide natively, so the two scores stack
+            into one panel instead of sitting on opposite corners. */}
+        <div className="pointer-events-none absolute left-2 bottom-2 rounded-md bg-black/45 px-2 py-1 text-[10px] leading-relaxed text-white backdrop-blur-[2px]">
+          <div className="flex items-baseline justify-between gap-3">
+            <span className="text-white/60">DreamerV3 Best</span>
+            <span className="font-semibold tabular-nums">{bestAssisted}</span>
+          </div>
+          <div className="flex items-baseline justify-between gap-3">
+            <span className="text-white/60">Your Best</span>
+            <span className="font-semibold tabular-nums">{bestUnassisted}</span>
+          </div>
         </div>
 
         <div
@@ -384,31 +406,34 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
         )}
       </div>
 
-      <button
-        onClick={flap}
-        className="rounded-lg bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
-      >
-        Flap
-      </button>
-      <p className="max-w-md text-center text-xs text-neutral-500 dark:text-neutral-400">
-        A DreamerV3 world model imagines the game; its actor flies on its own.
+      <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <Switch
+            id="dreamer-assist"
+            checked={assist}
+            onCheckedChange={setAssist}
+          />
+          <label
+            htmlFor="dreamer-assist"
+            className="cursor-pointer select-none text-sm font-medium text-neutral-700 dark:text-neutral-300"
+          >
+            DreamerV3 Assist
+          </label>
+        </div>
+      </div>
+      <Small className="max-w-md text-center">
         Press{" "}
         <kbd className="rounded border border-neutral-400 px-1 dark:border-neutral-600">
           Space
         </kbd>{" "}
-        (or tap the frame) to take over and flap. Nothing here is a real game —
-        every pixel is hallucinated by the RSSM from a latent it imagines.
-        {backend && (
-          <>
-            {" "}
-            Running on{" "}
-            <span className="font-mono">
-              {backend === "webgpu" ? "WebGPU (GPU)" : "wasm (CPU)"}
-            </span>
-            .
-          </>
-        )}
-      </p>
+        (or tap the frame) to take over and flap, or switch off{" "}
+        <span className="font-medium">DreamerV3 Assist</span> to fly the dream
+        yourself.
+      </Small>
+      <Small className="max-w-md text-center">
+        Nothing here is a real game — every pixel is hallucinated by
+        the RSSM from a latent it imagines.
+      </Small>
     </div>
   );
 }

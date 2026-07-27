@@ -22,3 +22,4 @@ export * from "./breadcrumb";
 export * from "./carousel";
 export * from "./button";
 export * from "./post/publicationCard";
+export * from "./switch";
