@@ -6,7 +6,7 @@ export let posts: PostProps[] = [
     slug: "flappy-world",
     thumbnail: "/assets/projects/2026/flappy-world/thumbnail.webp",
     title: "Mastering Flappy Birds through World Models",
-    description: "hi",
+    description: "Under construction...",
     date: "24 Jul 2026",
     year: "2026",
     links: {
