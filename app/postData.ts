@@ -105,7 +105,6 @@ export let posts: PostProps[] = [
     date: "28 Oct 2025",
     year: "2025",
     links: {
-      lichess: "https://lichess.org/@/athena-bot",
       github: "https://github.com/joshuakgao/athena/tree/main",
       huggingfaceDataset:
         "https://huggingface.co/datasets/joshuakgao/chessbenchmate",

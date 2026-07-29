@@ -14,6 +14,7 @@ import {
   Small,
 } from "@/components/ui";
 import { BlockMath, InlineMath } from "react-katex";
+import AthenaChessDemo from "./AthenaChessDemo";
 
 export default function Athena() {
   const { year, slug, assetsPath, post } = getPostMetadata();
@@ -26,7 +27,13 @@ export default function Athena() {
           that reaches an ELO of 1959 by distilling Stockfish 17 across 15.3
           billion labeled positions.
         </P>
+      </PostContent>
 
+      <PostContent className="items-center">
+        <AthenaChessDemo basePath={assetsPath} />
+      </PostContent>
+
+      <PostContent>
         <H1>Overview</H1>
         <P>
           Teaching a neural network to play strong chess has traditionally

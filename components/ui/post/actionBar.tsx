@@ -2,7 +2,7 @@ import { Button, Row } from "@/components/ui";
 import { FaGithub, FaGoogleDrive, FaRegFilePdf } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
 import { LuExternalLink } from "react-icons/lu";
-import { SiHuggingface, SiLichess } from "react-icons/si";
+import { SiHuggingface } from "react-icons/si";
 import { PostProps } from "../../types";
 
 export function ActionBar({ post }: { post: PostProps }) {
@@ -14,10 +14,6 @@ export function ActionBar({ post }: { post: PostProps }) {
     website: {
       icon: <LuExternalLink size={22} />,
       label: "Visit Website",
-    },
-    lichess: {
-      icon: <SiLichess />,
-      label: "Challenge Athena (Set Time Control to Real Time)",
     },
     pdf: {
       icon: <FaRegFilePdf size={22} />,
