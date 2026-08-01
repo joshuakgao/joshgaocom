@@ -98,7 +98,7 @@ export let posts: PostProps[] = [
   {
     contentType: "AI",
     slug: "athena-chess",
-    thumbnail: "/assets/projects/2025/athena-chess/thumbnail.webp",
+    thumbnail: "/assets/projects/2025/athena-chess/athena-selfplay.mp4",
     title: "Athena: How Well Can Transformers Play Chess?",
     description:
       "Discover how Athena, a transformer-based model, is pushing the boundaries of chess AI, challenging traditional engines and human players alike.",
