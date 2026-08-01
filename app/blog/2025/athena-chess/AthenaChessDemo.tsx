@@ -292,6 +292,18 @@ export default function AthenaChessDemo({ basePath }: { basePath: string }) {
     }
   }, [basePath]);
 
+  /**
+   * The error overlay's retry, for both ways this demo can fail. A failed load
+   * cleared `startedRef`, so it can just download again; a failed evaluation
+   * happened with the engine already up, and going back to "ready" re-runs the
+   * move effect against the current position — `load` would no-op there.
+   */
+  const retry = useCallback(() => {
+    setErrorMsg(null);
+    if (engineRef.current) setStatus("ready");
+    else load();
+  }, [load]);
+
   // Start the download as soon as the demo mounts.
   useEffect(() => {
     load();
@@ -697,7 +709,7 @@ export default function AthenaChessDemo({ basePath }: { basePath: string }) {
                 {status === "error" && (
                   <>
                     <span className="text-xs text-red-400">{errorMsg}</span>
-                    <Button size="sm" variant="secondary" onClick={load}>
+                    <Button size="sm" variant="secondary" onClick={retry}>
                       Retry
                     </Button>
                   </>

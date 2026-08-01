@@ -25,6 +25,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
+import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Small } from "@/components/ui";
 
@@ -79,6 +80,16 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
   const [crashed, setCrashed] = useState(false);
   const [youFlapped, setYouFlapped] = useState(false);
   const [assist, setAssist] = useState(true);
+  // Bumped by the retry button; the load effect keys off it, so incrementing
+  // tears the old sessions down and re-runs init from scratch.
+  const [attempt, setAttempt] = useState(0);
+
+  const retry = () => {
+    setErrorMsg(null);
+    setCrashed(false);
+    setStatus("loading");
+    setAttempt((a) => a + 1);
+  };
 
   // The dream loop lives in a long-running effect, so it reads the toggle
   // through a ref rather than a captured state value.
@@ -343,7 +354,7 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
       rssmImg?.release?.();
       heads?.release?.();
     };
-  }, [basePath]);
+  }, [basePath, attempt]);
 
   const flap = () => {
     flapRef.current = true;
@@ -394,8 +405,11 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
           </div>
         )}
         {status === "error" && (
-          <div className="absolute inset-0 flex items-center justify-center bg-neutral-950 p-4 text-center text-xs text-red-400">
-            {errorMsg}
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-neutral-950 p-4 text-center">
+            <span className="text-xs text-red-400">{errorMsg}</span>
+            <Button size="sm" variant="secondary" onClick={retry}>
+              Retry
+            </Button>
           </div>
         )}
         {crashed && (
