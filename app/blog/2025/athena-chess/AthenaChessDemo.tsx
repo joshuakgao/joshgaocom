@@ -808,9 +808,8 @@ export default function AthenaChessDemo({ basePath }: { basePath: string }) {
       </div>
 
       <Small className="max-w-lg text-center">
-        This demo runs the 6.9M parameter Athena - trained on 25% of
-        chessbenchmate dataset rather than the full 270M parameter model
-        described below.
+        This demo runs the 6.9M parameter Athena - trained until puzzle accuracy reached 60% rather than the full 270M parameter model
+        that reached 80% puzzle accuracy described below.
       </Small>
     </div>
   );
