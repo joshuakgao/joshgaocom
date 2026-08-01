@@ -48,6 +48,15 @@ const DARK_SQUARE = "#b58863";
 const VARIETY_MARGIN = 0.02;
 const VARIETY_CANDIDATES = 3;
 
+/**
+ * For each side's first two moves the top `OPENING_CANDIDATES` are sampled
+ * uniformly, ignoring `VARIETY_MARGIN`. Nothing is decided this early, so the
+ * widened pick costs no real strength and is what stops every game opening the
+ * same way — the gap gate alone is often narrow enough to leave one move.
+ */
+const OPENING_PLIES = 4;
+const OPENING_CANDIDATES = 4;
+
 type Status = "loading" | "ready" | "error";
 
 type Engine = {
@@ -356,16 +365,23 @@ export default function AthenaChessDemo({ basePath }: { basePath: string }) {
     setPly((p) => p + 1);
   }, []);
 
-  /** Pick from the moves statistically tied with the best one. */
+  /**
+   * Pick from the moves statistically tied with the best one — or, for the
+   * first `OPENING_PLIES` plies, from the top few outright. The ply count is
+   * read off the board so it covers each side's first two moves whichever
+   * colour Athena has.
+   */
   const chooseMove = useCallback((ranked: ScoredMove[]) => {
     const best = ranked[0];
-    const tied = ranked
-      .slice(0, VARIETY_CANDIDATES)
+    const opening = gameRef.current.history().length < OPENING_PLIES;
+    const pool = ranked
+      .slice(0, opening ? OPENING_CANDIDATES : VARIETY_CANDIDATES)
       .filter(
         (m) =>
-          m.repeats === best.repeats && best.score - m.score <= VARIETY_MARGIN,
+          m.repeats === best.repeats &&
+          (opening || best.score - m.score <= VARIETY_MARGIN),
       );
-    return tied[Math.floor(Math.random() * tied.length)];
+    return pool[Math.floor(Math.random() * pool.length)];
   }, []);
 
   // After every ply: evaluate the position, then move if it is Athena's turn.
@@ -510,9 +526,10 @@ export default function AthenaChessDemo({ basePath }: { basePath: string }) {
               <div
                 className="w-full bg-neutral-100 transition-[height] duration-500 ease-out"
                 style={{
-                  height: `${(flipped ? 1 - whiteWinProb : whiteWinProb) * 100}%`,
+                  height: `${whiteWinProb * 100}%`,
                   // Whichever colour sits at the bottom of the board owns the
-                  // bottom of the bar, so the fill grows towards you.
+                  // bottom of the bar, so the fill grows towards you. Only the
+                  // anchor flips — the fill is always White's share.
                   marginTop: flipped ? 0 : "auto",
                   marginBottom: flipped ? "auto" : 0,
                 }}
