@@ -30,7 +30,9 @@ export const PublicationCard: React.FC<PostProps> = ({
 }) => {
   return (
     <Link href={`/blog/${year}/${slug}`} key={slug}>
-      <Row className="items-start gap-6 p-4 border-b border-gray-20 hover:bg-gray-50 transition-colors duration-300">
+      {/* Below sm the thumbnail sits above the text — side by side there is not
+          enough width left for the title and author list on a phone. */}
+      <Row className="flex-col sm:flex-row items-start gap-4 sm:gap-6 p-4 border-b border-gray-20 hover:bg-gray-50 transition-colors duration-300">
         {thumbnail.endsWith(".mov") || thumbnail.endsWith(".mp4") ? (
           <video
             src={thumbnail}
@@ -40,7 +42,7 @@ export const PublicationCard: React.FC<PostProps> = ({
             playsInline
             disablePictureInPicture
             disableRemotePlayback
-            className="inset-0 max-w-64 object-cover aspect-video rounded-xl"
+            className="inset-0 w-full sm:max-w-64 shrink-0 object-cover aspect-video rounded-xl"
             preload="auto"
           />
         ) : (
@@ -48,7 +50,7 @@ export const PublicationCard: React.FC<PostProps> = ({
             src={thumbnail}
             alt={title}
             loading="eager"
-            className="inset-0 max-w-64 object-cover aspect-video rounded-xl"
+            className="inset-0 w-full sm:max-w-64 shrink-0 object-cover aspect-video rounded-xl"
           />
         )}
         <Col className="flex-1 self-stretch items-start justify-between">
