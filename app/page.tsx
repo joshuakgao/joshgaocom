@@ -1,7 +1,6 @@
 "use client";
 
 import { posts } from "@/app";
-import { MyTimeline } from "@/components/content";
 import {
   Button,
   Carousel,
@@ -33,11 +32,6 @@ export default function Home() {
       <>
         <Col className="w-full flex items-center justify-center p-8 md:p-16">
           <Col className={`w-full max-w-7xl rounded-lg space-y-8 md:my-8`}>
-            <H1>My AI Timeline</H1>
-            <MyTimeline />
-
-            <Spacer size={64} />
-
             <Row className="justify-between">
               <Col>
                 <H1>Highlighted Publications</H1>
@@ -95,12 +89,9 @@ export default function Home() {
                 <CarouselNext />
               </Carousel>
             </Col>
-
-            <Spacer size={64} />
-
           </Col>
         </Col>
-        <Spacer size={256} />
+        <Spacer size={128} />
       </>
     </ScrollDiv>
   );

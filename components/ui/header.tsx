@@ -68,12 +68,12 @@ export default function Header() {
           {menuOpen && (
             <div className="absolute right-0 mt-2 w-40 bg-white rounded shadow-lg z-50">
               <a
-                href="/assets/docs/cv.pdf"
+                href="/assets/docs/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
               >
-                CV
+                Resume
               </a>
               <a
                 href="https://scholar.google.com/citations?user=E7cW1dQAAAAJ&hl=en"
@@ -104,12 +104,12 @@ export default function Header() {
         {/* Desktop Links */}
         <H2 className="hidden md:flex flex-row gap-4 text-gray-500">
           <a
-            href="/assets/docs/cv.pdf"
+            href="/assets/docs/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-gray-700 transition-colors"
           >
-            CV
+            Resume
           </a>
           <a
             href="https://scholar.google.com/citations?user=E7cW1dQAAAAJ&hl=en"
