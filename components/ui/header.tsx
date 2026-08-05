@@ -1,6 +1,6 @@
 "use client";
 
-import { Col, GradientText, H1, H2, H3, H4, Row } from "@/components/ui";
+import { Col, H1, H2, Row } from "@/components/ui";
 import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -17,7 +17,6 @@ function copyEmail() {
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [hovered, setHovered] = useState(false);
 
   return (
     <Row className="items-center justify-center px-1 md:px-2 w-full bg-white">
@@ -25,32 +24,12 @@ export default function Header() {
         <Col>
           <Link href="/">
             <Row className="translate-y-[5px]">
-              <H1
-                className="text-lg md:text-2xl"
-                onMouseEnter={() => setHovered(true)}
-                onMouseLeave={() => setHovered(false)}
-              >
-                <GradientText parentHovered={hovered}>Joshua Gao</GradientText>
-              </H1>
+              <H1 className="text-lg md:text-2xl">Joshua Gao</H1>
             </Row>
-          </Link>
-          <Row>
-            <H2 className="text-gray-500 text-md md:text-xl translate-y-[-5px]">
-              deep learning researcher at
+            <H2 className="text-gray-500 text-base md:text-xl">
+              deep learning researcher
             </H2>
-            <Link
-              href="https://sail.cive.uh.edu/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GradientText
-                base="gradient"
-                className="text-sm md:text-lg font-bold translate-y-[-4.5px] md:translate-y-[-3.5px] translate-x-[5px]"
-              >
-                SAIL
-              </GradientText>
-            </Link>
-          </Row>
+          </Link>
         </Col>
 
         {/* Hamburger Menu for Mobile */}
