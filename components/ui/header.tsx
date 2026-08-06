@@ -1,6 +1,6 @@
 "use client";
 
-import { Col, H1, H2, Row } from "@/components/ui";
+import { Col, H0, H1, H2, Row } from "@/components/ui";
 import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -20,15 +20,10 @@ export default function Header() {
 
   return (
     <Row className="items-center justify-center px-1 md:px-2 w-full bg-white">
-      <Row className="w-full mx-8 items-center justify-between">
+      <Row className="w-full mx-8 mt-4 justify-between">
         <Col>
           <Link href="/">
-            <Row className="translate-y-[5px]">
-              <H1 className="text-lg md:text-2xl">Joshua Gao</H1>
-            </Row>
-            <H2 className="text-gray-500 text-base md:text-xl">
-              deep learning researcher
-            </H2>
+            <H0 className="md:text-2xl">Joshua Gao</H0>
           </Link>
         </Col>
 

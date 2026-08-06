@@ -9,7 +9,10 @@ import {
   CarouselNext,
   CarouselPrevious,
   Col,
+  H0,
   H1,
+  H2,
+  P,
   PostCard,
   PublicationCard,
   Row,
@@ -26,12 +29,45 @@ export default function Home() {
   );
 
   const works = posts.filter((post) => post.contentType !== "Research");
+  const Sep = () => (
+    <span className="mx-2 text-gray-300 select-none text-xl">/</span>
+  );
 
   return (
     <ScrollDiv className="min-h-screen bg-transparent">
       <>
         <Col className="w-full flex items-center justify-center p-8 md:p-16">
           <Col className={`w-full max-w-7xl rounded-lg space-y-8 md:my-8`}>
+            <Spacer horizontal />
+            <Col className="justify-center items-center gap-y-4">
+              <H1 className="text-center">
+                I want to build in intelligent embodied systems.
+              </H1>
+              <Row className="text-center justify-center">
+                <P className="text-gray-600 leading-relaxed">PhD student</P>
+                <Sep />
+                <P>
+                  <a
+                    href="https://sail.cive.uh.edu/"
+                    className="hover:text-pop transition-colors"
+                  >
+                    SAIL
+                  </a>
+                </P>
+                <Sep />
+                <P>
+                  Advisor:{" "}
+                  <a
+                    href="https://scholar.google.com/citations?user=f9M0CiIAAAAJ&hl=en&oi=ao"
+                    className="hover:text-pop transition-colors"
+                  >
+                    Dr. Hoskere
+                  </a>
+                </P>
+              </Row>
+            </Col>
+
+            <Spacer size={200} />
             <Row className="justify-between">
               <Col>
                 <H1>Highlighted Publications</H1>
