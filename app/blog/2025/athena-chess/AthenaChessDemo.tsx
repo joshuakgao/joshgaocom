@@ -24,6 +24,7 @@ import { Chess, type Square } from "chess.js";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Small } from "@/components/ui";
+import { loadOrtWasm } from "@/lib/ort";
 import {
   buildMoveIndex,
   encodeFen,
@@ -264,14 +265,13 @@ export default function AthenaChessDemo({ basePath }: { basePath: string }) {
       setProgress(1);
 
       // A move takes long enough to freeze the page if it ran on the main
-      // thread, so the session is proxied into a worker. WebGPU is deliberately
-      // not used: it needs a second 24 MB runtime artifact, and where the
-      // browser only has a software adapter it is an order of magnitude slower
-      // than wasm on a batch this small.
-      const ort = await import("onnxruntime-web/wasm");
-      ort.env.wasm.wasmPaths = "/ort/";
-      ort.env.wasm.numThreads = 1; // SharedArrayBuffer needs COOP/COEP we do not control
-      ort.env.wasm.proxy = true;
+      // thread, so the session is proxied into a worker — that, and the rest of
+      // the runtime's settings, are set once in lib/ort.ts because the module is
+      // shared page-wide with the flappy-world demo. WebGPU is deliberately not
+      // used: it needs a second 24 MB runtime artifact, and where the browser
+      // only has a software adapter it is an order of magnitude slower than
+      // wasm on a batch this small.
+      const ort = await loadOrtWasm();
       const session = await ort.InferenceSession.create(bytes, {
         executionProviders: ["wasm"],
         graphOptimizationLevel: "all",

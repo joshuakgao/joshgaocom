@@ -28,6 +28,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Small } from "@/components/ui";
+import { loadOrtWasm } from "@/lib/ort";
 
 // Shapes come from meta.json (fetched at runtime), but these are the trained values.
 type Meta = {
@@ -146,23 +147,11 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
           )
         );
 
-      // `ort.env` is global to the module, and the athena-chess demo imports the
-      // same onnxruntime-web/wasm build and turns `proxy` on — a setting that
-      // outlives a client-side route change into this page. Proxied runs
-      // *transfer* every input buffer to the worker, detaching it here, so the
-      // next tensor built from the same array dies with "Tensor's size(1088)
-      // does not match data length(0)". This demo drives the canvas from the
-      // main thread, so state the settings it needs rather than inheriting
-      // whatever the last demo left behind.
-      const configureEnv = () => {
-        ort.env.wasm.wasmPaths = "/ort/";
-        ort.env.wasm.numThreads = 1;
-        ort.env.wasm.proxy = false;
-      };
-
+      // The plain-wasm build is shared with the athena-chess demo, and its env
+      // has to be one decision for the whole page — see lib/ort.ts. Notably it
+      // runs proxied, so inputs are transferred away rather than borrowed.
       async function loadWasm() {
-        ort = await import("onnxruntime-web/wasm");
-        configureEnv();
+        ort = await loadOrtWasm();
         return create(["wasm"]);
       }
 
@@ -170,8 +159,10 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
       let usedBackend: "webgpu" | "wasm" = "wasm";
       if (wantGpu) {
         try {
+          // A separate bundle from the shared wasm one below, with its own env.
           ort = await import("onnxruntime-web/webgpu");
-          configureEnv();
+          ort.env.wasm.wasmPaths = "/ort/";
+          ort.env.wasm.numThreads = 1;
           [decoder, actor, rssmImg, heads] = await create(["webgpu"]);
           usedBackend = "webgpu";
         } catch (e) {
