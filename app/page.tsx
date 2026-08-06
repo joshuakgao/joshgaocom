@@ -50,6 +50,8 @@ export default function Home() {
                   <a
                     href="https://sail.cive.uh.edu/"
                     className="hover:text-pop transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     SAIL
                   </a>
@@ -60,6 +62,8 @@ export default function Home() {
                   <a
                     href="https://scholar.google.com/citations?user=f9M0CiIAAAAJ&hl=en&oi=ao"
                     className="hover:text-pop transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Dr. Hoskere
                   </a>
