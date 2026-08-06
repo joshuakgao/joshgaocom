@@ -23,7 +23,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="hover:text-gray-700 transition-colors"
           >
-            Papers
+            Publications
           </a>
           <a
             href="https://scholar.google.com/citations?user=E7cW1dQAAAAJ&hl=en"
