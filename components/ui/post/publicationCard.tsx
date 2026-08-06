@@ -32,7 +32,7 @@ export const PublicationCard: React.FC<PostProps> = ({
     <Link href={`/blog/${year}/${slug}`} key={slug}>
       {/* Below sm the thumbnail sits above the text — side by side there is not
           enough width left for the title and author list on a phone. */}
-      <Row className="flex-col sm:flex-row items-start gap-4 sm:gap-6 p-4 scale-[99%] hover:scale-[100%] transition-all duration-300">
+      <Row className="flex-col sm:flex-row items-start gap-8 sm:gap-10 mb-8 scale-[100%] hover:scale-[101%] transition-all duration-300">
         {thumbnail.endsWith(".mov") || thumbnail.endsWith(".mp4") ? (
           <video
             src={thumbnail}

@@ -16,7 +16,7 @@ export const PostCard: React.FC<PostProps> = ({
 }) => {
   return (
     <Col
-      className={`group flex h-[480px] w-[340px] md:w-[430px] bg-white cursor-pointer scale-[98%] hover:scale-[100%] transition-all duration-300`}
+      className={`group flex h-[480px] w-[340px] md:w-[430px] bg-white cursor-pointer scale-[100%] hover:scale-[102%] transition-all duration-300 py-4`}
     >
       <Link href={`/blog/${year}/${slug}`} passHref className="w-full h-full">
         <Col className="overflow-hidden w-full h-full">
