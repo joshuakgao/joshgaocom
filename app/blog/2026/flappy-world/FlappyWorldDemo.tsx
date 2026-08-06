@@ -106,6 +106,14 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
     let heads: any = null;
     let ort: any = null;
 
+    const release = () => {
+      decoder?.release?.();
+      actor?.release?.();
+      rssmImg?.release?.();
+      heads?.release?.();
+      decoder = actor = rssmImg = heads = null;
+    };
+
     const modelsPath = `${basePath}/models`;
 
     async function init() {
@@ -138,10 +146,23 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
           )
         );
 
-      async function loadWasm() {
-        ort = await import("onnxruntime-web/wasm");
+      // `ort.env` is global to the module, and the athena-chess demo imports the
+      // same onnxruntime-web/wasm build and turns `proxy` on — a setting that
+      // outlives a client-side route change into this page. Proxied runs
+      // *transfer* every input buffer to the worker, detaching it here, so the
+      // next tensor built from the same array dies with "Tensor's size(1088)
+      // does not match data length(0)". This demo drives the canvas from the
+      // main thread, so state the settings it needs rather than inheriting
+      // whatever the last demo left behind.
+      const configureEnv = () => {
         ort.env.wasm.wasmPaths = "/ort/";
         ort.env.wasm.numThreads = 1;
+        ort.env.wasm.proxy = false;
+      };
+
+      async function loadWasm() {
+        ort = await import("onnxruntime-web/wasm");
+        configureEnv();
         return create(["wasm"]);
       }
 
@@ -150,8 +171,7 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
       if (wantGpu) {
         try {
           ort = await import("onnxruntime-web/webgpu");
-          ort.env.wasm.wasmPaths = "/ort/";
-          ort.env.wasm.numThreads = 1;
+          configureEnv();
           [decoder, actor, rssmImg, heads] = await create(["webgpu"]);
           usedBackend = "webgpu";
         } catch (e) {
@@ -161,7 +181,13 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
       } else {
         [decoder, actor, rssmImg, heads] = await loadWasm();
       }
-      if (cancelled) return;
+      // Cleanup ran while the sessions were still loading (StrictMode's double
+      // mount, or a fast route change), so it saw nothing to free — release
+      // here instead, or these four leak for the life of the page.
+      if (cancelled) {
+        release();
+        return;
+      }
       setBackend(usedBackend);
 
       const S = meta.stoch;
@@ -243,8 +269,11 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
         return out;
       }
 
+      // Hand every run its own copy. ORT does not promise to leave the array it
+      // is given alone — under a proxied session it transfers the buffer away
+      // entirely — and `feat` / `stoch` / `deter` are all reused across steps.
       const t = (buf: Float32Array, dims: number[]) =>
-        new ort.Tensor("float32", buf, dims);
+        new ort.Tensor("float32", buf.slice(), dims);
 
       async function stepOnce() {
         // feat = [deter, flatten(stoch)]
@@ -349,10 +378,7 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
       runningRef.current = false;
       window.removeEventListener("keydown", onKey);
       // Release sessions on unmount (StrictMode double-invoke in dev is safe).
-      decoder?.release?.();
-      actor?.release?.();
-      rssmImg?.release?.();
-      heads?.release?.();
+      release();
     };
   }, [basePath, attempt]);
 
