@@ -40,8 +40,8 @@ export default function Home() {
           <Col className={`w-full max-w-7xl rounded-lg space-y-8 md:my-8`}>
             <Spacer horizontal />
             <Col className="justify-center items-center gap-y-4">
-              <H1 className="text-center">
-                I want to build in intelligent embodied systems.
+              <H1 className="text-center mt-16">
+                Building intelligent embodied systems.
               </H1>
               <Row className="text-center justify-center">
                 <P className="text-gray-600 leading-relaxed">PhD student</P>
@@ -71,7 +71,7 @@ export default function Home() {
               </Row>
             </Col>
 
-            <Spacer size={200} />
+            <Spacer size={128} />
             <Row className="justify-between">
               <Col>
                 <H1>Highlighted Publications</H1>
