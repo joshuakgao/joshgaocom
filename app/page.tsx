@@ -89,7 +89,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="hover:text-pop scale-[100%] hover:scale-[110%] transition-all duration-300"
                 >
-                  <TbFileCv />
+                  <TbFileCv size={24} />
                 </a>
                 <a
                   href="https://scholar.google.com/citations?user=E7cW1dQAAAAJ&hl=en"
@@ -111,7 +111,7 @@ export default function Home() {
                   className="hover:text-pop scale-[100%] hover:scale-[110%] transition-all duration-300 cursor-pointer"
                   onClick={copyEmail}
                 >
-                  <MdAlternateEmail />
+                  <MdAlternateEmail size={22} />
                 </div>
               </H2>
             </Col>
