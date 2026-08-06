@@ -23,7 +23,9 @@ export default function Header() {
       <Row className="w-full mx-8 mt-4 justify-between">
         <Col>
           <Link href="/">
-            <H0 className="md:text-2xl">Joshua Gao</H0>
+            <H0 className="md:text-2xl hover:text-pop transition-all">
+              Joshua Gao
+            </H0>
           </Link>
         </Col>
 
