@@ -21,7 +21,22 @@ import {
 } from "@/components/ui";
 import Link from "next/link";
 import { LuArrowRight } from "react-icons/lu";
+import { TbFileCv } from "react-icons/tb";
+import { FaGoogleScholar } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import { MdAlternateEmail } from "react-icons/md";
 
+import { toast } from "sonner";
+
+// Email is base64-encoded so the raw address never appears as a plain-text
+// literal in the client bundle, defeating naive regex-based scrapers.
+const ENCODED_EMAIL = "am9zaHVha2dhb0BnbWFpbC5jb20=";
+
+function copyEmail() {
+  const email = atob(ENCODED_EMAIL);
+  toast("Email has been copied to clipboard!");
+  navigator.clipboard.writeText(email);
+}
 export default function Home() {
   // Filter publications (assuming they have a type or category property)
   const publications = posts.filter(
@@ -69,6 +84,39 @@ export default function Home() {
                   </a>
                 </P>
               </Row>
+              {/* Desktop Links */}
+              <H2 className="flex flex-row gap-4 text-gray-500 items-center">
+                <a
+                  href="/assets/docs/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-pop scale-[100%] hover:scale-[110%] transition-all duration-300"
+                >
+                  <TbFileCv />
+                </a>
+                <a
+                  href="https://scholar.google.com/citations?user=E7cW1dQAAAAJ&hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-pop scale-[100%] hover:scale-[110%] transition-all duration-300"
+                >
+                  <FaGoogleScholar />
+                </a>
+                <a
+                  href="https://github.com/joshuakgao"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-pop scale-[100%] hover:scale-[110%] transition-all duration-300"
+                >
+                  <FaGithub />
+                </a>
+                <div
+                  className="hover:text-pop scale-[100%] hover:scale-[110%] transition-all duration-300 cursor-pointer"
+                  onClick={copyEmail}
+                >
+                  <MdAlternateEmail />
+                </div>
+              </H2>
             </Col>
 
             <Spacer size={128} />
