@@ -52,7 +52,9 @@ const GREEDY = true;
 const CONT_THRESHOLD = 0.99;
 const GRACE_STEPS = 45;
 const FPS = 30; // target rate; wasm fallback just runs as fast as it can
-const DISPLAY_SCALE = 3;
+const DISPLAY_SCALE = 4;
+const NATIVE_W = 72;
+const NATIVE_H = 128;
 
 const FLAP = 1;
 const NOOP = 0;
@@ -70,7 +72,7 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
   const assistRef = useRef(true); // mirrors `assist` so the loop reads it live
 
   const [status, setStatus] = useState<"loading" | "running" | "error">(
-    "loading"
+    "loading",
   );
   const [backend, setBackend] = useState<"webgpu" | "wasm" | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -125,7 +127,7 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
       // plain wasm build (a failed GPU init poisons its own wasm module, so the
       // fallback imports the separate plain-wasm build fresh).
       const meta: Meta = await fetch(`${modelsPath}/meta.json`).then((r) =>
-        r.json()
+        r.json(),
       );
       const seeds: Seed[] = await fetch(`${modelsPath}/seeds.json`)
         .then((r) => r.json())
@@ -143,8 +145,8 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
             ort.InferenceSession.create(u, {
               executionProviders: eps,
               graphOptimizationLevel: "all",
-            })
-          )
+            }),
+          ),
         );
 
       // The plain-wasm build is shared with the athena-chess demo, and its env
@@ -209,7 +211,10 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
           const o = p << 2;
           px[o] = Math.max(0, Math.min(255, (data[p] + 0.5) * 255)); // R plane
           px[o + 1] = Math.max(0, Math.min(255, (data[HW + p] + 0.5) * 255)); // G
-          px[o + 2] = Math.max(0, Math.min(255, (data[2 * HW + p] + 0.5) * 255)); // B
+          px[o + 2] = Math.max(
+            0,
+            Math.min(255, (data[2 * HW + p] + 0.5) * 255),
+          ); // B
           px[o + 3] = 255;
         }
         octx.putImageData(imgData, 0, 0);
@@ -343,8 +348,7 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
           continue;
         }
         const dt = performance.now() - t0;
-        if (dt < frameMs)
-          await new Promise((r) => setTimeout(r, frameMs - dt));
+        if (dt < frameMs) await new Promise((r) => setTimeout(r, frameMs - dt));
       }
     }
 
@@ -390,13 +394,22 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
             flap();
           }}
           className="block cursor-pointer touch-none"
-          style={{ imageRendering: "auto" }}
+          // Display size is CSS-only, so the box is correct from the first paint
+          // rather than from whenever the models land. `maxWidth` shrinks it to
+          // fit a narrow screen and the aspect ratio carries the height along.
+          style={{
+            imageRendering: "auto",
+            width: NATIVE_W * DISPLAY_SCALE,
+            aspectRatio: `${NATIVE_W} / ${NATIVE_H}`,
+            maxWidth: "100%",
+            height: "auto",
+          }}
         />
 
         {/* HUD */}
         {/* The dream frame is only 72px wide natively, so the two scores stack
             into one panel instead of sitting on opposite corners. */}
-        <div className="pointer-events-none absolute left-2 bottom-2 rounded-md bg-black/45 px-2 py-1 text-[10px] leading-relaxed text-white backdrop-blur-[2px]">
+        <div className="pointer-events-none absolute left-2 bottom-2 rounded-md bg-black/45 px-2.5 py-1.5 text-xs leading-relaxed text-white backdrop-blur-[2px]">
           <div className="flex items-baseline justify-between gap-3">
             <span className="text-white/60">DreamerV3 Best</span>
             <span className="font-semibold tabular-nums">{bestAssisted}</span>
@@ -408,7 +421,7 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
         </div>
 
         <div
-          className={`pointer-events-none absolute bottom-2 left-1/2 -translate-x-1/2 rounded bg-emerald-500/90 px-2 py-0.5 text-[11px] font-semibold text-white transition-opacity duration-150 ${
+          className={`pointer-events-none absolute bottom-2 left-1/2 -translate-x-1/2 rounded bg-emerald-500/90 px-2.5 py-1 text-xs font-semibold text-white transition-opacity duration-150 ${
             youFlapped ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -462,8 +475,8 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
         yourself.
       </Small>
       <Small className="max-w-md text-center">
-        Nothing here is a real game — every pixel is hallucinated by
-        the RSSM from a latent it imagines.
+        Nothing here is a real game — every pixel is hallucinated by the RSSM
+        from a latent it imagines.
       </Small>
     </div>
   );
