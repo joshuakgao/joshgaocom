@@ -25,18 +25,15 @@ import { TbFileCv } from "react-icons/tb";
 import { FaGoogleScholar } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
-
 import { toast } from "sonner";
 
-// Email is base64-encoded so the raw address never appears as a plain-text
-// literal in the client bundle, defeating naive regex-based scrapers.
-const ENCODED_EMAIL = "am9zaHVha2dhb0BnbWFpbC5jb20=";
-
 function copyEmail() {
+  const ENCODED_EMAIL = "am9zaHVha2dhb0BnbWFpbC5jb20=";
   const email = atob(ENCODED_EMAIL);
-  toast("Email has been copied to clipboard!");
+  toast("Email has been copied to clipboard!", { position: "top-center" });
   navigator.clipboard.writeText(email);
 }
+
 export default function Home() {
   // Filter publications (assuming they have a type or category property)
   const publications = posts.filter(
