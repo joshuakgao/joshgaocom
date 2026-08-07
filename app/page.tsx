@@ -17,6 +17,7 @@ import {
   PublicationCard,
   Row,
   ScrollDiv,
+  Small,
   Spacer,
 } from "@/components/ui";
 import Link from "next/link";
@@ -51,14 +52,13 @@ export default function Home() {
         <Col className="w-full flex items-center justify-center p-8 md:p-16">
           <Col className={`w-full max-w-7xl rounded-lg space-y-8 md:my-8`}>
             <Spacer horizontal />
-            <Col className="justify-center items-center gap-y-4">
+            <Col className="justify-center items-center">
               <H1 className="text-center mt-16">
                 Building intelligent embodied systems.
               </H1>
-              <Row className="text-center justify-center">
-                <P className="text-gray-600 leading-relaxed">PhD student</P>
-                <Sep />
-                <P>
+              <Row className="text-center justify-center mt-4">
+                <P className="text-gray-600 leading-relaxed">
+                  PhD student at{" "}
                   <a
                     href="https://sail.cive.uh.edu/"
                     className="hover:text-pop transition-colors"
@@ -69,20 +69,11 @@ export default function Home() {
                   </a>
                 </P>
                 <Sep />
-                <P>
-                  Advisor:{" "}
-                  <a
-                    href="https://scholar.google.com/citations?user=f9M0CiIAAAAJ&hl=en&oi=ao"
-                    className="hover:text-pop transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Dr. Hoskere
-                  </a>
-                </P>
+                <P>Deep Learning & Robotics</P>
+                <Sep />
+                <P>Houston, TX</P>
               </Row>
-              {/* Desktop Links */}
-              <H2 className="flex flex-row gap-4 text-gray-500 items-center">
+              <Row className="flex flex-row gap-4 text-xl text-gray-500 items-center mt-4">
                 <a
                   href="/assets/docs/resume.pdf"
                   target="_blank"
@@ -113,7 +104,7 @@ export default function Home() {
                 >
                   <MdAlternateEmail size={22} />
                 </div>
-              </H2>
+              </Row>
             </Col>
 
             <Spacer size={128} />
