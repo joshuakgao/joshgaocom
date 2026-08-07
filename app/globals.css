@@ -8,7 +8,12 @@ body {
   background: #ffffff;
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
-  height: 100%;
+  /* No `height: 100%` here. `overflow-x: hidden` computes the other axis from
+     `visible` to `auto`, so pinning these to the viewport height would make
+     <body> its own scroll container — the page would scroll inside it while the
+     viewport stayed put, and the router's scroll-to-top on navigation (which
+     moves the window) would land on nothing. Letting height stay auto keeps the
+     viewport as the scroller. Full-height pages come from `min-h-screen`. */
   overflow-x: hidden;
   /* Extend background color into the safe area */
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
