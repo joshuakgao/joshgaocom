@@ -8,6 +8,8 @@ export type PostProps = {
   year: string;
   thumbnail: string;
   video?: string;
+  // When set, the card links straight here instead of to the post page.
+  externalUrl?: string;
   starred?: boolean;
   links?: { [key: string]: string };
   authors?: string[];

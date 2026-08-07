@@ -12,13 +12,20 @@ export const PostCard: React.FC<PostProps> = ({
   year,
   thumbnail,
   starred,
+  externalUrl,
   ...props
 }) => {
   return (
     <Col
       className={`group flex h-[480px] w-[340px] md:w-[430px] bg-white cursor-pointer scale-[100%] hover:scale-[102%] transition-all duration-300 py-4`}
     >
-      <Link href={`/blog/${year}/${slug}`} passHref className="w-full h-full">
+      <Link
+        href={externalUrl ?? `/blog/${year}/${slug}`}
+        passHref
+        className="w-full h-full"
+        target={externalUrl ? "_blank" : undefined}
+        rel={externalUrl ? "noopener noreferrer" : undefined}
+      >
         <Col className="overflow-hidden w-full h-full">
           {thumbnail.endsWith(".mov") || thumbnail.endsWith(".mp4") ? (
             <video

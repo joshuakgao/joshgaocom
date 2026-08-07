@@ -26,10 +26,16 @@ export const PublicationCard: React.FC<PostProps> = ({
   authors,
   journal,
   journalHighlighted,
+  externalUrl,
   ...props
 }) => {
   return (
-    <Link href={`/blog/${year}/${slug}`} key={slug}>
+    <Link
+      href={externalUrl ?? `/blog/${year}/${slug}`}
+      key={slug}
+      target={externalUrl ? "_blank" : undefined}
+      rel={externalUrl ? "noopener noreferrer" : undefined}
+    >
       {/* Below sm the thumbnail sits above the text — side by side there is not
           enough width left for the title and author list on a phone. */}
       <Row className="flex-col sm:flex-row items-start gap-8 sm:gap-10 mb-8 scale-[100%] hover:scale-[101%] transition-all duration-300">

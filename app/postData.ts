@@ -31,8 +31,9 @@ export let posts: PostProps[] = [
     journal: "Computer-Aided Civil and Infrastructure Engineering",
     date: "16 Jun 2026",
     year: "2026",
+    externalUrl: "https://doi.org/10.1016/j.cacaie.2026.100126",
     links: {
-      pdf: "https://www.sciencedirect.com/science/article/pii/S1093968726031129",
+      pdf: "https://doi.org/10.1016/j.cacaie.2026.100126",
     },
   },
   // {
@@ -69,6 +70,7 @@ export let posts: PostProps[] = [
     journalHighlighted: true,
     description: "Virtual Embodied Agents for Real Bridge Inspections.",
     date: "3 Jun 2026",
+    externalUrl: "https://drags99.github.io/bridge-eqa/",
     links: {
       publication: "https://arxiv.org/abs/2511.12676",
       website: "https://drags99.github.io/bridge-eqa/",
@@ -124,6 +126,7 @@ export let posts: PostProps[] = [
     journalHighlighted: true,
     description: "Scaling change detection through text-conditioning.",
     date: "19 Oct 2025",
+    externalUrl: "https://joshuakgao.github.io/viewdelta/",
     links: {
       publication: "https://arxiv.org/abs/2412.07612",
       website: "https://joshuakgao.github.io/viewdelta/",
