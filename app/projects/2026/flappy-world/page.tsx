@@ -20,13 +20,6 @@ export default function FlappyWorld() {
 
   return (
     <PostWrapper post={post}>
-      <PostContent>
-        <H2 className="text-center">
-          Our agent didn't play a single game of Flappy Birds and still cleared
-          over 1000 pipes. It learned entirely through imagination.
-        </H2>
-      </PostContent>
-
       <PostContent className="items-center">
         <FlappyWorldDemo basePath={assetsPath} />
       </PostContent>

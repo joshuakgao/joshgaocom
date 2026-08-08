@@ -17,7 +17,7 @@ export const PostCard: React.FC<PostProps> = ({
 }) => {
   return (
     <Col
-      className={`group flex h-[480px] w-[340px] md:w-[430px] bg-white cursor-pointer scale-[100%] hover:scale-[102%] transition-all duration-300 py-4`}
+      className={`group flex h-[380px] md:h-[430px] w-[340px] md:w-[430px]  bg-white cursor-pointer scale-[100%] hover:scale-[102%] transition-all duration-300 py-4`}
     >
       <Link
         href={externalUrl ?? `/projects/${year}/${slug}`}
@@ -54,8 +54,8 @@ export const PostCard: React.FC<PostProps> = ({
           <Col className="min-w-0 h-full flex flex-col">
             <Muted className="text-gray-500">{contentType}</Muted>
             <H2>{title}</H2>
-            <Spacer size={8} />
-            <P className="line-clamp-3">{description}</P>
+            {/* <Spacer size={8} /> */}
+            {/* <P className="line-clamp-3">{description}</P> */}
             <Row className="items-center justify-between mt-auto">
               <ExtraSmall>{date}</ExtraSmall>
             </Row>

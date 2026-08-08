@@ -12,6 +12,7 @@ import {
   PostLink,
   PostWrapper,
   Small,
+  Spacer,
 } from "@/components/ui";
 import { BlockMath, InlineMath } from "react-katex";
 import AthenaChessDemo from "./AthenaChessDemo";
@@ -21,14 +22,6 @@ export default function Athena() {
 
   return (
     <PostWrapper post={post}>
-      <PostContent>
-        <P className="italic">
-          Presenting Athena: a 270M parameter transformer-based chess engine
-          that reaches an ELO of 1959 by distilling Stockfish 17 across 15.3
-          billion labeled positions.
-        </P>
-      </PostContent>
-
       <PostContent className="items-center">
         <AthenaChessDemo basePath={assetsPath} />
       </PostContent>

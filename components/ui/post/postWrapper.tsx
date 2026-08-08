@@ -6,6 +6,7 @@ import {
   Col,
   H0,
   H1,
+  H2,
   H3,
   H4,
   P,
@@ -103,6 +104,7 @@ export function PostWrapper({
       </PostContent>
       <PostContent>
         <Col className="w-full space-y-4 items-center justify-center">
+          <H2 className="text-center my-16">{post.description}</H2>
           {children}
         </Col>
       </PostContent>

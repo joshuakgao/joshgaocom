@@ -6,7 +6,8 @@ export let posts: PostProps[] = [
     slug: "flappy-world",
     thumbnail: "/assets/projects/2026/flappy-world/thumbnail.webp",
     title: "Mastering Flappy Birds through World Models",
-    description: "Under construction...",
+    description:
+      "Our agent never played a single game of Flappy Bird during training, yet it cleared 1,000+ pipes. It learned entirely through imagination.",
     date: "24 Jul 2026",
     year: "2026",
     links: {
@@ -20,8 +21,6 @@ export let posts: PostProps[] = [
     thumbnail: "/assets/projects/2026/pe-civil-bench/thumbnail.webp",
     title:
       "PE Civil Bench: Advancing Agentic Retrieval-Augmented Generation Performance of Large Language Models on Exam Problems and Automated Component Design",
-    description:
-      "Advancing Agentic Retrieval-Augmented Generation Performance of Large Language Models on Exam Problems and Automated Component Design",
     authors: [
       "Subin Varghese",
       "Joshua Gao",
@@ -68,13 +67,11 @@ export let posts: PostProps[] = [
     authors: ["Subin Varghese", "Joshua Gao", "Asad Rahman", "Vedhus Hoskere"],
     journal: "CVPR 2026",
     journalHighlighted: true,
-    description: "Virtual Embodied Agents for Real Bridge Inspections.",
     date: "3 Jun 2026",
     externalUrl: "https://drags99.github.io/bridge-eqa/",
     links: {
       publication: "https://arxiv.org/abs/2511.12676",
       website: "https://drags99.github.io/bridge-eqa/",
-      // pdf: "https://arxiv.org/pdf/2511.12676",
       github: "https://github.com/drags99/bridge-eqa",
       huggingfaceDataset:
         "https://huggingface.co/datasets/hoskerelab/bridge-eqa",
@@ -103,7 +100,7 @@ export let posts: PostProps[] = [
     thumbnail: "/assets/projects/2025/athena-chess/athena-selfplay.webp",
     title: "Athena: How Well Can Transformers Play Chess?",
     description:
-      "Discover how Athena, a transformer-based model, is pushing the boundaries of chess AI, challenging traditional engines and human players alike.",
+      "We build a 270M parameter transformer-based chess engine that reaches an ELO of 1959 by distilling Stockfish 17 across 15.3 billion labeled positions.",
     date: "28 Oct 2025",
     year: "2025",
     links: {
@@ -124,7 +121,6 @@ export let posts: PostProps[] = [
     authors: ["Subin Varghese", "Joshua Gao", "Vedhus Hoskere"],
     journal: "ICCV 2025, SEA Workshop",
     journalHighlighted: true,
-    description: "Scaling change detection through text-conditioning.",
     date: "19 Oct 2025",
     externalUrl: "https://joshuakgao.github.io/viewdelta/",
     links: {
@@ -141,8 +137,8 @@ export let posts: PostProps[] = [
     contentType: "Hardware",
     slug: "self-hosted-cloud-storage",
     thumbnail: "/assets/projects/2024/self-hosted-cloud-storage/thumbnail.webp",
-    title: "Self Hosting Cloud Storage",
-    description: "Avoiding cloud storage fees with a RasberryPi and NextCloud.",
+    title: "No More Cloud Storage Subscriptions",
+    description: "Can you build cloud storage smaller than a coke can? Yes.",
     links: { website: "https://cloud.joshgao.com" },
     date: "9 Dec 2024",
     year: "2024",
@@ -164,7 +160,7 @@ export let posts: PostProps[] = [
   {
     contentType: "AI",
     slug: "gpt-nano",
-    title: "GptNano",
+    title: "GptNano: Outperforming GPT-2",
     description: "Outperforming OpenAI's GPT-2.",
     thumbnail: "/assets/projects/2024/gpt-nano/thumbnail2.webp",
     date: "27 Jun 2024",
@@ -204,7 +200,7 @@ export let posts: PostProps[] = [
     contentType: "Software",
     slug: "reddit-laughs",
     title: "Reddit Laughs",
-    description: "Fully Automating a Youtube Channel.",
+    description: "Here's how to fully automate a Youtube channel.",
     date: "13 Jun 2022",
     year: "2022",
     links: {
