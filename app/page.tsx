@@ -133,7 +133,7 @@ export default function Home() {
             <Row className="justify-between">
               <H1>Highlighted Works</H1>
               <Button asChild variant={"ghost"} className="text-pop">
-                <Link href="/blog">
+                <Link href="/projects">
                   <Row>
                     View all works <LuArrowRight size={18} className="ml-2" />
                   </Row>

@@ -39,7 +39,7 @@ export function PostList() {
   return (
     <Col className="w-full max-w-7xl mx-auto px-4 md:px-0">
       <Spacer size={64} />
-      <H0>Blog</H0>
+      <H0>Projects</H0>
       <Spacer size={64} />
       {/* Filters */}
       <Col className="my-8 space-y-4">

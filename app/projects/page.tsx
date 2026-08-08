@@ -3,7 +3,7 @@
 import { PostList } from "@/components/content";
 import { Col, ScrollDiv } from "@/components/ui";
 
-export default function Blog() {
+export default function Projects() {
   return (
     <ScrollDiv className="min-h-screen relative bg-transparent">
       <Col className="w-full flex items-center justify-center p-4">

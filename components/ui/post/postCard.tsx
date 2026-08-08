@@ -20,7 +20,7 @@ export const PostCard: React.FC<PostProps> = ({
       className={`group flex h-[480px] w-[340px] md:w-[430px] bg-white cursor-pointer scale-[100%] hover:scale-[102%] transition-all duration-300 py-4`}
     >
       <Link
-        href={externalUrl ?? `/blog/${year}/${slug}`}
+        href={externalUrl ?? `/projects/${year}/${slug}`}
         passHref
         className="w-full h-full"
         target={externalUrl ? "_blank" : undefined}

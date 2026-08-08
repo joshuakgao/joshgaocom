@@ -31,7 +31,7 @@ export const PublicationCard: React.FC<PostProps> = ({
 }) => {
   return (
     <Link
-      href={externalUrl ?? `/blog/${year}/${slug}`}
+      href={externalUrl ?? `/projects/${year}/${slug}`}
       key={slug}
       target={externalUrl ? "_blank" : undefined}
       rel={externalUrl ? "noopener noreferrer" : undefined}

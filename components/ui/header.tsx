@@ -23,7 +23,10 @@ export default function Header() {
           >
             Publications
           </Link>
-          <Link href="/blog" className="hover:text-gray-700 transition-colors">
+          <Link
+            href="/projects"
+            className="hover:text-gray-700 transition-colors"
+          >
             Projects
           </Link>
         </H2>
