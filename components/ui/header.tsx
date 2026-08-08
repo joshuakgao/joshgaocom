@@ -17,22 +17,15 @@ export default function Header() {
 
         {/* Desktop Links */}
         <H2 className="text-md md:text-xl flex flex-row gap-4 text-gray-500 items-center">
-          <a
-            href="/assets/docs/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/publications"
             className="hover:text-gray-700 transition-colors"
           >
             Publications
-          </a>
-          <a
-            href="https://scholar.google.com/citations?user=E7cW1dQAAAAJ&hl=en"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-gray-700 transition-colors"
-          >
+          </Link>
+          <Link href="/blog" className="hover:text-gray-700 transition-colors">
             Projects
-          </a>
+          </Link>
         </H2>
       </Row>
     </Row>
