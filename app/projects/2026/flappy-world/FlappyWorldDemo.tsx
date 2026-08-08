@@ -48,9 +48,8 @@ type Seed = { deter: number[]; stoch: number[] };
 // greedily (argmax), and the dream ends when the continue head's p(continue)
 // drops below the threshold — but only after a grace period while the state
 // settles from the seed frame.
-const GREEDY = true;
-const CONT_THRESHOLD = 0.99;
-const GRACE_STEPS = 45;
+const CONT_THRESHOLD = 0.5;
+const GRACE_STEPS = 0;
 const FPS = 30; // target rate; wasm fallback just runs as fast as it can
 const DISPLAY_SCALE = 4;
 const NATIVE_W = 72;
@@ -475,8 +474,8 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
         yourself.
       </Small>
       <Small className="max-w-md text-center">
-        Nothing here is a real game — every pixel is hallucinated by the RSSM
-        from a latent it imagines.
+        Nothing here is a real game - every pixel is imagined by the DreamerV3
+        world model.
       </Small>
     </div>
   );
