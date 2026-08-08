@@ -41,7 +41,7 @@ export default function Home() {
     (post) => post.contentType === "Research" || post.journal,
   );
 
-  const works = posts.filter((post) => post.contentType !== "Research");
+  const projects = posts.filter((post) => post.contentType !== "Research");
   const Sep = () => (
     <span className="mx-2 text-gray-300 select-none text-xl">/</span>
   );
@@ -131,11 +131,12 @@ export default function Home() {
 
             <Spacer size={64} />
             <Row className="justify-between">
-              <H1>Highlighted Works</H1>
+              <H1>Highlighted Projects</H1>
               <Button asChild variant={"ghost"} className="text-pop">
                 <Link href="/projects">
                   <Row>
-                    View all works <LuArrowRight size={18} className="ml-2" />
+                    View all projects{" "}
+                    <LuArrowRight size={18} className="ml-2" />
                   </Row>
                 </Link>
               </Button>
@@ -150,7 +151,7 @@ export default function Home() {
                 }}
               >
                 <CarouselContent className="ml-[max(1rem,calc((98vw-theme(maxWidth.7xl))/2))] md:ml-[max(3rem,calc((98vw-theme(maxWidth.7xl))/2))] mr-[max(1rem,calc((96vw-theme(maxWidth.7xl))/2))] md:mr-[max(3rem,calc((96vw-theme(maxWidth.7xl))/2))]">
-                  {works.map((props, idx) =>
+                  {projects.map((props, idx) =>
                     props.starred ? (
                       <CarouselItem
                         key={props.slug || idx}
