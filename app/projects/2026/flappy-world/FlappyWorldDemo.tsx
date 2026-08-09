@@ -50,6 +50,11 @@ type Seed = { deter: number[]; stoch: number[] };
 // settles from the seed frame.
 const CONT_THRESHOLD = 0.5;
 const GRACE_STEPS = 0;
+// The env pays +1.0 exactly on a cleared pipe and +0.1 for an ordinary frame
+// alive, so a predicted reward past the midpoint is the model saying "that was a
+// pipe". Score is pipes cleared, not the shaped return — the return is ~78% a
+// survival timer, and pipes are what's comparable to a human's Flappy Bird number.
+const PIPE_REWARD_THRESHOLD = 0.5;
 const FPS = 30; // target rate; wasm fallback just runs as fast as it can
 const DISPLAY_SCALE = 4;
 const NATIVE_W = 72;
@@ -79,6 +84,7 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
   // a frame's action, so flying the whole episode yourself scores unassisted.
   const [bestAssisted, setBestAssisted] = useState(0);
   const [bestUnassisted, setBestUnassisted] = useState(0);
+  const [score, setScore] = useState(0); // pipes cleared in the current dream
   const [crashed, setCrashed] = useState(false);
   const [youFlapped, setYouFlapped] = useState(false);
   const [assist, setAssist] = useState(true);
@@ -225,6 +231,8 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
       let stoch = new Float32Array(SK); // flattened (S groups × K classes)
       const feat = new Float32Array(F); // reused each step: [deter, flatten(stoch)]
       let step = 0;
+      let pipes = 0; // pipes the model thinks you've cleared this episode
+      let pipeLatch = false; // suppresses double-counting one pipe's reward spike
       let usedAssist = false; // did the actor drive any frame of this episode?
 
       function seedDream() {
@@ -239,6 +247,8 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
           stoch = new Float32Array(SK);
         }
         step = 0;
+        pipes = 0;
+        pipeLatch = false;
         usedAssist = false;
       }
 
@@ -279,9 +289,21 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
         const dec = await decoder.run({ feat: t(feat, [1, F]) });
         drawFrame(dec.frame.data as Float32Array);
 
-        // 2. Continue head -> p(episode continues); crash when it drops.
+        // 2. Heads: p(episode continues) — crash when it drops — and the reward
+        // the model expects for this frame, which is where the score comes from.
         const hd = await heads.run({ feat: t(feat, [1, F]) });
         const cont = (hd.cont.data as Float32Array)[0];
+        const reward = (hd.reward.data as Float32Array)[0];
+
+        // Count a pipe on the rising edge only: the reward head's two-hot mean
+        // smears the spike across a frame or two, which would otherwise score
+        // one pipe several times over.
+        if (reward > PIPE_REWARD_THRESHOLD) {
+          if (!pipeLatch) pipes++;
+          pipeLatch = true;
+        } else {
+          pipeLatch = false;
+        }
 
         // 3. Actor's action (greedy argmax over unimixed probs) — unless you flap.
         // With assist off the actor never runs: you're the only pilot, and the
@@ -309,7 +331,8 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
 
         if (!cancelled) {
           const setBest = usedAssist ? setBestAssisted : setBestUnassisted;
-          setBest((b) => (step > b ? step : b));
+          setBest((b) => (pipes > b ? pipes : b));
+          setScore(pipes);
           if (human) {
             setYouFlapped(true);
             setTimeout(() => !cancelled && setYouFlapped(false), 150);
@@ -415,9 +438,15 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
         />
 
         {/* HUD */}
-        {/* The dream frame is only 72px wide natively, so the two scores stack
-            into one panel instead of sitting on opposite corners. */}
+        {/* Scores are pipes cleared, read off the reward head — the same number
+            the Python evaluator reports, so it lines up with the post's figures.
+            The dream frame is only 72px wide natively, so the rows stack into
+            one panel instead of sitting on opposite corners. */}
         <div className="pointer-events-none absolute left-2 bottom-2 rounded-md bg-black/45 px-2.5 py-1.5 text-xs leading-relaxed text-white backdrop-blur-[2px]">
+          <div className="mb-0.5 flex items-baseline justify-between gap-3 border-b border-white/15 pb-0.5">
+            <span className="text-white/60">Score</span>
+            <span className="font-semibold tabular-nums">{score}</span>
+          </div>
           <div className="flex items-baseline justify-between gap-3">
             <span className="text-white/60">DreamerV3 Best</span>
             <span className="font-semibold tabular-nums">{bestAssisted}</span>
