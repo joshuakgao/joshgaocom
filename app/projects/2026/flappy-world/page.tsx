@@ -22,6 +22,7 @@ export default function FlappyWorld() {
   return (
     <PostWrapper post={post}>
       <PostContent className="items-center">
+        <H2>World Model Interactive Demo</H2>
         <FlappyWorldDemo basePath={assetsPath} />
       </PostContent>
 
@@ -174,9 +175,9 @@ export default function FlappyWorld() {
         <H2>Training & Results</H2>
         <P>
           We train a 12M parameter DreamerV3 world model for 20 epochs on our
-          rollout dataset. For fair comparison, we train the DreamerV3 behavior
-          component, Q-Learning, DQN, and PPO policies for 10 million steps. All
-          models are 1M parameters.
+          rollout dataset. For fair comparison, we train 1M parameter models for
+          each method for 1 million real environment frames, with a learning
+          rate of 1e-4 and a batch size of 16.
         </P>
         <P>
           We generate a 32 val seeds and 100 test seeds. We use the 32 val seeds

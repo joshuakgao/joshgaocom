@@ -406,7 +406,7 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
   return (
     <div className="flex w-full flex-col items-center gap-4">
       <Small className="max-w-md text-center">
-        Interactive demo for Flappy Birds dreaming. Tap screen or press{" "}
+        Tap screen or press{" "}
         <kbd className="rounded border border-neutral-400 px-1 dark:border-neutral-600">
           Space
         </kbd>{" "}

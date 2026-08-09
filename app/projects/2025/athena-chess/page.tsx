@@ -22,7 +22,8 @@ export default function Athena() {
 
   return (
     <PostWrapper post={post}>
-      <PostContent className="items-center">
+      <PostContent className="items-center gap-y-2">
+        <H2>Play Against Athena</H2>
         <AthenaChessDemo basePath={assetsPath} />
       </PostContent>
 
