@@ -11,7 +11,7 @@ export function PostLink({
       target="_blank"
       rel="noopener noreferrer"
       {...props}
-      className="text-blue-500 hover:underline hover:underline-offset-4 transition-all duration-200"
+      className="text-pop hover:underline hover:underline-offset-4 transition-all duration-200"
     >
       {children}
     </Link>

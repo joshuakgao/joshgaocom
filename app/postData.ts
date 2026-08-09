@@ -7,7 +7,7 @@ export let posts: PostProps[] = [
     thumbnail: "/assets/projects/2026/flappy-world/thumbnail.webp",
     title: "Mastering Flappy Birds through World Models",
     description:
-      "Our agent never played a single game of Flappy Bird during training, yet it cleared 1,000+ pipes. It learned entirely through imagination.",
+      "Our agent never played a single game of Flappy Bird during training, yet it still can clear +1,000 pipes. It learned entirely through imagination.",
     date: "24 Jul 2026",
     year: "2026",
     links: {

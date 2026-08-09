@@ -382,6 +382,15 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
 
   return (
     <div className="flex w-full flex-col items-center gap-4">
+      <Small className="max-w-md text-center">
+        Interactive demo for Flappy Birds dreaming. Tap screen or press{" "}
+        <kbd className="rounded border border-neutral-400 px-1 dark:border-neutral-600">
+          Space
+        </kbd>{" "}
+        to override the agent's decision. Switch off{" "}
+        <span className="font-medium">DreamerV3 Assist</span> to fly the dream
+        yourself.
+      </Small>
       <div
         className="relative select-none overflow-hidden rounded-xl border border-neutral-300 bg-neutral-950 shadow-lg dark:border-neutral-700"
         style={{ lineHeight: 0 }}
@@ -464,19 +473,6 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
           </label>
         </div>
       </div>
-      <Small className="max-w-md text-center">
-        Press{" "}
-        <kbd className="rounded border border-neutral-400 px-1 dark:border-neutral-600">
-          Space
-        </kbd>{" "}
-        (or tap the frame) to take over and flap, or switch off{" "}
-        <span className="font-medium">DreamerV3 Assist</span> to fly the dream
-        yourself.
-      </Small>
-      <Small className="max-w-md text-center">
-        Nothing here is a real game - every pixel is imagined by the DreamerV3
-        world model.
-      </Small>
     </div>
   );
 }
