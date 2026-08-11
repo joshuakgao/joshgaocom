@@ -414,6 +414,21 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
         <span className="font-medium">DreamerV3 Assist</span> to fly the dream
         yourself.
       </Small>
+      <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <Switch
+            id="dreamer-assist"
+            checked={assist}
+            onCheckedChange={setAssist}
+          />
+          <label
+            htmlFor="dreamer-assist"
+            className="cursor-pointer select-none text-sm font-medium text-neutral-700 dark:text-neutral-300"
+          >
+            DreamerV3 Assist
+          </label>
+        </div>
+      </div>
       <div
         className="relative select-none overflow-hidden rounded-xl border border-neutral-300 bg-neutral-950 shadow-lg dark:border-neutral-700"
         style={{ lineHeight: 0 }}
@@ -485,22 +500,6 @@ export default function FlappyWorldDemo({ basePath }: { basePath: string }) {
             <span className="text-[11px] text-white/70">respawning…</span>
           </div>
         )}
-      </div>
-
-      <div className="flex items-center gap-4">
-        <div className="flex items-center gap-2">
-          <Switch
-            id="dreamer-assist"
-            checked={assist}
-            onCheckedChange={setAssist}
-          />
-          <label
-            htmlFor="dreamer-assist"
-            className="cursor-pointer select-none text-sm font-medium text-neutral-700 dark:text-neutral-300"
-          >
-            DreamerV3 Assist
-          </label>
-        </div>
       </div>
     </div>
   );
