@@ -7,8 +7,8 @@ import {
   P,
   PostContent,
   PostImg,
-  PostVideo,
   PostLink,
+  PostVideo,
   PostWrapper,
 } from "@/components/ui";
 

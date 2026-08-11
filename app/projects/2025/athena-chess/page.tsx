@@ -12,7 +12,6 @@ import {
   PostLink,
   PostWrapper,
   Small,
-  Spacer,
 } from "@/components/ui";
 import { BlockMath, InlineMath } from "react-katex";
 import AthenaChessDemo from "./AthenaChessDemo";

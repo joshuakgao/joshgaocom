@@ -9,30 +9,34 @@ import {
   CarouselNext,
   CarouselPrevious,
   Col,
-  H0,
   H1,
-  H2,
   P,
   PostCard,
   PublicationCard,
   Row,
   ScrollDiv,
-  Small,
   Spacer,
 } from "@/components/ui";
 import Link from "next/link";
-import { LuArrowRight } from "react-icons/lu";
-import { TbFileCv } from "react-icons/tb";
-import { FaGoogleScholar } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
+import { FaGoogleScholar } from "react-icons/fa6";
+import { LuArrowRight } from "react-icons/lu";
 import { MdAlternateEmail } from "react-icons/md";
+import { TbFileCv } from "react-icons/tb";
 import { toast } from "sonner";
 
-function copyEmail() {
-  const ENCODED_EMAIL = "am9zaHVha2dhb0BnbWFpbC5jb20=";
+const ENCODED_EMAIL = "am9zaHVha2dhb0BnbWFpbC5jb20=";
+
+async function copyEmail() {
   const email = atob(ENCODED_EMAIL);
-  toast("Email has been copied to clipboard!", { position: "top-center" });
-  navigator.clipboard.writeText(email);
+  try {
+    await navigator.clipboard.writeText(email);
+    toast("Email copied to clipboard", { position: "top-center" });
+  } catch {
+    toast(`Clipboard unavailable — the address is ${email}`, {
+      position: "top-center",
+    });
+  }
 }
 
 export default function Home() {
@@ -50,10 +54,10 @@ export default function Home() {
     <ScrollDiv className="min-h-screen bg-transparent">
       <>
         <Col className="w-full flex items-center justify-center p-8 md:p-16">
-          <Col className={`w-full max-w-7xl rounded-lg space-y-8 md:my-8`}>
-            <Spacer horizontal />
+          <Col className="w-full max-w-7xl rounded-lg space-y-8 md:my-8">
+            <Spacer size={64} />
             <Col className="justify-center items-center">
-              <H1 className="text-center mt-16">
+              <H1 className="text-center">
                 Building intelligent embodied systems.
               </H1>
               <Row className="text-center justify-center mt-4">
@@ -73,7 +77,7 @@ export default function Home() {
                 <Sep />
                 <P>Houston, TX</P>
               </Row>
-              <Row className="flex flex-row gap-4 text-xl text-gray-500 items-center mt-4">
+              <Row className="gap-4 text-xl text-gray-500 items-center mt-4">
                 <a
                   href="/assets/docs/resume.pdf"
                   target="_blank"
@@ -98,20 +102,18 @@ export default function Home() {
                 >
                   <FaGithub />
                 </a>
-                <div
+                <button
                   className="hover:text-pop scale-[100%] hover:scale-[110%] transition-all duration-300 cursor-pointer"
                   onClick={copyEmail}
                 >
                   <MdAlternateEmail size={22} />
-                </div>
+                </button>
               </Row>
             </Col>
 
             <Spacer size={128} />
             <Row className="justify-between">
-              <Col>
-                <H1>Highlighted Publications</H1>
-              </Col>
+              <H1>Highlighted Publications</H1>
               <Button asChild variant={"ghost"} className="text-pop">
                 <Link href="/publications">
                   <Row>
