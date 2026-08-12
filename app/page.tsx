@@ -2,6 +2,11 @@
 
 import { posts } from "@/app";
 import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
   Button,
   Carousel,
   CarouselContent,
@@ -10,7 +15,6 @@ import {
   CarouselPrevious,
   Col,
   H1,
-  P,
   PostCard,
   PublicationCard,
   Row,
@@ -46,9 +50,6 @@ export default function Home() {
   );
 
   const projects = posts.filter((post) => post.contentType !== "Research");
-  const Sep = () => (
-    <span className="mx-2 text-gray-300 select-none text-xl">/</span>
-  );
 
   return (
     <ScrollDiv className="min-h-screen bg-transparent">
@@ -60,23 +61,36 @@ export default function Home() {
               <H1 className="text-center">
                 Building intelligent embodied systems.
               </H1>
-              <Row className="text-center justify-center mt-4">
-                <P className="text-gray-600 leading-relaxed">
-                  PhD student at{" "}
-                  <a
-                    href="https://sail.cive.uh.edu/"
-                    className="hover:text-pop transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    SAIL
-                  </a>
-                </P>
-                <Sep />
-                <P>Deep Learning & Robotics</P>
-                <Sep />
-                <P>Houston, TX</P>
-              </Row>
+              <Breadcrumb className="mt-4">
+                {/* gap-3 sm:gap-3 overrides the component's own gap-1.5 sm:gap-2.5
+                    so row/column spacing stays 12px at every breakpoint */}
+                <BreadcrumbList className="justify-center gap-3 text-center text-[16px] leading-relaxed text-gray-600 sm:gap-3 md:flex-nowrap [&>li]:text-balance">
+                  <BreadcrumbItem className="block">
+                    PhD student at{" "}
+                    <BreadcrumbLink
+                      href="https://sail.cive.uh.edu/"
+                      className="hover:text-pop"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      SAIL
+                    </BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator className="select-none text-xl text-gray-300">
+                    /
+                  </BreadcrumbSeparator>
+                  <BreadcrumbItem className="block">
+                    Deep Learning & Robotics
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator className="hidden md:block select-none text-xl text-gray-300">
+                    /
+                  </BreadcrumbSeparator>
+                  {/* basis-full forces its own flex line below md; auto rejoins the row at md+ */}
+                  <BreadcrumbItem className="block basis-full md:basis-auto">
+                    Houston, TX
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
               <Row className="gap-4 text-xl text-gray-500 items-center mt-4">
                 <a
                   href="/assets/docs/resume.pdf"
