@@ -8,7 +8,7 @@ export let posts: PostProps[] = [
     title: "Mastering Flappy Birds through World Models",
     description:
       "Our agent never played a single game of Flappy Bird during training, yet it still can clear +1,000 pipes. It learned entirely through imagination.",
-    date: "24 Jul 2026",
+    date: "Aug 11 2026",
     year: "2026",
     links: {
       github: "https://github.com/joshuakgao/flappy-world.git",
