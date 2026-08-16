@@ -22,7 +22,7 @@ export let posts: PostProps[] = [
     title:
       "PE Civil Bench: Advancing Agentic Retrieval-Augmented Generation Performance of Large Language Models on Exam Problems and Automated Component Design",
     authors: [
-      "Subin Varghese",
+      "Saurav Silwal",
       "Joshua Gao",
       "Subin Varghese",
       "Vedhus Hoskere",
